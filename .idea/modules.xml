@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/scala-spark-tutorial.iml" filepath="$PROJECT_DIR$/scala-spark-tutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-spark-tutorial_main.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-spark-tutorial_main.iml" group="scala-spark-tutorial" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scala-spark-tutorial_test.iml" filepath="$PROJECT_DIR$/.idea/modules/scala-spark-tutorial_test.iml" group="scala-spark-tutorial" />
+    </modules>
+  </component>
+</project>
