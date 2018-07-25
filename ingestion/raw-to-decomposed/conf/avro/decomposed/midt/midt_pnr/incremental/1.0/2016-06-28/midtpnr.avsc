@@ -1,0 +1,193 @@
+{
+  "type" : "record",
+  "name" : "import_midtpnr",
+  "doc" : "import of DW_OWNR.midtpnr",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "PNR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKING_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_CRT_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_CRT_DATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "AGENT_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_NO",
+    "sqlType" : "93"
+  }, {
+    "name" : "CRS",
+    "type" : [ "string", "null" ],
+    "columnName" : "CRS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PCC",
+    "type" : [ "string", "null" ],
+    "columnName" : "PCC",
+    "sqlType" : "93"
+  }, {
+    "name" : "AGENT_COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_COUNTRY_CODE",
+    "sqlType" : "93"
+  }, {
+    "name" : "AGENT_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_CITY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_CITY_NAME",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLOWN_SECTOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLOWN_SECTOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_LOC_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_LOC_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_LOC_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_LOC_TIME",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLIGHT_GMT_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_GMT_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_GMT_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_GMT_TIME",
+    "sqlType" : "2"
+  },{
+    "name" : "STOPOVER_DURATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "STOPOVER_DURATION",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLYING_DURATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLYING_DURATION",
+    "sqlType" : "2"
+  }, {
+    "name" : "ARRIVAL_LOC_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ARRIVAL_LOC_DATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "ARRIVAL_LOC_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "ARRIVAL_LOC_TIME",
+    "sqlType" : "2"
+  }, {
+    "name" : "ARRIVAL_GMT_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ARRIVAL_GMT_DATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "ARRIVAL_GMT_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "ARRIVAL_GMT_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARKETING_CARRIER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_CARRIER",
+    "sqlType" : "93"
+  }, {
+    "name" : "MARKETING_CARRIER_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_CARRIER_NO",
+    "sqlType" : "93"
+  }, {
+    "name" : "OPERATING_CARRIER",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATING_CARRIER",
+    "sqlType" : "93"
+  }, {
+    "name" : "OPERATING_CARRIER_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATING_CARRIER_NO",
+    "sqlType" : "93"
+  }, {
+    "name" : "BOOKING_CLASS",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_CLASS",
+    "sqlType" : "93"
+  }, {
+    "name" : "COMPARTMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "COMPARTMENT",
+    "sqlType" : "93"
+  }, {
+    "name" : "BOOKING_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRCRAFT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_TYPE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PAX",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX",
+    "sqlType" : "2"
+  }, {
+    "name" : "SECTOR_ORIGIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "SECTOR_ORIGIN",
+    "sqlType" : "93"
+  }, {
+    "name" : "SECTOR_DESTINATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "SECTOR_DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEQUENCE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEQUENCE_NUMBER",
+    "sqlType" : "93"
+  }, {
+    "name" : "BATCH_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "BATCH_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROCESSING_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROCESSING_DATE",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.MIDTPNR"
+}

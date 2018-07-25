@@ -1,0 +1,59 @@
+{
+  "type" : "record",
+  "name" : "dob_schema",
+  "namespace":"datalake",  
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "GDS_CODE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PSEUDO_CITY_CODE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "AGENCY_NUMBER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CHECK_DIGIT",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "NAME",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ADDRESS_1",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ADDRESS_2",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CITY",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "STATE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "POSTAL_CODE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "COUNTRY",
+    "type" : [ "string", "null" ]
+  },
+  {
+    "name" : "FILLER",
+    "type" : [ "string", "null" ]
+  },
+   {
+    "name" : "BATCH_NUMBER",
+    "type" : [ "string", "null" ]
+  },
+   {
+    "name" : "PROCESSING_DATE",
+    "type" : [ "string", "null" ]
+  }
+
+  ]
+}

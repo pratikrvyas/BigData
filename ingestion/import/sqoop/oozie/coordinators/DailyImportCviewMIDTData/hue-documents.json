@@ -1,0 +1,26 @@
+[
+{
+  "pk": null, 
+  "model": "desktop.document2", 
+  "fields": {
+    "uuid": "40ffc1ab-b7d2-2dc5-9443-88ffaea7d229", 
+    "extra": "", 
+    "type": "oozie-coordinator2", 
+    "description": "Cordinator to schedule MIDT data to GPS", 
+    "is_history": false, 
+    "parent_directory": [
+      "", 
+      1, 
+      false
+    ], 
+    "last_modified": "2017-08-03T16:33:40.254", 
+    "version": 1, 
+    "owner": [
+      "scv_ops"
+    ], 
+    "dependencies": [], 
+    "data": "{\"end_date\": {\"name\": \"end_date\", \"value\": \"2017-08-03T23:00\"}, \"variables\": [{\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"3387bee9-83b4-880e-1be0-03a9ca9f35a1\", \"frequency_number\": \"1\", \"dataset_variable\": \"/data/helix/temp/raw/frr/oal_midt_load/full/${YEAR}-${MONTH}-${DAY}/${HOUR}-${MINUTE}\", \"start\": \"2016-08-04T13:45\", \"same_frequency\": false, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"output_path\", \"use_done_flag\": true, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"TABLE_OAL_MIDT_LOAD\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"America/Los_Angeles\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"e2370971-6702-6dd1-369b-a3ab98f5a7ef\", \"frequency_number\": \"1\", \"dataset_variable\": \"/data/helix/temp/raw/frr/oal_midt_load2/full/${YEAR}-${MONTH}-${DAY}/${HOUR}-${MINUTE}\", \"start\": \"2016-11-27T04:00:19.605Z\", \"same_frequency\": false, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"output_path\", \"use_done_flag\": true, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"TABLE_OAL_MIDT_LOAD2\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"69fb82a1-d2ba-c27d-b1c9-812ccebebfd0\", \"frequency_number\": \"1\", \"dataset_variable\": \"/data/helix/temp/raw/frr/gps_oal_midt_load/full/${YEAR}-${MONTH}-${DAY}/${HOUR}-${MINUTE}\", \"start\": \"2017-07-25T15:33\", \"same_frequency\": false, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"output_path\", \"use_done_flag\": true, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"TABLE_GPS_OAL_MIDT_LOAD\", \"is_advanced_end_instance\": false}], \"isDirty\": true, \"showAdvancedFrequencyUI\": true, \"variablesUI\": [\"parameter\", \"input_path\", \"output_path\"], \"workflowParameters\": [{\"name\": \"FRR_CONTROL_FILE\", \"value\": \"\"}, {\"name\": \"TABLE_OAL_MIDT_LOAD\", \"value\": \"\"}, {\"name\": \"TABLE_GPS_OAL_MIDT_LOAD\", \"value\": \"\"}, {\"name\": \"FRR_SQOOP_OPTIONS_FILE\", \"value\": \"\"}, {\"name\": \"TABLE_OAL_MIDT_LOAD2\", \"value\": \"\"}], \"id\": 51449, \"name\": \"DailyImportCviewMIDTData\", \"uuid\": \"40ffc1ab-b7c2-2dc5-9443-88ffaea7d229\", \"properties\": {\"job_xml\": \"\", \"execution\": \"LAST_ONLY\", \"end\": \"${end_date}\", \"description\": \"Cordinator to schedule MIDT data to GPS\", \"frequency_number\": 1, \"workflow\": \"50197fe0-facb-4a93-90e1-047eb3a8e1f0\", \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1470303865.83\", \"cron_frequency\": \"0 2 * * *\", \"frequency_unit\": \"days\", \"schema_version\": \"uri:oozie:coordinator:0.2\", \"cron_advanced\": false, \"start\": \"${start_date}\", \"timeout\": \"500\", \"timezone\": \"Asia/Dubai\", \"credentials\": [], \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"start_date\", \"value\": \"2017-08-03T02:00Z\"}, {\"name\": \"end_date\", \"value\": \"2017-08-03T23:00\"}, {\"name\": \"FRR_CONTROL_FILE\", \"value\": \"frrstatus_control.txt\"}, {\"name\": \"FRR_SQOOP_OPTIONS_FILE\", \"value\": \"frr_import_db_options\"}], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"start_date\": {\"name\": \"start_date\", \"value\": \"2017-08-03T02:00Z\"}}", 
+    "name": "DailyImportCviewMIDTData"
+  }
+}
+]

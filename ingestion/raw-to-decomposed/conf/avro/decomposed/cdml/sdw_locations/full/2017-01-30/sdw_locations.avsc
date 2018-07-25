@@ -1,0 +1,125 @@
+{
+  "type" : "record",
+  "name" : "SDW_LOCATIONS",
+  "doc" : "Sqoop import of DW_OWNR.SDW_LOCATIONS",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "LCN_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "LCN_ID"
+  }, {
+    "name" : "COU_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COU_IATA_CODE"
+  }, {
+    "name" : "STREET",
+    "type" : [ "string", "null" ],
+    "columnName" : "STREET"
+  }, {
+    "name" : "TOWN",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOWN"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CREATED"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED"
+  }, {
+    "name" : "DESCRIPTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESCRIPTION"
+  }, {
+    "name" : "CO_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "CO_NAME"
+  }, {
+    "name" : "BUILDING",
+    "type" : [ "string", "null" ],
+    "columnName" : "BUILDING"
+  }, {
+    "name" : "LOCALITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCALITY"
+  }, {
+    "name" : "REGION",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION"
+  }, {
+    "name" : "ADDRESS_KEY",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADDRESS_KEY"
+  }, {
+    "name" : "MAIL_SORT_KEY",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAIL_SORT_KEY"
+  }, {
+    "name" : "POST_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POST_CODE"
+  }, {
+    "name" : "MATCH_STRING",
+    "type" : [ "string", "null" ],
+    "columnName" : "MATCH_STRING"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CHANGED"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED"
+  }, {
+    "name" : "PO_BOX",
+    "type" : [ "string", "null" ],
+    "columnName" : "PO_BOX"
+  }, {
+    "name" : "CTY_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CTY_IATA_CODE"
+  }, {
+    "name" : "SOF_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SOF_CODE"
+  }, {
+    "name" : "SEND_CARE_OF",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEND_CARE_OF"
+  }, {
+    "name" : "REGION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION_CODE"
+  }, {
+    "name" : "STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STG_PROCESS_DATE"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE"
+  }, {
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CARD_NO"
+  } ],
+  "tableName" : "SDW_LOCATIONS"
+}

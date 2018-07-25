@@ -1,0 +1,68 @@
+{
+  "type" : "record",
+  "name" : "CDW_COM_AIRPORTS_OD",
+  "doc" : "import of DW_OWNR.CDW_COM_AIRPORTS_OD",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "CAR_APT_CD",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_APT_CD",
+    "sqlType" : "2"
+  }, {
+    "name" : "CAR_APT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_APT_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CAR_OPR_FLG",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_OPR_FLG",
+    "sqlType" : "2"
+  }, {
+    "name" : "CAR_OPR_EFF_FRM_DT",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_OPR_EFF_FRM_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "CAR_OPR_EFF_TO_DT",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_OPR_EFF_TO_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CAR_UPD_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_UPD_BY",
+    "sqlType" : "93"
+  }, {
+    "name" : "CAR_UPD_DT",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_UPD_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "CAR_CCT_CITY_CD",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_CCT_CITY_CD",
+    "sqlType" : "12"
+  }, {
+    "name" : "CAR_LONG",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_LONG",
+    "sqlType" : "93"
+  }, {
+    "name" : "CAR_LATI",
+    "type" : [ "string", "null" ],
+    "columnName" : "CAR_LATI",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.CDW_COM_AIRPORTS_OD"
+}

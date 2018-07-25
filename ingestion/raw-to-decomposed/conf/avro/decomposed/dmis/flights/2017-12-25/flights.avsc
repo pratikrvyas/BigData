@@ -1,0 +1,505 @@
+{
+  "type" : "record",
+  "name" : "flights",
+  "fields" : [ {
+    "name" : "FLHT_FLIGHT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_STA_STD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_STA_STD",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_ACTP_AIRCRAFT_TYPE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ACTP_AIRCRAFT_TYPE_ID",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_AIRL_AIRLINE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_AIRL_AIRLINE_ID",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_FLTP_FLIGHT_TYPE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_FLTP_FLIGHT_TYPE_ID",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_ARRIVAL_DEPARTURE_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ARRIVAL_DEPARTURE_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CHARGE_TO_CARRIER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CHARGE_TO_CARRIER",
+    "sqlType" : "20"
+  }, {
+    "name" : "FLHT_LTA_LTD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_LTA_LTD",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_IBFI_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_IBFI_ID",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_OBFI_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_OBFI_ID",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_STAF_STAFF_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_STAF_STAFF_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_STAF_STAFF_NO_SSM",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_STAF_STAFF_NO_SSM",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_TERMINAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_TERMINAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_ADHOC_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ADHOC_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_ORIGINATING_FROM_DUBAI",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ORIGINATING_FROM_DUBAI",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_ETA_ETD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ETA_ETD",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_ATA_ATD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ATA_ATD",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_CANCELLED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CANCELLED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_LINKED_FLT_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_LINKED_FLT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_LINKED_FLT_ARR_DEP_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_LINKED_FLT_ARR_DEP_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_LINKED_FLT_ARR_DEP_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_LINKED_FLT_ARR_DEP_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_LINKED_FLT_DMIS_SRNO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_LINKED_FLT_DMIS_SRNO",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_LINKED_FLT_AOMIS_SRNO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_LINKED_FLT_AOMIS_SRNO",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_BILLING_OVER_YN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_BILLING_OVER_YN",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_SPOT_BILLED_YN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_SPOT_BILLED_YN",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CRITICALFLIGHT_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CRITICALFLIGHT_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_FLIGHT_REMARKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_FLIGHT_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_AGSS_DACS_PAIR_D_A_FLT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_AGSS_DACS_PAIR_D_A_FLT",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_BAY_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_BAY_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_GATE_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_GATE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_TELEX_DATE_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_TELEX_DATE_TIME",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_TELEX_REMARKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_TELEX_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_TOUCHDOWN_AIRBORNE_DT_TM",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_TOUCHDOWN_AIRBORNE_DT_TM",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_FB_COUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_FB_COUNT",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_AGSS_DACS_PAIR_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_AGSS_DACS_PAIR_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_AOMIS_FLIGHT_MOVEMENT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_AOMIS_FLIGHT_MOVEMENT_ID",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_AGSS_DACS_FLT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_AGSS_DACS_FLT_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_ACFT_AIRCRAFT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ACFT_AIRCRAFT_ID",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_HANDLING_NOTE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_HANDLING_NOTE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_BAGG_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_BAGG_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_SCR_ID_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_SCR_ID_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_USER_USER_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_USER_USER_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_STAF_STAFF_NO_DO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_STAF_STAFF_NO_DO",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_SYPA_AIRP_AIRPORT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_SYPA_AIRP_AIRPORT_ID",
+    "sqlType" : "200"
+  }, {
+    "name" : "FLHT_SYPA_HAAG_HANDL_AGENT_CD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_SYPA_HAAG_HANDL_AGENT_CD",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CAROSEL_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CAROSEL_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CODESHARE_FLIGHT1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CODESHARE_FLIGHT1",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CODESHARE_FLIGHT2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CODESHARE_FLIGHT2",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CODESHARE_FLIGHT3",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CODESHARE_FLIGHT3",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CODESHARE_FLIGHT4",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CODESHARE_FLIGHT4",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CODESHARE_FLIGHT5",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CODESHARE_FLIGHT5",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CALL_SIGN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CALL_SIGN",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATE_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_ULD_CHARGE_YN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ULD_CHARGE_YN",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_STATUS_REMARKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_STATUS_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_FIDS_REMARK_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_FIDS_REMARK_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_TMOA_DT_TM",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_TMOA_DT_TM",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_MOCON_REMARKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_MOCON_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_AUTO_CANCEL_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_AUTO_CANCEL_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_BKEND_UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_BKEND_UPDT_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_BKEND_UPDT_USR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_BKEND_UPDT_USR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_PROV_CLOSE_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_PROV_CLOSE_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_FLT_MODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_FLT_MODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_CASH_CREDIT_YN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CASH_CREDIT_YN",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_PARTIAL_HANDLING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_PARTIAL_HANDLING",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_UNACCDELY_SHIFTRPT_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_UNACCDELY_SHIFTRPT_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_FLT_DELINK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_FLT_DELINK",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_RF_ATA_ATD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_RF_ATA_ATD",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_ATA_ATD_UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ATA_ATD_UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_SPOT_FLIGHT_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_SPOT_FLIGHT_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_SPOT_AHCN_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_SPOT_AHCN_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_PARKING_TERMINAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_PARKING_TERMINAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_ETA_ETD_TEMP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_ETA_ETD_TEMP",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_STATUS_APT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_STATUS_APT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLHT_EK_DOOR_CLOSE_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_EK_DOOR_CLOSE_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_PAX_DOOR_CLOSE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_PAX_DOOR_CLOSE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_CARGO_DOOR_CLOSE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_CARGO_DOOR_CLOSE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLHT_FLIGHT_SUB_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLHT_FLIGHT_SUB_TYPE",
+    "sqlType" : "12"
+  },  {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null
+  } ]
+}

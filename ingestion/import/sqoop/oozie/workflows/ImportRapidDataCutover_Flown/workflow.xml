@@ -1,0 +1,398 @@
+<workflow-app name="ImportRapidDataCutover-Flown" xmlns="uri:oozie:workflow:0.5">
+    <start to="fork-c178"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-0a2f">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_FLPDOCTRN}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT X1.BATSEQ,                X1.TRNTYP,                X1.CARNUMCOD,                X1.DOCNUM,                X1.CPNNUM,                X1.CTACOD,                X1.FARCURCOD,                X1.GRSFARAMT,                X1.ISCPCT,                X1.CHKWGT,                X1.CHKPCS,                X1.POOTKT,                X1.SECMISTYP,                X1.NMTCPNSTA,                X1.CLONUM,                X1.CLODAT,                X1.ACCIND,                X1.REJIND,                X1.BILSTA,                X1.PRICPNIND,                X1.USRCOD,                X1.UPDDAT,                X1.ASOIDR,                X1.PAXCNTIND,                X1.REVPAXIND,                X1.FLPTRNSEQ,                X1.MCOUTLVAL,                X1.ACCIDR,                X1.CVWIND,                X1.MCOUTLCUR,                X1.ENDIND,                X1.CLOIND,                X1.DOCTYP,                X1.DATSRC,                X1.ETKIND,                X1.DUMIND,                X1.FLNISSCTYCOD,                X1.FLNSALDAT,                X1.FLNFABCOD,                X1.FLNEXCWGT,                X1.FLNEXCPCS,                X1.COUEBTIND,                X1.MCOSRVTYP,                X1.ENTFABCOD,                X1.ENTSECMISTYP,                X1.SACCOD,                X1.SOUIND,                X1.MANTAXREA,                X1.CPNTAXSTA,                X1.FLNTAXACCIDR,                X1.SYSTAXREA,                X1.CPNVALIDR,                X1.CPNVALSTA,                X1.REACOD,                X1.CPNVALUSR,                X1.CPNVALDAT,                X1.ETKTRNSEQ,                X1.INPPRVCALIDR,                X1.INPPRVACCIDR,                X1.FLNTAXPRC,                X1.FLNTAXPRCDAT,                X1.SABLYTRUNSEQ,                X1.FLNSALIND,                X1.TOTFLNSURAMT,                X1.TOTFLNTAXAMT,                X1.TOTSALSURAMT,                X1.TOTSALTAXAMT,                X1.FIMIND,                X1.TKTSALDAT,                X1.REUIND,                X1.ACTCHKPCS,                X1.ACTCHKWGT,                X1.TOTBAG           FROM FLPDOCTRN X1  where $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FLPDOCTRN</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FLPDOCTRN}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.DOCNUM</arg>
+              <arg>--boundary-query</arg>
+              <arg> &quot;select (select min(docnum) from FLPDOCTRN) minnum, (select max(docnum)  from FLPDOCTRN) maxnum from dual&quot; </arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPDDAT=String,CLODAT=String,FLNSALDAT=String,CPNVALDAT=String,FLNTAXPRCDAT=String,TKTSALDAT=String</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-804d"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-c178">
+        <path start="sqoop-1c01" />
+        <path start="sqoop-0a2f" />
+        <path start="sqoop-389f" />
+        <path start="sqoop-bf19" />
+    </fork>
+    <join name="join-428c" to="End"/>
+    <action name="sqoop-1c01">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_FLPDOCTAX}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT X1.CARNUMCOD,        X1.SALDOCNUM,        X1.DOCNUM,        X1.CPNNUM,        X1.TAXCOD,        X1.CNTCOD,        X1.TAXSERNUM,        X1.TAXAPLSERNUM,        X1.CURCOD,        X1.COLTAXAMT,        X1.TAXMGTTYP,        X1.RUNSEQ,        X1.FLTDAT,        X1.BATSEQ,        X1.FLNSALIND,        X1.ACCCOD,        X1.ACCCSTCOD,        X1.TAXREVACCCOD,        X1.FRZIDR,        X1.CBKCOLREFAMT,        X1.CBKTAXAMT,        X1.TAXPROTYP,        X1.SRPSOU,        X1.SRPTOTAMT,        X1.UPDDAT,        X1.USRCOD,        X1.SURIND,        X1.TAXREVCSTCOD,        X1.ACCSOU,        X1.CLDTAXAMT,        X1.COSALNCEVAL,        X1.PAYCURCOD,        X1.PAYEXCRATTYP,        X1.PAYEXCRAT,        X1.PAYCONVDAT,        X1.PAYCOLAMT,        X1.PAYCLDAMT,        X1.EXCDIFAMT,        X1.EXCDIFACC,        X1.PAYCBKTAXAMT   FROM FLPDOCTAX X1  where $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FLPDOCTAX</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FLPDOCTAX}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.DOCNUM</arg>
+              <arg>--boundary-query</arg>
+              <arg>&quot;select (select min(docnum) from FLPDOCTAX) minnum, (select max(docnum)  from FLPDOCTAX) maxnum from dual&quot;</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPDDAT=String,FLTDAT=String,PAYCONVDAT=String</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-ee50"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-59bd">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_FLPFIMDTL}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT X1.SYSFIMIDR,        X1.CARNUMCOD,        X1.DOCNUM,        X1.CPNNUM,        X1.FABCOD,        X1.BOKCLS,        X1.BILAMT,        X1.ISCPCT,        X1.SPACOD,        X1.BILCOD,        X1.EXCWGT,        X1.UPDDAT,        X1.USRCOD,        X1.DOCPROSTA,        X1.ISSCTYCOD,        X1.FFAIDR,        X1.SYSTAXREA,        X1.MANTAXREA,        X1.CREUSRCOD,        X1.CREDAT,        X1.CBKAMT,        X1.CBKPRVAMT   FROM FLPFIMDTL X1  WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FLPFIMDTL</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FLPFIMDTL}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.DOCNUM</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPDDAT=String,CREDAT=String</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-428c"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-389f">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_SLPAPDDTL}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg> &quot;SELECT X1.UNQSEQNUM,X1.CARNUMCOD,X1.DOCNUM,X1.PAXNAM,X1.APDTYP,X1.APDIDR,X1.MFL_ID, X1.PAXREFNUM,X1.PAXDOB,X1.PAXNAT,X1.GENDER,X1.PASNUM,X1.IDDOCTYP,X1.USRCOD, X1.UPDDAT,X1.TKTTYP   FROM SLPAPDDTL X1   where $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SLPAPDDTL</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SLPAPDDTL}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.DOCNUM</arg>
+              <arg>--boundary-query</arg>
+              <arg> &quot;select (select min(docnum) from SLPAPDDTL) minnum, (select max(docnum)  from SLPAPDDTL) maxnum from dual&quot; </arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>PAXDOB=String,UPDDAT=String</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-9105"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-bf19">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_SLPCPNACC}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT X1.DOCNUM,                X1.CARNUMCOD,                X1.CPNNUM,                X1.ORGCPNAMT,                X1.ORGDSCAMT,                X1.ORGCOMAMT,                X1.ORGORCAMT,                X1.ORGLOCCOD,                X1.FLNCPNAMT,                X1.FLNDSCAMT,                X1.FLNCOMAMT,                X1.FLNORCAMT,                X1.UTLBATIDR,                X1.DUMIND,                X1.ORGVATISCAMT,                X1.FLNVATISCAMT,                X1.POOACCCOD,                X1.FLNCSCCOMAMT,                X1.ORGCSCCOMAMT           FROM SLPCPNACC X1  where $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SLPCPNACC</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SLPCPNACC}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.DOCNUM</arg>
+              <arg>--boundary-query</arg>
+              <arg>&quot;select (select min(docnum) from SLPCPNACC) minnum, (select max(docnum)  from SLPCPNACC) maxnum from dual&quot;</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-59bd"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-804d">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_SLPTXPEXMDTL}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT X1.CARNUMCOD,                X1.SALDOCNUM,                X1.DOCNUM,                X1.CPNNUM,                X1.TAXCOD,                X1.CNTCOD,                X1.TAXSERNUM,                X1.TAXAPLSERNUM,                X1.EXMSERNUM,                X1.EXMDES,                X1.USRCOD,                X1.UPDDAT,                X1.SOURCE           FROM SLPTXPEXMDTL X1         WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SLPTXPEXMDTL</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SLPTXPEXMDTL}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.DOCNUM</arg>
+              <arg>--boundary-query</arg>
+              <arg>&quot;select (select min(docnum) from SLPTXPEXMDTL) minnum, (select max(docnum)  from SLPTXPEXMDTL) maxnum from dual&quot;</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPDDAT=String</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-9161"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-ee50">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_FLPFIMHDR}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg> &quot;SELECT X1.FIMIDR,        X1.SYSFIMIDR,        X1.RCVFLTNUM,        X1.RCVFLTDAT,        X1.RCVFRMARP,        X1.RCVTOOARP,        X1.DLVCARNUM,        X1.DLVFLTNUM,        X1.DLVFLTDAT,        X1.DLVFRMARP,        X1.DLVTOOARP,        X1.PAXEBTIND,        X1.NUMFSTPAX,        X1.NUMBUSPAX,        X1.NUMECOPAX,        X1.NUMTOTPAX,        X1.NUMTOTEBT,        X1.PAXBILAMT,        X1.PAXISCAMT,        X1.EBTBILAMT,        X1.FIMDOC,        X1.NUMINFPAX,        X1.USRCOD,        X1.UPDDAT,        X1.CODIDR,        X1.ACCIDR,        X1.CBKPAXBILAMT,        X1.CBKPAXISCAMT,        X1.CBKEBTBILAMT,        X1.OALNUMFSTPAX,        X1.OALNUMBUSPAX,        X1.OALNUMECOPAX,        X1.OALNUMTOTPAX,        X1.OALNUMTOTEBT,        X1.OALNUMINFPAX,        X1.DOCNUM,        X1.CPNNUM,        X1.CLOIND,        X1.NUMFSTCHD,        X1.NUMBUSCHD,        X1.NUMECOCHD,        X1.OALNUMFSTCHD,        X1.OALNUMBUSCHD,        X1.OALNUMECOCHD,        X1.PROSTA,        X1.NUMBUSINF,        X1.NUMFSTINF,        X1.OALNUMBUSINF,        X1.OALNUMFSTINF,        X1.FFABILAMT,        X1.FFAISCAMT,        X1.SYSTAXREA,        X1.MANTAXREA,        X1.CLOUSRCOD,        X1.CLOUPDDAT,        X1.CREUSRCOD,        X1.CREDAT,        X1.OWNEMDCNT,        X1.OALEMDCNT,        X1.EMDBILAMT,        X1.CBKEMDBILAMT,        X1.CBKPAXBILPRVAMT,        X1.PRVPRC,        X1.UTLCMPCOD,        X1.UTLPOSCOD   FROM FLPFIMHDR X1  WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FLPFIMHDR</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FLPFIMHDR}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.DOCNUM</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>RCVFLTDAT=String,DLVFLTDAT=String,UPDDAT=String,CLOUPDDAT=String,CREDAT=String</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-428c"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-9105">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_FLPBATHDR}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select X1.BATSEQ,                X1.FLTNUM,                X1.FLTDAT,                X1.FRMARPCOD,                X1.TOOARPCOD,                X1.RCVDAT,                X1.ACFRGNNUM,                X1.CFGFST,                X1.CFGBUS,                X1.CFGECO,                X1.TOBBAT,                X1.NUMFSTPAX,                X1.NUMFSTCBG,                X1.NUMFSTEXS,                X1.NUMFSTSTR,                X1.NUMBUSPAX,                X1.NUMBUSCBG,                X1.NUMBUSEXS,                X1.NUMBUSSTR,                X1.NUMECOPAX,                X1.NUMECOCBG,                X1.NUMECOEXS,                X1.NUMECOSTR,                X1.NUMINFPAX,                X1.OALCPNVAL,                X1.NUMOALPAX,                X1.NUMEMRMCO,                X1.NUMOALMCO,                X1.NUMEMREBT,                X1.NUMOALEBT,                X1.CHRPAXIND,                X1.CHRNUMPAX,                X1.BATSTA,                X1.ACCIND,                X1.FLTTYP,                X1.USRCOD,                X1.UPDDAT,                X1.EXCCPNIND,                X1.CHRAGRRFR,                X1.CVWIND,                X1.RMK,                X1.SUBACCCOD,                X1.NUMFIM,                X1.NUMETK,                X1.ARCSTA,                X1.OWNFIMCNT,                X1.OWNFIMPAXCNT,                X1.OALFIMCNT,                X1.OALFIMPAXCNT,                X1.TOTMCO,                X1.TOTEBT,                X1.OWNFIMEBTCNT,                X1.OALFIMEBTCNT,                X1.QAPUSRCOD,                X1.QAPUPDDAT,                X1.DEDLOD,                X1.PAYLOD,                X1.ETKTOBMATIND,                X1.ETKTRNSEQ,                X1.CREUSRCOD,                X1.CREDAT,                X1.SYSMANIND,                X1.FRCDBATBAL,                X1.BATSRC,                X1.NUMOWNEMD,                X1.NUMOALEMD,                X1.TOTEMD,                X1.OWNFIMEMDCNT,                X1.OALFIMEMDCNT           from FLPBATHDR X1  where $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FLPBATHDR</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FLPBATHDR}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.BATSEQ</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPDDAT=String,RCVDAT=String,FLTDAT=String,QAPUPDDAT=String,CREDAT=String</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-fff4"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-fff4">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_FLPTRNACC}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg> &quot;select X1.ACCIDR,X1.ACCDAT,X1.FLTNUM,X1.STADAT, X1.ENDDAT,X1.FRMARPCOD,X1.TOOARPCOD,X1.USRCOD,X1.UPDDAT,X1.FLTDAT,X1.STATIM,X1.ENDTIM,X1.PENLV2LV3, X1.INPPRVCALSTA   from FLPTRNACC X1   where $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FLPTRNACC</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FLPTRNACC}</arg>
+              <arg>--split-by</arg>
+              <arg>X1.ACCIDR</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>ACCDAT=String,STADAT=String,ENDDAT=String,UPDDAT=String,FLTDAT=String,STATIM=String,ENDTIM=String</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-428c"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-9161">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_OBLPAXCPN}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${RAPID_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT TRNTYP, DOCTYP, CARNUMCOD, DOCNUM, CPNNUM, UTLDAT, CBLCPNAMT, CBLISCAMT, CBLTAXAMT, BILSTA, BILMTH, BILIND, BATSEQ, CTYCOD, REJIND, SALCURCOD, INVFTNNUM, INVFINYER, SUPINVIND, SUPINVFTNNUM, SUPINVFINYER, SUPAPLCURCOD, SUPMMREXCRAT, SUPFDREXCRAT, SUPCBLCPNAMT, SUPCBLISCAMT, FLTNUM, FRMARPCOD, TOOARPCOD, UTLBATIDR, LV2DAT, TRNACCIDR, BILCARCOD, FLNACCDAT, VATFAR, VATISC, EXCDIFACCDAT, CBKEXCDIFAMT, CBKEXCFTNNUM, CBKEXCFINYER, SOUCOD, ACHBATIDR, ACHSUPBATIDR, ETKIND, SACCOD, ADDPROFLG, SUPCBLTAXAMT, SUPINVEXCFTNNUM, SUPINVEXCFINYER, SUPINVCBKCPNAMT, SUPINVCBKISCAMT, SUPINVCBKTAXAMT, OALSRTSEQ, VATONNFAR, VATONNISC, CONVDAT, FNFBILIND, COLCURCOD, COLCPNAMT, COLISCAMT, COLTAXAMT, COLVATONNISC, COLVATONNFAR, COICURCOD, COICPNAMT, COIISCAMT, COITAXAMT, COIVATONNISC, COIVATONNFAR, SUPCOLCURCOD, SUPCOLCPNAMT, SUPCOLISCAMT, SUPCOICURCOD, SUPCOICPNAMT, SUPCOIISCAMT, SUPUSDSALFDRRAT, SUPSALUSDFDRRAT, SUPUSDCOLFDRRAT, SUPCOLCOIFDRRAT, SUPSALUSDMMRRAT, SUPUSDCOLMMRRAT, SUPCOLCOIMMRRAT, COLCOIEXCRAT, FIXVALIND, SUPCOLTAXAMT, SUPCOITAXAMT, RFICOD, RFISUBCOD, CBLHNDFEEAMT, CBLUATDSCAMT, CBLOTHCOMAMT, CBLVATAMT, COLHNDFEEAMT, COLUATDSCAMT, COLOTHCOMAMT, COLVATAMT, COIHNDFEEAMT, COIUATDSCAMT, COIOTHCOMAMT, COIVATAMT, SUPCOLHNDFEEAMT, SUPCOLUATDSCAMT, SUPCOLOTHCOMAMT, SUPCOLVATAMT, SUPCOIHNDFEEAMT, SUPCOIUATDSCAMT, SUPCOIOTHCOMAMT, SUPCOIVATAMT, SUPINVCBKHNDFEEAMT, SUPINVCBKUATDSCAMT, SUPINVCBKOTHCOMAMT, SUPINVCBKVATAMT, SUPCBLHNDFEEAMT, SUPCBLUATDSCAMT, SUPCBLOTHCOMAMT, SUPCBLVATAMT, HNDFEETYP, SISSOUCOD, RESLVL FROM OBLPAXCPN WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>OBLPAXCPN</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.DeflateCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_OBLPAXCPN}</arg>
+              <arg>--split-by</arg>
+              <arg>DOCNUM</arg>
+              <arg>--boundary-query</arg>
+              <arg>&quot;select (select min(docnum) from OBLPAXCPN) minnum, (select max(docnum)  from OBLPAXCPN) maxnum from dual&quot;</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--map-column-java</arg>
+              <arg>EXCDIFACCDAT=String,UTLDAT=String,FLNACCDAT=String,CONVDAT=String,LV2DAT=String</arg>
+            <file>${RAPID_SQOOP_OPTIONS_FILE_PATH}/${RAPID_SQOOP_OPTIONS_FILE}#${RAPID_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-428c"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,11 @@
+#import
+--connect
+jdbc:oracle:thin:@10.150.98.126:6516:fosod
+--username
+OND_HELIX_USR
+--password
+emi_rates_123
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec
+--delete-target-dir 

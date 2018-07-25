@@ -1,0 +1,247 @@
+
+<workflow-app name="RawToDecomposed_PNR" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="fork-11f3"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-c0ed">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_PASSANGER_NAME_RECORDS}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-f8d2"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-dec7">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_RMKS}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-6ea3"/>
+        <error to="email-efcd"/>
+    </action>
+    <fork name="fork-11f3">
+        <path start="shell-c0ed" />
+        <path start="shell-dec7" />
+        <path start="shell-2733" />
+        <path start="shell-57bb" />
+        <path start="shell-865d" />
+        <path start="shell-9615" />
+        <path start="shell-f6a4" />
+        <path start="shell-4b21" />
+    </fork>
+    <join name="join-2636" to="End"/>
+    <action name="shell-2733">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_ITNS}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-e884"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-f8d2">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_PASSANGER_NAME_RECORDS}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_PASSANGER_NAME_RECORDS}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_PASSANGER_NAME_RECORDS}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-c0ed&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-6ea3">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_RMKS}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_RMKS}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_RMKS}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-dec7&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-e884">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_ITNS}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_ITNS}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_ITNS}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-2733&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-57bb">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_MMS}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-9872"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-9872">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_MMS}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_MMS}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_MMS}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-57bb&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-865d">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_OTHERS}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-897f"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-897f">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_OTHERS}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_OTHERS}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_OTHERS}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-865d&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-9615">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_PAX}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-6302"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-6302">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_PAX}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_PAX}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_PAX}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-9615&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-f6a4">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_HFX_GFXS}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-4692"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-4692">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_HFX_GFXS}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_HFX_GFXS}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_HFX_GFXS}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-f6a4&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-4b21">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="email-efcd">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

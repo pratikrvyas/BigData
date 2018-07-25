@@ -1,0 +1,182 @@
+{
+  "type" : "record",
+  "name" : "cbi_uvw_fbreporting",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [  
+  {
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "4"
+  }, {
+    "name" : "PNR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKING_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOOKING_ID",
+    "sqlType" : "4"
+  }, {
+    "name" : "LEG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LEG",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEGTYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LEGTYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAREBASIS_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAREBASIS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAREBRAND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAREBRAND",
+    "sqlType" : "12"
+  }, {
+    "name" : "CURRENCYCODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CURRENCYCODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRFARE_CASH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRFARE_CASH",
+    "sqlType" : "3"
+  }, {
+    "name" : "CIC_CASH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CIC_CASH",
+    "sqlType" : "3"
+  }, {
+    "name" : "TAX",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TAX",
+    "sqlType" : "3"
+  }, {
+    "name" : "AIRFARE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRFARE_MILES",
+    "sqlType" : "4"
+  }, {
+    "name" : "CIC_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CIC_MILES",
+    "sqlType" : "4"
+  }, {
+    "name" : "ISUPSELL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISUPSELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPSELL_CASH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPSELL_CASH",
+    "sqlType" : "3"
+  }, {
+    "name" : "UPSELL_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPSELL_MILES",
+    "sqlType" : "4"
+  }, {
+    "name" : "INITIALCABINCLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INITIALCABINCLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FINALCABINCLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FINALCABINCLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "LOWESTFARE_LEG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LOWESTFARE_LEG",
+    "sqlType" : "3"
+  }, {
+    "name" : "LOWESTMILES_LEG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LOWESTMILES_LEG",
+    "sqlType" : "4"
+  }, {
+    "name" : "LOWESTFAREBRAND_LEG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LOWESTFAREBRAND_LEG",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPSELLPAGE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPSELLPAGE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHTSELECTED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHTSELECTED",
+    "sqlType" : "12"
+  }, {
+    "name" : "LOWESTFAREBRAND_FLIGHT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LOWESTFAREBRAND_FLIGHT",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAREBRANDSSHOWN_FLIGHT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAREBRANDSSHOWN_FLIGHT",
+    "sqlType" : "12"
+  }, {
+    "name" : "LowestFare_Flight",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LowestFare_Flight",
+    "sqlType" : "3"
+  }, {
+    "name" : "Conservative_Upsell",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Conservative_Upsell",
+    "sqlType" : "3"
+  }, {
+    "name" : "UpsellType",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UpsellType",
+    "sqlType" : "12"
+  }, {
+    "name" : "Resultrow",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Resultrow",
+    "sqlType" : "4"
+  } ],
+  "tableName" : "cbi_uvw_fbreporting"
+}

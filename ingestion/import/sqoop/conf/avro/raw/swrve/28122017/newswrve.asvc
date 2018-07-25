@@ -1,0 +1,114 @@
+{
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [ {
+    "name" : "device",
+    "type" : [ {
+      "type" : "record",
+      "name" : "device",
+      "fields" : [ {
+        "name" : "OS",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "OSVersion",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "deviceLanguage",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "name",
+        "type" : [ "string", "null" ]
+      } ]
+    }, "null" ]
+  }, {
+    "name" : "header",
+    "type" : [ {
+      "type" : "record",
+      "name" : "header",
+      "fields" : [ {
+        "name" : "eventAction",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "eventDomain",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "eventExpiry",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "eventId",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "eventName",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "eventPriority",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "eventSource",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "eventTimestamp",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "eventVersion",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "persistenceRequired",
+        "type" : [ "boolean", "null" ]
+      }, {
+        "name" : "sourceIdentifier",
+        "type" : [ "string", "null" ]
+      } ]
+    }, "null" ]
+  }, {
+    "name" : "pnrList",
+    "type" : [ {
+      "type" : "array",
+      "items" : [ {
+        "type" : "record",
+        "name" : "pnrList",
+        "fields" : [ {
+          "name" : "pnrDate",
+          "type" : [ "string", "null" ]
+        }, {
+          "name" : "pnrDeleteAction",
+          "type" : [ "boolean", "null" ]
+        }, {
+          "name" : "pnrReference",
+          "type" : [ "string", "null" ]
+        } ]
+      }, "null" ]
+    }, "null" ]
+  }, {
+    "name" : "preference",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "user",
+    "type" : [ {
+      "type" : "record",
+      "name" : "user",
+      "fields" : [ {
+        "name" : "appID",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "appLanguage",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "appVersion",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "deviceTokenID",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "oldDeviceTokenID",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "pushNotificationID",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "skywardsID",
+        "type" : [ "long", "null" ]
+      } ]
+    }, "null" ]
+  } ]
+}

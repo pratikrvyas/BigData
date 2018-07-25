@@ -1,0 +1,43 @@
+{
+  "type" : "record",
+  "name" : "import_iata",
+  "doc" : "import of DW_OWNR.AIRCRAFT_TYPE",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "AIRCRAFT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_NAME",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRCRAFT_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRCRAFT_GROUP_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_GROUP_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "CATEGORY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CATEGORY",
+    "sqlType" : "93"
+  }, {
+    "name" : "ICAO_AIRCRAFT_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ICAO_AIRCRAFT_TYPE_CODE",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.AIRCRAFT_TYPE"
+}

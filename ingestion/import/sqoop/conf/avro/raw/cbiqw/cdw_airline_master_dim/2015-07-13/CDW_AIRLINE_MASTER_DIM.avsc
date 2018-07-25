@@ -1,0 +1,72 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_CDW_AIRLINE_MASTER_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_AIRLINE_MASTER_DIM",
+  "fields" : [ {
+    "name" : "AIRLINE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "BCD_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BCD_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARR_CD",
+    "type" : [ "string", "null" ],
+    "columnName" : "CARR_CD",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_ISO_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_ISO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "IATA_MEMBER_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "IATA_MEMBER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "ICH_MEMBER_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "ICH_MEMBER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACH_MEMBER_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACH_MEMBER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "GENERAL_REMARKS",
+    "type" : [ "string", "null" ],
+    "columnName" : "GENERAL_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_AIRLINE_MASTER_DIM"
+}

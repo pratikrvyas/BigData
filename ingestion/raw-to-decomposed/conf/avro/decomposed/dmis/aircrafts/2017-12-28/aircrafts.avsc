@@ -1,0 +1,123 @@
+{
+  "type" : "record",
+  "name" : "aircraftsdecomposed",
+  "fields" : [ {
+    "name" : "ACFT_AIRCRAFT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_AIRCRAFT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_ACTP_AIRCRAFT_TYPE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_ACTP_AIRCRAFT_TYPE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_REG_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_REG_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACFT_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACFT_AIRP_AIRPORT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_AIRP_AIRPORT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_AIRL_AIRLINE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_AIRL_AIRLINE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_BUSI_CLASS_CONFIG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_BUSI_CLASS_CONFIG",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_ECON_CLASS_CONFIG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_ECON_CLASS_CONFIG",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_FIRST_CLASS_CONFIG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_FIRST_CLASS_CONFIG",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_MAX_PAX",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_MAX_PAX",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_MAX_FREIGHT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_MAX_FREIGHT",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_MAX_TAKE_OFF_WEIGHT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_MAX_TAKE_OFF_WEIGHT",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACFT_REMARKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFT_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "OLD_ACTP_AIRCRAFT_TYPE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OLD_ACTP_AIRCRAFT_TYPE_ID",
+    "sqlType" : "2"
+  },
+	{
+	"name" : "HELIX_UUID",
+	"type" : [ "string", "null" ]
+	},
+	{
+	"name" : "HELIX_TIMESTAMP",
+	"type" : [ "string", "null" ]
+	}  
+]
+ 
+}

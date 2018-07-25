@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.152.61:6516:rpsl
+--username
+rps_intcbi
+--password
+rps_intcbi

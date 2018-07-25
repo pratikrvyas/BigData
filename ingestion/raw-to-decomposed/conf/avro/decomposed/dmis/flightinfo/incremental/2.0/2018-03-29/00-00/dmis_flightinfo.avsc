@@ -1,0 +1,442 @@
+{
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [ {
+    "name" : "FlightInfo",
+    "type" : [ {
+      "type" : "record",
+      "name" : "FlightInfo",
+      "fields" : [ {
+        "name" : "actualDate",
+        "type" : [ {
+          "type" : "record",
+          "name" : "actualDate",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "adhocTelexDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "adhocType",
+        "type" : [ {
+          "type" : "record",
+          "name" : "adhocType",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "aircraftType",
+        "type" : [ {
+          "type" : "record",
+          "name" : "aircraftType",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "aircraftTypeSize",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "airlineCode",
+        "type" : [ {
+          "type" : "record",
+          "name" : "airlineCode",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "arrivalDepartureFlag",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "arrivalStation",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "baggageBeltNumber",
+        "type" : [ {
+          "type" : "record",
+          "name" : "baggageBeltNumber",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "bayNumber",
+        "type" : [ {
+          "type" : "record",
+          "name" : "bayNumber",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "cargoDoorCloseDate",
+        "type" : [ {
+          "type" : "record",
+          "name" : "cargoDoorCloseDate",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "cashCreditYN",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "chargedAirlineCode",
+        "type" : [ {
+          "type" : "record",
+          "name" : "chargedAirlineCode",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "choksOffDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "choksOnDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "codeshareFlight1",
+        "type" : [ {
+          "type" : "record",
+          "name" : "codeshareFlight1",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "codeshareFlight2",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "codeshareFlight3",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "codeshareFlight4",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "codeshareFlight5",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "departureStation",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "dubaiOrigin",
+        "type" : [ {
+          "type" : "record",
+          "name" : "dubaiOrigin",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "estimatedDate",
+        "type" : [ {
+          "type" : "record",
+          "name" : "estimatedDate",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "flightCancelDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "flightCombiType",
+        "type" : [ {
+          "type" : "record",
+          "name" : "flightCombiType",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "flightHandlingType",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "flightNumber",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "flightRemarks",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "flightStatus",
+        "type" : [ {
+          "type" : "record",
+          "name" : "flightStatus",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "flightSubType",
+        "type" : [ {
+          "type" : "record",
+          "name" : "flightSubType",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "flightUpdatedDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "flightcreatedDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "gateNumber",
+        "type" : [ {
+          "type" : "record",
+          "name" : "gateNumber",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "handlingTerminal",
+        "type" : [ {
+          "type" : "record",
+          "name" : "handlingTerminal",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "latestDate",
+        "type" : [ {
+          "type" : "record",
+          "name" : "latestDate",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "linkFlightAirlineCode",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "linkedFlightArrivalDepartureFlag",
+        "type" : [ {
+          "type" : "record",
+          "name" : "linkedFlightArrivalDepartureFlag",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "linkedFlightDate",
+        "type" : [ {
+          "type" : "record",
+          "name" : "linkedFlightDate",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "linkedFlightNumber",
+        "type" : [ {
+          "type" : "record",
+          "name" : "linkedFlightNumber",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "pairFlightAirlineCode",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "pairFlightArrivalDepartureFlag",
+        "type" : [ {
+          "type" : "record",
+          "name" : "pairFlightArrivalDepartureFlag",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "pairFlightDate",
+        "type" : [ {
+          "type" : "record",
+          "name" : "pairFlightDate",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "pairFlightnumber",
+        "type" : [ {
+          "type" : "record",
+          "name" : "pairFlightnumber",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "parkingTerminal",
+        "type" : [ {
+          "type" : "record",
+          "name" : "parkingTerminal",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "partialHandling",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "paxDoorCloseDate",
+        "type" : [ {
+          "type" : "record",
+          "name" : "paxDoorCloseDate",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "registrationNumber",
+        "type" : [ {
+          "type" : "record",
+          "name" : "registrationNumber",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "scheduledDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "shortFinalDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "touchdownAirborneDate",
+        "type" : [ "string", "null" ]
+      }, {
+        "name" : "uldCharges",
+        "type" : [ {
+          "type" : "record",
+          "name" : "uldCharges",
+          "fields" : [ {
+            "name" : "_ATTRIBUTE_VALUE",
+            "type" : [ "string", "null" ]
+          }, {
+            "name" : "_Update",
+            "type" : [ "string", "null" ]
+          } ]
+        }, "null" ]
+      }, {
+        "name" : "viaRoutes",
+        "type" : [ "string", "null" ]
+      } ]
+    }, "null" ]
+  },
+  {
+    "name" : "tibco_messageTime",
+    "type" : [ "string", "null" ]
+  }]
+}

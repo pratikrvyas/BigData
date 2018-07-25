@@ -1,0 +1,85 @@
+{
+  "type" : "record",
+  "name" : "CDW_AIRLINE_MASTER_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_AIRLINE_MASTER_DIM",
+  "fields" : [ {
+    "name" : "AIRLINE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "BCD_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BCD_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARR_CD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CARR_CD",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_ISO_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COUNTRY_ISO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "IATA_MEMBER_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "IATA_MEMBER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "ICH_MEMBER_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ICH_MEMBER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACH_MEMBER_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACH_MEMBER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "GENERAL_REMARKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GENERAL_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_AIRLINE_MASTER_DIM"
+}

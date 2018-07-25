@@ -1,0 +1,152 @@
+{
+  "type" : "record",
+  "name" : "tbl_ods_flight_info",
+  "fields" : [ {
+    "name" : "SCHDTIMEDEPUTC",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SCHDTIMEARRUTC",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ACTARRSTN",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ACTDEPSTN",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "EFFECTIVETO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "EFFECTIVEFROM",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRANSDATETIME",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRANSUSERID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PRETRXNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRXNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MODBY",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MODON",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TAILNOTYPE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TAILNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SIREMARKDEP",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SIREMARKARR",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SERVICETYPE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SCHDTIMEDEP",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SCHDTIMEARR",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "REMARK",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ONWARDFLIGHT",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BLKTIMEACT",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BLKTIMEORIG",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLTTIME",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLTSTATUS",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "DORREMARK",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "DORFLAG",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "LEGNUM",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ARRSTN",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "DEPSTN",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLIGHTDATE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "DEPNUM",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLTSUFFIX",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLTNUM",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CXCD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLIGHTSEQNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ACVERSION",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ACSUBTYPE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ACOWNER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CARGO_DOOR_CLOSURE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CABIN_DOOR_CLOSURE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TAXI_IN",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TAXI_OUT",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "LAST_DOOR_CLOSURE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "RTG_FLAG",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TAILTYPE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ACTLEGNUM",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  } ]
+}

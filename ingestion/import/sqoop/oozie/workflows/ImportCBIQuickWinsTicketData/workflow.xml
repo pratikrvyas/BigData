@@ -1,0 +1,239 @@
+
+<workflow-app name="ImportCBIQuickWinsTicketData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="fork-d634"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-749b">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${CBI_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-7ea8&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-7ea8&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${CBI_CONTROL_FILE}#${CBI_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="email-3acc">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-7ea8">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${CBI_CONTROL_FILE}</argument>
+              <argument>${wf:appPath()}/VW_CBI_FLWN_WKLY_MNTLY_FCT_CTRL_LOG/part-m-00000</argument>
+              <argument>${wf:appPath()}/VW_CBI_FLWN_PREFINAL_FINAL_FCT_CTRL_LOG/part-m-00000</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${CBI_CONTROL_FILE}#${CBI_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="decision-d7a4"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="shell-56bc">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="email-08f2"/>
+        <error to="email-3acc"/>
+    </action>
+    <decision name="decision-d7a4">
+        <switch>
+            <case to="fork-bd16">
+              ${ (wf:actionData(&#39;shell-7ea8&#39;)[&#39;HELIX_RUN_IMPORT&#39;] eq &#39;TRUE&#39;) }
+            </case>
+            <case to="shell-56bc">
+              ${ (wf:actionData(&#39;shell-7ea8&#39;)[&#39;HELIX_RUN_IMPORT&#39;]  eq &#39;FALSE&#39;) }
+            </case>
+            <default to="Kill"/>
+        </switch>
+    </decision>
+    <action name="sqoop-ecff">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${wf:appPath()}/VW_CBI_FLWN_WKLY_MNTLY_FCT_CTRL_LOG"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select count(*) from CDW_SUB_MODULE_DETAIL t  where t.run_id=(select run_id from cdw_run_id_log)  and t.sub_module in  (&#39;BOOKING_FACT2&#39;,  &#39;FLOWN_WEEKLY_FACT&#39;, &#39;FLOWN_MONTHLY_FACT&#39;) and decode(t.status, &#39;C&#39;, &#39;C&#39;,  &#39;R&#39;) = &#39;R&#39; AND $CONDITIONS&quot;</arg>
+              <arg>--as-textfile</arg>
+              <arg>--class-name</arg>
+              <arg>VW_CBI_FLWN_WKLY_MNTLY_FCT_CTRL_LOG</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--target-dir</arg>
+              <arg>${wf:appPath()}/VW_CBI_FLWN_WKLY_MNTLY_FCT_CTRL_LOG</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-7843"/>
+        <error to="email-3acc"/>
+    </action>
+    <fork name="fork-d634">
+        <path start="sqoop-ecff" />
+        <path start="sqoop-475a" />
+    </fork>
+    <join name="join-7843" to="shell-7ea8"/>
+    <action name="sqoop-475a">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${wf:appPath()}/VW_CBI_FLWN_PREFINAL_FINAL_FCT_CTRL_LOG"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select count(*) from cdw_flown_final_detail t  where t.process_date = trunc(sysdate)  and t.sub_module in (&#39;FLOWN_PREFINAL_FACT_LOAD&#39;, &#39;FLOWN_FINAL_FACT_LOAD&#39;) and decode(t.status, &#39;C&#39;, &#39;C&#39;,  &#39;R&#39;) = &#39;R&#39; AND $CONDITIONS&quot;</arg>
+              <arg>--as-textfile</arg>
+              <arg>--class-name</arg>
+              <arg>VW_CBI_FLWN_PREFINAL_FINAL_FCT_CTRL_LOG</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--target-dir</arg>
+              <arg>${wf:appPath()}/VW_CBI_FLWN_PREFINAL_FINAL_FCT_CTRL_LOG</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-7843"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-b3b2">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_TICKET_COUPON_FACT}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TICKET_SK,T1.TICKET_COUPON_ID,T1.TICKET_ISSUE_DATE_SK,T1.TICKET_NUMBER,T1.PNR_SK,T1.CUSTOMER_SK,T1.SKYWARDS_MEMBER_SK,T1.BR_MEMBER_SK,T1.REVENUE_TICKET_INDICATOR,T1.GROSS_REVENUE_AED,T1.NET_REVENUE_AED,T1.COMMISSION_AED,T1.OTHER_TAXES_AED,T1.YQ_SURCHARGE_AED,T1.YR_SURCHARGE_AED,T1.BOOKING_DATE_SK,T1.DEPARTURE_DATE_SK,T1.ARRIVAL_DATE_SK,T1.TICKET_ITINERARY_STRING,T1.ROUTE_SK,T1.SECTOR_SK,T1.SECTOR_DISTANCE,T1.BOOKING_CLASS_SK,T1.CABIN_CLASS_SK,T1.TRAVELLED_CLASS_SK,T1.TICKETED_FAREBASIS,T1.TOUR_CODE,T1.EK_POO_SK,T1.POO_SK,T1.COUPON_NUMBER,T1.COUPON_REVALIDATION_INDICATOR,T1.COUPON_EXCLUDING_VOID_NUMBER,T1.COUPON_STATUS,T1.COUPON_VALIDITY_PERIOD_FROM,T1.COUPON_VALIDITY_PERIOD_TO,T1.BOARD_POINT_STOPOVER_INDICATOR,T1.OFF_POINT_STOPOVER_INDICATOR,T1.STOPOVER_DURATION_HRS,T1.BAGGAGE_ALLOWANCE,T1.CHECK_IN_WEIGHT,T1.CHECK_IN_WEIGHT_UNIT,T1.CHECK_IN_PIECES,T1.BUSINESS_TYPE_SK,T1.EMD_ASSOCIATED_INDICATOR,T1.GROUP_BOOKING_IND,T1.BOOKING_DISB_CHANNEL_SK,T1.TICKET_DISB_CHANNEL_SK,T1.MARKETING_AIRLINE_SK,T1.MARKETING_FLIGHT_NUMBER_SK,T1.OPERATIONAL_AIRLINE_SK,T1.OPERATIONAL_FLIGHT_NUMBER_SK,T1.FLIGHT_SCHEDULE_SK,T1.BOOKED_AGENT_SK,T1.BOOKED_AGENCY_SK,T1.TICKETED_AGENT_SK,T1.TICKETED_AGENCY_SK,T1.CREDIT_AGENT_SK,T1.CREDIT_AGENCY_SK,T1.TRIP_OD_SK,T1.TRIP_OD_DATE_SK,T1.TRIP_OD_MAIN_CLASS_SK,T1.TICKETED_TRUE_OD_SK,T1.TICKETED_TRUE_OD_DATE_SK,T1.TICKETED_TRUE_OD_CLASS_SK,T1.TKT_TRUE_OD_MAX_FAREBASIS_SK,T1.TKT_TRUE_OD_MIN_FAREBASIS_SK,T1.TICKETED_ONLINE_OD_SK,T1.TICKETED_ONLINE_OD_DATE_SK,T1.TICKETED_ONLINE_OD_CLASS_SK,T1.TKT_ONLINE_OD_MIN_FAREBASIS_SK,T1.TKT_ONLINE_OD_MAX_FAREBASIS_SK,T1.TRIP_OD_PAX_COUNT,T1.TRIP_OD_GROSS_REVENUE_AED,T1.TRIP_OD_NET_REVENUE_AED,T1.TRIP_OD_COMMISSION_AED,T1.TRIP_OD_OTHER_TAXES_AED,T1.TRIP_OD_YQ_SURCHARGE_AED,T1.TRIP_OD_YR_SURCHARGE_AED,T1.TRUE_OD_PAX_COUNT,T1.TRUE_OD_GROSS_REVENUE_AED,T1.TRUE_OD_NET_REVENUE_AED,T1.TRUE_OD_COMMISSION_AED,T1.TRUE_OD_OTHER_TAXES_AED,T1.TRUE_OD_YQ_SURCHARGE_AED,T1.TRUE_OD_YR_SURCHARGE_AED,T1.ONLINE_OD_PAX_COUNT,T1.ONLINE_OD_GROSS_REVENUE_AED,T1.ONLINE_OD_NET_REVENUE_AED,T1.ONLINE_OD_COMMISSION_AED,T1.ONLINE_OD_OTHER_TAXES_AED,T1.ONLINE_OD_YQ_SURCHARGE_AED,T1.ONLINE_OD_YR_SURCHARGE_AED,T1.LOCAL_CORP_ORG_SK,T1.LOCAL_CORP_TRACKING_IND_SK,T1.GLOBAL_CORP_ORG_SK,T1.GLOBAL_CORP_TRACKING_IND_SK,T1.CDW_CREATED_USER,T1.CDW_CREATED_DATE,T1.CDW_CHANGED_USER,T1.CDW_CHANGED_DATE,T1.FLOWN_STATUS,T1.TRIP_TYPE,T1.TRIP_OD_FREEDOM_TYPE,T1.TRUE_OD_FREEDOM_TYPE,T1.ONLINE_OD_FREEDOM_TYPE,T1.LOCAL_CORP_REMARKS,T1.GLOBAL_CORP_REMARKS,T1.JOURNEY_TYPE,T1.TRIP_OD_COMPLETION_IND,T1.TRUE_OD_COMPLETION_IND,T1.ONLINE_OD_COMPLETION_IND,T1.TRIP_ITINERARY_WCC,T1.TRIP_ITINERARY_WOCC,T1.TRIP_ITINERARY_CTRY,T1.TRIP_ITINERARY_REGION,T1.TRUE_ITINERARY_WCC,T1.TRUE_ITINERARY_WOCC,T1.TRUE_ITINERARY_CTRY,T1.TFLAG,T1.OFLAG,T1.LOCAL_CORP_DESC,T1.GLOBAL_CORP_DESC,T1.PRISM_CORPORATE_CODE,T1.PRISM_INDICATOR,T1.PREV_LOCAL_CORP_ORG_SK,T1.PREV_LOCAL_CORP_TRK_IND_SK,T1.PREV_LOCAL_CORP,T1.PREV_GLOBAL_CORP_ORG_SK,T1.PREV_GLOBAL_CORP_TRK_IND_SK,T1.PREV_GLOBAL_CORP,T1.DEPARTURE_TIME,T1.ARRIVAL_TIME,T1.HUB_STOPOVER_DURATION FROM CBI_OWNR.CDW_TICKET_COUPON_FACT T1 WHERE T1.CDW_CHANGED_DATE BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>COUPON_VALIDITY_PERIOD_FROM=String,COUPON_VALIDITY_PERIOD_TO=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.TICKET_COUPON_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_TICKET_COUPON_FACT</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_TICKET_COUPON_FACT}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-2351"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="email-08f2">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} - Data Extraction Skipped</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Message: Data Extraction for Ticket Header and Ticket Coupon Fact skipped.</body>
+        </email>
+        <ok to="End"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-67dd">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_TICKET_HEADER}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TICKET_SK, T1.TICKET_ID, T1.TICKET_NUMBER, T1.TICKET_ISSUE_DATE, T1.TICKET_SERVICING_AIRLINE_SK, T1.ISSUING_HOST, T1.CONJUNCTION_INDICATOR, T1.TICKET_TYPE, T1.CONJUNCTION_LAST_TICKET_NO, T1.TICKET_EXCHANGE_IND, T1.ORIGINAL_TICKET_SK, T1.REISSUED_TICKET_IND, T1.CORPORATE_IDENTIFICATION_CODE, T1.REVENUE_TICKET_INDICATOR, T1.ETR_SOURCE_INDICATOR, T1.ISSUING_CITY_CODE, T1.IATA_AGENCY_CODE, T1.CR_CODE, T1.REWARDS_AUTHORIZATION_CODE, T1.PNR_SK, T1.GDS_PNR_ADDRESS, T1.SERIAL_NUMBER, T1.OAL_CONFIRMATION_NUMBER, T1.ISSUE_DATE_GMT, T1.ISSUE_TIME, T1.ISSUE_TIME_GMT, T1.LOCAL_CREATION_DATE, T1.TST_VALIDATION_INDICATOR, T1.INTERNATIONAL_SALES_IND, T1.FARE_LOGIC_CODE, T1.FARE_SOURCE_IND, T1.PAX_MC_IND, T1.SERVICE_TYPE, T1.REBATE_TYP, T1.DISCOUNT_IND, T1.TICKET_SALES_TYPE, T1.TICKET_DISTRIBUTION_CHANNEL, T1.ISSUING_AGENT_CODE, T1.AGENT_ID, T1.TICKET_CREATION_TYPE, T1.PAYMENT_STRING, T1.E_TICKET_IND, T1.TOUR_CODE_DATA, T1.TICKET_ITINERARY_STRING, T1.POO_SK, T1.POT_SK, T1.EK_POO_SK, T1.EK_BOARD_POINT, T1.CORPORATE_TRACKING_DEAL_STRING, T1.PARENT_TICKET_SK, T1.PNR_BOOKING_REFERENCE, T1.PNR_BOOKING_CREATION_DATE, T1.CUSTOMER_TYPE, T1.EMPLOYEE_NUMBER, T1.CDW_CREATED_USER, T1.CDW_CREATED_DATE, T1.CDW_CHANGED_USER, T1.CDW_CHANGED_DATE, T1.TOTAL_FARE_AMOUNT_CUR_SK, T1.TOTAL_FARE_AMOUNT_RC, T1.ADDITIONAL_CHARGES_FLAG, T1.TICKET_ISSUING_AIRLINE, T1.OAL_MEMBERSHIP_AIRLINE, T1.OAL_MEMBERSHIP_NUMBER, T1.FFP_TYPE, T1.OAL_FFP_TYPE, T1.ITINERARY_COMPLETION_INDICATOR, T1.LAST_COUPON_FLOWN_DATE FROM CBI_OWNR.CDW_TICKET_HEADER T1 WHERE T1.CDW_CHANGED_DATE BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>TICKET_ISSUE_DATE=String,ISSUE_DATE_GMT=String,LOCAL_CREATION_DATE=String,PNR_BOOKING_CREATION_DATE=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String,LAST_COUPON_FLOWN_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.TICKET_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_TICKET_HEADER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_TICKET_HEADER}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-2351"/>
+        <error to="email-3acc"/>
+    </action>
+    <fork name="fork-bd16">
+        <path start="sqoop-b3b2" />
+        <path start="sqoop-67dd" />
+    </fork>
+    <join name="join-2351" to="shell-749b"/>
+    <end name="End"/>
+</workflow-app>

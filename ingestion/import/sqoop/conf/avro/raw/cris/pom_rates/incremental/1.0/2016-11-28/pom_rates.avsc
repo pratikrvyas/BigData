@@ -1,0 +1,85 @@
+{
+  "type" : "record",
+  "name" : "POM_RATES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "POM_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POM_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MSEN_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MSEN_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "CRITERIA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CRITERIA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CURRENCY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "EFF_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DISCONT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCONT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "LPP_PTNR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LPP_PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "POM_RATES"
+}

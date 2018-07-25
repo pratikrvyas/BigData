@@ -1,0 +1,83 @@
+
+<workflow-app name="ImportSkywardsMonthly" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-a9bf"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-002d">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${SDW_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select MEMBER_ID, CARD_NO, TIER_CODE, MONTH_YEAR, YEAR, SDW_CREATED_DATE, SDW_REFRESH_DATE, SKYWARDS_MILES_EMA, SKYWARDS_MILES_RMA, TIER_MILES, FLEX_CNT, SAVR_CNT, ODS_CNT, SECTOR_CNT, F_CLASS_ACT_CNT, J_CLASS_ACT_CNT, Y_CLASS_ACT_CNT, REVENUE_VAL, F_CLASS_TOTAL_REV, J_CLASS_TOTAL_REV, Y_CLASS_TOTAL_REV, F_CLASS_CORP_REV, J_CLASS_CORP_REV, Y_CLASS_CORP_REV, CORP_MEMBER_ID from sdw_member_card_tier_history where  MONTH_YEAR BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-a9bf&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-a9bf&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>MONTH_YEAR=String,YEAR=String,SDW_CREATED_DATE=String,SDW_REFRESH_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>CARD_NO</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SDW_MEMBER_CARD_TIER_HISTORY</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SDW_MEMBER_CARD_TIER_HISTORY}</arg>
+            <file>${SDW_SQOOP_OPTIONS_FILE}#${SDW_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="shell-27de"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-a9bf">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${SDW_CONTROL_FILE}</argument>
+            <file>${SDW_CONTROL_FILE}#${SDW_CONTROL_FILE}</file>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="sqoop-002d"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-27de">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${SDW_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-a9bf&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-a9bf&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>${SDW_CONTROL_FILE}#${SDW_CONTROL_FILE}</file>
+            <file>update_control_file.sh#update_control_file.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

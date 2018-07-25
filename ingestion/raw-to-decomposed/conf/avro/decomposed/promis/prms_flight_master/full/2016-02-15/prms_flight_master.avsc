@@ -1,0 +1,27 @@
+{
+  "type": "record",
+  "name": "PRMS_FLIGHT_MASTER",
+  "fields": [
+    {
+      "name": "helix_uuid",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "helix_timestamp",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+{"name" :  "FLT_KEY","type" : ["null", "string"]},
+{"name" :  "CARR_CODE","type" : ["null", "string"]},
+{"name" :  "FLT_NO","type" : ["null", "string"]},
+{"name" :  "ORGN","type" : ["null", "string"]},
+{"name" :  "DSTN","type" : ["null", "string"]},
+{"name" :  "UPD_DT","type" : ["null", "string"]},
+{"name" :  "UPD_ID","type" : ["null", "string"]}
+]
+}

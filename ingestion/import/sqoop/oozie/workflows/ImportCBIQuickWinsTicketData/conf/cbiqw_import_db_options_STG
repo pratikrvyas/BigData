@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.155.85:6516:idwos
+--username
+cbi_ownr
+--password 
+cbi_ownr
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "TBL_APP_TYPE",
+  "fields": [
+{"name" :  "HELIX_UUID","type" : ["null","string"]},
+{"name" :  "HELIX_TIMESTAMP","type" : ["null","string"]},
+{"name" :  "APP_TYPE_ID","type" : ["null", "string"]},
+{"name" :  "APP_TYPE","type" : ["null", "string"]},
+{"name" :  "MESSAGE_TYPE_ID","type" : ["null", "string"]},
+{"name" :  "PUSH_NOT_ENB","type" : ["null", "string"]}
+
+
+]
+}

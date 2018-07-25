@@ -1,0 +1,28 @@
+{  
+   "type":"record",
+   "name":"GENMISCURMST_VW",
+   "namespace":"datalake",
+   "fields":[  
+      {  
+         "name":"CURCOD",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"CURDES",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"ACTIND",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }
+   ]
+}

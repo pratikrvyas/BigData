@@ -1,0 +1,265 @@
+
+<workflow-app name="ImportSkywardsDataIncremental" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-fc39"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-fc39">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${SDW_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${SDW_CONTROL_FILE}#${SDW_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="decision-43b2"/>
+        <error to="email-a103"/>
+    </action>
+    <action name="shell-f81e">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-a103"/>
+    </action>
+    <action name="sqoop-2434">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${SDW_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select MEMBER_ID, USR_CREATED, SMSE_CREATED, SMSE_USR_CHANGED, SMSE_CHANGED, ACTIVATION_DATE, SEN_CARD_NO, STG_PROCESS_DATE, STATUS_ENH_CODE, STATUS_ENH_DESCR,   CARD_REQD, SDW_CREATED_DATE, SDW_CHANGED_DATE, SDW_REFRESH_DATE, SEN_UID, ICIID_NUMBER, INTERNAL_NUMBER, REGION_CODE, STAFF_PF_NUMBER, FAM_MEM_UID, PRIMARY_FLAG,   ES_DOWNLOAD_STATUS_FLG, ACCRUAL_BONUS_FLAG, CARD_EXPIRY, BIN_NUMBER, SEN_CARD_TYPE, SEN_CUSTOMER_NAME, SEN_CARD_STATUS, SEN_CANCEL_REASON_CODE, SEN_DATE_CEASED,   SEN_DOWNLD_STATUS_FLG, DISCONT_DATE, CORP_ACTIVE_CARD_NO, COBRAND_CARD_SEQ_NO, CHARGES_ID, SP_PUL_DATE, CORP_AMEX_CARD_NO, CORP_CARD_TYPE, TRANSFER_DATE, MIN_AGE,   PTNR_CODE, PTNR_VALIDATION, STA_DELINK_ENABLE, STATUS_CR_CODE, SYNCH_CR_CODE, SEN_UPLOAD_STATUS_FLG, PARTNER_TIER, PARTNER_TIER_EXPIRY from   sdw_member_status_enhancements where SDW_REFRESH_DATE  BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE  (&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>SMSE_CREATED=String,SMSE_CHANGED=String,ACTIVATION_DATE=String,STG_PROCESS_DATE=String,SDW_CREATED_DATE=String,SDW_CHANGED_DATE=String,SDW_REFRESH_DATE=String,CARD_EXPIRY=String,SEN_DATE_CEASED=String,DISCONT_DATE=String,SP_PUL_DATE=String,TRANSFER_DATE=String,PARTNER_TIER_EXPIRY=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>SEN_UID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SKY_SDW_MEMBER_STATUS_ENHANCEMENTS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SDW_MEMBER_STATUS_ENHANCEMENTS}</arg>
+            <file>${SDW_SQOOP_OPTIONS_FILE}#${SDW_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-aded"/>
+        <error to="email-a103"/>
+    </action>
+    <decision name="decision-43b2">
+        <switch>
+            <case to="sqoop-0424">
+              ${ (wf:actionData(&#39;shell-fc39&#39;)[&#39;HELIX_RUN_IMPORT&#39;] eq &#39;FALSE&#39;) }
+            </case>
+            <case to="sqoop-0424">
+              ${ (wf:actionData(&#39;shell-fc39&#39;)[&#39;HELIX_RUN_IMPORT&#39;] eq &#39;TRUE&#39;) }
+            </case>
+            <default to="email-a103"/>
+        </switch>
+    </decision>
+    <action name="email-a103">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>s453013@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-da39">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${SDW_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-fc39&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-fc39&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${SDW_CONTROL_FILE}#${SDW_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-a103"/>
+    </action>
+    <fork name="fork-604f">
+        <path start="sqoop-2434" />
+        <path start="sqoop-1f09" />
+        <path start="sqoop-816d" />
+        <path start="sqoop-5911" />
+    </fork>
+    <join name="join-aded" to="shell-da39"/>
+    <action name="sqoop-1f09">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${SDW_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select  PERSON_ID, MEMBER_ID, ACTIVITY_TYPE_CATEGORY_CODE, ACTIVITY_TYPE_CATEGORY_DESCR, ACTIVITY_TYPE_CODE, ACTIVITY_TYPE_DESCR, BOOKABLE_ACTIVITY_CODE, BOOKABLE_ACTIVITY_ID,   ACTIVITY_NO, CLASS_OF_SERVICE,BKBL_ACT_DIFFERENTIATOR, BAC_DISCONTINUE_DATE, BAC_EFFECTIVE_DATE, FARE_BASIS,  LPT_CODE, MAX_APPLICN_PERIOD, MIN_APPLICN_PERIOD,   PARTNER_CODE, PARTNER_DESCRIPTION, REDEMPTION_METHOD, SEGMENT_CITY_PAIR, SEGMENT_DISTANCE, STATEMENT_DSCR, VOUCHER_CODE, BKA_STG_PROCESS_DATE, ACTIVITY_UNIT_YIELD,   ACTIVITY_METHOD, ACTIVTY_ACTION_REASON_CODE, ACTIVTY_ACTION_REASON_DESCR, ACTIVTY_ACTION_TYPE, ACTIVITY_ACTION_REASON_CTGRY, AGENT_CITY, AGENT_IATA_CODE, ASSIGNED_TO,   ACTIVITY_UPLOAD_BATCH_ID, BCP, BILL_APPROVED, BILLABLE, BILLED_CANCELLED_ACT, BILLED_DATE, BOOKING_DATE, CABIN_CLASS, CANCELLED, CARD_NO_PREFIX, COUPON_NO,   DIRECT_BKBL_ACTIVITY, ACTIVITY_DISCONTINUE_DATE, DNLD_FOR_BILLING, ACTIVITY_EFFECTIVE_DATE, EXT_AUTH_CODE, FLOWN_CLASS, FOLLOWUP_DATE, INV_BY_PTNR_DATE, INVOICE_DATE,   INVOICE_NUMBER, MEMBER_ACTIVITY_DATE, MEMBER_ACTIVITY_ID, MEMBER_ACTIVITY_TYPE, PMA_MEMBER_ID, MERGED, MKT_CARRIER, MKT_FLT_NO, NM_CHK_COMBI_CODE, NM_CHK_COMBI_DSCR,   NUMBER_OF_ACT_UNITS, OPR_CARRIER, OPR_FLT_NO, PAX_DESCRIPTION, PFP_FLOWN_PAX_ID, PMA_CHANGED, PMA_MERGED_FROM_ID, PMA_STATUS, PMA_USR_CHANGED, PRIORITY_LEVEL,   PROGRESS_STATUS, PTA_NO, PTNR_INV_PAID_DATE, PTS_REDEEMABLE, RBE_REWARD_ID, RECORD_LOCATOR, REDEEMED_STATUS, RETRO_EVIDENCE_CODE, RETRO_EVIDENCE_DSCR,   RPS_CODE_AFTR_TM_LMT, RPS_DATE_AFTR_TM_LMT, RETRO_PROCESS_STATUS_CODE, RETRO_PROCESS_STATUS_DESCR, SEQ_NUMBER, SEQUENCE_NO, PMA_CREATED, PMA_USR_CREATED,   SYSTEM_CALCULATED, TICKET_NUMBER, TIER_CODE, TIER_DESCRIPTION, TIER_RESOLUTION_CODE, TIER_TYPE, ACT_STG_PROCESS_DATE,  AVAILABLE_MILES, TRANS_CREATED,   TRANS_DESCRIPTION, TRANS_EFFECTIVE_DATE, EXPIRY_ACTION_DATE, FAM_ACT_PTS,  FAM_FAMILY_ID, FAM_MEMBER_ID, GIFT_MEM_UID, MTR_MEMBER_ID,  MEMBERSHIP_CARD_NO,   MEMBER_STATEMENT_ID, MTR_ID,  MTR_TRANSFER_ID, RATE_BAND_CODE, RATE_BAND_DSCR, RATE_BAND_TYPE, RTB_LPP_PTNR_CODE,  RULE_CODE, RULE_DESCR,  RULE_TYPE, SBE_CODE,   SKYWARDS_MILES, MTR_STG_PROCESS_DATE, TIER_MILES, TRANSACTION_DATE, TRANSACTION_ID, TRANSACTION_TYPE, MTR_USR_CREATED, VOUCHER_NO, MTR_CHANGED, MTR_USR_CHANGED,   SDW_CREATED_DATE, SDW_CHANGED_DATE,  SDW_REFRESH_DATE, BKBL_ACTIVITY_TYPE, QRS_CODE, RBE_PAX_NAME, RBE_INIT_DATE, RBE_REC_LOCATOR, EXT_TRANSACTION_TYPE,   EXT_SERVICE_TYPE, STMT_DESC_LANG1, STMT_DESC_LANG2, FLIGHT_TYPE, DESCR_LANG1, DESCR_LANG2, CORP_PMA_ID, CORP_MILES, CORP_REVENUE, EXT_TERMINAL_ID, EXT_BATCH_NO,   EXT_DATE_TIME, CORP_ACCRUAL_DONE, UMA_REC_NUMBER, FLT_SPC_BONUS, FLT_SPC_EXCEPTION, FAMILY_BONUS_FLAG, BKBL_TIER_CODE, TICKET_ISSUE_DATE, AIRLINE_DESIGNATOR,   ACCRUAL_MODEL, TICKETING_START_DATE, TICKETING_END_DATE, O_D_BASED, FARE_GROUP, ACTIVITY_MONTH, ACTIVITY_YEAR, TICKET_ISSUE_MONTH, TICKET_ISSUE_YEAR, ORIGIN,   DESTINATION, MA_RATE_BAND_CODE,  MA_RATE_BAND_DSCR, MA_RATE_BAND_TYPE, ON_HOLD, PROMO_CODE, RETRO_PROMOTIONAL_BONUS, PARENT_CARD_NO, DC_BATCH_ID, DC_BATCH_DATE,   DC_PARTNER, DC_SEND_CARD_NO, DC_CURRENCY_VALUE, DC_POINTS, HBACK_RESPONSE, RESPONSE_CODE, HBACK_UPLD_ID, ACFIN_BATCH_ID, HBACK_UPLD_DATE, ACFIN_BILLED_DATE, IS_BILLED,   AMOUNT_ACCEPTED, POINTS_ACCEPTED, DC_FLAG, EXT_MEMBERSHIP_NO, EXT_PTS, TICKET_ID from sdw_member_act_transactions where SDW_REFRESH_DATE  BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>BAC_DISCONTINUE_DATE=String,BAC_EFFECTIVE_DATE=String,BKA_STG_PROCESS_DATE=String,BILLED_DATE=String,BOOKING_DATE=String,ACTIVITY_DISCONTINUE_DATE=String,ACTIVITY_EFFECTIVE_DATE=String,FOLLOWUP_DATE=String,INV_BY_PTNR_DATE=String,INVOICE_DATE=String,MEMBER_ACTIVITY_DATE=String,PMA_CHANGED=String,PTNR_INV_PAID_DATE=String,RPS_DATE_AFTR_TM_LMT=String,PMA_CREATED=String,ACT_STG_PROCESS_DATE=String,TRANS_CREATED=String,TRANS_EFFECTIVE_DATE=String,EXPIRY_ACTION_DATE=String,MTR_STG_PROCESS_DATE=String,TRANSACTION_DATE=String,MTR_CHANGED=String,SDW_CREATED_DATE=String,SDW_CHANGED_DATE=String,SDW_REFRESH_DATE=String,RBE_INIT_DATE=String,EXT_DATE_TIME=String,TICKET_ISSUE_DATE=String,TICKETING_START_DATE=String,TICKETING_END_DATE=String,DC_BATCH_DATE=String,HBACK_UPLD_DATE=String,ACFIN_BILLED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>TRANSACTION_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SKY_SDW_MEMBER_ACT_TRANSACTIONS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SDW_MEMBER_ACT_TRANSACTIONS}</arg>
+            <file>${SDW_SQOOP_OPTIONS_FILE}#${SDW_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-aded"/>
+        <error to="email-a103"/>
+    </action>
+    <action name="sqoop-816d">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${SDW_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select ID,TKT_ID,CPN_EXVOID_NO,TICKET_NUMBER,COUPON_NUMBER,COUPON_STATUS_INDICATOR,COUPON_STATUS_DESCRIPTION,PNR_REC_LOCATOR,PNR_CREATION_DATE,AIRLINE_CODE,FLIGHT_NUMBER,DEPARTURE_DATE,BOARD_POINT,OFFPOINT,FARE_BASIS_DATA,PROCESSED,ITINERY_STRING,ZONE_STRING,OND,FFP_DESIGNATOR,FFP_NUMBER,PAX_NAME,PAX_SURNAME,PAX_FIRSTNAME,PAX_NAME_DESC,BASE_PMA_ID,FLIGHT_SPEC_PMA_ID,FLIGHT_SPC_ACCRUED,PERSON_ID,CREATED_BY,CREATED_DATE,CHANGED_BY,CHANGED_DATE,ZONE_OND,OFFLOAD_FLAG,CPN_EXVOID_NO_ITN_STR,O_R,ON_BOARD_UPGRADE,TICKET_ISSUE_DATE,CLASS_OF_SERVICE,BATCH_NO,ACTIVITY_METHOD,UPLOADED_DATE,UPLOADED_BY,REV_CODE,NAME_MISMATCH_FLAG,MARKETING_CARRIER_CODE,MARKETING_CARRIER_FLT_NUMBER,OAL_APPROVAL_FLAG,SIDE_TRIP,RBD_CLASS,AGENT_IATA_CODE,MEMBER_ID,BLACKLISTED,UTC_DEPARTURE_DATE,ISSUING_CITY_CODE,STG_PROCESS_DATE,SDW_CREATED_DATE,SDW_CHANGED_DATE,SDW_REFRESH_DATE,RESUBMITTED_FARE_TYPE,CRM_MISMATCH_FLAG,RESUBMIT_USER,RESUBMIT_DATE,RESUBMIT_CLASS,FROM_ZONE,TO_ZONE,FLIGHT_DAY,FARE_TYPE,ISSUING_AGENT_CODE,UPGRADE_CHANNEL,DIFF from sdw_identified_tkt_coupons where $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PNR_CREATION_DATE=String,DEPARTURE_DATE=String,CREATED_DATE=String,CHANGED_DATE=String,TICKET_ISSUE_DATE=String,UPLOADED_DATE=String,UTC_DEPARTURE_DATE=String,STG_PROCESS_DATE=String,SDW_CREATED_DATE=String,SDW_CHANGED_DATE=String,SDW_REFRESH_DATE=String,RESUBMIT_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SKY_SDW_IDENTIFIED_TKT_COUPONS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SDW_SDW_IDENTIFIED_TKT_COUPONS}</arg>
+            <file>${SDW_SQOOP_OPTIONS_FILE}#${SDW_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-aded"/>
+        <error to="email-a103"/>
+    </action>
+    <action name="sqoop-5911">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${SDW_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT MEMBER_ACTIVITY_ID,MEMBER_ACTIVITY_TYPE,MEMBER_ID,BOOKABLE_ACTIVITY_ID,NUMBER_OF_ACT_UNITS,USR_CREATED,CREATED,RBE_REWARD_ID,PRIORITY_LEVEL,FOLLOWUP_DATE,MERGED,CANCELLED,RECORD_LOCATOR,PROGRESS_STATUS,BOOKING_DATE,BCP,MEMBER_ACTIVITY_DATE,REDEEMED_STATUS,FARE_BASIS,INV_BY_PTNR_DATE,PTNR_INV_PAID_DATE,ACT_UNIT_YIELD,PTS_REDEEMABLE,AGENT_IATA_CODE,AUB_ID,PMA_MERGED_FROM_ID,ASSIGNED_TO,USR_CHANGED,CHANGED,PFP_FLOWN_PAX_ID,CABIN_CLASS,TICKET_NUMBER,FLOWN_CLASS,MKT_CARRIER,MKT_FLT_NO,OPR_CARRIER,OPR_FLT_NO,DNLD_FOR_BILLING,BILL_APPROVED,BILLED_DATE,AGENT_CITY,REV_CODE,RPS_CODE_AFTR_TM_LMT,RPS_DATE_AFTR_TM_LMT,INVOICE_NUMBER,INVOICE_DATE,BILLED_CANCELLED_ACT,ACTIVITY_METHOD,PTA_NO,COUPON_NO,PAX_DESCRIPTION,SYSTEM_CALCULATED,DIRECT_BKBL_ACTIVITY,QRS_CODE,EXT_AUTH_CODE,STG_PROCESS_DATE,TIER_CODE,TIER_TYPE,SEQ_NUMBER,TIER_DESCRIPTION,CARD_NO_PREFIX,TIER_RESOLUTION_CODE,NM_CHK_COMBI_CODE,NM_CHK_COMBI_DSCR,EFFECTIVE_DATE,DISCONTINUE_DATE,SEQUENCE_NO,RETRO_EVIDENCE_CODE,RETRO_EVIDENCE_DSCR,STATUS,RTRO_PROC_STAT_CODE,RTRO_PROC_STAT_DSCR,ACTVTY_ACTN_RSN_CODE,ACTVTY_ACTN_RSN_DSCR,ACTION_TYPE,CATEGORY,BILLABLE,SDW_CREATED_DATE,SDW_CHANGED_DATE,SDW_REFRESH_DATE,ACTIVITY_NO,ACTIVITY_TYPE_CODE,ACTIVITY_TYPE_DSCR,ACT_TYPE_CTGR_CODE,ACT_TYPE_CTGR_DSCR,ACTIVITY_IDENTIFIER,BKBL_ACTIVITY_ID,BKBL_ACTIVITY_TYPE,CLASS_OF_SERVICE,DIFFERENTIATOR,BAC_DISCONTINUE_DATE,BAC_EFFECTIVE_DATE,MIN_APPLICN_PERIOD,MAX_APPLICN_PERIOD,PARTNER_CODE,PARTNER_DESCRIPTION,REDEMPTION_METHOD,SEGMENT_CITY_PAIR,SEGMENT_DISTANCE,STATEMENT_DSCR,VOUCHER_CODE,LPT_CODE,RBE_PAX_NAME,RBE_INIT_DATE,RBE_REC_LOCATOR,EXT_TRANSACTION_TYPE,EXT_SERVICE_TYPE,STMT_DESC_LANG1,STMT_DESC_LANG2,FLIGHT_TYPE,CORP_PMA_ID,CORP_MILES,CORP_REVENUE,EXT_TERMINAL_ID,EXT_BATCH_NO,EXT_DATE_TIME,CORP_ACCRUAL_DONE,RBE_REDEEMED_STATUS,UMA_REC_NUMBER,BKBL_TIER_CODE,TICKET_ISSUE_DATE,AIRLINE_DESIGNATOR,ACCRUAL_MODEL,TICKETING_START_DATE,TICKETING_END_DATE,O_D_BASED,FARE_GROUP,ACTIVITY_MONTH,ACTIVITY_YEAR,ITC_ID,ITC_OND_FLT_NO,ORIGIN,DESTINATION,RATE_BAND_CODE,RATE_BAND_DSCR,RATE_BAND_TYPE,ON_HOLD,PROMO_CODE,PARENT_CARD_NO,DC_BATCH_ID,DC_BATCH_DATE,DC_PARTNER,DC_SEND_CARD_NO,DC_CURRENCY_VALUE,DC_POINTS,HBACK_RESPONSE,RESPONSE_CODE,HBACK_UPLD_ID,ACFIN_BATCH_ID,HBACK_UPLD_DATE,ACFIN_BILLED_DATE,IS_BILLED,AMOUNT_ACCEPTED,POINTS_ACCEPTED,DC_FLAG,EXT_MEMBERSHIP_NO,EXT_PTS,TICKET_ID,TICKET_UTILIZED,PARTNER_REFERENCE_NUMBER FROM SDW_MEMBER_ACTIVITIES WHERE SDW_REFRESH_DATE  BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>DC_BATCH_DATE=String,STG_PROCESS_DATE=String,INVOICE_DATE=String,RPS_DATE_AFTR_TM_LMT=String,BILLED_DATE=String,CHANGED=String,PTNR_INV_PAID_DATE=String,INV_BY_PTNR_DATE=String,MEMBER_ACTIVITY_DATE=String,BOOKING_DATE=String,FOLLOWUP_DATE=String,CREATED=String,RBE_INIT_DATE=String,BAC_EFFECTIVE_DATE=String,BAC_DISCONTINUE_DATE=String,SDW_REFRESH_DATE=String,SDW_CHANGED_DATE=String,SDW_CREATED_DATE=String,DISCONTINUE_DATE=String,EFFECTIVE_DATE=String,TICKETING_END_DATE=String,TICKETING_START_DATE=String,TICKET_ISSUE_DATE=String,EXT_DATE_TIME=String,ACFIN_BILLED_DATE=String,HBACK_UPLD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>MEMBER_ACTIVITY_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SDW_MEMBER_ACTIVITIES</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SDW_MEMBER_ACTIVITIES}</arg>
+            <file>${SDW_SQOOP_OPTIONS_FILE}#${SDW_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-aded"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-0424">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${SDW_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.MEMBER_ID,T1.MEMBERSHIP_TYPE,T1.GROUPING_NO,T1.JOIN_DATE,T1.WMEM_USR_CREATED,T1.WMEM_CREATED,T1.PREFERRED_CARD_NAME,T1.ACTIVE_STATUS,T1.SKYWARDS_MILES_BAL,T1.ORG_ORG_ID,T1.MERGD_FROM_MEMBER_ID,T1.MEM_MEMBER_ID,T1.ASSOCIATED_MEMBER_ID,T1.RECOM_BY_MEMBER_ID,T1.DEPARTMENT_NAME,T1.TERMINATION_DATE,T1.NON_EXP_END,T1.UPGRADE_PROHIBITED,T1.DOWNGRADE_PROHIBITED,T1.POSTAL_STATUS,T1.LAST_DNGRD_RVW_DATE,T1.VS_YIELD_VALUE,T1.VS_LAST_ACTVTY_DATE,T1.NOTES,T1.ACTIVE_CARD_NO,T1.LAST_EXPIRY,T1.RECEIVED_BONUS_AWRD,T1.WELCOME_LETTER_DATE,T1.WMEM_USR_CHANGED,T1.AUTHORISED_SIGNATORY,T1.WMEM_CHANGED,T1.INTY_CODE,T1.TIER_MILES_BAL,T1.OTHER_MEMBER_ID,T1.RLTNSHIP_TO_FAM_HEAD,T1.AGENT_CODE,T1.AUTH_SIGN_RELATION,T1.PROSP_COMM_CODE,T1.POSTAL_STAT_CHNG_RSN,T1.WMEM_STG_PROCESS_DATE,T1.RULE_CODE,T1.CONDITION_MET_DATE,T1.FAMILY_ID,T1.HEAD_SHARE_PERCENT,T1.MEMBER_SHARE_PERCENT,T1.MGM_REQUEST,T1.MEDIA_TYPE,T1.MEDIA_CODE,T1.PARTNER_CODE,T1.ECMC_DESCR,T1.ENROL_METHOD_CODE,T1.ENROL_METHOD_DSCR,T1.TIER_CODE,T1.TIER_TYPE,T1.SEQUENCE_NUMBER,T1.TIER_DESCRIPTION,T1.CARD_NO_PREFIX,T1.TIER_RESOLUTION_CODE,T1.TERRITORY_CODE,T1.AMC_CODE,T1.TERRITORY_DSCR,T1.MTC_TRAVEL_COORD_ID,T1.MTC_RELATIONSHIP,T1.MTC_CO_NAME,T1.MTC_TELEPHONE_NO_HOME,T1.MTC_TELEPHONE_NO_WORK,T1.MTC_MOBILE_NO,T1.MTC_EMAIL_ADDRESS,T1.MTC_JOB_ROLE,T1.MTC_INTERNET_ACCESS,T1.MTC_FAX_NO,T1.PERSON_ID,T1.IMPORTANCE_RATING,T1.LASTNAME_UPPER,T1.FIRSTNAME,T1.INITIALS,T1.TITLE,T1.GENDER,T1.NATIONALITY_CODE,T1.DATE_OF_BIRTH,T1.INTERNET_USER_NAME,T1.SEND_NO_EMAIL,T1.ACC_ONLINE_STATUS,T1.ACC_ONLINE_STAT_DATE,T1.SEND_VS_MAIL,T1.SEND_NON_VS_MAIL,T1.WPER_USR_CREATED,T1.WPER_CREATED,T1.WPER_USR_CHANGED,T1.WPER_CHANGED,T1.FAMILY_NAME,T1.NO_FAMILY_MEMBERS,T1.JOB_DESIGNATION,T1.INT_CODE,T1.STAFF_NO,T1.JOB_TITLE,T1.UNSUBSCRIBE_EMAIL,T1.INVALID_EMAIL,T1.EMAIL_ADDRESS_UPPER,T1.WPER_STG_PROCESS_DATE,T1.PCO_CODE,T1.PCO_DESCR,T1.IND_TYPE_CODE,T1.IND_TYPE_DESCR,T1.LANGUAGE_ID,T1.LANGUAGE_NAME,T1.LANGUAGE_RES_CODE,T1.SDW_CREATED_DATE,T1.SDW_CHANGED_DATE,T1.SDW_REFRESH_DATE,T1.ADDRESS_TYPE_CODE,T1.ADDRESS_ID,T1.VALID_FROM_DATE,T1.VALID_TO_DATE,T1.PREFFERED_CONTACT,T1.COUNTRY_IATA_CODE,T1.COUNTRY_NAME,T1.AT_CODE,T1.ISD_CODE,T1.STREET,T1.TOWN,T1.BUILDING,T1.LOCALITY,T1.REGION,T1.POST_CODE,T1.PO_BOX,T1.REGION_CODE,T1.CTY_IATA_CODE,T1.SOF_CODE,T1.SEND_CARE_OF,T1.CITY_NAME,T1.INVALID_ADDRESS,T1.EMAIL_ADDRESS,T1.MIME_PREFERENCE,T1.STAT_PREFERENCE,T1.CHECK_INVALID_EMAIL,T1.FORMAL_SAL,T1.FAMILY_HEAD_ID,T1.COMPANY_NAME,T1.FAMILY_HEAD_FLAG,T1.FAMILY_MEMBER_FLAG,T1.EMAIL_ADDRESS_LOWER,T1.NEXT_EXPIRING_MILES,T1.NEXT_EXPIRY_DATE,T1.FEEDBACK_CATEGORY,T1.ES_DOWNLOAD_STATUS,T1.NCC_CODE,T1.COUNTRY_CORP_ENABLE,T1.MOB_IND,T1.EUB_ID,T1.BR_MEMBER_FLAG,T1.SECONDARY_FAM_HEAD,T1.AGE,T1.TMB_CHANGED_DATE,T1.LAST_ACTIVITY_F,T1.LAST_ACTIVITY_J,T1.LAST_ACTIVITY_Y,T1.LASTEST_ACTIVITY_DATE,T1.COMPANY_NAME_CLEANED,T1.INDUSTRY_TYPE_CLEANED,T1.HOME_AIRPORT,T1.PARENT_CARD_NO,T1.COBRAND_MEMBER,T1.ALT_EMAIL_ADDRESS_UPPER,T1.ALT_EMAIL_ADDRESS,T1.PROFILE_COMPL_PERC,T1.JOIN_FAM_DATE,T1.AGENT_MODIFY_CODE,T1.PRS_CODE,T1.PLASTIC_CARD,T1.MINOR_STATUS_CHNG_REASON,T1.TRAVEL_AGENT_ID,T1.AGENT_PROMO_CODE,T1.CHANNEL_ID,T1.UPLOAD_ID FROM SDW_CUSTOMER T1 WHERE ((T1.SDW_REFRESH_DATE BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD&#39;)) OR (T1.SDW_CHANGED_DATE BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-fc39&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD&#39;))) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>JOIN_DATE=String,WMEM_CREATED=String,TERMINATION_DATE=String,NON_EXP_END=String,UPGRADE_PROHIBITED=String,DOWNGRADE_PROHIBITED=String,LAST_DNGRD_RVW_DATE=String,VS_LAST_ACTVTY_DATE=String,LAST_EXPIRY=String,WELCOME_LETTER_DATE=String,WMEM_CHANGED=String,WMEM_STG_PROCESS_DATE=String,CONDITION_MET_DATE=String,DATE_OF_BIRTH=String,ACC_ONLINE_STAT_DATE=String,WPER_CREATED=String,WPER_CHANGED=String,WPER_STG_PROCESS_DATE=String,NEXT_EXPIRY_DATE=String,SDW_CHANGED_DATE=String,VALID_FROM_DATE=String,SDW_REFRESH_DATE=String,LAST_ACTIVITY_Y=String,VALID_TO_DATE=String,SDW_CREATED_DATE=String,TMB_CHANGED_DATE=String,LAST_ACTIVITY_F=String,LAST_ACTIVITY_J=String,LASTEST_ACTIVITY_DATE=String,JOIN_FAM_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.MEMBER_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SDW_CUSTOMER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SDW_CUSTOMER}</arg>
+            <file>${SDW_SQOOP_OPTIONS_FILE}#${SDW_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="shell-da39"/>
+        <error to="email-a103"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

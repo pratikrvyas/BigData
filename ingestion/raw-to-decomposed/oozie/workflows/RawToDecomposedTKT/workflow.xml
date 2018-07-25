@@ -1,0 +1,237 @@
+
+<workflow-app name="RawToDecomposedTKT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="fork-796f"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-f54e">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_TKT_FREQ_FLYER}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-8dd1"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="shell-ac68">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_TKT_MASTER}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-b7bd"/>
+        <error to="email-ed90"/>
+    </action>
+    <fork name="fork-796f">
+        <path start="shell-f54e" />
+        <path start="shell-ac68" />
+        <path start="shell-4192" />
+        <path start="shell-698d" />
+        <path start="shell-8a50" />
+        <path start="shell-9198" />
+        <path start="shell-a824" />
+    </fork>
+    <join name="join-8f44" to="End"/>
+    <action name="shell-4192">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_TKT_OPERATING_CARRIER}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-215d"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="shell-698d">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_TKT_REF}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-ddcc"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="shell-8a50">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_TKT_PAX_FARE}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-d2fa"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="pig-8dd1">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_TKT_FREQ_FLYER}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_TKT_FREQ_FLYER}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_TKT_FREQ_FLYER}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_TKT_FREQ_FLYER}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-f54e&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-8f44"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="pig-b7bd">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_TKT_MASTER}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_TKT_MASTER}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_TKT_MASTER}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_TKT_MASTER}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-ac68&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-8f44"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="pig-215d">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_TKT_OPERATING_CARRIER}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_TKT_OPERATING_CARRIER}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_TKT_OPERATING_CARRIER}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_TKT_OPERATING_CARRIER}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-4192&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-8f44"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="pig-ddcc">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_TKT_REF}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_TKT_REF}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_TKT_REF}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_TKT_REF}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-698d&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-8f44"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="pig-d2fa">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_TKT_PAX_FARE}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_TKT_PAX_FARE}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_TKT_PAX_FARE}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_TKT_PAX_FARE}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-8a50&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-8f44"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="shell-9198">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_TKT_FLT_CPN}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-ca31"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="pig-ca31">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_TKT_FLT_CPN}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_TKT_FLT_CPN}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_TKT_FLT_CPN}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_TKT_FLT_CPN}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-9198&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-8f44"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="shell-a824">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="join-8f44"/>
+        <error to="email-ed90"/>
+    </action>
+    <action name="email-ed90">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

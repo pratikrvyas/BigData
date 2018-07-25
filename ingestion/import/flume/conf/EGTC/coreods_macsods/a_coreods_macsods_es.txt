@@ -1,0 +1,255 @@
+################# AGENT (Get data from Kafka To ES) #################
+
+# Name the components on this agent
+a_coreods_macsods_es.sources = r_coreflt r_macsdst r_macsinbd r_macsonwd  r_macspax r_macsflt
+
+a_coreods_macsods_es.sinks = k_coreflt_spark1 k_macsdst_es1 k_macsinbd_es1 k_macsonwd_es1  k_macspax_es1 k_macspax_es2 k_macspaxfltmv_es1 k_macspaxfltmv_es2 k_macspaxfltmv_es3 k_macspaxfltmv_es4 k_macsflt_es1
+
+a_coreods_macsods_es.channels = c_coreflt_spark c_macsdst_es c_macsinbd_es c_macsonwd_es  c_macspax_es c_macspaxfltmv_es c_macsflt_es
+
+################# CORE FLIGHT #################
+
+# Describe/configure the source
+a_coreods_macsods_es.sources.r_coreflt.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods_es.sources.r_coreflt.kafka.bootstrap.servers = hqlinux760:9092,hqlinux752:9092,hqlinux753:9092
+a_coreods_macsods_es.sources.r_coreflt.kafka.topics = kt_coreods.helix.fltfull.ek.qbrd.DOZ,kt_coreods.helix.fltfull.ek.qbrd.ETC
+a_coreods_macsods_es.sources.r_coreflt.groupId = coresparkes
+a_coreods_macsods_es.sources.r_coreflt.interceptors = i1
+a_coreods_macsods_es.sources.r_coreflt.interceptors.i1.type = timestamp
+a_coreods_macsods_es.sources.r_coreflt.kafka.consumer.timeout.ms = 100
+ 
+
+# Describe file channel
+
+a_coreods_macsods_es.channels.c_coreflt_spark.type = file
+a_coreods_macsods_es.channels.c_coreflt_spark.checkpointDir = /data/1/flumev1/core/flight-spark/checkpoint/checkpoint2
+a_coreods_macsods_es.channels.c_coreflt_spark.dataDirs = /data/1/flumev1/core/flight-spark/data
+
+# Spark streaming sink
+
+a_coreods_macsods_es.sinks.k_coreflt_spark1.type = org.apache.spark.streaming.flume.sink.SparkSink
+a_coreods_macsods_es.sinks.k_coreflt_spark1.hostname = hqlinux760
+a_coreods_macsods_es.sinks.k_coreflt_spark1.port = 41114
+
+
+# Bind the source and sink to the channel
+a_coreods_macsods_es.sources.r_coreflt.channels =  c_coreflt_spark
+a_coreods_macsods_es.sinks.k_coreflt_spark1.channel = c_coreflt_spark
+
+########## MACS Destination ###############
+
+# Describe/configure the source
+a_coreods_macsods_es.sources.r_macsdst.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods_es.sources.r_macsdst.kafka.bootstrap.servers = hqlinux760:9092,hqlinux752:9092,hqlinux753:9092
+a_coreods_macsods_es.sources.r_macsdst.kafka.topics = kt_macsods.helix.dst.ek.qbrd.DOZ,kt_macsods.helix.dst.ek.qbrd.ETC
+a_coreods_macsods_es.sources.r_macsdst.groupId = macsdstes
+a_coreods_macsods_es.sources.r_macsdst.interceptors = i1
+a_coreods_macsods_es.sources.r_macsdst.interceptors.i1.type = timestamp
+a_coreods_macsods_es.sources.r_macsdst.kafka.consumer.timeout.ms = 100
+
+
+# Describe  File channel
+a_coreods_macsods_es.channels.c_macsdst_es.type = file
+a_coreods_macsods_es.channels.c_macsdst_es.checkpointDir = /data/1/flumev1/dst_es/checkpoint/checkpoint1
+a_coreods_macsods_es.channels.c_macsdst_es.dataDirs = /data/1/flumev1/dst_es/data
+
+# Describe sink
+a_coreods_macsods_es.sinks.k_macsdst_es1.type= HelixSink
+a_coreods_macsods_es.sinks.k_macsdst_es1.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macsdst_es1.batchSize= 1
+a_coreods_macsods_es.sinks.k_macsdst_es1.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macsdst_es1.indexName= idx_macs_speed
+a_coreods_macsods_es.sinks.k_macsdst_es1.indexType= dst
+a_coreods_macsods_es.sinks.k_macsdst_es1.serializer = HelixEventSerializerIndexRequestBuilderFactory
+
+
+# Bind the source and sink to the channel
+a_coreods_macsods_es.sources.r_macsdst.channels =  c_macsdst_es
+a_coreods_macsods_es.sinks.k_macsdst_es1.channel = c_macsdst_es
+
+############### MACS INBOUND ###########################
+
+# Describe/configure the source
+a_coreods_macsods_es.sources.r_macsinbd.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods_es.sources.r_macsinbd.kafka.bootstrap.servers = hqlinux760:9092,hqlinux752:9092,hqlinux753:9092
+a_coreods_macsods_es.sources.r_macsinbd.kafka.topics = kt_macsods.helix.inb.ek.qbrd.DOZ,kt_macsods.helix.inb.ek.qbrd.ETC
+a_coreods_macsods_es.sources.r_macsinbd.groupId = macsinbes
+a_coreods_macsods_es.sources.r_macsinbd.interceptors = i1
+a_coreods_macsods_es.sources.r_macsinbd.interceptors.i1.type = timestamp
+a_coreods_macsods_es.sources.r_macsinbd.kafka.consumer.timeout.ms = 100
+
+
+# Describe sink (ELASTIC SEARCH)
+a_coreods_macsods_es.sinks.k_macsinbd_es1.type= HelixSink
+a_coreods_macsods_es.sinks.k_macsinbd_es1.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macsinbd_es1.batchSize= 100
+a_coreods_macsods_es.sinks.k_macsinbd_es1.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macsinbd_es1.indexName= idx_macs_speed
+a_coreods_macsods_es.sinks.k_macsinbd_es1.indexType= inbound
+a_coreods_macsods_es.sinks.k_macsinbd_es1.serializer = HelixEventSerializerIndexRequestBuilderFactory
+
+
+# Describe file channel
+a_coreods_macsods_es.channels.c_macsinbd_es.type = file
+a_coreods_macsods_es.channels.c_macsinbd_es.checkpointDir = /data/1/flumev1/inbound_es/checkpoint/checkpoint1
+a_coreods_macsods_es.channels.c_macsinbd_es.dataDirs = /data/1/flumev1/inbound_es/data
+
+
+
+# Bind the source and sink to the channel
+a_coreods_macsods_es.sources.r_macsinbd.channels =  c_macsinbd_es
+a_coreods_macsods_es.sinks.k_macsinbd_es1.channel = c_macsinbd_es
+
+
+################# MACS ONWARD #################
+# Describe/configure the source
+a_coreods_macsods_es.sources.r_macsonwd.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods_es.sources.r_macsonwd.kafka.bootstrap.servers = hqlinux760:9092,hqlinux752:9092,hqlinux753:9092
+a_coreods_macsods_es.sources.r_macsonwd.kafka.topics = kt_macsods.helix.onw.ek.qbrd.DOZ,kt_macsods.helix.onw.ek.qbrd.ETC
+a_coreods_macsods_es.sources.r_macsonwd.groupId = macsonwes
+a_coreods_macsods_es.sources.r_macsonwd.interceptors = i1
+a_coreods_macsods_es.sources.r_macsonwd.interceptors.i1.type = timestamp
+a_coreods_macsods_es.sources.r_macsonwd.kafka.consumer.timeout.ms = 100
+
+
+# Describe file channel
+a_coreods_macsods_es.channels.c_macsonwd_es.type = file
+a_coreods_macsods_es.channels.c_macsonwd_es.checkpointDir = /data/1/flumev1/onward_es/checkpoint/checkpoint1
+a_coreods_macsods_es.channels.c_macsonwd_es.dataDirs = /data/1/flumev1/onward_es/data
+
+# Describe sink (ELASTIC SEARCH)
+a_coreods_macsods_es.sinks.k_macsonwd_es1.type= HelixSink
+a_coreods_macsods_es.sinks.k_macsonwd_es1.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macsonwd_es1.batchSize= 100
+a_coreods_macsods_es.sinks.k_macsonwd_es1.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macsonwd_es1.indexName= idx_macs_speed
+a_coreods_macsods_es.sinks.k_macsonwd_es1.indexType= onward
+a_coreods_macsods_es.sinks.k_macsonwd_es1.serializer = HelixEventSerializerIndexRequestBuilderFactory
+
+# Bind the source and sink to the channel
+a_coreods_macsods_es.sources.r_macsonwd.channels =  c_macsonwd_es
+a_coreods_macsods_es.sinks.k_macsonwd_es1.channel = c_macsonwd_es
+
+################# MACS FLIGHT #################
+## Describe/configure the source
+a_coreods_macsods_es.sources.r_macsflt.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods_es.sources.r_macsflt.kafka.bootstrap.servers = hqlinux760:9092,hqlinux752:9092,hqlinux753:9092
+a_coreods_macsods_es.sources.r_macsflt.kafka.topics = kt_macsods.helix.flt.ek.qbrd.DOZ,kt_macsods.helix.flt.ek.qbrd.ETC
+a_coreods_macsods_es.sources.r_macsflt.groupId = macsfltes
+a_coreods_macsods_es.sources.r_macsflt.interceptors = i1
+a_coreods_macsods_es.sources.r_macsflt.interceptors.i1.type = timestamp
+a_coreods_macsods_es.sources.r_macsflt.kafka.consumer.timeout.ms = 100
+
+
+#Describe File channel
+a_coreods_macsods_es.channels.c_macsflt_es.type = file
+a_coreods_macsods_es.channels.c_macsflt_es.checkpointDir = /data/1/flumev1/flt_es/checkpoint/checkpoint1
+a_coreods_macsods_es.channels.c_macsflt_es.dataDirs = /data/1/flumev1/flt_es/data 
+
+# Describe sink (ELASTIC SEARCH)
+a_coreods_macsods_es.sinks.k_macsflt_es1.type= HelixSink
+a_coreods_macsods_es.sinks.k_macsflt_es1.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macsflt_es1.batchSize= 5
+a_coreods_macsods_es.sinks.k_macsflt_es1.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macsflt_es1.indexName= idx_macs_speed
+a_coreods_macsods_es.sinks.k_macsflt_es1.indexType= flt
+a_coreods_macsods_es.sinks.k_macsflt_es1.serializer = HelixEventSerializerIndexRequestBuilderFactory
+
+# Bind the source and sink to the channel
+a_coreods_macsods_es.sources.r_macsflt.channels =  c_macsflt_es
+a_coreods_macsods_es.sinks.k_macsflt_es1.channel = c_macsflt_es
+
+################# MACS PAX #################
+# Describe/configure the source
+a_coreods_macsods_es.sources.r_macspax.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods_es.sources.r_macspax.kafka.bootstrap.servers = hqlinux760:9092,hqlinux752:9092,hqlinux753:9092
+a_coreods_macsods_es.sources.r_macspax.kafka.topics = kt_macsods.helix.pxx.ek.qbrd.DOZ,kt_macsods.helix.pxx.ek.qbrd.ETC
+a_coreods_macsods_es.sources.r_macspax.groupId = macspaxes
+
+a_coreods_macsods_es.sources.r_macspax.interceptors = i1
+a_coreods_macsods_es.sources.r_macspax.interceptors.i1.type = timestamp
+a_coreods_macsods_es.sources.r_macspax.kafka.consumer.timeout.ms = 100
+
+
+# Describe file channel
+
+a_coreods_macsods_es.channels.c_macspax_es.type = file
+a_coreods_macsods_es.channels.c_macspax_es.checkpointDir = /data/1/flumev1/pax_es/checkpoint/checkpoint1
+a_coreods_macsods_es.channels.c_macspax_es.dataDirs = /data/1/flumev1/pax_es/data
+
+a_coreods_macsods_es.channels.c_macspaxfltmv_es.type = file
+a_coreods_macsods_es.channels.c_macspaxfltmv_es.checkpointDir = /data/1/flumev1/pax-flt-es/checkpoint/checkpoint1
+a_coreods_macsods_es.channels.c_macspaxfltmv_es.dataDirs = /data/1/flumev1/pax-flt-es/data1
+
+#Describe Sink
+
+
+a_coreods_macsods_es.sinks.k_macspax_es1.type= HelixSink
+a_coreods_macsods_es.sinks.k_macspax_es1.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macspax_es1.batchSize= 500
+a_coreods_macsods_es.sinks.k_macspax_es1.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macspax_es1.indexName= idx_macs_speed
+a_coreods_macsods_es.sinks.k_macspax_es1.indexType= pax
+a_coreods_macsods_es.sinks.k_macspax_es1.serializer.removeFieldsPrefix = true
+a_coreods_macsods_es.sinks.k_macspax_es1.serializer = HelixEventSerializerIndexRequestBuilderFactory
+a_coreods_macsods_es.sinks.k_macspax_es1.serializer.objectFields = body
+
+a_coreods_macsods_es.sinks.k_macspax_es2.type= HelixSink
+a_coreods_macsods_es.sinks.k_macspax_es2.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macspax_es2.batchSize= 500
+a_coreods_macsods_es.sinks.k_macspax_es2.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macspax_es2.indexName= idx_macs_speed
+a_coreods_macsods_es.sinks.k_macspax_es2.indexType= pax
+a_coreods_macsods_es.sinks.k_macspax_es2.serializer.removeFieldsPrefix = true
+a_coreods_macsods_es.sinks.k_macspax_es2.serializer = HelixEventSerializerIndexRequestBuilderFactory
+a_coreods_macsods_es.sinks.k_macspax_es2.serializer.objectFields = body
+
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.type= HelixSink
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.batchSize= 250
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.indexName= idx_flightmanifest_speed
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.indexType= pax-flt-mv
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.serializer.removeFieldsPrefix = true
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.serializer = HelixEventSerializerIndexRequestBuilderFactory
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.serializer.objectFields = body
+
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.type= HelixSink
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.batchSize= 250
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.indexName= idx_flightmanifest_speed
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.indexType= pax-flt-mv
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.serializer.removeFieldsPrefix = true
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.serializer = HelixEventSerializerIndexRequestBuilderFactory
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.serializer.objectFields = body
+
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.type= HelixSink
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.batchSize= 250
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.indexName= idx_flightmanifest_speed
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.indexType= pax-flt-mv
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.serializer.removeFieldsPrefix = true
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.serializer = HelixEventSerializerIndexRequestBuilderFactory
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.serializer.objectFields = body
+
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.type= HelixSink
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.hostNames= hqlinux755:9300,hqlinux756:9300,hqlinux763:9300,hqlinux758:9300,hqlinux764:9300,hqlinux765:9300
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.batchSize= 250
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.clusterName= elasticsearch_helixprod_egtc
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.indexName= idx_flightmanifest_speed
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.indexType= pax-flt-mv
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.serializer.removeFieldsPrefix = true
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.serializer = HelixEventSerializerIndexRequestBuilderFactory
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.serializer.objectFields = body
+
+# Bind the source and sink to the channel
+a_coreods_macsods_es.sources.r_macspax.channels = c_macspax_es c_macspaxfltmv_es
+
+a_coreods_macsods_es.sinks.k_macspax_es1.channel = c_macspax_es
+a_coreods_macsods_es.sinks.k_macspax_es2.channel = c_macspax_es
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es1.channel = c_macspaxfltmv_es
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es2.channel = c_macspaxfltmv_es
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es3.channel = c_macspaxfltmv_es
+a_coreods_macsods_es.sinks.k_macspaxfltmv_es4.channel = c_macspaxfltmv_es

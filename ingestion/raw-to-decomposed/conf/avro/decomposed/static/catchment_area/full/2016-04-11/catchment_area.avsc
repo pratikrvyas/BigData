@@ -1,0 +1,87 @@
+{
+  "type" : "record",
+  "name" : "catchment_area",
+  "doc" : "catchment_area",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP"
+  },{
+    "name" : "POSTCODE_AREA",
+    "type" : [ "string", "null" ],
+    "columnName" : "POSTCODE_AREA"
+  }, {
+    "name" : "POSTCODE_DISTRICT",
+    "type" : [ "string", "null" ],
+    "columnName" : "POSTCODE_DISTRICT" 
+  }, {
+    "name" : "REGION",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION"
+  }, {
+    "name" : "AREA",
+    "type" : [ "string", "null" ],
+    "columnName" : "AREA"
+  }, {
+    "name" : "FORMER_POSTAL_COUNTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "FORMER_POSTAL_COUNTRY"
+  }, {
+    "name" : "SPECIAL_PROPERTIES",
+    "type" : [ "string", "null" ],
+    "columnName" : "SPECIAL_PROPERTIES"
+  }, {
+    "name" : "LATITUDE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LATITUDE"
+  }, {
+    "name" : "LONGITUDE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LONGITUDE"
+  }, {
+    "name" : "DISTANCE_FROM_BHX",
+    "type" : [ "string", "null" ],
+    "columnName" : "DISTANCE_FROM_BHX"
+  }, {
+    "name" : "DISTANCE_FROM_GLA",
+    "type" : [ "string", "null" ],
+    "columnName" : "DISTANCE_FROM_GLA"
+  },  {
+    "name" : "DISTANCE_FROM_LGW",
+    "type" : [ "string", "null" ],
+    "columnName" : "DISTANCE_FROM_LGW"
+  }, {
+    "name" : "DISTANCE_FROM_LHR",
+    "type" : [ "string", "null" ],
+    "columnName" : "DISTANCE_FROM_LHR"
+  }, {
+    "name" : "DISTANCE_FROM_MAN",
+    "type" : [ "string", "null" ],
+    "columnName" : "DISTANCE_FROM_MAN"
+  }, {
+    "name" : "DISTANCE_FROM_NCL",
+    "type" : [ "string", "null" ],
+    "columnName" : "DISTANCE_FROM_NCL"
+  }, {
+    "name" : "PRIMARY_AIRPORT",
+    "type" : [ "string", "null" ],
+    "columnName" : "PRIMARY_AIRPORT"
+  }, {
+    "name" : "SECONDARY_AIRPORT",
+    "type" : [ "string", "null" ],
+    "columnName" : "SECONDARY_AIRPORT"
+  }, {
+    "name" : "CATCHEMENT_AREA_1",
+    "type" : [ "string", "null" ],
+    "columnName" : "CATCHEMENT_AREA_1"
+  }, {
+    "name" : "CATCHEMENT_AREA_2",
+    "type" : [ "string", "null" ],
+    "columnName" : "CATCHEMENT_AREA_2"
+  } ],
+  "tableName" : "catchment_area_master"
+}

@@ -1,0 +1,27 @@
+{
+  "onward": {
+    "_ttl": {"enabled": true,"default":"10d"},
+    "_timestamp" : {
+      "enabled":true,
+      "format":"YYYY-MM-dd HH:mm:ss"
+     },
+    "properties": {
+      "flt_snapshot_day": {"type": "string","index": "not_analyzed"},
+      "onw_id": {"type": "string"},
+      "mfl_id": {"type": "string"},
+      "reference_number": {"type": "string"},
+      "airline_designator": {"type": "string"},
+      "flight_number": {"type": "string"},
+      "operation_date": {"type": "string","index": "not_analyzed"},
+      "operation_time": {"type": "string"},
+      "board_point": {"type": "string"},
+      "off_point": {"type": "string"},
+      "booked_class": {"type": "string"},
+      "download_date": {"type": "string","index": "not_analyzed"},
+      "time_stamp": {"type": "string"},
+      "variable_data": {"type": "string"},
+      "flight_number_exp": {"type": "string"},
+      "status": {"type": "string"}
+    }
+  }
+}

@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.153.168:6516:prm
+--username
+HELIX_INT_USR
+--password
+PROMIS2016

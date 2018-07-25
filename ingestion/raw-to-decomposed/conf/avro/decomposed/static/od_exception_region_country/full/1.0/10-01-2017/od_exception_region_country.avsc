@@ -1,0 +1,66 @@
+{
+  "type" : "record",
+  "name" : "OD_EXCEPTION_REGION_COUNTRY",
+  "doc" : "Sqoop import of OD_EXCEPTION_REGION_COUNTRY",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "SET_Code",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SET_Code",
+    "sqlType" : "12"
+  }, {
+    "name" : "Exception_Type",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Exception_Type",
+    "sqlType" : "2"
+  }, {
+    "name" : "Point1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Point1",
+    "sqlType" : "2"
+  }, {
+    "name" : "Point2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Point2",
+    "sqlType" : "2"
+  }, {
+    "name" : "EffectivE_Date",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EffectivE_Date",
+    "sqlType" : "2"
+  }, {
+    "name" : "start_date",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "start_date",
+    "sqlType" : "2"
+  }, {
+    "name" : "EffectivE_end_date",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EffectivE_end_date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Active_flag",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Active_flag",
+    "sqlType" : "2"
+  }
+   ],
+  "tableName" : "OD_EXCEPTION_REGION_COUNTRY"
+}

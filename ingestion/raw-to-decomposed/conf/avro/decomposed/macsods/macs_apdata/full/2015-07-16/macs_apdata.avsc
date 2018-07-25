@@ -1,0 +1,122 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_MACS_APDATA",
+  "doc" : "Sqoop import of MACS_OWNR.MACS_APDATA",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "PARTITION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARTITION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "APD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "APD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MFL_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "MFL_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "REFERENCE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "REFERENCE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "APD_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "APD_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DOCUMENT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOCUMENT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXPIRY_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXPIRY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "COUNTRY_OF_ISSUE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_OF_ISSUE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATE_OF_BIRTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "DATE_OF_BIRTH",
+    "sqlType" : "93"
+  }, {
+    "name" : "NATIONALITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "NATIONALITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "GENDER",
+    "type" : [ "string", "null" ],
+    "columnName" : "GENDER",
+    "sqlType" : "12"
+  }, {
+    "name" : "VARIABLE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "VARIABLE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "DOCUMENT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOCUMENT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATE_OF_ISSUE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DATE_OF_ISSUE",
+    "sqlType" : "93"
+  }, {
+    "name" : "COUNTRY_OF_BIRTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_OF_BIRTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_OF_RESIDENCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_OF_RESIDENCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STATUS_ON_BOARD",
+    "type" : [ "string", "null" ],
+    "columnName" : "STATUS_ON_BOARD",
+    "sqlType" : "12"
+  }, {
+    "name" : "ITN_EMBARKATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "ITN_EMBARKATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "ITN_DISEMBARKATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "ITN_DISEMBARKATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "DOWNLOAD_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOWNLOAD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TIME_STAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIME_STAMP",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "MACS_OWNR.MACS_APDATA"
+}

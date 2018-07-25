@@ -1,0 +1,154 @@
+################# AGENT (Get Data From TIBCO to Kafka) ##################
+
+# Name the components on this agent
+aq_ingestion.sources = rq_coreflt rq_macsdst rq_macsinbd rq_macsonwd rq_macsflt rq_macspax
+aq_ingestion.channels = ch_coreflt ch_macsdst ch_macsinbd ch_macsonwd ch_macsflt ch_macspax
+
+################# CORE FLIGHT #################
+
+# Describe/configure the source
+aq_ingestion.sources.rq_coreflt.type = jms
+aq_ingestion.sources.rq_coreflt.initialContextFactory = com.tibco.tibjms.naming.TibjmsInitialContextFactory
+aq_ingestion.sources.rq_coreflt.connectionFactory = QueueConnectionFactory
+aq_ingestion.sources.rq_coreflt.providerURL = tcp://dotibems01.hq.emirates.com:7224
+aq_ingestion.sources.rq_coreflt.destinationName = COREODS.HELIX.FLTFULL.EK.QBRD
+aq_ingestion.sources.rq_coreflt.destinationType = QUEUE
+aq_ingestion.sources.rq_coreflt.userName = ext_helix_user
+aq_ingestion.sources.rq_coreflt.passwordFile=/data/2/helix-flume/jms-flume/passwords/coreods/password.txt
+aq_ingestion.sources.rq_coreflt.batchSize = 100
+
+# Describe channel
+
+
+aq_ingestion.channels.ch_coreflt.type = org.apache.flume.channel.kafka.KafkaChannel
+aq_ingestion.channels.ch_coreflt.kafka.bootstrap.servers = dolinux753.hq.emirates.com:9092,dolinux768.hq.emirates.com:9092,dolinux752.hq.emirates.com:9092
+aq_ingestion.channels.ch_coreflt.kafka.topic=kt_coreods.helix.fltfull.ek.qbrd.DOZ
+aq_ingestion.channels.ch_coreflt.parseAsFlumeEvent = false
+aq_ingestion.channels.ch_coreflt.kafka.consumer.group.id = cq_coreflt
+
+# Bind the source to the channel
+aq_ingestion.sources.rq_coreflt.channels = ch_coreflt
+
+
+################# MACS DESTINATION #################
+
+# Describe/configure the source
+aq_ingestion.sources.rq_macsdst.type = jms
+aq_ingestion.sources.rq_macsdst.initialContextFactory = com.tibco.tibjms.naming.TibjmsInitialContextFactory
+aq_ingestion.sources.rq_macsdst.connectionFactory = QueueConnectionFactory
+aq_ingestion.sources.rq_macsdst.providerURL = tcp://dotibems01.hq.emirates.com:7224
+aq_ingestion.sources.rq_macsdst.destinationName = MACSODS.HELIX.DST.EK.QBRD
+aq_ingestion.sources.rq_macsdst.destinationType = QUEUE
+aq_ingestion.sources.rq_macsdst.userName = ext_helix_user
+aq_ingestion.sources.rq_macsdst.passwordFile= /data/2/helix-flume/jms-flume/passwords/macsods/password.txt
+aq_ingestion.sources.rq_macsdst.batchSize = 100
+
+# Describe channel
+
+aq_ingestion.channels.ch_macsdst.type = org.apache.flume.channel.kafka.KafkaChannel
+aq_ingestion.channels.ch_macsdst.kafka.bootstrap.servers = dolinux753.hq.emirates.com:9092,dolinux768.hq.emirates.com:9092,dolinux752.hq.emirates.com:9092
+aq_ingestion.channels.ch_macsdst.kafka.topic=kt_macsods.helix.dst.ek.qbrd.DOZ
+aq_ingestion.channels.ch_macsdst.parseAsFlumeEvent = false
+aq_ingestion.channels.ch_macsdst.kafka.consumer.group.id = cq_macsdst
+
+# Bind the source to the channel
+aq_ingestion.sources.rq_macsdst.channels =  ch_macsdst
+
+
+################# MACS INBOUND #################
+
+# Describe/configure the source
+aq_ingestion.sources.rq_macsinbd.type = jms
+aq_ingestion.sources.rq_macsinbd.initialContextFactory = com.tibco.tibjms.naming.TibjmsInitialContextFactory
+aq_ingestion.sources.rq_macsinbd.connectionFactory = QueueConnectionFactory
+aq_ingestion.sources.rq_macsinbd.providerURL = tcp://dotibems01.hq.emirates.com:7224
+aq_ingestion.sources.rq_macsinbd.destinationName = MACSODS.HELIX.INB.EK.QBRD
+aq_ingestion.sources.rq_macsinbd.destinationType = QUEUE
+aq_ingestion.sources.rq_macsinbd.userName = ext_helix_user
+aq_ingestion.sources.rq_macsinbd.passwordFile=/data/2/helix-flume/jms-flume/passwords/macsods/password.txt
+aq_ingestion.sources.rq_macsinbd.batchSize = 100
+
+# Describe channel
+
+aq_ingestion.channels.ch_macsinbd.type = org.apache.flume.channel.kafka.KafkaChannel
+aq_ingestion.channels.ch_macsinbd.kafka.bootstrap.servers = dolinux753.hq.emirates.com:9092,dolinux768.hq.emirates.com:9092,dolinux752.hq.emirates.com:9092
+aq_ingestion.channels.ch_macsinbd.kafka.topic=kt_macsods.helix.inb.ek.qbrd.DOZ
+aq_ingestion.channels.ch_macsinbd.parseAsFlumeEvent = false
+aq_ingestion.channels.ch_macsinbd.kafka.consumer.group.id = cq_macsdst
+
+# Bind the source to the channel
+aq_ingestion.sources.rq_macsinbd.channels = ch_macsinbd
+
+
+################# MACS ONWARD #################
+
+# Describe/configure the source
+aq_ingestion.sources.rq_macsonwd.type = jms
+aq_ingestion.sources.rq_macsonwd.initialContextFactory = com.tibco.tibjms.naming.TibjmsInitialContextFactory
+aq_ingestion.sources.rq_macsonwd.connectionFactory = QueueConnectionFactory
+aq_ingestion.sources.rq_macsonwd.providerURL = tcp://dotibems01.hq.emirates.com:7224
+aq_ingestion.sources.rq_macsonwd.destinationName = MACSODS.HELIX.ONW.EK.QBRD
+aq_ingestion.sources.rq_macsonwd.destinationType = QUEUE
+aq_ingestion.sources.rq_macsonwd.userName = ext_helix_user
+aq_ingestion.sources.rq_macsonwd.passwordFile= /data/2/helix-flume/jms-flume/passwords/macsods/password.txt
+aq_ingestion.sources.rq_macsonwd.batchSize = 100
+
+# Describe channel
+
+aq_ingestion.channels.ch_macsonwd.type = org.apache.flume.channel.kafka.KafkaChannel
+aq_ingestion.channels.ch_macsonwd.kafka.bootstrap.servers = dolinux753.hq.emirates.com:9092,dolinux768.hq.emirates.com:9092,dolinux752.hq.emirates.com:9092
+aq_ingestion.channels.ch_macsonwd.kafka.topic=kt_macsods.helix.onw.ek.qbrd.DOZ
+aq_ingestion.channels.ch_macsonwd.parseAsFlumeEvent = false
+aq_ingestion.channels.ch_macsonwd.kafka.consumer.group.id = cq_macsdst
+
+# Bind the source to the channel
+aq_ingestion.sources.rq_macsonwd.channels = ch_macsonwd
+
+################# MACS FLIGHT #################
+
+# Describe/configure the source
+aq_ingestion.sources.rq_macsflt.type = jms
+aq_ingestion.sources.rq_macsflt.initialContextFactory = com.tibco.tibjms.naming.TibjmsInitialContextFactory
+aq_ingestion.sources.rq_macsflt.connectionFactory = QueueConnectionFactory
+aq_ingestion.sources.rq_macsflt.providerURL = tcp://dotibems01.hq.emirates.com:7224
+aq_ingestion.sources.rq_macsflt.destinationName = MACSODS.HELIX.FLT.EK.QBRD
+aq_ingestion.sources.rq_macsflt.destinationType = QUEUE
+aq_ingestion.sources.rq_macsflt.userName = ext_helix_user
+aq_ingestion.sources.rq_macsflt.passwordFile= /data/2/helix-flume/jms-flume/passwords/macsods/password.txt
+aq_ingestion.sources.rq_macsflt.batchSize = 100
+
+# Describe channel
+
+aq_ingestion.channels.ch_macsflt.type = org.apache.flume.channel.kafka.KafkaChannel
+aq_ingestion.channels.ch_macsflt.kafka.bootstrap.servers = dolinux753.hq.emirates.com:9092,dolinux768.hq.emirates.com:9092,dolinux752.hq.emirates.com:9092
+aq_ingestion.channels.ch_macsflt.kafka.topic=kt_macsods.helix.flt.ek.qbrd.DOZ
+aq_ingestion.channels.ch_macsflt.parseAsFlumeEvent = false
+aq_ingestion.channels.ch_macsflt.kafka.consumer.group.id = cq_macsdst
+
+# Bind the source to the channel
+aq_ingestion.sources.rq_macsflt.channels = ch_macsflt
+
+################# MACS PAX #################
+
+# Describe/configure the source
+aq_ingestion.sources.rq_macspax.type = jms
+aq_ingestion.sources.rq_macspax.initialContextFactory = com.tibco.tibjms.naming.TibjmsInitialContextFactory
+aq_ingestion.sources.rq_macspax.connectionFactory = QueueConnectionFactory
+aq_ingestion.sources.rq_macspax.providerURL = tcp://dotibems01.hq.emirates.com:7224
+aq_ingestion.sources.rq_macspax.destinationName = MACSODS.HELIX.PXX.EK.QBRD
+aq_ingestion.sources.rq_macspax.destinationType = QUEUE
+aq_ingestion.sources.rq_macspax.userName = ext_helix_user
+aq_ingestion.sources.rq_macspax.passwordFile=/data/2/helix-flume/jms-flume/passwords/macsods/password.txt
+aq_ingestion.sources.rq_macspax.batchSize = 100
+
+# Describe channel
+
+aq_ingestion.channels.ch_macspax.type = org.apache.flume.channel.kafka.KafkaChannel
+aq_ingestion.channels.ch_macspax.kafka.bootstrap.servers = dolinux753.hq.emirates.com:9092,dolinux768.hq.emirates.com:9092,dolinux752.hq.emirates.com:9092
+aq_ingestion.channels.ch_macspax.kafka.topic=kt_macsods.helix.pxx.ek.qbrd.DOZ
+aq_ingestion.channels.ch_macspax.parseAsFlumeEvent = false
+aq_ingestion.channels.ch_macspax.kafka.consumer.group.id = cq_macsdst
+
+
+# Bind the source to the channel
+aq_ingestion.sources.rq_macspax.channels = ch_macspax

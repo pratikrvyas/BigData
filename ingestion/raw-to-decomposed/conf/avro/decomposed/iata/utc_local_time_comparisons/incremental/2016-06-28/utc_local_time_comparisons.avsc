@@ -1,0 +1,68 @@
+{
+  "type" : "record",
+  "name" : "import_iata",
+  "doc" : "import of DW_OWNR.UTC_COMPARISION",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIMEZONE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIMEZONE_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "TIMEZONE_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIMEZONE_NAME",
+    "sqlType" : "93"
+  }, {
+    "name" : "STANDARD_VARIATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "STANDARD_VARIATION",
+    "sqlType" : "93"
+  },{
+    "name" : "DST_START_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "DST_START_TIME",
+    "sqlType" : "2"
+  }, {
+    "name" : "DST_START_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DST_START_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DST_END_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "DST_END_TIME",
+    "sqlType" : "2"
+  }, {
+    "name" : "DST_END_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DST_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DST_VARIATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "DST_VARIATION",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.UTC_COMPARISION"
+}

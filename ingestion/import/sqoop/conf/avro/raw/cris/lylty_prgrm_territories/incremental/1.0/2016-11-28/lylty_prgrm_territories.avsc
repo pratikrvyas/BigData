@@ -1,0 +1,133 @@
+{
+  "type" : "record",
+  "name" : "LYLTY_PRGRM_TERRITORIES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUR_SHORT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUR_SHORT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXP_INT_OVERRIDE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXP_INT_OVERRIDE",
+    "sqlType" : "2"
+  }, {
+    "name" : "AMC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "DFLT_LANG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DFLT_LANG",
+    "sqlType" : "12"
+  }, {
+    "name" : "LAST_EXP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_EXP",
+    "sqlType" : "93"
+  }, {
+    "name" : "EXP_LOOKAHEAD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXP_LOOKAHEAD",
+    "sqlType" : "2"
+  }, {
+    "name" : "FILENAME_PREFIX",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FILENAME_PREFIX",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORP_LAST_EXP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORP_LAST_EXP",
+    "sqlType" : "93"
+  }, {
+    "name" : "CORP_EXP_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORP_EXP_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "CORP_EXP_INT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORP_EXP_INT",
+    "sqlType" : "2"
+  }, {
+    "name" : "CORP_EXP_LOOKAHEAD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORP_EXP_LOOKAHEAD",
+    "sqlType" : "2"
+  }, {
+    "name" : "IN_PATH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "IN_PATH",
+    "sqlType" : "12"
+  }, {
+    "name" : "OUT_PATH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OUT_PATH",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "EXP_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXP_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "WELCOME_LETTER_REQD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WELCOME_LETTER_REQD",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "LYLTY_PRGRM_TERRITORIES"
+}

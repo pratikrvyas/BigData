@@ -1,0 +1,100 @@
+{
+  "type" : "record",
+  "name" : "import_accelya",
+  "doc" : "import of DW_OWNR.CTRL.AU.EKJV.201608xx",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "FILENAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "FILENAME",
+    "sqlType" : "11"
+  }, {
+    "name" : "CRT_DT",
+    "type" : [ "string", "null" ],
+    "columnName" : "CRT_DT",
+    "sqlType" : "3"
+  }, {
+    "name" : "UPD_DT",
+    "type" : [ "string", "null" ],
+    "columnName" : "UPD_DT",
+    "sqlType" : "7"
+  }, {
+    "name" : "NO_OF_RECORDS",
+    "type" : [ "string", "null" ],
+    "columnName" : "NO_OF_RECORDS",
+    "sqlType" : "11"
+  }, {
+    "name" : "IND_NET_AMNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "IND_NET_AMNT",
+    "sqlType" : "3"
+  }, {
+    "name" : "AIRLINE_NET_AMNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_NET_AMNT",
+    "sqlType" : "7"
+  },
+{
+    "name" : "IND_GROSS_AMNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "IND_GROSS_AMNT",
+    "sqlType" : "93"
+  }, {
+    "name" : "AIRLINE_GROSS_AMNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_GROSS_AMNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "IND_DOC_CNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "IND_DOC_CNT",
+    "sqlType" : "93"
+  }, {
+    "name" : "AIRLINE_DOC_CNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DOC_CNT",
+    "sqlType" : "93"
+  },{
+    "name" : "IND_YQ",
+    "type" : [ "string", "null" ],
+    "columnName" : "IND_YQ",
+    "sqlType" : "12"
+  }, {
+    "name" : "IND_YR",
+    "type" : [ "string", "null" ],
+    "columnName" : "IND_YR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_YQ",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_YQ",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_YR",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_YR",
+    "sqlType" : "2"
+  }
+, {
+    "name" : "COUNTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CUTP",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROCESSING_MONTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "CUTP",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.CTRL.AU.EKJV.201608xx"
+}

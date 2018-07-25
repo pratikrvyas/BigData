@@ -1,0 +1,1387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emdData xmlns="http://www.emirates.com/pss/integration/xmlschemas/emdData/2XX14/XX4">
+    <emdHeaderData>
+        <EMDOperationIndicator>EMDOperationIndicatorXX</EMDOperationIndicator>
+        <conjunctionEMDIndicator>conjunctionEMDIndicatorXX</conjunctionEMDIndicator>
+        <emdNumber>XX</emdNumber>
+        <emdType>emdTypeXX</emdType>
+        <emdDownloadDate>XXXXXXXXXXXXXX</emdDownloadDate>
+        <emdDownloadTime>emdDownloadTimeXX</emdDownloadTime>
+        <emdPurgeDate>XXXXXXXXXXXXXXXXXX</emdPurgeDate>
+        <emdIssuanceDate>XXXXXXXXXXXXXX</emdIssuanceDate>
+        <emdSource>e</emdSource>
+    </emdHeaderData>
+    <emdDetails>
+        <emdCreationDetails>
+            <emdType>emdType1</emdType>
+            <emdSubType>X</emdSubType>
+            <pnrNumber>XX</pnrNumber>
+            <emdCreatingHost>XXXX</emdCreatingHost>
+            <emdCreatingSubHost>XXXX</emdCreatingSubHost>
+            <dateTimeDetails>
+                <localDate>XXXXXXXXXXXXXX</localDate>
+                <systemDate>XXXXXXXXXXXXXX</systemDate>
+                <localTime>localTimeXX</localTime>
+                <systemTime>systemTimeXX</systemTime>
+            </dateTimeDetails>
+            <emdCreateIndicator>X</emdCreateIndicator>
+            <emdCreationLocation>XXXX</emdCreationLocation>
+            <emdCreationAgent>
+                <agentCode>agentCod</agentCode>
+                <agentCRI>agentCRI</agentCRI>
+                <agentIATACode>agentIATACodeXX</agentIATACode>
+            </emdCreationAgent>
+            <emdMaskPrimaryStatus>X</emdMaskPrimaryStatus>
+            <emdMaskSecondaryStatus>X</emdMaskSecondaryStatus>
+            <PTAFirstIndicator>X</PTAFirstIndicator>
+            <PTASecondIndicator>X</PTASecondIndicator>
+            <agentReference>agentReferenceXX</agentReference>
+            <displayRestrictionIndicator>displayRestrictionIndicatorXX</displayRestrictionIndicator>
+            <isValidEMD>isValidE</isValidEMD>
+            <serviceType>serviceTypeXX</serviceType>
+            <validationDate>XXXXXXXXXXXXXX</validationDate>
+            <netFareIndicator>X</netFareIndicator>
+            <paymentErrorIndicator>X</paymentErrorIndicator>
+            <salesCreditor>salesCreditorXX</salesCreditor>
+            <emdSourceIndicator>emdSourceIndicatorXX</emdSourceIndicator>
+            <paymentMethodDate>XXXXXXXXXXXXXX</paymentMethodDate>
+            <isStandaloneEMD>isStanda</isStandaloneEMD>
+            <isAssociatedEMD>isAssoci</isAssociatedEMD>
+            <issuanceReasonCode>X</issuanceReasonCode>
+            <validityDate>XXXXXXXXXXXXXX</validityDate>
+            <issuanceReasonDetail>issuanceReasonDetailXX</issuanceReasonDetail>
+            <endorsementData>endorsementDataXX</endorsementData>
+            <tourCodeSource>tourCodeSourceXX</tourCodeSource>
+            <tourCode>tourCodeXX</tourCode>
+            <additionalAttribute key="key1" value="value1"/>
+            <additionalAttribute key="key3" value="value3"/>
+        </emdCreationDetails>
+        <emdIssuanceDetails>
+            <originalIssueDetails>
+                <originalIssueDate>original</originalIssueDate>
+                <originalIssueIATAcode>originalIssueIATAcodeXX</originalIssueIATAcode>
+                <originalIssueDocumentNumber>originalIssueDocumentNum</originalIssueDocumentNumber>
+                <originalIssueData>originalIssueDataXX</originalIssueData>
+                <additionalAttribute key="key5" value="value5"/>
+                <additionalAttribute key="key7" value="value7"/>
+            </originalIssueDetails>
+            <ATBPrinterAddress>ATBPrinterAddressXX</ATBPrinterAddress>
+            <issuingHostAirline>XXXX</issuingHostAirline>
+            <issuingCity>XXXXXX</issuingCity>
+            <issuingAgentCode>
+                <agentCode>agentCod</agentCode>
+                <agentCRI>agentCRI</agentCRI>
+                <agentIATACode>agentIATACode1</agentIATACode>
+            </issuingAgentCode>
+            <emdSalesStatus>emdSalesStatusXX</emdSalesStatus>
+            <issuanceDateTime>
+                <localDate>XXXXXXXXXXXXXX</localDate>
+                <systemDate>XXXXXXXXXXXXXX</systemDate>
+                <localTime>localTime1</localTime>
+                <systemTime>systemTime1</systemTime>
+            </issuanceDateTime>
+            <reportingLocalDate>
+                <localDate>XXXXXXXXXXXXXX</localDate>
+                <systemDate>XXXXXXXXXXXXXX</systemDate>
+                <localTime>localTime2</localTime>
+                <systemTime>systemTime2</systemTime>
+            </reportingLocalDate>
+            <reportingType>r</reportingType>
+            <reportedIndicator>reportedIndicatorXX</reportedIndicator>
+            <reportingCity>XXXXXX</reportingCity>
+            <reportingAgentCode>reportin</reportingAgentCode>
+            <salesReportNumber>salesRep</salesReportNumber>
+            <ticketingModeIndicator>X</ticketingModeIndicator>
+            <dataReceiver>dataRece</dataReceiver>
+            <totalCouponsWithoutVoid>totalCou</totalCouponsWithoutVoid>
+            <issuingAirline>XXXX</issuingAirline>
+            <airlineNumericode>airlineNumericodeXX</airlineNumericode>
+            <airlineCodeCheckDigit>a</airlineCodeCheckDigit>
+            <emdNumber>XX</emdNumber>
+            <oldEMDSerialNumberFrom>oldEMDSe</oldEMDSerialNumberFrom>
+            <newEMDSerialNumberFrom>newEMDSe</newEMDSerialNumberFrom>
+            <oldEMDSerialNumberTo>oldEMDSe</oldEMDSerialNumberTo>
+            <primaryTicketCheckDigit>p</primaryTicketCheckDigit>
+            <exchangeCouponCheckDigit>e</exchangeCouponCheckDigit>
+            <totalCouponsWithVoid>totalCou</totalCouponsWithVoid>
+            <PNRCreationDate>XXXXXXXXXXXXXX</PNRCreationDate>
+            <newEMDSerialNumberTo>newEMDSe</newEMDSerialNumberTo>
+            <ticketIssuingAirlineName>ticketIssuingAirlineName</ticketIssuingAirlineName>
+            <additionalAttribute key="key9" value="value9"/>
+            <additionalAttribute key="key11" value="value11"/>
+        </emdIssuanceDetails>
+        <additionalRemarkInformation>
+            <lastUpdateCity>XXXXXX</lastUpdateCity>
+            <lastUpdateAirlineCode>XXXX</lastUpdateAirlineCode>
+            <lastUpdateAgent>lastUpda</lastUpdateAgent>
+            <UTCDate>XXXXXXXXXXXXXX</UTCDate>
+            <UTCTime>UTCTimeXX</UTCTime>
+            <additionalInfo>additionalInfoXX</additionalInfo>
+            <additionalAttribute key="key13" value="value13"/>
+            <additionalAttribute key="key15" value="value15"/>
+        </additionalRemarkInformation>
+        <additionalRemarkInformation>
+            <lastUpdateCity>XXXXXX</lastUpdateCity>
+            <lastUpdateAirlineCode>XXXX</lastUpdateAirlineCode>
+            <lastUpdateAgent>lastUpda</lastUpdateAgent>
+            <UTCDate>XXXXXXXXXXXXXX</UTCDate>
+            <UTCTime>UTCTime1</UTCTime>
+            <additionalInfo>additionalInfo1</additionalInfo>
+            <additionalAttribute key="key17" value="value17"/>
+            <additionalAttribute key="key19" value="value19"/>
+        </additionalRemarkInformation>
+        <additionalInformation>
+            <informationType>informationTypeXX</informationType>
+            <additionalInformation>additionalInformationXX</additionalInformation>
+            <additionalAttribute key="key21" value="value21"/>
+            <additionalAttribute key="key23" value="value23"/>
+        </additionalInformation>
+        <emdService>
+            <informationType>informationType1</informationType>
+            <serviceTypeIATACode>s</serviceTypeIATACode>
+            <serviceTypeGroupCode>serviceT</serviceTypeGroupCode>
+            <serviceType>serviceType1</serviceType>
+            <additionalAttribute key="key25" value="value25"/>
+            <additionalAttribute key="key27" value="value27"/>
+        </emdService>
+        <emdStatus>
+            <emdStatusIndicator>e</emdStatusIndicator>
+            <isRefundReported>isRefund</isRefundReported>
+            <isNASAReported>isNASARe</isNASAReported>
+            <isExchangeByMCO>isExchan</isExchangeByMCO>
+            <additionalAttribute key="key29" value="value29"/>
+            <additionalAttribute key="key31" value="value31"/>
+        </emdStatus>
+        <flightSegment>
+            <boardPointCityCode>XXXXXX</boardPointCityCode>
+            <offPointCityCode>XXXXXX</offPointCityCode>
+            <couponNumber>c</couponNumber>
+            <airlineCode>XXXX</airlineCode>
+            <flightNumber>flightNu</flightNumber>
+            <departureDate>XXXXXXXXXXXXXX</departureDate>
+            <departureTime>departureTimeXX</departureTime>
+            <reservationClass>reservat</reservationClass>
+            <isExcahngedbyRMCO>isExcahn</isExcahngedbyRMCO>
+            <couponStatus>couponStatusXX</couponStatus>
+            <additionalAttribute key="key33" value="value33"/>
+            <additionalAttribute key="key35" value="value35"/>
+        </flightSegment>
+        <couponDetails>
+            <couponHistoryDetails>
+                <oldCouponStatusIndicator>oldCouponStatusIndicatorXX</oldCouponStatusIndicator>
+                <newCouponStatusIndicator>newCouponStatusIndicatorXX</newCouponStatusIndicator>
+                <transactionRemarkCommon>
+                    <hostAirlineCode>XXXX</hostAirlineCode>
+                    <transactionCityCode>XXXXXX</transactionCityCode>
+                    <agentDetails>
+                        <agentCode>agentCod</agentCode>
+                        <agentCRI>agentCRI</agentCRI>
+                        <agentIATACode>agentIATACode2</agentIATACode>
+                    </agentDetails>
+                    <datetime>
+                        <localDate>XXXXXXXXXXXXXXXXXX</localDate>
+                        <systemDate>XXXXXXXXXXXXXXXXXX</systemDate>
+                        <localTime>localTime3</localTime>
+                        <systemTime>systemTime3</systemTime>
+                    </datetime>
+                    <transactionRemark>transactionRemarkXX</transactionRemark>
+                </transactionRemarkCommon>
+                <couponLineNumber>coupon</couponLineNumber>
+                <CRSItemNumber>CRSItemN</CRSItemNumber>
+                <additionalAttribute key="key37" value="value37"/>
+                <additionalAttribute key="key39" value="value39"/>
+            </couponHistoryDetails>
+            <couponHistoryDetails>
+                <oldCouponStatusIndicator>oldCouponStatusIndicator1</oldCouponStatusIndicator>
+                <newCouponStatusIndicator>newCouponStatusIndicator1</newCouponStatusIndicator>
+                <transactionRemarkCommon>
+                    <hostAirlineCode>XXXX</hostAirlineCode>
+                    <transactionCityCode>XXXXXX</transactionCityCode>
+                    <agentDetails>
+                        <agentCode>agentCod</agentCode>
+                        <agentCRI>agentCRI</agentCRI>
+                        <agentIATACode>agentIATACode3</agentIATACode>
+                    </agentDetails>
+                    <datetime>
+                        <localDate>XXXXXXXXXXXXXXXXXX</localDate>
+                        <systemDate>XXXXXXXXXXXXXXXXXX</systemDate>
+                        <localTime>localTime4</localTime>
+                        <systemTime>systemTime4</systemTime>
+                    </datetime>
+                    <transactionRemark>transactionRemark1</transactionRemark>
+                </transactionRemarkCommon>
+                <couponLineNumber>coupon</couponLineNumber>
+                <CRSItemNumber>CRSItemN</CRSItemNumber>
+                <additionalAttribute key="key41" value="value41"/>
+                <additionalAttribute key="key43" value="value43"/>
+            </couponHistoryDetails>
+            <serviceProviderDetails>
+                <couponLineNumber>coupon</couponLineNumber>
+                <serviceDetails>serviceDetailsXX</serviceDetails>
+                <serviceTypeIndicator>serviceTypeIndicatorXX</serviceTypeIndicator>
+                <serviceProviderDetails>serviceProviderDetailsXX</serviceProviderDetails>
+                <additionalAttribute key="key45" value="value45"/>
+                <additionalAttribute key="key47" value="value47"/>
+            </serviceProviderDetails>
+            <serviceProviderDetails>
+                <couponLineNumber>coupon</couponLineNumber>
+                <serviceDetails>serviceDetails1</serviceDetails>
+                <serviceTypeIndicator>serviceTypeIndicator1</serviceTypeIndicator>
+                <serviceProviderDetails>serviceProviderDetails1</serviceProviderDetails>
+                <additionalAttribute key="key49" value="value49"/>
+                <additionalAttribute key="key51" value="value51"/>
+            </serviceProviderDetails>
+            <flightCouponDetails>
+                <lineNumber>lineNumb</lineNumber>
+                <couponNumber>couponNumber2</couponNumber>
+                <segmentTicketNumber>segmentTicketNumberXX</segmentTicketNumber>
+                <ticketCheckDigit>t</ticketCheckDigit>
+                <couponStatusIndicator>c</couponStatusIndicator>
+                <PNR>PNRXX</PNR>
+                <airlineCode>XXXX</airlineCode>
+                <flightNumber>XX</flightNumber>
+                <reservationClassCode>r</reservationClassCode>
+                <classofService>c</classofService>
+                <departureDate>XXXXXXXXXXXXXXXXXX</departureDate>
+                <departureTime>departureTime1</departureTime>
+                <isssuanceReasonCode>isssuanc</isssuanceReasonCode>
+                <marketingCarrierCode>XXXX</marketingCarrierCode>
+                <involuntaryIndicator>i</involuntaryIndicator>
+                <baggageInPiece>baggageI</baggageInPiece>
+                <baggageInWeight>baggageI</baggageInWeight>
+                <boardPointAirportCode>XXXXXX</boardPointAirportCode>
+                <offPointAirportCode>XXXXXX</offPointAirportCode>
+                <fareBasisDataSize>fareBasi</fareBasisDataSize>
+                <fareBasisData>fareBasisDataXX</fareBasisData>
+                <boardPointStopover>b</boardPointStopover>
+                <offPointStopover>o</offPointStopover>
+                <emdsettelementtAuthorizationCode>emdsettelementtAuthorizationCode</emdsettelementtAuthorizationCode>
+                <numberOfServices>numberOf</numberOfServices>
+                <connectionTicketNumber>XX</connectionTicketNumber>
+                <connectionCouponNumber>c</connectionCouponNumber>
+                <isConsumedOnIssuance>isConsum</isConsumedOnIssuance>
+                <bankersSaleRate>bankersSaleRateXX</bankersSaleRate>
+                <couponFareCurrencyCode>couponFa</couponFareCurrencyCode>
+                <boardPointAmount>boardPointAmountXX</boardPointAmount>
+                <equivalentFare>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation1</additionalInformation>
+                </equivalentFare>
+                <netFareAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation2</additionalInformation>
+                </netFareAmount>
+                <netEquivalentAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation3</additionalInformation>
+                </netEquivalentAmount>
+                <excessBaggageDetails>
+                    <rate>XXXXXXX</rate>
+                    <count>XX</count>
+                </excessBaggageDetails>
+                <controllingAirlineCode>controll</controllingAirlineCode>
+                <excessBaggageMeasuringUnit>excessBaggageMeasuringUnitXX</excessBaggageMeasuringUnit>
+                <isManuallyPriced>isManual</isManuallyPriced>
+                <isAutoPriced>isAutoPr</isAutoPriced>
+                <isRefundReported>isRefund</isRefundReported>
+                <isNASAReported>isNASARe</isNASAReported>
+                <isBoardPointValidated>isBoardP</isBoardPointValidated>
+                <isOffPointValidated>isOffPoi</isOffPointValidated>
+                <isGroupDeposit>isGroupD</isGroupDeposit>
+                <auxillaryServiceIndicator>a</auxillaryServiceIndicator>
+                <isExchangedByRMCO>isExchan</isExchangedByRMCO>
+                <isRapidDownload>isRapidD</isRapidDownload>
+                <flightIssuanceReasonType>f</flightIssuanceReasonType>
+                <isASVCForGDS>isASVCFo</isASVCForGDS>
+                <openEmdType>openEmdTypeXX</openEmdType>
+                <notValidBeforeDate>XXXXXXXXXXXXXX</notValidBeforeDate>
+                <notvalidAfterDate>XXXXXXXXXXXXXX</notvalidAfterDate>
+                <marketingFlightNumber>XX</marketingFlightNumber>
+                <marketingFlightRBD>marketingFlightRBDXX</marketingFlightRBD>
+                <PNRCreationDate>XXXXXXXXXXXXXX</PNRCreationDate>
+                <ticketIssueDate>XXXXXXXXXXXXXX</ticketIssueDate>
+                <issuanceReasonCodeDetails>issuanceReasonCodeDetailsXX</issuanceReasonCodeDetails>
+                <additionalAttribute key="key53" value="value53"/>
+                <additionalAttribute key="key55" value="value55"/>
+            </flightCouponDetails>
+            <flightCouponDetails>
+                <lineNumber>lineNumb</lineNumber>
+                <couponNumber>couponNumber3</couponNumber>
+                <segmentTicketNumber>segmentTicketNumber1</segmentTicketNumber>
+                <ticketCheckDigit>t</ticketCheckDigit>
+                <couponStatusIndicator>c</couponStatusIndicator>
+                <PNR>PNR1</PNR>
+                <airlineCode>XXXX</airlineCode>
+                <flightNumber>XX</flightNumber>
+                <reservationClassCode>r</reservationClassCode>
+                <classofService>c</classofService>
+                <departureDate>XXXXXXXXXXXXXXXXXX</departureDate>
+                <departureTime>departureTime2</departureTime>
+                <isssuanceReasonCode>isssuanc</isssuanceReasonCode>
+                <marketingCarrierCode>XXXX</marketingCarrierCode>
+                <involuntaryIndicator>i</involuntaryIndicator>
+                <baggageInPiece>baggageI</baggageInPiece>
+                <baggageInWeight>baggageI</baggageInWeight>
+                <boardPointAirportCode>XXXXXX</boardPointAirportCode>
+                <offPointAirportCode>XXXXXX</offPointAirportCode>
+                <fareBasisDataSize>fareBasi</fareBasisDataSize>
+                <fareBasisData>fareBasisData1</fareBasisData>
+                <boardPointStopover>b</boardPointStopover>
+                <offPointStopover>o</offPointStopover>
+                <emdsettelementtAuthorizationCode>emdsettelementtAuthorizationCode</emdsettelementtAuthorizationCode>
+                <numberOfServices>numberOf</numberOfServices>
+                <connectionTicketNumber>XX</connectionTicketNumber>
+                <connectionCouponNumber>c</connectionCouponNumber>
+                <isConsumedOnIssuance>isConsum</isConsumedOnIssuance>
+                <bankersSaleRate>bankersSaleRate1</bankersSaleRate>
+                <couponFareCurrencyCode>couponFa</couponFareCurrencyCode>
+                <boardPointAmount>boardPointAmount1</boardPointAmount>
+                <equivalentFare>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation4</additionalInformation>
+                </equivalentFare>
+                <netFareAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation5</additionalInformation>
+                </netFareAmount>
+                <netEquivalentAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation6</additionalInformation>
+                </netEquivalentAmount>
+                <excessBaggageDetails>
+                    <rate>XXXXXXX</rate>
+                    <count>XX</count>
+                </excessBaggageDetails>
+                <controllingAirlineCode>controll</controllingAirlineCode>
+                <excessBaggageMeasuringUnit>excessBaggageMeasuringUnit1</excessBaggageMeasuringUnit>
+                <isManuallyPriced>isManual</isManuallyPriced>
+                <isAutoPriced>isAutoPr</isAutoPriced>
+                <isRefundReported>isRefund</isRefundReported>
+                <isNASAReported>isNASARe</isNASAReported>
+                <isBoardPointValidated>isBoardP</isBoardPointValidated>
+                <isOffPointValidated>isOffPoi</isOffPointValidated>
+                <isGroupDeposit>isGroupD</isGroupDeposit>
+                <auxillaryServiceIndicator>a</auxillaryServiceIndicator>
+                <isExchangedByRMCO>isExchan</isExchangedByRMCO>
+                <isRapidDownload>isRapidD</isRapidDownload>
+                <flightIssuanceReasonType>f</flightIssuanceReasonType>
+                <isASVCForGDS>isASVCFo</isASVCForGDS>
+                <openEmdType>openEmdType1</openEmdType>
+                <notValidBeforeDate>XXXXXXXXXXXXXX</notValidBeforeDate>
+                <notvalidAfterDate>XXXXXXXXXXXXXX</notvalidAfterDate>
+                <marketingFlightNumber>XX</marketingFlightNumber>
+                <marketingFlightRBD>marketingFlightRBD1</marketingFlightRBD>
+                <PNRCreationDate>XXXXXXXXXXXXXX</PNRCreationDate>
+                <ticketIssueDate>XXXXXXXXXXXXXX</ticketIssueDate>
+                <issuanceReasonCodeDetails>issuanceReasonCodeDetails1</issuanceReasonCodeDetails>
+                <additionalAttribute key="key57" value="value57"/>
+                <additionalAttribute key="key59" value="value59"/>
+            </flightCouponDetails>
+        </couponDetails>
+        <couponDetails>
+            <couponHistoryDetails>
+                <oldCouponStatusIndicator>oldCouponStatusIndicator2</oldCouponStatusIndicator>
+                <newCouponStatusIndicator>newCouponStatusIndicator2</newCouponStatusIndicator>
+                <transactionRemarkCommon>
+                    <hostAirlineCode>XXXX</hostAirlineCode>
+                    <transactionCityCode>XXXXXX</transactionCityCode>
+                    <agentDetails>
+                        <agentCode>agentCod</agentCode>
+                        <agentCRI>agentCRI</agentCRI>
+                        <agentIATACode>agentIATACode4</agentIATACode>
+                    </agentDetails>
+                    <datetime>
+                        <localDate>XXXXXXXXXXXXXXXXXX</localDate>
+                        <systemDate>XXXXXXXXXXXXXXXXXX</systemDate>
+                        <localTime>localTime5</localTime>
+                        <systemTime>systemTime5</systemTime>
+                    </datetime>
+                    <transactionRemark>transactionRemark2</transactionRemark>
+                </transactionRemarkCommon>
+                <couponLineNumber>coupon</couponLineNumber>
+                <CRSItemNumber>CRSItemN</CRSItemNumber>
+                <additionalAttribute key="key61" value="value61"/>
+                <additionalAttribute key="key63" value="value63"/>
+            </couponHistoryDetails>
+            <couponHistoryDetails>
+                <oldCouponStatusIndicator>oldCouponStatusIndicator3</oldCouponStatusIndicator>
+                <newCouponStatusIndicator>newCouponStatusIndicator3</newCouponStatusIndicator>
+                <transactionRemarkCommon>
+                    <hostAirlineCode>XXXX</hostAirlineCode>
+                    <transactionCityCode>XXXXXX</transactionCityCode>
+                    <agentDetails>
+                        <agentCode>agentCod</agentCode>
+                        <agentCRI>agentCRI</agentCRI>
+                        <agentIATACode>agentIATACode5</agentIATACode>
+                    </agentDetails>
+                    <datetime>
+                        <localDate>XXXXXXXXXXXXXXXXXX</localDate>
+                        <systemDate>XXXXXXXXXXXXXXXXXX</systemDate>
+                        <localTime>localTime6</localTime>
+                        <systemTime>systemTime6</systemTime>
+                    </datetime>
+                    <transactionRemark>transactionRemark3</transactionRemark>
+                </transactionRemarkCommon>
+                <couponLineNumber>coupon</couponLineNumber>
+                <CRSItemNumber>CRSItemN</CRSItemNumber>
+                <additionalAttribute key="key65" value="value65"/>
+                <additionalAttribute key="key67" value="value67"/>
+            </couponHistoryDetails>
+            <serviceProviderDetails>
+                <couponLineNumber>coupon</couponLineNumber>
+                <serviceDetails>serviceDetails2</serviceDetails>
+                <serviceTypeIndicator>serviceTypeIndicator2</serviceTypeIndicator>
+                <serviceProviderDetails>serviceProviderDetails2</serviceProviderDetails>
+                <additionalAttribute key="key69" value="value69"/>
+                <additionalAttribute key="key71" value="value71"/>
+            </serviceProviderDetails>
+            <serviceProviderDetails>
+                <couponLineNumber>coupon</couponLineNumber>
+                <serviceDetails>serviceDetails3</serviceDetails>
+                <serviceTypeIndicator>serviceTypeIndicator3</serviceTypeIndicator>
+                <serviceProviderDetails>serviceProviderDetails3</serviceProviderDetails>
+                <additionalAttribute key="key73" value="value73"/>
+                <additionalAttribute key="key75" value="value75"/>
+            </serviceProviderDetails>
+            <flightCouponDetails>
+                <lineNumber>lineNumb</lineNumber>
+                <couponNumber>couponNumber4</couponNumber>
+                <segmentTicketNumber>segmentTicketNumber2</segmentTicketNumber>
+                <ticketCheckDigit>t</ticketCheckDigit>
+                <couponStatusIndicator>c</couponStatusIndicator>
+                <PNR>PNR2</PNR>
+                <airlineCode>XXXX</airlineCode>
+                <flightNumber>XX</flightNumber>
+                <reservationClassCode>r</reservationClassCode>
+                <classofService>c</classofService>
+                <departureDate>XXXXXXXXXXXXXXXXXX</departureDate>
+                <departureTime>departureTime3</departureTime>
+                <isssuanceReasonCode>isssuanc</isssuanceReasonCode>
+                <marketingCarrierCode>XXXX</marketingCarrierCode>
+                <involuntaryIndicator>i</involuntaryIndicator>
+                <baggageInPiece>baggageI</baggageInPiece>
+                <baggageInWeight>baggageI</baggageInWeight>
+                <boardPointAirportCode>XXXXXX</boardPointAirportCode>
+                <offPointAirportCode>XXXXXX</offPointAirportCode>
+                <fareBasisDataSize>fareBasi</fareBasisDataSize>
+                <fareBasisData>fareBasisData2</fareBasisData>
+                <boardPointStopover>b</boardPointStopover>
+                <offPointStopover>o</offPointStopover>
+                <emdsettelementtAuthorizationCode>emdsettelementtAuthorizationCode</emdsettelementtAuthorizationCode>
+                <numberOfServices>numberOf</numberOfServices>
+                <connectionTicketNumber>XX</connectionTicketNumber>
+                <connectionCouponNumber>c</connectionCouponNumber>
+                <isConsumedOnIssuance>isConsum</isConsumedOnIssuance>
+                <bankersSaleRate>bankersSaleRate2</bankersSaleRate>
+                <couponFareCurrencyCode>couponFa</couponFareCurrencyCode>
+                <boardPointAmount>boardPointAmount2</boardPointAmount>
+                <equivalentFare>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation7</additionalInformation>
+                </equivalentFare>
+                <netFareAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation8</additionalInformation>
+                </netFareAmount>
+                <netEquivalentAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation9</additionalInformation>
+                </netEquivalentAmount>
+                <excessBaggageDetails>
+                    <rate>XXXXXXX</rate>
+                    <count>XX</count>
+                </excessBaggageDetails>
+                <controllingAirlineCode>controll</controllingAirlineCode>
+                <excessBaggageMeasuringUnit>excessBaggageMeasuringUnit2</excessBaggageMeasuringUnit>
+                <isManuallyPriced>isManual</isManuallyPriced>
+                <isAutoPriced>isAutoPr</isAutoPriced>
+                <isRefundReported>isRefund</isRefundReported>
+                <isNASAReported>isNASARe</isNASAReported>
+                <isBoardPointValidated>isBoardP</isBoardPointValidated>
+                <isOffPointValidated>isOffPoi</isOffPointValidated>
+                <isGroupDeposit>isGroupD</isGroupDeposit>
+                <auxillaryServiceIndicator>a</auxillaryServiceIndicator>
+                <isExchangedByRMCO>isExchan</isExchangedByRMCO>
+                <isRapidDownload>isRapidD</isRapidDownload>
+                <flightIssuanceReasonType>f</flightIssuanceReasonType>
+                <isASVCForGDS>isASVCFo</isASVCForGDS>
+                <openEmdType>openEmdType2</openEmdType>
+                <notValidBeforeDate>XXXXXXXXXXXXXX</notValidBeforeDate>
+                <notvalidAfterDate>XXXXXXXXXXXXXX</notvalidAfterDate>
+                <marketingFlightNumber>XX</marketingFlightNumber>
+                <marketingFlightRBD>marketingFlightRBD2</marketingFlightRBD>
+                <PNRCreationDate>XXXXXXXXXXXXXX</PNRCreationDate>
+                <ticketIssueDate>XXXXXXXXXXXXXX</ticketIssueDate>
+                <issuanceReasonCodeDetails>issuanceReasonCodeDetails2</issuanceReasonCodeDetails>
+                <additionalAttribute key="key77" value="value77"/>
+                <additionalAttribute key="key79" value="value79"/>
+            </flightCouponDetails>
+            <flightCouponDetails>
+                <lineNumber>lineNumb</lineNumber>
+                <couponNumber>couponNumber5</couponNumber>
+                <segmentTicketNumber>segmentTicketNumber3</segmentTicketNumber>
+                <ticketCheckDigit>t</ticketCheckDigit>
+                <couponStatusIndicator>c</couponStatusIndicator>
+                <PNR>PNR3</PNR>
+                <airlineCode>XXXX</airlineCode>
+                <flightNumber>XX</flightNumber>
+                <reservationClassCode>r</reservationClassCode>
+                <classofService>c</classofService>
+                <departureDate>XXXXXXXXXXXXXXXXXX</departureDate>
+                <departureTime>departureTime4</departureTime>
+                <isssuanceReasonCode>isssuanc</isssuanceReasonCode>
+                <marketingCarrierCode>XXXX</marketingCarrierCode>
+                <involuntaryIndicator>i</involuntaryIndicator>
+                <baggageInPiece>baggageI</baggageInPiece>
+                <baggageInWeight>baggageI</baggageInWeight>
+                <boardPointAirportCode>XXXXXX</boardPointAirportCode>
+                <offPointAirportCode>XXXXXX</offPointAirportCode>
+                <fareBasisDataSize>fareBasi</fareBasisDataSize>
+                <fareBasisData>fareBasisData3</fareBasisData>
+                <boardPointStopover>b</boardPointStopover>
+                <offPointStopover>o</offPointStopover>
+                <emdsettelementtAuthorizationCode>emdsettelementtAuthorizationCode</emdsettelementtAuthorizationCode>
+                <numberOfServices>numberOf</numberOfServices>
+                <connectionTicketNumber>XX</connectionTicketNumber>
+                <connectionCouponNumber>c</connectionCouponNumber>
+                <isConsumedOnIssuance>isConsum</isConsumedOnIssuance>
+                <bankersSaleRate>bankersSaleRate3</bankersSaleRate>
+                <couponFareCurrencyCode>couponFa</couponFareCurrencyCode>
+                <boardPointAmount>boardPointAmount3</boardPointAmount>
+                <equivalentFare>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation1XX</additionalInformation>
+                </equivalentFare>
+                <netFareAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation11</additionalInformation>
+                </netFareAmount>
+                <netEquivalentAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation12</additionalInformation>
+                </netEquivalentAmount>
+                <excessBaggageDetails>
+                    <rate>XXXXXXX</rate>
+                    <count>XX</count>
+                </excessBaggageDetails>
+                <controllingAirlineCode>controll</controllingAirlineCode>
+                <excessBaggageMeasuringUnit>excessBaggageMeasuringUnit3</excessBaggageMeasuringUnit>
+                <isManuallyPriced>isManual</isManuallyPriced>
+                <isAutoPriced>isAutoPr</isAutoPriced>
+                <isRefundReported>isRefund</isRefundReported>
+                <isNASAReported>isNASARe</isNASAReported>
+                <isBoardPointValidated>isBoardP</isBoardPointValidated>
+                <isOffPointValidated>isOffPoi</isOffPointValidated>
+                <isGroupDeposit>isGroupD</isGroupDeposit>
+                <auxillaryServiceIndicator>a</auxillaryServiceIndicator>
+                <isExchangedByRMCO>isExchan</isExchangedByRMCO>
+                <isRapidDownload>isRapidD</isRapidDownload>
+                <flightIssuanceReasonType>f</flightIssuanceReasonType>
+                <isASVCForGDS>isASVCFo</isASVCForGDS>
+                <openEmdType>openEmdType3</openEmdType>
+                <notValidBeforeDate>XXXXXXXXXXXXXX</notValidBeforeDate>
+                <notvalidAfterDate>XXXXXXXXXXXXXX</notvalidAfterDate>
+                <marketingFlightNumber>XX</marketingFlightNumber>
+                <marketingFlightRBD>marketingFlightRBD3</marketingFlightRBD>
+                <PNRCreationDate>XXXXXXXXXXXXXX</PNRCreationDate>
+                <ticketIssueDate>XXXXXXXXXXXXXX</ticketIssueDate>
+                <issuanceReasonCodeDetails>issuanceReasonCodeDetails3</issuanceReasonCodeDetails>
+                <additionalAttribute key="key81" value="value81"/>
+                <additionalAttribute key="key83" value="value83"/>
+            </flightCouponDetails>
+        </couponDetails>
+        <ticketDetails>
+            <ticketCreationdate>XXXXXXXXXXXXXX</ticketCreationdate>
+            <issuanceTypeIndicator>issuanceTypeIndicatorXX</issuanceTypeIndicator>
+            <connectionTicketNumber>XX</connectionTicketNumber>
+            <additionalAttribute key="key85" value="value85"/>
+            <additionalAttribute key="key87" value="value87"/>
+        </ticketDetails>
+        <passengerDetails>
+            <passengerNameDetails>
+                <isInfantNameMatch>isInfant</isInfantNameMatch>
+                <deleteIndicator>d</deleteIndicator>
+                <nameSetupIndicator>n</nameSetupIndicator>
+                <paxNameItemNumber>paxNameI</paxNameItemNumber>
+                <paxFullname>paxFullnameXX</paxFullname>
+                <paxSurName>paxSurNameXX</paxSurName>
+                <paxInitalName>paxInitalNameXX</paxInitalName>
+                <paxDescriptionCode>paxDescriptionCodeXX</paxDescriptionCode>
+                <creationSource>creation</creationSource>
+                <ageofMinorPassenger>XX</ageofMinorPassenger>
+                <magneticStripeIndicator>m</magneticStripeIndicator>
+                <paxPNRName>paxPNRNameXX</paxPNRName>
+                <additionalAttribute key="key89" value="value89"/>
+                <additionalAttribute key="key91" value="value91"/>
+            </passengerNameDetails>
+            <frequentFlyerDetails>
+                <couponOrdinalNumber>couponOrdinalNumberXX</couponOrdinalNumber>
+                <modificationIndicator>modificationIndicatorXX</modificationIndicator>
+                <frequentFlyerType>frequent</frequentFlyerType>
+                <frequentFlyerNumber>frequentFlyerNumberXX</frequentFlyerNumber>
+                <additionalAttribute key="key93" value="value93"/>
+                <additionalAttribute key="key95" value="value95"/>
+            </frequentFlyerDetails>
+            <frequentFlyerDetails>
+                <couponOrdinalNumber>couponOrdinalNumber1</couponOrdinalNumber>
+                <modificationIndicator>modificationIndicator1</modificationIndicator>
+                <frequentFlyerType>frequent</frequentFlyerType>
+                <frequentFlyerNumber>frequentFlyerNumber1</frequentFlyerNumber>
+                <additionalAttribute key="key97" value="value97"/>
+                <additionalAttribute key="key99" value="value99"/>
+            </frequentFlyerDetails>
+            <passengerIdentificationDetails>
+                <formOfIdentificationCode>formOfIdentificationCodeXX</formOfIdentificationCode>
+                <formOfIdentificationNumber>formOfIdentificationNumberXX</formOfIdentificationNumber>
+                <additionalAttribute key="key1XX1" value="value1XX1"/>
+                <additionalAttribute key="key1XX3" value="value1XX3"/>
+            </passengerIdentificationDetails>
+            <passengerIdentificationDetails>
+                <formOfIdentificationCode>formOfIdentificationCode1</formOfIdentificationCode>
+                <formOfIdentificationNumber>formOfIdentificationNumber1</formOfIdentificationNumber>
+                <additionalAttribute key="key1XX5" value="value1XX5"/>
+                <additionalAttribute key="key1XX7" value="value1XX7"/>
+            </passengerIdentificationDetails>
+        </passengerDetails>
+        <fareDetails>
+            <allFareDetail>
+                <totalFareData>
+                    <totalFareStatus>XX</totalFareStatus>
+                    <fareTypeIndicator>fareTypeIndicatorXX</fareTypeIndicator>
+                    <salesCountryCode>AA</salesCountryCode>
+                    <fareData>
+                        <currencyDecimalNumber>currency</currencyDecimalNumber>
+                        <totalFaredetails>
+                            <currencyCode>currency</currencyCode>
+                            <amount>XXXXXXX</amount>
+                            <additionalInformation>additionalInformation13</additionalInformation>
+                        </totalFaredetails>
+                    </fareData>
+                    <additionalAttribute key="key1XX9" value="value1XX9"/>
+                    <additionalAttribute key="key111" value="value111"/>
+                </totalFareData>
+                <netFareData>
+                    <totalFare>
+                        <currencyDecimalNumber>currency</currencyDecimalNumber>
+                        <totalFaredetails>
+                            <currencyCode>currency</currencyCode>
+                            <amount>XXXXXXX</amount>
+                            <additionalInformation>additionalInformation14</additionalInformation>
+                        </totalFaredetails>
+                    </totalFare>
+                    <additionalAttribute key="key113" value="value113"/>
+                    <additionalAttribute key="key115" value="value115"/>
+                </netFareData>
+                <fareTypeData>
+                    <totalStatus>totalSta</totalStatus>
+                    <totalFareData>
+                        <currencyDecimalNumber>currency</currencyDecimalNumber>
+                        <totalFaredetails>
+                            <currencyCode>currency</currencyCode>
+                            <amount>XXXXXXX</amount>
+                            <additionalInformation>additionalInformation15</additionalInformation>
+                        </totalFaredetails>
+                    </totalFareData>
+                    <additionalAttribute key="key117" value="value117"/>
+                    <additionalAttribute key="key119" value="value119"/>
+                </fareTypeData>
+                <netTotalData>
+                    <totalFare>
+                        <currencyDecimalNumber>currency</currencyDecimalNumber>
+                        <totalFaredetails>
+                            <currencyCode>currency</currencyCode>
+                            <amount>XXXXXXX</amount>
+                            <additionalInformation>additionalInformation16</additionalInformation>
+                        </totalFaredetails>
+                    </totalFare>
+                    <additionalAttribute key="key121" value="value121"/>
+                    <additionalAttribute key="key123" value="value123"/>
+                </netTotalData>
+                <equivalentfareData>
+                    <equivalentfareStatus>equivale</equivalentfareStatus>
+                    <totalFare>
+                        <currencyDecimalNumber>currency</currencyDecimalNumber>
+                        <totalFaredetails>
+                            <currencyCode>currency</currencyCode>
+                            <amount>XXXXXXX</amount>
+                            <additionalInformation>additionalInformation17</additionalInformation>
+                        </totalFaredetails>
+                    </totalFare>
+                </equivalentfareData>
+                <netequivalentfareData>
+                    <currencyDecimalNumber>currency</currencyDecimalNumber>
+                    <totalFaredetails>
+                        <currencyCode>currency</currencyCode>
+                        <amount>XXXXXXX</amount>
+                        <additionalInformation>additionalInformation18</additionalInformation>
+                    </totalFaredetails>
+                </netequivalentfareData>
+                <fareCalculationDetails>
+                    <fareCalculationModeIndicator>fareCalculationModeIndic</fareCalculationModeIndicator>
+                    <fareCalculationData>fareCalculationDataXX</fareCalculationData>
+                    <additionalAttribute key="key125" value="value125"/>
+                    <additionalAttribute key="key127" value="value127"/>
+                </fareCalculationDetails>
+            </allFareDetail>
+            <taxDetails>
+                <taxStatus>taxStatu</taxStatus>
+                <taxDataSource>t</taxDataSource>
+                <taxdetails>
+                    <currencyDecimalNumber>currency</currencyDecimalNumber>
+                    <totalFaredetails>
+                        <currencyCode>currency</currencyCode>
+                        <amount>XXXXXXX</amount>
+                        <additionalInformation>additionalInformation19</additionalInformation>
+                    </totalFaredetails>
+                </taxdetails>
+                <taxCode>taxCodeXX</taxCode>
+            </taxDetails>
+            <taxDetails>
+                <taxStatus>taxStatu</taxStatus>
+                <taxDataSource>t</taxDataSource>
+                <taxdetails>
+                    <currencyDecimalNumber>currency</currencyDecimalNumber>
+                    <totalFaredetails>
+                        <currencyCode>currency</currencyCode>
+                        <amount>XXXXXXX</amount>
+                        <additionalInformation>additionalInformation2XX</additionalInformation>
+                    </totalFaredetails>
+                </taxdetails>
+                <taxCode>taxCode1</taxCode>
+            </taxDetails>
+            <commissionDetails>
+                <commissionAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation21</additionalInformation>
+                </commissionAmount>
+                <commissionableAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation22</additionalInformation>
+                </commissionableAmount>
+                <commissionRetainedAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation23</additionalInformation>
+                </commissionRetainedAmount>
+                <commissionRate>commissi</commissionRate>
+                <commissionIndicator>c</commissionIndicator>
+                <CRSTotalData>CRSTotalDataXX</CRSTotalData>
+                <additionalAttribute key="key129" value="value129"/>
+                <additionalAttribute key="key131" value="value131"/>
+            </commissionDetails>
+            <withHoldTax>
+                <withHoldTaxRate>withHold</withHoldTaxRate>
+                <withHoldTaxAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation24</additionalInformation>
+                </withHoldTaxAmount>
+                <partyCode>partyCodeXX</partyCode>
+                <additionalAttribute key="key133" value="value133"/>
+                <additionalAttribute key="key135" value="value135"/>
+            </withHoldTax>
+        </fareDetails>
+        <paymentDetails>
+            <creditCardDetails>
+                <cardType>cardTypeXX</cardType>
+                <cardType>cardType1</cardType>
+                <cardNumber>cardNumberXX</cardNumber>
+                <cardNumber>cardNumber1</cardNumber>
+                <additionalAttribute key="key137" value="value137"/>
+                <additionalAttribute key="key139" value="value139"/>
+            </creditCardDetails>
+            <creditCardDetails>
+                <cardType>cardType2</cardType>
+                <cardType>cardType3</cardType>
+                <cardNumber>cardNumber2</cardNumber>
+                <cardNumber>cardNumber3</cardNumber>
+                <additionalAttribute key="key141" value="value141"/>
+                <additionalAttribute key="key143" value="value143"/>
+            </creditCardDetails>
+            <paymentPrimaryMethod>
+                <FOPIndicator1>FOPIndicator1XX</FOPIndicator1>
+                <FOPIndicator2>FOPIndicator2XX</FOPIndicator2>
+                <FOPIndicator3>FOPIndicator3XX</FOPIndicator3>
+                <FOPData>FOPDataXX</FOPData>
+                <keyPaymentTypeData>
+                    <primaryPaymentTypeKeyCode>primaryPaymentTypeKeyCodeXX</primaryPaymentTypeKeyCode>
+                    <repeatingNumber>repeat</repeatingNumber>
+                    <paymentTypeIndicator>X</paymentTypeIndicator>
+                    <salesLocation>s</salesLocation>
+                </keyPaymentTypeData>
+                <BSPReportPaymentMethod>BSPReportPaymentMethodXX</BSPReportPaymentMethod>
+                <paymentMethodType>X</paymentMethodType>
+                <amountIndicator>a</amountIndicator>
+                <remittanceTYpe>XX</remittanceTYpe>
+                <FOPPrintData>FOPPrintDataXX</FOPPrintData>
+                <additionalAttribute key="key145" value="value145"/>
+                <additionalAttribute key="key147" value="value147"/>
+            </paymentPrimaryMethod>
+            <paymentPrimaryMethod>
+                <FOPIndicator1>FOPIndicator11</FOPIndicator1>
+                <FOPIndicator2>FOPIndicator21</FOPIndicator2>
+                <FOPIndicator3>FOPIndicator31</FOPIndicator3>
+                <FOPData>FOPData1</FOPData>
+                <keyPaymentTypeData>
+                    <primaryPaymentTypeKeyCode>primaryPaymentTypeKeyCode1</primaryPaymentTypeKeyCode>
+                    <repeatingNumber>repeat</repeatingNumber>
+                    <paymentTypeIndicator>X</paymentTypeIndicator>
+                    <salesLocation>s</salesLocation>
+                </keyPaymentTypeData>
+                <BSPReportPaymentMethod>BSPReportPaymentMethod1</BSPReportPaymentMethod>
+                <paymentMethodType>X</paymentMethodType>
+                <amountIndicator>a</amountIndicator>
+                <remittanceTYpe>XX</remittanceTYpe>
+                <FOPPrintData>FOPPrintData1</FOPPrintData>
+                <additionalAttribute key="key149" value="value149"/>
+                <additionalAttribute key="key151" value="value151"/>
+            </paymentPrimaryMethod>
+            <paymentMethodDetails>
+                <paymentMethodKeyData>
+                    <primaryPaymentTypeKeyCode>primaryPaymentTypeKeyCode2</primaryPaymentTypeKeyCode>
+                    <repeatingNumber>repeat</repeatingNumber>
+                    <paymentTypeIndicator>X</paymentTypeIndicator>
+                    <salesLocation>s</salesLocation>
+                </paymentMethodKeyData>
+                <subitemNumber>subite</subitemNumber>
+                <modificationIndicator>XX</modificationIndicator>
+                <subitemKey>subitemK</subitemKey>
+                <OMCIndicator>XX</OMCIndicator>
+                <OMCRelationIndicator>XX</OMCRelationIndicator>
+                <ticketPriority>ticketPr</ticketPriority>
+                <ATBPrinterlocation>ATBPrint</ATBPrinterlocation>
+                <paymentTypeSubitemSource>paymentT</paymentTypeSubitemSource>
+                <tapeLocation>tapeLoca</tapeLocation>
+                <salesLocation>s</salesLocation>
+                <paymentTypeSubItem>paymentTypeSubItemXX</paymentTypeSubItem>
+                <additionalAttribute key="key153" value="value153"/>
+                <additionalAttribute key="key155" value="value155"/>
+            </paymentMethodDetails>
+            <paymentMethodDetails>
+                <paymentMethodKeyData>
+                    <primaryPaymentTypeKeyCode>primaryPaymentTypeKeyCode3</primaryPaymentTypeKeyCode>
+                    <repeatingNumber>repeat</repeatingNumber>
+                    <paymentTypeIndicator>X</paymentTypeIndicator>
+                    <salesLocation>s</salesLocation>
+                </paymentMethodKeyData>
+                <subitemNumber>subite</subitemNumber>
+                <modificationIndicator>XX</modificationIndicator>
+                <subitemKey>subitemK</subitemKey>
+                <OMCIndicator>XX</OMCIndicator>
+                <OMCRelationIndicator>XX</OMCRelationIndicator>
+                <ticketPriority>ticketPr</ticketPriority>
+                <ATBPrinterlocation>ATBPrint</ATBPrinterlocation>
+                <paymentTypeSubitemSource>paymentT</paymentTypeSubitemSource>
+                <tapeLocation>tapeLoca</tapeLocation>
+                <salesLocation>s</salesLocation>
+                <paymentTypeSubItem>paymentTypeSubItem1</paymentTypeSubItem>
+                <additionalAttribute key="key157" value="value157"/>
+                <additionalAttribute key="key159" value="value159"/>
+            </paymentMethodDetails>
+        </paymentDetails>
+        <paymentDetails>
+            <creditCardDetails>
+                <cardType>cardType4</cardType>
+                <cardType>cardType5</cardType>
+                <cardNumber>cardNumber4</cardNumber>
+                <cardNumber>cardNumber5</cardNumber>
+                <additionalAttribute key="key161" value="value161"/>
+                <additionalAttribute key="key163" value="value163"/>
+            </creditCardDetails>
+            <creditCardDetails>
+                <cardType>cardType6</cardType>
+                <cardType>cardType7</cardType>
+                <cardNumber>cardNumber6</cardNumber>
+                <cardNumber>cardNumber7</cardNumber>
+                <additionalAttribute key="key165" value="value165"/>
+                <additionalAttribute key="key167" value="value167"/>
+            </creditCardDetails>
+            <paymentPrimaryMethod>
+                <FOPIndicator1>FOPIndicator12</FOPIndicator1>
+                <FOPIndicator2>FOPIndicator22</FOPIndicator2>
+                <FOPIndicator3>FOPIndicator32</FOPIndicator3>
+                <FOPData>FOPData2</FOPData>
+                <keyPaymentTypeData>
+                    <primaryPaymentTypeKeyCode>primaryPaymentTypeKeyCode4</primaryPaymentTypeKeyCode>
+                    <repeatingNumber>repeat</repeatingNumber>
+                    <paymentTypeIndicator>X</paymentTypeIndicator>
+                    <salesLocation>s</salesLocation>
+                </keyPaymentTypeData>
+                <BSPReportPaymentMethod>BSPReportPaymentMethod2</BSPReportPaymentMethod>
+                <paymentMethodType>X</paymentMethodType>
+                <amountIndicator>a</amountIndicator>
+                <remittanceTYpe>XX</remittanceTYpe>
+                <FOPPrintData>FOPPrintData2</FOPPrintData>
+                <additionalAttribute key="key169" value="value169"/>
+                <additionalAttribute key="key171" value="value171"/>
+            </paymentPrimaryMethod>
+            <paymentPrimaryMethod>
+                <FOPIndicator1>FOPIndicator13</FOPIndicator1>
+                <FOPIndicator2>FOPIndicator23</FOPIndicator2>
+                <FOPIndicator3>FOPIndicator33</FOPIndicator3>
+                <FOPData>FOPData3</FOPData>
+                <keyPaymentTypeData>
+                    <primaryPaymentTypeKeyCode>primaryPaymentTypeKeyCode5</primaryPaymentTypeKeyCode>
+                    <repeatingNumber>repeat</repeatingNumber>
+                    <paymentTypeIndicator>X</paymentTypeIndicator>
+                    <salesLocation>s</salesLocation>
+                </keyPaymentTypeData>
+                <BSPReportPaymentMethod>BSPReportPaymentMethod3</BSPReportPaymentMethod>
+                <paymentMethodType>X</paymentMethodType>
+                <amountIndicator>a</amountIndicator>
+                <remittanceTYpe>XX</remittanceTYpe>
+                <FOPPrintData>FOPPrintData3</FOPPrintData>
+                <additionalAttribute key="key173" value="value173"/>
+                <additionalAttribute key="key175" value="value175"/>
+            </paymentPrimaryMethod>
+            <paymentMethodDetails>
+                <paymentMethodKeyData>
+                    <primaryPaymentTypeKeyCode>primaryPaymentTypeKeyCode6</primaryPaymentTypeKeyCode>
+                    <repeatingNumber>repeat</repeatingNumber>
+                    <paymentTypeIndicator>X</paymentTypeIndicator>
+                    <salesLocation>s</salesLocation>
+                </paymentMethodKeyData>
+                <subitemNumber>subite</subitemNumber>
+                <modificationIndicator>XX</modificationIndicator>
+                <subitemKey>subitemK</subitemKey>
+                <OMCIndicator>XX</OMCIndicator>
+                <OMCRelationIndicator>XX</OMCRelationIndicator>
+                <ticketPriority>ticketPr</ticketPriority>
+                <ATBPrinterlocation>ATBPrint</ATBPrinterlocation>
+                <paymentTypeSubitemSource>paymentT</paymentTypeSubitemSource>
+                <tapeLocation>tapeLoca</tapeLocation>
+                <salesLocation>s</salesLocation>
+                <paymentTypeSubItem>paymentTypeSubItem2</paymentTypeSubItem>
+                <additionalAttribute key="key177" value="value177"/>
+                <additionalAttribute key="key179" value="value179"/>
+            </paymentMethodDetails>
+            <paymentMethodDetails>
+                <paymentMethodKeyData>
+                    <primaryPaymentTypeKeyCode>primaryPaymentTypeKeyCode7</primaryPaymentTypeKeyCode>
+                    <repeatingNumber>repeat</repeatingNumber>
+                    <paymentTypeIndicator>X</paymentTypeIndicator>
+                    <salesLocation>s</salesLocation>
+                </paymentMethodKeyData>
+                <subitemNumber>subite</subitemNumber>
+                <modificationIndicator>XX</modificationIndicator>
+                <subitemKey>subitemK</subitemKey>
+                <OMCIndicator>XX</OMCIndicator>
+                <OMCRelationIndicator>XX</OMCRelationIndicator>
+                <ticketPriority>ticketPr</ticketPriority>
+                <ATBPrinterlocation>ATBPrint</ATBPrinterlocation>
+                <paymentTypeSubitemSource>paymentT</paymentTypeSubitemSource>
+                <tapeLocation>tapeLoca</tapeLocation>
+                <salesLocation>s</salesLocation>
+                <paymentTypeSubItem>paymentTypeSubItem3</paymentTypeSubItem>
+                <additionalAttribute key="key181" value="value181"/>
+                <additionalAttribute key="key183" value="value183"/>
+            </paymentMethodDetails>
+        </paymentDetails>
+        <revenueDetails>
+            <revenueAdjustmentData>
+                <IATACodeAndEMDCheckDigit>IATACodeAndEMDCheckDigit</IATACodeAndEMDCheckDigit>
+                <revenueAdjustmentIndicator>XX</revenueAdjustmentIndicator>
+                <transactionDetails>
+                    <host>XXXX</host>
+                    <IATACode>IATACodeXX</IATACode>
+                    <agentDutyCode>agentDut</agentDutyCode>
+                    <currencyCode>XX</currencyCode>
+                    <reportingCity>XXXXXX</reportingCity>
+                    <reportDate>XXXXXXXXXXXXXX</reportDate>
+                    <paymentMethod>paymentMethodXX</paymentMethod>
+                    <paymentMethodSubitem>paymentMethodSubitemXX</paymentMethodSubitem>
+                </transactionDetails>
+                <city>XXXXXX</city>
+                <firstRevenueAdjustmentDate>XXXXXXXXXXXXXX</firstRevenueAdjustmentDate>
+                <firstRevenueAdjustmentTime>firstRevenueAdjustmentTimeXX</firstRevenueAdjustmentTime>
+                <lastRevenueAdjustmentDate>XXXXXXXXXXXXXX</lastRevenueAdjustmentDate>
+                <lastRevenueAdjustmentTime>lastRevenueAdjustmentTimeXX</lastRevenueAdjustmentTime>
+                <revenueAdjustmentDate>XXXXXXXXXXXXXXXXXX</revenueAdjustmentDate>
+                <reasonCode>reasonCodeXX</reasonCode>
+                <localReportingDate>XXXXXXXXXXXXXX</localReportingDate>
+                <revenueAdjustmentReportNumber>revenueAdjustmentReportN</revenueAdjustmentReportNumber>
+                <reportingAgentInitials>
+                    <agentCode>agentCod</agentCode>
+                    <agentCRI>agentCRI</agentCRI>
+                    <agentIATACode>agentIATACode6</agentIATACode>
+                </reportingAgentInitials>
+                <reportingCity>XXXXXX</reportingCity>
+                <reportedIndicator>reported</reportedIndicator>
+                <decimalNumber>d</decimalNumber>
+                <revenueAdjustmentDetails>revenueAdjustmentDetailsXX</revenueAdjustmentDetails>
+                <additionalAttribute key="key185" value="value185"/>
+                <additionalAttribute key="key187" value="value187"/>
+            </revenueAdjustmentData>
+            <revenueAdjustmentData>
+                <IATACodeAndEMDCheckDigit>IATACodeAndEMDCheckDigit</IATACodeAndEMDCheckDigit>
+                <revenueAdjustmentIndicator>XX</revenueAdjustmentIndicator>
+                <transactionDetails>
+                    <host>XXXX</host>
+                    <IATACode>IATACode1</IATACode>
+                    <agentDutyCode>agentDut</agentDutyCode>
+                    <currencyCode>XX</currencyCode>
+                    <reportingCity>XXXXXX</reportingCity>
+                    <reportDate>XXXXXXXXXXXXXX</reportDate>
+                    <paymentMethod>paymentMethod1</paymentMethod>
+                    <paymentMethodSubitem>paymentMethodSubitem1</paymentMethodSubitem>
+                </transactionDetails>
+                <city>XXXXXX</city>
+                <firstRevenueAdjustmentDate>XXXXXXXXXXXXXX</firstRevenueAdjustmentDate>
+                <firstRevenueAdjustmentTime>firstRevenueAdjustmentTime1</firstRevenueAdjustmentTime>
+                <lastRevenueAdjustmentDate>XXXXXXXXXXXXXX</lastRevenueAdjustmentDate>
+                <lastRevenueAdjustmentTime>lastRevenueAdjustmentTime1</lastRevenueAdjustmentTime>
+                <revenueAdjustmentDate>XXXXXXXXXXXXXXXXXX</revenueAdjustmentDate>
+                <reasonCode>reasonCode1</reasonCode>
+                <localReportingDate>XXXXXXXXXXXXXX</localReportingDate>
+                <revenueAdjustmentReportNumber>revenueAdjustmentReportN</revenueAdjustmentReportNumber>
+                <reportingAgentInitials>
+                    <agentCode>agentCod</agentCode>
+                    <agentCRI>agentCRI</agentCRI>
+                    <agentIATACode>agentIATACode7</agentIATACode>
+                </reportingAgentInitials>
+                <reportingCity>XXXXXX</reportingCity>
+                <reportedIndicator>reported</reportedIndicator>
+                <decimalNumber>d</decimalNumber>
+                <revenueAdjustmentDetails>revenueAdjustmentDetails1</revenueAdjustmentDetails>
+                <additionalAttribute key="key189" value="value189"/>
+                <additionalAttribute key="key191" value="value191"/>
+            </revenueAdjustmentData>
+            <refundDetails>
+                <transactionDetails>
+                    <host>XXXX</host>
+                    <IATACode>IATACode2</IATACode>
+                    <agentDutyCode>agentDut</agentDutyCode>
+                    <currencyCode>XX</currencyCode>
+                    <reportingCity>XXXXXX</reportingCity>
+                    <reportDate>XXXXXXXXXXXXXX</reportDate>
+                    <paymentMethod>paymentMethod2</paymentMethod>
+                    <paymentMethodSubitem>paymentMethodSubitem2</paymentMethodSubitem>
+                </transactionDetails>
+                <refundReportNumber>refund</refundReportNumber>
+                <refundFare>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation25</additionalInformation>
+                </refundFare>
+                <refundTax>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation26</additionalInformation>
+                </refundTax>
+                <netTotalRefund>netTotalRefundXX</netTotalRefund>
+                <couponNumber>coupon</couponNumber>
+                <documentTypeIndicator>d</documentTypeIndicator>
+                <refundedBookletNumber>refundedBookletNumberXX</refundedBookletNumber>
+                <additionalAttribute key="key193" value="value193"/>
+                <additionalAttribute key="key195" value="value195"/>
+            </refundDetails>
+            <refundDetails>
+                <transactionDetails>
+                    <host>XXXX</host>
+                    <IATACode>IATACode3</IATACode>
+                    <agentDutyCode>agentDut</agentDutyCode>
+                    <currencyCode>XX</currencyCode>
+                    <reportingCity>XXXXXX</reportingCity>
+                    <reportDate>XXXXXXXXXXXXXX</reportDate>
+                    <paymentMethod>paymentMethod3</paymentMethod>
+                    <paymentMethodSubitem>paymentMethodSubitem3</paymentMethodSubitem>
+                </transactionDetails>
+                <refundReportNumber>refund</refundReportNumber>
+                <refundFare>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation27</additionalInformation>
+                </refundFare>
+                <refundTax>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation28</additionalInformation>
+                </refundTax>
+                <netTotalRefund>netTotalRefund1</netTotalRefund>
+                <couponNumber>coupon</couponNumber>
+                <documentTypeIndicator>d</documentTypeIndicator>
+                <refundedBookletNumber>refundedBookletNumber1</refundedBookletNumber>
+                <additionalAttribute key="key197" value="value197"/>
+                <additionalAttribute key="key199" value="value199"/>
+            </refundDetails>
+            <GDSInformation>
+                <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                <CRSType>CRSTypeXX</CRSType>
+                <CRSPNR>CRSPNRXX</CRSPNR>
+                <agentPseudoCity>agentPse</agentPseudoCity>
+                <commissionIndicator>X</commissionIndicator>
+                <commissionCurrency>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation29</additionalInformation>
+                </commissionCurrency>
+                <commissionAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation3XX</additionalInformation>
+                </commissionAmount>
+                <commissionRate>commissi</commissionRate>
+                <CRSTotal>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation31</additionalInformation>
+                </CRSTotal>
+                <additionalAttribute key="key2XX1" value="value2XX1"/>
+                <additionalAttribute key="key2XX3" value="value2XX3"/>
+            </GDSInformation>
+            <GDSInformation>
+                <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                <CRSType>CRSType1</CRSType>
+                <CRSPNR>CRSPNR1</CRSPNR>
+                <agentPseudoCity>agentPse</agentPseudoCity>
+                <commissionIndicator>X</commissionIndicator>
+                <commissionCurrency>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation32</additionalInformation>
+                </commissionCurrency>
+                <commissionAmount>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation33</additionalInformation>
+                </commissionAmount>
+                <commissionRate>commissi</commissionRate>
+                <CRSTotal>
+                    <currencyCode>currency</currencyCode>
+                    <amount>XXXXXXX</amount>
+                    <additionalInformation>additionalInformation34</additionalInformation>
+                </CRSTotal>
+                <additionalAttribute key="key2XX5" value="value2XX5"/>
+                <additionalAttribute key="key2XX7" value="value2XX7"/>
+            </GDSInformation>
+            <exchangeDetailsofCRSIssued>
+                <CRSSegmentNumber>CRSSegme</CRSSegmentNumber>
+                <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                <segmentData>segmentDataXX</segmentData>
+                <additionalAttribute key="key2XX9" value="value2XX9"/>
+                <additionalAttribute key="key211" value="value211"/>
+            </exchangeDetailsofCRSIssued>
+            <exchangeDetailsofCRSIssued>
+                <CRSSegmentNumber>CRSSegme</CRSSegmentNumber>
+                <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                <segmentData>segmentData1</segmentData>
+                <additionalAttribute key="key213" value="value213"/>
+                <additionalAttribute key="key215" value="value215"/>
+            </exchangeDetailsofCRSIssued>
+            <CRSHistoryDetails>
+                <CRSHiscouponInfo sequenceNumber="XX">
+                    <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                    <agentCityCode>agentCit</agentCityCode>
+                    <settlementAuthorizationCode>settlementAuthorizationC</settlementAuthorizationCode>
+                    <historyItemNumber>historyItemNumberXX</historyItemNumber>
+                    <additionalAttribute key="key217" value="value217"/>
+                    <additionalAttribute key="key219" value="value219"/>
+                </CRSHiscouponInfo>
+                <CRSHiscouponInfo sequenceNumber="XX">
+                    <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                    <agentCityCode>agentCit</agentCityCode>
+                    <settlementAuthorizationCode>settlementAuthorizationC</settlementAuthorizationCode>
+                    <historyItemNumber>historyItemNumber1</historyItemNumber>
+                    <additionalAttribute key="key221" value="value221"/>
+                    <additionalAttribute key="key223" value="value223"/>
+                </CRSHiscouponInfo>
+            </CRSHistoryDetails>
+            <CRSHistoryDetails>
+                <CRSHiscouponInfo sequenceNumber="XX">
+                    <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                    <agentCityCode>agentCit</agentCityCode>
+                    <settlementAuthorizationCode>settlementAuthorizationC</settlementAuthorizationCode>
+                    <historyItemNumber>historyItemNumber2</historyItemNumber>
+                    <additionalAttribute key="key225" value="value225"/>
+                    <additionalAttribute key="key227" value="value227"/>
+                </CRSHiscouponInfo>
+                <CRSHiscouponInfo sequenceNumber="XX">
+                    <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                    <agentCityCode>agentCit</agentCityCode>
+                    <settlementAuthorizationCode>settlementAuthorizationC</settlementAuthorizationCode>
+                    <historyItemNumber>historyItemNumber3</historyItemNumber>
+                    <additionalAttribute key="key229" value="value229"/>
+                    <additionalAttribute key="key231" value="value231"/>
+                </CRSHiscouponInfo>
+            </CRSHistoryDetails>
+            <CRSHistoryEDIFACT>
+                <CRSHisEDIFACTcouponInfo sequenceNumber="XX">
+                    <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                    <CRSsegmentNumber>CRSsegme</CRSsegmentNumber>
+                    <CRSItemNumber>CRSItemNumber8</CRSItemNumber>
+                    <segmentData>segmentData2</segmentData>
+                    <additionalAttribute key="key233" value="value233"/>
+                    <additionalAttribute key="key235" value="value235"/>
+                </CRSHisEDIFACTcouponInfo>
+                <CRSHisEDIFACTcouponInfo sequenceNumber="XX">
+                    <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                    <CRSsegmentNumber>CRSsegme</CRSsegmentNumber>
+                    <CRSItemNumber>CRSItemNumber9</CRSItemNumber>
+                    <segmentData>segmentData3</segmentData>
+                    <additionalAttribute key="key237" value="value237"/>
+                    <additionalAttribute key="key239" value="value239"/>
+                </CRSHisEDIFACTcouponInfo>
+            </CRSHistoryEDIFACT>
+            <CRSHistoryEDIFACT>
+                <CRSHisEDIFACTcouponInfo sequenceNumber="XX">
+                    <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                    <CRSsegmentNumber>CRSsegme</CRSsegmentNumber>
+                    <CRSItemNumber>CRSItemNumber1XX</CRSItemNumber>
+                    <segmentData>segmentData4</segmentData>
+                    <additionalAttribute key="key241" value="value241"/>
+                    <additionalAttribute key="key243" value="value243"/>
+                </CRSHisEDIFACTcouponInfo>
+                <CRSHisEDIFACTcouponInfo sequenceNumber="XX">
+                    <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+                    <CRSsegmentNumber>CRSsegme</CRSsegmentNumber>
+                    <CRSItemNumber>CRSItemNumber11</CRSItemNumber>
+                    <segmentData>segmentData5</segmentData>
+                    <additionalAttribute key="key245" value="value245"/>
+                    <additionalAttribute key="key247" value="value247"/>
+                </CRSHisEDIFACTcouponInfo>
+            </CRSHistoryEDIFACT>
+            <CRSIssuedInExchange>
+                <CRSExchangedTicketNumber>CRSExchangedTicketNumber</CRSExchangedTicketNumber>
+                <exchangedCoupon1>exchan</exchangedCoupon1>
+                <exchangedMediaiIndicator1>exchange</exchangedMediaiIndicator1>
+                <exchangedCoupon2>exchan</exchangedCoupon2>
+                <exchangedMediaiIndicator2>exchange</exchangedMediaiIndicator2>
+                <exchangedCoupon3>exchan</exchangedCoupon3>
+                <exchangedMediaiIndicator3>exchange</exchangedMediaiIndicator3>
+                <exchangedCoupon4>exchan</exchangedCoupon4>
+                <exchangedMediaiIndicator4>exchange</exchangedMediaiIndicator4>
+                <totalTickets>totalTic</totalTickets>
+                <emdType>emdType2</emdType>
+                <additionalAttribute key="key249" value="value249"/>
+                <additionalAttribute key="key251" value="value251"/>
+            </CRSIssuedInExchange>
+            <CRSIssuedInExchange>
+                <CRSExchangedTicketNumber>CRSExchangedTicketNumber</CRSExchangedTicketNumber>
+                <exchangedCoupon1>exchan</exchangedCoupon1>
+                <exchangedMediaiIndicator1>exchange</exchangedMediaiIndicator1>
+                <exchangedCoupon2>exchan</exchangedCoupon2>
+                <exchangedMediaiIndicator2>exchange</exchangedMediaiIndicator2>
+                <exchangedCoupon3>exchan</exchangedCoupon3>
+                <exchangedMediaiIndicator3>exchange</exchangedMediaiIndicator3>
+                <exchangedCoupon4>exchan</exchangedCoupon4>
+                <exchangedMediaiIndicator4>exchange</exchangedMediaiIndicator4>
+                <totalTickets>totalTic</totalTickets>
+                <emdType>emdType3</emdType>
+                <additionalAttribute key="key253" value="value253"/>
+                <additionalAttribute key="key255" value="value255"/>
+            </CRSIssuedInExchange>
+            <emdExchangeDetails>
+                <exchangeData>exchangeDataXX</exchangeData>
+                <additionalAttribute key="key257" value="value257"/>
+                <additionalAttribute key="key259" value="value259"/>
+            </emdExchangeDetails>
+        </revenueDetails>
+        <staffDetails>
+            <modIndicator>modIndic</modIndicator>
+            <staffNumber>staffNumberXX</staffNumber>
+            <tripType>tripType</tripType>
+            <dateOfBirth>XXXXXXXXXXXXXX</dateOfBirth>
+            <relationshipIndicator>relation</relationshipIndicator>
+            <IRAnumber>IRAnumberXX</IRAnumber>
+            <requestNumber>requestNumberXX</requestNumber>
+            <additionalAttribute key="key261" value="value261"/>
+            <additionalAttribute key="key263" value="value263"/>
+        </staffDetails>
+        <paidSeatDetails>
+            <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+            <originalSeatInfo>
+                <originalSeatNumber>original</originalSeatNumber>
+                <originalSeatType>o</originalSeatType>
+                <originalRemarks>originalRemarksXX</originalRemarks>
+            </originalSeatInfo>
+            <paidSeatInvoluntaryIndicator>p</paidSeatInvoluntaryIndicator>
+            <flownSeatInfo>
+                <flownSeatNumber>flownSea</flownSeatNumber>
+                <flownSeatType>f</flownSeatType>
+                <flownRemarks>flownRemarksXX</flownRemarks>
+            </flownSeatInfo>
+            <additionalAttribute key="key265" value="value265"/>
+        </paidSeatDetails>
+        <paidSeatDetails>
+            <couponOrdinalNumber>couponOr</couponOrdinalNumber>
+            <originalSeatInfo>
+                <originalSeatNumber>original</originalSeatNumber>
+                <originalSeatType>o</originalSeatType>
+                <originalRemarks>originalRemarks1</originalRemarks>
+            </originalSeatInfo>
+            <paidSeatInvoluntaryIndicator>p</paidSeatInvoluntaryIndicator>
+            <flownSeatInfo>
+                <flownSeatNumber>flownSea</flownSeatNumber>
+                <flownSeatType>f</flownSeatType>
+                <flownRemarks>flownRemarks1</flownRemarks>
+            </flownSeatInfo>
+            <additionalAttribute key="key267" value="value267"/>
+        </paidSeatDetails>
+    </emdDetails>
+    <MDADetails>
+        <MDADataDetails>
+            <ATBPrinterLocation>ATBPrinterLocationXX</ATBPrinterLocation>
+            <amount>
+                <currencyCode>currency</currencyCode>
+                <amount>XXXXXXX</amount>
+                <additionalInformation>additionalInformation35</additionalInformation>
+            </amount>
+            <MDAPrintData>MDAPrintDataXX</MDAPrintData>
+            <additionalAttribute key="key269" value="value269"/>
+            <additionalAttribute key="key271" value="value271"/>
+        </MDADataDetails>
+        <MDADataDetails>
+            <ATBPrinterLocation>ATBPrinterLocation1</ATBPrinterLocation>
+            <amount>
+                <currencyCode>currency</currencyCode>
+                <amount>XXXXXXX</amount>
+                <additionalInformation>additionalInformation36</additionalInformation>
+            </amount>
+            <MDAPrintData>MDAPrintData1</MDAPrintData>
+            <additionalAttribute key="key273" value="value273"/>
+            <additionalAttribute key="key275" value="value275"/>
+        </MDADataDetails>
+        <MDAValidationDetails>
+            <airlineAndAgentDetails>airlineAndAgentDetailsXX</airlineAndAgentDetails>
+            <agentCityDetails>agentCityDetailsXX</agentCityDetails>
+            <countryCode>AA</countryCode>
+            <agencyIATANumber>agencyIATANumberXX</agencyIATANumber>
+            <IATACurrencyCode>IATACurr</IATACurrencyCode>
+            <currencyDecimalNumbers>currency</currencyDecimalNumbers>
+            <additionalAttribute key="key277" value="value277"/>
+            <additionalAttribute key="key279" value="value279"/>
+        </MDAValidationDetails>
+        <MDAValidationDetails>
+            <airlineAndAgentDetails>airlineAndAgentDetails1</airlineAndAgentDetails>
+            <agentCityDetails>agentCityDetails1</agentCityDetails>
+            <countryCode>AA</countryCode>
+            <agencyIATANumber>agencyIATANumber1</agencyIATANumber>
+            <IATACurrencyCode>IATACurr</IATACurrencyCode>
+            <currencyDecimalNumbers>currency</currencyDecimalNumbers>
+            <additionalAttribute key="key281" value="value281"/>
+            <additionalAttribute key="key283" value="value283"/>
+        </MDAValidationDetails>
+        <SCNRDetails>
+            <serviceControlNumberforMDA>serviceControlNumberforM</serviceControlNumberforMDA>
+            <serviceControlNumberDataForMDA>serviceControlNumberDataForMDAXX</serviceControlNumberDataForMDA>
+        </SCNRDetails>
+        <SCNRDetails>
+            <serviceControlNumberforMDA>serviceControlNumberforM</serviceControlNumberforMDA>
+            <serviceControlNumberDataForMDA>serviceControlNumberDataForMDA1</serviceControlNumberDataForMDA>
+        </SCNRDetails>
+    </MDADetails>
+</emdData>

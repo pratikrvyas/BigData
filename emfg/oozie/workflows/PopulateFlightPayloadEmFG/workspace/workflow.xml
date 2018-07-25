@@ -1,0 +1,71 @@
+<workflow-app name="PopulateFlightPayloadEmFG_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-c324"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST} </to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-c324">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>spark-execute.sh</exec>
+              <argument>hdfs://${SPARK_JAR}</argument>
+              <argument>${CLASS_NAME}</argument>
+              <argument>${EXECUTOR_MEMORY}</argument>
+              <argument>${DRIVER_MEMORY}</argument>
+              <argument>${QUEUE}</argument>
+              <argument>${MIN_EXECUTORS}</argument>
+              <argument>${MAX_EXECUTORS}</argument>
+              <argument>${EXECUTOR_CORES}</argument>
+              <argument>${INPUT_LOADSHEET_DEDUPE_LOCATION}</argument>
+              <argument>${INPUT_LIDOFSUM_DEDUPE_LOCATION}</argument>
+              <argument>${INPUT_LDM_DEDUPE_LOCATION}</argument>
+              <argument>${INPUT_FLIGHTMASTER_LOCATION}</argument>
+              <argument>${OUTPUT_PAYLOAD_HISTORY_LOCATION}</argument>
+              <argument>${OUTPUT_PAYLOAD_CURRENT_LOCATION}</argument>
+              <argument>${REJECTED_LOADSHEET_LOCATION}</argument>
+              <argument>${REJECTED_LIDOFSUM_LOCATION}</argument>
+              <argument>${REJECTED_LDM_LOCATION}</argument>
+              <argument>${COALESCE_VALUE}</argument>
+              <argument>${LOOKBACK_MONTHS}</argument>
+              <argument>${DATA_LOAD_MODE}</argument>
+              <argument>${COMPRESSION}</argument>
+            <file>spark-execute.sh#spark-execute.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="email-c12d"/>
+        <error to="Kill"/>
+    </action>
+    <action name="email-c12d">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST} </to>
+            <subject>Workflow ${wf:name()} Completed Successfully</subject>
+            <body>Workflow ${wf:name()} Completed Successfully</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

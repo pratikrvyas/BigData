@@ -1,0 +1,171 @@
+
+<workflow-app name="ImportMobileAppData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-a0d6"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-a0d6">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${MOB_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${MOB_CONTROL_FILE}#${MOB_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-7b75"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="sqoop-034b">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${MOB_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select DEVICE_ID, STATUS, APP_USER_TYPE_ID, APP_TYPE_ID, MODEL_TYPE, MEMBER_ID, LOCALE, CREATED_DATE, UPDATED_DATE, BATCH_ID, SYNC_ATTEMPT_COUNT, ZONE, SYNC_STATUS, API_VERSION, SKYWARDS_PAX_NAME, IS_APPLEWATCH from tbl_device_settings where updated_date between TO_DATE(&#39;${wf:actionData(&#39;shell-a0d6&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND  TO_DATE(&#39;${wf:actionData(&#39;shell-a0d6&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;)  and $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CREATED_DATE=String,UPDATED_DATE=String,SYNC_STATUS=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>MEMBER_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TBL_DEVICE_SETTINGS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TBL_DEVICE_SETTINGS}</arg>
+            <file>${MOB_SQOOP_OPTIONS_FILE}#${MOB_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-92aa"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="sqoop-fc7a">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${MOB_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select FLIGHT_NO_AND_DATE, AIRCRAFT_TYPE, CONF, LST_UPDATED_TIME from TBL_AIRCRAFT_CONF where lst_updated_time between TO_DATE(&#39;${wf:actionData(&#39;shell-a0d6&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND  TO_DATE(&#39;${wf:actionData(&#39;shell-a0d6&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) and $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>LST_UPDATED_TIME=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FLIGHT_NO_AND_DATE</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TBL_AIRCRAFT_CONF</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TBL_AIRCRAFT_CONF}</arg>
+            <file>${MOB_SQOOP_OPTIONS_FILE}#${MOB_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-92aa"/>
+        <error to="email-98ee"/>
+    </action>
+    <fork name="fork-7b75">
+        <path start="sqoop-034b" />
+        <path start="sqoop-fc7a" />
+        <path start="sqoop-5516" />
+    </fork>
+    <join name="join-92aa" to="shell-f4f6"/>
+    <action name="sqoop-5516">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${MOB_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select APP_TYPE_ID, APP_TYPE, MESSAGE_TYPE_ID, PUSH_NOT_ENB  from TBL_APP_TYPE where $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--m</arg>
+              <arg>1</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TBL_APP_TYPE</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TBL_APP_TYPE}</arg>
+            <file>${MOB_SQOOP_OPTIONS_FILE}#${MOB_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-92aa"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="shell-f4f6">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${MOB_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-a0d6&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-a0d6&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${MOB_CONTROL_FILE}#${MOB_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="email-98ee">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

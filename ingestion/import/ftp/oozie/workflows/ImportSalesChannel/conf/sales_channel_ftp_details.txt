@@ -1,0 +1,4 @@
+FTP_HOST=ftp1.emirates.com
+FTP_USER=insight
+FTP_PUBLIC_KEY=/home/satishs/ssh_key/id_rsa
+FTP_DIR=/incoming/insight/STATIC/sales_channel

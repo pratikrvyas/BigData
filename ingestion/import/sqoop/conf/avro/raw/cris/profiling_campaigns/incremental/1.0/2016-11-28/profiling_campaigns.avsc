@@ -1,0 +1,91 @@
+{
+  "type" : "record",
+  "name" : "PROFILING_CAMPAIGNS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PCT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PCT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "START_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "START_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "TARGET_ACT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TARGET_ACT",
+    "sqlType" : "2"
+  }, {
+    "name" : "TARGET_EST",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TARGET_EST",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEND_MAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEND_MAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEND_MAIL_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "SEND_MAIL_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MIN_START_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "MIN_START_DATE",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "PROFILING_CAMPAIGNS"
+}

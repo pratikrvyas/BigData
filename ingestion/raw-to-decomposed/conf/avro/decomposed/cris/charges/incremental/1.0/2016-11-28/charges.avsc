@@ -1,0 +1,201 @@
+{
+  "type" : "record",
+  "name" : "CHARGES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+ {
+    "name" : "SEQ_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEQ_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "STC_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STC_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "RBE_REWARD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RBE_REWARD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "CUR_SHORT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUR_SHORT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PYMT_METHOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PYMT_METHOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "PYMT_REQ_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PYMT_REQ_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "AMOUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PYC_CARD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PYC_CARD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "REASON",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REASON",
+    "sqlType" : "12"
+  }, {
+    "name" : "DUE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PAID_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PAID_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PMA_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PMA_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PER_PERSON_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PER_PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ORG_ORG_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORG_ORG_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRACE_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TRACE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "BATCH_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BATCH_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "BANK_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BANK_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "SALES_OFFICES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_OFFICES",
+    "sqlType" : "12"
+  }, {
+    "name" : "VAT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VAT",
+    "sqlType" : "2"
+  }, {
+    "name" : "DISCOUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "REFUND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REFUND",
+    "sqlType" : "2"
+  }, {
+    "name" : "REFUND_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REFUND_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DISPLAY_TOTAL_AMOUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISPLAY_TOTAL_AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "CORP_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORP_FLAG",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CHARGES"
+}

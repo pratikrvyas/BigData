@@ -1,0 +1,83 @@
+{
+  "type" : "record",
+  "name" : "import_networkgeohierarchi",
+  "doc" : "import of DW_OWNR.geo_location",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "EFFECTIVE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EFFECTIVE_DATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "SNO",
+    "type" : [ "string", "null" ],
+    "columnName" : "SNO",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY",
+    "sqlType" : "93"
+  }, {
+    "name" : "COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_NAME",
+    "sqlType" : "93"
+  },{
+    "name" : "REGION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION_CODE",
+    "sqlType" : "12"
+  },{
+    "name" : "REGION",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION",
+    "sqlType" : "2"
+  }, {
+    "name" : "REPORTING_CURRENCY",
+    "type" : [ "string", "null" ],
+    "columnName" : "REPORTING_CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISO_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISO_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "MAIN_PORT",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAIN_PORT",
+    "sqlType" : "93"
+  }, {
+    "name" : "AREA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AREA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AREA_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "AREA_NAME",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.area_region"
+}

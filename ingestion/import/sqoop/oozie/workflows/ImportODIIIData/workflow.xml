@@ -1,0 +1,60 @@
+
+<workflow-app name="ImportODIIIData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="sqoop-0a6a"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-0a6a">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_OD_BIDPRICE}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${ODIII_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--direct</arg>
+              <arg>--table</arg>
+              <arg>OND.OD_BIDPRICE</arg>
+              <arg>--columns</arg>
+              <arg>FLTDATE,FLTNUM,CRRCODE,ORGN,DSTN,CMPCODE,SEATIDX,LEGDPTDATE,VALUE,RAW_VALUE,UPDATETIME,EXPECTED_VALUE,RAW_EXPECTED_VALUE,VALUE_NO_FRQ_FLY_DMD,RAW_VALUE_NO_FRQ_FLY_DMD</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>FLTDATE=String,LEGDPTDATE=String,UPDATETIME=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>SEATIDX</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>OD_BIDPRICE</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_OD_BIDPRICE}</arg>
+            <file>${ODIII_SQOOP_OPTIONS_FILE}#${ODIII_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

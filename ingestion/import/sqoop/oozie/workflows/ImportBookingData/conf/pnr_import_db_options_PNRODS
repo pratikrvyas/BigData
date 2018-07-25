@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@pnrods_db_ha.app.emirates.com:1526:PODSL
+--username
+pods_qry_user
+--password 
+pods_qry#777
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

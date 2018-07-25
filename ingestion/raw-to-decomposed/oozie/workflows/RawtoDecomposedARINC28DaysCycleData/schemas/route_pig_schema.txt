@@ -1,0 +1,1 @@
+(chararray)$0 AS RteId,(chararray)$1 AS Orig,(chararray)$2 AS OrigIC,(chararray)$3 AS Dest,(chararray)$4 AS DestIC,(chararray)$5 AS Seq,(chararray)$6 AS CI,(chararray)$7 AS LegType,(chararray)$8 AS Awy,(chararray)$9 AS AreaC,(chararray)$10 AS Fix,(chararray)$11 AS FixIC , (chararray)$12 AS FixType, (chararray)$13 AS Cycle

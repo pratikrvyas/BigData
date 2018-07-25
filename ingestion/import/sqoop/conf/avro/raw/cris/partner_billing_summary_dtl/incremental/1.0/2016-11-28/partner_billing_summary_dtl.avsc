@@ -1,0 +1,127 @@
+{
+  "type" : "record",
+  "name" : "PARTNER_BILLING_SUMMARY_DTL",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "DTL_SYSTEM_REF_LINE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DTL_SYSTEM_REF_LINE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "O_ORIG_SYS_REF_LINE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "O_ORIG_SYS_REF_LINE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERFACE_LINE_ATTRIBUTE_1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTERFACE_LINE_ATTRIBUTE_1",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCOUNT_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACCOUNT_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "AMOUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "D_LOB",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "D_LOB",
+    "sqlType" : "12"
+  }, {
+    "name" : "COST_CENTRE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COST_CENTRE",
+    "sqlType" : "12"
+  }, {
+    "name" : "NOMINAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NOMINAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "SUBNOMINAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SUBNOMINAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "ANALYSIS_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ANALYSIS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACFOUT_BATCHID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFOUT_BATCHID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PARTNER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARTNER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVOICE_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INVOICE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVOICE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INVOICE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "NARRATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NARRATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PARTNER_BILLING_SUMMARY_DTL"
+}

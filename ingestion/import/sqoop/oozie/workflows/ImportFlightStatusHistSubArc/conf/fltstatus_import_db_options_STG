@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@lnxdevvm336.hq.emirates.com:6516:FOSSD
+--username
+faceoff_ownr
+--password
+faceoff_ownr
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

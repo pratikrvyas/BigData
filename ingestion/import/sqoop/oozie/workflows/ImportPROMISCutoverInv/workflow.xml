@@ -1,0 +1,89 @@
+
+<workflow-app name="ImportPROMISCutoverInv" xmlns="uri:oozie:workflow:0.5">
+    <start to="shell-77e5"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-77e5">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${PROMIS_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${PROMIS_CONTROL_FILE}#${PROMIS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="sqoop-8d39"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-8d39">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PROMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select SNAP_DT, FLT_MASTER_FLT_KEY, CLS_MASTER_CLASS, CLS_MASTER_COMP, DEP_DATE, DEP_OFFSET, ARR_OFFSET, LEG_SEG_IND, MULTI_LEG_FLT_IND, DUMMY_LEG_IND, ORGN_CITY_NUM, DSTN_CITY_NUM,   GRP_HANDLING_IND, CTRL_HOST_AIRLINE, NESTING_STRING_NBR, NESTING_MODE_IND, EQUIP_CODE, SEG_CLSD_IND, NO_TRFC_RIGHT_IND, CAPACITY, COMP_LEG_UPG_MAX, CAP_PLANNED, LEG_BKG_PERCENT, LEG_PERCENT_APPL,   SEG_SEATS_SOLD, LEG_SEATS_SOLD, SEG_GRP_BKGS, LEG_GRP_BKGS, SEG_CAP_SOLD, LEG_CAP_SOLD, LEG_MIN_SALES, CAP_PROT, CAP_AVLBL, LEG_MAX_SALES, LEG_SEATS_AVLBL, SEG_MAX_SALES, SEG_SEATS_AVLBL,   SEG_PRIOR_WL, LEG_PRIOR_WL, SEG_WL_ALLOWED, SEG_UN_DMND, SEG_SHOWUP_FIGURE, SEG_NOSHOW_PERCENT, LEG_RECALC_OUT, LEG_UNC_OUT, UPD_DT, UPD_ID, ORGN, DSTN, RCL, CAP_ORG, LEG_TKT_COUNT, SEG_TKT_COUNT,   REV_CLASS_FROM, REV_CLASS_TO, INHIBIT_IND from  PRMS_V_HELIX_INV_ADV_PART WHERE  SNAP_DT BETWEEN  TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>SNAP_DT=String,DEP_DATE=String,UPD_DT=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FLT_MASTER_FLT_KEY</arg>
+              <arg>--m</arg>
+              <arg>40</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PRMS_INVENTORY_ADVANCE_PART</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PRMS_INVENTORY_ADVANCE_PART}</arg>
+            <file>${PROMIS_SQOOP_OPTIONS_FILE}#${PROMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="shell-a550"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-a550">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${PROMIS_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${PROMIS_CONTROL_FILE}#${PROMIS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="email-22c4">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>Ksenia.Suresh@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,42 @@
+{
+  "type" : "record",
+  "name" : "sms_gateway",
+  "doc" : "sqoop import of sms_gateway",
+  "fields" : [ {
+    "name" : "helix_uuid",
+    "type" : [ "string", "null" ],
+    "columnname" : "helix_uuid",
+    "sqltype" : "-9"
+  }, {
+    "name" : "helix_timestamp",
+    "type" : [ "string", "null" ],
+    "columnname" : "helix_timestamp",
+    "sqltype" : "-9"
+  },{
+    "name" : "mobile_number",
+    "type" : [ "string", "null" ],
+    "columnname" : "mobile_number",
+    "sqltype" : "12"
+  }, {
+    "name" : "sms_message",
+    "type" : [ "string", "null" ],
+    "columnname" : "sms_message",
+    "sqltype" : "12"
+  }, {
+    "name" : "airline",
+    "type" : [ "string", "null" ],
+    "columnname" : "airline",
+    "sqltype" : "12"
+  }, {
+    "name" : "created_date",
+    "type" : [ "string", "null" ],
+    "columnname" : "created_date",
+    "sqltype" : "93"
+  }, {
+    "name" : "action_time",
+    "type" : [ "string", "null" ],
+    "columnname" : "action_time",
+    "sqltype" : "93"
+  } ],
+  "tablename" : "sms_gateway"
+}

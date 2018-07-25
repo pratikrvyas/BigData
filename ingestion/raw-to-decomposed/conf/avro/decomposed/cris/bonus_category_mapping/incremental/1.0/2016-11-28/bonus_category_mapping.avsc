@@ -1,0 +1,63 @@
+{
+  "type" : "record",
+  "name" : "BONUS_CATEGORY_MAPPING",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [  {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+{
+    "name" : "BONUS_CATEGORY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BONUS_CATEGORY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MILE_CATEGORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MILE_CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "USER_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USER_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USER_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USER_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "BONUS_CATEGORY_MAPPING"
+}

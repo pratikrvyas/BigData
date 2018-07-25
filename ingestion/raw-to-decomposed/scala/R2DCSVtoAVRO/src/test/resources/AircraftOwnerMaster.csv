@@ -1,0 +1,854 @@
+Aircraft Type,Aircraft SubType,AC_REGNO,Aircraft Owner,,,,,,,,,,,,,,,,
+A388,388,A6EDJ,Rimal Limited,,,,,,,,,AIRBUS,A330,A6-EAD,,,A6EAD,A 330-243,Emirates
+A388,388,A6EDK,Jumanah Limited,,,,,,,,,AIRBUS,A330,A6-EAE,,,A6EAE,A 330-243,Emirates
+A388,388,A6EDL,Al Thatha Limited,,,,,,,,,AIRBUS,A330,A6-EAF,,,A6EAF,A 330-243,Gate Capital (Cayman) Seven Limited
+A388,388,A6EDM,Jumanah Limited,,,,,,,,,AIRBUS,A330,A6-EAG,,,A6EAG,A 330-243,RIL Aviation MSN 396 Limited
+A388,388,A6EDN,Rimal Limited,,,,,,,,,AIRBUS,A330,A6-EAH,,,A6-EAH,A 330-243,Emirates
+A388,388,A6EDO,Rimal Limited,,,,,,,,,AIRBUS,A330,A6-EAI,,,A6-EAK,A 330-243,RIL Aviation MSN 452 Limited
+A388,388,A6EDP,MSN077 Limited,,,,,,,,,AIRBUS,A330,A6-EAJ,,,A6-EAM,A 330-243,RIL Aviation MSN 491 Limited
+A388,388,A6EDQ,Shams 1 Limited,,,,,,,,,AIRBUS,A330,A6-EAK,,,A6-EAO,A 330-243,RIL Aviation MSN 509 Limited
+A388,388,A6EDR,Doric Flugzeugfonds Gmbh & Co. KG,,,,,,,,,AIRBUS,A330,A6-EAM,,,A6-EAP,A 330-243,RIL Aviation MSN 525 Limited
+A388,388,A6EDS,Laith MSN 86 and 98 Limited,,,,,,,,,AIRBUS,A330,A6-EAO,,,A6-EAQ,A 330-243,Emirates
+A388,388,A6EDT,MSN090 LIMITED,,,,,,,,,AIRBUS,A330,A6-EAP,,,A6-EAR,A 330-243,Emirates
+A388,388,A6EDU,Laith MSN 86 and 98 Limited,,,,,,,,,AIRBUS,A330,A6-EAQ,,,A6-EAS,A 330-243,Emirates
+A388,388,A6EDV,Shams 1 Limited,,,,,,,,,AIRBUS,A330,A6-EAR,,,A6-EKQ,A 330-243,Gate Capital (Cayman) Four Limited 
+A388,388,A6EDW,DORIC FLUGZEUGFONDS SECHSTE GMBH & CO. KG,,,,,,,,,AIRBUS,A330,A6-EAS,,,A6-EKR,A 330-243,Gate Capital (Cayman) Four Limited 
+A388,388,A6EDX,MSN105 Limited,,,,,,,,,AIRBUS,A330,A6-EKQ,,,A6-EKS,A 330-243,Gate Capital (Cayman) Four Limited 
+A388,388,A6EDY,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,AIRBUS,A330,A6-EKR,,,A6-EKT,A 330-243,Gate Capital (Cayman) Four Limited 
+A388,388,A6EDZ,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,AIRBUS,A330,A6-EKS,,,A6-EKU,A 330-243,Gate Capital (Cayman) Four Limited 
+A388,388,A6EEA,HANNOVER LEASING Flight Invest 50 GmbH & Co. KG,,,,,,,,,AIRBUS,A330,A6-EKT,,,A6-EKV,A 330-243,Emirates
+A388,388,A6EEB,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,AIRBUS,A330,A6-EKU,,,A6-EKW,A 330-243,Emirates
+A388,388,A6EEC,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,AIRBUS,A330,A6-EKV,,,A6-EKX,A 330-243,Gate Capital (Cayman) Seven Limited
+A388,388,A6EED,Laith MSN 86 and 98 Limited,,,,,,,,,AIRBUS,A330,A6-EKW,,,A6-EKY,A 330-243,Gate Capital (Cayman) Seven Limited
+A388,388,A6EEE,MSN 112 Limited,,,,,,,,,AIRBUS,A330,A6-EKX,,,A6-EBA,B 777-300 ER,International Lease Finance Corporation
+A388,388,A6EEF,Laith MSN 86 and 98 Limited,,,,,,,,,AIRBUS,A330,A6-EKY,,,A6-EBB,B 777-300 ER,Celestial Aviation Trading 55 Limited
+A388,388,A6EEG,Khidri Limited,,,,,,,,,AIRBUS,A343,A6-ERM,,,A6-EBC,B 777-300 ER,Celestial Aviation Trading 55 Limited
+A388,388,A6EEH,Khidri Limited,,,,,,,,,AIRBUS,A343,A6-ERN,,,A6-EBD,B 777-300 ER,International Lease Finance Corporation
+A388,388,A6EEI,Emirates,,,,,,,,,AIRBUS,A343,A6-ERO,,,A6-EBE,B 777-300 ER,Celestial Aviation Trading 56 Limited
+A388,388,A6EEJ,Emirates,,,,,,,,,AIRBUS,A343,A6-ERP,,,A6-EBF,B 777-300 ER,International Lease Finance Corporation
+A388,388,A6EEK,DNA Alpha Limited,,,,,,,,,AIRBUS,A343,A6-ERQ,,,A6-EBG,B 777-300 ER,Celestial Aviation Trading 57 Limited
+A388,388,A6EEL,DNA Alpha Limited,,,,,,,,,AIRBUS,A343,A6-ERR,,,A6-EBH,B 777-300 ER,International Lease Finance Corporation
+A388,388,A6EEM,DNA Alpha Limited,,,,,,,,,AIRBUS,A343,A6-ERS,,,A6-EBI,B 777-300 ER,Celestial Aviation Trading 56 Limited
+A388,388,A6EEN,Emirates,,,,,,,,,AIRBUS,A343,A6-ERT,,,A6-EBJ,B 777-300 ER,Celestial Aviation Trading 57 Limited
+A388,388,A6EEO,DNA Alpha Limited,,,,,,,,,AIRBUS,A345,A6-ERA,,,A6-EBK,B 777-300 ER,Mankhool One Limited
+A388,388,A6EEP,Emirates,,,,,,,,,AIRBUS,A345,A6-ERB,,,A6-EBL,B 777-300 ER,International Lease Finance Corporation
+A388,388,A6EER,Barhi Limited,,,,,,,,,AIRBUS,A345,A6-ERC,,,A6-EBM,B 777-300 ER,Mankhool Two Limited
+A388,388,A6EES,Barhi Limited,,,,,,,,,AIRBUS,A345,A6-ERD,,,A6-EBN,B 777-300 ER,Celestial Aviation Trading 64 Limited
+B772,77X,A6EFD,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,AIRBUS,A345,A6-ERE,,,A6-EBO,B 777-300 ER,Celestial Aviation Trading 64 Limited
+B772,77X,A6EFE,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,AIRBUS,A345,A6-ERF,,,A6-EBP,B 777-300 ER,Altair Aviation No. 3 Limited
+B772,77X,A6EFF,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,AIRBUS,A345,A6-ERG,,,A6-EBQ,B 777-300 ER,Celestial Aviation Trading 65 Limited
+B772,77X,A6EFG,MSN 35613 LEASING LIMITED,,,,,,,,,AIRBUS,A345,A6-ERH,,,A6-EBR,B 777-300 ER,Sufooh One Limited
+B772,77X,A6EFH,MSN 35608 LEASING LIMITED,,,,,,,,,AIRBUS,A345,A6-ERI,,,A6-EBS,B 777-300 ER,International Lease Finance Corporation
+B772,77X,A6EFI,MSN 35609 LEASING LIMITED,,,,,,,,,AIRBUS,A345,A6-ERJ,,,A6-EBT,B 777-300 ER,International Lease Finance Corporation
+B772,77X,A6EFJ,MSN 35610 LEASING LIMITED,,,,,,,,,AIRBUS,A380,A6-EDA,,,A6-EBU,B 777-300 ER,Sufooh Two Limited
+B772,77X,A6EFK,MSN 35611 Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EDB,,,A6-EBV,B 777-300 ER,Altair Aviation No. 3 Limited
+B772,77X,A6EFL,MSN 42230 (Cayman) Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EDC,,,A6-EBW,B 777-300 ER,Celestial Aviation Trading 65 Limited
+B772,77X,A6EFM,MSN 42231 (CAYMAN) LEASING LIMITED,,,,,,,,,AIRBUS,A380,A6-EDD,,,A6-EBX,B 777-300 ER,International Lease Finance Corporation
+B77W,77W,A6EGA,Sayarra Limited,,,,,,,,,AIRBUS,A380,A6-EDE,,,A6-EBY,B 777-300 ER,Celestial Aviation Trading 67 Limited
+B77W,77W,A6EGB,Lyon 1 Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EDF,,,A6-EBZ,B 777-300 ER,International Lease Finance Corporation
+B77W,77W,A6EGC,JSA International Aircraft 35596 Limited,,,,,,,,,AIRBUS,A380,A6-EDG,,,A6-ECA,B 777-300 ER,Celestial Aviation Trading 67 Limited
+B77W,77W,A6EGD,Pembroke Aircraft Leasing 1 Limited,,,,,,,,,AIRBUS,A380,A6-EDH,,,A6-ECB,B 777-300 ER,International Lease Finance Corporation
+B77W,77W,A6EGE,Shams 1 Limited,,,,,,,,,AIRBUS,A380,A6-EDI,,,A6-ECC,B 777-300 ER,Celestial Aviation Trading 68 Limited
+B77W,77W,A6EGF,JSA International Aircraft 38987 Limited,,,,,,,,,AIRBUS,A380,A6-EDJ,,,A6-ECD,B 777-300 ER,Celestial Aviation Trading 68 Limited
+B77W,77W,A6EGG,Pembroke Aircraft Leasing 1 Limited,,,,,,,,,AIRBUS,A380,A6-EDK,,,A6-ECE,B 777-300 ER,DS-Rendite-Fonds NR. 124 Flugzeugfonds II GmbH & Co. KG
+B77W,77W,A6EGH,Shams 1 Limited,,,,,,,,,AIRBUS,A380,A6-EDL,,,A6-ECF,B 777-300 ER,Dibla Two Limited
+B77W,77W,A6EGI,MSN International Aircraft 38986 Limited,,,,,,,,,AIRBUS,A380,A6-EDM,,,A6-ECG,B 777-300 ER,Shabka One Limited
+B77W,77W,A6EGJ,Waza 38989 and 41071 Limited,,,,,,,,,AIRBUS,A380,A6-EDN,,,A6-ECH,B 777-300 ER,Kosha One Limited
+B77W,77W,A6EGK,Waza 38989 and 41071 Limited,,,,,,,,,AIRBUS,A380,A6-EDO,,,A6-ECI,B 777-300 ER,Tarha One Limited
+B77W,77W,A6EGL,Safina Limited,,,,,,,,,AIRBUS,A380,A6-EDP,,,A6-ECJ,B 777-300 ER,Kosha Two Limited
+B77W,77W,A6EGM,BAHAR LIMITED,,,,,,,,,AIRBUS,A380,A6-EDQ,,,A6-ECK,B 777-300 ER,Malcha One Limited
+B77W,77W,A6EGN,Abra Limited,,,,,,,,,AIRBUS,A380,A6-EDR,,,A6-ECL,B 777-300 ER,DS-Rendite-Fonds NR. 134 Flugzeugfonds IX GmbH & Co. KG
+B77W,77W,A6EGO,SAFINA LIMITED,,,,,,,,,AIRBUS,A380,A6-EDS,,,A6-ECM,B 777-300 ER,Sky High III Leasing Company Limited
+B77W,77W,A6EGP,Abra Limited,,,,,,,,,AIRBUS,A380,A6-EDT,,,A6-ECN,B 777-300 ER,"GY Aviation Lease 0901 Co., Limited"
+B77W,77W,A6EGQ,AL SALAM LEASING 3 LTD.,,,,,,,,,AIRBUS,A380,A6-EDU,,,A6-ECO,B 777-300 ER,Sky High III Leasing Company Limited
+B77W,77W,A6EGR,NBB NIGHTHAWK CO. LTD. and NBB Spoonbill LLC,,,,,,,,,AIRBUS,A380,A6-EDV,,,A6-ECP,B 777-300 ER,Sinoaero Leasing Co. Limited
+B77W,77W,A6EGS,MSN 41078 AND 35602 LIMITED,,,,,,,,,AIRBUS,A380,A6-EDW,,,A6-ECQ,B 777-300 ER,DS-Rendite-Fonds NR. 13 Flugzeugfonds IX GmbH & Co. KG
+B77W,77W,A6EGT,Owner and Lessor: COMPASS POINT AVIATION NOVUS FIN 1 LTD. SubLessor:COMPASS POINT AVIATION NOVUS LEASE 1 LTD.,,,,,,,,,AIRBUS,A380,A6-EDX,,,A6-ECR,B 777-300 ER,Doric Flugzeugfonds Fuenfte GmbH & Co. KG
+B77W,77W,A6EGU,MSN 41079 AND 41084 LIMITED,,,,,,,,,AIRBUS,A380,A6-EDY,,,A6-ECS,B 777-300 ER,Amal Limited
+B77W,77W,A6EGV,NBB GOLDEN EAGLE LLC and NBB SYLPH CO. LTD,,,,,,,,,AIRBUS,A380,A6-EDZ,,,A6-ECT,B 777-300 ER,Amal Limited
+B77W,77W,A6EGW,ABRA LIMITED,,,,,,,,,AIRBUS,A380,A6-EEA,,,A6-ECU,B 777-300 ER,Amal Limited
+B77W,77W,A6EGX,MSN 41078 AND 35602 LIMITED,,,,,,,,,AIRBUS,A380,A6-EEB,,,A6-ECV,B 777-300 ER,Sayarra Limited
+B77W,77W,A6EGY,WILMINGTON TRUST SP SERVICES (DUBLIN) LIMITED,,,,,,,,,AIRBUS,A380,A6-EEC,,,A6-ECW,B 777-300 ER,Tayarra Limited
+B77W,77W,A6EGZ,NBB HAWFINCH LLC and NBB CRANE CO. LTD.,,,,,,,,,AIRBUS,A380,A6-EED,,,A6-ECX,B 777-300 ER,Safina Limited
+A332,332,A6EKQ,MSN 248 Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EEE,,,A6-ECY,B 777-300 ER,Safina Limited
+A332,332,A6EKR,MSN 251 Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EEF,,,A6-ECZ,B 777-300 ER,Tayarra Limited
+A332,332,A6EKS,MSN 283 Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EEG,,,A6-EGA,B 777-300 ER,Sayarra Limited
+A332,332,A6EKT,MSN 293 Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EEH,,,A6-EGB,B 777-300 ER,Celestial Trade Kumiai
+A332,332,A6EKU,MSN 295 Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EEI,,,A6-EGC,B 777-300 ER,"JSA International Aircraft 35596, Limited"
+A332,332,A6EKV,Emirates,,,,,,,,,AIRBUS,A380,A6-EEJ,,,A6-EGD,B 777-300 ER,Pembroke Aircraft Leasing 1 Limited
+A332,332,A6EKW,Emirates,,,,,,,,,AIRBUS,A380,A6-EEK,,,A6-EGE,B 777-300 ER,Shams 1 Limited
+A332,332,A6EKX,MSN 326 Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EEL,,,A6-EGF,B 777-300 ER,"JSA International Aircraft 38987, Limited"
+B77L,77L,A6EWD,Dibla One Limited,,,,,,,,,AIRBUS,A380,A6-EEM,,,A6-EGG,B 777-300 ER,Pembroke Aircraft Leasing 1 Limited
+B77L,77L,A6EWE,Shabka Two Limited,,,,,,,,,AIRBUS,A380,A6-EEN,,,A6-EGH,B 777-300 ER,Shams 1 Limited
+B77L,77L,A6EWF,Tarha Two Limited,,,,,,,,,AIRBUS,A380,A6-EEO,,,A6-EGI,B 777-300 ER,"MSN International Aircraft 38986, Limited"
+B77L,77L,A6EWG,Inishquirk Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EEP,,,A6-EGJ,B 777-300 ER,Celestial Investment Kumiai
+B77L,77L,A6EWH,Aviation Leasing OpCo 9 S.a.r.l.,,,,,,,,,AIRBUS,A380,A6-EEQ,,,A6-EGK,B 777-300 ER,SAQR AIRCRAFT FIN 1 LTD
+B77L,77L,A6EWI,Malcha Two Limited,,,,,,,,,AIRBUS,A380,A6-EER,,,A6-EGL,B 777-300 ER,Safina Limited
+B77L,77L,A6EWJ,Inishtubrid Leasing Limited,,,,,,,,,AIRBUS,A380,A6-EES,,,A6-EGM,B 777-300 ER,DSN Aircraft Owner 2 Ltd
+B744,BOEING 747-400 (international winglets) Freighter,DACGA,AIR CARGO GERMANY,,,,,,,,,AIRBUS,A380,A6-EET,,,A6-EGN,B 777-300 ER,Novus Aircraft Lease Ltd
+B744,BOEING 747-400 (international winglets) Freighter,G-GSSC,GLOBAL SUPPLY SYSTEMS,,,,,,,,,AIRBUS,A380,A6-EEU,,,A6-EGO,B 777-300 ER,SAFINA LIMITED
+B744,BOEING 747-400 (international winglets) Freighter,N408MC,Atlas Air Inc,,,,,,,,,AIRBUS,A380,A6-EEV,,,A6-EGP,B 777-300 ER,Abra Limited
+B744,BOEING 747-400 (international winglets) Freighter,N415MC,Atlas Air Inc,,,,,,,,,AIRBUS,A380,A6-EEW,,,A6-EGQ,B 777-300 ER,AL SALAM LEASING 3 LTD.
+B744,BOEING 747-400 (international winglets) Freighter,N429MC,Atlas Air Inc,,,,,,,,,AIRBUS,A380,A6-EEX,,,A6-EGR,B 777-300 ER,NBB Spoonbill LLC
+B744,BOEING 747-400 (international winglets) Freighter,N493MC,Atlas Air Inc,,,,,,,,,AIRBUS,A380,A6-EEY,,,A6-EGS,B 777-300 ER,MSN 41078 AND 35602 LIMITED
+B744,BOEING 747-400 (international winglets) Freighter,N497MC,Atlas Air Inc,,,,,,,,,AIRBUS,A380,A6-EEZ,,,A6-EGT,B 777-300 ER,CPAN Fin 2 Limited
+B744,BOEING 747-400 (international winglets) Freighter,N742WA,WORLD AIRWAYS,,,,,,,,,BOEING,B777-200,A6-EMD,,,A6-EGU,B 777-300 ER,MSN 41079 AND 41084 LIMITED
+B744,BOEING 747-400 (international winglets) Freighter,N746CK,KALITTA AIR,,,,,,,,,BOEING,B777-200,A6-EME,,,A6-EGV,B 777-300 ER,"NBB GOLDEN EAGLE LLC and NBB SYLPH CO., LTD"
+B744,BOEING 747-400 (international winglets) Freighter,N748CK,KALITTA AIR,,,,,,,,,BOEING,B777-200,A6-EMF,,,A6-EGW,B 777-300 ER,ABRA LIMITED
+B772,BOEING 777-200 Freighter,N778SA,TNT / SOUTHERN AIR,,,,,,,,,BOEING,B777-200,A6-EMG,,,A6-EGX,B 777-300 ER,MSN 41078 AND 35602 LIMITED
+B744,BOEING 747-400 (international winglets) Extended Range Freighter,OOTHA,TNT Airways S.A.,,,,,,,,,BOEING,B777-200,A6-EMH,,,A6-EGY,B 777-300 ER,WILMINGTON TRUST SP SERVICES (DUBLIN) LIMITED
+B744,BOEING 747-400 (international winglets) Extended Range Freighter,OOTHB,TNT Airways S.A.,,,,,,,,,BOEING,B777-200,A6-EMI,,,A6-EGZ,B 777-300 ER,"NBB HAWFINCH LLC and NBB CRANE CO., LTD."
+B744,BOEING 747-400 (international winglets) Extended Range Freighter,OOTHC,Aircraft MSN 35235 LLC,,,,,,,,,BOEING,B777-200,A6-EMJ,,,A6-ENA,B 777-300 ER,Jin Shan Ireland Company Limited
+B744,BOEING 747-400 (international winglets) Extended Range Freighter,OOTHD,Aircraft MSN 35236 LLC,,,,,,,,,BOEING,B777-200,A6-EMK,,,A6-ENB,B 777-300 ER,"NBB Corncrake Co., Ltd."
+B772,BOEING 777-200 Freighter,OOTSA,TNT Airways S.A.,,,,,,,,,BOEING,B777-200,A6-EML,,,A6-ENC,B 777-300 ER,GY Aviation Lease 0901 Co.
+B744,BOEING 747-400 (international winglets) Freighter,PHMPS,MARTINAIR,,,,,,,,,BOEING,B777-200LR,A6-EWA,,,A6-END,B 777-300 ER,MSN 41079 AND 41084 LIMITED
+A332,AIRBUS A-330-200,A6EAA,IA Yagoot 4 Limited,,,,,,,,,BOEING,B777-200LR,A6-EWB,,,A6-ENE,B 777-300 ER,Durrah MSN 35603
+A332,332,A6EAD,Emirates,,,,,,,,,BOEING,B777-200LR,A6-EWC,,,A6-ENF,B 777-300 ER,Excalibur One 77B LLC
+A332,332,A6EAE,IA Murjan 4 Limited,,,,,,,,,BOEING,B777-200LR,A6-EWD,,,A6-ENG,B 777-300 ER,Lulwa Limited
+A332,332,A6EAF,MSN 392 Leasing Limited,,,,,,,,,BOEING,B777-200LR,A6-EWE,,,A6-ENH,B 777-300 ER,Nagwa MSN 41086 Limited
+A332,332,A6EAG,RIL Aviation MSN 396 Limited,,,,,,,,,BOEING,B777-200LR,A6-EWF,,,A6-ENI,B 777-300 ER,Lulwa Limited
+A332,332,A6EAH,Vierundzwanzigste Gamma Trans Leasing Verwaltungs-GmbH & Co Finanzierungs Management KG,,,,,,,,,BOEING,B777-200LR,A6-EWG,,,A6-ENJ,B 777-300 ER,Emirates
+A332,AIRBUS A-330-200,A6EAI,IA Murjan 5 Limited Tokyo Branch,,,,,,,,,BOEING,B777-200LR,A6-EWH,,,A6-ENK,B 777-300 ER,Emirates
+A332,AIRBUS A-330-200,A6EAJ,IA Safa 1 Limited Tokyo Branch,,,,,,,,,BOEING,B777-200LR,A6-EWI,,,A6-ENL,B 777-300 ER,Emirates
+A332,332,A6EAK,RIL Aviation MSN 452 Limited,,,,,,,,,BOEING,B777-200LR,A6-EWJ,,,A6-ENM,B 777-300 ER,Emirates
+A332,AIRBUS A-330-200,A6EAL,International Lease Finance Corporation,,,,,,,,,BOEING,B777-200F,A6-EFD,,,A6-ENN,B 777-300ER,Kholas Limited
+A332,332,A6EAM,RIL Aviation MSN 491 Limited,,,,,,,,,BOEING,B777-200F,A6-EFE,,,A6-ENO,B 777-300ER,Kholas Limited
+A332,AIRBUS A-330-200,A6EAN,The Safa 0494 Limited Partnership,,,,,,,,,BOEING,B777-200F,A6-EFF,,,A6-ENP,B 777-300ER,Sokari Limited
+A332,332,A6EAO,RIL Aviation MSN 509 Limited,,,,,,,,,BOEING,B777-200F,A6-EFG,,,A6-ENQ,B 777-300ER,Dekkini Limited
+A332,332,A6EAP,RIL Aviation MSN 525 Limited,,,,,,,,,BOEING,B777-200F,A6-EFH,,,A6-ENR,B 777-300ER,Sokari Limited
+A332,332,A6EAQ,Saduf Seven Limited,,,,,,,,,BOEING,B777-200F,A6-EFI,,,A6-ENS,B 777-300ER,Dekkini Limited
+A332,332,A6EAR,Saduf Ten Limited,,,,,,,,,BOEING,B777-200F,A6-EFJ,,,A6-ENT,B 777-300ER,Dekkini Limited
+A332,332,A6EAS,Deira One Limited,,,,,,,,,BOEING,B777-200F,A6-EFK,,,A6-ENU,B 777-300ER,Deglet Limited
+B77W,77W,A6EBA,International Lease Finance Corporation,,,,,,,,,BOEING,B777-200F,A6-EFL,,,A6-ENV,B 777-300ER,Deglet Limited
+B77W,77W,A6EBB,Celestial Aviation Trading 55 Limited,,,,,,,,,BOEING,B777-200F,A6-EFM,,,A6-ENW,B 777-300ER,Thoory Limited
+B77W,77W,A6EBC,Celestial Aviation Trading 55 Limited,,,,,,,,,BOEING,B777-200F,A6-EFN,,,A6-ENX,B 777-300ER,Thoory Limited
+B77W,77W,A6EBD,International Lease Finance Corporation,,,,,,,,,BOEING,B777-200F,A6-EFO,,,A6-ENY,B 777-300ER,"ALC B773 42122, LLC"
+B77W,77W,A6EBE,Celestial Aviation Trading 56 Limited,,,,,,,,,BOEING,B777-200F,A6-EFP,,,A6-ENZ,B 777-300ER,DSN Aircraft Owner 3 Ltd
+B77W,77W,A6EBF,International Lease Finance Corporation,,,,,,,,,BOEING,B777-200F,A6-EFQ,,,A6-EPA,B 777-300ER,"NBB Goose Co., Ltd"
+B77W,77W,A6EBG,Celestial Aviation Trading 57 Limited,,,,,,,,,BOEING,B777-200F,A6-EFR,,,A6-EPB,B 777-300ER,ROC Aviation One Designated Activity Company Limited
+B77W,77W,A6EBH,International Lease Finance Corporation,,,,,,,,,BOEING,B777-200F,A6-EFS,,,A6-EPC,B 777-300ER,NBB Jacana Co Ltd
+B77W,77W,A6EBI,Celestial Aviation Trading 56 Limited,,,,,,,,,BOEING,B777-200F,A6-EFT,,,A6-EPD,B 777-300ER,ROC Aviation One Designated Activity Company Limited
+B77W,77W,A6EBJ,Celestial Aviation Trading 57 Limited,,,,,,,,,BOEING,B777-200F,A6-EFU,,,A6-EPE,B 777-300ER,ROC Aviation One Designated Activity Company Limited
+B77W,77W,A6EBK,Mankhool One Limited,,,,,,,,,BOEING,B777-200F,A6-EFV,,,A6-EPF,B 777-300ER,"Cyan Leasing Co., Ltd"
+B77W,77W,A6EBL,International Lease Finance Corporation,,,,,,,,,BOEING,B777-200F,A6-EFW,,,A6-EPG,B 777-300ER,"Miles Leasing Co., Ltd"
+B77W,77W,A6EBM,Mankhool Two Limited,,,,,,,,,BOEING,B777-200F,A6-EFX,,,A6-EPH,B 777-300ER,"NBB Sparrowhawk Co., Ltd"
+B77W,77W,A6EBN,Celestial Aviation Trading 64 Limited,,,,,,,,,BOEING,B777-200F,A6-EFY,,,A6-EMF,B 777-200 (A),Emirates
+B77W,77W,A6EBO,Celestial Aviation Trading 64 Limited,,,,,,,,,BOEING,B777-200F,A6-EFZ,,,A6-EMG,B 777-200 ER (B),Triple Seven (CIS) Limited
+B77W,77W,A6EBP,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300,A6-EMM,,,A6-EMH,B 777-200 ER (B),Triple Seven MSN 27251 Limited
+B77W,77W,A6EBQ,Celestial Aviation Trading 65 Limited,,,,,,,,,BOEING,B777-300,A6-EMN,,,A6-EMI,B 777-200 ER (B),Triple Seven MSN 27250 Limited
+B77W,77W,A6EBR,Sufooh One Limited,,,,,,,,,BOEING,B777-300,A6-EMO,,,A6-EMJ,B 777-200 ER (B),Triple Seven (CIS) Limited
+B77W,77W,A6EBS,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300,A6-EMP,,,A6-EMK,B 777-200 ER (B),Triple Seven Aviation Fin 1 Limited
+B77W,77W,A6EBT,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300,A6-EMQ,,,A6-EML,B 777-200 ER (B),Triple Seven MSN 29325 Limited
+B77W,77W,A6EBU,Sufooh Two Limited,,,,,,,,,BOEING,B777-300,A6-EMR,,,A6-EMM,B 777-300,Emirates
+B77W,77W,A6EBV,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300,A6-EMS,,,A6-EMN,B 777-300,Emirates
+B77W,77W,A6EBW,Celestial Aviation Trading 65 Limited,,,,,,,,,BOEING,B777-300,A6-EMT,,,A6-EMO,B 777-300,Castle 2003-2A LLC
+B77W,77W,A6EBX,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300,A6-EMU,,,A6-EMP,B 777-300,International Lease Finance Corporation
+B77W,77W,A6EBY,Celestial Aviation Trading 67 Limited,,,,,,,,,BOEING,B777-300,A6-EMV,,,A6-EMQ,B 777-300,International Lease Finance Corporation
+B77W,77W,A6EBZ,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300,A6-EMW,,,A6-EMR,B 777-300,International Lease Finance Corporation
+B77W,77W,A6ECA,Celestial Aviation Trading 67 Limited,,,,,,,,,BOEING,B777-300,A6-EMX,,,A6-EMS,B 777-300,"Wells Fargo Bank Northwest, National Association"
+B77W,77W,A6ECB,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300ER,A6-EBA,,,A6-EMT,B 777-300,International Lease Finance Corporation
+B77W,77W,A6ECC,Celestial Aviation Trading 68 Limited,,,,,,,,,BOEING,B777-300ER,A6-EBB,,,A6-EMU,B 777-300,Emerald Four Limited
+B77W,77W,A6ECD,Celestial Aviation Trading 68 Limited,,,,,,,,,BOEING,B777-300ER,A6-EBC,,,A6-EMV,B 777-300,International Lease Finance Corporation
+B77W,77W,A6ECE,DS-Rendite-Fonds NR. 124 Flugzeugfonds II GmbH & Co. KG,,,,,,,,,BOEING,B777-300ER,A6-EBD,,,A6-EMW,B 777-300,Wilmington Trust SP Services (Dublin) Limited
+B77W,77W,A6ECF,Dibla Two Limited,,,,,,,,,BOEING,B777-300ER,A6-EBE,,,A6-EMX,B 777-300,Wilmington Trust SP Services (Dublin) Limited
+B77W,77W,A6ECG,Shabka One Limited,,,,,,,,,BOEING,B777-300ER,A6-EBF,,,A6-ERB,A 340-500,Emirates
+B77W,77W,A6ECH,Kosha One Limited,,,,,,,,,BOEING,B777-300ER,A6-EBG,,,A6-ERD,A 340-500,Emirates 
+B77W,77W,A6ECI,Tarha One Limited,,,,,,,,,BOEING,B777-300ER,A6-EBH,,,A6-ERE,A 340-500,Emirates
+B77W,77W,A6ECJ,Kosha Two Limited,,,,,,,,,BOEING,B777-300ER,A6-EBI,,,A6-ERI,A 340-500,Barsha One Limited
+B77W,77W,A6ECK,Malcha One Limited,,,,,,,,,BOEING,B777-300ER,A6-EBJ,,,A6-ERJ,A 340-500,Raffa Two Limited
+B77W,77W,A6ECL,DS-Rendite-Fonds NR. 134 Flugzeugfonds IX GmbH & Co. KG,,,,,,,,,BOEING,B777-300ER,A6-EBK,,,A6-ERM,A 340-300 ER,AS AIR LEASE IX (IRELAND) LIMITED
+B77W,77W,A6ECM,Sky High III Leasing Company Limited,,,,,,,,,BOEING,B777-300ER,A6-EBL,,,A6-ERN,A 340-300 ER,AS AIR LEASE IX (IRELAND) LIMITED
+B77W,77W,A6ECN,Sinoaero Leasing Co. Limited,,,,,,,,,BOEING,B777-300ER,A6-EBM,,,A6-ERO,A 340-300 ER,AS AIR LEASE IX (IRELAND) LIMITED
+B77W,77W,A6ECO,Sky High III Leasing Company Limited,,,,,,,,,BOEING,B777-300ER,A6-EBN,,,A6-ERP,A 340-300 ER,AS AIR LEASE IX (IRELAND) LIMITED
+B77W,77W,A6ECP,Sinoaero Leasing Co. Limited,,,,,,,,,BOEING,B777-300ER,A6-EBO,,,A6-EWA,B 777-200 LR,Tuileries Financement 26 S.A.S.
+B77W,77W,A6ECQ,DS-Rendite-Fonds NR. 13 Flugzeugfonds IX GmbH & Co. KG,,,,,,,,,BOEING,B777-300ER,A6-EBP,,,A6-EWB,B 777-200 LR,Tuileries Financement 27 S.A.S.
+B77W,77W,A6ECR,Doric Flugzeugfonds Fuenfte GmbH & Co. KG,,,,,,,,,BOEING,B777-300ER,A6-EBQ,,,A6-EWC,B 777-200 LR,DS-Rendite-Fonds NR. 122 Flugzeugfonds I GmbH & Co. KG
+B77W,77W,A6ECS,Amal Limited,,,,,,,,,BOEING,B777-300ER,A6-EBR,,,A6-EWD,B 777-200 LR,Dibla One Limited 
+B77W,77W,A6ECT,Amal Limited,,,,,,,,,BOEING,B777-300ER,A6-EBS,,,A6-EWE,B 777-200 LR,Shabka Two Limited
+B77W,77W,A6ECU,Amal Limited,,,,,,,,,BOEING,B777-300ER,A6-EBT,,,A6-EWF,B 777-200 LR,Tarha Two Limited
+B77W,77W,A6ECV,Sayarra Limited,,,,,,,,,BOEING,B777-300ER,A6-EBU,,,A6-EWG,B 777-200 LR,Inishquirk Leasing Limited
+B77W,77W,A6ECW,Tayarra Limited,,,,,,,,,BOEING,B777-300ER,A6-EBV,,,A6-EWH,B 777-200 LR,Aviation Leasing OpCo 9 S.a.r.l.
+B77W,77W,A6ECX,Safina Limited,,,,,,,,,BOEING,B777-300ER,A6-EBW,,,A6-EWI,B 777-200 LR,Malcha Two Limited
+B77W,77W,A6ECY,Safina Limited,,,,,,,,,BOEING,B777-300ER,A6-EBX,,,A6-EWJ,B 777-200 LR,Inishtubrid Leasing Limited
+B77W,77W,A6ECZ,Tayarra Limited,,,,,,,,,BOEING,B777-300ER,A6-EBY,,,A6-EDA,A380-800,Akhir Limited
+A388,388,A6EDA,Akhir Limited,,,,,,,,,BOEING,B777-300ER,A6-EBZ,,,A6-EDB,A380-800,Akhir Limited
+A388,388,A6EDB,Akhir Limited,,,,,,,,,BOEING,B777-300ER,A6-ECA,,,A6-EDC,A380-800,Doric Nimrod Air One Limited
+A388,388,A6EDC,Doric Nimrod Air One Limited,,,,,,,,,BOEING,B777-300ER,A6-ECB,,,A6-EDD,A380-800,HSBC Middle East Leasing Partnership
+A388,388,A6EDD,HSBC Middle East Leasing Partnership,,,,,,,,,BOEING,B777-300ER,A6-ECC,,,A6-EDE,A380-800,Doric Flugzeugfonds Neunte GmbH & Co. KG
+A388,388,A6EDE,Doric Flugzeugfonds Neunte GmbH & Co. KG,,,,,,,,,BOEING,B777-300ER,A6-ECD,,,A6-EDF,A380-800,Rimal Limited
+A388,388,A6EDF,Rimal Limited,,,,,,,,,BOEING,B777-300ER,A6-ECE,,,A6-EDG,A380-800,Doric Flugzeugfonds Sechste GmbH & Co. KG
+A388,388,A6EDG,Doric Flugzeugfonds Sechste GmbH & Co. KG,,,,,,,,,BOEING,B777-300ER,A6-ECF,,,A6-EDH,A380-800,Doric Flugzeugfonds Zwoelfte GmbH & Co. KG
+A388,388,A6EDH,Doric Flugzeugfonds Zwoelfte GmbH & Co. KG,,,,,,,,,BOEING,B777-300ER,A6-ECG,,,A6-EDI,A380-800,Rimal Limited
+A388,388,A6EDI,Rimal Limited,,,,,,,,,BOEING,B777-300ER,A6-ECH,,,A6-EDJ,A380-800,Rimal Limited
+A388,388,A6EDJ,Rimal Limited,,,,,,,,,BOEING,B777-300ER,A6-ECI,,,A6-EDK,A380-800,Jumanah Limited
+A388,388,A6EDK,Jumanah Limited,,,,,,,,,BOEING,B777-300ER,A6-ECJ,,,A6-EDL,A380-800,Al Thatha Limited
+A388,388,A6EDL,Al Thatha Limited,,,,,,,,,BOEING,B777-300ER,A6-ECK,,,A6-EDM,A380-800,Jumanah Limited
+A388,388,A6EDM,Jumanah Limited,,,,,,,,,BOEING,B777-300ER,A6-ECL,,,A6-EDN,A380-800,Rimal Limited
+A388,388,A6EDN,Rimal Limited,,,,,,,,,BOEING,B777-300ER,A6-ECM,,,A6-EDO,A380-800,Rimal Limited
+A388,388,A6EDO,Rimal Limited,,,,,,,,,BOEING,B777-300ER,A6-ECN,,,A6-EDP,A380-800,MSN077 Limited
+A388,388,A6EDP,MSN077 Limited,,,,,,,,,BOEING,B777-300ER,A6-ECO,,,A6-EDQ,A380-800,Shams 1 Limited
+A388,388,A6EDQ,Shams 1 Limited,,,,,,,,,BOEING,B777-300ER,A6-ECP,,,A6-EDR,A380-800,Doric Flugzeugfonds Gmbh & Co. KG
+A388,388,A6EDR,Doric Flugzeugfonds Gmbh & Co. KG,,,,,,,,,BOEING,B777-300ER,A6-ECQ,,,A6-EDS,A380-800,Laith MSN 86 and 98 Limited
+A388,388,A6EDS,Laith MSN 86 and 98 Limited,,,,,,,,,BOEING,B777-300ER,A6-ECR,,,A6-EDT,A380-800,MSN090 LIMITED
+A388,388,A6EDT,MSN090 Limited,,,,,,,,,BOEING,B777-300ER,A6-ECS,,,A6-EDU,A380-800,Laith MSN 86 and 98 Limited
+B772,77X,A6EFD,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,BOEING,B777-300ER,A6-ECT,,,A6-EDV,A380-800,Shams 1 Limited
+B772,77X,A6EFE,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,BOEING,B777-300ER,A6-ECU,,,A6-EDW,A380-800,DORIC FLUGZEUGFONDS SECHSTE GMBH & CO. KG
+B772,77X,A6EFF,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,BOEING,B777-300ER,A6-ECV,,,A6-EDX,A380-800,MSN105 Limited
+B77W,77W,A6EGA,Sayarra Limited,,,,,,,,,BOEING,B777-300ER,A6-ECW,,,A6-EDY,A380-800,Doric Nimrod Air Finance Alpha Limited
+B77W,77W,A6EGB,Lyon 1 Leasing Limited,,,,,,,,,BOEING,B777-300ER,A6-ECX,,,A6-EDZ,A380-800,Doric Nimrod Air Finance Alpha Limited
+B77W,77W,A6EGC,JSA International Aircraft 35596 Limited,,,,,,,,,BOEING,B777-300ER,A6-ECY,,,A6-EEB,A380-800,Doric Nimrod Air Finance Alpha Limited
+B77W,77W,A6EGD,Pembroke Aircraft Leasing 1 Limited,,,,,,,,,BOEING,B777-300ER,A6-ECZ,,,A6-EEC,A380-800,Doric Nimrod Air Finance Alpha Limited
+B77W,77W,A6EGE,Shams 1 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGA,,,A6-EEA,A380-800,HANNOVER LEASING Flight Invest 50 GmbH & Co. KG
+B77W,77W,A6EGF,JSA International Aircraft 38987 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGB,,,A6-EED,A380-800,Laith MSN 86 and 98 Limited
+B77W,77W,A6EGG,Pembroke Aircraft Leasing 1 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGC,,,A6-EEE,A380-800,MSN 112 Limited
+B77W,77W,A6EGH,Shams 1 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGD,,,A6-EEF,A380-800,Laith MSN 86 and 98 Limited
+B77W,77W,A6EGI,MSN International Aircraft 38986 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGE,,,A6-EEG,A380-800,Khidri Limited
+B77W,77W,A6EGJ,Waza 38989 and 41071 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGF,,,A6-EEH,A380-800,Khidri Limited
+B77W,77W,A6EGK,Waza 38989 and 41071 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGG,,,A6-EEI,A380-800,Emirates
+A332,332,A6EKQ,MSN 248 Leasing Limited,,,,,,,,,BOEING,B777-300ER,A6-EGH,,,A6-EEJ,A380-800,Emirates
+A332,332,A6EKR,MSN 251 Leasing Limited,,,,,,,,,BOEING,B777-300ER,A6-EGI,,,A6-EEK,A380-800,DNA Alpha Limited
+A332,332,A6EKS,MSN 283 Leasing Limited,,,,,,,,,BOEING,B777-300ER,A6-EGJ,,,A6-EEL,A380-800,DNA Alpha Limited
+A332,332,A6EKT,MSN 293 Leasing Limited,,,,,,,,,BOEING,B777-300ER,A6-EGK,,,A6-EEM,A380-800,DNA Alpha Limited
+A332,332,A6EKU,MSN 295 Leasing Limited,,,,,,,,,BOEING,B777-300ER,A6-EGL,,,A6-EEN,A380-800,Emirates
+A332,332,A6EKV,Emirates,,,,,,,,,BOEING,B777-300ER,A6-EGM,,,A6-EEO,A380-800,DNA Alpha Limited
+A332,332,A6EKW,Emirates,,,,,,,,,BOEING,B777-300ER,A6-EGN,,,A6-EEP,A380-800,Emirates
+A332,332,A6EKX,MSN 326 Leasing Limited,,,,,,,,,BOEING,B777-300ER,A6-EGO,,,A6-EEQ,A380-861,Khidri Limited
+A332,332,A6EKY,MSN 328 Leasing Limited,,,,,,,,,BOEING,B777-300ER,A6-EGP,,,A6-EER,A380-800,Barhi Limited
+A332,AIRBUS A-330-200,A6EKZ,IA Yagoot 3 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGQ,,,A6-EES,A380-800,Barhi Limited
+B772,772,A6EMD,Triple Seven MSN 27247 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGR,,,A6-EET,A380-861,Wanan Limited
+B772,772,A6EME,Saqr Limited,,,,,,,,,BOEING,B777-300ER,A6-EGS,,,A6-EEU,A380-861,Khidri Limited
+B772,772,A6EMF,Emirates,,,,,,,,,BOEING,B777-300ER,A6-EGT,,,A6-EEV,A380-861,Khidri Limited
+B772,772,A6EMG,Triple Seven (CIS) Limited,,,,,,,,,BOEING,B777-300ER,A6-EGU,,,A6-EEW,A380-861,Safawy Limited
+B772,772,A6EMH,Triple Seven MSN 27251 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGV,,,A6-EEX,A380-861,Roshadia Limited
+B772,772,A6EMI,Triple Seven MSN 27250 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGW,,,A6-EEY,A380-861,AA4P Alpha Limited
+B772,772,A6EMJ,Triple Seven (CIS) Limited,,,,,,,,,BOEING,B777-300ER,A6-EGX,,,A6-EEZ,A380-861,HL Flight Invest 51 GmbH & Co. geschlossene Investment-KG
+B772,772,A6EMK,Triple Seven Aviation Fin 1 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGY,,,A6-EOA,A380-861,"SAP Meridian EK1 Co., Ltd"
+B772,772,A6EML,Triple Seven MSN 29325 Limited,,,,,,,,,BOEING,B777-300ER,A6-EGZ,,,A6-EOB,A380-861,AA4P Beta Limited
+B773,773,A6EMM,Emerald One Limited,,,,,,,,,BOEING,B777-300ER,A6-ENA,,,A6-EOC,A380-861,Safawy Limited
+B773,773,A6EMN,Emerald Two Limited,,,,,,,,,BOEING,B777-300ER,A6-ENB,,,A6-EOD,A380-861,Roshadia Limited
+B773,773,A6EMO,Castle 2003-2A LLC,,,,,,,,,BOEING,B777-300ER,A6-ENC,,,A6-EOE,A380-861,Onex ATR Seven Limited
+B773,773,A6EMP,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300ER,A6-END,,,A6-EOF,A380-861,"EK171 Co., Ltd."
+B773,773,A6EMQ,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300ER,A6-ENE,,,A6-EOG,A380-861,"Iris Leasing Co., Ltd"
+B773,773,A6EMR,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300ER,A6-ENF,,,A6-EOH,A380-861,Khadrawy Aircraft Limited
+B773,773,A6EMS,Emerald Three Limited,,,,,,,,,BOEING,B777-300ER,A6-ENG,,,A6-EOI,A380-861,Khadrawy Aircraft Limited
+B773,773,A6EMT,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300ER,A6-ENH,,,A6-EOJ,A380-861,Khadrawy Aircraft Limited
+B773,773,A6EMU,Emerald Four Limited,,,,,,,,,BOEING,B777-300ER,A6-ENI,,,A6-EOK,A380-861,Khadrawy Aircraft Limited
+B773,773,A6EMV,International Lease Finance Corporation,,,,,,,,,BOEING,B777-300ER,A6-ENJ,,,A6-EOL,A380-861,"SAP Meridian EK2 Co., Ltd."
+B773,773,A6EMW,LSA Finance AB,,,,,,,,,BOEING,B777-300ER,A6-ENK,,,A6-EOM,A380-861,AA4P Gamma Limited
+B773,773,A6EMX,Suderey KB,,,,,,,,,BOEING,B777-300ER,A6-ENL,,,A6-EON,A380-861,"EK188 Co., Ltd"
+A345,345,A6ERA,Hatta One Limited,,,,,,,,,BOEING,B777-300ER,A6-ENM,,,A6-EOO,A380-861,MY KFUND LIMITED
+A345,345,A6ERB,Almaas Limited,,,,,,,,,BOEING,B777-300ER,A6-ENN,,,A6-EOP,A380-861,"EK Meridian 1 Co., Ltd"
+A345,345,A6ERC,Almaas 2 Limited,,,,,,,,,BOEING,B777-300ER,A6-ENO,,,A6-EOQ,A380-861,AA4P Delta Limited
+A345,345,A6ERD,Satwa One Limited,,,,,,,,,BOEING,B777-300ER,A6-ENP,,,A6-EOR,A380-861,"EK202 Co., Ltd."
+A345,345,A6ERE,Zabeel One Limited,,,,,,,,,BOEING,B777-300ER,A6-ENQ,,,A6-EOS,A380-861,AC Finance MSN203 Limited
+A345,AIRBUS A-340-500,A6ERF,Raffa One Limited,,,,,,,,,BOEING,B777-300ER,A6-ENR,,,A6-EOT,A380-861,"FLIP No.99 Co., Ltd"
+A345,345,A6ERG,Cootha One Limited,,,,,,,,,BOEING,B777-300ER,A6-ENS,,,A6-EFD,B 777-200F,Gate Capital (Cayman) One Limited
+A345,345,A6ERH,Orix Kalliope Corporation,,,,,,,,,BOEING,B777-300ER,A6-ENT,,,A6-EFE,B 777-200F,Gate Capital (Cayman) Two Limited
+A345,345,A6ERI,Barsha One Limited,,,,,,,,,BOEING,B777-300ER,A6-ENU,,,A6-EFF,B 777-200F,Gate Capital (Cayman) Five Limited
+A345,345,A6ERJ,Raffa Two Limited,,,,,,,,,BOEING,B777-300ER,A6-ENV,,,A6-EFG,B 777-200F,MSN 35613 LEASING LIMITED
+A343,343,A6ERM,MALC Lease Fifteen Limited,,,,,,,,,BOEING,B777-300ER,A6-ENW,,,A6-EFH,B 777-200F,"MSN 35608 LEASING LIMITED,"
+A343,343,A6ERN,MALC Lease Fourteen Limited,,,,,,,,,BOEING,B777-300ER,A6-ENX,,,A6-EFI,B 777-200F,MSN 35609 LEASING LIMITED
+A343,343,A6ERO,Allco Aviation Leasing (Jersey) Limited,,,,,,,,,BOEING,B777-300ER,A6-ENY,,,A6-EFJ,B 777-200F,MSN 35610 LEASING LIMITED
+A343,343,A6ERP,Allco Aviation Leasing (Jersey) Limited,,,,,,,,,BOEING,B777-300ER,A6-ENZ,,,A6-EFK,B777-200F,MSN 35611 Leasing Limited
+A343,AIRBUS A-340-300,A6ERQ,NBB Column Co. Limited,,,,,,,,,,,,,,A6-EFL,B777-200F,MSN 42230 (Cayman) Leasing Limited
+A343,AIRBUS A-340-300,A6ERR,NBB Prism Co. Limited,,,,,,,,,,,,,,A6-EFM,B777-200F,MSN 42231 (CAYMAN) LEASING LIMITED
+A343,AIRBUS A-340-300,A6ERS,Wolf 139 LLC,,,,,,,,,,,,,,A6-EFN,B777-200F,MSN 42232 Leasing Limited
+A343,AIRBUS A-340-300,A6ERT,Wolf 149 LLC,,,,,,,,,,,,,,A6-EFO,B777-200F,MSN 42233 Leasing Limited
+B77L,77L,A6EWA,Tuileries Financement 26 S.A.S.,,,,,,,,,,,,,,A6-EFS,B777-200F,MSN 42234 Leasing Limited
+B77L,77L,A6EWB,Tuileries Financement 27 S.A.S.,,,,,,,,,,,,,,A6-CJE,A319-115,Emirates
+B77L,77L,A6EWC,DS-Rendite-Fonds NR. 122 Flugzeugfonds I GmbH & Co. KG,,,,,,,,,,,,,,,,
+A332,332,A6EKY,MSN 328 Leasing Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMD,Triple Seven MSN 27247 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EME,Saqr Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMF,Emirates,,,,,,,,,,,,,,,,
+B772,772,A6EMG,Triple Seven (CIS) Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMH,Triple Seven MSN 27251 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMI,Triple Seven MSN 27250 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMJ,Triple Seven (CIS) Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMK,Triple Seven Aviation Fin 1 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EML,Triple Seven MSN 29325 Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMM,Emerald One Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMN,Emerald Two Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMO,Castle 2003-2A LLC,,,,,,,,,,,,,,,,
+B773,773,A6EMP,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMQ,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMR,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMS,Emerald Three Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMT,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMU,Emerald Four Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMV,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMW,LSA Finance AB,,,,,,,,,,,,,,,,
+B773,773,A6EMX,Suderey KB,,,,,,,,,,,,,,,,
+B77W,77W,A6ENA,Celestial Aviation Trading 19 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENB,Celestial Aviation Trading 66 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENC,Owner & Head Lessor: Novus asb fin 4 ltd. Sub-Lessor: AL SALAM LEASING 4 LTD.,,,,,,,,,,,,,,,,
+B77W,77W,A6END,MSN 41079 AND 41084 LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6ENE,Durrah MSN 35603,,,,,,,,,,,,,,,,
+B77W,77W,A6ENF,Excalibur One 77B LLC,,,,,,,,,,,,,,,,
+B77W,77W,A6ENG,Lulwa Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENH,Nagwa MSN 41086 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENI,Lulwa Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENJ,Emirates,,,,,,,,,,,,,,,,
+B77W,77W,A6ENK,Emirates,,,,,,,,,,,,,,,,
+B77W,77W,A6ENL,Emirates,,,,,,,,,,,,,,,,
+A345,345,A6ERA,Hatta One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERB,Almaas Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERC,Almaas 2 Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERD,Satwa One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERE,Zabeel One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERF,Raffa One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERG,Cootha One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERH,Orix Kalliope Corporation,,,,,,,,,,,,,,,,
+A345,345,A6ERI,Barsha One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERJ,Raffa Two Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERM,MALC Lease Fifteen Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERN,MALC Lease Fourteen Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERO,Allco Aviation Leasing (Jersey) Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERP,Allco Aviation Leasing (Jersey) Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERQ,NBB Column Co. Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERR,NBB Prism Co. Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERS,Wolf 139 LLC,,,,,,,,,,,,,,,,
+A343,343,A6ERT,Wolf 149 LLC,,,,,,,,,,,,,,,,
+B77L,77L,A6EWA,Tuileries Financement 26 S.A.S.,,,,,,,,,,,,,,,,
+A319,319,A6CJE,Emirates,,,,,,,,,,,,,,,,
+A332,AIRBUS A-330-200,A6EAA,IA Yagoot 4 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAD,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EAE,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EAF,MSN 392 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAG,RIL Aviation MSN 396 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAH,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EAI,IA Murjan 5 Limited Tokyo Branch,,,,,,,,,,,,,,,,
+A332,332,A6EAJ,IA Safa 1 Limited Tokyo Branch,,,,,,,,,,,,,,,,
+A332,332,A6EAK,RIL Aviation MSN 452 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAM,RIL Aviation MSN 491 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAO,RIL Aviation MSN 509 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAP,RIL Aviation MSN 525 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAQ,Saduf Seven Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAR,Saduf Ten Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAS,Deira One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBA,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBB,Celestial Aviation Trading 55 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBC,Celestial Aviation Trading 55 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBD,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBE,Celestial Aviation Trading 56 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBF,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBG,Celestial Aviation Trading 57 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBH,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBI,Celestial Aviation Trading 56 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBJ,Celestial Aviation Trading 57 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBK,Mankhool One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBL,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBM,Mankhool Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBN,Celestial Aviation Trading 64 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBO,Celestial Aviation Trading 64 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBP,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBQ,Celestial Aviation Trading 65 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBR,Sufooh One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBS,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBT,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBU,Sufooh Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBV,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBW,Celestial Aviation Trading 65 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBX,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBY,Celestial Aviation Trading 67 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBZ,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6ECA,Celestial Aviation Trading 67 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECB,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6ECC,Celestial Aviation Trading 68 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECD,Celestial Aviation Trading 68 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECE,DS-Rendite-Fonds NR. 124 Flugzeugfonds II GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECF,Dibla Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECG,Shabka One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECH,Kosha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECI,Tarha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECJ,Kosha Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECK,Malcha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECL,DS-Rendite-Fonds NR. 134 Flugzeugfonds IX GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECM,Sky High III Leasing Company Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECN,Sinoaero Leasing Co. Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECO,Sky High III Leasing Company Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECP,Sinoaero Leasing Co. Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECQ,DS-Rendite-Fonds NR. 13 Flugzeugfonds IX GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECR,Doric Flugzeugfonds Fuenfte GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECS,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECT,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECU,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECV,Sayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECW,Tayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECX,Safina Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECY,Safina Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECZ,Tayarra Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDA,Akhir Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDB,Akhir Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDC,Doric Nimrod Air One Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDD,HSBC Middle East Leasing Partnership,,,,,,,,,,,,,,,,
+A388,388,A6EDE,Doric Flugzeugfonds Neunte GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDF,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDG,Doric Flugzeugfonds Sechste GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDH,Doric Flugzeugfonds Zwoelfte GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDI,Rimal Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAE,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EAH,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EAO,RIL Aviation MSN 509 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAS,Deira One Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKS,Gate Capital (Cayman) Four Limited ,,,,,,,,,,,,,,,,
+A332,332,A6EKW,Emirates,,,,,,,,,,,,,,,,
+B77W,77W,A6EBA,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBE,Celestial Aviation Trading 56 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBJ,Celestial Aviation Trading 57 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBN,Celestial Aviation Trading 64 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBS,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBX,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6ECE,DS-Rendite-Fonds NR. 124 Flugzeugfonds II GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECN,Sinoaero Leasing Co. Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECS,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECX,Safina Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGD,Pembroke Aircraft Leasing 1 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGJ,Waza 38989 and 41071 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGP,Abra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGU,MSN 41079 AND 41084 LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6ENA,Jin Shan Ireland Company Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENG,Lulwa Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENM,Emirates,,,,,,,,,,,,,,,,
+B77W,77W,A6ENS,Dekkini Limited,,,,,,,,,,,,,,,,
+B772,772,A6EME,Saqr Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMI,Triple Seven MSN 27250 Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMP,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMV,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+A345,345,A6ERG,Emirates,,,,,,,,,,,,,,,,
+A343,343,A6ERO,Allco Aviation Leasing (Jersey) Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWE,Shabka Two Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWI,Malcha Two Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDE,Doric Flugzeugfonds Neunte GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDL,Al Thatha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEA,HANNOVER LEASING Flight Invest 50 GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EEH,Khidri Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEK,DNA Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEN,Emirates,,,,,,,,,,,,,,,,
+A388,388,A6EEQ,Khidri Limited,,,,,,,,,,,,,,,,
+A388,388,A6EET,Wanan Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEW,Safawy Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEZ,HL Flight Invest 51 GmbH & Co. geschlossene Investment-KG,,,,,,,,,,,,,,,,
+B772,77X,A6EFD,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,,,,,,,,
+B772,77X,A6EFH,"MSN 35608 LEASING LIMITED,",,,,,,,,,,,,,,,,
+B772,77X,A6EFL,MSN 42230 (Cayman) Leasing Limited,,,,,,,,,,,,,,,,
+A319,319,A6CJE,Emirates,,,,,,,,,,,,,,,,
+B77W,77W,A6ECD,Celestial Aviation Trading 68 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECQ,DS-Rendite-Fonds NR. 13 Flugzeugfonds IX GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6EGF,"JSA International Aircraft 38987, Limited",,,,,,,,,,,,,,,,
+B77W,77W,A6EGV,"NBB GOLDEN EAGLE LLC and NBB SYLPH CO., LTD",,,,,,,,,,,,,,,,
+B77W,77W,A6ENJ,Emirates,,,,,,,,,,,,,,,,
+B77W,77W,A6ENR,Sokari Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMD,Triple Seven MSN 27247 Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMO,Castle 2003-2A LLC,,,,,,,,,,,,,,,,
+A345,345,A6ERC,Emirates,,,,,,,,,,,,,,,,
+A343,343,A6ERM,MALC Lease Fifteen Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWJ,Inishtubrid Leasing Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDM,Jumanah Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAR,Saduf Ten Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBK,Mankhool One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECH,Kosha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGN,Abra Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMK,Triple Seven Aviation Fin 1 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDG,Doric Flugzeugfonds Sechste GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EEF,Laith MSN 86 and 98 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECA,Celestial Aviation Trading 67 Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMQ,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Freighter,N415MC,Atlas Air Inc,,,,,,,,,,,,,,,,
+A388,388,A6EOC,Safawy Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWB,Tuileries Financement 27 S.A.S.,,,,,,,,,,,,,,,,
+B77L,77L,A6EWC,DS-Rendite-Fonds NR. 122 Flugzeugfonds I GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77L,77L,A6EWD,Dibla One Limited ,,,,,,,,,,,,,,,,
+B77L,77L,A6EWE,Shabka Two Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWF,Tarha Two Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWG,Inishquirk Leasing Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWH,Aviation Leasing OpCo 9 S.a.r.l.,,,,,,,,,,,,,,,,
+B77L,77L,A6EWI,Malcha Two Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWJ,Inishtubrid Leasing Limited,,,,,,,,,,,,,,,,
+B744,74Y,N408MC,Atlas Air Inc,,,,,,,,,,,,,,,,
+B744,74Y,OOTHA,TNT Airways S.A.,,,,,,,,,,,,,,,,
+B744,74Y,OOTHB,TNT Airways S.A.,,,,,,,,,,,,,,,,
+B744,74Y,OOTHC,Aircraft MSN 35235 LLC,,,,,,,,,,,,,,,,
+B744,74Y,OOTHD,Aircraft MSN 35236 LLC,,,,,,,,,,,,,,,,
+A332,AIRBUS A-330-200,A6EAA,IA Yagoot 4 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAD,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EAE,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EAF,MSN 392 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAG,RIL Aviation MSN 396 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAH,Emirates,,,,,,,,,,,,,,,,
+A332,AIRBUS A-330-200,A6EAI,IA Murjan 5 Limited Tokyo Branch,,,,,,,,,,,,,,,,
+A332,AIRBUS A-330-200,A6EAJ,IA Safa 1 Limited Tokyo Branch,,,,,,,,,,,,,,,,
+A332,332,A6EAK,RIL Aviation MSN 452 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAM,RIL Aviation MSN 491 Limited,,,,,,,,,,,,,,,,
+A332,AIRBUS A-330-200,A6EAN,The Safa 0494 Limited Partnership,,,,,,,,,,,,,,,,
+A332,332,A6EAO,RIL Aviation MSN 509 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAP,RIL Aviation MSN 525 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAQ,Saduf Seven Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAR,Saduf Ten Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAS,Deira One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBA,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBB,Celestial Aviation Trading 55 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBC,Celestial Aviation Trading 55 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBD,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBE,Celestial Aviation Trading 56 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBF,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBG,Celestial Aviation Trading 57 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBH,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBI,Celestial Aviation Trading 56 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBJ,Celestial Aviation Trading 57 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBK,Mankhool One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBL,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBM,Mankhool Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBN,Celestial Aviation Trading 64 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBO,Celestial Aviation Trading 64 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBP,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBQ,Celestial Aviation Trading 65 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBR,Sufooh One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBS,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBT,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBU,Sufooh Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBV,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBW,Celestial Aviation Trading 65 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBX,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBY,Celestial Aviation Trading 67 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBZ,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6ECA,Celestial Aviation Trading 67 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECB,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6ECC,Celestial Aviation Trading 68 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECD,Celestial Aviation Trading 68 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECE,DS-Rendite-Fonds NR. 124 Flugzeugfonds II GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECF,Dibla Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECG,Shabka One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECH,Kosha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECI,Tarha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECJ,Kosha Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECK,Malcha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECL,DS-Rendite-Fonds NR. 134 Flugzeugfonds IX GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECM,Sky High III Leasing Company Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECN,Sinoaero Leasing Co. Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECO,Sky High III Leasing Company Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECP,Sinoaero Leasing Co. Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECQ,DS-Rendite-Fonds NR. 13 Flugzeugfonds IX GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECR,Doric Flugzeugfonds Fuenfte GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECS,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECT,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECU,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECV,Sayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECW,Tayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECX,Safina Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECY,Safina Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECZ,Tayarra Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDA,Akhir Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDB,Akhir Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDC,Doric Nimrod Air One Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDD,HSBC Middle East Leasing Partnership,,,,,,,,,,,,,,,,
+A388,388,A6EDE,Doric Flugzeugfonds Neunte GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDF,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDG,Doric Flugzeugfonds Sechste GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDH,Doric Flugzeugfonds Zwoelfte GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDI,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDJ,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDK,Jumanah Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDL,Al Thatha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDM,Jumanah Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDN,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDO,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDP,MSN077 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDQ,Shams 1 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDR,Doric Flugzeugfonds Gmbh & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDS,Laith MSN 86 and 98 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDT,MSN090 LIMITED,,,,,,,,,,,,,,,,
+A388,388,A6EDU,Laith MSN 86 and 98 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDV,Shams 1 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDW,DORIC FLUGZEUGFONDS SECHSTE GMBH & CO. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDX,MSN105 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDY,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDZ,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEA,HANNOVER LEASING Flight Invest 50 GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EEB,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEC,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EED,Laith MSN 86 and 98 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEE,MSN 112 Limited,,,,,,,,,,,,,,,,
+B772,77X,A6EFD,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,,,,,,,,
+B772,77X,A6EFE,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,,,,,,,,
+B772,77X,A6EFF,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,,,,,,,,
+B773,77X,A6EFG,MSN 35613 LEASING LIMITED,,,,,,,,,,,,,,,,
+B774,77X,A6EFH,MSN 35608 LEASING LIMITED,,,,,,,,,,,,,,,,
+B775,77X,A6EFI,MSN 35609 LEASING LIMITED,,,,,,,,,,,,,,,,
+B776,77X,A6EFJ,MSN 35610 LEASING LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGA,Sayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGB,Lyon 1 Leasing Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGC,JSA International Aircraft 35596 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGD,Pembroke Aircraft Leasing 1 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGE,Shams 1 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGF,JSA International Aircraft 38987 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGG,Pembroke Aircraft Leasing 1 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGH,Shams 1 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGI,MSN International Aircraft 38986 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGJ,Waza 38989 and 41071 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGK,Waza 38989 and 41071 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGL,Safina Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGM,BAHAR LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGN,Abra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGO,SAFINA LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGP,Abra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGQ,AL SALAM LEASING 3 LTD.,,,,,,,,,,,,,,,,
+B77W,77W,A6EGR,NBB NIGHTHAWK CO. LTD. and NBB Spoonbill LLC,,,,,,,,,,,,,,,,
+B77W,77W,A6EGS,MSN 41078 AND 35602 LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGT,Owner and Lessor: COMPASS POINT AVIATION NOVUS FIN 1 LTD. SubLessor:COMPASS POINT AVIATION NOVUS LEASE 1 LTD.,,,,,,,,,,,,,,,,
+B77W,77W,A6EGU,MSN 41079 AND 41084 LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGV,NBB GOLDEN EAGLE LLC and NBB SYLPH CO. LTD,,,,,,,,,,,,,,,,
+B77W,77W,A6EGW,ABRA LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGX,MSN 41078 AND 35602 LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGY,WILMINGTON TRUST SP SERVICES (DUBLIN) LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGZ,NBB HAWFINCH LLC and NBB CRANE CO. LTD.,,,,,,,,,,,,,,,,
+A332,332,A6EKQ,MSN 248 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKR,MSN 251 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKS,MSN 283 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKT,MSN 293 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKU,MSN 295 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKV,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EKW,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EKX,MSN 326 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKY,MSN 328 Leasing Limited,,,,,,,,,,,,,,,,
+A332,AIRBUS A-330-200,A6EKZ,IA Yagoot 3 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMD,Triple Seven MSN 27247 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EME,Saqr Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMF,Emirates,,,,,,,,,,,,,,,,
+B772,772,A6EMG,Triple Seven (CIS) Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMH,Triple Seven MSN 27251 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMI,Triple Seven MSN 27250 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMJ,Triple Seven (CIS) Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMK,Triple Seven Aviation Fin 1 Limited,,,,,,,,,,,,,,,,
+B772,772,A6EML,Triple Seven MSN 29325 Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMM,Emerald One Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMN,Emerald Two Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMO,Castle 2003-2A LLC,,,,,,,,,,,,,,,,
+B773,773,A6EMP,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMQ,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMR,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMS,Emerald Three Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMT,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMU,Emerald Four Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMV,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMW,LSA Finance AB,,,,,,,,,,,,,,,,
+B773,773,A6EMX,Suderey KB,,,,,,,,,,,,,,,,
+B77W,77W,A6ENA,Celestial Aviation Trading 19 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENB,Celestial Aviation Trading 66 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENC,Owner & Head Lessor: Novus asb fin 4 ltd. Sub-Lessor: AL SALAM LEASING 4 LTD.,,,,,,,,,,,,,,,,
+B77W,77W,A6END,MSN 41079 AND 41084 LIMITED,,,,,,,,,,,,,,,,
+A345,345,A6ERA,Hatta One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERB,Almaas Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERC,Almaas 2 Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERD,Satwa One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERE,Zabeel One Limited,,,,,,,,,,,,,,,,
+A345,AIRBUS A-340-500,A6ERF,Raffa One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERG,Cootha One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERH,Orix Kalliope Corporation,,,,,,,,,,,,,,,,
+A345,345,A6ERI,Barsha One Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERJ,Raffa Two Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERM,MALC Lease Fifteen Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERN,MALC Lease Fourteen Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERO,Allco Aviation Leasing (Jersey) Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERP,Allco Aviation Leasing (Jersey) Limited,,,,,,,,,,,,,,,,
+A343,AIRBUS A-340-300,A6ERQ,NBB Column Co. Limited,,,,,,,,,,,,,,,,
+A343,AIRBUS A-340-300,A6ERR,NBB Prism Co. Limited,,,,,,,,,,,,,,,,
+A343,AIRBUS A-340-300,A6ERS,Wolf 139 LLC,,,,,,,,,,,,,,,,
+A343,AIRBUS A-340-300,A6ERT,Wolf 149 LLC,,,,,,,,,,,,,,,,
+B77L,77L,A6EWA,Tuileries Financement 26 S.A.S.,,,,,,,,,,,,,,,,
+B77L,77L,A6EWB,Tuileries Financement 27 S.A.S.,,,,,,,,,,,,,,,,
+B77L,77L,A6EWC,DS-Rendite-Fonds NR. 122 Flugzeugfonds I GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77L,77L,A6EWD,Dibla One Limited ,,,,,,,,,,,,,,,,
+B77L,77L,A6EWE,Shabka Two Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWF,Tarha Two Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWG,Inishquirk Leasing Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWH,Aviation Leasing OpCo 9 S.a.r.l.,,,,,,,,,,,,,,,,
+B77L,77L,A6EWI,Malcha Two Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWJ,Inishtubrid Leasing Limited,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Freighter,G-GSSC,GLOBAL SUPPLY SYSTEMS,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Freighter,N408MC,Atlas Air Inc,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Freighter,N415MC,Atlas Air Inc,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Freighter,N497MC,Atlas Air Inc,,,,,,,,,,,,,,,,
+B772,BOEING 777-200 Freighter,N778SA,SOUTHERN AIR / TNT AIRWAYS S.A,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Extended Range Freighter,OOTHA,TNT Airways SA,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Extended Range Freighter,OOTHB,TNT Airways SA,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Extended Range Freighter,OOTHC,Aircraft MSN 35235 LLC,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Extended Range Freighter,OOTHD,Aircraft MSN 35236 LLC,,,,,,,,,,,,,,,,
+B772,BOEING 777-200 Freighter,OOTSA,TNT AIRWAYS S.A,,,,,,,,,,,,,,,,
+B772,BOEING 777-200 Freighter,OOTSB,TNT AIRWAYS S.A,,,,,,,,,,,,,,,,
+B772,BOEING 777-200 Freighter,OOTSC,TNT AIRWAYS S.A,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Freighter,N408MC,Atlas Air Inc,,,,,,,,,,,,,,,,
+B744,BOEING 747-400 (international winglets) Freighter,N497MC,Atlas Air Inc,,,,,,,,,,,,,,,,
+B744,74Y,OOTHD,Aircraft MSN 35236 LLC,,,,,,,,,,,,,,,,
+B744,74Y,OOTHC,Aircraft MSN 35235 LLC,,,,,,,,,,,,,,,,
+A332,332,A6EAD,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EAF,MSN 392 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAG,RIL Aviation MSN 396 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAJ,"IA Safa 1 Limited, Tokyo Branch",,,,,,,,,,,,,,,,
+A332,332,A6EAK,RIL Aviation MSN 452 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAM,RIL Aviation MSN 491 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAP,RIL Aviation MSN 525 Limited,,,,,,,,,,,,,,,,
+A332,332,A6EAQ,Saduf Seven Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKQ,Gate Capital (Cayman) Four Limited ,,,,,,,,,,,,,,,,
+A332,332,A6EKR,Gate Capital (Cayman) Four Limited ,,,,,,,,,,,,,,,,
+A332,332,A6EKT,Gate Capital (Cayman) Four Limited ,,,,,,,,,,,,,,,,
+A332,332,A6EKU,Gate Capital (Cayman) Four Limited ,,,,,,,,,,,,,,,,
+A332,332,A6EKV,Emirates,,,,,,,,,,,,,,,,
+A332,332,A6EKX,MSN 326 Leasing Limited,,,,,,,,,,,,,,,,
+A332,332,A6EKY,MSN 328 Leasing Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBB,Celestial Aviation Trading 55 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBC,Celestial Aviation Trading 55 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBD,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBF,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBG,Celestial Aviation Trading 57 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBH,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBI,Celestial Aviation Trading 56 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBL,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBM,Mankhool Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBO,Celestial Aviation Trading 64 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBP,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBQ,Celestial Aviation Trading 65 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBR,Sufooh One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBT,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBU,Sufooh Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBV,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6EBY,Celestial Aviation Trading 67 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBZ,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6ECB,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B77W,77W,A6ECC,Celestial Aviation Trading 68 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECF,Dibla Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECJ,Kosha Two Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECL,DS-Rendite-Fonds NR. 134 Flugzeugfonds IX GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECO,Sky High III Leasing Company Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECP,Sinoaero Leasing Co. Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECR,Doric Flugzeugfonds Fuenfte GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77W,77W,A6ECT,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECV,Sayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECZ,Tayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGB,Lyon 1 Leasing Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGE,Shams 1 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGG,Pembroke Aircraft Leasing 1 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGH,Shams 1 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGK,Waza 38989 and 41071 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGL,Safina Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGR,NBB Spoonbill LLC,,,,,,,,,,,,,,,,
+B77W,77W,A6EGT,Owner and Lessor: COMPASS POINT AVIATION NOVUS FIN 1 LTD. SubLessor:COMPASS POINT AVIATION NOVUS LEASE 1 LTD.,,,,,,,,,,,,,,,,
+B77W,77W,A6EGW,ABRA LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGX,MSN 41078 AND 35602 LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGZ,"NBB HAWFINCH LLC and NBB CRANE CO., LTD.",,,,,,,,,,,,,,,,
+B77W,77W,A6ENB,"NBB Corncrake Co., Ltd.",,,,,,,,,,,,,,,,
+B77W,77W,A6END,MSN 41079 AND 41084 LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6ENE,Durrah MSN 35603,,,,,,,,,,,,,,,,
+B77W,77W,A6ENI,Lulwa Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENK,Emirates,,,,,,,,,,,,,,,,
+B77W,77W,A6ENO,Kholas Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENQ,Dekkini Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENU,Deglet Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENX,Thoory Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMF,Emirates,,,,,,,,,,,,,,,,
+B772,772,A6EMH,Triple Seven MSN 27251 Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMM,Emerald One Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMN,Emerald Two Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMR,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMS,Emerald Three Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMT,International Lease Finance Corporation,,,,,,,,,,,,,,,,
+B773,773,A6EMX,Wilmington Trust SP Services (Dublin) Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERA,Emirates,,,,,,,,,,,,,,,,
+A345,345,A6ERB,Emirates,,,,,,,,,,,,,,,,
+A345,345,A6ERE,Emirates,,,,,,,,,,,,,,,,
+A345,345,A6ERJ,Raffa Two Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERN,MALC Lease Fourteen Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWA,Tuileries Financement 26 S.A.S.,,,,,,,,,,,,,,,,
+B77L,77L,A6EWB,Tuileries Financement 27 S.A.S.,,,,,,,,,,,,,,,,
+B77L,77L,A6EWD,Dibla One Limited ,,,,,,,,,,,,,,,,
+B77L,77L,A6EWF,Tarha Two Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWG,Inishquirk Leasing Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDA,Akhir Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDB,Akhir Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDD,HSBC Middle East Leasing Partnership,,,,,,,,,,,,,,,,
+A388,388,A6EDI,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDJ,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDN,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDP,MSN077 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDQ,Shams 1 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDR,Doric Flugzeugfonds Gmbh & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDS,Laith MSN 86 and 98 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDT,MSN090 LIMITED,,,,,,,,,,,,,,,,
+A388,388,A6EDU,Laith MSN 86 and 98 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDV,Shams 1 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDW,DORIC FLUGZEUGFONDS SECHSTE GMBH & CO. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDX,MSN105 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDY,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDZ,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEB,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEC,Doric Nimrod Air Finance Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EED,Laith MSN 86 and 98 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEE,MSN 112 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEG,Khidri Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEI,Emirates,,,,,,,,,,,,,,,,
+A388,388,A6EEJ,Emirates,,,,,,,,,,,,,,,,
+A388,388,A6EEL,DNA Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEM,DNA Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEO,DNA Alpha Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEP,Emirates,,,,,,,,,,,,,,,,
+A388,388,A6EER,Barhi Limited,,,,,,,,,,,,,,,,
+A388,388,A6EES,Barhi Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEU,Khidri Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEV,Khidri Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEX,Roshadia Limited,,,,,,,,,,,,,,,,
+A388,388,A6EEY,Amedeo MSN 157 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EOA,"SAP Meridian EK1 Co., Ltd",,,,,,,,,,,,,,,,
+A388,388,A6EOB,Amedeo MSN 164 Limited,,,,,,,,,,,,,,,,
+A388,388,A6EOD,Roshadia Limited,,,,,,,,,,,,,,,,
+A388,388,A6EOE,Onex ATR Seven Limited,,,,,,,,,,,,,,,,
+B772,77X,A6EFE,Dubai Aerospace Enterprise (DAE) Limited,,,,,,,,,,,,,,,,
+B772,77X,A6EFF,Gate Capital (Cayman) Five Limited ,,,,,,,,,,,,,,,,
+B772,77X,A6EFG,MSN 35613 LEASING LIMITED,,,,,,,,,,,,,,,,
+B772,77X,A6EFI,MSN 35609 LEASING LIMITED,,,,,,,,,,,,,,,,
+B772,77X,A6EFJ,MSN 35610 LEASING LIMITED,,,,,,,,,,,,,,,,
+B772,77X,A6EFK,MSN 35611 Leasing Limited,,,,,,,,,,,,,,,,
+B772,77X,A6EFM,MSN 42231 (CAYMAN) LEASING LIMITED,,,,,,,,,,,,,,,,
+B772,77X,A6EFN,MSN 42232 Leasing Limited,,,,,,,,,,,,,,,,
+B772,77X,A6EFO,MSN 42233 Leasing Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EBW,Celestial Aviation Trading 65 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECG,Shabka One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECI,Tarha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECK,Malcha One Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECM,Sky High III Leasing Company Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECU,Amal Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECW,Tayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ECY,Safina Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGA,Sayarra Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6EGC,"JSA International Aircraft 35596, Limited",,,,,,,,,,,,,,,,
+B77W,77W,A6EGI,"MSN International Aircraft 38986, Limited",,,,,,,,,,,,,,,,
+B77W,77W,A6EGM,BAHAR LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGO,SAFINA LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGQ,AL SALAM LEASING 3 LTD.,,,,,,,,,,,,,,,,
+B77W,77W,A6EGS,MSN 41078 AND 35602 LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6EGY,WILMINGTON TRUST SP SERVICES (DUBLIN) LIMITED,,,,,,,,,,,,,,,,
+B77W,77W,A6ENC,GY Aviation Lease 0901 Co.,,,,,,,,,,,,,,,,
+B77W,77W,A6ENF,Excalibur One 77B LLC,,,,,,,,,,,,,,,,
+B77W,77W,A6ENH,Nagwa MSN 41086 Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENL,Emirates,,,,,,,,,,,,,,,,
+B77W,77W,A6ENN,Kholas Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENP,Sokari Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENT,Dekkini Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENV,Deglet Limited,,,,,,,,,,,,,,,,
+B77W,77W,A6ENW,Thoory Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMG,Triple Seven (CIS) Limited,,,,,,,,,,,,,,,,
+B772,772,A6EMJ,Triple Seven (CIS) Limited,,,,,,,,,,,,,,,,
+B772,772,A6EML,Triple Seven MSN 29325 Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMU,Emerald Four Limited,,,,,,,,,,,,,,,,
+B773,773,A6EMW,Wilmington Trust SP Services (Dublin) Limited,,,,,,,,,,,,,,,,
+A345,345,A6ERD,Emirates ,,,,,,,,,,,,,,,,
+A345,345,A6ERF,Emirates,,,,,,,,,,,,,,,,
+A345,345,A6ERH,Emirates,,,,,,,,,,,,,,,,
+A345,345,A6ERI,Barsha One Limited,,,,,,,,,,,,,,,,
+A343,343,A6ERP,Allco Aviation Leasing (Jersey) Limited,,,,,,,,,,,,,,,,
+B77L,77L,A6EWC,DS-Rendite-Fonds NR. 122 Flugzeugfonds I GmbH & Co. KG,,,,,,,,,,,,,,,,
+B77L,77L,A6EWH,Aviation Leasing OpCo 9 S.a.r.l.,,,,,,,,,,,,,,,,
+A388,388,A6EDC,Doric Nimrod Air One Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDF,Rimal Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDH,Doric Flugzeugfonds Zwoelfte GmbH & Co. KG,,,,,,,,,,,,,,,,
+A388,388,A6EDK,Jumanah Limited,,,,,,,,,,,,,,,,
+A388,388,A6EDO,Rimal Limited,,,,,,,,,,,,,,,,

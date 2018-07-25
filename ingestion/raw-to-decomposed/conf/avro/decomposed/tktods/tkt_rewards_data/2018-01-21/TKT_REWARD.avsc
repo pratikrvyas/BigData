@@ -1,0 +1,139 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_TKT_REWARDS_DATA",
+  "doc" : "Sqoop import of TKT_REWARDS_DATA",
+  "fields" : [{
+    "name" : "TKT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TKT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_RWD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TKT_RWD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONJUNCTION_TICKET_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONJUNCTION_TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "BRSR_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BRSR_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGINAL_REISSUED_TICKET",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGINAL_REISSUED_TICKET",
+    "sqlType" : "12"
+  }, {
+    "name" : "REWARD_TYPE_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REWARD_TYPE_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "MILESPOINTS_DEDUCTED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MILESPOINTS_DEDUCTED",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCUMULATED_MP_VALUE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACCUMULATED_MP_VALUE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CASH_DEDUCTED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CASH_DEDUCTED",
+    "sqlType" : "12"
+  }, {
+    "name" : "AMT_ADJUSTED_IN_MILES_POINTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMT_ADJUSTED_IN_MILES_POINTS",
+    "sqlType" : "12"
+  }, {
+    "name" : "AMT_ADJUSTED_IN_MP_ACCUMULATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMT_ADJUSTED_IN_MP_ACCUMULATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FARE_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOTAL_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TOTAL_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "BALANCE_FARE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BALANCE_FARE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BALANCE_TOTAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BALANCE_TOTAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "PERCENTAGE_PAIDBY_MILES_POINTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PERCENTAGE_PAIDBY_MILES_POINTS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PERCENTAGE_PAIDBY_OTHER_FOP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PERCENTAGE_PAIDBY_OTHER_FOP",
+    "sqlType" : "12"
+  }, {
+    "name" : "LENGTH_OF_CONVERSION_RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LENGTH_OF_CONVERSION_RATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONVERSION_RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONVERSION_RATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED_BY",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "TKT_REWARDS_DATA"
+}

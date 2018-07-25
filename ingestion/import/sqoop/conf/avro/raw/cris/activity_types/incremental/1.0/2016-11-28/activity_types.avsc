@@ -1,0 +1,61 @@
+{
+  "type" : "record",
+  "name" : "ACTIVITY_TYPES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "ATC_ATC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ATC_ATC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STMT_ZERO_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STMT_ZERO_MILES",
+    "sqlType" : "12"
+  }, {
+    "name" : "USER_GROUP_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USER_GROUP_NAME",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "ACTIVITY_TYPES"
+}

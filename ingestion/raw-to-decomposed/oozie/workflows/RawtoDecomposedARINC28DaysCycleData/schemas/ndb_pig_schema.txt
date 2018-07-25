@@ -1,0 +1,1 @@
+(chararray)$0 AS Ident,(chararray)$1 AS IdentIC,(chararray)$2 AS Port,(chararray)$3 AS PortIC,(chararray)$4 AS Lat,(chararray)$5 AS Lon, (chararray)$6  AS Freq , (chararray)$7 AS MagVar,(chararray)$8 AS NavClass,(chararray)$9 AS Cycle

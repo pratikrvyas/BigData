@@ -1,0 +1,314 @@
+<workflow-app name="ImportDMISHistoricalData_Masters" xmlns="uri:oozie:workflow:0.5">
+    <start to="fork-b59d"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>pratik.vyas@dnata.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-0f55">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${RAW_DIR_BAYCHANGEREASON}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${DMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  BCHM_REASON_ID,BCHM_DESCRIPTION,TO_CHAR(CREATE_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as CREATE_DT ,CREATE_USER,TO_CHAR(UPDT_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as UPDT_DT ,UPDT_USER FROM OMG_MSTR.FLIGHTS_BAY_CHANGE_REASONS WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>BCHM_REASON_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${RAW_DIR_BAYCHANGEREASON}</arg>
+              <arg>--num-mappers</arg>
+              <arg>1</arg>
+            <file>${DMIS_SQOOP_OPTIONS_FILE}#${DMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-80f2"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-3c60">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${RAW_DIR_AIRCRAFTTYPES}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${DMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  ACTP_AIRCRAFT_TYPE_ID, ACTP_ACGR_CODE_ID, ACTP_IATA_CODE, ACTP_ICAO_CODE, ACTP_ULD_CAPABLE, ACTP_TYPE_SIZE, ACTP_MAX_FREIGHT, ACTP_MAX_PAX, ACTP_MAX_TAKE_OFF_WEIGHT, ACTP_MAX_TAXI_WGT, ACTP_SHORT_DESC, ACTP_LONG_DESCRIPTION, UPDT_USER,  CREATE_USER,  ACTP_CLASS_CODE,  ACTP_ACTIVE, TO_CHAR(CREATE_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as CREATE_DT , TO_CHAR(UPDT_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as UPDT_DT  FROM OMG_MSTR.AIRCRAFT_TYPES WHERE $CONDITIONS &quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>ACTP_AIRCRAFT_TYPE_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${RAW_DIR_AIRCRAFTTYPES}</arg>
+              <arg>--num-mappers</arg>
+              <arg>1</arg>
+            <file>${DMIS_SQOOP_OPTIONS_FILE}#${DMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-80f2"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-b59d">
+        <path start="sqoop-0f55" />
+        <path start="sqoop-3c60" />
+        <path start="sqoop-88a1" />
+        <path start="sqoop-6822" />
+        <path start="sqoop-ea4b" />
+        <path start="sqoop-700b" />
+        <path start="sqoop-259e" />
+        <path start="sqoop-ca5e" />
+    </fork>
+    <join name="join-80f2" to="End"/>
+    <action name="sqoop-88a1">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${RAW_DIR_DELAYS}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${DMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT DELY_DELAY_ID, DELY_IATA_ALPHA_CODE, DELY_IATA_NUM_CODE, DELY_ACCOUNTABLE, DELY_USAE_ID, DELY_AIRPORT_ALPHA_CODE, DELY_AIRPORT_DELAY_DESC, DELY_AIRPORT_NUM_CODE, DELY_IATA_DELAY_TYPE_DESC, DELY_CONTROLLABLE, TO_CHAR(UPDT_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as UPDT_DT, UPDT_USER, DELY_CCC_RESP, DELY_ACTIVE_FLAG FROM OMG_MSTR.DELAYS WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>DELY_DELAY_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${RAW_DIR_DELAYS}</arg>
+              <arg>--num-mappers</arg>
+              <arg>1</arg>
+            <file>${DMIS_SQOOP_OPTIONS_FILE}#${DMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-80f2"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-6822">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${RAW_DIR_FLIGHTTYPES}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${DMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT FLTP_FLIGHT_TYPE_ID, FLTP_FLIGHT_CATEGORY, FLTP_IATA_CODE, FLTP_DESCRIPTION, FLTP_ICAO_CODE, TO_CHAR(UPDT_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as UPDT_DT , UPDT_USER FROM OMG_MSTR.FLIGHT_TYPES WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FLTP_FLIGHT_TYPE_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${RAW_DIR_FLIGHTTYPES}</arg>
+              <arg>--num-mappers</arg>
+              <arg>1</arg>
+            <file>${DMIS_SQOOP_OPTIONS_FILE}#${DMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-80f2"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-ea4b">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${RAW_DIR_BAGGAGE_DISCREPANCIES}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${DMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT * FROM (SELECT ROWNUM RN,BDIS_CODE,BDIS_NAME,BDIS_SECT,BDIS_ACCOUNTABLE FROM BAGGAGE_DISCREPANCIES) WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>RN</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${RAW_DIR_BAGGAGE_DISCREPANCIES}</arg>
+              <arg>--num-mappers</arg>
+              <arg>1</arg>
+            <file>${DMIS_SQOOP_OPTIONS_FILE}#${DMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-80f2"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-700b">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${RAW_DIR_AIRLINES}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${DMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  AIRL_AIRLINE_ID, 	AIRL_IATA_CURRENT_CODE, 	AIRL_ICAO_CODE, 	AIRL_CAGR_ID, 	AIRL_NAME, 	AIRL_CASH_PAYER, 	AIRL_CONTACT_NAME, 	AIRL_FOREIGN_AIRLINE, 	TO_CHAR(UPDT_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as UPDT_DT, 	UPDT_USER, 	AIRL_IATA_OTHER_CODE, 	AIRL_ADDRESS, 	AIRL_AIRLINE_NR, 	AIRL_CUSTOMER_CODE, 	AIRL_EMAIL_ID, 	AIRL_FAX_NO, 	AIRL_PHONE_NO, 	AIRL_BILLING_REF, 	AIRL_GROUP_CODE_ID, 	AIRL_SEND_SITA, 	TO_CHAR(CREATE_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as CREATE_DT, 	CREATE_USER, 	AIRL_ULD, 	AIRL_BTAG_TCI, 	AIRL_OLD_CODE, 	AIRL_OLD_IATA_CURRENT_CODE, 	AIRL_DACS_IATA_CODE, 	AIRL_DELINK_ARR_PCT, 	AIRL_DELINK_DEP_PCT, 	AIRL_DIFFAIRL_ARR_PCT, 	AIRL_DIFFAIRL_DEP_PCT, 	AIRL_CUSTOMER_BALANCE, 	AIRL_UNACCT_CASH_ADVANCE, 	AIRL_UNACCT_CASH_ADV_DATE, 	AIRL_ALLOW_ATD_WITHOUT_AHCN, 	AIRL_CHARTER_FLAG, 	AIRL_CONTRACTED, 	AIRL_MOVEMENT_CODE FROM 	OMG_MSTR.AIRLINES WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>AIRL_AIRLINE_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${RAW_DIR_AIRLINES}</arg>
+              <arg>--num-mappers</arg>
+              <arg>1</arg>
+            <file>${DMIS_SQOOP_OPTIONS_FILE}#${DMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-80f2"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-259e">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${RAW_DIR_AIRCRAFTS}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${DMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT 	ACFT_AIRCRAFT_ID, 	ACFT_ACTP_AIRCRAFT_TYPE_ID, 	ACFT_REG_NO, 	ACFT_STATUS, 	ACFT_AIRP_AIRPORT_ID, 	ACFT_AIRL_AIRLINE_ID, 	ACFT_BUSI_CLASS_CONFIG, 	ACFT_ECON_CLASS_CONFIG, 	ACFT_FIRST_CLASS_CONFIG, 	ACFT_MAX_PAX, 	ACFT_MAX_FREIGHT, 	ACFT_MAX_TAKE_OFF_WEIGHT, 	ACFT_REMARKS, 	TO_CHAR(UPDT_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as UPDT_DT, 	UPDT_USER, 	TO_CHAR(CREATE_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as CREATE_DT, 	CREATE_USER, 	OLD_ACTP_AIRCRAFT_TYPE_ID FROM 	OMG_MSTR.AIRCRAFTS WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>ACFT_AIRCRAFT_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${RAW_DIR_AIRCRAFTS}</arg>
+              <arg>--num-mappers</arg>
+              <arg>1</arg>
+            <file>${DMIS_SQOOP_OPTIONS_FILE}#${DMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-80f2"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-ca5e">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${RAW_DIR_AIRPORTS}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${DMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT 	AIRP_AIRPORT_ID, 	AIRP_IATA_CODE, 	AIRP_ICAO_CODE, 	AIRP_SEGR_ID, 	AIRP_COUN_COUNTRY_ID, 	TO_CHAR(UPDT_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as UPDT_DT, 	UPDT_USER, 	AIRP_AIRPORT_NAME, 	AIRP_ADDRESS, 	AIRP_EMAILID, 	AIRP_FAX_NR, 	AIRP_FLYING_TYPE, 	AIRP_GROUP_CODE_ID, 	AIRP_HOST_AIRPORT, 	AIRP_IATA_CITY_CODE, 	AIRP_MANAGER, 	AIRP_OPERATING_HOURS, 	AIRP_REGION, 	AIRP_TELEPHONE_NR, 	AIRP_TIME_ZONE_CODE, 	TO_CHAR(CREATE_DT, &#39;YYYY-MM-DD HH24:MI:SS&#39;) as CREATE_DT, 	CREATE_USER, 	AIRP_FLY_TIME FROM 	OMG_MSTR.AIRPORTS WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>AIRP_AIRPORT_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${RAW_DIR_AIRPORTS}</arg>
+              <arg>--num-mappers</arg>
+              <arg>1</arg>
+            <file>${DMIS_SQOOP_OPTIONS_FILE}#${DMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-80f2"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

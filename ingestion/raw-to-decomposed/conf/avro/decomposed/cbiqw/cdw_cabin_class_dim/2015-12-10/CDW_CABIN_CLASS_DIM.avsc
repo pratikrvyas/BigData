@@ -1,0 +1,89 @@
+{
+  "type" : "record",
+  "name" : "CDW_CABIN_CLASS_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_CABIN_CLASS_DIM",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "CABIN_CLASS_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CABIN_CLASS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CABIN_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CABIN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "RBD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RBD",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CABIN_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CABIN_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPERATIONAL_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OPERATIONAL_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DISCONTINUED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCONTINUED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SOURCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SOURCE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_CABIN_CLASS_DIM"
+}

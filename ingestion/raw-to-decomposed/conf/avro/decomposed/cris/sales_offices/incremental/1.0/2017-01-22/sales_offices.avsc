@@ -1,0 +1,79 @@
+{
+  "type" : "record",
+  "name" : "SALES_OFFICES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+    "name" : "helix_uuid",
+    "type" : [ "null", "string" ]
+  }, {  
+    "name" : "helix_timestamp",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "LPT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LPT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TELEPHONE_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TELEPHONE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAX_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAX_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_ADDRESS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EMAIL_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEND_MAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEND_MAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "SALES_OFFICES"
+}

@@ -1,0 +1,170 @@
+{
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [ {
+    "name" : "UTC",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "Date",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "AltStandard",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "AltQNH",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CAS",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FlightPhase",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TAS",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MACH",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TrackDistance",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "N11",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "N12",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "N13",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "N14",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "IVV",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "GrossWeight",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FuelBurned",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "LATPC",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "LONPC",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "AirGroundDiscrete",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TransitionAltitudeDiscrete",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HeadingTrue",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BaroSetting",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CG",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ISADEV",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WINDDirection",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WindSpeed",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WindComponent",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TAT",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SAT",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CrossWindComponent",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CrossWindDriftVector",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T1",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T2",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T3",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T4",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T5",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T6",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T7",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T8",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T9",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T10",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T11",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FOB_T12",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "Height",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "RowNumber",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PK_Date",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PK_FlNum",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PK_Tail",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PK_Origin",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PK_Dest",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FileName",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FolderName",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  } ]
+}

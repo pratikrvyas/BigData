@@ -1,0 +1,73 @@
+[
+{
+  "pk": 220540, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "c504b0d9-d6ef-4a04-a4a3-c14574002dbb", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "This workflow will take the AGS history data and sync with incremental data format", 
+    "is_history": false, 
+    "parent_directory": [
+      "63e12206-9e5b-4dff-ba0f-76133643baec", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-03-01T10:21:34", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "72ee1077-25bb-443e-8090-2f2eab9c3d11", 
+        1, 
+        true
+      ], 
+      [
+        "5dfa65b6-0e26-4c16-9351-57fece28589e", 
+        1, 
+        true
+      ], 
+      [
+        "9efe4647-0d09-4ba4-a9d4-6dda7576003b", 
+        1, 
+        true
+      ], 
+      [
+        "9377c83d-cb33-4cfb-b99d-bf72d8313229", 
+        1, 
+        true
+      ], 
+      [
+        "80d6ef28-3c9a-4a8e-ad70-30204c4fe989", 
+        1, 
+        true
+      ], 
+      [
+        "a8e3ac45-3b4d-478d-bb25-e70068a58177", 
+        1, 
+        true
+      ], 
+      [
+        "e899fb4e-33de-4946-98e6-376536374ab8", 
+        1, 
+        true
+      ], 
+      [
+        "f4760129-4171-4bd5-a5d4-92e2c3de867c", 
+        1, 
+        true
+      ], 
+      [
+        "6d4c3a7f-6685-4e78-ada7-a53fe5e4c228", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Shell\", \"widgetType\": \"shell-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"size\": 12}], \"id\": \"d8aee24e-041c-9387-36a5-52250fca32b3\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c12d1fe7-f975-1911-3b91-58bed3224ec6\", \"size\": 12}], \"id\": \"eaebe065-bccd-bf0d-2ab2-98099fd81afd\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"16cecde7-0f41-872d-8c5f-c2b1ff0bda7f\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Shell\", \"widgetType\": \"shell-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"size\": 12}], \"id\": \"d8aee24e-041c-9387-36a5-52250fca32b3\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c12d1fe7-f975-1911-3b91-58bed3224ec6\", \"size\": 12}], \"id\": \"eaebe065-bccd-bf0d-2ab2-98099fd81afd\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"949ae26d-f0b7-8ac4-ba4b-6b281e12cee3\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"a934e48b-a2dc-821e-93b3-4f657c5c60d1\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"949ae26d-f0b7-8ac4-ba4b-6b281e12cee3\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"a934e48b-a2dc-821e-93b3-4f657c5c60d1\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"16cecde7-0f41-872d-8c5f-c2b1ff0bda7f\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"f1ec49a1-c82e-2069-c3a0-349d4d111cbc\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"This workflow will take the AGS history data and sync with incremental data format\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"oozie.launcher.mapreduce.job.queuename\", \"value\": \"ingest\"}, {\"name\": \"INPUT_HDFS_PATH_ROUTE\", \"value\": \"/data/helix/decomposed/ags/actual_route/full/1.0/2016-09-01/*.avro\"}, {\"name\": \"OUTPUT_HDFS_PATH\", \"value\": \"/data/helix/modelled/emfg/sync/ags/actual_route/full/1.0/2018-02-25/00-00\"}, {\"name\": \"COMPRESSION\", \"value\": \"snappy\"}, {\"name\": \"SPARK_JAR\", \"value\": \"/apps/helix/conf/oozie/workspaces/wf_schemasyncagsactualrouteinitial/lib/agsroutehistoryschemasync-1.0.jar\"}, {\"name\": \"CLASS_NAME\", \"value\": \"com.emirates.helix.AGSRouteHistorySchemaSyncDriver\"}, {\"name\": \"EXECUTOR_MEMORY\", \"value\": \"2g\"}, {\"name\": \"DRIVER_MEMORY\", \"value\": \"2g\"}, {\"name\": \"QUEUE\", \"value\": \"opseff\"}, {\"name\": \"MIN_EXECUTORS\", \"value\": \"2\"}, {\"name\": \"MAX_EXECUTORS\", \"value\": \"10\"}, {\"name\": \"EXECUTOR_CORES\", \"value\": \"2\"}, {\"name\": \"PARTITIONS\", \"value\": \"5\"}, {\"name\": \"EMAIL_ADDRESS_LIST \", \"value\": \"fayazbasha.shaik@dnata.com, aswini.subramani@dnata.com\"}, {\"name\": \"INPUT_HDFS_PATH_REFLINE\", \"value\": \"/data/helix/decomposed/ags/refline/full/1.0/2018-01-31/00-00/*.avro\"}], \"sla_enabled\": false, \"deployment_dir\": \"/apps/helix/conf/oozie/workspaces/wf_schemasyncagsactualrouteinitial\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"show_arrows\": true, \"wf1_id\": null, \"properties\": []}, \"name\": \"SchemaSyncAgsActualRouteInitial\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": true, \"movedNode\": null, \"linkMapping\": {\"c12d1fe7-f975-1911-3b91-58bed3224ec6\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"c324533a-75b3-c136-d1e3-ad7748298ca7\"], \"c324533a-75b3-c136-d1e3-ad7748298ca7\": [\"c12d1fe7-f975-1911-3b91-58bed3224ec6\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": []}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"c12d1fe7-f975-1911-3b91-58bed3224ec6\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow Name: ${wf:name()} \\nCurrent Timestamp: ${timestamp()}\", \"cc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST} \", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"files\": [{\"value\": \"spark-execute.sh\"}], \"job_xml\": \"\", \"retry_interval\": [], \"retry_max\": [], \"job_properties\": [], \"capture_output\": true, \"shell_command\": \"spark-execute.sh\", \"arguments\": [{\"value\": \"hdfs://${SPARK_JAR}\"}, {\"value\": \"${CLASS_NAME}\"}, {\"value\": \"${EXECUTOR_MEMORY}\"}, {\"value\": \"${DRIVER_MEMORY}\"}, {\"value\": \"${QUEUE}\"}, {\"value\": \"${MIN_EXECUTORS}\"}, {\"value\": \"${MAX_EXECUTORS}\"}, {\"value\": \"${EXECUTOR_CORES}\"}, {\"value\": \"${INPUT_HDFS_PATH_ROUTE}\"}, {\"value\": \"${INPUT_HDFS_PATH_REFLINE}\"}, {\"value\": \"${OUTPUT_HDFS_PATH}\"}, {\"value\": \"${COMPRESSION}\"}, {\"value\": \"${PARTITIONS}\"}], \"prepares\": [], \"credentials\": [], \"env_var\": [], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}], \"archives\": []}, \"name\": \"shell-c324\", \"children\": [{\"to\": \"c12d1fe7-f975-1911-3b91-58bed3224ec6\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"shell-widget\", \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow ${wf:name()} Completed Successfully\", \"cc\": \"\", \"retry_interval\": [], \"retry_max\": [], \"bcc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST} \", \"attachment\": \"\", \"content_type\": \"text/plain\", \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"subject\": \"Workflow ${wf:name()} Completed Successfully\"}, \"name\": \"email-c12d\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"email-widget\", \"id\": \"c12d1fe7-f975-1911-3b91-58bed3224ec6\", \"actionParameters\": []}], \"id\": 220540, \"nodeNamesMapping\": {\"c12d1fe7-f975-1911-3b91-58bed3224ec6\": \"email-c12d\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"c324533a-75b3-c136-d1e3-ad7748298ca7\": \"shell-c324\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\"}, \"uuid\": \"ca4fddd7-8ef8-5590-bff8-04e83b321f92\"}}", 
+    "name": "SchemaSyncAgsActualRouteInitial"
+  }
+}
+]

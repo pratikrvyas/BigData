@@ -1,0 +1,12 @@
+#import
+--direct
+--connect
+jdbc:oracle:thin:@dolinuxbl440.hq.emirates.com:1526:frrlp
+--username
+frr_usr
+--password
+frr_usr
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec
+--delete-target-dir

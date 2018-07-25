@@ -1,0 +1,67 @@
+{
+  "type" : "record",
+  "name" : "arincrunwaydecomposed",
+  "fields" : 
+[
+{
+"name" : "Port",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "PortIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Ident",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Length",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Brg",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Lat",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Lon",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "ThrElev",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "DispDist",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "TCH",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "LIdent",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "SWay",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Cycle",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "uuid",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "timestamp",
+"type" : [ "string", "null" ]
+}
+]
+}

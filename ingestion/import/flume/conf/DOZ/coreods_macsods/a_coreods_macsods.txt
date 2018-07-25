@@ -1,0 +1,283 @@
+################# AGENT (Get data from Kafka To HDFS) #################
+
+# Name the components on this agent
+a_coreods_macsods.sources = r_coreflt r_macsdst r_macsinbd r_macsonwd r_macsflt r_macspax
+
+a_coreods_macsods.sinks = k_coreflt_hdfs1 k_coreflt_hdfs2 k_macsdst_hdfs1 k_macsdst_hdfs2  k_macsinbd_hdfs1 k_macsinbd_hdfs2  k_macsonwd_hdfs1 k_macsonwd_hdfs2  k_macsflt_hdfs1 k_macsflt_hdfs2 k_macspax_hdfs1 k_macspax_hdfs2
+
+a_coreods_macsods.channels = c_coreflt_hdfs c_macsdst_hdfs  c_macsinbd_hdfs  c_macsonwd_hdfs c_macsflt_hdfs  c_macspax_hdfs  
+
+################# CORE FLIGHT #################
+
+# Describe/configure the source
+a_coreods_macsods.sources.r_coreflt.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods.sources.r_coreflt.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_coreods_macsods.sources.r_coreflt.kafka.topics = kt_coreods.helix.fltfull.ek.qbrd.DOZ,kt_coreods.helix.fltfull.ek.qbrd.ETC
+a_coreods_macsods.sources.r_coreflt.groupId = coreflthdfs
+a_coreods_macsods.sources.r_coreflt.interceptors = i1
+a_coreods_macsods.sources.r_coreflt.interceptors.i1.type = timestamp
+a_coreods_macsods.sources.r_coreflt.kafka.consumer.timeout.ms = 100
+ 
+# Describe sink
+
+a_coreods_macsods.sinks.k_coreflt_hdfs1.type = HDFS
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.path = /data/helix/raw/coreods/flight/incremental/%Y-%m-%d
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.batchSize = 500
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.rollCount = 500
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.rollInterval = 500
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.filePrefix = sink1
+a_coreods_macsods.sinks.k_coreflt_hdfs1.hdfs.proxyUser = scv_ops
+
+
+a_coreods_macsods.sinks.k_coreflt_hdfs2.type = HDFS
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.path = /data/helix/raw/coreods/flight/incremental/%Y-%m-%d
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.batchSize = 500
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.rollCount = 500
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.rollInterval = 500
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.filePrefix = sink2
+a_coreods_macsods.sinks.k_coreflt_hdfs2.hdfs.proxyUser = scv_ops
+
+
+# Use a channel which buffers events in file
+a_coreods_macsods.channels.c_coreflt_hdfs.type = file
+a_coreods_macsods.channels.c_coreflt_hdfs.checkpointDir = /data/1/flumev1/core/flight/checkpoint/checkpoint2
+a_coreods_macsods.channels.c_coreflt_hdfs.dataDirs = /data/1/flumev1/core/flight/data
+
+
+# Bind the source and sink to the channel
+a_coreods_macsods.sources.r_coreflt.channels =  c_coreflt_hdfs
+
+a_coreods_macsods.sinks.k_coreflt_hdfs1.channel = c_coreflt_hdfs
+a_coreods_macsods.sinks.k_coreflt_hdfs2.channel = c_coreflt_hdfs
+
+
+################# MACS DESTINATION #################
+
+# Describe/configure the source
+a_coreods_macsods.sources.r_macsdst.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods.sources.r_macsdst.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_coreods_macsods.sources.r_macsdst.kafka.topics = kt_macsods.helix.dst.ek.qbrd.DOZ,kt_macsods.helix.dst.ek.qbrd.ETC
+a_coreods_macsods.sources.r_macsdst.groupId = macsdsthdfs
+a_coreods_macsods.sources.r_macsdst.interceptors = i1
+a_coreods_macsods.sources.r_macsdst.interceptors.i1.type = timestamp
+a_coreods_macsods.sources.r_macsdst.kafka.consumer.timeout.ms = 100
+
+
+# Describe sink (HDFS)
+a_coreods_macsods.sinks.k_macsdst_hdfs1.type = HDFS
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.path = /data/helix/raw/macsods/dst/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.batchSize = 500
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.rollCount = 500
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.rollInterval = 500
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.filePrefix = sink1
+a_coreods_macsods.sinks.k_macsdst_hdfs1.hdfs.proxyUser = scv_ops
+
+a_coreods_macsods.sinks.k_macsdst_hdfs2.type = HDFS
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.path = /data/helix/raw/macsods/dst/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.batchSize = 500
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.rollCount = 500
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.rollInterval = 500
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.filePrefix = sink2
+a_coreods_macsods.sinks.k_macsdst_hdfs2.hdfs.proxyUser = scv_ops
+
+
+# Use a channel which buffers events in memory
+a_coreods_macsods.channels.c_macsdst_hdfs.type = file
+a_coreods_macsods.channels.c_macsdst_hdfs.checkpointDir = /data/1/flumev1/dst/checkpoint/checkpoint1
+a_coreods_macsods.channels.c_macsdst_hdfs.dataDirs = /data/1/flumev1/dst/data
+
+# Bind the source and sink to the channel
+a_coreods_macsods.sources.r_macsdst.channels = c_macsdst_hdfs
+
+a_coreods_macsods.sinks.k_macsdst_hdfs1.channel = c_macsdst_hdfs
+a_coreods_macsods.sinks.k_macsdst_hdfs2.channel = c_macsdst_hdfs
+
+################# MACS INBOUND #################
+# Describe/configure the source
+a_coreods_macsods.sources.r_macsinbd.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods.sources.r_macsinbd.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_coreods_macsods.sources.r_macsinbd.kafka.topics = kt_macsods.helix.inb.ek.qbrd.DOZ,kt_macsods.helix.inb.ek.qbrd.ETC
+a_coreods_macsods.sources.r_macsinbd.groupId = macsinbdhdfs
+a_coreods_macsods.sources.r_macsinbd.interceptors = i1
+a_coreods_macsods.sources.r_macsinbd.interceptors.i1.type = timestamp
+a_coreods_macsods.sources.r_macsinbd.kafka.consumer.timeout.ms = 100
+
+# Describe sink (HDFS)
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.type = HDFS
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.path = /data/helix/raw/macsods/inbound/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.batchSize = 1000
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.rollCount = 1000
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.rollInterval = 1000
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.filePrefix = sink1
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.hdfs.proxyUser = scv_ops
+
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.type = HDFS
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.path = /data/helix/raw/macsods/inbound/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.batchSize = 1000
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.rollCount = 1000
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.rollInterval = 1000
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.filePrefix = sink2
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.hdfs.proxyUser = scv_ops
+
+
+# Channel
+a_coreods_macsods.channels.c_macsinbd_hdfs.type = file
+a_coreods_macsods.channels.c_macsinbd_hdfs.checkpointDir = /data/1/flumev1/inbound/checkpoint/checkpoint1
+a_coreods_macsods.channels.c_macsinbd_hdfs.dataDirs = /data/1/flumev1/inbound/data
+
+# Bind the source and sink to the channel
+a_coreods_macsods.sources.r_macsinbd.channels = c_macsinbd_hdfs
+a_coreods_macsods.sinks.k_macsinbd_hdfs1.channel = c_macsinbd_hdfs
+a_coreods_macsods.sinks.k_macsinbd_hdfs2.channel = c_macsinbd_hdfs
+
+################# MACS ONWARD #################
+# Describe/configure the source
+a_coreods_macsods.sources.r_macsonwd.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods.sources.r_macsonwd.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_coreods_macsods.sources.r_macsonwd.kafka.topics = kt_macsods.helix.onw.ek.qbrd.DOZ,kt_macsods.helix.onw.ek.qbrd.ETC
+a_coreods_macsods.sources.r_macsonwd.groupId = macsonwdhdfs
+a_coreods_macsods.sources.r_macsonwd.interceptors = i1
+a_coreods_macsods.sources.r_macsonwd.interceptors.i1.type = timestamp
+a_coreods_macsods.sources.r_macsonwd.kafka.consumer.timeout.ms = 100
+
+# Channel
+a_coreods_macsods.channels.c_macsonwd_hdfs.type = file
+a_coreods_macsods.channels.c_macsonwd_hdfs.checkpointDir = /data/1/flumev1/onward/checkpoint/checkpoint1
+a_coreods_macsods.channels.c_macsonwd_hdfs.dataDirs = /data/1/flumev1/onward/data
+
+# Describe sink (HDFS)
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.type = HDFS
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.path = /data/helix/raw/macsods/onward/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.batchSize = 1000
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.rollCount = 1000
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.rollInterval = 1000
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.filePrefix = sink1
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.hdfs.proxyUser = scv_ops
+
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.type = HDFS
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.path = /data/helix/raw/macsods/onward/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.batchSize = 1000
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.rollCount = 1000
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.rollInterval = 1000
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.filePrefix = sink2
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.hdfs.proxyUser = scv_ops
+
+# Bind the source and sink to the channel
+a_coreods_macsods.sources.r_macsonwd.channels = c_macsonwd_hdfs
+
+a_coreods_macsods.sinks.k_macsonwd_hdfs1.channel = c_macsonwd_hdfs
+a_coreods_macsods.sinks.k_macsonwd_hdfs2.channel = c_macsonwd_hdfs
+
+################# MACS FLIGHT #################
+# Describe/configure the source
+a_coreods_macsods.sources.r_macsflt.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods.sources.r_macsflt.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_coreods_macsods.sources.r_macsflt.kafka.topics = kt_macsods.helix.flt.ek.qbrd.DOZ, kt_macsods.helix.flt.ek.qbrd.ETC
+a_coreods_macsods.sources.r_macsflt.groupId = macsflthdfs
+a_coreods_macsods.sources.r_macsflt.interceptors = i1
+a_coreods_macsods.sources.r_macsflt.interceptors.i1.type = timestamp
+a_coreods_macsods.sources.r_macsflt.kafka.consumer.timeout.ms = 100
+
+# Describe sink
+a_coreods_macsods.sinks.k_macsflt_hdfs1.type = HDFS
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.path = /data/helix/raw/macsods/flt/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.batchSize = 100
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.rollCount = 100
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.rollInterval = 1000
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.filePrefix = sink1
+a_coreods_macsods.sinks.k_macsflt_hdfs1.hdfs.proxyUser = scv_ops
+
+a_coreods_macsods.sinks.k_macsflt_hdfs2.type = HDFS
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.path = /data/helix/raw/macsods/flt/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.batchSize = 100
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.rollCount = 100
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.rollInterval = 1000
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.filePrefix = sink2
+a_coreods_macsods.sinks.k_macsflt_hdfs2.hdfs.proxyUser = scv_ops
+
+#Describe file channel
+a_coreods_macsods.channels.c_macsflt_hdfs.type = file
+a_coreods_macsods.channels.c_macsflt_hdfs.checkpointDir = /data/1/flumev1/flt/checkpoint/checkpoint1
+a_coreods_macsods.channels.c_macsflt_hdfs.dataDirs = /data/1/flumev1/flt/data
+
+
+a_coreods_macsods.sources.r_macsflt.channels =  c_macsflt_hdfs
+a_coreods_macsods.sinks.k_macsflt_hdfs1.channel = c_macsflt_hdfs
+a_coreods_macsods.sinks.k_macsflt_hdfs2.channel = c_macsflt_hdfs
+
+################# MACS PAX #################
+# Describe/configure the source
+a_coreods_macsods.sources.r_macspax.type = org.apache.flume.source.kafka.KafkaSource
+a_coreods_macsods.sources.r_macspax.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_coreods_macsods.sources.r_macspax.kafka.topics = kt_macsods.helix.pxx.ek.qbrd.DOZ,kt_macsods.helix.pxx.ek.qbrd.ETC
+a_coreods_macsods.sources.r_macspax.groupId = macspaxhdfs
+a_coreods_macsods.sources.r_macspax.interceptors = i1
+a_coreods_macsods.sources.r_macspax.interceptors.i1.type = timestamp
+a_coreods_macsods.sources.r_macspax.kafka.consumer.timeout.ms = 100
+
+# Describe sink
+
+a_coreods_macsods.sinks.k_macspax_hdfs1.type = HDFS
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.path = /data/helix/raw/macsods/pax/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.batchSize = 1000
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.rollCount = 1000
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.rollInterval = 1000
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.filePrefix = sink1
+a_coreods_macsods.sinks.k_macspax_hdfs1.hdfs.proxyUser = scv_ops
+
+a_coreods_macsods.sinks.k_macspax_hdfs2.type = HDFS
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.path = /data/helix/raw/macsods/pax/incremental/1.0/%Y-%m-%d
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.useLocalTimeStamp = true
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.batchSize = 1000
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.rollCount = 1000
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.rollSize = 0
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.rollInterval = 1000
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.callTimeout = 60000
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.filePrefix = sink2
+a_coreods_macsods.sinks.k_macspax_hdfs2.hdfs.proxyUser = scv_ops
+
+# Use a channel which buffers events in file
+a_coreods_macsods.channels.c_macspax_hdfs.type = file
+a_coreods_macsods.channels.c_macspax_hdfs.checkpointDir = /data/1/flumev1/pax/checkpoint/checkpoint39
+a_coreods_macsods.channels.c_macspax_hdfs.dataDirs = /data/1/flumev1/pax/data3
+
+
+a_coreods_macsods.sources.r_macspax.channels = c_macspax_hdfs
+a_coreods_macsods.sinks.k_macspax_hdfs1.channel = c_macspax_hdfs
+a_coreods_macsods.sinks.k_macspax_hdfs2.channel = c_macspax_hdfs
+
+###Config ends here ########
+

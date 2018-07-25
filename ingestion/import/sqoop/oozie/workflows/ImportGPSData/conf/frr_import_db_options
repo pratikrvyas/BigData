@@ -1,0 +1,11 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.79.120:1521:frrdp
+--username
+frr_usr
+--password
+frr_usr
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec
+--delete-target-dir

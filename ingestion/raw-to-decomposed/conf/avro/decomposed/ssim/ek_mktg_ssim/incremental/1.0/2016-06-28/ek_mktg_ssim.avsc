@@ -1,0 +1,23 @@
+{
+  "type" : "record",
+  "name" : "import_oag",
+  "doc" : "import of DW_OWNR. ek_mktg_ssim.",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "SSIM_TEXT_MESSAGE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SSIM_TEXT_MESSAGE",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.ek_mktg_ssim"
+}

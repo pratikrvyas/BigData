@@ -1,0 +1,65 @@
+
+<workflow-app name="RawToDecomposedStatic_AircraftMapping" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapreduce.job.queuename</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.queuename</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-9713"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-9713">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-13ca"/>
+        <error to="email-5929"/>
+    </action>
+    <action name="pig-13ca">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-9713&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="End"/>
+        <error to="email-5929"/>
+    </action>
+    <action name="email-5929">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>akash.verma@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

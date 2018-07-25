@@ -1,0 +1,93 @@
+{
+  "type" : "record",
+  "name" : "PROGRAMME_PARTNER_RATES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [  {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+{
+    "name" : "RTB_LPP_PTNR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RTB_LPP_PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RTB_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RTB_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EFF_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "CUR_SHORT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUR_SHORT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DISCONT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCONT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FIXED_RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FIXED_RATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "CHRG_RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHRG_RATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "RMKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RMKS",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PROGRAMME_PARTNER_RATES"
+}

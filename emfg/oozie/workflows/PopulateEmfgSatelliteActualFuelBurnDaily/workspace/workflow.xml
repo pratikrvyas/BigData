@@ -1,0 +1,60 @@
+<workflow-app name="PopulateEmfgSatelliteActualFuelBurnDaily" xmlns="uri:oozie:workflow:0.5">
+    <start to="shell-c324"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST} </to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-c324">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>spark-execute.sh</exec>
+              <argument>hdfs://${SPARK_JAR}</argument>
+              <argument>${CLASS_NAME}</argument>
+              <argument>${EXECUTOR_MEMORY}</argument>
+              <argument>${DRIVER_MEMORY}</argument>
+              <argument>${QUEUE}</argument>
+              <argument>${MIN_EXECUTORS}</argument>
+              <argument>${MAX_EXECUTORS}</argument>
+              <argument>${EXECUTOR_CORES}</argument>
+              <argument>${INPUT_DEDUPE_CURRENT_PATH}</argument>
+              <argument>${INPUT_FLIGHT_MASTER_CURRENT_PATH}</argument>
+              <argument>${OUTPUT_CURRENT_PATH}_tmp</argument>
+              <argument>${OUTPUT_REJECTED_PATH}</argument>
+              <argument>${COMPRESSION}</argument>
+              <argument>${PARTITIONS}</argument>
+            <file>spark-execute.sh#spark-execute.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fs-79cb"/>
+        <error to="Kill"/>
+    </action>
+    <action name="email-c12d">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST} </to>
+            <subject>Workflow ${wf:name()} Completed Successfully</subject>
+            <body>Workflow ${wf:name()} Completed Successfully</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="fs-79cb">
+        <fs>
+              <delete path='${OUTPUT_CURRENT_PATH}'/>
+              <move source='${OUTPUT_CURRENT_PATH}_tmp' target='${OUTPUT_CURRENT_PATH}'/>
+        </fs>
+        <ok to="email-c12d"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

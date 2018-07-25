@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@tktods_db_ha.app.emirates.com:6517:TKTODS
+--username
+helix_user
+--password
+emirates12#3
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

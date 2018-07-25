@@ -1,0 +1,157 @@
+{
+  "type" : "record",
+  "name" : "REWARDS_BOOKING_ENTRIES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "CONTACT_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONTACT_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "REWARD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REWARD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PMP_MEM_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PMP_MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PROGRESS_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PROGRESS_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "INIT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INIT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PRIORITY_LEVEL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PRIORITY_LEVEL",
+    "sqlType" : "2"
+  }, {
+    "name" : "REFUND_PERCENTAGE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REFUND_PERCENTAGE",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "FOLLOWUP_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FOLLOWUP_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FOLLOWUP_REASON",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FOLLOWUP_REASON",
+    "sqlType" : "12"
+  }, {
+    "name" : "QUEUE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUEUE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "REC_LOCATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REC_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_IATA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REDEEMED_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REDEEMED_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CANCELLED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CANCELLED",
+    "sqlType" : "12"
+  }, {
+    "name" : "TELEPHONE_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TELEPHONE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "REMARKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "ADD_ADD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ADD_ADD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AMC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_ON_DEPARTURE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_ON_DEPARTURE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PAX_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PAX_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGINATOR_SYSTEM",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGINATOR_SYSTEM",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "REWARDS_BOOKING_ENTRIES"
+}

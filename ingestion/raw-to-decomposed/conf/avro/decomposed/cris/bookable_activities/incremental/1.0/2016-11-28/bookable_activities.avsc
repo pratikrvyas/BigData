@@ -1,0 +1,196 @@
+{
+  "type" : "record",
+  "name" : "BOOKABLE_ACTIVITIES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [   {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+ {
+
+    "name" : "ACT_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACT_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BAC_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BAC_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ATP_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ATP_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACT_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "EFF_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BAC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BAC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "LPP_PTNR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LPP_PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DISCONT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCONT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CLASS_OF_SERVICE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLASS_OF_SERVICE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SGMT_CITY_PAIR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SGMT_CITY_PAIR",
+    "sqlType" : "12"
+  }, {
+    "name" : "SGMT_DISTANCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SGMT_DISTANCE",
+    "sqlType" : "2"
+  }, {
+    "name" : "FARE_BASIS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FARE_BASIS",
+    "sqlType" : "12"
+  }, {
+    "name" : "DIFF",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DIFF",
+    "sqlType" : "12"
+  }, {
+    "name" : "STMT_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STMT_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "REDEMPTN_METHOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REDEMPTN_METHOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "MIN_APPLCN_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MIN_APPLCN_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "MAX_APPLCN_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MAX_APPLCN_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "VOUCHER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VOUCHER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXT_TRANSACTION_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXT_TRANSACTION_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXT_SERVICE_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXT_SERVICE_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STMT_DESC_LANG1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STMT_DESC_LANG1",
+    "sqlType" : "12"
+  }, {
+    "name" : "STMT_DESC_LANG2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STMT_DESC_LANG2",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MILES_CATEGORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MILES_CATEGORY",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "BOOKABLE_ACTIVITIES"
+}

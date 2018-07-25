@@ -1,0 +1,68 @@
+{
+  "type" : "record",
+  "name" : "CDW_OD_EXCEPTIONS",
+  "doc" : "import of DW_OWNR.CDW_OD_EXCEPTIONS",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "ORIGIN_COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGIN_COUNTRY_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "ORIGIN_COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGIN_COUNTRY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGIN_IATA_AREA",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGIN_IATA_AREA",
+    "sqlType" : "2"
+  }, {
+    "name" : "DESTN_COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESTN_COUNTRY_CODE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESTN_COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESTN_COUNTRY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTN_IATA_AREA",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESTN_IATA_AREA",
+    "sqlType" : "93"
+  }, {
+    "name" : "STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "STATUS",
+    "sqlType" : "93"
+  }, {
+    "name" : "ORIGIN_REGION_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGIN_REGION_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTN_REGION_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESTN_REGION_NAME",
+    "sqlType" : "93"
+  }, {
+    "name" : "TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TYPE",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.CDW_OD_EXCEPTIONS"
+}

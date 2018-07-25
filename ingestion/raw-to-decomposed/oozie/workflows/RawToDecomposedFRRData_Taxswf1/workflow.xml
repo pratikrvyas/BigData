@@ -1,0 +1,268 @@
+<workflow-app name="RawToDecomposedFRRData_TaxSWF1_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="fork-11f3"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-c0ed">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_FRR_SUBS_X1}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-f8d2"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-dec7">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_FRR_SUBS_TBL167}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-6ea3"/>
+        <error to="email-efcd"/>
+    </action>
+    <fork name="fork-11f3">
+        <path start="shell-c0ed" />
+        <path start="shell-dec7" />
+        <path start="shell-4b21" />
+        <path start="shell-94ba" />
+        <path start="shell-f9ed" />
+        <path start="shell-7b93" />
+        <path start="shell-7b5e" />
+        <path start="shell-7f09" />
+    </fork>
+    <join name="join-2636" to="End"/>
+    <action name="pig-f8d2">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_FRR_SUBS_X1}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_FRR_SUBS_X1}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_FRR_SUBS_X1}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_FRR_SUBS_X1}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-c0ed&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-6ea3">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_FRR_SUBS_TBL167}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_FRR_SUBS_TBL167}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_FRR_SUBS_TBL167}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_FRR_SUBS_TBL167}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-dec7&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-4b21">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="email-efcd">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>s434654@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-94ba">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_FRR_SUBS_TBL169}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-7543"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="pig-7543">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_FRR_SUBS_TBL169}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_FRR_SUBS_TBL169}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_FRR_SUBS_TBL169}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_FRR_SUBS_TBL169}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-94ba&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="email-efcd"/>
+    </action>
+    <action name="shell-f9ed">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_FRR_SUBS_TBL183}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-1ba4"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-1ba4">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_FRR_SUBS_TBL183}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_FRR_SUBS_TBL183}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_FRR_SUBS_TBL183}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_FRR_SUBS_TBL183}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-f9ed&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-7b93">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_FRR_SUBS_TBL186}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-f32e"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-f32e">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_FRR_SUBS_TBL186}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_FRR_SUBS_TBL186}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_FRR_SUBS_TBL186}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_FRR_SUBS_TBL186}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-7b93&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-7b5e">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_FRR_SUBS_TBL186SEG}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-8478"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-8478">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_FRR_SUBS_TBL186SEG}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_FRR_SUBS_TBL186SEG}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_FRR_SUBS_TBL186SEG}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_FRR_SUBS_TBL186SEG}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-7b5e&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-7f09">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_OAL_COUNTRY_CURRENCY_MAP}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-8a9f"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-8a9f">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_OAL_COUNTRY_CURRENCY_MAP}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_OAL_COUNTRY_CURRENCY_MAP}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_OAL_COUNTRY_CURRENCY_MAP}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_OAL_COUNTRY_CURRENCY_MAP}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-7f09&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-2636"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

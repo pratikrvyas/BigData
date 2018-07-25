@@ -1,0 +1,87 @@
+{
+  "type" : "record",
+  "name" : "ACTIVITY_ACTION_REASON",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [  {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+{
+    "name" : "CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTION_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTION_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CATEGORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "BILLABLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILLABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "INCL_IN_STMT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INCL_IN_STMT",
+    "sqlType" : "12"
+  }, {
+    "name" : "SHORT_STMT_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SHORT_STMT_DESC",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "ACTIVITY_ACTION_REASON"
+}

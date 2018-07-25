@@ -1,0 +1,52 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_MACS_TICKET_NUMBER",
+  "doc" : "Sqoop import of MACS_OWNR.MACS_TICKET_NUMBER",
+  "fields" : [ {
+    "name" : "PARTITION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARTITION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TKN_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKN_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MFL_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "MFL_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "REFERENCE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "REFERENCE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "COUPON_WEIGHT",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUPON_WEIGHT",
+    "sqlType" : "2"
+  }, {
+    "name" : "DOWNLOAD_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOWNLOAD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TIME_STAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIME_STAMP",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "MACS_OWNR.MACS_TICKET_NUMBER"
+}

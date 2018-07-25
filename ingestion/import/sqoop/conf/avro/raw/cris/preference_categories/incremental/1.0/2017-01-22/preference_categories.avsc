@@ -1,0 +1,67 @@
+{
+  "type" : "record",
+  "name" : "PREFERENCE_CATEGORIES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "CTG_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CTG_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USAGE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USAGE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEMBER_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROFILE_SR_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PROFILE_SR_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRPORT_VAL_REQ",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRPORT_VAL_REQ",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PREFERENCE_CATEGORIES"
+}

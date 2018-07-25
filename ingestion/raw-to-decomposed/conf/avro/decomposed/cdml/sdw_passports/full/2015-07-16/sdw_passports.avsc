@@ -1,0 +1,142 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_SDW_PASSPORTS",
+  "doc" : "Sqoop import of DW_OWNR.SDW_PASSPORTS",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "LPT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LPT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STG_PROCESS_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PPT_SEQ_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PPT_SEQ_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "FIRST_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "FIRST_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "MIDDLE_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "MIDDLE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "LAST_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "LAST_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PLACE_OF_ISSUE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PLACE_OF_ISSUE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PLACE_OF_BIRTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "PLACE_OF_BIRTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXP_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXP_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ISSUE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PPT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PPT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "NATIONALITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "NATIONALITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "COU_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COU_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PERSON_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PASSPORT_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PASSPORT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CARD_NO",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "DW_OWNR.SDW_PASSPORTS"
+}

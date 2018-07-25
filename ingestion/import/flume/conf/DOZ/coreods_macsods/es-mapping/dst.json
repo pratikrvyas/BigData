@@ -1,0 +1,47 @@
+{
+  "dst": {
+    "_ttl": {"enabled": true,"default":"10d"},
+    "_timestamp" : {
+      "enabled":true,
+      "format":"YYYY-MM-dd HH:mm:ss"
+    },
+    "properties": {
+      "flt_snapshot_day": {"type": "string","index": "not_analyzed"},
+      "dst_id": {"type": "string"},
+      "mfl_id": {"type": "string"},
+      "destination": {"type": "string"},
+      "arrival_date":  {"type": "string","index": "not_analyzed"},
+      "arrival_time": {"type": "string"},
+      "arrival_date_gmt": {"type": "string","index": "not_analyzed"},
+      "arrival_time_gmt": {"type": "string"},
+      "latest_arrival_date":  {"type": "string","index": "not_analyzed"},
+      "latest_arrival_time": {"type": "string"},
+      "latest_arrival_date_gmt":  {"type": "string","index": "not_analyzed"},
+      "latest_arrival_time_gmt": {"type": "string"},
+      "joining_load": {"type": "string"},
+      "sub_load": {"type": "string"},
+      "transit_load": {"type": "string"},
+      "connecting_load": {"type": "string"},
+      "accepted_joining": {"type": "string"},
+      "accepted_subload": {"type": "string"},
+      "accepted_transit": {"type": "string"},
+      "accepted_connecting": {"type": "string"},
+      "dead_load": {"type": "string"},
+      "departure_date":  {"type": "string","index": "not_analyzed"},
+      "departure_time": {"type": "string"},
+      "departure_date_gmt": {"type": "string","index": "not_analyzed"},
+      "departure_time_gmt": {"type": "string"},
+	  "latest_departure_date":  {"type": "string","index": "not_analyzed"},
+      "latest_departure_time": {"type": "string"},
+      "latest_departure_date_gmt":  {"type": "string","index": "not_analyzed"},
+      "latest_departure_time_gmt": {"type": "string"},
+      "pax_load_data": {"type": "string"},
+      "download_date": {"type": "string","index": "not_analyzed"},
+      "time_stamp": {"type": "string"},
+      "accepted_joining_subload": {"type": "string"},
+      "sequence_no": {"type": "string"},
+      "accepted_connecting_subload": {"type": "string"},
+      "status": {"type": "string"}
+    }
+  }
+}

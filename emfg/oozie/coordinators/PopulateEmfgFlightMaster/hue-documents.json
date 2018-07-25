@@ -1,0 +1,204 @@
+[
+{
+  "pk": 2151635, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": "", 
+    "uuid": "3fcc0a48-7c59-4fc0-911e-ac89de0fe05c", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "This workflow will create Flight Master Genome", 
+    "is_history": false, 
+    "parent_directory": [
+      "f1992374-b8b7-458e-b157-af952172c926", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-04-05T11:11:41.069", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "846edf1c-57e0-4899-b97c-6ebb8256c75c", 
+        1, 
+        true
+      ], 
+      [
+        "90cb8714-cc58-4a50-b410-b0a648ca12c7", 
+        1, 
+        true
+      ], 
+      [
+        "9cf26cab-bbdf-4f72-b6a4-7b0c76ef87ed", 
+        1, 
+        true
+      ], 
+      [
+        "66df5eaf-0fc9-4246-98e0-e154ec2764ea", 
+        1, 
+        true
+      ], 
+      [
+        "3d917fa5-d0b4-497d-89b2-f18bcfcf9263", 
+        1, 
+        true
+      ], 
+      [
+        "d18dca30-31f0-4923-95d5-a09a8a42adbc", 
+        1, 
+        true
+      ], 
+      [
+        "934049d5-7565-4259-b75a-eb10f4e713bc", 
+        1, 
+        true
+      ], 
+      [
+        "2a503d7b-0618-41f6-82bb-c38fd9374f29", 
+        1, 
+        true
+      ], 
+      [
+        "bf45774f-65d2-4feb-b532-97c8f339efac", 
+        1, 
+        true
+      ], 
+      [
+        "2641685d-9bca-4698-b9b6-2b763fcc2fc2", 
+        1, 
+        true
+      ], 
+      [
+        "8f0f76bd-ecfe-45e7-bac6-c25b689866d3", 
+        1, 
+        true
+      ], 
+      [
+        "139fccf5-a10b-40b2-8031-bc1a4258c0cf", 
+        1, 
+        true
+      ], 
+      [
+        "0292147f-f7f9-44cf-a32c-aca8750e305b", 
+        1, 
+        true
+      ], 
+      [
+        "677f0110-557a-411b-bde4-ae47b92049df", 
+        1, 
+        true
+      ], 
+      [
+        "6b9ab859-2418-4e62-8fb9-e4a364467788", 
+        1, 
+        true
+      ], 
+      [
+        "5ec00019-bbdf-4158-bf54-e9d26646f56e", 
+        1, 
+        true
+      ], 
+      [
+        "3b8c859b-8696-4f69-89c4-1fd779559634", 
+        1, 
+        true
+      ], 
+      [
+        "41faf4e6-0314-4f57-b8a8-c64c15ddba3a", 
+        1, 
+        true
+      ], 
+      [
+        "23c267b0-42f4-4b4d-b374-55a2523cafac", 
+        1, 
+        true
+      ], 
+      [
+        "24a5caa3-279a-4ee1-a9ef-8930141aeb41", 
+        1, 
+        true
+      ], 
+      [
+        "263e09ae-7cc4-4871-b05a-8ac5e6accbb3", 
+        1, 
+        true
+      ], 
+      [
+        "2076842e-511f-436c-9f15-f8dcc319bfb3", 
+        1, 
+        true
+      ], 
+      [
+        "69db03cf-6879-471e-b173-2d843274f95c", 
+        1, 
+        true
+      ], 
+      [
+        "e71da84a-3a80-4678-b47b-faa5ac70beca", 
+        1, 
+        true
+      ], 
+      [
+        "47c1a7f7-558a-4163-a3cf-324e190f647b", 
+        1, 
+        true
+      ], 
+      [
+        "1de4dc74-c86c-40b5-9a68-25e53be98e45", 
+        1, 
+        true
+      ], 
+      [
+        "7bacb9f3-1533-42fd-91a9-2184326b1773", 
+        1, 
+        true
+      ], 
+      [
+        "f36178c3-f23e-4cff-a975-bce3e30e9a21", 
+        1, 
+        true
+      ], 
+      [
+        "a0c1b4c8-1b6a-435d-9fdd-5ad6e2bcf34c", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"EMFG_Flight_Master\", \"widgetType\": \"spark-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"size\": 12}], \"id\": \"2e9e8bff-2509-83b1-da96-3aa5ff746aa5\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"57afd00c-2636-1d90-7074-27b454ad37d0\", \"size\": 12}], \"id\": \"2c7a0f1a-b5ec-700d-7915-8e9772022f7f\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"0fac7971-83ac-4221-f8b9-99d02a2c7d9b\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"EMFG_Flight_Master\", \"widgetType\": \"spark-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"size\": 12}], \"id\": \"2e9e8bff-2509-83b1-da96-3aa5ff746aa5\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"57afd00c-2636-1d90-7074-27b454ad37d0\", \"size\": 12}], \"id\": \"2c7a0f1a-b5ec-700d-7915-8e9772022f7f\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"87585fc1-8db9-bf64-9da7-0818a72395fd\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"95699433-5ef9-bca0-5652-c88fedb75656\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"87585fc1-8db9-bf64-9da7-0818a72395fd\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"95699433-5ef9-bca0-5652-c88fedb75656\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"0fac7971-83ac-4221-f8b9-99d02a2c7d9b\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"5a4b49d3-7fe6-bb17-8604-563382351a70\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"This workflow will create Flight Master Genome\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"EMAIL_ADDRESS_LIST\", \"value\": \"aswini.subramani@dnata.com, krishnaraj.rajagopal@emirates.com, fayazbasha.shaik@dnata.com\"}, {\"name\": \"CORE_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/core/*\"}, {\"name\": \"AGS_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/ags/refline/*\"}, {\"name\": \"COMPRESSION\", \"value\": \"snappy\"}, {\"name\": \"COALESCE_VALUE\", \"value\": \"50\"}, {\"name\": \"DMIS_FLIGHTINFO_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/dmis/flightinfo/*\"}, {\"name\": \"LIDO_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/lido/lido_fsum_flight_level/*\"}, {\"name\": \"BROADCAST_SIZE\", \"value\": \"1073741824\"}, {\"name\": \"LOOK_BACK_PERIOD\", \"value\": \"5\"}, {\"name\": \"OUTPUT_HISTORY_LOCATION\", \"value\": \"/data/helix/uat/modelled/emfg/public/flightmaster/history/snapdate=2018-04-02/snaptime=00-00\"}, {\"name\": \"OUTPUT_CURRENT_LOCATION\", \"value\": \"/data/helix/uat/modelled/emfg/public/flightmaster/current/snapdate=2018-04-02/snaptime=00-00\"}, {\"name\": \"AIRCRAFT_COUNTRY_REGION_PATH\", \"value\": \"/data/helix/decomposed/sof_master/aircraft_country_region/1.0/2018-02-25/00-00/*.avro\"}, {\"name\": \"FLIGHT_SERVICE_PATH\", \"value\": \"/data/helix/decomposed/sof_master/flight_service/1.0/2018-02-25/00-00/*.avro\"}, {\"name\": \"FLIGHT_STATUS_PATH\", \"value\": \"/data/helix/decomposed/sof_master/flight_status/1.0/2018-02-25/00-00/*.avro\"}, {\"name\": \"FLIGHT_DELAY_PATH\", \"value\": \"/data/helix/decomposed/sof_master/flight_delay/1.0/2018-02-25/00-00/*.avro\"}, {\"name\": \"DATA_LOAD_MODE\", \"value\": \"History\"}, {\"name\": \"DMIS_BAYDETAILS_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/dmis/bay_details/*\"}, {\"name\": \"BAYCHANGE_LOOKUP\", \"value\": \"/data/helix/decomposed/sof_master/bay_change_reason/1.0/2018-02-25/00-00\"}, {\"name\": \"CONCOURSE_LOOKUP\", \"value\": \"/data/helix/decomposed/sof_master/terminal_coucourse_gate_bay/1.0/2018-02-25/00-00\"}, {\"name\": \"AIRCRAFT_DETAILS_LOOKUP\", \"value\": \"/data/helix/decomposed/sof_master/aircraft_fleet_master/1.0/2018-03-30/00-00\"}], \"sla_enabled\": false, \"deployment_dir\": \"/apps/helix/conf/oozie/workspaces/uat/wf_populateemfgflightmaster\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"properties\": [{\"name\": \"oozie.launcher.mapred.job.queue.name\", \"value\": \"opseff\"}, {\"name\": \"mapred.job.queue.name\", \"value\": \"opseff\"}], \"show_arrows\": true, \"wf1_id\": null, \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"PopulateFlightMasterEmFG_UAT\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": true, \"movedNode\": null, \"linkMapping\": {\"57afd00c-2636-1d90-7074-27b454ad37d0\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"fa832f7b-18d3-8f6a-8437-0a3864e97c78\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": [], \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\": [\"57afd00c-2636-1d90-7074-27b454ad37d0\"]}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"57afd00c-2636-1d90-7074-27b454ad37d0\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Current timestamp: ${timestamp()}\\nWorkflow name: ${wf:name()}\\nWorkflow application path: ${wf:appPath()}\\nWorkflow user: ${wf:user()}\\nLast error action: ${wf:lastErrorNode()}\\nError code: ${wf:errorCode(wf:lastErrorNode())}\\nError message: ${wf:errorMessage(wf:lastErrorNode())}\", \"cc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST}\", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"Workflow ${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"job_xml\": \"\", \"app_name\": \"flight-master-1.0\", \"spark_opts\": \"--files hive-site.xml --driver-memory 10g --executor-memory 20g --num-executors 25 --executor-cores 3 --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf \\\"spark.sql.shuffle.partitions=50\\\"\", \"retry_max\": [], \"retry_interval\": [], \"job_properties\": [], \"spark_arguments\": [{\"value\": \"--core_input\"}, {\"value\": \"${CORE_DEDUPE_PATH}\"}, {\"value\": \"--ags_input\"}, {\"value\": \"${AGS_DEDUPE_PATH}\"}, {\"value\": \"--dmis_input\"}, {\"value\": \"${DMIS_FLIGHTINFO_DEDUPE_PATH}\"}, {\"value\": \"--lido_input\"}, {\"value\": \"${LIDO_DEDUPE_PATH}\"}, {\"value\": \"--coalesce_value\"}, {\"value\": \"${COALESCE_VALUE}\"}, {\"value\": \"--compression\"}, {\"value\": \"${COMPRESSION}\"}, {\"value\": \"--broadcast_size\"}, {\"value\": \"${BROADCAST_SIZE}\"}, {\"value\": \"--look_back_months\"}, {\"value\": \"${LOOK_BACK_PERIOD}\"}, {\"value\": \"--output_current_location\"}, {\"value\": \"${OUTPUT_CURRENT_LOCATION}\"}, {\"value\": \"--output_history_location\"}, {\"value\": \"${OUTPUT_HISTORY_LOCATION}\"}, {\"value\": \"--aircraft_country_region_path\"}, {\"value\": \"${AIRCRAFT_COUNTRY_REGION_PATH}\"}, {\"value\": \"--flight_service_path\"}, {\"value\": \"${FLIGHT_SERVICE_PATH}\"}, {\"value\": \"--flight_status_path\"}, {\"value\": \"${FLIGHT_STATUS_PATH}\"}, {\"value\": \"--flight_delay_path\"}, {\"value\": \"${FLIGHT_DELAY_PATH}\"}, {\"value\": \"--data_load_mode\"}, {\"value\": \"${DATA_LOAD_MODE}\"}, {\"value\": \"--dmis_baydetail_input\"}, {\"value\": \"${DMIS_BAYDETAILS_DEDUPE_PATH}\"}, {\"value\": \"--baychange_lookup\"}, {\"value\": \"${BAYCHANGE_LOOKUP}\"}, {\"value\": \"--concourse_lookup\"}, {\"value\": \"${CONCOURSE_LOOKUP}\"}, {\"value\": \"--aircraft_details_lookup\"}, {\"value\": \"${AIRCRAFT_DETAILS_LOOKUP}\"}], \"spark_master\": \"yarn\", \"mode\": \"cluster\", \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"prepares\": [{\"type\": \"delete\", \"value\": \"${OUTPUT_HISTORY_LOCATION}\"}, {\"type\": \"delete\", \"value\": \"${OUTPUT_CURRENT_LOCATION}\"}], \"credentials\": [], \"jars\": \"flight-master-1.0.jar\", \"class\": \"com.emirates.helix.emfg.FlightMasterDriver\"}, \"name\": \"spark-fa83\", \"children\": [{\"to\": \"57afd00c-2636-1d90-7074-27b454ad37d0\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"spark-widget\", \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow ${wf:name()} Completed Successfully\", \"cc\": \"\", \"retry_interval\": [], \"retry_max\": [], \"bcc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST}\", \"attachment\": \"\", \"content_type\": \"text/plain\", \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"subject\": \"Workflow ${wf:name()} Completed Successfully :)\"}, \"name\": \"email-57af\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"email-widget\", \"id\": \"57afd00c-2636-1d90-7074-27b454ad37d0\", \"actionParameters\": []}], \"id\": 2151635, \"nodeNamesMapping\": {\"57afd00c-2636-1d90-7074-27b454ad37d0\": \"email-57af\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\", \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\": \"spark-fa83\"}, \"uuid\": \"9183a858-bc3d-f281-8d37-dff0972c25b1\"}}", 
+    "name": "PopulateFlightMasterEmFG_UAT"
+  }
+},
+{
+  "pk": 2167059, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": "", 
+    "uuid": "e3804768-da5b-af51-2f0c-7f52a0c49afd", 
+    "extra": "", 
+    "type": "oozie-coordinator2", 
+    "description": "This is a coordinator for Flight Master population", 
+    "is_history": false, 
+    "parent_directory": [
+      "f1992374-b8b7-458e-b157-af952172c926", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-04-05T10:49:33.856", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "3fcc0a48-7c59-4fc0-911e-ac89de0fe05c", 
+        1, 
+        false
+      ]
+    ], 
+    "data": "{\"end_date\": {\"name\": \"end_date\", \"value\": \"2018-04-30T23:59\"}, \"variables\": [{\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"7f810904-8995-e03e-1f91-bfddce4dcee5\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/uat/modelled/emfg/dedupe/lido/lido_fsum_flight_level/current\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"LIDO_DEDUPE_PATH\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"0c326f72-9160-d01c-ddfe-81fd9ebb0ffa\", \"frequency_number\": \"1\", \"dataset_variable\": \"/data/helix/uat/modelled/emfg/public/flightmaster/history/snapdate=${YEAR}-${MONTH}-${DAY}/snaptime=${HOUR}-${MINUTE}\", \"start\": \"2018-04-04T04:00\", \"same_frequency\": false, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"single\", \"dataset_type\": \"output_path\", \"use_done_flag\": true, \"done_flag\": \"_SUCCESS\", \"same_start\": false, \"frequency_unit\": \"days\", \"workflow_variable\": \"OUTPUT_HISTORY_LOCATION\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"bf9eb538-900c-e2f1-7702-05a1ea8d18c9\", \"frequency_number\": 1, \"dataset_variable\": \"snappy\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"COMPRESSION\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"6442945b-a734-f32b-85b0-33ad5d08afe1\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/decomposed/sof_master/aircraft_country_region/1.0/2018-02-25/00-00/*.avro\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"AIRCRAFT_COUNTRY_REGION_PATH\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"b777af35-cf1e-76e6-0681-d13bf620d75f\", \"frequency_number\": 1, \"dataset_variable\": \"7\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"COALESCE_VALUE\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"831fbe9f-0c66-5f46-f55a-a905a53313fa\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/uat/modelled/emfg/dedupe/ags/refline/current\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"AGS_DEDUPE_PATH\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"94ad69db-d7ab-1458-d981-851108fd61ac\", \"frequency_number\": 1, \"dataset_variable\": \"1073741824\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"BROADCAST_SIZE\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"7f4f1400-799c-7f06-cc6c-e40205400bf3\", \"frequency_number\": \"1\", \"dataset_variable\": \"/data/helix/uat/modelled/emfg/public/flightmaster/current/snapdate=${YEAR}-${MONTH}-${DAY}/snaptime=${HOUR}-${MINUTE}\", \"start\": \"2018-04-04T04:00\", \"same_frequency\": false, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"single\", \"dataset_type\": \"output_path\", \"use_done_flag\": true, \"done_flag\": \"_SUCCESS\", \"same_start\": false, \"frequency_unit\": \"days\", \"workflow_variable\": \"OUTPUT_CURRENT_LOCATION\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"48bdb37a-e7f7-b6ad-c15d-1191698a1ac0\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/decomposed/sof_master/bay_change_reason/1.0/2018-02-25/00-00\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"BAYCHANGE_LOOKUP\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"4f2f0c71-8002-5646-e50f-97a3a8a3d712\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/uat/modelled/emfg/dedupe/dmis/flightinfo/current\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"DMIS_FLIGHTINFO_DEDUPE_PATH\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"fe97561f-dda3-6ea2-b746-a8188edce588\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/uat/modelled/emfg/dedupe/dmis/bay_details/current\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"DMIS_BAYDETAILS_DEDUPE_PATH\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"1f7382b5-7741-f0f0-cb5a-4d5e81400920\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/decomposed/sof_master/terminal_coucourse_gate_bay/1.0/2018-02-25/00-00\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"CONCOURSE_LOOKUP\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"88778c1d-8d04-0e70-e75c-80bf4be3a435\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/uat/modelled/emfg/dedupe/core/current\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"CORE_DEDUPE_PATH\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"b2403099-0b15-a2dd-2241-2a9bccf19b90\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/decomposed/sof_master/flight_delay/1.0/2018-02-25/00-00/*.avro\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"FLIGHT_DELAY_PATH\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"d41f6d79-d0b5-ffbd-d86a-a7df15aabd4e\", \"frequency_number\": 1, \"dataset_variable\": \"Incremental\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"DATA_LOAD_MODE\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"53a5f1e4-cf42-7470-8ede-e14846f5c88f\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/decomposed/sof_master/aircraft_fleet_master/1.0/2018-03-30/00-00\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"AIRCRAFT_DETAILS_LOOKUP\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"a3151657-9da6-3320-d76e-c623714b789c\", \"frequency_number\": 1, \"dataset_variable\": \"5\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"LOOK_BACK_PERIOD\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"1cf15977-77e3-df35-ec65-94db6aec2392\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/decomposed/sof_master/flight_status/1.0/2018-02-25/00-00/*.avro\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"FLIGHT_STATUS_PATH\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"b07abacd-3802-5319-2492-fa516d9f2e40\", \"frequency_number\": 1, \"dataset_variable\": \"krishnaraj.rajagopal@dnata.com, aswini.subramani@dnata.com, fayazbasha.shaik@dnata.com\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"EMAIL_ADDRESS_LIST\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"ab34e4b2-d81a-4a0e-63b7-e24d92be0b1d\", \"frequency_number\": 1, \"dataset_variable\": \"/data/helix/decomposed/sof_master/flight_service/1.0/2018-02-25/00-00/*.avro\", \"start\": \"2018-04-05T10:31\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"FLIGHT_SERVICE_PATH\", \"is_advanced_end_instance\": false}], \"isDirty\": true, \"showAdvancedFrequencyUI\": true, \"variablesUI\": [\"parameter\", \"input_path\", \"output_path\"], \"workflowParameters\": [{\"name\": \"LIDO_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/lido/lido_fsum_flight_level/*\"}, {\"name\": \"OUTPUT_HISTORY_LOCATION\", \"value\": \"/data/helix/uat/modelled/emfg/public/flightmaster/history/snapdate=2018-04-02/snaptime=00-00\"}, {\"name\": \"COMPRESSION\", \"value\": \"snappy\"}, {\"name\": \"AIRCRAFT_COUNTRY_REGION_PATH\", \"value\": \"/data/helix/decomposed/sof_master/aircraft_country_region/1.0/2018-02-25/00-00/*.avro\"}, {\"name\": \"COALESCE_VALUE\", \"value\": \"50\"}, {\"name\": \"AGS_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/ags/refline/*\"}, {\"name\": \"BROADCAST_SIZE\", \"value\": \"1073741824\"}, {\"name\": \"OUTPUT_CURRENT_LOCATION\", \"value\": \"/data/helix/uat/modelled/emfg/public/flightmaster/current/snapdate=2018-04-02/snaptime=00-00\"}, {\"name\": \"BAYCHANGE_LOOKUP\", \"value\": \"/data/helix/decomposed/sof_master/bay_change_reason/1.0/2018-02-25/00-00\"}, {\"name\": \"DMIS_FLIGHTINFO_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/dmis/flightinfo/*\"}, {\"name\": \"DMIS_BAYDETAILS_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/dmis/bay_details/*\"}, {\"name\": \"CONCOURSE_LOOKUP\", \"value\": \"/data/helix/decomposed/sof_master/terminal_coucourse_gate_bay/1.0/2018-02-25/00-00\"}, {\"name\": \"CORE_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/core/*\"}, {\"name\": \"FLIGHT_DELAY_PATH\", \"value\": \"/data/helix/decomposed/sof_master/flight_delay/1.0/2018-02-25/00-00/*.avro\"}, {\"name\": \"DATA_LOAD_MODE\", \"value\": \"History\"}, {\"name\": \"AIRCRAFT_DETAILS_LOOKUP\", \"value\": \"/data/helix/decomposed/sof_master/aircraft_fleet_master/1.0/2018-03-30/00-00\"}, {\"name\": \"LOOK_BACK_PERIOD\", \"value\": \"5\"}, {\"name\": \"FLIGHT_STATUS_PATH\", \"value\": \"/data/helix/decomposed/sof_master/flight_status/1.0/2018-02-25/00-00/*.avro\"}, {\"name\": \"EMAIL_ADDRESS_LIST\", \"value\": \"aswini.subramani@dnata.com, krishnaraj.rajagopal@emirates.com, fayazbasha.shaik@dnata.com\"}, {\"name\": \"FLIGHT_SERVICE_PATH\", \"value\": \"/data/helix/decomposed/sof_master/flight_service/1.0/2018-02-25/00-00/*.avro\"}], \"properties\": {\"job_xml\": \"\", \"timeout\": null, \"execution\": \"FIFO\", \"end\": \"${end_date}\", \"description\": \"This is a coordinator for Flight Master population\", \"frequency_number\": 1, \"workflow\": \"3fcc0a48-7c59-4fc0-911e-ac89de0fe05c\", \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1522909861.06\", \"cron_frequency\": \"30 19 * * *\", \"frequency_unit\": \"days\", \"schema_version\": \"uri:oozie:coordinator:0.2\", \"cron_advanced\": true, \"start\": \"${start_date}\", \"concurrency\": 0, \"timezone\": \"Etc/UTC\", \"credentials\": [], \"throttle\": 0, \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"start_date\", \"value\": \"2018-04-04T00:00\"}, {\"name\": \"end_date\", \"value\": \"2018-04-30T23:59\"}], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"uuid\": \"e3804768-da5b-af51-2f0c-7f52a0c49afd\", \"name\": \"DailyPopulateFlightMasterEmFG_UAT\", \"id\": 2167059, \"start_date\": {\"name\": \"start_date\", \"value\": \"2018-04-04T00:00\"}}", 
+    "name": "DailyPopulateFlightMasterEmFG_UAT"
+  }
+}
+]

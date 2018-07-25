@@ -1,0 +1,39 @@
+{
+"type" : "record",
+  "name" : "baychangereasondecomposed",
+  "fields" : 
+[
+{
+"name" : "BCHM_REASON_ID",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "BCHM_DESCRIPTION",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "CREATE_DT",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "CREATE_USER",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "UPDT_DT",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "UPDT_USER",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "HELIX_UUID",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "HELIX_TIMESTAMP",
+"type" : [ "string", "null" ]
+}
+]
+}

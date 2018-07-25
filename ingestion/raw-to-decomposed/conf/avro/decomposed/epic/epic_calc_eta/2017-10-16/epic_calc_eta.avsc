@@ -1,0 +1,155 @@
+{
+  "type" : "record",
+  "name" : "EPIC_CALC_ETA",
+  "fields" : [ 
+  {
+    "name" : "UUID",
+    "type" : [ "null", "string" ],
+    "default" : null
+  },
+  {
+    "name" : "TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null
+  },
+  {
+    "name" : "CALC_ETA_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CALC_ETA_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AC_REGN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AC_REGN",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIME_AT120",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIME_AT120",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCEND_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCEND_TIME",
+    "sqlType" : "2"
+  }, {
+    "name" : "ETA_BAY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ETA_BAY",
+    "sqlType" : "93"
+  }, {
+    "name" : "ETA_TOUCHDOWN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ETA_TOUCHDOWN",
+    "sqlType" : "93"
+  }, {
+    "name" : "AVG_TAXI_IN_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AVG_TAXI_IN_TIME",
+    "sqlType" : "2"
+  }, {
+    "name" : "THRESHOLD_EXCEED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "THRESHOLD_EXCEED",
+    "sqlType" : "12"
+  }, {
+    "name" : "EVENT_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EVENT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EVENT_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EVENT_TIME",
+    "sqlType" : "93"
+  }, {
+    "name" : "NEAREST_STAR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NEAREST_STAR",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "LANDED_RUNWAY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LANDED_RUNWAY",
+    "sqlType" : "12"
+  }, {
+    "name" : "LANDED_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LANDED_TIME",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCEND_TIME_120NM",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCEND_TIME_120NM",
+    "sqlType" : "2"
+  }, {
+    "name" : "PREDICT_RUNWAY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PREDICT_RUNWAY",
+    "sqlType" : "12"
+  }, {
+    "name" : "MST_VALUE_USED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MST_VALUE_USED",
+    "sqlType" : "12"
+  }, {
+    "name" : "ABNORMAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ABNORMAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCEND_120_ORIG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCEND_120_ORIG",
+    "sqlType" : "2"
+  }, {
+    "name" : "HOLD_ENTRY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOLD_ENTRY",
+    "sqlType" : "93"
+  }, {
+    "name" : "HOLD_EXIT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOLD_EXIT",
+    "sqlType" : "93"
+  }, {
+    "name" : "HOLD_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOLD_TIME",
+    "sqlType" : "2"
+  }
+  ]
+}

@@ -1,0 +1,46 @@
+<workflow-app name="DedupeDmisFlightInfoInitial" xmlns="uri:oozie:workflow:0.5">
+    <start to="spark-6880"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-6880">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>DMIS_FLIGHTLEVEL_HIST_INCR_DEDUP</name>
+              <class>com.emirates.helix.DmisFlightLevelDedupDriver</class>
+            <jar>dmis-flightlevel-dedup-1.0.jar</jar>
+              <spark-opts>--files hive-site.xml --driver-memory 256m --executor-memory 1G  --queue opseff --conf spark.kryo.classesToRegister=com.emirates.helix.udf.UDF --conf spark.dynamicAllocation.minExecutors=5 --conf spark.dynamicAllocation.maxExecutors=20</spark-opts>
+              <arg>-h</arg>
+              <arg>${HIST_INPUT_PATH}</arg>
+              <arg>-i</arg>
+              <arg>${INCR_INPUT_PATH}</arg>
+              <arg>-l</arg>
+              <arg>${INCR_OUTPUT_HDFS_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${HIST_OUTPUT_HDFS_PATH}</arg>
+              <arg>-p</arg>
+              <arg>${SPARK_PARTITIONS}</arg>
+              <arg>-m</arg>
+              <arg>${LOOK_BACK_MONTHS}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+              <arg>--init</arg>
+        </spark>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

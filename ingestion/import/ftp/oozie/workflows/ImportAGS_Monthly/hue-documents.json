@@ -1,0 +1,203 @@
+[
+{
+  "pk": 178030, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "6f8b8c35-6cac-a862-46fb-0e3cf7317b0f", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "Workflow to downloads AGS related files to Helix datalake on monthly", 
+    "is_history": false, 
+    "parent_directory": [
+      "63e12206-9e5b-4dff-ba0f-76133643baec", 
+      1, 
+      false
+    ], 
+    "last_modified": "2017-10-24T14:58:38", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "6ef8c0fb-910e-4c7f-bd5c-b7a3e4decbe2", 
+        1, 
+        true
+      ], 
+      [
+        "2ee429f2-ff67-4a11-a5d0-d1c8943a3b24", 
+        1, 
+        true
+      ], 
+      [
+        "04ac63aa-a4f4-4e07-ad1d-f3862edf0b46", 
+        1, 
+        true
+      ], 
+      [
+        "be62cfe5-f2b4-432e-b0a8-a66649de4c34", 
+        1, 
+        true
+      ], 
+      [
+        "d6d70eb4-d914-486f-a431-9602bba3e4ab", 
+        1, 
+        true
+      ], 
+      [
+        "d13033fd-53e7-4e8f-9259-e0c9bd946f96", 
+        1, 
+        true
+      ], 
+      [
+        "c174c4ed-3696-4dbd-ab15-979686230035", 
+        1, 
+        true
+      ], 
+      [
+        "b51530eb-e00a-4f39-8846-baae7ee098ae", 
+        1, 
+        true
+      ], 
+      [
+        "adf6fd06-878e-40c0-a5c4-939daf75ba6c", 
+        1, 
+        true
+      ], 
+      [
+        "eb46dd1c-d879-49bc-b587-7ec1dd6ebd15", 
+        1, 
+        true
+      ], 
+      [
+        "2d7d1b8d-2f51-411e-ae95-c29c0c9644ec", 
+        1, 
+        true
+      ], 
+      [
+        "ede01424-22ec-462e-9cc3-30f311ea3e23", 
+        1, 
+        true
+      ], 
+      [
+        "4cef7085-9ebf-4afd-afa6-769d02c749bd", 
+        1, 
+        true
+      ], 
+      [
+        "fcf6cbe4-2807-417c-8a05-91b4094340f7", 
+        1, 
+        true
+      ], 
+      [
+        "e2f1a2d4-646e-42e7-8e05-63fbe601a402", 
+        1, 
+        true
+      ], 
+      [
+        "2cc8657e-30bc-482a-b5eb-92c6430a0960", 
+        1, 
+        true
+      ], 
+      [
+        "041d337a-950a-4f31-845d-fb2b7e6d66b9", 
+        1, 
+        true
+      ], 
+      [
+        "1cdb2dd3-1c9e-4d1f-b6d5-9511bcf98a55", 
+        1, 
+        true
+      ], 
+      [
+        "940d27ea-2a78-4d06-862e-85a19f935636", 
+        1, 
+        true
+      ], 
+      [
+        "2e3ec9a5-74b9-404d-8d54-8d83233cc666", 
+        1, 
+        true
+      ], 
+      [
+        "530b168f-b213-4513-a75f-38273d0e1167", 
+        1, 
+        true
+      ], 
+      [
+        "8a294791-be31-4b7c-9522-ac4bb3faebb1", 
+        1, 
+        true
+      ], 
+      [
+        "991cc335-bd4b-4c01-9e25-fe3377fba563", 
+        1, 
+        true
+      ], 
+      [
+        "e4d1df33-b66c-422f-92cd-88f946be9fd8", 
+        1, 
+        true
+      ], 
+      [
+        "337e31d5-5cb2-404f-b08e-f517d02c35c1", 
+        1, 
+        true
+      ], 
+      [
+        "6788049c-03ee-4590-b0df-2e75e24eca1b", 
+        1, 
+        true
+      ], 
+      [
+        "29debd09-b929-40b2-b8d6-cbd89aea8b0b", 
+        1, 
+        true
+      ], 
+      [
+        "f88e7c12-5846-4d0d-a71f-1cba5f39fc91", 
+        1, 
+        true
+      ], 
+      [
+        "40379e5a-29f5-4325-a38b-7705bb395ce8", 
+        1, 
+        true
+      ], 
+      [
+        "13b597ad-256e-447a-9c85-fa5055f74ef9", 
+        1, 
+        true
+      ], 
+      [
+        "21e539d8-4351-4686-8b6b-780bbac8f96a", 
+        1, 
+        true
+      ], 
+      [
+        "4f32fc6a-b4e3-4ff1-8124-dc28ebd5861b", 
+        1, 
+        true
+      ], 
+      [
+        "d521b41b-e511-46c9-a74e-f31d8f858222", 
+        1, 
+        true
+      ], 
+      [
+        "9cb3334f-b96e-4177-b49d-cb4d5c4bbc56", 
+        1, 
+        true
+      ], 
+      [
+        "c97b96ec-782d-49ad-af65-bc4be43ff773", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"687eb859-e1e7-637a-64a0-d8a2f4323f57\", \"size\": 12}], \"id\": \"5f102285-353d-ca3d-401f-f2ae1ec7a9d2\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"0c9484c2-3d3e-7227-a0f4-ffaa920e4e7b\", \"size\": 12}], \"id\": \"d454b63c-2070-b77b-6e36-cd93edc8acc2\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"72f17183-d91a-589c-7d68-f547739dad11\", \"size\": 12}], \"id\": \"45f1c97e-9264-f020-88f5-70334bee67a8\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"8801d08b-cbd6-074c-9f93-3f9105b6810f\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"687eb859-e1e7-637a-64a0-d8a2f4323f57\", \"size\": 12}], \"id\": \"5f102285-353d-ca3d-401f-f2ae1ec7a9d2\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"0c9484c2-3d3e-7227-a0f4-ffaa920e4e7b\", \"size\": 12}], \"id\": \"d454b63c-2070-b77b-6e36-cd93edc8acc2\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Ssh\", \"widgetType\": \"ssh-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"72f17183-d91a-589c-7d68-f547739dad11\", \"size\": 12}], \"id\": \"45f1c97e-9264-f020-88f5-70334bee67a8\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"2c166e8a-ba7e-9234-846a-e285e59564f1\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"297dbbf8-473b-e9a8-64f2-31d81ee902e1\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"2c166e8a-ba7e-9234-846a-e285e59564f1\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"297dbbf8-473b-e9a8-64f2-31d81ee902e1\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"8801d08b-cbd6-074c-9f93-3f9105b6810f\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"d884e29f-1f58-46f7-65d0-75083cd02c20\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"Workflow to downloads AGS related files to Helix datalake on monthly\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"oozie.servlet.CallbackServlet.max.data.len\", \"value\": \"-1\"}, {\"name\": \"oozie.launcher.mapreduce.job.queuename\", \"value\": \"opseff \"}], \"sla_enabled\": false, \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1507539889.22\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"show_arrows\": true, \"wf1_id\": null, \"properties\": []}, \"name\": \"ImportAgsMonthlyData\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": true, \"movedNode\": null, \"linkMapping\": {\"17c9c895-5a16-7443-bb81-f34b30b21548\": [], \"0c9484c2-3d3e-7227-a0f4-ffaa920e4e7b\": [\"72f17183-d91a-589c-7d68-f547739dad11\"], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"687eb859-e1e7-637a-64a0-d8a2f4323f57\"], \"687eb859-e1e7-637a-64a0-d8a2f4323f57\": [\"0c9484c2-3d3e-7227-a0f4-ffaa920e4e7b\"], \"72f17183-d91a-589c-7d68-f547739dad11\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"]}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"687eb859-e1e7-637a-64a0-d8a2f4323f57\", \"0c9484c2-3d3e-7227-a0f4-ffaa920e4e7b\", \"72f17183-d91a-589c-7d68-f547739dad11\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"687eb859-e1e7-637a-64a0-d8a2f4323f57\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow Name: ${wf:name()} \\nCurrent Timestamp: ${timestamp()}\\n\\nReason for failure:\\nplease refer to the latest logs for present in \\n/home/ops_eff/ek_ags/ags_log/monthly/ek_opseff_ags_ftp_import_monthly_<date time>.log\\n/home/ops_eff/ek_ags/ags_log/monthly/ek_opseff_ags_hdfs_raw_import_<date time>.log\\n/home/ops_eff/ek_ags/ags_log/monthly/ek_opseff_ags_ftp_del_<date time>.log\\n\\nError Resolution Info : \\nplease refer to the confluence page\\nhttps://confluence.emirates.com/display/OBI/\", \"cc\": \"aswini.subramani@dnata.com\", \"to\": \"pratik.vyas@dnata.com \", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"ssh_command\": \"sh\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": false, \"host\": \"ops_eff@10.232.154.65\", \"arguments\": [{\"value\": \"/home/ops_eff/ek_ags/ags_scripts/ek_opseff_ags_ftp_import_monthly.sh\"}, {\"value\": \"-p\"}, {\"value\": \"/home/ops_eff/ek_ags/ags_params/ek_opseff_ags_import.env\"}, {\"value\": \"-f\"}, {\"value\": \"cruise_climb_and_cruise_descent_analysis\"}], \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}]}, \"name\": \"ssh-687e\", \"children\": [{\"to\": \"0c9484c2-3d3e-7227-a0f4-ffaa920e4e7b\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"ssh-widget\", \"id\": \"687eb859-e1e7-637a-64a0-d8a2f4323f57\", \"actionParameters\": []}, {\"properties\": {\"ssh_command\": \"sh\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": false, \"host\": \"ops_eff@10.232.154.65\", \"arguments\": [{\"value\": \"/home/ops_eff/ek_ags/ags_scripts/ek_opseff_ags_hdfs_raw_import.sh\"}, {\"value\": \"-p\"}, {\"value\": \"/home/ops_eff/ek_ags/ags_params/ek_opseff_ags_import.env\"}, {\"value\": \"-f\"}, {\"value\": \"cruise_climb_and_cruise_descent_analysis\"}], \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}]}, \"name\": \"ssh-0c94\", \"children\": [{\"to\": \"72f17183-d91a-589c-7d68-f547739dad11\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"ssh-widget\", \"id\": \"0c9484c2-3d3e-7227-a0f4-ffaa920e4e7b\", \"actionParameters\": []}, {\"properties\": {\"ssh_command\": \"sh\", \"retry_max\": [], \"retry_interval\": [], \"capture_output\": false, \"host\": \"ops_eff@10.232.154.65\", \"arguments\": [{\"value\": \"/home/ops_eff/ek_ags/ags_scripts/ek_opseff_ags_ftp_del.sh\"}, {\"value\": \"-p\"}, {\"value\": \"/home/ops_eff/ek_ags/ags_params/ek_opseff_ags_import.env\"}, {\"value\": \"-f\"}, {\"value\": \"cruise_climb_and_cruise_descent_analysis\"}], \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}]}, \"name\": \"ssh-72f1\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"ssh-widget\", \"id\": \"72f17183-d91a-589c-7d68-f547739dad11\", \"actionParameters\": []}], \"id\": 178030, \"nodeNamesMapping\": {\"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\", \"0c9484c2-3d3e-7227-a0f4-ffaa920e4e7b\": \"ssh-0c94\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"687eb859-e1e7-637a-64a0-d8a2f4323f57\": \"ssh-687e\", \"72f17183-d91a-589c-7d68-f547739dad11\": \"ssh-72f1\"}, \"uuid\": \"6f8b8c35-6cac-a862-46fb-0e3cf7317b0f\"}}", 
+    "name": "ImportAgsMonthlyData"
+  }
+}
+]

@@ -1,0 +1,47 @@
+{
+"type" : "record",
+  "name" : "agssedecomposed",
+  "fields" : 
+[
+{
+"name" : "tibco_message_time",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "bchtFlightNumber",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "bchtStaStd",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "bchtReasonId",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "bchtOldBayNo",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "bchtNewBayNo",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "srcCreateDate",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "srcUpdateDate",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "HELIX_UUID",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "HELIX_TIMESTAMP",
+"type" : [ "string", "null" ]
+}
+]
+}

@@ -1,0 +1,46 @@
+{
+  "type" : "record",
+  "name" : "prism_corptkttrkcntrl",
+  "doc" : "Sqoop import of prism_corptkttrkcntrl",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "Processed_Month",
+    "type" : [ "string", "null" ],
+    "columnName" : "Processed_Month",
+    "sqlType" : "2"
+  }, {
+    "name" : "No_Of_Records",
+    "type" : [ "string", "null" ],
+    "columnName" : "No_Of_Records",
+    "sqlType" : "12"
+  },{
+    "name" : "total_base_amount",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "total_base_amount",
+    "sqlType" : "12"
+  }, {
+    "name" : "total_tax_amount",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "total_tax_amount",
+    "sqlType" : "2"
+  }, {
+    "name" : "total_comm_amount",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "total_comm_amount",
+    "sqlType" : "2"
+  }
+   ],
+  "tableName" : "prism_corptkttrkcntrl"
+}

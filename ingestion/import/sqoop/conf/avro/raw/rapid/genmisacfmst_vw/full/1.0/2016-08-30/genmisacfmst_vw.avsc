@@ -1,0 +1,35 @@
+{  
+   "type":"record",
+   "name":"GENMISACFMST_VW",
+   "namespace":"datalake",
+   "fields":[  
+      {  
+         "name":"ACFRGNNUM",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"ACFTYP",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"ACFDES",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"ACTIND",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }
+   ]
+}

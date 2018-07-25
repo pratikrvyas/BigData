@@ -1,0 +1,303 @@
+
+<workflow-app name="ImportTicketData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="sqoop-ec14"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-ec14">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${wf:appPath()}/VW_TKT_YRF_CTRL_LOG"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${TKT_SQOOP_OPTIONS_FILE_INCR}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT MAX(TKT_YRF_ID) FROM TKT_OWNR.VW_TKT_YRF_CTRL_LOG WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-textfile</arg>
+              <arg>--class-name</arg>
+              <arg>VW_TKT_YRF_CTRL_LOG</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--target-dir</arg>
+              <arg>${wf:appPath()}/VW_TKT_YRF_CTRL_LOG</arg>
+            <file>${TKT_SQOOP_OPTIONS_FILE_INCR}#${TKT_SQOOP_OPTIONS_FILE_INCR}</file>
+        </sqoop>
+        <ok to="shell-4226"/>
+        <error to="email-c1dd"/>
+    </action>
+    <action name="shell-4226">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_params.sh</exec>
+              <argument>${CONTROL_FILE}</argument>
+              <argument>${wf:appPath()}/VW_TKT_YRF_CTRL_LOG/part-m-00000</argument>
+            <file>generate_params.sh#generate_params.sh</file>
+            <file>${CONTROL_FILE}#${CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-2ddb"/>
+        <error to="email-c1dd"/>
+    </action>
+    <action name="sqoop-3d18">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${TKT_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TKT_ID, T1.TKT_FFD_ID, T1.FFP_TYPE, T1.FFP_NUM_LENGTH, T1.FFP_NUMBER_DTL, T1.FFP_MEMBER_AIRLINE, T1.FFP_NUMBER, T1.CREATED_DATE, T1.CREATED_BY FROM TKT_OWNR.TKT_FREQUENT_FLYER T1 JOIN TKT_OWNR.VW_TKT_YRF_CTRL_LOG T2 ON (T1.TKT_ID = T2.TKT_ID) WHERE T2.TKT_YRF_ID BETWEEN ${wf:actionData(&#39;shell-4226&#39;)[&#39;START_ID&#39;]} AND ${wf:actionData(&#39;shell-4226&#39;)[&#39;END_ID&#39;]} AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CREATED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.TKT_FFD_ID</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TKT_FREQUENT_FLYER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TKT_FREQUENT_FLYER}</arg>
+            <file>${TKT_SQOOP_OPTIONS_FILE}#${TKT_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-2a7b"/>
+        <error to="email-c1dd"/>
+    </action>
+    <action name="sqoop-1947">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${TKT_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TKT_ID,T1.TKT_OCD_ID,T1.CPN_EXVOID_NO,T1.MARKETING_CARRIER_CODE,T1.MARKETING_CARRIER_FLT_NUMBER,T1.OPERATING_CARRIER_CODE,T1.OPERATING_CARRIER_FLT_NUM,T1.EQUIPMENT_OWNER_CARRIER_CODE,T1.SEGMENT_LINE_LEG_NUMBER,T1.AIRCRAFT_TYPE,T1.AIRPORT_CODE_BOARDPOINT,T1.AIRPORT_CODE_OFFPOINT,T1.TRANSMIT_INDICATOR,T1.TRANSMISSION_SYSTEM_DATE,T1.ACCOUNTING_CARRIER_CODE,T1.DEPARTURE_DATE,T1.CREATED_DATE,T1.CREATED_BY,T1.CHANGED_DATE,T1.CHANGED_BY FROM TKT_OWNR.TKT_OPERATING_CARRIER T1 JOIN TKT_OWNR.VW_TKT_YRF_CTRL_LOG T2 ON (T1.TKT_ID = T2.TKT_ID) WHERE T2.TKT_YRF_ID BETWEEN ${wf:actionData(&#39;shell-4226&#39;)[&#39;START_ID&#39;]} AND ${wf:actionData(&#39;shell-4226&#39;)[&#39;END_ID&#39;]} AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>TRANSMISSION_SYSTEM_DATE=String,DEPARTURE_DATE=String,CREATED_DATE=String,CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.TKT_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TKT_OPERATING_CARRIER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TKT_OPERATING_CARRIER}</arg>
+            <file>${TKT_SQOOP_OPTIONS_FILE}#${TKT_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-2a7b"/>
+        <error to="email-c1dd"/>
+    </action>
+    <fork name="fork-2ddb">
+        <path start="sqoop-3d18" />
+        <path start="sqoop-1947" />
+        <path start="sqoop-d1d9" />
+        <path start="sqoop-f12b" />
+        <path start="sqoop-97a0" />
+        <path start="sqoop-90d1" />
+    </fork>
+    <join name="join-2a7b" to="shell-9bd1"/>
+    <action name="sqoop-d1d9">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${TKT_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.ID,T1.TKT_ID,T1.TICKET_NUMBER,T1.MASTER_TICKET_NUMBER,T1.CONJUNCTION_IND,T1.CREATED_DATE,T1.CREATED_BY,T1.ISSUE_DATE FROM TKT_OWNR.TKT_REF T1 JOIN TKT_OWNR.VW_TKT_YRF_CTRL_LOG T2 ON (T1.TKT_ID = T2.TKT_ID) WHERE T2.TKT_YRF_ID BETWEEN ${wf:actionData(&#39;shell-4226&#39;)[&#39;START_ID&#39;]} AND ${wf:actionData(&#39;shell-4226&#39;)[&#39;END_ID&#39;]} AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>ISSUE_DATE=String,CREATED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TKT_REF</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TKT_REF}</arg>
+            <file>${TKT_SQOOP_OPTIONS_FILE}#${TKT_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-2a7b"/>
+        <error to="email-c1dd"/>
+    </action>
+    <action name="sqoop-f12b">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${TKT_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TKT_ID,T1.TKT_PAX_ID,T1.AGENT_AIRLINE_INFO,T1.ISO_COUNTRY_CODE,T1.IATA_AGENCY_CODE,T1.PAX_LENGHT,T1.PAX_NAME,T1.PAX_SURNAME_LEN,T1.PAX_SURNAME,T1.PAX_FIRSTNAME_LEN,T1.PAX_FIRSTNAME,T1.PAX_MAGNETIC_STRIP_INDICATOR,T1.PAX_STRING_LEN,T1.PAX_NAME_DESC,T1.ENDORSEMENT_LEN,T1.ENDORSEMENT_DATA,T1.INTERNATIONAL_SALES_INDICATOR,T1.EXCHANGE_RATE,T1.FARE_LOGIC_CODE,T1.FARE_SOURCE_INDICATOR,T1.FARE_MODE_INDICATOR,T1.FARE_DATA,T1.FARE_STATUS,T1.FARE_AMOUNT,T1.NET_FARE_DATA,T1.EQUIVALENT_FARE_STATUS,T1.EQUIVALENT_FARE_AMOUNT,T1.TOTAL_FARE_STATUS,T1.TOTAL_FARE_AMOUNT,T1.TOUR_CODE_DATA,T1.PAYMENT_INDICATOR_1,T1.PAYMENT_INDICATOR_2,T1.PAYMENT_INDICATOR_3,T1.PAYMENT_DATA,T1.ORIGIN,T1.DESTINATION,T1.COMMISSION_RATE,T1.COMMISSION_AMOUNT,T1.ISSUED_EXCHANGE_DATA,T1.ORIGINAL_ISSUE_DATE_JULIAN,T1.ORIGINAL_ISSUE_IATA_CODE,T1.ORIGINAL_ISSUE_TICKET_NUMBER,T1.ORIGINAL_ISSUE_DATA,T1.GDS_TYPE,T1.GDS_PNR_ADDRESS,T1.GDS_AGENT_PSEUDO_CITY_CODE,T1.GDS_COMMISSION_INDICATOR,T1.GDS_COMMISSION_RATE,T1.GDS_TOTAL_DATA,T1.CREATED_DATE,T1.CREATED_BY,T1.GDS_COMMISSION_CURRENCY_CODE,T1.GDS_COMMISSION_AMOUNT,T1.NET_CURR_DEC,T1.NET_EQUIVALENT_FARE,T1.NET_TOTAL_CURR_DEC,T1.NET_TOTAL,T1.COM_CURR,T1.COM_AMOUNT_LA,T1.COM_PART_AMOUNT_CURR,T1.COM_PART_AMOUNT_LA,T1.REFUND_CURR,T1.REFUND_AMOUNT,T1.COM_PERCENT,T1.COM_PERCENT_DEC,T1.TAX_COMM_RATE,T1.TAX_AMOUNT_CURR,T1.TAX_AMOUNT,T1.TAX_PARTY_CODE,T1.INFANT_DATE_OF_BIRTH,T1.PASSENGER_TYPE_CODE,T1.AGE_FOR_UM,T1.POINT_OF_SALE_CODE,T1.PRESENT_CC_DURING_CHECK_IN,T1.CURRENCY_DECIMAL_NUMBER,T1.CURRENCY_AMOUNT_DATA_ELEMENT FROM TKT_OWNR.TKT_PAX_FARE T1 JOIN TKT_OWNR.VW_TKT_YRF_CTRL_LOG T2 ON (T1.TKT_ID = T2.TKT_ID) WHERE T2.TKT_YRF_ID BETWEEN ${wf:actionData(&#39;shell-4226&#39;)[&#39;START_ID&#39;]} AND ${wf:actionData(&#39;shell-4226&#39;)[&#39;END_ID&#39;]} AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CREATED_DATE=String,INFANT_DATE_OF_BIRTH=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.TKT_PAX_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TKT_PAX_FARE</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TKT_PAX_FARE}</arg>
+            <file>${TKT_SQOOP_OPTIONS_FILE}#${TKT_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-2a7b"/>
+        <error to="email-c1dd"/>
+    </action>
+    <action name="sqoop-97a0">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${TKT_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TKT_ID,T1.TKT_CPN_ID,T1.CPN_EXVOID_NO,T1.TICKET_NUMBER,T1.COUPON_NUMBER,T1.CHECK_DIGIT,T1.COUPON_STATUS_INDICATOR,T1.COUPON_STATUS_DESCRIPTION,T1.REVAL_HIS_INDICATOR,T1.PNR_REC_LOCATOR,T1.PNR_CREATION_DATE,T1.CHECKED_PIECES,T1.CHECKED_WEIGHT,T1.AIRLINE_CODE,T1.FLIGHT_NUMBER,T1.RBD_CLASS_CODE,T1.CLASS_OF_SERVICE,T1.DEPARTURE_STATUS,T1.DEPARTURE_DATE,T1.DEPARTURE_TIME,T1.ARRIVAL_DATE,T1.ARRIVAL_TIME,T1.RESERVATION_PNR_STATUS_CODE,T1.RESERVATION_TKT_STATUS_CODE,T1.RESERVATION_STATUS_INDICATOR,T1.NOT_VALID_BEFORE_DATE,T1.NOT_VALID_AFTER_DATE,T1.BAGGAGE_ALLOWANCE,T1.BOARD_POINT_STOPOVER_INDICATOR,T1.BOARD_POINT_CITY_CODE,T1.BOARD_POINT,T1.OFFPOINT_STOPOVER_INDICATOR,T1.OFFPOINT_CITY_CODE,T1.OFFPOINT,T1.BOARD_POINT_EXTN_LENGTH,T1.BOARD_POINT_EXTENDED,T1.OFFPOINT_EXTN_LENGTH,T1.OFFPOINT_EXTENDED,T1.FARE_BASIS_DATA_SIZE,T1.FARE_BASIS_DATA,T1.INDUSTRY_DISCOUNT_DATA,T1.CREATED_DATE,T1.CREATED_BY,T1.CHANGED_DATE,T1.CHANGED_BY,T1.MARS_CHANGED_DATETIME,T1.SETTLEMENT_AUTH_CODE,T1.EMD_ASSOCIATED_INDICATOR,T1.FARE_BRAND_IND FROM TKT_OWNR.TKT_FLIGHT_COUPON T1 JOIN TKT_OWNR.VW_TKT_YRF_CTRL_LOG T2 ON (T1.TKT_ID = T2.TKT_ID) WHERE T2.TKT_YRF_ID BETWEEN ${wf:actionData(&#39;shell-4226&#39;)[&#39;START_ID&#39;]} AND ${wf:actionData(&#39;shell-4226&#39;)[&#39;END_ID&#39;]} AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PNR_CREATION_DATE=String,DEPARTURE_DATE=String,ARRIVAL_DATE=String,NOT_VALID_BEFORE_DATE=String,NOT_VALID_AFTER_DATE=String,CREATED_DATE=String,CHANGED_DATE=String,MARS_CHANGED_DATETIME=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TKT_FLIGHT_COUPON</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TKT_FLIGHT_COUPON}</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+            <file>${TKT_SQOOP_OPTIONS_FILE}#${TKT_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-2a7b"/>
+        <error to="email-c1dd"/>
+    </action>
+    <action name="sqoop-90d1">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${TKT_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TKT_ID,T1.TICKET_NUMBER,T1.SERIAL_NUMBER,T1.PURGE_DATE,T1.PNR_REC_LOCATOR,T1.PNR_CREATION_DATE,T1.AIRLINE_CONFIRM_NUM_LENGTH,T1.AIRLINE_CONFIRMATION_NUMBER,T1.LOCAL_CREATION_DATE,T1.ETR_SOURCE_INDICATOR,T1.ETR_SOURCE_DESCRIPTION,T1.ISSUING_CITY_CODE,T1.ISSUING_AGENT_CODE,T1.ISSUE_DATE,T1.ISSUE_TIME,T1.ISSUE_DATE_GMT,T1.ISSUE_TIME_GMT,T1.ISSUING_HOST,T1.ISSUING_AIRLINE_CODE,T1.SERVICING_AIRLINE_DESIGNATOR,T1.SERVICING_AIRLINE_CODE,T1.SERVICING_AIRLINE_CODE_EXTN,T1.AIRLINE_CHK_DIGIT,T1.PRIME_CHECK_DIGIT,T1.TOTAL_AUDIT_COUPONS,T1.TOTAL_FLIGHT_COUPONS_EXVOID,T1.FARE_LOGIC_CODE,T1.EK_STAFF_NUMBER,T1.ISSUING_AIRLINE_LENGTH,T1.ISSUING_AIRLINE_NAME,T1.CONJUNCTION_INDICATOR,T1.CREATED_DATE,T1.CREATED_BY,T1.MARS_DOWNLOAD_DATETIME,T1.AGENT_ID,T1.TYPE_OF_CREATION_TYPE_OF_TKT,T1.TST_VALIDATION_INDICATOR FROM TKT_OWNR.TKT_MASTER T1 JOIN TKT_OWNR.VW_TKT_YRF_CTRL_LOG T2 ON (T1.TKT_ID = T2.TKT_ID) WHERE T2.TKT_YRF_ID BETWEEN ${wf:actionData(&#39;shell-4226&#39;)[&#39;START_ID&#39;]} AND ${wf:actionData(&#39;shell-4226&#39;)[&#39;END_ID&#39;]} AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PURGE_DATE=String,PNR_CREATION_DATE=String,LOCAL_CREATION_DATE=String,ISSUE_DATE=String,ISSUE_DATE_GMT=String,CREATED_DATE=String,MARS_DOWNLOAD_DATETIME=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.TKT_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TKT_MASTER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_TKT_MASTER}</arg>
+            <file>${TKT_SQOOP_OPTIONS_FILE}#${TKT_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-2a7b"/>
+        <error to="email-c1dd"/>
+    </action>
+    <action name="shell-9bd1">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-4226&#39;)[&#39;START_ID&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-4226&#39;)[&#39;END_ID&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${CONTROL_FILE}#${CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-c1dd"/>
+    </action>
+    <action name="email-c1dd">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

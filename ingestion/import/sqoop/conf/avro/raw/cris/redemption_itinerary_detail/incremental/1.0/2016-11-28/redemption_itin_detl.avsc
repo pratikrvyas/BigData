@@ -1,0 +1,223 @@
+{
+  "type" : "record",
+  "name" : "REDEMPTION_ITIN_DETL",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "RIH_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RIH_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "SEQ_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEQ_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "FLIGHT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKING_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOOKING_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKING_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOOKING_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "STOP_OVER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STOP_OVER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTIVE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DIFF_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DIFF_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "BASE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BASE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "BASE_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BASE_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "NOTE_DETAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NOTE_DETAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEASON_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEASON_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "BAC_ACT_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BAC_ACT_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BILLED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILLED",
+    "sqlType" : "12"
+  }, {
+    "name" : "BILLED_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "BILLED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "INVOICE_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INVOICE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVOICE_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "INVOICE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEQ_NUMBER_PK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEQ_NUMBER_PK",
+    "sqlType" : "2"
+  }, {
+    "name" : "DAY_CHANGE_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAY_CHANGE_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEPARTURE_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DEPARTURE_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ARRIVAL_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ARRIVAL_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ENTRY_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ENTRY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DOUBLE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DOUBLE_MILES",
+    "sqlType" : "12"
+  }, {
+    "name" : "IFP_LINE_BAR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "IFP_LINE_BAR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_CONFIG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_CONFIG",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONVERSION_RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONVERSION_RATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "FARE_BRAND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FARE_BRAND",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "REDEMPTION_ITIN_DETL"
+}

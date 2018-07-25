@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@10.38.231.133:6516:FOSSD
+--username
+faceoff_ownr
+--password
+faceoff_ownr

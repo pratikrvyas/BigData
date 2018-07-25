@@ -1,0 +1,259 @@
+{
+  "type" : "record",
+  "name" : "CDW_PNR_HEADER",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "PNR_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_BOOKING_REFERENCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_BOOKING_REFERENCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_BOOKING_CREATION_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_BOOKING_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "EOL_ORDER_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EOL_ORDER_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKING_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOOKING_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATOR_DUTY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATOR_DUTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATOR_INITIALS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATOR_INITIALS",
+    "sqlType" : "12"
+  }, {
+    "name" : "GROUP_BOOKING_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GROUP_BOOKING_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "LAST_UPDATE_PNR_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_UPDATE_PNR_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MASTER_PNR_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MASTER_PNR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "MASTER_PNR_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MASTER_PNR_INDICATOR",
+    "sqlType" : "1"
+  }, {
+    "name" : "SPLIT_PNR_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SPLIT_PNR_INDICATOR",
+    "sqlType" : "1"
+  }, {
+    "name" : "TICKET_AGENT_INITIALS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_AGENT_INITIALS",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_DUTY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_DUTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_DATA_ORIGINATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POS_DATA_ORIGINATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLOC_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RLOC_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCOUNTING_INFO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACCOUNTING_INFO",
+    "sqlType" : "12"
+  }, {
+    "name" : "LANGUAGE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LANGUAGE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SUB_HOST_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SUB_HOST_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_INITIALS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_INITIALS",
+    "sqlType" : "12"
+  }, {
+    "name" : "DUTY_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DUTY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USER_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATOR_CITY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATOR_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_GEO_CITY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POS_GEO_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_SYSTEM_DESIGNATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POS_CRS_SYSTEM_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_CITY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POS_CRS_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_PSEUDO_CITY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POS_PSEUDO_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORPORATE_TRACKING_DEAL_STRING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORPORATE_TRACKING_DEAL_STRING",
+    "sqlType" : "12"
+  }, {
+    "name" : "EK_POINT_OF_ORIGIN_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EK_POINT_OF_ORIGIN_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKING_OFFICE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOOKING_OFFICE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POINT_OF_BOOKING_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POINT_OF_BOOKING_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "DISTRIBUTION_CHANNEL_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISTRIBUTION_CHANNEL_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ITINERARY_STRING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ITINERARY_STRING",
+    "sqlType" : "12"
+  }, {
+    "name" : "CANCELLED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CANCELLED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ITN_POINT_OF_ORIGIN_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ITN_POINT_OF_ORIGIN_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "ISSUING_AIRLINE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUING_AIRLINE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_MEMB_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_MEMB_SK",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "QueryResult"
+}

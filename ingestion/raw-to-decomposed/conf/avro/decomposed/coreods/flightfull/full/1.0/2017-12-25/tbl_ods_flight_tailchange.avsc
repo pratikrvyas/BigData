@@ -1,0 +1,47 @@
+{
+  "type" : "record",
+  "name" : "tbl_ods_flight_tailchange",
+  "fields" : [ {
+    "name" : "EFFECTIVETO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "EFFECTIVEFROM",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRANSDATETIME",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRANSUSERID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PRETRXNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRXNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MODBY",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MODON",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CHANGE_REASON",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TAILNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "REQUEST_DATE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLIGHTSEQNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  } ]
+}

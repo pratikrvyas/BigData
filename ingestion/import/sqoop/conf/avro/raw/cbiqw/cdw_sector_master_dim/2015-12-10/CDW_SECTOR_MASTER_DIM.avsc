@@ -1,0 +1,97 @@
+{
+  "type" : "record",
+  "name" : "CDW_SECTOR_MASTER_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_SECTOR_MASTER_DIM",
+  "fields" : [ {
+    "name" : "SECTOR_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SECTOR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "SECTOR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SECTOR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SECTOR_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SECTOR_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "SECTOR_DISTANCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SECTOR_DISTANCE",
+    "sqlType" : "2"
+  }, {
+    "name" : "OUTBOUND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OUTBOUND",
+    "sqlType" : "12"
+  }, {
+    "name" : "EK_OPR_SECT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EK_OPR_SECT",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOARD_POINT_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOARD_POINT_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "OFF_POINT_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OFF_POINT_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SOURCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SOURCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "COMBINED_SECTOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COMBINED_SECTOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "GCD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GCD",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_SECTOR_MASTER_DIM"
+}

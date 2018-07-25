@@ -1,0 +1,39 @@
+{
+  "type" : "record",
+  "name" : "skywards_engagement_member",
+  "doc" : "skywards_engagement_member",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP"
+  },{
+    "name" : "SKYWARDSID",
+    "type" : [ "string", "null" ],
+    "columnName" : "SKYWARDSID"
+  }, {
+    "name" : "CITYOFRESIDENCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITYOFRESIDENCE" 
+  }, {
+    "name" : "COUNTRYOFRESIDENCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRYOFRESIDENCE"
+  }, {
+    "name" : "EMAIL",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMAIL"
+  }, {
+    "name" : "SEPID",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEPID"
+  }, {
+    "name" : "SEPUSERSDEVICES",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEPUSERSDEVICES"
+  } ],
+  "tableName" : "skywards_engagement_member"
+}

@@ -1,0 +1,163 @@
+{
+  "type" : "record",
+  "name" : "CDW_GEO_LOCATION_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_GEO_LOCATION_DIM",
+  "fields" : [ {
+    "name" : "LOCATION_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LOCATION_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CITY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CITY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COUNTRY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COUNTRY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "TERRITORY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TERRITORY_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "TERRITORY_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TERRITORY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "REGION_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REGION_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "REGION_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REGION_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVE_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTIVE_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "REPORTING_CURRENCY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REPORTING_CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "OLD_REPORTING_CURRENCY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OLD_REPORTING_CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "EK_ONLINE_CITY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EK_ONLINE_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "BASE_CITY_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BASE_CITY_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRPORT_ONLY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRPORT_ONLY",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAIN_CITY_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MAIN_CITY_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CITY_EFF_FROM_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CITY_EFF_FROM_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CITY_EFF_TO_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CITY_EFF_TO_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "NETWORK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NETWORK",
+    "sqlType" : "12"
+  }, {
+    "name" : "AREA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AREA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AREA_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AREA_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SOURCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SOURCE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_GEO_LOCATION_DIM"
+}

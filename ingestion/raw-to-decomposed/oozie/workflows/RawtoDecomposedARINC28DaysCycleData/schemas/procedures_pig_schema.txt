@@ -1,0 +1,5 @@
+(chararray)$0 AS Port,(chararray)$1 AS PortIC,(chararray)$2 AS TransId,(chararray)$3 AS ProcType,(chararray)$4 AS Seq,(chararray)$5 AS Fix,(chararray)$6 AS FixIC,(chararray)$7 AS SecCode,(chararray)$8 AS DescCode,(chararray)$9 AS TurnDr,(chararray)$10 AS PathTerm,(chararray)$11 AS TDV , (chararray)$12 AS Course, (chararray)$13 AS Dis, (chararray)$14 AS RecdNavaid,
+(chararray)$15 AS RecNavIC, (chararray)$16 AS VertAngle, (chararray)$17 AS Rho, (chararray)$18 AS Theta,
+(chararray)$19 AS AL, (chararray)$20 AS SpdLmt, (chararray)$21 AS AltDesc, (chararray)$22 AS ATC,
+(chararray)$23 AS Altitude1, (chararray)$24 AS Altitude2, (chararray)$25 AS TransAlt,
+(chararray)$26 AS CenterFix, (chararray)$27 AS CentreIC, (chararray)$28 AS SQ,(chararray)$28 AS Cycle

@@ -1,0 +1,172 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_SDW_CONTACT_NUMBERS",
+  "doc" : "Sqoop import of DW_OWNR.SDW_CONTACT_NUMBERS",
+  "fields" : [ {
+    "name" : "PREFERED_CONTACT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREFERED_CONTACT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STG_PROCESS_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "HOME_TEL_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOME_TEL_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAX_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAX_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "WORK_TEL_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "WORK_TEL_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOBILE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MOBILE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREFERED_CONTACT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREFERED_CONTACT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PER_PERSON_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PER_PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CARD_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOME_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "HOME_USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOME_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOME_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "HOME_USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOME_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAX_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAX_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "FAX_USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAX_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAX_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAX_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "FAX_USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAX_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "WORK_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WORK_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "WORK_USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WORK_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "WORK_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WORK_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "WORK_USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WORK_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOB_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MOB_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "MOB_USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MOB_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOB_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MOB_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "MOB_USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MOB_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREF_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PREF_USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREF_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PREF_USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORGANISATION_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORGANISATION_ID",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "DW_OWNR.SDW_CONTACT_NUMBERS"
+}

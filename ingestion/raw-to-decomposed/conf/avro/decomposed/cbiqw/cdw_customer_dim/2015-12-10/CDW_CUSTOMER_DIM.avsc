@@ -1,0 +1,389 @@
+{
+  "type" : "record",
+  "name" : "CDW_CUSTOMER_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_CUSTOMER_DIM",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "CUSTOMER_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "PARTY_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARTY_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "SKYWARDS_MEMBER_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SKYWARDS_MEMBER_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CORPORATE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORPORATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CUSTOMER_TYPE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SALUTATION_TEXT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALUTATION_TEXT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_MIDDLE_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_MIDDLE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_LAST_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_LAST_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "GENDER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GENDER",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATE_OF_BIRTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DATE_OF_BIRTH",
+    "sqlType" : "93"
+  }, {
+    "name" : "MARITAL_STATUS_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MARITAL_STATUS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PASSPORT_RES_COUNTRY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PASSPORT_RES_COUNTRY",
+    "sqlType" : "12"
+  }, {
+    "name" : "PASSPORT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PASSPORT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PASSPORT_ISSUE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PASSPORT_ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PASSPORT_EXPIRY_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PASSPORT_EXPIRY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "OTHER_DOCUMENT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OTHER_DOCUMENT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONTACT_NUMBER_HOME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONTACT_NUMBER_HOME",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_CONTACT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_CONTACT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOBILE_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MOBILE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_ADDRESS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EMAIL_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "GEO_NATIONALITY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GEO_NATIONALITY",
+    "sqlType" : "2"
+  }, {
+    "name" : "JOB_TITLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "JOB_TITLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEPARTMENT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DEPARTMENT_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "JOB_DESIGNATION_TEXT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "JOB_DESIGNATION_TEXT",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_TEXT_LINE_1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_TEXT_LINE_1",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_TEXT_LINE_2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_TEXT_LINE_2",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_TEXT_LINE_3",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_TEXT_LINE_3",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_PO_BOX_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_PO_BOX_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_CITY_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_CITY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_POST_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_POST_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_TERRITORY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_TERRITORY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_COUNTRY_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_COUNTRY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_ADDR_REGION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BUSINESS_ADDR_REGION",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_ADDRESS_TEXT_LINE1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOME_ADDRESS_TEXT_LINE1",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_ADDRESS_TEXT_LINE2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOME_ADDRESS_TEXT_LINE2",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_ADDRESS_TEXT_LINE3",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOME_ADDRESS_TEXT_LINE3",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_ADDRESS_PO_BOX",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOME_ADDRESS_PO_BOX",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_ADDRESS_CITY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOME_ADDRESS_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_ADDRESS_POST_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOME_ADDRESS_POST_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_ADDRESS_TERRITORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOME_ADDRESS_TERRITORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREFERRED_ADDRESS_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PREFERRED_ADDRESS_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREFERRED_SPOKEN_LANG_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PREFERRED_SPOKEN_LANG_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREFERRED_WRITTEN_LANG_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PREFERRED_WRITTEN_LANG_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREDIT_CARD_HOLDING_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREDIT_CARD_HOLDING_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREFERRED_MEAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PREFERRED_MEAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREFERRED_SEAT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PREFERRED_SEAT",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREFERRED_DRINK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PREFERRED_DRINK",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_COMMUNICATION_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EMAIL_COMMUNICATION_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_SEGMENT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_SEGMENT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_RELATIONSHIP_LEVEL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_RELATIONSHIP_LEVEL",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MARK_FOR_DELETE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MARK_FOR_DELETE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMPLOYEE_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EMPLOYEE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "SOURCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SOURCE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_CUSTOMER_DIM"
+}

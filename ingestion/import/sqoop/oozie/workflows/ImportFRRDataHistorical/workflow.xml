@@ -1,0 +1,74 @@
+<workflow-app name="importFRRDataHistorical_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="sqoop-b992"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>s434654@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-b992">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT fareid,subid, vendorid, faretype, cxr, orig, origcity, origcntry, dest, destcity, destcntry, tarno, tarcd, farecls, status, effdt, discdt, acteffdt, actdiscdt, createdttm, ruleno, rtgno, owrt, ftnt, di, global, mpm, cabotage, fareamt, curr, amtdec, actioncd, vendoractioncd, batchno, linkno, seqno, gfsref, audited, chgamt, prevfareid, batchid, customerid,process_dt FROM frr_subs_intfared WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>EFFDT=String,DISCDT=String,ACTEFFDT=String,ACTDISCDT=String,CREATEDTTM=String,PROCESS_DT=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FAREID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FRR_SUBS_INTFARED</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FRR_SUBS_INTFARED}</arg>
+              <arg>--num-mappers</arg>
+              <arg>40</arg>
+              <arg>--boundary-query </arg>
+              <arg>&quot;select min(fareid), max(fareid) from frr_subs_intfared&quot; </arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

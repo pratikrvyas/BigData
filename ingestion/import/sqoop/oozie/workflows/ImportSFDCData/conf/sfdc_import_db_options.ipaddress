@@ -1,0 +1,7 @@
+#
+--connect
+jdbc:oracle:thin:@10.20.143.202:6516:SFEKOP
+--username
+helix_user
+--password
+Helix_User#999

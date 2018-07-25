@@ -1,0 +1,511 @@
+{
+  "type" : "record",
+  "name" : "CDW_CALENDAR_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_CALENDAR_DIM",
+  "fields" : [ {
+    "name" : "DATE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CALENDAR_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CALENDAR_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DAY_OF_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAY_OF_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "DAY_OF_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAY_OF_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "DAY_OF_YEAR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAY_OF_YEAR",
+    "sqlType" : "2"
+  }, {
+    "name" : "DAY_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "DAY_ABBREVIATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAY_ABBREVIATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "SAME_DAY_IN_LAST_YEAR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SAME_DAY_IN_LAST_YEAR",
+    "sqlType" : "93"
+  }, {
+    "name" : "SAME_DAY_IN_LAST_YEAR_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SAME_DAY_IN_LAST_YEAR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "WEEK_DAY_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WEEK_DAY_FLAG",
+    "sqlType" : "1"
+  }, {
+    "name" : "SEASONALITY_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEASONALITY_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "WEEK_OF_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WEEK_OF_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "WEEK_OF_YEAR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WEEK_OF_YEAR",
+    "sqlType" : "2"
+  }, {
+    "name" : "WEEK_BEGIN_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WEEK_BEGIN_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "WEEK_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WEEK_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "WEEK_BEGIN_DATE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WEEK_BEGIN_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_WEEK",
+    "sqlType" : "12"
+  }, {
+    "name" : "POWER_WEEK_ST_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_WEEK_ST_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "POWER_WEEK_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_WEEK_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "POWER_WEEK_YEAR_ST_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_WEEK_YEAR_ST_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "POWER_WEEK_YEAR_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_WEEK_YEAR_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MONTH_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "MONTH_OF_QUARTER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_OF_QUARTER",
+    "sqlType" : "2"
+  }, {
+    "name" : "MONTH_BEGIN_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_BEGIN_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MONTH_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MONTH_BEGIN_DATE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_BEGIN_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "MONTH_END_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_END_FLAG",
+    "sqlType" : "1"
+  }, {
+    "name" : "MONTH_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "MONTH_ABBREVIATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_ABBREVIATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "QUARTER_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUARTER_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "QUARTER_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUARTER_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "QUARTER_BEGIN_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUARTER_BEGIN_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "QUARTER_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUARTER_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "QUARTER_BEGIN_DATE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUARTER_BEGIN_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_BEGIN_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_BEGIN_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "YEAR_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "YEAR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_FISCAL_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_FISCAL_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_FISCAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_FISCAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FISCAL_YEAR_BEGIN_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FISCAL_YEAR_BEGIN_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FISCAL_YEAR_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FISCAL_YEAR_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FISCAL_YEAR_BEGIN_DATE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FISCAL_YEAR_BEGIN_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "FISCAL_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FISCAL_MONTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "FISCAL_QUARTER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FISCAL_QUARTER",
+    "sqlType" : "2"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MON_YY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MON_YY",
+    "sqlType" : "12"
+  }, {
+    "name" : "LAST_DAY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_DAY",
+    "sqlType" : "12"
+  }, {
+    "name" : "POWER_YEAR_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_YEAR_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_YEAR_LAST_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_YEAR_LAST_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_YEAR_LAST_2_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_YEAR_LAST_2_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_YEAR_NEXT_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_YEAR_NEXT_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_LAST_YEAR_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_LAST_YEAR_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_LAST_YEAR_LAST_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_LAST_YEAR_LAST_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_LAST_YEAR_NEXT_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_LAST_YEAR_NEXT_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_YEAR_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_YEAR_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_LAST_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_LAST_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_LAST_2_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_LAST_2_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_LAST_3_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_LAST_3_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_LAST_4_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_LAST_4_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_NEXT_QUARTER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_NEXT_QUARTER",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_YEAR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_YEAR",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_QUARTER_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_QUARTER_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_YEAR_QUARTER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_YEAR_QUARTER",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_LAST_QUARTER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_LAST_QUARTER",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_LAST_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_LAST_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_YEAR_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_YEAR_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_NEXT_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_NEXT_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_NEXT_2_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_NEXT_2_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_NEXT_3_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_NEXT_3_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_YEAR_NEXT_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_YEAR_NEXT_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_YEAR_FISCAL_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_YEAR_FISCAL_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POWER_YEAR_LAST_3_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_YEAR_LAST_3_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_YEAR_LAST_4_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_YEAR_LAST_4_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_NEXT_4_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_NEXT_4_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_NEXT_5_MONTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_NEXT_5_MONTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_NEXT_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_NEXT_WEEK",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_YEAR_SAME_DAY_OF_WEEK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_YEAR_SAME_DAY_OF_WEEK",
+    "sqlType" : "12"
+  }, {
+    "name" : "POWER_YEAR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_YEAR_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "POWER_YEAR_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POWER_YEAR_DESC",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_CALENDAR_DIM"
+}

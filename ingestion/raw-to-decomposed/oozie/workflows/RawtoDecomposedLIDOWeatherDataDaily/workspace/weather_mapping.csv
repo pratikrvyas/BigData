@@ -1,0 +1,4 @@
+MessageIdent,0,4
+NoofWeatherMessages,4,8
+Seperator,8,12
+WeatherInfo,4,8,12,FirstAirportCodeICAO,4,FirstAirportCodeIATA,5,WeatherIdent,2,TimeofObservationPromulgation,6,Remark,3,InputOffice,1,StartofValidity,6,EndofValidity,6,WeatherText,=

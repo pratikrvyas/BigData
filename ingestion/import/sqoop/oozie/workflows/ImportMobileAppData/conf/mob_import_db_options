@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.88.246:6516:EKMOBOP
+--username
+hlx_user
+--password
+Emirates123
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

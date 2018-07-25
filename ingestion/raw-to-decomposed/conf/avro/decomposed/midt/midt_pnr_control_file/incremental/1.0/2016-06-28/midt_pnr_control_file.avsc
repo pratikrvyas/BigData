@@ -1,0 +1,43 @@
+{
+  "type" : "record",
+  "name" : "import_midtpnr",
+  "doc" : "import of DW_OWNR.midtpnrcntrl",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "NUMBER_OF_FILES",
+    "type" : [ "string", "null" ],
+    "columnName" : "NUMBER_OF_FILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "NUMBER_OF_RECORDS",
+    "type" : [ "string", "null" ],
+    "columnName" : "NUMBER_OF_RECORDS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONTROL_FILE_PROCESSING_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CONTROL_FILE_PROCESSING_DATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "BATCH_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "BATCH_NUMBER",
+    "sqlType" : "93"
+  }, {
+    "name" : "PROCESSING_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROCESSING_DATE",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.MIDTPNRCNTRL"
+}

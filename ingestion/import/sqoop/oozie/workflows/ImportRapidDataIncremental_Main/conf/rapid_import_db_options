@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.150.243.6:1526:rpd
+--username
+HELIX_USER
+--password
+HELIX_USER
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.DeflateCodec

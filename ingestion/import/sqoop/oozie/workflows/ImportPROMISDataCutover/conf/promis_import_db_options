@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@(DESCRIPTION =(CONNECT_TIMEOUT=15)(FAILOVER = ON)(LOAD_BALANCE = OFF)(TRANSPORT_CONNECT_TIMEOUT=6)(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = hqlinuxbl692.hq.emirates.com)(PORT = 6516))(ADDRESS = (PROTOCOL = TCP)(HOST = dolinuxbl692.hq.emirates.com)(PORT = 6516)))(CONNECT_DATA =(SERVICE_NAME = prm_ha)))
+--username
+HELIX_INT_USR
+--password
+PROMIS2016

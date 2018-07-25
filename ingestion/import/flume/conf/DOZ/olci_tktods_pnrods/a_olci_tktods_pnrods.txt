@@ -1,0 +1,130 @@
+######### EGTC ELASTIC SEARCH  KAFKA to ES for OLCI, PNR ODS and TICKET ODS ###########
+
+a_olci_tktods_pnrods.sinks = k_olciemail_es k_olcisms k_ticket k_pnr1 k_pnr2 k_pnr3
+a_olci_tktods_pnrods.channels = c_olciemail c_olcisms c_ticket c_pnr
+a_olci_tktods_pnrods.sinkgroups = k_pnr_sinkgrp
+a_olci_tktods_pnrods.sinkgroups.k_pnr_sinkgrp.sinks = k_pnr1 k_pnr2 k_pnr3
+a_olci_tktods_pnrods.sinkgroups.k_pnr_sinkgrp.processor.type = load_balance
+
+######### Describe channel OLCI EMAIL ###########
+
+a_olci_tktods_pnrods.channels.c_olciemail.type = org.apache.flume.channel.kafka.KafkaChannel
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.topic=HLX_OLCI_EMAIL.DOZ
+a_olci_tktods_pnrods.channels.c_olciemail.parseAsFlumeEvent = false
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.consumer.group.id = OLCIEMAILESCONSUMER
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.consumer.heartbeat.interval.ms=5000
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.consumer.auto.offset.reset=latest
+
+######### Describe sink OLCI EMAIL ###########
+a_olci_tktods_pnrods.sinks.k_olciemail_es.type= HelixSink
+a_olci_tktods_pnrods.sinks.k_olciemail_es.hostNames= dolinux755:9300,dolinux756:9300,dolinux771:9300,dolinux758:9300,dolinux772:9300,dolinux773:9300
+a_olci_tktods_pnrods.sinks.k_olciemail_es.batchSize= 200
+a_olci_tktods_pnrods.sinks.k_olciemail_es.clusterName= elasticsearch_helixprod
+a_olci_tktods_pnrods.sinks.k_olciemail_es.indexName= spd-olci
+a_olci_tktods_pnrods.sinks.k_olciemail_es.indexType= olciods
+a_olci_tktods_pnrods.sinks.k_olciemail_es.serializer.removeFieldsPrefix = true
+a_olci_tktods_pnrods.sinks.k_olciemail_es.serializer = HelixOLCIEventSerializerIndexRequestbuilderFactory
+a_olci_tktods_pnrods.sinks.k_olciemail_es.serializer.objectFields = body
+                           
+a_olci_tktods_pnrods.sinks.k_olciemail_es.channel = c_olciemail
+
+
+######### Describe channel OLCI SMS ###########
+
+a_olci_tktods_pnrods.channels.c_olcisms.type = org.apache.flume.channel.kafka.KafkaChannel
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.topic=HLX_OLCI_SMS.DOZ
+a_olci_tktods_pnrods.channels.c_olcisms.parseAsFlumeEvent = false
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.consumer.group.id = OLCISMSESCONSUMER
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.consumer.heartbeat.interval.ms=5000
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.consumer.auto.offset.reset=latest
+
+
+
+######### Describe sink OLCI SMS ###########
+a_olci_tktods_pnrods.sinks.k_olcisms.type= HelixSink
+a_olci_tktods_pnrods.sinks.k_olcisms.hostNames= dolinux755:9300,dolinux756:9300,dolinux771:9300,dolinux758:9300,dolinux772:9300,dolinux773:9300
+a_olci_tktods_pnrods.sinks.k_olcisms.batchSize= 200
+a_olci_tktods_pnrods.sinks.k_olcisms.clusterName= elasticsearch_helixprod
+a_olci_tktods_pnrods.sinks.k_olcisms.indexName= spd-olcisms
+a_olci_tktods_pnrods.sinks.k_olcisms.indexType= olcismsods
+a_olci_tktods_pnrods.sinks.k_olcisms.serializer.removeFieldsPrefix = true
+a_olci_tktods_pnrods.sinks.k_olcisms.serializer = HelixOLCIEventSerializerIndexRequestbuilderFactory
+a_olci_tktods_pnrods.sinks.k_olcisms.serializer.objectFields = body
+                           
+a_olci_tktods_pnrods.sinks.k_olcisms.channel = c_olcisms
+
+
+######### Describe channel OLCI TICKET ODS ###########
+
+a_olci_tktods_pnrods.channels.c_ticket.type = org.apache.flume.channel.kafka.KafkaChannel
+a_olci_tktods_pnrods.channels.c_ticket.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_olci_tktods_pnrods.channels.c_ticket.kafka.topic=HLX_TKTODS.DOZ
+a_olci_tktods_pnrods.channels.c_ticket.parseAsFlumeEvent = false
+a_olci_tktods_pnrods.channels.c_ticket.kafka.consumer.group.id = OLCITKTODSESCONSUMER
+a_olci_tktods_pnrods.channels.c_ticket.kafka.consumer.heartbeat.interval.ms=5000
+a_olci_tktods_pnrods.channels.c_ticket.kafka.consumer.auto.offset.reset=latest
+
+
+######### Describe sink OLCI TICKET ODS ###########
+a_olci_tktods_pnrods.sinks.k_ticket.type= HelixSink
+a_olci_tktods_pnrods.sinks.k_ticket.hostNames= dolinux755:9300,dolinux756:9300,dolinux771:9300,dolinux758:9300,dolinux772:9300,dolinux773:9300
+a_olci_tktods_pnrods.sinks.k_ticket.batchSize= 200
+a_olci_tktods_pnrods.sinks.k_ticket.clusterName= elasticsearch_helixprod
+a_olci_tktods_pnrods.sinks.k_ticket.indexName= idx_tkt_speed
+a_olci_tktods_pnrods.sinks.k_ticket.indexType= typ_tkt
+a_olci_tktods_pnrods.sinks.k_ticket.serializer.removeFieldsPrefix = true
+a_olci_tktods_pnrods.sinks.k_ticket.serializer = HelixTicketEventSerializerIndexRequestbuilderFactory
+a_olci_tktods_pnrods.sinks.k_ticket.serializer.objectFields = body
+                           
+a_olci_tktods_pnrods.sinks.k_ticket.channel = c_ticket
+
+######### Describe channel OLCI PNR ODS ###########
+
+a_olci_tktods_pnrods.channels.c_pnr.type = org.apache.flume.channel.kafka.KafkaChannel
+a_olci_tktods_pnrods.channels.c_pnr.kafka.bootstrap.servers = hqlinux760:9092,hqlinux752:9092,hqlinux753:9092
+a_olci_tktods_pnrods.channels.c_pnr.kafka.topic=HLX_PNRODS.DOZ
+a_olci_tktods_pnrods.channels.c_pnr.parseAsFlumeEvent = false
+a_olci_tktods_pnrods.channels.c_pnr.kafka.consumer.group.id = OLCIPNRODSESCONSUMER
+a_olci_tktods_pnrods.channels.c_pnr.kafka.consumer.heartbeat.interval.ms=5000
+a_olci_tktods_pnrods.channels.c_pnr.kafka.consumer.auto.offset.reset=latest
+
+######### Describe sink OLCI PNR ODS ###########
+a_olci_tktods_pnrods.sinks.k_pnr1.type= HelixSink
+a_olci_tktods_pnrods.sinks.k_pnr1.hostNames= dolinux755:9300,dolinux756:9300,dolinux771:9300,dolinux758:9300,dolinux772:9300,dolinux773:9300
+a_olci_tktods_pnrods.sinks.k_pnr1.batchSize= 200
+a_olci_tktods_pnrods.sinks.k_pnr1.clusterName= elasticsearch_helixprod
+a_olci_tktods_pnrods.sinks.k_pnr1.indexName= idx_pnr_speed
+a_olci_tktods_pnrods.sinks.k_pnr1.indexType= typ_pnr
+a_olci_tktods_pnrods.sinks.k_pnr1.serializer.removeFieldsPrefix = true
+a_olci_tktods_pnrods.sinks.k_pnr1.serializer = HelixPnrEventSerializerIndexRequestBuilderFactory
+a_olci_tktods_pnrods.sinks.k_pnr1.serializer.objectFields = body
+                           
+a_olci_tktods_pnrods.sinks.k_pnr1.channel = c_pnr
+
+######### Describe sink OLCI PNR ODS ###########
+a_olci_tktods_pnrods.sinks.k_pnr2.type= HelixSink
+a_olci_tktods_pnrods.sinks.k_pnr2.hostNames= dolinux755:9300,dolinux756:9300,dolinux771:9300,dolinux758:9300,dolinux772:9300,dolinux773:9300
+a_olci_tktods_pnrods.sinks.k_pnr2.batchSize= 200
+a_olci_tktods_pnrods.sinks.k_pnr2.clusterName= elasticsearch_helixprod
+a_olci_tktods_pnrods.sinks.k_pnr2.indexName= idx_pnr_speed
+a_olci_tktods_pnrods.sinks.k_pnr2.indexType= typ_pnr
+a_olci_tktods_pnrods.sinks.k_pnr2.serializer.removeFieldsPrefix = true
+a_olci_tktods_pnrods.sinks.k_pnr2.serializer = HelixPnrEventSerializerIndexRequestBuilderFactory
+a_olci_tktods_pnrods.sinks.k_pnr2.serializer.objectFields = body
+                                
+a_olci_tktods_pnrods.sinks.k_pnr2.channel = c_pnr
+
+######### Describe sink OLCI PNR ODS ###########
+a_olci_tktods_pnrods.sinks.k_pnr3.type= HelixSink
+a_olci_tktods_pnrods.sinks.k_pnr3.hostNames= dolinux755:9300,dolinux756:9300,dolinux771:9300,dolinux758:9300,dolinux772:9300,dolinux773:9300
+a_olci_tktods_pnrods.sinks.k_pnr3.batchSize= 200
+a_olci_tktods_pnrods.sinks.k_pnr3.clusterName= elasticsearch_helixprod
+a_olci_tktods_pnrods.sinks.k_pnr3.indexName= idx_pnr_speed
+a_olci_tktods_pnrods.sinks.k_pnr3.indexType= typ_pnr
+a_olci_tktods_pnrods.sinks.k_pnr3.serializer.removeFieldsPrefix = true
+a_olci_tktods_pnrods.sinks.k_pnr3.serializer = HelixPnrEventSerializerIndexRequestBuilderFactory
+a_olci_tktods_pnrods.sinks.k_pnr3.serializer.objectFields = body
+                                
+a_olci_tktods_pnrods.sinks.k_pnr3.channel = c_pnr

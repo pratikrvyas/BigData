@@ -1,0 +1,106 @@
+<workflow-app name="SchemaSyncLidoFsumFlightLevelInitial_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="spark-6880"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-89dc">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>LIDO_FSUM_FLIGHT_LEVEL_SCHEMASYNC</name>
+              <class>com.emirates.helix.SchemaSyncDriver</class>
+            <jar>schema-sync-1.0.jar</jar>
+              <spark-opts>--executor-memory 6g --driver-memory 6g --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=5 --conf spark.dynamicAllocation.maxExecutors=10</spark-opts>
+              <arg>-i</arg>
+              <arg>${SPLIT_OUTPUT_HDFS_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${SYNC_OUTPUT_HDFS_PATH}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+              <arg>-s</arg>
+              <arg>${IN_FORMAT}</arg>
+              <arg>-p</arg>
+              <arg>${OUT_FORMAT}</arg>
+              <arg>-x</arg>
+              <arg>${SYNC_MAPPING_FILE}</arg>
+        </spark>
+        <ok to="spark-5a8b"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-5a8b">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${DRVD_OUTPUT_HDFS_PATH}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>LIDO_FSUM_FLIGHT_LEVEL_HIST_WITH_DRVD_COLS</name>
+              <class>com.helix.emirates.Lido_Fsum_Flight_Level_Hist_With_Derived_Cols</class>
+            <jar>Lido_Fsum_Flight_Level_Hist_With_Derived_Cols-1.0-SNAPSHOT.jar</jar>
+              <spark-opts>--executor-memory 6g --driver-memory 4g --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=5 --conf spark.dynamicAllocation.maxExecutors=10</spark-opts>
+              <arg>-i</arg>
+              <arg>${SYNC_OUTPUT_HDFS_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${DRVD_OUTPUT_HDFS_PATH}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+              <arg>-p</arg>
+              <arg>50</arg>
+        </spark>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-6880">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>LIDO_FSUM_FLIGHTLEVEL_HIST_SPLIT</name>
+              <class>com.emirates.helix.GenericColumnSplitDriver</class>
+            <jar>generic-columnsplit-1.0.jar</jar>
+              <spark-opts>--executor-memory 6g --driver-memory 6g --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=5 --conf spark.dynamicAllocation.maxExecutors=10</spark-opts>
+              <arg>-i</arg>
+              <arg>${SPLIT_INPUT_HDFS_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${SPLIT_OUTPUT_HDFS_PATH}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+              <arg>-s</arg>
+              <arg>${IN_FORMAT}</arg>
+              <arg>-p</arg>
+              <arg>${OUT_FORMAT}</arg>
+              <arg>-x</arg>
+              <arg>${SPLIT_MAPPING_FILE}</arg>
+        </spark>
+        <ok to="spark-89dc"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

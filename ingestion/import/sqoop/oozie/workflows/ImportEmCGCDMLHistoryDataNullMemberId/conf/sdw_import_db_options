@@ -1,0 +1,12 @@
+#import
+--connect
+jdbc:oracle:thin:@10.38.229.14:6516:CDMD
+#jdbc:oracle:thin:@dolinuxbl303.hq.emirates.com:6516:CDML
+####jdbc:oracle:thin:@cdml_db_ha.app.emirates.com:1526:CDML
+--username
+dw_ownr
+--password
+emirates@123
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

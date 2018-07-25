@@ -1,0 +1,1 @@
+mvn org.apache.maven.plugins:maven-dependency-plugin:2.1:get -DrepoUrl=http://repository.cloudera.com/cloudera/cloudera-repos -Dartifact=com.cloudera.cdh:cdh-root:5.3.1 -Dpackaging=pom

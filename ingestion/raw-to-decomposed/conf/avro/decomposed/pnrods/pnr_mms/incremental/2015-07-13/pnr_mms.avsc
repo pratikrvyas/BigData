@@ -1,0 +1,97 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_PNR_MMS",
+  "doc" : "PNR_MMS_INCR",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+	"sqlType" : "12"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+	"sqlType" : "12"
+  },{
+    "name" : "PNR_SNAP_SHOT_DAY",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_SNAP_SHOT_DAY",
+    "sqlType" : "2"
+  },{
+    "name" : "PNR_MMS_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_MMS_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PAX_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "STATUS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STATUS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREDIT_AIRLINE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREDIT_AIRLINE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREDIT_AIRLINE_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREDIT_AIRLINE_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "MM_FIELD_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "MM_FIELD_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_IDENTIFIER",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_IDENTIFIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_IDENTIFIER_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_IDENTIFIER_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "SOURCE_MMS_FIELD",
+    "type" : [ "string", "null" ],
+    "columnName" : "SOURCE_MMS_FIELD",
+    "sqlType" : "12"
+  }, {
+    "name" : "VARIABLE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "VARIABLE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "VERSION_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "VERSION_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLOWN_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLOWN_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_SCORE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CUSTOMER_SCORE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PNR_MMS_INCR"
+}

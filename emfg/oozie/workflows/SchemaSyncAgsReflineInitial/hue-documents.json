@@ -1,0 +1,103 @@
+[
+{
+  "pk": 208698, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "ab1a65c8-d1e6-4334-888a-26c65bbe2786", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "This workflow is used to perform History Schema Sync of AGS_Refline", 
+    "is_history": false, 
+    "parent_directory": [
+      "63e12206-9e5b-4dff-ba0f-76133643baec", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-02-01T11:54:24", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "8f3377d4-9318-49a8-8521-a693527d01dd", 
+        1, 
+        true
+      ], 
+      [
+        "16fccc3c-612b-4334-8aae-6818c5a2f703", 
+        1, 
+        true
+      ], 
+      [
+        "1827e0ad-44b8-4360-9a37-5c1390375add", 
+        1, 
+        true
+      ], 
+      [
+        "9e185080-e2b0-4344-b551-141ff182a0ce", 
+        1, 
+        true
+      ], 
+      [
+        "5646b078-4fbd-4174-8075-fbbd2fc0c672", 
+        1, 
+        true
+      ], 
+      [
+        "94f3229f-d2ac-4915-82a9-962641e4fd57", 
+        1, 
+        true
+      ], 
+      [
+        "b1e065ec-80a7-4992-9acf-025d8caf4bd1", 
+        1, 
+        true
+      ], 
+      [
+        "1575a8cd-f6b4-4c2a-a110-9c7c54140274", 
+        1, 
+        true
+      ], 
+      [
+        "fa9bd902-2ecf-482b-a9b0-11c9d0c85ec7", 
+        1, 
+        true
+      ], 
+      [
+        "568cf37b-40e3-4568-a746-e2a5164e0228", 
+        1, 
+        true
+      ], 
+      [
+        "afd5568d-d868-408e-94fd-6abf71f1f826", 
+        1, 
+        true
+      ], 
+      [
+        "123b461a-50e7-4825-9774-49dc65be46cb", 
+        1, 
+        true
+      ], 
+      [
+        "a22c4b8a-71d1-4846-a69a-784ade2f85ce", 
+        1, 
+        true
+      ], 
+      [
+        "ef402e6e-1dfa-46ca-b22c-5365b2fe2f71", 
+        1, 
+        true
+      ], 
+      [
+        "56ebf67f-220f-4a33-adfe-7a0cbc2fc77a", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"AGS_Refline_history_schema_sync\", \"widgetType\": \"spark-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"size\": 12}], \"id\": \"81a9574b-d799-bcad-4fab-fd9f34eaa5bd\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\", \"size\": 12}], \"id\": \"ccf556e0-2249-4874-ab50-2cda82569182\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"702f0252-40cf-0546-abaa-9cfa63b1929f\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"AGS_Refline_history_schema_sync\", \"widgetType\": \"spark-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"size\": 12}], \"id\": \"81a9574b-d799-bcad-4fab-fd9f34eaa5bd\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\", \"size\": 12}], \"id\": \"ccf556e0-2249-4874-ab50-2cda82569182\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"805d5f26-86ef-affb-4d2f-54eaa3af4a26\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"137705d6-7faa-7e43-45d8-7295b972d26d\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"805d5f26-86ef-affb-4d2f-54eaa3af4a26\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"137705d6-7faa-7e43-45d8-7295b972d26d\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"702f0252-40cf-0546-abaa-9cfa63b1929f\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"996d9c5f-6dc1-508f-3434-342aaca8edf9\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"This workflow is used to perform History Schema Sync of AGS_Refline\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"EMAIL_ADDRESS_LIST\", \"value\": \"fayazbasha.shaik@dnata.com, aswini.subramani@dnata.com\"}, {\"name\": \"AGS_REFLINE_HISTORY_INPUT_PATH\", \"value\": \"/data/helix/decomposed/ags/refline/full/1.0/2017-12-11/02-00/*.avro\"}, {\"name\": \"AGS_REFLINE_HISTORY_SYNC_PATH\", \"value\": \"/data/helix/modelled/flight_genome/sync/ags/ags_refline\"}, {\"name\": \"COMPRESSION\", \"value\": \"snappy\"}, {\"name\": \"COALESCE_VALUE\", \"value\": \"4\"}], \"sla_enabled\": false, \"deployment_dir\": \"/apps/helix/conf/oozie/workspaces/wf_schemasyncagsreflineinitial\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"show_arrows\": true, \"wf1_id\": null, \"properties\": [{\"name\": \"oozie.launcher.mapred.job.queue.name\", \"value\": \"opseff\"}, {\"name\": \"mapred.job.queue.name\", \"value\": \"opseff\"}]}, \"name\": \"SchemaSyncAgsReflineInitial\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": false, \"movedNode\": null, \"linkMapping\": {\"b888c8f8-1968-1b89-38a5-600eea8c7a8c\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": [], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"fa832f7b-18d3-8f6a-8437-0a3864e97c78\"], \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\": [\"b888c8f8-1968-1b89-38a5-600eea8c7a8c\"]}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Current timestamp: ${timestamp()}\\nWorkflow name: ${wf:name()}\\nWorkflow path: http://10.232.154.13:8888/oozie/list_oozie_workflow/${wf:id()}\\nWorkflow application path: ${wf:appPath()}\\nWorkflow user: ${wf:user()}\\nLast error action: ${wf:lastErrorNode()}\\nError code: ${wf:errorCode(wf:lastErrorNode())}\\nError message: ${wf:errorMessage(wf:lastErrorNode())}\", \"cc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST}\", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"Workflow ${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"job_xml\": \"\", \"app_name\": \"agsreflinehistoryschemasync\", \"spark_opts\": \"--executor-memory 2g --driver-memory 1g --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=1 --conf spark.dynamicAllocation.maxExecutors=10 \", \"retry_max\": [], \"class\": \"com.emirates.helix.AgsReflineHistorySchemaSyncDriver\", \"retry_interval\": [], \"job_properties\": [], \"spark_arguments\": [{\"value\": \"-i\"}, {\"value\": \"${AGS_REFLINE_HISTORY_INPUT_PATH}\"}, {\"value\": \"-o\"}, {\"value\": \"${AGS_REFLINE_HISTORY_SYNC_PATH}\"}, {\"value\": \"-p\"}, {\"value\": \"${COALESCE_VALUE}\"}, {\"value\": \"-c\"}, {\"value\": \"${COMPRESSION}\"}], \"prepares\": [], \"mode\": \"cluster\", \"spark_master\": \"yarn\", \"credentials\": [], \"jars\": \"agsreflinehistoryschemasync-1.0.jar\", \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"spark-fa83\", \"children\": [{\"to\": \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"spark-widget\", \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow ${wf:name()} Completed Successfully\", \"cc\": \"\", \"retry_interval\": [], \"retry_max\": [], \"bcc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST} \", \"attachment\": \"\", \"content_type\": \"text/plain\", \"credentials\": [], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}], \"subject\": \"Workflow ${wf:name()} Completed Successfully\"}, \"name\": \"email-b888\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"email-widget\", \"id\": \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\", \"actionParameters\": []}], \"id\": 208698, \"nodeNamesMapping\": {\"b888c8f8-1968-1b89-38a5-600eea8c7a8c\": \"email-b888\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\": \"spark-fa83\"}, \"uuid\": \"9183a858-bc3d-f281-8d37-dff0972c25b1\"}}", 
+    "name": "SchemaSyncAgsReflineInitial"
+  }
+}
+]

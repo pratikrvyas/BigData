@@ -1,0 +1,211 @@
+{
+  "type" : "record",
+  "name" : "PARTNER_BILLING_SUMMARY_MSTR",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "ORIG_SYSTEM_REF_LINE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIG_SYSTEM_REF_LINE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATA_SOURCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DATA_SOURCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERFACE_LINE_CONTEXT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTERFACE_LINE_CONTEXT",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERFACE_LINE_ATTRIBUTE_1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTERFACE_LINE_ATTRIBUTE_1",
+    "sqlType" : "12"
+  }, {
+    "name" : "BATCH_SOURCE_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BATCH_SOURCE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CURRENCY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CURRENCY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOTAL_AMOUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TOTAL_AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "CUST_TRX_TYPE_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUST_TRX_TYPE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIG_SYSTEM_BATCH_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIG_SYSTEM_BATCH_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONVERSION_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONVERSION_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONVERSION_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONVERSION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TRX_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TRX_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "GL_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GL_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "INVOICE_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INVOICE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "COMMENTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COMMENTS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTNER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARTNER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTNER_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARTNER_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "SUB_NOMINAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SUB_NOMINAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "START_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "START_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACFOUT_BATCHID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFOUT_BATCHID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TOTAL_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TOTAL_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACFOUT_BATCH_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACFOUT_BATCH_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "FAILURE_REASON",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAILURE_REASON",
+    "sqlType" : "12"
+  }, {
+    "name" : "REQUEST_ARPOST",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REQUEST_ARPOST",
+    "sqlType" : "2005"
+  }, {
+    "name" : "REQUEST_ARAUDIT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REQUEST_ARAUDIT",
+    "sqlType" : "2005"
+  }, {
+    "name" : "RESPONSE_ARPOST",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RESPONSE_ARPOST",
+    "sqlType" : "2005"
+  }, {
+    "name" : "RESPONSE_ARAUDIT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RESPONSE_ARAUDIT",
+    "sqlType" : "2005"
+  } ],
+  "tableName" : "PARTNER_BILLING_SUMMARY_MSTR"
+}

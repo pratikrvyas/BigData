@@ -1,0 +1,34 @@
+<workflow-app name="ImportDmisBayHistoryDataInitial" xmlns="uri:oozie:workflow:0.5">
+    <start to="java-6ea3"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name : ${wf:name()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="java-6ea3">
+        <java>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <main-class>JavaGenericFTPDownloader</main-class>
+            <arg>${FTP_HOST}</arg>
+            <arg>${FTP_PORT}</arg>
+            <arg>${FTP_USERNAME}</arg>
+            <arg>${FTP_PASSWORD}</arg>
+            <arg>${FTP_FILE_PATH}</arg>
+            <arg>${HDFS_URI}</arg>
+            <arg>${HDFS_LOCATION}</arg>
+            <file>/apps/helix/conf/oozie/workspaces/wf_importdmisbayhistorydata_initial/lib/JavaGenericFTPDownloader-1.0-SNAPSHOT.jar#JavaGenericFTPDownloader-1.0-SNAPSHOT.jar</file>
+        </java>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

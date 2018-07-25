@@ -1,0 +1,302 @@
+
+<workflow-app name="RawToDecomposedCBIQWDimensions" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="fork-a7b0"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-ce98">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_AIRLINE_MASTER_DIM}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-da7b"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-a7b0">
+        <path start="shell-c25f" />
+        <path start="shell-ce98" />
+        <path start="shell-9a30" />
+        <path start="shell-ef88" />
+        <path start="shell-6095" />
+        <path start="shell-4809" />
+        <path start="shell-641c" />
+        <path start="shell-c14c" />
+        <path start="shell-fec3" />
+    </fork>
+    <join name="join-0675" to="End"/>
+    <action name="pig-da7b">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_AIRLINE_MASTER_DIM}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_AIRLINE_MASTER_DIM}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_AIRLINE_MASTER_DIM}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_AIRLINE_MASTER_DIM}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-ce98&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-c25f">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_CABIN_CLASS_DIM}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-5a36"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-5a36">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_CABIN_CLASS_DIM}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_CABIN_CLASS_DIM}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_CABIN_CLASS_DIM}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_CABIN_CLASS_DIM}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-c25f&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-9a30">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_CALENDAR_DIM}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-bfec"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-bfec">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_CALENDAR_DIM}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_CALENDAR_DIM}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_CALENDAR_DIM}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_CALENDAR_DIM}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-9a30&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-ef88">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_FLIGHT_MASTER_DIM}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-60f6"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-60f6">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_FLIGHT_MASTER_DIM}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_FLIGHT_MASTER_DIM}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_FLIGHT_MASTER_DIM}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_FLIGHT_MASTER_DIM}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-ef88&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-6095">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_GEO_LOCATION_DIM}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-63d7"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-63d7">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_GEO_LOCATION_DIM}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_GEO_LOCATION_DIM}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_GEO_LOCATION_DIM}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_GEO_LOCATION_DIM}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-6095&#39;)[&#39;AVRO_SCHEMA&#39;]}=${wf:actionData(&#39;shell-b5e2&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-4809">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_OD_MASTER_DIM}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-5368"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-5368">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_OD_MASTER_DIM}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_OD_MASTER_DIM}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_OD_MASTER_DIM}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_OD_MASTER_DIM}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-4809&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-641c">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_PNR_HEADER}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-4d4d"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-4d4d">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_PNR_HEADER}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_PNR_HEADER}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_PNR_HEADER}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_PNR_HEADER}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-641c&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-c14c">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_SALES_CHANNEL_DIM}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-5589"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-5589">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_SALES_CHANNEL_DIM}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_SALES_CHANNEL_DIM}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_SALES_CHANNEL_DIM}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_SALES_CHANNEL_DIM}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-c14c&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-fec3">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_SECTOR_MASTER_DIM}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-5a93"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-5a93">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_SECTOR_MASTER_DIM}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_SECTOR_MASTER_DIM}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_SECTOR_MASTER_DIM}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_SECTOR_MASTER_DIM}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-fec3&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

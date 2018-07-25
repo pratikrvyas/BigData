@@ -1,0 +1,12 @@
+#import
+--direct
+--connect 
+jdbc:oracle:thin:@10.150.98.149:6516:prmsos
+--username 
+odavl_ownr
+--password 
+odavl_#4_ke
+--compress
+--compression-codec 
+org.apache.hadoop.io.compress.SnappyCodec
+--delete-target-dir

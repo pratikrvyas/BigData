@@ -1,0 +1,657 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_PNR_ITNS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "PNR_SNAP_SHOT_DAY",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_SNAP_SHOT_DAY",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_ITN_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ITN_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ITN_TYPE_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ITN_TYPE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "SEGMENT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEGMENT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "LINKED_SEGMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LINKED_SEGMENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPERATIONAL_MARKETING_SEGMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATIONAL_MARKETING_SEGMENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_NUMBER_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICE_CLASS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERVICE_CLASS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RESERVATION_CLASS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESERVATION_CLASS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVENTORY_CLASS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "INVENTORY_CLASS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEPARTURE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEPARTURE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BOARD_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOARD_POINT_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOARD_POINT_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFF_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "OFF_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFF_POINT_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "OFF_POINT_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKING_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "SUBPRIORITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "SUBPRIORITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "NUMBER_OF_PAX_IN_PARTY",
+    "type" : [ "string", "null" ],
+    "columnName" : "NUMBER_OF_PAX_IN_PARTY",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEPARTURE_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEPARTURE_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ARRIVAL_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "ARRIVAL_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATE_CHANGE_FLIGHT",
+    "type" : [ "string", "null" ],
+    "columnName" : "DATE_CHANGE_FLIGHT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONTROLLING_HOST",
+    "type" : [ "string", "null" ],
+    "columnName" : "CONTROLLING_HOST",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONTROLLING_HOST_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CONTROLLING_HOST_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARKETING_CARRIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_CARRIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAPPED_MARKETING_CARRIER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAPPED_MARKETING_CARRIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAPPED_MARKETING_CARRIER_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAPPED_MARKETING_CARRIER_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARKETING_CARRIER_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_CARRIER_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "TYPE_ZERO_INFO_SEGMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TYPE_ZERO_INFO_SEGMENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "FQTV_SPECIFIC_SEGMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "FQTV_SPECIFIC_SEGMENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "VARIABLE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "VARIABLE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "TYPE_OF_SERVICE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TYPE_OF_SERVICE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEGMENT_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEGMENT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "ALLOTMENT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ALLOTMENT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOTAL_NUMBER_OF_ROOMS_SEGMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOTAL_NUMBER_OF_ROOMS_SEGMENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOTEL_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOTEL_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOTEL_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOTEL_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "RESORT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESORT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RESORT_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESORT_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "RESORT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESORT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ROOM_OUTDATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ROOM_OUTDATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "LINK_SYSTEM",
+    "type" : [ "string", "null" ],
+    "columnName" : "LINK_SYSTEM",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOTEL_CHAIN_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOTEL_CHAIN_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOST_SEGMENT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOST_SEGMENT_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "HOST_SEGMENT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOST_SEGMENT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_SEGMENT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "OAL_SEGMENT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_AIRLINE_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "OAL_AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_AIRLINE_DESIGNATOR_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "OAL_AIRLINE_DESIGNATOR_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_FLIGHT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "OAL_FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_FLIGHT_NUMBER_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "OAL_FLIGHT_NUMBER_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_BOOKED_CLASS",
+    "type" : [ "string", "null" ],
+    "columnName" : "OAL_BOOKED_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERNAL_BCC",
+    "type" : [ "string", "null" ],
+    "columnName" : "INTERNAL_BCC",
+    "sqlType" : "12"
+  }, {
+    "name" : "OLD_BOOKING_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "OLD_BOOKING_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "DAY_CHANGE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DAY_CHANGE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DAY_OF_WEEK",
+    "type" : [ "string", "null" ],
+    "columnName" : "DAY_OF_WEEK",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKING_SOURCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_SOURCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EQUIPMENT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EQUIPMENT_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "MARKETING_FLIGHT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARKETING_FLIGHT_NUMBER_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_FLIGHT_NUMBER_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "INBOUND_FLIGHT_CONN_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "INBOUND_FLIGHT_CONN_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARR_CONN_INBOUND_FLIGHT_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARR_CONN_INBOUND_FLIGHT_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "OUTBOUND_FLIGHT_CONN_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "OUTBOUND_FLIGHT_CONN_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARR_CONN_OUTBOUND_FLIGHT_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARR_CONN_OUTBOUND_FLIGHT_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFF_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "OFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACT_SEG_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACT_SEG_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "VERSION_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "VERSION_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLOWN_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLOWN_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARRIED_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARRIED_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARRIAGE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARRIAGE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "REVENUE_CLASS",
+    "type" : [ "string", "null" ],
+    "columnName" : "REVENUE_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARRIAGE_SEQ_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARRIAGE_SEQ_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_SIGN_INFO",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_SIGN_INFO",
+    "sqlType" : "12"
+  }, {
+    "name" : "LINK_CARRIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LINK_CARRIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "LINK_SALE_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "LINK_SALE_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "LINK_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "LINK_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEG_ORGN_USED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEG_ORGN_USED",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEG_DSTN_USED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEG_DSTN_USED",
+    "sqlType" : "12"
+  }, {
+    "name" : "OD_DATE_USED",
+    "type" : [ "string", "null" ],
+    "columnName" : "OD_DATE_USED",
+    "sqlType" : "93"
+  }, {
+    "name" : "LOWEST_RMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOWEST_RMT",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_ORGN",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_ORGN",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_DSTN",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_DSTN",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_OD_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_OD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "LOWEST_RMT_EOT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOWEST_RMT_EOT",
+    "sqlType" : "12"
+  }, {
+    "name" : "BLOCK_PNR_REFERENCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BLOCK_PNR_REFERENCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATE_DISCREPANCY_SIGN",
+    "type" : [ "string", "null" ],
+    "columnName" : "DATE_DISCREPANCY_SIGN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATE_DISCREPANCY",
+    "type" : [ "string", "null" ],
+    "columnName" : "DATE_DISCREPANCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "RTDP_EXEMPT_ERROR_INDICATORS",
+    "type" : [ "string", "null" ],
+    "columnName" : "RTDP_EXEMPT_ERROR_INDICATORS",
+    "sqlType" : "12"
+  }, {
+    "name" : "SELL_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SELL_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SELL_TRIP_ORIGIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "SELL_TRIP_ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "SELL_TRIP_DESTINATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "SELL_TRIP_DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "SELL_EVALUATION_FARE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SELL_EVALUATION_FARE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SELL_BID_PRICE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SELL_BID_PRICE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SELL_LEG_BID_PRICE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SELL_LEG_BID_PRICE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SELL_BID_DIFFRNTIAL_SIGN",
+    "type" : [ "string", "null" ],
+    "columnName" : "SELL_BID_DIFFRNTIAL_SIGN",
+    "sqlType" : "12"
+  }, {
+    "name" : "SELL_BID_PRICE_DIFFERENCIAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "SELL_BID_PRICE_DIFFERENCIAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "RBD_SELL_COUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "RBD_SELL_COUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "RBD_AVAILABLE_COUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "RBD_AVAILABLE_COUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG1_BOARD_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG1_BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG1_F_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG1_F_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG1_J_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG1_J_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG1_Y_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG1_Y_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG2_BOARD_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG2_BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG2_F_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG2_F_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG2_J_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG2_J_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG2_Y_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG2_Y_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG3_BOARD_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG3_BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG3_F_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG3_F_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG3_J_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG3_J_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG3_Y_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG3_Y_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG4_BOARD_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG4_BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG4_F_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG4_F_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG4_J_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG4_J_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG4_Y_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG4_Y_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG5_BOARD_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG5_BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG5_F_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG5_F_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG5_J_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG5_J_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG5_Y_AVAILABLE_ON_SELL",
+    "type" : [ "string", "null" ],
+    "columnName" : "LEG5_Y_AVAILABLE_ON_SELL",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_TRIP_ORIGIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_TRIP_ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_TRIP_DESTINATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_TRIP_DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_EVALUATION_FARE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_EVALUATION_FARE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_EVALUATION_BID_PRICE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_EVALUATION_BID_PRICE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_LEG_BID_PRICE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_LEG_BID_PRICE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_BID_DIFFRNTIAL_SIGN",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_BID_DIFFRNTIAL_SIGN",
+    "sqlType" : "12"
+  }, {
+    "name" : "EOT_BID_PRICE_DIFFERENCIAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "EOT_BID_PRICE_DIFFERENCIAL",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "QueryResult"
+}

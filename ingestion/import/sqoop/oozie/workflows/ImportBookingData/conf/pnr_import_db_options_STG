@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.154.166:6516:PODSOS
+--username
+PODS_QRY_USER
+--password 
+PODS_QRY_STG
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

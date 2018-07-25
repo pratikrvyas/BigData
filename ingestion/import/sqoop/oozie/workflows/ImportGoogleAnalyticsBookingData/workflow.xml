@@ -1,0 +1,48 @@
+
+<workflow-app name="ImportGoogleAnalyticsBookingData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapreduce.job.queuename</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.queuename</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="ssh-c7fc"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="email-9cf0">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="ssh-c7fc">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>scv_ops@dolinux752</host>
+            <command>/apps/helix/scripts/gabookings_ftp2hdfs.sh</command>
+            <args>${wf:user()}</args>
+            <args>${TARGET_DIRECTORY_GA_BOOKINGS}</args>
+            <capture-output/>
+        </ssh>
+        <ok to="End"/>
+        <error to="email-9cf0"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

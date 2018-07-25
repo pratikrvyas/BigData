@@ -1,0 +1,225 @@
+{
+  "type" : "record",
+  "name" : "LYLTY_PRGRM_PARTNERSHIPS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+ {
+    "name" : "PTNR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "LPT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LPT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORG_ORG_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORG_ORG_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CULLED_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CULLED_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "DOWNLOAD_REQD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DOWNLOAD_REQD",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "REDEMPTION_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REDEMPTION_MILES",
+    "sqlType" : "1"
+  }, {
+    "name" : "TIER_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIER_MILES",
+    "sqlType" : "1"
+  }, {
+    "name" : "RETRO_VERIFICATION_REQD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RETRO_VERIFICATION_REQD",
+    "sqlType" : "12"
+  }, {
+    "name" : "RETRO_MAX_DAYS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RETRO_MAX_DAYS",
+    "sqlType" : "2"
+  }, {
+    "name" : "VERIF_REC_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VERIF_REC_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "CLASS_CHANGE_ALLOWED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLASS_CHANGE_ALLOWED",
+    "sqlType" : "12"
+  }, {
+    "name" : "MILES_MULTIPLIER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MILES_MULTIPLIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORP_ACCRUAL_ALLOWED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORP_ACCRUAL_ALLOWED",
+    "sqlType" : "12"
+  }, {
+    "name" : "DISABLE_INF_CALC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISABLE_INF_CALC",
+    "sqlType" : "12"
+  }, {
+    "name" : "IS_AIRLINES_PARTNER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "IS_AIRLINES_PARTNER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHK_DIGIT_CRITERIA",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHK_DIGIT_CRITERIA",
+    "sqlType" : "12"
+  }, {
+    "name" : "PTNR_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PTNR_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STATUSEHANCEMENTVALIDATIONS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STATUSEHANCEMENTVALIDATIONS",
+    "sqlType" : "12"
+  }, {
+    "name" : "RDMPTN_MLS_MULTIPLIER_CHK_REQ",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RDMPTN_MLS_MULTIPLIER_CHK_REQ",
+    "sqlType" : "12"
+  }, {
+    "name" : "VOUCHER_VALIDATION_CHK_REQ",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VOUCHER_VALIDATION_CHK_REQ",
+    "sqlType" : "12"
+  }, {
+    "name" : "AUTH_CODE_VALIDATION_CHK_REQ",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AUTH_CODE_VALIDATION_CHK_REQ",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTNER_CHK_REQ",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARTNER_CHK_REQ",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTNER_VALIDATION_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARTNER_VALIDATION_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTEGRATE_WITH_OF",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTEGRATE_WITH_OF",
+    "sqlType" : "12"
+  }, {
+    "name" : "CUSTOMER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SUBNOMINAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SUBNOMINAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "BILLING_SUMMARY_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILLING_SUMMARY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REAL_TIME_STATUS_ENH_CHK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REAL_TIME_STATUS_ENH_CHK",
+    "sqlType" : "12"
+  }, {
+    "name" : "REAL_TIME_CHECK_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REAL_TIME_CHECK_TYPE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "LYLTY_PRGRM_PARTNERSHIPS"
+}

@@ -1,0 +1,111 @@
+{
+  "type" : "record",
+  "name" : "PRMS_CLASS_MASTER",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [
+ {
+      "name": "HELIX_UUID",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "HELIX_TIMESTAMP",
+      "type": [
+        "string",
+        "null"
+      ]
+    }, {
+    "name" : "COMP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COMP",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "COMP_NBR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COMP_NBR",
+    "sqlType" : "12"
+  }, {
+    "name" : "SUBCLASS_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SUBCLASS_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLASS_KEY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLASS_KEY",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPD_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPD_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "UPD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPD_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLASS_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLASS_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CRIT_FLT_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CRIT_FLT_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "SPACE_EXCEPTION_GEN_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SPACE_EXCEPTION_GEN_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "SPACE_EXCEPTION_FS_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SPACE_EXCEPTION_FS_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "SPACE_EXCEPTION_BL_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SPACE_EXCEPTION_BL_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "SPACE_EXCEPTION_SG_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SPACE_EXCEPTION_SG_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "REPORT_EXCEPTION_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REPORT_EXCEPTION_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "SPACE_EXCEPTION_CG_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SPACE_EXCEPTION_CG_IND",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PRMS_CLASS_MASTER"
+}

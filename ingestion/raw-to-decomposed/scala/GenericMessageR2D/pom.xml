@@ -1,0 +1,152 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.emirates.helix</groupId>
+	<artifactId>GenericMessageR2D</artifactId>
+	<version>0.0.2</version>
+
+	<properties>
+		<!-- Version -->
+		<spark.cdh.version>1.6.0-cdh5.8.5</spark.cdh.version>
+		<scala.version>2.10.6</scala.version>
+		<scalastyle.maven.plugin.version>0.8.0</scalastyle.maven.plugin.version>
+		<scala.maven.plugin.version>3.2.2</scala.maven.plugin.version>
+		<maven.surefire.plugin.version>2.13</maven.surefire.plugin.version>
+		<maven.resources.plugin.version>3.0.0</maven.resources.plugin.version>
+		<!-- Other properties -->
+		<dependency.locations.enabled>false</dependency.locations.enabled>
+		<project.organization.name>Emirates</project.organization.name>
+	</properties>
+	<repositories>
+		<repository>
+			<id>cloudera</id>
+			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus-server</id>
+			<name>nexus-server</name>
+			<url>http://repository.emirates.com/repository/maven-helixng/</url>
+		</repository>
+	</distributionManagement>
+
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-assembly_2.10 -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-assembly_2.10</artifactId>
+			<version>${spark.cdh.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-yarn_2.10 -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-yarn_2.10</artifactId>
+			<version>${spark.cdh.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-hive_2.10</artifactId>
+			<version>${spark.cdh.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.holdenkarau</groupId>
+			<artifactId>spark-testing-base_2.10</artifactId>
+			<version>1.6.0_0.4.7</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.scalactic</groupId>
+			<artifactId>scalactic_2.10</artifactId>
+			<version>2.2.6</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.databricks/spark-xml_2.10 -->
+		<dependency>
+			<groupId>com.databricks</groupId>
+			<artifactId>spark-xml_2.10</artifactId>
+			<version>0.3.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.databricks/spark-avro_2.10 -->
+		<dependency>
+			<groupId>com.databricks</groupId>
+			<artifactId>spark-avro_2.10</artifactId>
+			<version>1.1.0-cdh5.8.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+
+	</dependencies>
+
+	<build>
+		<finalName>helix-message-converter-${version}</finalName>
+		<sourceDirectory>src/main/scala</sourceDirectory>
+		<testSourceDirectory>src/test/scala</testSourceDirectory>
+		<plugins>
+			<plugin>
+				<!-- see http://davidb.github.com/scala-maven-plugin -->
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+				<version>${scala.maven.plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<args>
+								<arg>-make:transitive</arg>
+								<arg>-dependencyfile</arg>
+								<arg>${project.build.directory}/.scala_dependencies</arg>
+							</args>
+							<jvmArgs>
+								<jvmArg>-Xms64m</jvmArg>
+								<jvmArg>-Xmx1024m</jvmArg>
+							</jvmArgs>
+							<scalaVersion>${scala.version}</scalaVersion>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+				<configuration>
+					<useFile>false</useFile>
+					<disableXmlReport>true</disableXmlReport>
+					<!-- If you have classpath issue like NoDefClassError,... -->
+					<includes>
+						<include>**/*Test.*</include>
+						<include>**/*Suite.*</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+							<appendAssemblyId>false</appendAssemblyId>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

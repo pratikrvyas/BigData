@@ -1,0 +1,77 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_PNR_PAX",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+	"sqlType" : "12"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+	"sqlType" : "12"
+  },{
+    "name" : "PNR_SNAP_SHOT_DAY",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_SNAP_SHOT_DAY",
+    "sqlType" : "2"
+  }, {
+    "name" : "PAX_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "SUFFIX",
+    "type" : [ "string", "null" ],
+    "columnName" : "SUFFIX",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_NUM",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_NUM",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_PAX_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_PAX_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_INDIVIDUAL_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_INDIVIDUAL_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_COMMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_COMMENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "VERSION_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "VERSION_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLOWN_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLOWN_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_ITN_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ITN_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "NAME_CHANGE_INH",
+    "type" : [ "string", "null" ],
+    "columnName" : "NAME_CHANGE_INH",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "QueryResult"
+}

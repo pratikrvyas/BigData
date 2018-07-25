@@ -1,0 +1,532 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_PASSENGER_NAME_RECORDS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+	"sqlType" : "12"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+	"sqlType" : "12"
+  },{
+    "name" : "PNR_SNAP_SHOT_DAY",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_SNAP_SHOT_DAY",
+    "sqlType" : "2"
+  }, {
+    "name" : "ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_OWNER",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_OWNER",
+    "sqlType" : "12"
+  }, {
+    "name" : "REC_LOCATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "REC_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_CREATION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PNR_CREATION_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_CREATION_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_SNAP_SHOT_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_SNAP_SHOT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATOR_DUTY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATOR_DUTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATOR_INITIALS",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATOR_INITIALS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATOR_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATOR_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATOR_CITY_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATOR_CITY_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "GROUP_BOOKING_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "GROUP_BOOKING_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RELIABILITY_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "RELIABILITY_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLOWN_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLOWN_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PROGRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROGRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKING_SOURCE_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_SOURCE_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERNET_BOOKING_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "INTERNET_BOOKING_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAYMENT_REFERENCE_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAYMENT_REFERENCE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_AGENT_IATA_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_AGENT_IATA_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_AGENT_IATA_NO_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_AGENT_IATA_NO_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_AGENT_REF_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_AGENT_REF_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_AGENT_REF_NO_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_AGENT_REF_NO_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_AGENT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_AGENT_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_AGENT_NAME_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_AGENT_NAME_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_HOST_AIRLINE_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_HOST_AIRLINE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_HOST_AIRLINE_ID_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_HOST_AIRLINE_ID_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_TRAVEL_AGENT_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_TRAVEL_AGENT_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_CITY_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_CITY_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_AGENT_INITIAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_AGENT_INITIAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_DUTY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_DUTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_USER_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_USER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_LST_MOD_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_LST_MOD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACOUNTING_INFO",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACOUNTING_INFO",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_ORIGINATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_ORIGINATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_RLOC_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_RLOC_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_CRS_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_CITY_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_CRS_CITY_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_SYSTEM_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_CRS_SYSTEM_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_SYSTEM_DESIGNATOR_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_CRS_SYSTEM_DESIGNATOR_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_PNR_ADDR",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_CRS_PNR_ADDR",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_PNT_ADDR",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_CRS_PNT_ADDR",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_PSUEDO_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_PSUEDO_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_AGENT_IATA_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_AGENT_IATA_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_ERPS_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_ERPS_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_ERPS_UNIQUE_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_ERPS_UNIQUE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_USER_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_USER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_FIRST_DEPARTURE_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_FIRST_DEPARTURE_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_FIRST_DEPARTURE_POINT_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_FIRST_DEPARTURE_POINT_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_GEO_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_GEO_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_GEO_CITY_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_GEO_CITY_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_COUNTRY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_COUNTRY_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_COUNTRY_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_OA",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_CRS_OA",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_CRS_OA_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_CRS_OA_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_PAYMENT_COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_PAYMENT_COUNTRY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_AGENT_DUTY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_AGENT_DUTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_AGENT_DUTY_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_AGENT_DUTY_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_LANG_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_LANG_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_INHOUSE_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_INHOUSE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_HOST_AIRLINE_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_HOST_AIRLINE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_HOST_AIRLINE_ID_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_HOST_AIRLINE_ID_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_TRAVEL_AGENT_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_TRAVEL_AGENT_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_CITY_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_CITY_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_SUB_HOST_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_SUB_HOST_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_SUB_HOST_ID_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_SUB_HOST_ID_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_AGENT_INITIALS",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_AGENT_INITIALS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_DUTY_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_DUTY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_USER_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_USER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNO_LST_UPD_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNO_LST_UPD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TRV_COMPANY",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_COMPANY",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_POOL",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_POOL",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_BRANCH",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_BRANCH",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRV_DEPARTMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRV_DEPARTMENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATOR_COUNTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATOR_COUNTRY",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATOR_COUNTRY_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATOR_COUNTRY_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "NUMBER_OF_NAMES",
+    "type" : [ "string", "null" ],
+    "columnName" : "NUMBER_OF_NAMES",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAX_INTRA_PNR_SET_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAX_INTRA_PNR_SET_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "SEAT_COUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEAT_COUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "POS_STAFF_INITIALS",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_STAFF_INITIALS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORPORATE_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "CORPORATE_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_DOWNLOADED_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_DOWNLOADED_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "VERSION_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "VERSION_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "OLD_REC_LOCATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "OLD_REC_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_RECORD_LOCATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_RECORD_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_CREATION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "POS_FARES_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_FARES_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_FARES_COUNTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_FARES_COUNTRY",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_FARES_FLOWN",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_FARES_FLOWN",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_FARES_VIOLATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_FARES_VIOLATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "POS_FARES_VIOLATION_REMOVE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POS_FARES_VIOLATION_REMOVE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_MOVE_FQI_89",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_MOVE_FQI_89",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_MOVE_FQI_95",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_MOVE_FQI_95",
+    "sqlType" : "12"
+  }, {
+    "name" : "RSS_MARRIAGE_NUM",
+    "type" : [ "string", "null" ],
+    "columnName" : "RSS_MARRIAGE_NUM",
+    "sqlType" : "12"
+  }, {
+    "name" : "HIGH_MARRIAGE_NUM",
+    "type" : [ "string", "null" ],
+    "columnName" : "HIGH_MARRIAGE_NUM",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_RESTRICTION_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_RESTRICTION_FLAG",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "QueryResult"
+}

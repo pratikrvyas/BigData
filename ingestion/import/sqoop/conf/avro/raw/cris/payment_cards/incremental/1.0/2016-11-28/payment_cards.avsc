@@ -1,0 +1,97 @@
+{
+  "type" : "record",
+  "name" : "PAYMENT_CARDS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "CARD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CARD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACCOUNT_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACCOUNT_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCOUNT_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACCOUNT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXP_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXP_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "VALID_FROM",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VALID_FROM",
+    "sqlType" : "93"
+  }, {
+    "name" : "ADD_ADD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ADD_ADD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PYCT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PYCT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "RMKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RMKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUE_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PIN_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PIN_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARENT_CARD_NO",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PAYMENT_CARDS"
+}

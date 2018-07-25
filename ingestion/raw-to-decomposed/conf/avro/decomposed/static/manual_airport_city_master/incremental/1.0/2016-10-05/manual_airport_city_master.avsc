@@ -1,0 +1,88 @@
+{
+  "type" : "record",
+  "name" : "MANUAL_AIRPORT_CITY_MASTER",
+  "doc" : "import of DW_OWNR.MANUAL_AIRPORT_CITY_MASTER",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "Three_Letter_City_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "Three_Letter_City_Code",
+    "sqlType" : "2"
+  }, {
+    "name" : "City_Name",
+    "type" : [ "string", "null" ],
+    "columnName" : "City_Name",
+    "sqlType" : "12"
+  }, {
+    "name" : "State_Pro",
+    "type" : [ "string", "null" ],
+    "columnName" : "State_Pro",
+    "sqlType" : "2"
+  }, {
+    "name" : "Country_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "Country_Code",
+    "sqlType" : "93"
+  }, {
+    "name" : "Time_Zone_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "Time_Zone_Code",
+    "sqlType" : "12"
+  }, {
+    "name" : "STV",
+    "type" : [ "string", "null" ],
+    "columnName" : "STV",
+    "sqlType" : "93"
+  }, {
+    "name" : "Three_Letter_Airport_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "Three_Letter_Airport_Code",
+    "sqlType" : "93"
+  }, {
+    "name" : "Airport_Name",
+    "type" : [ "string", "null" ],
+    "columnName" : "Airport_Name",
+    "sqlType" : "12"
+  }, {
+    "name" : "Location_Type",
+    "type" : [ "string", "null" ],
+    "columnName" : "Location_Type",
+    "sqlType" : "93"
+  }, {
+    "name" : "Latitude",
+    "type" : [ "string", "null" ],
+    "columnName" : "Latitude",
+    "sqlType" : "12"
+  }, {
+    "name" : "Longitude",
+    "type" : [ "string", "null" ],
+    "columnName" : "Longitude",
+    "sqlType" : "12"
+  }, {
+    "name" : "Country_name",
+    "type" : [ "string", "null" ],
+    "columnName" : "Country_name",
+    "sqlType" : "12"
+  }, {
+    "name" : "Effective_start_date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Effective_start_date",
+    "sqlType" : "12"
+  }, {
+    "name" : "Effective_end_date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Effective_end_date",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.MANUAL_AIRPORT_CITY_MASTER"
+}

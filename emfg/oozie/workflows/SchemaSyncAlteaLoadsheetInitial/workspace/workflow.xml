@@ -1,0 +1,61 @@
+<workflow-app name="SchemaSyncAlteaLoadsheetInitial_UAT_" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-c324"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-c324">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_HDFS_PATH}"/>
+            </prepare>
+            <exec>spark-execute.sh</exec>
+              <argument>hdfs://${SPARK_JAR}</argument>
+              <argument>${CLASS_NAME}</argument>
+              <argument>${EXECUTOR_MEMORY}</argument>
+              <argument>${DRIVER_MEMORY}</argument>
+              <argument>${QUEUE}</argument>
+              <argument>${MIN_EXECUTORS}</argument>
+              <argument>${MAX_EXECUTORS}</argument>
+              <argument>${INPUT_HDFS_PATH_CLC_FLIGHT_DTLS}</argument>
+              <argument>${ INPUT_HDFS_PATH_CLC_CABIN_SEC_INFO}</argument>
+              <argument>${INPUT_HDFS_PATH_CLC_CREW_FIGURES }</argument>
+              <argument>${ INPUT_HDFS_PATH_CLC_LEG_INFO}</argument>
+              <argument>${INPUT_HDFS_PATH_CLC_PAX_BAG_TOTAL }</argument>
+              <argument>${INPUT_HDFS_PATH_CLC_PAX_FIGURES }</argument>
+              <argument>${ INPUT_HDFS_PATH_MACS_LOAD_SHEET_DATA}</argument>
+              <argument>${ INPUT_HDFS_PATH_MACS_CARGO_DSTR_CMPT}</argument>
+              <argument>${OUTPUT_HDFS_PATH}</argument>
+              <argument>${COALESCE_VALUE}</argument>
+              <argument>${COMPRESSION}</argument>
+            <file>spark-execute.sh#spark-execute.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

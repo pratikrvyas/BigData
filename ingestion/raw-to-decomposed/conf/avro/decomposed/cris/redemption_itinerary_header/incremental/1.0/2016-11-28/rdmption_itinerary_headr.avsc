@@ -1,0 +1,129 @@
+{
+  "type" : "record",
+  "name" : "RDMPTION_ITINERARY_HEADR",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+ {
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PMP_MEM_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PMP_MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "RBE_REWARD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RBE_REWARD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "TURN_AROUND_POINT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TURN_AROUND_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "RECORD_LOCATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RECORD_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOTAL_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TOTAL_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "BAC_ACT_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BAC_ACT_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "RIT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RIT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "SYSTEM_CALCULATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SYSTEM_CALCULATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_CREATION_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "PNR_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MULTI_REWARD_MAPPING_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MULTI_REWARD_MAPPING_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "REDEMPTION_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REDEMPTION_TYPE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "RDMPTION_ITINERARY_HEADR"
+}

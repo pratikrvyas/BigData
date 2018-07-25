@@ -1,0 +1,71 @@
+{
+  "type" : "record",
+  "name" : "arincroutedecomposed",
+  "fields" : 
+[
+{
+"name" : "RteId",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Orig",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "OrigIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Dest",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "DestIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Seq",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "CI",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "LegType",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Awy",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "AreaC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Fix",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "FixIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "FixType",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Cycle",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "uuid",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "timestamp",
+"type" : [ "string", "null" ]
+}
+]
+}

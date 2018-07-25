@@ -1,0 +1,415 @@
+{
+  "type" : "record",
+  "name" : "CDW_TICKET_HEADER",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "TICKET_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_ISSUE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TICKET_SERVICING_AIRLINE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_SERVICING_AIRLINE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "ISSUING_HOST",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUING_HOST",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONJUNCTION_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONJUNCTION_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONJUNCTION_LAST_TICKET_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONJUNCTION_LAST_TICKET_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_EXCHANGE_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_EXCHANGE_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGINAL_TICKET_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGINAL_TICKET_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "REISSUED_TICKET_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REISSUED_TICKET_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORPORATE_IDENTIFICATION_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORPORATE_IDENTIFICATION_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REVENUE_TICKET_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REVENUE_TICKET_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ETR_SOURCE_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ETR_SOURCE_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUING_CITY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUING_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "IATA_AGENCY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "IATA_AGENCY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REWARDS_AUTHORIZATION_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REWARDS_AUTHORIZATION_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "GDS_PNR_ADDRESS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GDS_PNR_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERIAL_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SERIAL_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_CONFIRMATION_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OAL_CONFIRMATION_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_DATE_GMT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUE_DATE_GMT",
+    "sqlType" : "93"
+  }, {
+    "name" : "ISSUE_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUE_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_TIME_GMT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUE_TIME_GMT",
+    "sqlType" : "12"
+  }, {
+    "name" : "LOCAL_CREATION_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LOCAL_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TST_VALIDATION_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TST_VALIDATION_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERNATIONAL_SALES_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTERNATIONAL_SALES_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_LOGIC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FARE_LOGIC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_SOURCE_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FARE_SOURCE_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_MC_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PAX_MC_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICE_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SERVICE_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REBATE_TYP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REBATE_TYP",
+    "sqlType" : "12"
+  }, {
+    "name" : "DISCOUNT_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCOUNT_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_SALES_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_SALES_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_DISTRIBUTION_CHANNEL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_DISTRIBUTION_CHANNEL",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUING_AGENT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUING_AGENT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_CREATION_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_CREATION_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAYMENT_STRING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PAYMENT_STRING",
+    "sqlType" : "12"
+  }, {
+    "name" : "E_TICKET_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "E_TICKET_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOUR_CODE_DATA",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TOUR_CODE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_ITINERARY_STRING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_ITINERARY_STRING",
+    "sqlType" : "12"
+  }, {
+    "name" : "POO_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POO_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POT_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POT_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "EK_POO_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EK_POO_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "EK_BOARD_POINT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EK_BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORPORATE_TRACKING_DEAL_STRING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORPORATE_TRACKING_DEAL_STRING",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_TICKET_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARENT_TICKET_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_BOOKING_REFERENCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_BOOKING_REFERENCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_BOOKING_CREATION_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_BOOKING_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CUSTOMER_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUSTOMER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMPLOYEE_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EMPLOYEE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TOTAL_FARE_AMOUNT_CUR_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TOTAL_FARE_AMOUNT_CUR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TOTAL_FARE_AMOUNT_RC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TOTAL_FARE_AMOUNT_RC",
+    "sqlType" : "2"
+  }, {
+    "name" : "ADDITIONAL_CHARGES_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ADDITIONAL_CHARGES_FLAG",
+    "sqlType" : "1"
+  }, {
+    "name" : "TICKET_ISSUING_AIRLINE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_ISSUING_AIRLINE",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_MEMBERSHIP_AIRLINE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OAL_MEMBERSHIP_AIRLINE",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_MEMBERSHIP_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OAL_MEMBERSHIP_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FFP_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_FFP_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OAL_FFP_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ITINERARY_COMPLETION_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ITINERARY_COMPLETION_INDICATOR",
+    "sqlType" : "1"
+  }, {
+    "name" : "LAST_COUPON_FLOWN_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_COUPON_FLOWN_DATE",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "QueryResult"
+}

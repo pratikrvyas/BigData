@@ -1,0 +1,33 @@
+{
+  "type" : "record",
+  "name" : "import_powerweek",
+  "doc" : "import of DW_OWNR.powerweek",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DATE",
+    "sqlType" : "4"
+  }, {
+    "name" : "DOW",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOW",
+    "sqlType" : "12"
+  }, {
+    "name" : "WEEK_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "WEEK_NUMBER",
+    "sqlType" : "2"
+  }
+],
+  "tableName" : "DW_OWNR.powerweek"
+}

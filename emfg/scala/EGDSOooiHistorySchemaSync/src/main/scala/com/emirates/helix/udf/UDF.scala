@@ -1,0 +1,28 @@
+/*----------------------------------------------------------
+ * Created on  : 12/11/2017
+ * Author      : Manu Mukundan(S795217)
+ * Email       : manu.mukundan@dnata.com
+ * Version     : 1.0
+ * Project     : Helix-OpsEfficnecy
+ * Filename    : UDF.scala
+ * Description : Scala file to keep all UDF functions
+ * ----------------------------------------------------------
+ */
+package com.emirates.helix.udf
+
+import java.io.Serializable
+import org.apache.spark.sql.functions.udf
+import java.util.UUID
+
+object UDF extends Serializable{
+
+  /**
+    * UDF function to get the array of fields for EGDS OOOI message
+    *
+    */
+  val getFormattedMessage =  udf((message: String) => {
+    val columns = (message.split("\n")(0) +: (message.split("\n")(1).split(","))).map(_ .trim)
+    columns
+  })
+
+}

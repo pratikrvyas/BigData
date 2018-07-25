@@ -1,0 +1,28 @@
+[
+
+{
+  "pk": null, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "d2f6a97a-ae02-1d40-8508-273d5e8979bc", 
+    "extra": "", 
+    "type": "oozie-coordinator2", 
+    "description": "scheduled daily at 10", 
+    "is_history": false, 
+    "parent_directory": [
+      "", 
+      1, 
+      false
+    ], 
+    "last_modified": "2017-12-09T18:40:00", 
+    "version": 1, 
+    "owner": [
+      "scv_ops"
+    ], 
+    "dependencies": [], 
+    "data": "{\"end_date\": {\"name\": \"end_date\", \"value\": \"2017-10-26T16:10\"}, \"variables\": [], \"isDirty\": false, \"showAdvancedFrequencyUI\": true, \"variablesUI\": [\"parameter\", \"input_path\", \"output_path\"], \"workflowParameters\": [{\"name\": \"oozie.servlet.CallbackServlet.max.data.len\", \"value\": \"16000\"}], \"properties\": {\"job_xml\": \"\", \"timeout\": null, \"execution\": \"FIFO\", \"end\": \"${end_date}\", \"description\": \"scheduled daily at 10\", \"frequency_number\": 1, \"workflow\": \"2b56d5ee-f945-413a-b217-e3d8ef871420\", \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1507550318.73\", \"cron_frequency\": \"0 11 * * *\", \"frequency_unit\": \"days\", \"schema_version\": \"uri:oozie:coordinator:0.2\", \"cron_advanced\": true, \"start\": \"${start_date}\", \"concurrency\": 0, \"timezone\": \"Asia/Dubai\", \"credentials\": [], \"throttle\": 0, \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"start_date\", \"value\": \"2017-10-24T00:00\"}, {\"name\": \"end_date\", \"value\": \"2017-10-26T16:10\"}], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"uuid\": \"d2f6a97a-ae02-1d40-8508-273d5e8979bc\", \"name\": \"DailyImportAgsActualData\", \"id\": 178355, \"start_date\": {\"name\": \"start_date\", \"value\": \"2017-10-24T00:00\"}}", 
+    "name": "DailyImportAgsActualData"
+  }
+}
+]

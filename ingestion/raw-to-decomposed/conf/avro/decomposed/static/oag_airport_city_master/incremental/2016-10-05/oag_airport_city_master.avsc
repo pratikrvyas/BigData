@@ -1,0 +1,88 @@
+{
+  "type" : "record",
+  "name" : "OAG_AIRPORT_CITY_MASTER",
+  "doc" : "import of DW_OWNR.OAG_AIRPORT_CITY_MASTER",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "LOC",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOC",
+    "sqlType" : "2"
+  }, {
+    "name" : "MULTICITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "MULTICITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TYPE",
+    "sqlType" : "2"
+  }, {
+    "name" : "SUBTYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SUBTYPE",
+    "sqlType" : "93"
+  }, {
+    "name" : "NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CTRY",
+    "sqlType" : "93"
+  }, {
+    "name" : "SUBCTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "SUBCTRY",
+    "sqlType" : "93"
+  }, {
+    "name" : "CTRYNAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "CTRYNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "STATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SUBSTATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SUBSTATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIMEDIV",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIMEDIV",
+    "sqlType" : "12"
+  }, {
+    "name" : "LAT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LAT",
+    "sqlType" : "2"
+  }, {
+    "name" : "LONG",
+    "type" : [ "string", "null" ],
+    "columnName" : "LONG",
+    "sqlType" : "12"
+  }, {
+    "name" : "INACTIVE",
+    "type" : [ "string", "null" ],
+    "columnName" : "INACTIVE",
+    "sqlType" : "2"
+  }
+],
+  "tableName" : "DW_OWNR.OAG_AIRPORT_CITY_MASTER"
+}

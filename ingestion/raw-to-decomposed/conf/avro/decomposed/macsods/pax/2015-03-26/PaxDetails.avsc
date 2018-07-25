@@ -1,0 +1,425 @@
+{
+  "type" : "record",
+  "name" : "AnonType_PaxDetails",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "source" : "HELIX_UUID"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "source" : "HELIX_TIMESTAMP"
+  },{
+    "name" : "PAX_FLT_SNAPSHOT_DAY",
+    "type" : "string",
+    "source" : "element PAX_FLT_SNAPSHOT_DAY"
+  }, {
+    "name" : "PAX_ID",
+    "type" : "string",
+    "source" : "element PAX_ID"
+  }, {
+    "name" : "MFL_ID",
+    "type" : "string",
+    "source" : "element MFL_ID"
+  }, {
+    "name" : "REFERENCE_NUMBER",
+    "type" : "string",
+    "source" : "element REFERENCE_NUMBER"
+  }, {
+    "name" : "REC_LOCATOR",
+    "type" : "string",
+    "source" : "element REC_LOCATOR"
+  }, {
+    "name" : "PNR_ID",
+    "type" : "string",
+    "source" : "element PNR_ID"
+  }, {
+    "name" : "PNR_CREATION_DATE",
+    "type" : "string",
+    "source" : "element PNR_CREATION_DATE"
+  }, {
+    "name" : "DESTINATION",
+    "type" : "string",
+    "source" : "element DESTINATION"
+  }, {
+    "name" : "PAX_NAME",
+    "type" : "string",
+    "source" : "element PAX_NAME"
+  }, {
+    "name" : "CABIN_CLASS",
+    "type" : "string",
+    "source" : "element CABIN_CLASS"
+  }, {
+    "name" : "UPGRADE_INDICATOR",
+    "type" : "string",
+    "source" : "element UPGRADE_INDICATOR"
+  }, {
+    "name" : "TRANSIT_INDICATOR",
+    "type" : "string",
+    "source" : "element TRANSIT_INDICATOR"
+  }, {
+    "name" : "BOOKED_CLASS",
+    "type" : "string",
+    "source" : "element BOOKED_CLASS"
+  }, {
+    "name" : "PAX_TYPE",
+    "type" : "string",
+    "source" : "element PAX_TYPE"
+  }, {
+    "name" : "PAX_GROUP_CODE",
+    "type" : "string",
+    "source" : "element PAX_GROUP_CODE"
+  }, {
+    "name" : "QUALIFIED_SSD",
+    "type" : "string",
+    "source" : "element QUALIFIED_SSD"
+  }, {
+    "name" : "TICKET_CLASS",
+    "type" : "string",
+    "source" : "element TICKET_CLASS"
+  }, {
+    "name" : "HANDICAPPED",
+    "type" : "string",
+    "source" : "element HANDICAPPED"
+  }, {
+    "name" : "UNACCOMPANIED_MINOR",
+    "type" : "string",
+    "source" : "element UNACCOMPANIED_MINOR"
+  }, {
+    "name" : "PRIORITY_PAX",
+    "type" : "string",
+    "source" : "element PRIORITY_PAX"
+  }, {
+    "name" : "BOARDING_PASS_PRINT",
+    "type" : "string",
+    "source" : "element BOARDING_PASS_PRINT"
+  }, {
+    "name" : "PAX_DOWNLOAD_DATE",
+    "type" : "string",
+    "source" : "element PAX_DOWNLOAD_DATE"
+  }, {
+    "name" : "PAX_TIME_STAMP",
+    "type" : "string",
+    "source" : "element PAX_TIME_STAMP"
+  }, {
+    "name" : "VARIABLE_DATA",
+    "type" : "string",
+    "source" : "element VARIABLE_DATA"
+  }, {
+    "name" : "PAX_BOOKING_STATUS",
+    "type" : "string",
+    "source" : "element PAX_BOOKING_STATUS"
+  }, {
+    "name" : "TRAVELLED_CLASS",
+    "type" : "string",
+    "source" : "element TRAVELLED_CLASS"
+  }, {
+    "name" : "SEAT_NUMBER",
+    "type" : "string",
+    "source" : "element SEAT_NUMBER"
+  }, {
+    "name" : "NUMBER_OF_PCS_WEIGHT",
+    "type" : "string",
+    "source" : "element NUMBER_OF_PCS_WEIGHT"
+  }, {
+    "name" : "CHECK_IN_SEQUENCE",
+    "type" : "string",
+    "source" : "element CHECK_IN_SEQUENCE"
+  }, {
+    "name" : "CHECK_IN_CITY",
+    "type" : "string",
+    "source" : "element CHECK_IN_CITY"
+  }, {
+    "name" : "CHECK_IN_AGENT_CODE",
+    "type" : "string",
+    "source" : "element CHECK_IN_AGENT_CODE"
+  }, {
+    "name" : "CHECK_IN_DATE",
+    "type" : "string",
+    "source" : "element CHECK_IN_DATE"
+  }, {
+    "name" : "CHECK_IN_TIME",
+    "type" : "string",
+    "source" : "element CHECK_IN_TIME"
+  }, {
+    "name" : "CHECK_IN_HANDLING_AGENT",
+    "type" : "string",
+    "source" : "element CHECK_IN_HANDLING_AGENT"
+  }, {
+    "name" : "PXE_DOWNLOAD_DATE",
+    "type" : "string",
+    "source" : "element PXE_DOWNLOAD_DATE"
+  }, {
+    "name" : "PXE_TIME_STAMP",
+    "type" : "string",
+    "source" : "element PXE_TIME_STAMP"
+  }, {
+    "name" : "BOARDING_AGENT_CODE",
+    "type" : "string",
+    "source" : "element BOARDING_AGENT_CODE"
+  }, {
+    "name" : "BOARDING_STATUS",
+    "type" : "string",
+    "source" : "element BOARDING_STATUS"
+  }, {
+    "name" : "BOARDING_DATE",
+    "type" : "string",
+    "source" : "element BOARDING_DATE"
+  }, {
+    "name" : "BOARDING_TIME",
+    "type" : "string",
+    "source" : "element BOARDING_TIME"
+  }, {
+    "name" : "BOARDING_HANDLING_AGENT",
+    "type" : "string",
+    "source" : "element BOARDING_HANDLING_AGENT"
+  }, {
+    "name" : "BRD_DOWNLOAD_DATE",
+    "type" : "string",
+    "source" : "element BRD_DOWNLOAD_DATE"
+  }, {
+    "name" : "BRD_TIME_STAMP",
+    "type" : "string",
+    "source" : "element BRD_TIME_STAMP"
+  }, {
+    "name" : "CANCELLED",
+    "type" : "string",
+    "source" : "element CANCELLED"
+  }, {
+    "name" : "JTOP_PAX_RELATION",
+    "type" : "string",
+    "source" : "element JTOP_PAX_RELATION"
+  }, {
+    "name" : "OFFLOADED_PAX",
+    "type" : "string",
+    "source" : "element OFFLOADED_PAX"
+  }, {
+    "name" : "TRANSIT_BAG",
+    "type" : "string",
+    "source" : "element TRANSIT_BAG"
+  }, {
+    "name" : "CHECK_IN_AGENT_LOCATION",
+    "type" : "string",
+    "source" : "element CHECK_IN_AGENT_LOCATION"
+  }, {
+    "name" : "ETK_FLT_SNAPSHOT_DAY",
+    "type" : "string",
+    "source" : "element ETK_FLT_SNAPSHOT_DAY"
+  }, {
+    "name" : "ETK_ID",
+    "type" : "string",
+    "source" : "element ETK_ID"
+  }, {
+    "name" : "ETK_MFL_ID",
+    "type" : "string",
+    "source" : "element ETK_MFL_ID"
+  }, {
+    "name" : "ETK_REFERENCE_NUMBER",
+    "type" : "string",
+    "source" : "element ETK_REFERENCE_NUMBER"
+  }, {
+    "name" : "ETK_TYPE",
+    "type" : "string",
+    "source" : "element ETK_TYPE"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : "string",
+    "source" : "element TICKET_NUMBER"
+  }, {
+    "name" : "COUPON_NUMBER",
+    "type" : "string",
+    "source" : "element COUPON_NUMBER"
+  }, {
+    "name" : "ETK_DOWNLOAD_DATE",
+    "type" : "string",
+    "source" : "element ETK_DOWNLOAD_DATE"
+  }, {
+    "name" : "ETK_TIME_STAMP",
+    "type" : "string",
+    "source" : "element ETK_TIME_STAMP"
+  }, {
+    "name" : "ETK_VARIABLE_DATA",
+    "type" : "string",
+    "source" : "element ETK_VARIABLE_DATA"
+  }, {
+    "name" : "APD_FLT_SNAPSHOT_DAY",
+    "type" : "string",
+    "source" : "element APD_FLT_SNAPSHOT_DAY"
+  }, {
+    "name" : "APD_ID",
+    "type" : "string",
+    "source" : "element APD_ID"
+  }, {
+    "name" : "APD_MFL_ID",
+    "type" : "string",
+    "source" : "element APD_MFL_ID"
+  }, {
+    "name" : "APD_REFERENCE_NUMBER",
+    "type" : "string",
+    "source" : "element APD_REFERENCE_NUMBER"
+  }, {
+    "name" : "APD_TYPE",
+    "type" : "string",
+    "source" : "element APD_TYPE"
+  }, {
+    "name" : "DOCUMENT_TYPE",
+    "type" : "string",
+    "source" : "element DOCUMENT_TYPE"
+  }, {
+    "name" : "DOCUMENT_NUMBER",
+    "type" : "string",
+    "source" : "element DOCUMENT_NUMBER"
+  }, {
+    "name" : "EXPIRY_DATE",
+    "type" : "string",
+    "source" : "element EXPIRY_DATE"
+  }, {
+    "name" : "DATE_OF_ISSUE",
+    "type" : "string",
+    "source" : "element DATE_OF_ISSUE"
+  }, {
+    "name" : "COUNTRY_OF_ISSUE",
+    "type" : "string",
+    "source" : "element COUNTRY_OF_ISSUE"
+  }, {
+    "name" : "DATE_OF_BIRTH",
+    "type" : "string",
+    "source" : "element DATE_OF_BIRTH"
+  }, {
+    "name" : "NATIONALITY",
+    "type" : "string",
+    "source" : "element NATIONALITY"
+  }, {
+    "name" : "GENDER",
+    "type" : "string",
+    "source" : "element GENDER"
+  }, {
+    "name" : "COUNTRY_OF_BIRTH",
+    "type" : "string",
+    "source" : "element COUNTRY_OF_BIRTH"
+  }, {
+    "name" : "COUNTRY_OF_RESIDENCE",
+    "type" : "string",
+    "source" : "element COUNTRY_OF_RESIDENCE"
+  }, {
+    "name" : "STATUS_ON_BOARD",
+    "type" : "string",
+    "source" : "element STATUS_ON_BOARD"
+  }, {
+    "name" : "ITN_EMBARKATION",
+    "type" : "string",
+    "source" : "element ITN_EMBARKATION"
+  }, {
+    "name" : "ITN_DISEMBARKATION",
+    "type" : "string",
+    "source" : "element ITN_DISEMBARKATION"
+  }, {
+    "name" : "APD_DOWNLOAD_DATE",
+    "type" : "string",
+    "source" : "element APD_DOWNLOAD_DATE"
+  }, {
+    "name" : "APD_TIME_STAMP",
+    "type" : "string",
+    "source" : "element APD_TIME_STAMP"
+  }, {
+    "name" : "APD_VARIABLE_DATA",
+    "type" : "string",
+    "source" : "element APD_VARIABLE_DATA"
+  }, {
+    "name" : "LBP_FLT_SNAPSHOT_DAY",
+    "type" : "string",
+    "source" : "element LBP_FLT_SNAPSHOT_DAY"
+  }, {
+    "name" : "LBP_ID",
+    "type" : "string",
+    "source" : "element LBP_ID"
+  }, {
+    "name" : "LBP_MFL_ID",
+    "type" : "string",
+    "source" : "element LBP_MFL_ID"
+  }, {
+    "name" : "LBP_REFERENCE_NUMBER",
+    "type" : "string",
+    "source" : "element LBP_REFERENCE_NUMBER"
+  }, {
+    "name" : "FFP_PREFIX",
+    "type" : "string",
+    "source" : "element FFP_PREFIX"
+  }, {
+    "name" : "FFP_NUMBER",
+    "type" : "string",
+    "source" : "element FFP_NUMBER"
+  }, {
+    "name" : "FFP_MEMBER_TYPE",
+    "type" : "string",
+    "source" : "element FFP_MEMBER_TYPE"
+  }, {
+    "name" : "UPDATED_IN_DCS",
+    "type" : "string",
+    "source" : "element UPDATED_IN_DCS"
+  }, {
+    "name" : "LBP_DOWNLOAD_DATE",
+    "type" : "string",
+    "source" : "element LBP_DOWNLOAD_DATE"
+  }, {
+    "name" : "LBP_TIME_STAMP",
+    "type" : "string",
+    "source" : "element LBP_TIME_STAMP"
+  }, {
+    "name" : "LBP_VARIABLE_DATA",
+    "type" : "string",
+    "source" : "element LBP_VARIABLE_DATA"
+  }, {
+    "name" : "FFP_ACTIVITY_TYPE",
+    "type" : "string",
+    "source" : "element FFP_ACTIVITY_TYPE"
+  }, {
+    "name" : "SCN_FLT_SNAPSHOT_DAY",
+    "type" : "string",
+    "source" : "element SCN_FLT_SNAPSHOT_DAY"
+  }, {
+    "name" : "SCN_ID",
+    "type" : "string",
+    "source" : "element SCN_ID"
+  }, {
+    "name" : "SCN_MFL_ID",
+    "type" : "string",
+    "source" : "element SCN_MFL_ID"
+  }, {
+    "name" : "SCN_REFERENCE_NUMBER",
+    "type" : "string",
+    "source" : "element SCN_REFERENCE_NUMBER"
+  }, {
+    "name" : "INFANT_INDICATOR",
+    "type" : "string",
+    "source" : "element INFANT_INDICATOR"
+  }, {
+    "name" : "SCANNED_LOCATION",
+    "type" : "string",
+    "source" : "element SCANNED_LOCATION"
+  }, {
+    "name" : "SCANNED_LOCAL_DATE",
+    "type" : "string",
+    "source" : "element SCANNED_LOCAL_DATE"
+  }, {
+    "name" : "SCANNED_LOCAL_TIME",
+    "type" : "string",
+    "source" : "element SCANNED_LOCAL_TIME"
+  }, {
+    "name" : "SCN_DOWNLOAD_DATE",
+    "type" : "string",
+    "source" : "element SCN_DOWNLOAD_DATE"
+  }, {
+    "name" : "SCN_TIME_STAMP",
+    "type" : "string",
+    "source" : "element SCN_TIME_STAMP"
+  }, {
+    "name" : "STATUS",
+    "type" : "string",
+    "source" : "element STATUS"
+  }, {
+    "name" : "INFANT_EXISTS",
+    "type" : [ "null", "string" ],
+    "source" : "element INFANT_EXISTS"
+  } ]
+}

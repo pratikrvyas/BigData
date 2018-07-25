@@ -1,0 +1,47 @@
+{
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [ {
+    "name" : "FLIGHTSEQNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MVTTYPE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MVTDATETIME",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRANSUSER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRANSDATETIME",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MODON",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MODBY",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "EFFECTIVEFROM",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "EFFECTIVETO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRXNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PRETRXNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MVTDATETIMEUTC",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  } ]
+}

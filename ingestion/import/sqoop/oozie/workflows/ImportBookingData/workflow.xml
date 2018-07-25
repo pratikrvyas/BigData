@@ -1,0 +1,333 @@
+
+<workflow-app name="ImportBookingData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-4245"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-4245">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${PNR_CONTROL_FILE}</argument>
+              <argument>${PATH_PASSANGER_NAME_RECORDS}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${PNR_CONTROL_FILE}#${PNR_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="decision-e0ba"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="shell-7ad2">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>/apps/helix/conf/oozie/workspaces/wf_importbookings/helix_donothing.sh</exec>
+            <file>/apps/helix/conf/oozie/workspaces/wf_importbookings/helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="sqoop-5bd7">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PNR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.PNR_SNAP_SHOT_DAY, T1.PNR_RMK_ID, T1.PNR_ID, T1.REMARK_TYPE, T1.PNR_SYMBOLIC_ADDRESS, T1.BCD_TIME, T1.BCD_DATE, T1.BCD_CITY_CODE, T1.BCD_CITY_CODE_EXP, T1.AIRLINE_DESIGNATOR, T1.AIRLINE_DESIGNATOR_EXP, T1.AGENT_INITIALS, T1.DUTY_INITIALS, T1.DVD_MSG, T1.VARIABLE_TEXT, T1.DUTY_CODE_CREATOR, T1.CITY_CREATOR, T1.CITY_CREATOR_EXP, T1.HA_ID_CREATOR, T1.HA_ID_CREATOR_EXP, T1.TRAVEL_AGENCY_ID, T1.DATE_CREATION, T1.TIME_CREATION, T1.GAL_CITY_CODE, T1.GAL_CITY_CODE_EXP, T1.CRS_AIRLINE_CODE, T1.CRS_AIRLINE_CODE_EXP, T1.CLAIM_RESTRICTION_IND, T1.AMD_CITY_CODE, T1.AMD_CITY_CODE_EXP, T1.VERSION_NO, T1.TICKET_NO, T1.SME_ID, T1.FFP_NUMBER, T1.NUM_OF_ADDRESSEE, T1.CITY_CODE_ADDRESSEE, T1.HOST_AIRLINE_CODE, T1.TRV_AGENCY_ID, T1.SPARE_4_ADDRESSEE, T1.AGENT_BCD_DATE, T1.AGENT_BCD_TIME, T1.NEGOSPACE_OWNR, T1.NEGOSPACE_AGENT_CRT FROM PNR_RMKS T1 JOIN PNR_LOG_MONITOR T2 ON (T1.PNR_ID = T2.PNR_ID) WHERE T2.PIF_ID=4 AND T2.CHANGED BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>BCD_DATE=String,DATE_CREATION=String,AGENT_BCD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.PNR_RMK_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PNR_RMKS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PNR_RMKS}</arg>
+            <file>${PNR_SQOOP_OPTIONS_FILE}#${PNR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-169d"/>
+        <error to="email-aa8d"/>
+    </action>
+    <decision name="decision-e0ba">
+        <switch>
+            <case to="fork-6656">
+              ${ (wf:actionData(&#39;shell-4245&#39;)[&#39;HELIX_RUN_IMPORT&#39;] eq &#39;TRUE&#39;) }
+            </case>
+            <case to="shell-7ad2">
+              ${ (wf:actionData(&#39;shell-4245&#39;)[&#39;HELIX_RUN_IMPORT&#39;] eq &#39;FALSE&#39;) }
+            </case>
+            <default to="email-aa8d"/>
+        </switch>
+    </decision>
+    <fork name="fork-6656">
+        <path start="sqoop-5bd7" />
+        <path start="sqoop-00b8" />
+        <path start="sqoop-1639" />
+        <path start="sqoop-59c7" />
+        <path start="sqoop-21be" />
+        <path start="sqoop-bbdc" />
+        <path start="sqoop-fe03" />
+    </fork>
+    <join name="join-169d" to="shell-de4b"/>
+    <action name="sqoop-00b8">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PNR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.PNR_SNAP_SHOT_DAY,T1.PNR_MMS_ID,T1.PNR_ID,T1.PAX_ID,T1.STATUS_CODE,T1.CREDIT_AIRLINE_CODE,T1.CREDIT_AIRLINE_CODE_EXP ,T1.MM_FIELD_INDICATOR,T1.FFP_IDENTIFIER,T1.FFP_IDENTIFIER_EXP,T1.FFP_NO,T1.SOURCE_MMS_FIELD,T1.VARIABLE_DATA,T1.VERSION_NO,T1.FLOWN_STATUS,T1.CUSTOMER_SCORE  FROM PNR_MMS T1 JOIN PNR_LOG_MONITOR T2 ON (T1.PNR_ID = T2.PNR_ID) WHERE T2.PIF_ID=4 AND T2.CHANGED BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.PNR_MMS_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PNR_MMS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PNR_MMS}</arg>
+            <file>${PNR_SQOOP_OPTIONS_FILE}#${PNR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-169d"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="sqoop-1639">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PNR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.PNR_SNAP_SHOT_DAY,T1.PAX_ID ,T1.PNR_ID ,T1.SUFFIX ,T1.PAX_NUM,T1.PNR_PAX_NAME ,T1.PAX_INDIVIDUAL_NAME,T1.PAX_COMMENT,T1.VERSION_NO,T1.FLOWN_STATUS ,T1.PNR_ITN_ID,T1.NAME_CHANGE_INH  FROM PNR_PAX T1 JOIN PNR_LOG_MONITOR T2 ON (T1.PNR_ID = T2.PNR_ID) WHERE T2.PIF_ID=4 AND T2.CHANGED BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.PAX_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PNR_PAX</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PNR_PAX}</arg>
+            <file>${PNR_SQOOP_OPTIONS_FILE}#${PNR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-169d"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="sqoop-59c7">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PNR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.PNR_SNAP_SHOT_DAY,T1.PNR_OTHER_ID ,T1.PNR_ID ,T1.OTHER_CODE ,T1.CITY_CODE,T1.CITY_CODE_EXP,T1.AIRLINE_DESIGNATOR,T1.AIRLINE_DESIGNATOR_EXP,T1.BCD_TIME_LIMIT ,T1.BCD_DATE ,T1.VARIABLE_DATA,T1.DAY_OF_WEEK,T1.SYSTEM_GENERATED,T1.CARRIER_CODE ,T1.CARRIER_CODE_EXP,T1.PNR_ADDRESS,T1.PSEUDO_CITY,T1.IATA_ERSP,T1.CLOSEST_CITY ,T1.CLOSEST_CITY_EXP,T1.CRS_CARRIER_CODE,T1.CRS_CARRIER_CODE_EXP,T1.AGENCY_TYPE,T1.ISO_COUNTRY,T1.ISO_CURRENCY ,T1.AGENT_CODE ,T1.PAX_ID ,T1.TSM_TYPE ,T1.PTA_STATUS_CODE,T1.TSM_ACTION ,T1.TSM_LOCAL_CREATION_DATE ,T1.PTA_OUT_LOCATION,T1.PTA_IN_LOCATION,T1.TSM_SALE_STATUS,T1.REPORT_INDICATOR,T1.TSM_CITY_CODE,T1.TSM_HOST_AIRLINE_CODE ,T1.TSM_HOST_AIRLINE_CODE_EXP ,T1.TSM_AGN_ID ,T1.FIRST_SEG_DEPARTURE_DATE,T1.RLC_HEADQUARTER_CITY,T1.RLC_GDS_CRC,T1.RLC_RECORD_ID,T1.RLC_OFFICE_ID,T1.RLC_IATA_ARC_NO,T1.RLC_PLACE_OF_ORIGIN ,T1.RLC_AIRLINE_DESIGNATOR,T1.RLC_ORIGIN_TYPE_CODE,T1.RLC_COUNTRY_OF_ORIGIN ,T1.RLC_CURRENCY_CODE ,T1.RLC_DUTY_CODE,T1.VERSION_NO ,T1.FLOWN_STATUS ,T1.PTA_MCO,T1.QUEUE_NUMBER ,T1.EMD_INDICTOR  FROM PNR_OTHERS T1 JOIN PNR_LOG_MONITOR T2 ON (T1.PNR_ID = T2.PNR_ID) WHERE T2.PIF_ID=4 AND T2.CHANGED BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>FIRST_SEG_DEPARTURE_DATE=String,TSM_LOCAL_CREATION_DATE=String,BCD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.PNR_OTHER_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PNR_OTHERS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PNR_OTHERS}</arg>
+            <file>${PNR_SQOOP_OPTIONS_FILE}#${PNR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-169d"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="sqoop-21be">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PNR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.PNR_SNAP_SHOT_DAY,T1.PNR_ITN_ID ,T1.ITN_TYPE_ID,T1.PNR_ID ,T1.SEGMENT_TYPE ,T1.LINKED_SEGMENT ,T1.OPERATIONAL_MARKETING_SEGMENT ,T1.AIRLINE_DESIGNATOR,T1.AIRLINE_DESIGNATOR_EXP,T1.FLIGHT_NUMBER,T1.FLIGHT_NUMBER_EXP ,T1.SERVICE_CLASS_CODE,T1.RESERVATION_CLASS_CODE,T1.INVENTORY_CLASS_CODE,T1.DEPARTURE_DATE ,T1.BOARD_POINT,T1.BOARD_POINT_EXP,T1.OFF_POINT,T1.OFF_POINT_EXP,T1.BOOKING_STATUS ,T1.SUBPRIORITY,T1.NUMBER_OF_PAX_IN_PARTY,T1.DEPARTURE_TIME ,T1.ARRIVAL_TIME ,T1.DATE_CHANGE_FLIGHT,T1.CONTROLLING_HOST,T1.CONTROLLING_HOST_EXP,T1.MARKETING_CARRIER_CODE,T1.MAPPED_MARKETING_CARRIER,T1.MAPPED_MARKETING_CARRIER_EXP,T1.MARKETING_CARRIER_CODE_EXP,T1.TYPE_ZERO_INFO_SEGMENT,T1.FQTV_SPECIFIC_SEGMENT ,T1.VARIABLE_DATA,T1.TYPE_OF_SERVICE,T1.SEGMENT_DATE ,T1.CITY_CODE,T1.CITY_CODE_EXP,T1.ALLOTMENT_TYPE ,T1.TOTAL_NUMBER_OF_ROOMS_SEGMENT ,T1.HOTEL_CODE ,T1.HOTEL_CODE_EXP ,T1.RESORT_CODE,T1.RESORT_CODE_EXP,T1.RESORT_NUMBER,T1.ROOM_OUTDATE ,T1.LINK_SYSTEM,T1.HOTEL_CHAIN_CODE,T1.HOST_SEGMENT_NUMBER ,T1.HOST_SEGMENT_TYPE ,T1.OAL_SEGMENT_TYPE,T1.OAL_AIRLINE_DESIGNATOR,T1.OAL_AIRLINE_DESIGNATOR_EXP,T1.OAL_FLIGHT_NUMBER ,T1.OAL_FLIGHT_NUMBER_EXP ,T1.OAL_BOOKED_CLASS,T1.INTERNAL_BCC ,T1.OLD_BOOKING_STATUS,T1.DAY_CHANGE ,T1.DAY_OF_WEEK,T1.BOOKING_SOURCE ,T1.EQUIPMENT_CODE ,T1.MARKETING_FLIGHT_NUMBER ,T1.MARKETING_FLIGHT_NUMBER_EXP ,T1.INBOUND_FLIGHT_CONN_IND ,T1.MARR_CONN_INBOUND_FLIGHT_IND,T1.OUTBOUND_FLIGHT_CONN_IND,T1.MARR_CONN_OUTBOUND_FLIGHT_IND ,T1.OFF_DATE ,T1.ACT_SEG_IND,T1.VERSION_NO ,T1.FLOWN_STATUS ,T1.MARRIED_INDICATOR ,T1.MARRIAGE_NUMBER,T1.REVENUE_CLASS,T1.MARRIAGE_SEQ_NUMBER ,T1.AGENT_SIGN_INFO,T1.LINK_CARRIER_CODE ,T1.LINK_SALE_IND,T1.LINK_IND ,T1.SEG_ORGN_USED,T1.SEG_DSTN_USED,T1.OD_DATE_USED ,T1.LOWEST_RMT ,T1.EOT_ORGN ,T1.EOT_DSTN ,T1.EOT_OD_DATE,T1.LOWEST_RMT_EOT ,T1.BLOCK_PNR_REFERENCE ,T1.DATE_DISCREPANCY_SIGN ,T1.DATE_DISCREPANCY,T1.RTDP_EXEMPT_ERROR_INDICATORS,T1.SELL_DATE,T1.SELL_TRIP_ORIGIN,T1.SELL_TRIP_DESTINATION ,T1.SELL_EVALUATION_FARE,T1.SELL_BID_PRICE ,T1.SELL_LEG_BID_PRICE,T1.SELL_BID_DIFFRNTIAL_SIGN,T1.SELL_BID_PRICE_DIFFERENCIAL ,T1.RBD_SELL_COUNT ,T1.RBD_AVAILABLE_COUNT ,T1.LEG1_BOARD_POINT,T1.LEG1_F_AVAILABLE_ON_SELL,T1.LEG1_J_AVAILABLE_ON_SELL,T1.LEG1_Y_AVAILABLE_ON_SELL,T1.LEG2_BOARD_POINT,T1.LEG2_F_AVAILABLE_ON_SELL,T1.LEG2_J_AVAILABLE_ON_SELL,T1.LEG2_Y_AVAILABLE_ON_SELL,T1.LEG3_BOARD_POINT,T1.LEG3_F_AVAILABLE_ON_SELL,T1.LEG3_J_AVAILABLE_ON_SELL,T1.LEG3_Y_AVAILABLE_ON_SELL,T1.LEG4_BOARD_POINT,T1.LEG4_F_AVAILABLE_ON_SELL,T1.LEG4_J_AVAILABLE_ON_SELL,T1.LEG4_Y_AVAILABLE_ON_SELL,T1.LEG5_BOARD_POINT,T1.LEG5_F_AVAILABLE_ON_SELL,T1.LEG5_J_AVAILABLE_ON_SELL,T1.LEG5_Y_AVAILABLE_ON_SELL,T1.EOT_DATE ,T1.EOT_TRIP_ORIGIN,T1.EOT_TRIP_DESTINATION,T1.EOT_EVALUATION_FARE ,T1.EOT_EVALUATION_BID_PRICE,T1.EOT_LEG_BID_PRICE ,T1.EOT_BID_DIFFRNTIAL_SIGN ,T1.EOT_BID_PRICE_DIFFERENCIAL FROM PNR_ITNS T1 JOIN PNR_LOG_MONITOR T2 ON (T1.PNR_ID = T2.PNR_ID) WHERE T2.PIF_ID=4 AND T2.CHANGED BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>ROOM_OUTDATE=String,SEGMENT_DATE=String,DEPARTURE_DATE=String,EOT_OD_DATE=String,OD_DATE_USED=String,OFF_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.PNR_ITN_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PNR_ITNS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PNR_ITNS}</arg>
+            <file>${PNR_SQOOP_OPTIONS_FILE}#${PNR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-169d"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="sqoop-bbdc">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PNR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.PNR_SNAP_SHOT_DAY,T1.ID ,T1.PNR_OWNER,T1.REC_LOCATOR,T1.PNR_CREATION_DATE ,T1.PNR_CREATION_TIME ,T1.PNR_SNAP_SHOT_DATE,T1.CREATOR_DUTY_CODE ,T1.CREATOR_INITIALS,T1.CREATOR_CITY ,T1.CREATOR_CITY_EXP,T1.GROUP_BOOKING_IND ,T1.AGENT_IATA_CODE,T1.RELIABILITY_IND,T1.FLOWN_IND,T1.USR_CREATED,T1.CREATED,T1.USR_CHANGED,T1.CHANGED,T1.PROGRESS ,T1.BOOKING_SOURCE_IND,T1.INTERNET_BOOKING_IND,T1.PAYMENT_REFERENCE_NO,T1.PNR_STATUS ,T1.TRV_AGENT_IATA_NO ,T1.TRV_AGENT_IATA_NO_EXP ,T1.TRV_AGENT_REF_NO,T1.TRV_AGENT_REF_NO_EXP,T1.TRV_AGENT_NAME ,T1.TRV_AGENT_NAME_EXP,T1.TKT_HOST_AIRLINE_ID ,T1.TKT_HOST_AIRLINE_ID_EXP ,T1.TKT_TRAVEL_AGENT_ID ,T1.TKT_CITY_CODE,T1.TKT_CITY_CODE_EXP ,T1.TKT_AGENT_INITIAL ,T1.TKT_DUTY_CODE,T1.TKT_USER_TYPE,T1.TKT_LST_MOD_DATE,T1.ACOUNTING_INFO ,T1.POS_ORIGINATOR ,T1.POS_RLOC_TYPE,T1.POS_CRS_CITY_CODE ,T1.POS_CRS_CITY_CODE_EXP ,T1.POS_CRS_SYSTEM_DESIGNATOR ,T1.POS_CRS_SYSTEM_DESIGNATOR_EXP ,T1.POS_CRS_PNR_ADDR,T1.POS_CRS_PNT_ADDR,T1.POS_PSUEDO_CITY_CODE,T1.POS_AGENT_IATA_NO ,T1.POS_ERPS_NO,T1.POS_ERPS_UNIQUE_NO,T1.POS_USER_TYPE,T1.POS_FIRST_DEPARTURE_POINT ,T1.POS_FIRST_DEPARTURE_POINT_EXP ,T1.POS_GEO_CITY ,T1.POS_GEO_CITY_EXP,T1.POS_COUNTRY_CODE,T1.POS_COUNTRY_CODE_EXP,T1.POS_CRS_OA ,T1.POS_CRS_OA_EXP ,T1.POS_PAYMENT_COUNTRY_CODE,T1.POS_AGENT_DUTY_CODE ,T1.POS_AGENT_DUTY_CODE_EXP ,T1.POS_LANG_CODE,T1.POS_INHOUSE_ID ,T1.PNO_HOST_AIRLINE_ID ,T1.PNO_HOST_AIRLINE_ID_EXP ,T1.PNO_TRAVEL_AGENT_ID ,T1.PNO_CITY_CODE,T1.PNO_CITY_CODE_EXP ,T1.PNO_SUB_HOST_ID,T1.PNO_SUB_HOST_ID_EXP ,T1.PNO_AGENT_INITIALS,T1.PNO_DUTY_TYPE,T1.PNO_USER_TYPE,T1.PNO_LST_UPD_DATE,T1.TRV_COMPANY,T1.TRV_POOL ,T1.TRV_BRANCH ,T1.TRV_DEPARTMENT ,T1.CREATOR_COUNTRY,T1.CREATOR_COUNTRY_EXP ,T1.NUMBER_OF_NAMES,T1.MAX_INTRA_PNR_SET_NUMBER,T1.SEAT_COUNT ,T1.POS_STAFF_INITIALS,T1.CORPORATE_INDICATOR ,T1.PNR_DOWNLOADED_TIME ,T1.VERSION_NO ,T1.OLD_REC_LOCATOR,T1.PARENT_RECORD_LOCATOR ,T1.PARENT_CREATION_DATE,T1.POS_FARES_CITY ,T1.POS_FARES_COUNTRY ,T1.POS_FARES_FLOWN,T1.POS_FARES_VIOLATION ,T1.POS_FARES_VIOLATION_REMOVE,T1.PNR_MOVE_FQI_89,T1.PNR_MOVE_FQI_95,T1.RSS_MARRIAGE_NUM,T1.HIGH_MARRIAGE_NUM ,T1.TICKET_RESTRICTION_FLAG  FROM PASSENGER_NAME_RECORDS T1 JOIN PNR_LOG_MONITOR T2 ON (T1.ID = T2.PNR_ID) WHERE T2.PIF_ID=4 AND T2.CHANGED BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PARENT_CREATION_DATE=String,PNO_LST_UPD_DATE=String,TKT_LST_MOD_DATE=String,CHANGED=String,CREATED=String,PNR_SNAP_SHOT_DATE=String,PNR_CREATION_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PASSENGER_NAME_RECORDS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PASSANGER_NAME_RECORDS}</arg>
+            <file>${PNR_SQOOP_OPTIONS_FILE}#${PNR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-169d"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="sqoop-fe03">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PNR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.PNR_SNAP_SHOT_DAY,T1.PNR_HFX_GFX_ID ,T1.PNR_ID ,T1.PNR_ITN_PNR_ITN_ID ,T1.PNR_PAX_ID ,T1.HFX_GFX_CODE ,T1.HFX_GFX_TYPE ,T1.SERVICE_TYPE ,T1.SERVICE_CODE ,T1.FFP_SUFFIX ,T1.FFP_NUMBER ,T1.AIRLINE_DESIGNATOR ,T1.AIRLINE_DESIGNATOR_EXP ,T1.AIRLINE_DESIGNATOR_SSR ,T1.AIRLINE_DESIGNATOR_SSR_EXP ,T1.AIRLINE_DESIGNATOR_FLT ,T1.AIRLINE_DESIGNATOR_FLT_EXP ,T1.FLIGHT_NUMBER,T1.FLIGHT_NUMBER_EXP,T1.SERVICE_CLASS_CODE ,T1.RESERVATION_CLASS_CODE ,T1.INVENTORY_CLASS_CODE ,T1.SEGMENT_BOOKING_DATE ,T1.BOOKING_STATUS ,T1.NUMBER_IN_PARTY_WEIGHT_QTY ,T1.WEIGHT_UNIT,T1.VARIABLE_DATA,T1.BOARD_POINT,T1.BOARD_POINT_EXP,T1.OFF_POINT,T1.OFF_POINT_EXP,T1.NAME_SEG_ERROR ,T1.SYSTEM_ACTION,T1.VERSION_NO ,T1.FLOWN_STATUS ,T1.TICKET_NO FROM PNR_HFX_GFXS T1 JOIN PNR_LOG_MONITOR T2 ON (T1.PNR_ID = T2.PNR_ID) WHERE T2.PIF_ID=4 AND T2.CHANGED BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-4245&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>SEGMENT_BOOKING_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.PNR_HFX_GFX_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PNR_HFX_GFXS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PNR_HFX_GFXS}</arg>
+            <file>${PNR_SQOOP_OPTIONS_FILE}#${PNR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-169d"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="shell-de4b">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${PNR_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-4245&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-4245&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${PNR_CONTROL_FILE}#${PNR_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-aa8d"/>
+    </action>
+    <action name="email-aa8d">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

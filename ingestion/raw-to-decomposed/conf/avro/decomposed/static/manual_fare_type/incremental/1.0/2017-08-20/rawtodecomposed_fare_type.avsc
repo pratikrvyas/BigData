@@ -1,0 +1,86 @@
+{
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [
+   {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  },
+{
+    "name" : "TKT_STOCK",
+    "type" : [ "string", "null" ]
+  },
+  {
+    "name" : "TKT_STOCK_COND",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "DOC_NO",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "REV_NON_REV",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "FARE_TYPE",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "FARE_SUB_TYPE",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "Serial_NO",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "Specific_FBC_String_Checklist",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "on_after",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "Ticket_Iss_Eff_Date",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "on_before",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "Ticket_Iss_Disc_Date",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "and_Ticket_Designator",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "Ticket_Designator",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "and_Tour_Code_Pattern",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "Tour_Code_Pattern",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "and_Fares_Basis_Pattern",
+    "type" : [ "string", "null" ]
+  }
+  , {
+    "name" : "Fares_Basis_Pattern",
+    "type" : [ "string", "null" ]
+  }
+  
+  
+  ]
+}

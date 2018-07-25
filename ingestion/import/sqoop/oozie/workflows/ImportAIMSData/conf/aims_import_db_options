@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.89.51:6516:ONTRACK
+--username
+helix_user
+--password
+PWD1_HELIX

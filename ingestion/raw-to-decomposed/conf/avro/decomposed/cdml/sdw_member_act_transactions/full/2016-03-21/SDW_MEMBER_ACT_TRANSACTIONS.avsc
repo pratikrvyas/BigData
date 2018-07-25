@@ -1,0 +1,1392 @@
+{
+  "type": "record",
+  "name": "SDW_MEMBER_ACT_TRANSACTIONS",
+  "fields": [
+    {
+      "name": "HELIX_UUID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "HELIX_TIMESTAMP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PERSON_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MEMBER_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_TYPE_CATEGORY_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_TYPE_CATEGORY_DESCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_TYPE_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_TYPE_DESCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BOOKABLE_ACTIVITY_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BOOKABLE_ACTIVITY_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CLASS_OF_SERVICE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BKBL_ACT_DIFFERENTIATOR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BAC_DISCONTINUE_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BAC_EFFECTIVE_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FARE_BASIS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "LPT_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MAX_APPLICN_PERIOD",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MIN_APPLICN_PERIOD",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PARTNER_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PARTNER_DESCRIPTION",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "REDEMPTION_METHOD",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SEGMENT_CITY_PAIR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SEGMENT_DISTANCE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "STATEMENT_DSCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "VOUCHER_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BKA_STG_PROCESS_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_UNIT_YIELD",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_METHOD",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVTY_ACTION_REASON_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVTY_ACTION_REASON_DESCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVTY_ACTION_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_ACTION_REASON_CTGRY",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AGENT_CITY",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AGENT_IATA_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ASSIGNED_TO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_UPLOAD_BATCH_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BCP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BILL_APPROVED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BILLABLE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BILLED_CANCELLED_ACT",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BILLED_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BOOKING_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CABIN_CLASS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CANCELLED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CARD_NO_PREFIX",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "COUPON_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DIRECT_BKBL_ACTIVITY",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_DISCONTINUE_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DNLD_FOR_BILLING",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_EFFECTIVE_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXT_AUTH_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FLOWN_CLASS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FOLLOWUP_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "INV_BY_PTNR_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "INVOICE_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "INVOICE_NUMBER",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MEMBER_ACTIVITY_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MEMBER_ACTIVITY_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MEMBER_ACTIVITY_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PMA_MEMBER_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MERGED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MKT_CARRIER",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MKT_FLT_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NM_CHK_COMBI_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NM_CHK_COMBI_DSCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NUMBER_OF_ACT_UNITS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "OPR_CARRIER",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "OPR_FLT_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PAX_DESCRIPTION",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PFP_FLOWN_PAX_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PMA_CHANGED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PMA_MERGED_FROM_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PMA_STATUS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PMA_USR_CHANGED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PRIORITY_LEVEL",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PROGRESS_STATUS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PTA_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PTNR_INV_PAID_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PTS_REDEEMABLE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RBE_REWARD_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RECORD_LOCATOR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "REDEEMED_STATUS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RETRO_EVIDENCE_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RETRO_EVIDENCE_DSCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RPS_CODE_AFTR_TM_LMT",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RPS_DATE_AFTR_TM_LMT",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RETRO_PROCESS_STATUS_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RETRO_PROCESS_STATUS_DESCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SEQ_NUMBER",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SEQUENCE_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PMA_CREATED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PMA_USR_CREATED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SYSTEM_CALCULATED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TICKET_NUMBER",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TIER_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TIER_DESCRIPTION",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TIER_RESOLUTION_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TIER_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACT_STG_PROCESS_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AVAILABLE_MILES",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRANS_CREATED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRANS_DESCRIPTION",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRANS_EFFECTIVE_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXPIRY_ACTION_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FAM_ACT_PTS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FAM_FAMILY_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FAM_MEMBER_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "GIFT_MEM_UID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MTR_MEMBER_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MEMBERSHIP_CARD_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MEMBER_STATEMENT_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MTR_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MTR_TRANSFER_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RATE_BAND_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RATE_BAND_DSCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RATE_BAND_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RTB_LPP_PTNR_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RULE_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RULE_DESCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RULE_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SBE_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SKYWARDS_MILES",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MTR_STG_PROCESS_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TIER_MILES",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRANSACTION_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRANSACTION_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRANSACTION_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MTR_USR_CREATED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "VOUCHER_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MTR_CHANGED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MTR_USR_CHANGED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SDW_CREATED_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SDW_CHANGED_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SDW_REFRESH_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BKBL_ACTIVITY_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "QRS_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RBE_PAX_NAME",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RBE_INIT_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RBE_REC_LOCATOR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXT_TRANSACTION_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXT_SERVICE_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "STMT_DESC_LANG1",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "STMT_DESC_LANG2",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FLIGHT_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DESCR_LANG1",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DESCR_LANG2",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CORP_PMA_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CORP_MILES",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CORP_REVENUE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXT_TERMINAL_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXT_BATCH_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXT_DATE_TIME",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CORP_ACCRUAL_DONE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "UMA_REC_NUMBER",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FLT_SPC_BONUS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FLT_SPC_EXCEPTION",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FAMILY_BONUS_FLAG",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BKBL_TIER_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TICKET_ISSUE_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AIRLINE_DESIGNATOR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACCRUAL_MODEL",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TICKETING_START_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TICKETING_END_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "O_D_BASED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FARE_GROUP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_MONTH",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACTIVITY_YEAR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TICKET_ISSUE_MONTH",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TICKET_ISSUE_YEAR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ORIGIN",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DESTINATION",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MA_RATE_BAND_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MA_RATE_BAND_DSCR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "MA_RATE_BAND_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ON_HOLD",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PROMO_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RETRO_PROMOTIONAL_BONUS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PARENT_CARD_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DC_BATCH_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DC_BATCH_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DC_PARTNER",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DC_SEND_CARD_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DC_CURRENCY_VALUE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DC_POINTS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "HBACK_RESPONSE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "RESPONSE_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "HBACK_UPLD_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACFIN_BATCH_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "HBACK_UPLD_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ACFIN_BILLED_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "IS_BILLED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AMOUNT_ACCEPTED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "POINTS_ACCEPTED",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DC_FLAG",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXT_MEMBERSHIP_NO",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "EXT_PTS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TICKET_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

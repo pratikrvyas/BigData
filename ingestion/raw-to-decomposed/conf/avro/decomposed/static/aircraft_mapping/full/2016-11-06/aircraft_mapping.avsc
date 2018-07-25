@@ -1,0 +1,23 @@
+{
+  "type" : "record",
+  "name" : "aircraft_mapping",
+  "doc" : "aircraft_mapping",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP"
+  },{
+    "name" : "AIRCRAFT_SHORT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_SHORT_NAME"
+  }, {
+    "name" : "AIRCRAFT_FULL_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_FULL_NAME" 
+  } ],
+  "tableName" : "aircraft_mapping"
+}

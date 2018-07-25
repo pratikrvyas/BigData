@@ -1,0 +1,76 @@
+{
+  "type": "record",
+  "name": "PRMS_LEG_FCST_DATA",
+  "fields": [
+
+    {
+      "name": "helix_uuid",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "helix_timestamp",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+{"name" :  "SNAP_DT","type" : ["null", "string"]},
+{"name" :  "NETWORK_DT","type" : ["null", "string"]},
+{"name" :  "FILE_PRCS_DT","type" : ["null", "string"]},
+{"name" :  "AIRL_CD","type" : ["null", "string"]},
+{"name" :  "FLT_NO","type" : ["null", "string"]},
+{"name" :  "FLT_DT","type" : ["null", "string"]},
+{"name" :  "DOW","type" : ["null", "string"]},
+{"name" :  "DCP","type" : ["null", "string"]},
+{"name" :  "DAYS_PRIOR","type" : ["null", "string"]},
+{"name" :  "INHIBIT_FLAG","type" : ["null", "string"]},
+{"name" :  "ORGN","type" : ["null", "string"]},
+{"name" :  "DSTN","type" : ["null", "string"]},
+{"name" :  "DEP_DT_ORG","type" : ["null", "string"]},
+{"name" :  "LEG_SEQ","type" : ["null", "string"]},
+{"name" :  "COMP","type" : ["null", "string"]},
+{"name" :  "CLASS","type" : ["null", "string"]},
+{"name" :  "ARCFT_TYPE","type" : ["null", "string"]},
+{"name" :  "AVAIL_SEAT_KM","type" : ["null", "string"]},
+{"name" :  "REV_PASS_KM","type" : ["null", "string"]},
+{"name" :  "CAP_ADJUSTED","type" : ["null", "string"]},
+{"name" :  "CAP_PHYSICAL","type" : ["null", "string"]},
+{"name" :  "CAP_VIRTUAL","type" : ["null", "string"]},
+{"name" :  "AU","type" : ["null", "string"]},
+{"name" :  "TOT_BKG","type" : ["null", "string"]},
+{"name" :  "TOT_BKG_FINAL","type" : ["null", "string"]},
+{"name" :  "ACH_DEMAND","type" : ["null", "string"]},
+{"name" :  "GRP_BKG","type" : ["null", "string"]},
+{"name" :  "TOT_OUT","type" : ["null", "string"]},
+{"name" :  "CNST_DEMAND","type" : ["null", "string"]},
+{"name" :  "CNST_OUT","type" : ["null", "string"]},
+{"name" :  "ACH_OUT","type" : ["null", "string"]},
+{"name" :  "TOT_NSHOW","type" : ["null", "string"]},
+{"name" :  "DND_BRD","type" : ["null", "string"]},
+{"name" :  "DND_BRD_VOL","type" : ["null", "string"]},
+{"name" :  "OVER_BKG","type" : ["null", "string"]},
+{"name" :  "DEC_SEATS","type" : ["null", "string"]},
+{"name" :  "ADDED_SEATS","type" : ["null", "string"]},
+{"name" :  "DNG_INTO","type" : ["null", "string"]},
+{"name" :  "DNG_OUTOF","type" : ["null", "string"]},
+{"name" :  "UPG_INTO","type" : ["null", "string"]},
+{"name" :  "UPG_OUTOF","type" : ["null", "string"]},
+{"name" :  "SBY_OUT","type" : ["null", "string"]},
+{"name" :  "BID_PRICE","type" : ["null", "string"]},
+{"name" :  "SEAT_IDX","type" : ["null", "string"]},
+{"name" :  "DSPL_COST","type" : ["null", "string"]},
+{"name" :  "GRP_OUT","type" : ["null", "string"]},
+{"name" :  "FARE","type" : ["null", "string"]},
+{"name" :  "BLOCKED_SEATS","type" : ["null", "string"]},
+{"name" :  "GRP_BKG_FINAL","type" : ["null", "string"]},
+{"name" :  "SEATS_PROTECTED","type" : ["null", "string"]},
+{"name" :  "LEG_SEG_IND","type" : ["null", "string"]},
+{"name" :  "SHOW_UP_RATE","type" : ["null", "string"]},
+{"name" :  "NO_SHOW_PCT","type" : ["null", "string"]},
+{"name" :  "FOS_ACH_OUT","type" : ["null", "string"]},
+{"name" :  "FOS_CNST_OUT","type" : ["null", "string"]}
+]
+}

@@ -1,0 +1,617 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_CDW_TICKET_COUPON_FACT",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "TICKET_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_COUPON_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_COUPON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_ISSUE_DATE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_ISSUE_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CUSTOMER_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "CUSTOMER_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "SKYWARDS_MEMBER_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "SKYWARDS_MEMBER_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "BR_MEMBER_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "BR_MEMBER_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "REVENUE_TICKET_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "REVENUE_TICKET_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "GROSS_REVENUE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "GROSS_REVENUE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "NET_REVENUE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "NET_REVENUE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "COMMISSION_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "COMMISSION_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "OTHER_TAXES_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "OTHER_TAXES_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "YQ_SURCHARGE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "YQ_SURCHARGE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "YR_SURCHARGE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "YR_SURCHARGE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKING_DATE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "DEPARTURE_DATE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEPARTURE_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "ARRIVAL_DATE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "ARRIVAL_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_ITINERARY_STRING",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_ITINERARY_STRING",
+    "sqlType" : "12"
+  }, {
+    "name" : "ROUTE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "ROUTE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "SECTOR_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "SECTOR_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "SECTOR_DISTANCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SECTOR_DISTANCE",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKING_CLASS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_CLASS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CABIN_CLASS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "CABIN_CLASS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRAVELLED_CLASS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRAVELLED_CLASS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_FAREBASIS",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_FAREBASIS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOUR_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOUR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EK_POO_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_POO_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "POO_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "POO_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "COUPON_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUPON_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "COUPON_REVALIDATION_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUPON_REVALIDATION_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUPON_EXCLUDING_VOID_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUPON_EXCLUDING_VOID_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUPON_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUPON_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUPON_VALIDITY_PERIOD_FROM",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUPON_VALIDITY_PERIOD_FROM",
+    "sqlType" : "93"
+  }, {
+    "name" : "COUPON_VALIDITY_PERIOD_TO",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUPON_VALIDITY_PERIOD_TO",
+    "sqlType" : "93"
+  }, {
+    "name" : "BOARD_POINT_STOPOVER_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOARD_POINT_STOPOVER_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFF_POINT_STOPOVER_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "OFF_POINT_STOPOVER_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "STOPOVER_DURATION_HRS",
+    "type" : [ "string", "null" ],
+    "columnName" : "STOPOVER_DURATION_HRS",
+    "sqlType" : "2"
+  }, {
+    "name" : "BAGGAGE_ALLOWANCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BAGGAGE_ALLOWANCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHECK_IN_WEIGHT",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHECK_IN_WEIGHT",
+    "sqlType" : "2"
+  }, {
+    "name" : "CHECK_IN_WEIGHT_UNIT",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHECK_IN_WEIGHT_UNIT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHECK_IN_PIECES",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHECK_IN_PIECES",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUSINESS_TYPE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "BUSINESS_TYPE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "EMD_ASSOCIATED_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMD_ASSOCIATED_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "GROUP_BOOKING_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "GROUP_BOOKING_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKING_DISB_CHANNEL_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_DISB_CHANNEL_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_DISB_CHANNEL_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_DISB_CHANNEL_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "MARKETING_AIRLINE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_AIRLINE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "MARKETING_FLIGHT_NUMBER_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_FLIGHT_NUMBER_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "OPERATIONAL_AIRLINE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATIONAL_AIRLINE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "OPERATIONAL_FLIGHT_NUMBER_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATIONAL_FLIGHT_NUMBER_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLIGHT_SCHEDULE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_SCHEDULE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKED_AGENT_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKED_AGENT_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKED_AGENCY_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKED_AGENCY_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_AGENT_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_AGENT_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_AGENCY_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_AGENCY_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CREDIT_AGENT_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREDIT_AGENT_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CREDIT_AGENCY_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREDIT_AGENCY_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_DATE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_MAIN_CLASS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_MAIN_CLASS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_TRUE_OD_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_TRUE_OD_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_TRUE_OD_DATE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_TRUE_OD_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_TRUE_OD_CLASS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_TRUE_OD_CLASS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_TRUE_OD_MAX_FAREBASIS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_TRUE_OD_MAX_FAREBASIS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_TRUE_OD_MIN_FAREBASIS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_TRUE_OD_MIN_FAREBASIS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_ONLINE_OD_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_ONLINE_OD_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_ONLINE_OD_DATE_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_ONLINE_OD_DATE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETED_ONLINE_OD_CLASS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETED_ONLINE_OD_CLASS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_ONLINE_OD_MIN_FAREBASIS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_ONLINE_OD_MIN_FAREBASIS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_ONLINE_OD_MAX_FAREBASIS_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_ONLINE_OD_MAX_FAREBASIS_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_PAX_COUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_PAX_COUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_GROSS_REVENUE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_GROSS_REVENUE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_NET_REVENUE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_NET_REVENUE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_COMMISSION_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_COMMISSION_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_OTHER_TAXES_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_OTHER_TAXES_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_YQ_SURCHARGE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_YQ_SURCHARGE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRIP_OD_YR_SURCHARGE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_YR_SURCHARGE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRUE_OD_PAX_COUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_PAX_COUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRUE_OD_GROSS_REVENUE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_GROSS_REVENUE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRUE_OD_NET_REVENUE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_NET_REVENUE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRUE_OD_COMMISSION_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_COMMISSION_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRUE_OD_OTHER_TAXES_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_OTHER_TAXES_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRUE_OD_YQ_SURCHARGE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_YQ_SURCHARGE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRUE_OD_YR_SURCHARGE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_YR_SURCHARGE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "ONLINE_OD_PAX_COUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_PAX_COUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "ONLINE_OD_GROSS_REVENUE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_GROSS_REVENUE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "ONLINE_OD_NET_REVENUE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_NET_REVENUE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "ONLINE_OD_COMMISSION_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_COMMISSION_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "ONLINE_OD_OTHER_TAXES_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_OTHER_TAXES_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "ONLINE_OD_YQ_SURCHARGE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_YQ_SURCHARGE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "ONLINE_OD_YR_SURCHARGE_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_YR_SURCHARGE_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "LOCAL_CORP_ORG_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCAL_CORP_ORG_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "LOCAL_CORP_TRACKING_IND_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCAL_CORP_TRACKING_IND_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "GLOBAL_CORP_ORG_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "GLOBAL_CORP_ORG_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "GLOBAL_CORP_TRACKING_IND_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "GLOBAL_CORP_TRACKING_IND_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLOWN_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLOWN_STATUS",
+    "sqlType" : "1"
+  }, {
+    "name" : "TRIP_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRIP_OD_FREEDOM_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_FREEDOM_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRUE_OD_FREEDOM_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_FREEDOM_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ONLINE_OD_FREEDOM_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_FREEDOM_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "LOCAL_CORP_REMARKS",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCAL_CORP_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "GLOBAL_CORP_REMARKS",
+    "type" : [ "string", "null" ],
+    "columnName" : "GLOBAL_CORP_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "JOURNEY_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "JOURNEY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRIP_OD_COMPLETION_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_OD_COMPLETION_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRUE_OD_COMPLETION_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_OD_COMPLETION_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "ONLINE_OD_COMPLETION_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "ONLINE_OD_COMPLETION_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRIP_ITINERARY_WCC",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_ITINERARY_WCC",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRIP_ITINERARY_WOCC",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_ITINERARY_WOCC",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRIP_ITINERARY_CTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_ITINERARY_CTRY",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRIP_ITINERARY_REGION",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRIP_ITINERARY_REGION",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRUE_ITINERARY_WCC",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_ITINERARY_WCC",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRUE_ITINERARY_WOCC",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_ITINERARY_WOCC",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRUE_ITINERARY_CTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRUE_ITINERARY_CTRY",
+    "sqlType" : "12"
+  }, {
+    "name" : "TFLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "TFLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "OFLAG",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "QueryResult"
+}

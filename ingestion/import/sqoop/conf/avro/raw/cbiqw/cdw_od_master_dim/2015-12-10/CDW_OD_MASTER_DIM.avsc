@@ -1,0 +1,91 @@
+{
+  "type" : "record",
+  "name" : "CDW_OD_MASTER_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_OD_MASTER_DIM",
+  "fields" : [ {
+    "name" : "OD_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OD_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "OD_PAIR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OD_PAIR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FREEDOM_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FREEDOM_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MULTI_DIRECTION_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MULTI_DIRECTION_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "GEO_ORIGIN_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GEO_ORIGIN_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "GEO_DESTINATION_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GEO_DESTINATION_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SOURCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SOURCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BI_DIRECTIONAL_OD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BI_DIRECTIONAL_OD",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_OD_MASTER_DIM"
+}

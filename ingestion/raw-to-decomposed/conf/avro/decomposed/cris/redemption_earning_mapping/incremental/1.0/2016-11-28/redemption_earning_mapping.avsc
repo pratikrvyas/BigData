@@ -1,0 +1,68 @@
+{
+  "type" : "record",
+  "name" : "REDEMPTION_EARNING_MAPPING",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }, {
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "REDM_MTR_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REDM_MTR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "EARN_MTR_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EARN_MTR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MILES_REDEEMED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MILES_REDEEMED",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "REDEMPTION_EARNING_MAPPING"
+}

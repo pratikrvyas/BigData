@@ -1,0 +1,173 @@
+{
+  "type" : "record",
+  "name" : "manual_airline_master",
+  "doc" : "import of DW_OWNR.manual_airline_master",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "airline_designator",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_designator",
+    "sqlType" : "2"
+  }, {
+    "name" : "airline_number",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_number",
+    "sqlType" : "12"
+  }, {
+    "name" : "airline_three_letter_code",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_three_letter_code",
+    "sqlType" : "2"
+  }, {
+    "name" : "airline_host_country_name",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_host_country_name",
+    "sqlType" : "93"
+  }, {
+    "name" : "airline_name",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_name",
+    "sqlType" : "12"
+  }, {
+    "name" : "airline_active_flag",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_active_flag",
+    "sqlType" : "93"
+  }, {
+    "name" : "effective_start_date",
+    "type" : [ "string", "null" ],
+    "columnName" : "effective_start_date",
+    "sqlType" : "93"
+  }, {
+    "name" : "effective_end_date",
+    "type" : [ "string", "null" ],
+    "columnName" : "effective_end_date",
+    "sqlType" : "12"
+  }, {
+    "name" : "last_modified_date",
+    "type" : [ "string", "null" ],
+    "columnName" : "last_modified_date",
+    "sqlType" : "93"
+  }, {
+    "name" : "source_",
+    "type" : [ "string", "null" ],
+    "columnName" : "source_",
+    "sqlType" : "12"
+  }, {
+    "name" : "duplicate_flag_indicator",
+    "type" : [ "string", "null" ],
+    "columnName" : "duplicate_flag_indicator",
+    "sqlType" : "12"
+  },{
+    "name" : "address_line_1",
+    "type" : [ "string", "null" ],
+    "columnName" : "address_line_1",
+    "sqlType" : "2"
+  }, {
+    "name" : "address_line_2",
+    "type" : [ "string", "null" ],
+    "columnName" : "address_line_2",
+    "sqlType" : "12"
+  }, {
+    "name" : "airline_city",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_city",
+    "sqlType" : "2"
+  }, {
+    "name" : "airline_state",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_state",
+    "sqlType" : "93"
+  }, {
+    "name" : "airline_postal_code",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_postal_code",
+    "sqlType" : "12"
+  }, {
+    "name" : "reservation_dept_teletype",
+    "type" : [ "string", "null" ],
+    "columnName" : "reservation_dept_teletype",
+    "sqlType" : "93"
+  }, {
+    "name" : "reservations_contact_name",
+    "type" : [ "string", "null" ],
+    "columnName" : "reservations_contact_name",
+    "sqlType" : "93"
+  }, {
+    "name" : "reservation_contact_title",
+    "type" : [ "string", "null" ],
+    "columnName" : "reservation_contact_title",
+    "sqlType" : "12"
+  }, {
+    "name" : "reservation_contact_teletype",
+    "type" : [ "string", "null" ],
+    "columnName" : "reservation_contact_teletype",
+    "sqlType" : "93"
+  }, {
+    "name" : "emergency_teletype",
+    "type" : [ "string", "null" ],
+    "columnName" : "emergency_teletype",
+    "sqlType" : "12"
+  }, {
+    "name" : "emergency_contact_name",
+    "type" : [ "string", "null" ],
+    "columnName" : "emergency_contact_name",
+    "sqlType" : "12"
+  },{
+    "name" : "emergency_contact_title",
+    "type" : [ "string", "null" ],
+    "columnName" : "emergency_contact_title",
+    "sqlType" : "2"
+  }, {
+    "name" : "membership_flag_sita",
+    "type" : [ "string", "null" ],
+    "columnName" : "membership_flag_sita",
+    "sqlType" : "12"
+  }, {
+    "name" : "membership_flag_arinc",
+    "type" : [ "string", "null" ],
+    "columnName" : "membership_flag_arinc",
+    "sqlType" : "2"
+  }, {
+    "name" : "membership_flag_iata",
+    "type" : [ "string", "null" ],
+    "columnName" : "membership_flag_iata",
+    "sqlType" : "93"
+  }, {
+    "name" : "type_operation_code",
+    "type" : [ "string", "null" ],
+    "columnName" : "type_operation_code",
+    "sqlType" : "12"
+  }, {
+    "name" : "type_operation_description",
+    "type" : [ "string", "null" ],
+    "columnName" : "type_operation_description",
+    "sqlType" : "93"
+  }, {
+    "name" : "accounting_code_secondary_flag",
+    "type" : [ "string", "null" ],
+    "columnName" : "accounting_code_secondary_flag",
+    "sqlType" : "93"
+  }, {
+    "name" : "airline_prefix",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_prefix",
+    "sqlType" : "12"
+  }, {
+    "name" : "airline_prefix_secondary_flag",
+    "type" : [ "string", "null" ],
+    "columnName" : "airline_prefix_secondary_flag",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.manual_airline_master"
+}

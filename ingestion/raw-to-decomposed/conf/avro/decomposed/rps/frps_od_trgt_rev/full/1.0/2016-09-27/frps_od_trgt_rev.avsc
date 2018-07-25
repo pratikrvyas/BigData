@@ -1,0 +1,95 @@
+{
+  "type" : "record",
+  "name" : "frps_od_trgt_rev",
+  "doc" : "importrps",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "BATCH_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BATCH_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "FIN_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FIN_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "VRSN_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VRSN_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "YR_MNTH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YR_MNTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "REGN_CD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REGN_CD",
+    "sqlType" : "2"
+  }, {
+    "name" : "POS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "POS",
+    "sqlType" : "12"
+  }, {
+    "name" : "OD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OD",
+    "sqlType" : "12"
+  }, {
+    "name" : "CRNCY_CD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CRNCY_CD",
+    "sqlType" : "12"
+  }, {
+    "name" : "COMP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COMP",
+    "sqlType" : "12"
+  }, {
+    "name" : "FNL_PAX",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FNL_PAX",
+    "sqlType" : "2"
+  }, {
+    "name" : "FNL_REV_BC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FNL_REV_BC",
+    "sqlType" : "2"
+  }, {
+    "name" : "FNL_REV_LC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FNL_REV_LC",
+    "sqlType" : "2"
+  }, {
+    "name" : "PUBLISH_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PUBLISH_DT",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "frps_od_trgt_rev"
+}

@@ -1,0 +1,97 @@
+{
+  "type" : "record",
+  "name" : "delays",
+  "fields" : [ {
+    "name" : "DELY_DELAY_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_DELAY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "DELY_IATA_ALPHA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_IATA_ALPHA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DELY_IATA_NUM_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_IATA_NUM_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DELY_ACCOUNTABLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_ACCOUNTABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DELY_USAE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_USAE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "DELY_AIRPORT_ALPHA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_AIRPORT_ALPHA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DELY_AIRPORT_DELAY_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_AIRPORT_DELAY_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "DELY_AIRPORT_NUM_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_AIRPORT_NUM_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "DELY_IATA_DELAY_TYPE_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_IATA_DELAY_TYPE_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "DELY_CONTROLLABLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_CONTROLLABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "DELY_CCC_RESP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_CCC_RESP",
+    "sqlType" : "2"
+  }, {
+    "name" : "DELY_ACTIVE_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DELY_ACTIVE_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }   ]
+}

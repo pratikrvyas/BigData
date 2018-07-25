@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "PRMS_REGION_DETAIL",
+  "fields": [
+{"name" :  "FROM_FLT_NO","type" : ["null", "string"]},
+{"name" :  "TO_FLT_NO","type" : ["null", "string"]},
+{"name" :  "UPD_DT","type" : ["null", "string"]},
+{"name" :  "UPD_ID","type" : ["null", "string"]},
+{"name" :  "REGION_MST_REGION_NAME","type" : ["null", "string"]}
+
+]
+}

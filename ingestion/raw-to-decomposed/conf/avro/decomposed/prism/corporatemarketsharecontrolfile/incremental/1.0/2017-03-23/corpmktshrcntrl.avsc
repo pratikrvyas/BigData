@@ -1,0 +1,38 @@
+{
+  "type" : "record",
+  "name" : "import_networkhierarchi",
+  "doc" : "import of DW_OWNR.area_region",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "PROCESSED_MONTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROCESSED_MONTH",
+    "sqlType" : "12"
+  },{
+    "name" : "NO_OF_RECORDS",
+    "type" : [ "string", "null" ],
+    "columnName" : "NO_OF_RECORDS",
+    "sqlType" : "12"
+  },{
+    "name" : "TOTAL_FLIGHTS",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOTAL_FLIGHTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "TOTAL_BASE_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOTAL_BASE_AMOUNT",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.area_region"
+}

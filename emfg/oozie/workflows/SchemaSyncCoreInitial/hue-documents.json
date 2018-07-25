@@ -1,0 +1,133 @@
+[
+{
+  "pk": 213282, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "3e693dd0-c167-46e4-92a0-d93a7cf361a8", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "This workflow sync Historical data to Incremental and save it to modelled layer.", 
+    "is_history": false, 
+    "parent_directory": [
+      "986cedef-9417-492f-bd74-b7fedeac9c62", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-02-06T15:23:42", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "a438cdf7-7635-4a8a-a951-aed99c903d2e", 
+        1, 
+        true
+      ], 
+      [
+        "67023756-b925-4a65-9a65-0cc36fa40185", 
+        1, 
+        true
+      ], 
+      [
+        "fd8de553-9a31-42ce-8000-b97afec3a806", 
+        1, 
+        true
+      ], 
+      [
+        "1c823f32-7c73-47f5-a417-c7f53a8f4b94", 
+        1, 
+        true
+      ], 
+      [
+        "bfcc1923-a678-4022-b9cb-29e168bc01fa", 
+        1, 
+        true
+      ], 
+      [
+        "417bbe28-6c9e-427d-9d56-18668a4bd33b", 
+        1, 
+        true
+      ], 
+      [
+        "d7ab592a-4615-4ed5-a6e4-606c70bc58a4", 
+        1, 
+        true
+      ], 
+      [
+        "6ae712cc-d31e-4e05-b255-7ad9c81d60ad", 
+        1, 
+        true
+      ], 
+      [
+        "32096aab-de60-40be-a800-038007a8719d", 
+        1, 
+        true
+      ], 
+      [
+        "8208b697-7f4a-429d-8e07-d47164179bcf", 
+        1, 
+        true
+      ], 
+      [
+        "ebeb2aac-b997-4e75-86d8-2da01cdc7d05", 
+        1, 
+        true
+      ], 
+      [
+        "2cba74e3-b1f1-479c-9dc4-86e3ef015d37", 
+        1, 
+        true
+      ], 
+      [
+        "9f4e8204-6125-4db7-926d-b7a089cc0244", 
+        1, 
+        true
+      ], 
+      [
+        "9e4fac4a-41bb-4a3d-9872-c7ddf986d266", 
+        1, 
+        true
+      ], 
+      [
+        "719cd513-7b5a-449a-a747-82aafca6de65", 
+        1, 
+        true
+      ], 
+      [
+        "7a6ea8e2-ac75-4fa6-8964-891edce5951c", 
+        1, 
+        true
+      ], 
+      [
+        "444a7858-d1e6-4420-a431-bd6f9f436842", 
+        1, 
+        true
+      ], 
+      [
+        "b9daeb97-0c2f-487b-9f15-dfb27f151344", 
+        1, 
+        true
+      ], 
+      [
+        "39f28cda-dffb-4f8f-ba94-f41c9155d4ad", 
+        1, 
+        true
+      ], 
+      [
+        "60ae4346-2639-4d85-90c4-a0fcad5a54b6", 
+        1, 
+        true
+      ], 
+      [
+        "d0381c68-139d-4087-a747-ebc8396fb562", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"CORESync\", \"widgetType\": \"spark-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"e00c3c8e-842b-864f-21b1-b8c2efbd97c2\", \"size\": 12}], \"id\": \"1b27436d-8df3-c462-37ec-d99ba1ac8a11\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"3a478854-5af5-54fc-3122-e082b4ce506e\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"CORESync\", \"widgetType\": \"spark-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"e00c3c8e-842b-864f-21b1-b8c2efbd97c2\", \"size\": 12}], \"id\": \"1b27436d-8df3-c462-37ec-d99ba1ac8a11\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"dd501690-7660-a067-ffb9-0319206ec318\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"95bd63a1-c2ed-2630-cf29-ad3f5bd6fe3d\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"dd501690-7660-a067-ffb9-0319206ec318\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"95bd63a1-c2ed-2630-cf29-ad3f5bd6fe3d\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"3a478854-5af5-54fc-3122-e082b4ce506e\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"03be5582-51a5-1097-79c0-625b3f34f928\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"This workflow sync Historical data to Incremental and save it to modelled layer.\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"FLIGHT_INFO_PATH\", \"value\": \"/data/helix/decomposed/coreods/ods_flight_info/full/1.0/*/*\"}, {\"name\": \"MVTTYPES_PATH\", \"value\": \"/data/helix/decomposed/coreods/ods_mvttypes/full/1.0/*/*\"}, {\"name\": \"TARGET_PARTITIONS\", \"value\": \"0\"}, {\"name\": \"EMAIL_ADDRESS_LIST\", \"value\": \"vera.ekimenko@dnata.com\"}, {\"name\": \"DELAY_PATH\", \"value\": \"/data/helix/decomposed/coreods/ods_delay/full/1.0/*/*\"}, {\"name\": \"TARGET_PATH\", \"value\": \"/data/helix/modelled/emfg/sync/core/2018-01-25/01-00\"}], \"sla_enabled\": false, \"deployment_dir\": \"/apps/helix/conf/oozie/workspaces/wf_schemasynccoreinitial\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"properties\": [{\"name\": \"oozie.launcher.mapreduce.job.queuename\", \"value\": \"opseff\"}, {\"name\": \"mapred.job.queuename\", \"value\": \"opseff\"}], \"show_arrows\": true, \"wf1_id\": null, \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"SchemaSyncCoreInitial\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": false, \"movedNode\": null, \"linkMapping\": {\"e00c3c8e-842b-864f-21b1-b8c2efbd97c2\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"e00c3c8e-842b-864f-21b1-b8c2efbd97c2\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": []}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"e00c3c8e-842b-864f-21b1-b8c2efbd97c2\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"e00c3c8e-842b-864f-21b1-b8c2efbd97c2\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Current timestamp: ${timestamp()}\\nWorkflow name: ${wf:name()}\\nWorkflow id: ${wf:id()}\\nWorkflow application path: ${wf:appPath()}\\nWorkflow user: ${wf:user()}\\nLast error action: ${wf:lastErrorNode()}\\nError code: ${wf:errorCode(wf:lastErrorNode())}\\nError message: ${wf:errorMessage(wf:lastErrorNode())}\", \"cc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST}\", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"Workflow ${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"job_xml\": \"\", \"app_name\": \"CORESync\", \"spark_opts\": \"--files hive-site.xml --executor-memory 2g --driver-memory 1g --queue opseff --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=5 --conf spark.dynamicAllocation.maxExecutors=30\", \"retry_max\": [], \"retry_interval\": [], \"job_properties\": [], \"spark_arguments\": [{\"value\": \"${FLIGHT_INFO_PATH}\"}, {\"value\": \"${MVTTYPES_PATH}\"}, {\"value\": \"${DELAY_PATH}\"}, {\"value\": \"${TARGET_PATH}\"}, {\"value\": \"${TARGET_PARTITIONS}\"}], \"prepares\": [], \"mode\": \"cluster\", \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}], \"spark_master\": \"yarn-cluster\", \"credentials\": [], \"jars\": \"CORESync.jar\", \"class\": \"com.emirates.flight_genome.CoreApp\"}, \"name\": \"spark-e00c\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"spark-widget\", \"id\": \"e00c3c8e-842b-864f-21b1-b8c2efbd97c2\", \"actionParameters\": []}], \"id\": 213282, \"nodeNamesMapping\": {\"e00c3c8e-842b-864f-21b1-b8c2efbd97c2\": \"spark-e00c\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\"}, \"uuid\": \"55d72614-fa41-6165-68ff-6764c23af4d8\"}}", 
+    "name": "SchemaSyncCoreInitial"
+  }
+}
+]

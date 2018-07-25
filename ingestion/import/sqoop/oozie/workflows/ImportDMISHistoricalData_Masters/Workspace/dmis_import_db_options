@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.38.216.157:6516:omgdbd
+--username
+omg_mstr
+--password
+emirates1
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

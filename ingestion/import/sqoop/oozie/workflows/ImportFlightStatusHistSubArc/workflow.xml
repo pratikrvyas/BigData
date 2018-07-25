@@ -1,0 +1,69 @@
+
+<workflow-app name="ImportFlightStatusHistSubArc" xmlns="uri:oozie:workflow:0.5">
+    <start to="shell-b30f"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-b30f">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${FLTSTATUS_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${FLTSTATUS_CONTROL_FILE}#${FLTSTATUS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="sqoop-30f3"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-30f3">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FLTSTATUS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select FLIGHT_ID, SUBSCRIPTION_TYPE, MOBILE_NUMBER, EMAIL, NOTIFY_CHANGES, MESSAGES_SENT, LAST_FLIGHT_STATUS, cast(LAST_FLIGHT_ARRIVAL_TIME as varchar(100)) as LAST_FLIGHT_ARRIVAL_TIME_STR , cast(LAST_FLIGHT_DEPARTURE_TIME as varchar(100)) as LAST_FLIGHT_DEPARTURE_TIME_STR ,  cast(NOTIFICATION_TIME as varchar(100)) as NOTIFICATION_TIME_STR, SUBSCRIPTION_ID, LANGUAGE_CODE, INTERVAL, STATUS, DEPARTURE_STATION, ARRIVAL_STATION,  SITE, cast(SUBSCRIPTION_TIME as varchar(100)) as SUBSCRIPTION_TIME_STR, COUNTRY_CODE from  fsa_subscriptions_arc where SUBSCRIPTION_TIME  BETWEEN TO_DATE  (&#39;${wf:actionData(&#39;GenerateParameters&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData  (&#39;GenerateParameters&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>SUBSCRIPTION_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FSA_SUBSCRIPTIONS_ARC</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FS_SUBSCRIPTIONS}</arg>
+            <file>${FLTSTATUS_SQOOP_OPTIONS_FILE}#${FLTSTATUS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="shell-57f8"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-57f8">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${FLTSTATUS_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;GenerateParameters&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;GenerateParameters&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${FLTSTATUS_CONTROL_FILE}#${FLTSTATUS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

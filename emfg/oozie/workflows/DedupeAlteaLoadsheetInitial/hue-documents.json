@@ -1,0 +1,118 @@
+[
+{
+  "pk": 2164290, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": "", 
+    "uuid": "6a90e66e-e8ac-4650-b181-08398b765b92", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "This workflow will perform the DeDupe of Altea Loadsheet", 
+    "is_history": false, 
+    "parent_directory": [
+      "f1992374-b8b7-458e-b157-af952172c926", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-05-17T11:39:33.473", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "b102f89a-3042-4153-bbd9-042c817ad18a", 
+        1, 
+        true
+      ], 
+      [
+        "a0a54be2-0186-4e59-861a-91acffbcb966", 
+        1, 
+        true
+      ], 
+      [
+        "3d9df2e2-fad3-4026-afaa-ac35f25df994", 
+        1, 
+        true
+      ], 
+      [
+        "484668a3-a2f4-49e3-9ed6-b931aec806d9", 
+        1, 
+        true
+      ], 
+      [
+        "314c084a-c32c-4ea4-90d5-19dc90e3dba7", 
+        1, 
+        true
+      ], 
+      [
+        "4ba051bd-fe8c-4753-adba-b8697d62757d", 
+        1, 
+        true
+      ], 
+      [
+        "215f546a-17f5-4cc9-9f03-e27eadd48db9", 
+        1, 
+        true
+      ], 
+      [
+        "2eb08415-8abb-4b1e-80e0-fbfa94e8697d", 
+        1, 
+        true
+      ], 
+      [
+        "09d77ade-9e17-4bb6-a541-e0e7edabc1b5", 
+        1, 
+        true
+      ], 
+      [
+        "487b78a1-4a5b-4dc5-a883-7c5171eeecda", 
+        1, 
+        true
+      ], 
+      [
+        "7ca7ec27-8a7d-4607-80d9-9b8fa81722d4", 
+        1, 
+        true
+      ], 
+      [
+        "93395565-e9c4-41ca-8f5a-aaa9c4420ff9", 
+        1, 
+        true
+      ], 
+      [
+        "3d9bf06c-1698-4616-ae82-3e6ddf6fc869", 
+        1, 
+        true
+      ], 
+      [
+        "10260f43-52b0-4460-bd6a-bcf672900761", 
+        1, 
+        true
+      ], 
+      [
+        "04909d5c-0150-45e0-ba61-0f36e2e981a2", 
+        1, 
+        true
+      ], 
+      [
+        "e5abb828-369e-48b3-87c8-941f2ad8d247", 
+        1, 
+        true
+      ], 
+      [
+        "758591ff-adc1-45f0-9b16-e8c12cea1c88", 
+        1, 
+        true
+      ], 
+      [
+        "7060c59e-ef91-4d74-9818-c5c6e2f143d3", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Shell\", \"widgetType\": \"shell-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"size\": 12}], \"id\": \"00f1ae08-b6d4-cb61-7328-93ad68f712b2\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"72695a4a-9983-df11-9729-bda8b5de595b\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Shell\", \"widgetType\": \"shell-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"size\": 12}], \"id\": \"00f1ae08-b6d4-cb61-7328-93ad68f712b2\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"9a4ea92c-342d-d495-de88-fae0fe141ff8\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"b8f26e4e-dab9-9dc0-8c10-4bc0b4304d0b\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"9a4ea92c-342d-d495-de88-fae0fe141ff8\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"b8f26e4e-dab9-9dc0-8c10-4bc0b4304d0b\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"72695a4a-9983-df11-9729-bda8b5de595b\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"fd84a1ff-4b00-73c8-b24d-e8681bca401a\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"This workflow will perform the DeDupe of Altea Loadsheet\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"oozie.launcher.mapreduce.job.queuename\", \"value\": \"opseff\"}, {\"name\": \"COMPRESSION\", \"value\": \"snappy\"}, {\"name\": \"SPARK_JAR\", \"value\": \"/apps/helix/conf/oozie/workspaces/uat/wf_DedupAlteaLoadsheetInitial/lib/payload_loadsheet_dedup-1.0.1.540.jar\"}, {\"name\": \"CLASS_NAME\", \"value\": \"com.emirates.helix.PayloadLoadSheetDedupDriver\"}, {\"name\": \"EXECUTOR_MEMORY\", \"value\": \"8g\"}, {\"name\": \"DRIVER_MEMORY\", \"value\": \"6g\"}, {\"name\": \"QUEUE\", \"value\": \"opseff\"}, {\"name\": \"MIN_EXECUTORS\", \"value\": \"5\"}, {\"name\": \"MAX_EXECUTORS\", \"value\": \"20\"}, {\"name\": \"EMAIL_LIST\", \"value\": \"pratik.vyas@dnata.com,aswini.subramani@dnata.com, krishnaraj.rajagopal@emirates.com, fayazbasha.shaik@dnata.com\"}, {\"name\": \"PAYLOAD_HISTORY_SCHEMA_SYNC_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/sync/altea/loadsheet/2018-04-20/00-00/*.avro\"}, {\"name\": \"PAYLOAD_LOADSHEET_INCREMENTAL_PATH\", \"value\": \"/data/helix/decomposed/altea/loadsheet/incremental/1.0/2018-04-19/00-00/*.avro\"}, {\"name\": \"PAYLOAD_LOADSHEET_DEDUPE_HISTORY_LOCATION\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/altea/loadsheet/history\"}, {\"name\": \"PAYLOAD_LOADSHEET_DEDUPE_CURRENT_LOCATION\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/altea/loadsheet/current\"}, {\"name\": \"COALESCE_VALUE\", \"value\": \"10\"}, {\"name\": \"LOOKBACK_MONTHS\", \"value\": \"3\"}, {\"name\": \"DATA_LOAD_MODE\", \"value\": \"History\"}], \"sla_enabled\": false, \"deployment_dir\": \"/apps/helix/conf/oozie/workspaces/uat/wf_DedupAlteaLoadsheetInitial\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"properties\": [{\"name\": \"oozie.launcher.mapred.job.queue.name\", \"value\": \"opseff\"}, {\"name\": \"mapred.job.queue.name\", \"value\": \"opseff\"}], \"show_arrows\": true, \"wf1_id\": null, \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"DedupeAlteaLoadsheetInitial_UAT\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": false, \"movedNode\": null, \"linkMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"c324533a-75b3-c136-d1e3-ad7748298ca7\"], \"c324533a-75b3-c136-d1e3-ad7748298ca7\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": []}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"c324533a-75b3-c136-d1e3-ad7748298ca7\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow Name: ${wf:name()} \\nCurrent Timestamp: ${timestamp()}\", \"cc\": \"\", \"to\": \"${EMAIL_LIST}\", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"files\": [{\"value\": \"spark-execute.sh\"}], \"job_xml\": \"\", \"retry_interval\": [], \"retry_max\": [], \"job_properties\": [], \"capture_output\": true, \"shell_command\": \"spark-execute.sh\", \"arguments\": [{\"value\": \"hdfs://${SPARK_JAR}\"}, {\"value\": \"${CLASS_NAME}\"}, {\"value\": \"${EXECUTOR_MEMORY}\"}, {\"value\": \"${DRIVER_MEMORY}\"}, {\"value\": \"${QUEUE}\"}, {\"value\": \"${MIN_EXECUTORS}\"}, {\"value\": \"${MAX_EXECUTORS}\"}, {\"value\": \"${PAYLOAD_HISTORY_SCHEMA_SYNC_PATH}\"}, {\"value\": \"${PAYLOAD_LOADSHEET_INCREMENTAL_PATH}\"}, {\"value\": \"${PAYLOAD_LOADSHEET_DEDUPE_HISTORY_LOCATION}\"}, {\"value\": \"${PAYLOAD_LOADSHEET_DEDUPE_CURRENT_LOCATION}\"}, {\"value\": \"${COALESCE_VALUE}\"}, {\"value\": \"${LOOKBACK_MONTHS}\"}, {\"value\": \"${DATA_LOAD_MODE}\"}, {\"value\": \"${COMPRESSION}\"}], \"prepares\": [], \"credentials\": [], \"env_var\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"archives\": []}, \"name\": \"shell-c324\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"shell-widget\", \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"actionParameters\": []}], \"id\": 2164290, \"nodeNamesMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"c324533a-75b3-c136-d1e3-ad7748298ca7\": \"shell-c324\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\"}, \"uuid\": \"ca4fddd7-8ef8-5590-bff8-04e83b321f92\"}}", 
+    "name": "DedupeAlteaLoadsheetInitial_UAT"
+  }
+}
+]

@@ -1,0 +1,60 @@
+{
+  "type" : "record",
+  "name" : "EMAIL_LOG_ARCHIVE",
+  "doc" : "Sqoop import of EMAIL_LOG_ARCHIVE",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP"
+  },{
+    "name" : "HTMLBODY",
+    "type" : [ "string", "null" ],
+    "columnName" : "HTMLBODY",
+    "sqlType" : "-9"
+  }, {
+    "name" : "HTMLHEADER",
+    "type" : [ "string", "null" ],
+    "columnName" : "HTMLHEADER",
+    "sqlType" : "-9"
+  }, {
+    "name" : "PNR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR",
+    "sqlType" : "12"
+  }, {
+    "name" : "SENT",
+    "type" : [ "int", "null" ],
+    "columnName" : "SENT",
+    "sqlType" : "4"
+  }, {
+    "name" : "SERVERNAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERVERNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATECREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "DATECREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "ATTEMPTCOUNT",
+    "type" : [ "int", "null" ],
+    "columnName" : "ATTEMPTCOUNT",
+    "sqlType" : "4"
+  }, {
+    "name" : "HOSTNAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOSTNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAILTYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMAILTYPE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "EMAIL_LOG_ARCHIVE"
+}

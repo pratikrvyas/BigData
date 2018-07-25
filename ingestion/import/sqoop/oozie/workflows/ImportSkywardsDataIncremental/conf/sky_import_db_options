@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.154.45:1526:CDML
+--username
+DW_USER
+--password
+DW_USER
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

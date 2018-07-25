@@ -1,0 +1,133 @@
+{
+	"pax-flt-mv": {
+		"_timestamp": {
+			"enabled": true,"format" : "YYYY-MM-dd HH:mm:ss||epoch_millis"
+		},
+		"_ttl": {
+			"enabled": true,
+			"default": 432000000
+		},
+		"properties": {
+			"arrival_date": {"type": "date", "format": "yyyy-MM-dd"},
+			"arrival_time": {"type": "string"},
+			"board_point": {"type": "string"},
+			"booking_status": {"type": "string"},
+			"cabin_class": {"type": "string"},
+			"coupon_number": {"type": "string"},
+			"coupon_status_description": {"type": "string"},
+			"coupon_status_indicator": {"type": "string"},
+			"ctcr_flag": {"type": "string"},
+			"date_of_birth": {"type": "date", "format": "yyyy-MM-ddZZ"},
+			"departure_date": {"type": "date", "format": "yyyy-MM-ddZZ"	},
+			"departure_time": {"type": "string"},
+			"destination": {"type": "string"},
+			"emails": {
+				"properties": {
+					"agent_email_flag": {	"type": "string"},
+					"category": {"type": "string"},
+					"email_address": {"type": "string"},
+					"email_domain": {"type": "string"},
+					"email_rag": {"type": "string"},
+					"email_source": {"type": "string"},
+					"email_valid_yn": {"type": "string"},
+					"first_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"last_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"seen_in": {"type": "string"}
+				}
+			},
+			"emcg_score": {"type": "double"},
+			"emcg_uuid": {"type": "string"},
+			"expiry_miles": {"type": "string"},
+			"fare_basis": {"type": "string"},
+			"fare_brand": {"type": "string"},
+			"first_name": {"type": "string"},
+			"flight_number": {"type": "string"},
+			"gender": {"type": "string"},
+			"grp_pnr_indicator": {"type": "string"},
+			"helix_customer_id": {"type": "string"},
+			"last_name": {"type": "string"},
+			"loyalty": {
+				"properties": {
+					"carrier": {"type": "string"},
+					"is_validated": {"type": "string"},
+					"number": {"type": "string"},
+					"tier": {"type": "string"}
+				}
+			},
+			"marketing_carrier": {"type": "string"},
+			"marketing_flight_number": {"type": "string"	},
+			"middle_name": {"type": "string"},
+			"miles_expiry_date": {"type": "date", "format": "yyyy-MM-dd"},
+			"operating_carrier": {"type": "string"},
+			"pax_name": {"type": "string", "index": "not_analyzed"},
+			"person_id": {"type": "string"},
+			"phones": {
+				"properties": {
+					"agent_phone_flag": {"type": "string"},
+					"cleansed_phone_type": {"type": "string"},
+					"first_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"last_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"phone": {"type": "string"},
+					"phone_area_code": {"type": "string"},
+					"phone_country_code": {"type": "string"},
+					"phone_full": {"type": "string"},
+					"phone_national_number": {"type": "string"},
+					"phone_number": {"type": "string"},
+					"phone_rag": {"type": "string"},
+					"phone_type": {"type": "string"},
+					"phone_valid_yn": {"type": "string"},
+					"searchphonenumber": {"type": "string"},
+					"seen_in": {"type": "string"},
+					"source": {"type": "string"},
+					"validated": {"type": "string"}
+				}
+			},
+			"pkey": {"type": "string", "index": "not_analyzed"},
+			"pnr_creation_date": {"type": "date", "format": "yyyy-MM-ddZZ"},
+			"pnr_emails": {
+				"properties": {
+					"email_address": {"type": "string"},
+					"email_valid_yn": {"type": "string"},
+					"first_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"last_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"source": {"type": "string"}
+				}
+			},
+			"pnr_phones": {
+				"properties": {
+					"first_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"last_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"phone": {"type": "string"},
+					"phone_type": {"type": "string"},
+					"source": {"type": "string"},
+					"validated": {"type": "string"
+					}
+				}
+			},
+			"pnr_skywards_number": {"type": "string"},
+			"pnr_tier_code": {"type": "string"},
+			"pos_crs_system_designator": {"type": "string", "index": "not_analyzed"},
+			"record_locator": {"type": "string"},
+			"reference_number": {"type": "string"},
+			"salutation": {"type": "string"},
+			"seat_number": {"type": "string"},
+			"skyward_miles": {"type": "string"},
+			"ticket_number": {"type": "string"},
+			"tier_miles": {"type": "string"},
+			"travel_class": {"type": "string"},
+			"travel_documents": {
+				"properties": {
+					"document_expiry_date": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"document_issue_country": {"type": "string"},
+					"document_nationality": {"type": "string"},
+					"document_number": {"type": "string"},
+					"document_type": {"type": "string"},
+					"first_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"last_seen": {"type": "date", "format": "yyyy-MM-dd||yyyy-MM-dd HH:mm||yyyy-MM-dd HH:mm:ss.SSS"},
+					"source": {"type": "string"}
+				}
+			},
+			"upgrades_history": {"type": "string"}
+		}
+	}
+}

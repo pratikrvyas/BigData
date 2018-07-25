@@ -1,0 +1,41 @@
+{
+	"typ_tkt": {
+		"_timestamp": {
+			"enabled": true,
+			"format": "YYYY-MM-dd HH:mm:ss"
+		},
+		"_ttl": {
+			"enabled": true,
+			"default":"10d"
+		},
+		"properties": {	
+			"airline_code": {"type": "string","index": "not_analyzed"},
+			"board_point": {"type": "string","index": "not_analyzed"},
+			"class_of_service": {"type": "string","index": "not_analyzed"},
+			"coupon_number": {"type": "string","index": "not_analyzed"},
+			"coupon_status_description": {"type": "string","index": "not_analyzed"},
+			"coupon_status_indicator": {"type": "string","index": "not_analyzed"},
+			"cpn_exvoid_no": {"type": "string","index": "not_analyzed"},
+			"date_of_birth": {"type": "string","index": "not_analyzed"},
+			"departure_date": {"type": "string","index": "not_analyzed"},
+			"departure_time": {"type": "string","index": "not_analyzed"},
+			"fare_basis_data": {"type": "string","index": "not_analyzed"},
+			"fare_basis_data_size": {"type": "string","index": "not_analyzed"},
+			"fare_brand_ind": {"type": "string","index": "not_analyzed"},
+			"flight_number": {"type": "string","index": "not_analyzed"},
+			"id": {"type": "string","index": "not_analyzed"},
+			"industry_discount_data": {"type": "string","index": "not_analyzed"},
+			"master_ticket_number": {"type": "string","index": "not_analyzed"},
+			"off_point": {"type": "string","index": "not_analyzed"},
+			"operating_carrier_code": {"type": "string","index": "not_analyzed"},
+			"operating_carrier_flt_num": {"type": "string","index": "not_analyzed"},
+			"pax_name": {"type": "string","index": "not_analyzed"},
+			"pnr_creation_date": {"type": "string","index": "not_analyzed"},
+			"pnr_rec_locator": {"type": "string","index": "not_analyzed"},
+			"rbd_class_code": {"type": "string","index": "not_analyzed"},
+			"ticket_number": {"type": "string","index": "not_analyzed"},
+			"tkt_cpn_id": {"type": "string","index": "not_analyzed"},
+			"tkt_id": {"type": "string","index": "not_analyzed"}
+		}
+	}
+}

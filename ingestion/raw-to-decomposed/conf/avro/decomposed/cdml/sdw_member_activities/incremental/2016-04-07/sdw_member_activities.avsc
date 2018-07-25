@@ -1,0 +1,817 @@
+{
+  "type" : "record",
+  "name" : "SDW_MEMBER_ACTIVITIES",
+  "doc" : "Sqoop import of SDW_MEMBER_ACTIVITIES",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "MEMBER_ACTIVITY_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBER_ACTIVITY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBER_ACTIVITY_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBER_ACTIVITY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEMBER_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKABLE_ACTIVITY_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKABLE_ACTIVITY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "NUMBER_OF_ACT_UNITS",
+    "type" : [ "string", "null" ],
+    "columnName" : "NUMBER_OF_ACT_UNITS",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "RBE_REWARD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "RBE_REWARD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PRIORITY_LEVEL",
+    "type" : [ "string", "null" ],
+    "columnName" : "PRIORITY_LEVEL",
+    "sqlType" : "2"
+  }, {
+    "name" : "FOLLOWUP_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FOLLOWUP_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MERGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MERGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CANCELLED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CANCELLED",
+    "sqlType" : "12"
+  }, {
+    "name" : "RECORD_LOCATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "RECORD_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROGRESS_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROGRESS_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKING_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BCP",
+    "type" : [ "string", "null" ],
+    "columnName" : "BCP",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEMBER_ACTIVITY_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBER_ACTIVITY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "REDEEMED_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "REDEEMED_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_BASIS",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_BASIS",
+    "sqlType" : "12"
+  }, {
+    "name" : "INV_BY_PTNR_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "INV_BY_PTNR_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PTNR_INV_PAID_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PTNR_INV_PAID_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACT_UNIT_YIELD",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACT_UNIT_YIELD",
+    "sqlType" : "2"
+  }, {
+    "name" : "PTS_REDEEMABLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PTS_REDEEMABLE",
+    "sqlType" : "2"
+  }, {
+    "name" : "AGENT_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AUB_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "AUB_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PMA_MERGED_FROM_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PMA_MERGED_FROM_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ASSIGNED_TO",
+    "type" : [ "string", "null" ],
+    "columnName" : "ASSIGNED_TO",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PFP_FLOWN_PAX_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PFP_FLOWN_PAX_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "CABIN_CLASS",
+    "type" : [ "string", "null" ],
+    "columnName" : "CABIN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLOWN_CLASS",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLOWN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MKT_CARRIER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MKT_CARRIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "MKT_FLT_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "MKT_FLT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPR_CARRIER",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPR_CARRIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPR_FLT_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPR_FLT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "DNLD_FOR_BILLING",
+    "type" : [ "string", "null" ],
+    "columnName" : "DNLD_FOR_BILLING",
+    "sqlType" : "12"
+  }, {
+    "name" : "BILL_APPROVED",
+    "type" : [ "string", "null" ],
+    "columnName" : "BILL_APPROVED",
+    "sqlType" : "12"
+  }, {
+    "name" : "BILLED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BILLED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "AGENT_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "REV_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "REV_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RPS_CODE_AFTR_TM_LMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "RPS_CODE_AFTR_TM_LMT",
+    "sqlType" : "12"
+  }, {
+    "name" : "RPS_DATE_AFTR_TM_LMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "RPS_DATE_AFTR_TM_LMT",
+    "sqlType" : "93"
+  }, {
+    "name" : "INVOICE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "INVOICE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVOICE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "INVOICE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BILLED_CANCELLED_ACT",
+    "type" : [ "string", "null" ],
+    "columnName" : "BILLED_CANCELLED_ACT",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVITY_METHOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_METHOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "PTA_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PTA_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "COUPON_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUPON_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "PAX_DESCRIPTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_DESCRIPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "SYSTEM_CALCULATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SYSTEM_CALCULATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "DIRECT_BKBL_ACTIVITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "DIRECT_BKBL_ACTIVITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "QRS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "QRS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXT_AUTH_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXT_AUTH_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STG_PROCESS_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEQ_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEQ_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "TIER_DESCRIPTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_DESCRIPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARD_NO_PREFIX",
+    "type" : [ "string", "null" ],
+    "columnName" : "CARD_NO_PREFIX",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_RESOLUTION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_RESOLUTION_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "NM_CHK_COMBI_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NM_CHK_COMBI_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "NM_CHK_COMBI_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "NM_CHK_COMBI_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "EFFECTIVE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EFFECTIVE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DISCONTINUE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DISCONTINUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEQUENCE_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEQUENCE_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "RETRO_EVIDENCE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RETRO_EVIDENCE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RETRO_EVIDENCE_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "RETRO_EVIDENCE_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "RTRO_PROC_STAT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RTRO_PROC_STAT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RTRO_PROC_STAT_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "RTRO_PROC_STAT_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTVTY_ACTN_RSN_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTVTY_ACTN_RSN_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTVTY_ACTN_RSN_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTVTY_ACTN_RSN_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTION_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTION_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CATEGORY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "BILLABLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BILLABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACTIVITY_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVITY_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVITY_TYPE_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_TYPE_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACT_TYPE_CTGR_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACT_TYPE_CTGR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACT_TYPE_CTGR_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACT_TYPE_CTGR_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVITY_IDENTIFIER",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_IDENTIFIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "BKBL_ACTIVITY_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "BKBL_ACTIVITY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BKBL_ACTIVITY_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BKBL_ACTIVITY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLASS_OF_SERVICE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CLASS_OF_SERVICE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DIFFERENTIATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "DIFFERENTIATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "BAC_DISCONTINUE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BAC_DISCONTINUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BAC_EFFECTIVE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BAC_EFFECTIVE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MIN_APPLICN_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "MIN_APPLICN_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "MAX_APPLICN_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAX_APPLICN_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "PARTNER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARTNER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTNER_DESCRIPTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARTNER_DESCRIPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "REDEMPTION_METHOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "REDEMPTION_METHOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEGMENT_CITY_PAIR",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEGMENT_CITY_PAIR",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEGMENT_DISTANCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEGMENT_DISTANCE",
+    "sqlType" : "2"
+  }, {
+    "name" : "STATEMENT_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "STATEMENT_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "VOUCHER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "VOUCHER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "LPT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LPT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RBE_PAX_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "RBE_PAX_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "RBE_INIT_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RBE_INIT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "RBE_REC_LOCATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "RBE_REC_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXT_TRANSACTION_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXT_TRANSACTION_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXT_SERVICE_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXT_SERVICE_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STMT_DESC_LANG1",
+    "type" : [ "string", "null" ],
+    "columnName" : "STMT_DESC_LANG1",
+    "sqlType" : "12"
+  }, {
+    "name" : "STMT_DESC_LANG2",
+    "type" : [ "string", "null" ],
+    "columnName" : "STMT_DESC_LANG2",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORP_PMA_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "CORP_PMA_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "CORP_MILES",
+    "type" : [ "string", "null" ],
+    "columnName" : "CORP_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "CORP_REVENUE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CORP_REVENUE",
+    "sqlType" : "2"
+  }, {
+    "name" : "EXT_TERMINAL_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXT_TERMINAL_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXT_BATCH_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXT_BATCH_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "EXT_DATE_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXT_DATE_TIME",
+    "sqlType" : "93"
+  }, {
+    "name" : "CORP_ACCRUAL_DONE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CORP_ACCRUAL_DONE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RBE_REDEEMED_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "RBE_REDEEMED_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "UMA_REC_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "UMA_REC_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "BKBL_TIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BKBL_TIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_ISSUE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCRUAL_MODEL",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACCRUAL_MODEL",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKETING_START_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETING_START_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TICKETING_END_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKETING_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "O_D_BASED",
+    "type" : [ "string", "null" ],
+    "columnName" : "O_D_BASED",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_GROUP",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_GROUP",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVITY_MONTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_MONTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVITY_YEAR",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_YEAR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ITC_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ITC_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ITC_OND_FLT_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "ITC_OND_FLT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "RATE_BAND_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RATE_BAND_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RATE_BAND_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "RATE_BAND_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "RATE_BAND_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RATE_BAND_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ON_HOLD",
+    "type" : [ "string", "null" ],
+    "columnName" : "ON_HOLD",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROMO_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROMO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CARD_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "DC_BATCH_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "DC_BATCH_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "DC_BATCH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DC_BATCH_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DC_PARTNER",
+    "type" : [ "string", "null" ],
+    "columnName" : "DC_PARTNER",
+    "sqlType" : "12"
+  }, {
+    "name" : "DC_SEND_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "DC_SEND_CARD_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "DC_CURRENCY_VALUE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DC_CURRENCY_VALUE",
+    "sqlType" : "2"
+  }, {
+    "name" : "DC_POINTS",
+    "type" : [ "string", "null" ],
+    "columnName" : "DC_POINTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "HBACK_RESPONSE",
+    "type" : [ "string", "null" ],
+    "columnName" : "HBACK_RESPONSE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RESPONSE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESPONSE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "HBACK_UPLD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HBACK_UPLD_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACFIN_BATCH_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACFIN_BATCH_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HBACK_UPLD_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "HBACK_UPLD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACFIN_BILLED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACFIN_BILLED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "IS_BILLED",
+    "type" : [ "string", "null" ],
+    "columnName" : "IS_BILLED",
+    "sqlType" : "12"
+  }, {
+    "name" : "AMOUNT_ACCEPTED",
+    "type" : [ "string", "null" ],
+    "columnName" : "AMOUNT_ACCEPTED",
+    "sqlType" : "2"
+  }, {
+    "name" : "POINTS_ACCEPTED",
+    "type" : [ "string", "null" ],
+    "columnName" : "POINTS_ACCEPTED",
+    "sqlType" : "2"
+  }, {
+    "name" : "DC_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "DC_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXT_MEMBERSHIP_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXT_MEMBERSHIP_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXT_PTS",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXT_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_UTILIZED",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_UTILIZED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTNER_REFERENCE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARTNER_REFERENCE_NUMBER",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "SDW_MEMBER_ACTIVITIES"
+}

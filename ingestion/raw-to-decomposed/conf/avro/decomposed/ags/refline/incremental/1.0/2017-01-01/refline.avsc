@@ -1,0 +1,113 @@
+{
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [ {
+    "name" : "Refline",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "Date",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FlightNumber",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "Tail",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "Origin",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "Destination",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "EngStartTime",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "EngStopTime",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "V1",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "V2",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "VR",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "AssumedTemperature",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TO_FLAP",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ZFW",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "RWY_TO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BAROMB_TO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SAT_TO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WC_TO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WD_TO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WS_TO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "AI_TO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "RWY_LD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BAROMB_LD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SAT_LD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WC_LD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WD_LD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "WS_LD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "VAPP",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLAP_LD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "APU_FUEL",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FUEL_OFF",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FUEL_ON",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FileName",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FolderName",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  } ]
+}

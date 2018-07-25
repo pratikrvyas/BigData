@@ -1,0 +1,209 @@
+
+<workflow-app name="ImportOLCIData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-fa86"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-fa86">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${OLCI_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${OLCI_CONTROL_FILE}#${OLCI_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-3245"/>
+        <error to="email-0e10"/>
+    </action>
+    <action name="sqoop-a357">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${OLCI_SQOOP_OPTIONS_FILE_NTT}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  [PNR],[BOOKED_DATE],[BOOKING_TYPE],[ORIGIN],[DESTINATION],[CABIN_CLASS],[MOBILE_NUMBER],[SMS_MESSAGE],[SMS_RESPONSE],[SMS_FLAG],[CREATED_DATE],[ACITON_DATE] FROM [IBEDB].[DBO].[SMSLOG]  WHERE BOOKING_TYPE =&#39;OLC&#39; AND ACITON_DATE BETWEEN CONVERT(DATETIME,&#39;${wf:actionData(&#39;shell-fa86&#39;)[&#39;START_DATE&#39;]}&#39;,120)  AND CONVERT(DATETIME,&#39;${wf:actionData(&#39;shell-fa86&#39;)[&#39;END_DATE&#39;]}&#39;,120) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>BOOKED_DATE=String,CREATED_DATE=String,ACITON_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SMS_LOG_NTT</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SMS_LOG_NTT}</arg>
+            <file>${OLCI_SQOOP_OPTIONS_FILE_NTT}#${OLCI_SQOOP_OPTIONS_FILE_NTT}</file>
+        </sqoop>
+        <ok to="join-541d"/>
+        <error to="email-0e10"/>
+    </action>
+    <action name="sqoop-df04">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${OLCI_SQOOP_OPTIONS_FILE_NTT}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  [HTMLBODY] ,[HTMLHEADER],[PNR],[SENT],[SERVERNAME],[DATECREATED],[ATTEMPTCOUNT],[HOSTNAME],[EMAILTYPE] FROM [IBEDB].[DBO].[EMAILLOGARCHIVE] WITH(NOLOCK) WHERE  SUBSTRING(PNR,8,3) = &#39;000&#39; AND EMAILTYPE = &#39;O&#39; AND DATECREATED BETWEEN CONVERT(DATETIME,&#39;${wf:actionData(&#39;shell-fa86&#39;)[&#39;START_DATE&#39;]}&#39;,120)  AND CONVERT(DATETIME,&#39;${wf:actionData(&#39;shell-fa86&#39;)[&#39;END_DATE&#39;]}&#39;,120) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>DATECREATED=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>EMAIL_LOG_ARCHIVE_NTT</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_EMAIL_LOG_ARCHIVE_NTT}</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+            <file>${OLCI_SQOOP_OPTIONS_FILE_NTT}#${OLCI_SQOOP_OPTIONS_FILE_NTT}</file>
+        </sqoop>
+        <ok to="join-541d"/>
+        <error to="email-0e10"/>
+    </action>
+    <fork name="fork-3245">
+        <path start="sqoop-a357" />
+        <path start="sqoop-df04" />
+        <path start="sqoop-a919" />
+        <path start="sqoop-86db" />
+    </fork>
+    <join name="join-541d" to="shell-de9a"/>
+    <action name="sqoop-a919">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${OLCI_SQOOP_OPTIONS_FILE_EGTC}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  [HTMLBODY] ,[HTMLHEADER],[PNR],[SENT],[SERVERNAME],[DATECREATED],[ATTEMPTCOUNT],[HOSTNAME],[EMAILTYPE] FROM [IBEDB].[DBO].[EMAILLOGARCHIVE] WITH(NOLOCK) WHERE  SUBSTRING(PNR,8,3) = &#39;000&#39; AND EMAILTYPE = &#39;O&#39; AND DATECREATED BETWEEN CONVERT(DATETIME,&#39;${wf:actionData(&#39;shell-fa86&#39;)[&#39;START_DATE&#39;]}&#39;,120)  AND CONVERT(DATETIME,&#39;${wf:actionData(&#39;shell-fa86&#39;)[&#39;END_DATE&#39;]}&#39;,120) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>DATECREATED=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>EMAIL_LOG_ARCHIVE_EGTC</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_EMAIL_LOG_ARCHIVE_EGTC}</arg>
+            <file>${OLCI_SQOOP_OPTIONS_FILE_EGTC}#${OLCI_SQOOP_OPTIONS_FILE_EGTC}</file>
+        </sqoop>
+        <ok to="join-541d"/>
+        <error to="email-0e10"/>
+    </action>
+    <action name="sqoop-86db">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${OLCI_SQOOP_OPTIONS_FILE_EGTC}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  [PNR],[BOOKED_DATE],[BOOKING_TYPE],[ORIGIN],[DESTINATION],[CABIN_CLASS],[MOBILE_NUMBER],[SMS_MESSAGE],[SMS_RESPONSE],[SMS_FLAG],[CREATED_DATE],[ACITON_DATE] FROM [IBEDB].[DBO].[SMSLOG]  WHERE BOOKING_TYPE =&#39;OLC&#39; AND ACITON_DATE BETWEEN CONVERT(DATETIME,&#39;${wf:actionData(&#39;shell-fa86&#39;)[&#39;START_DATE&#39;]}&#39;,120)  AND CONVERT(DATETIME,&#39;${wf:actionData(&#39;shell-fa86&#39;)[&#39;END_DATE&#39;]}&#39;,120) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>BOOKED_DATE=String,CREATED_DATE=String,ACITON_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>SMS_LOG_EGTC</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_SMS_LOG_EGTC}</arg>
+            <file>${OLCI_SQOOP_OPTIONS_FILE_EGTC}#${OLCI_SQOOP_OPTIONS_FILE_EGTC}</file>
+        </sqoop>
+        <ok to="join-541d"/>
+        <error to="email-0e10"/>
+    </action>
+    <action name="shell-de9a">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${OLCI_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-fa86&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-fa86&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${OLCI_CONTROL_FILE}#${OLCI_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-0e10"/>
+    </action>
+    <action name="email-0e10">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

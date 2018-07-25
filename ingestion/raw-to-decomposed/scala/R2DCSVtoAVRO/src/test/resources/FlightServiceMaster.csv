@@ -1,0 +1,24 @@
+SERVICE_TYPE,DESCRIPTION,PASSENGER,CARGO,ALL_TYPE
+,Flight Serv Type Null,,Y,Y
+A,Cargo/Mail service (Additional)                                               ,,,Y
+B,Shuttle passenger service (Additional)                                        ,,,Y
+C,CHARTER,,,Y
+D,General aviation                                                              ,Y,,Y
+E,SPECIAL,,Y,Y
+F,CARGO,,Y,Y
+G,Normal passenger service (Additional)                                         ,Y,,Y
+H,CHARTER CARGO,,,Y
+J,LIVE,Y,,Y
+K,Training (Scholl/Crew check)                                                  ,,,
+L,Charter passenger and Cargo and/or Mail                                       ,,,Y
+M,MAIL,Y,,Y
+O,Charter requiring special handling                                            ,,,Y
+P,FERRY,Y,,Y
+Q,COMBI,,,
+R,Passenger/Cargo in cabin (pax cum freighter) (Additional)                     ,,,Y
+S,SHUTTLE,,,
+T,TEST,,,
+U,Passenger service operated by surface vehicle (Scheduled)                     ,,,
+V,Cargo service operated by suface vehicle (Scheduled)                          ,,,
+W,MILITARY,,,Y
+X,Technical Stop (for Chapter 6 application only)                               ,,,Y

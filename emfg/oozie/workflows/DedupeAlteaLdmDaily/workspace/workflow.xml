@@ -1,0 +1,61 @@
+<workflow-app name="DedupeAlteaLdmDaily_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="spark-6880"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-6880">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>Dedupe_LDM_Daily</name>
+              <class>com.emirates.helix.DedupeLDMDaily</class>
+            <jar>Dedupe_LDM_Daily-1.0-SNAPSHOT.jar</jar>
+              <spark-opts>--files hive-site.xml --driver-memory 4g --executor-memory 4g --num-executors 4 --executor-cores 4 --queue opseff</spark-opts>
+              <arg>-h</arg>
+              <arg>${HIST_INPUT_PATH}</arg>
+              <arg>-i</arg>
+              <arg>${INCR_INPUT_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${INCR_OUTPUT_HDFS_PATH}_tmp</arg>
+              <arg>-p</arg>
+              <arg>${SPARK_PARTITIONS}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="fs-2580"/>
+        <error to="Kill"/>
+    </action>
+    <action name="fs-2580">
+        <fs>
+              <delete path='${INCR_OUTPUT_HDFS_PATH}'/>
+              <move source='${INCR_OUTPUT_HDFS_PATH}_tmp' target='${INCR_OUTPUT_HDFS_PATH}'/>
+        </fs>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

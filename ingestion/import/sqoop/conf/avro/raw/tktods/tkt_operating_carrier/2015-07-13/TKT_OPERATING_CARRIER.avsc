@@ -1,0 +1,107 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_TKT_OPERATING_CARRIER",
+  "doc" : "Sqoop import of TKT_OWNR.TKT_OPERATING_CARRIER",
+  "fields" : [ {
+    "name" : "TKT_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_OCD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_OCD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "CPN_EXVOID_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "CPN_EXVOID_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARKETING_CARRIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_CARRIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARKETING_CARRIER_FLT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARKETING_CARRIER_FLT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPERATING_CARRIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATING_CARRIER_CODE",
+    "sqlType" : "12"
+  },{
+    "name" : "OPERATING_CARRIER_FLT_NUM",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATING_CARRIER_FLT_NUM",
+    "sqlType" : "12"
+  }, {
+    "name" : "EQUIPMENT_OWNER_CARRIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EQUIPMENT_OWNER_CARRIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEGMENT_LINE_LEG_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEGMENT_LINE_LEG_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRCRAFT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRPORT_CODE_BOARDPOINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRPORT_CODE_BOARDPOINT",
+    "sqlType" : "12"
+  },{
+    "name" : "AIRPORT_CODE_OFFPOINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRPORT_CODE_OFFPOINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRANSMIT_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRANSMIT_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRANSMISSION_SYSTEM_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TRANSMISSION_SYSTEM_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACCOUNTING_CARRIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACCOUNTING_CARRIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEPARTURE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEPARTURE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CHANGED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED_BY",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "TKT_OWNR.TKT_OPERATING_CARRIER"
+}

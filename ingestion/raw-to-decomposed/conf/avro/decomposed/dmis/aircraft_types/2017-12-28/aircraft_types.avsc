@@ -1,0 +1,121 @@
+{
+  "type" : "record",
+  "name" : "aircraft_types",
+  "fields" : [ {
+    "name" : "ACTP_AIRCRAFT_TYPE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_AIRCRAFT_TYPE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACTP_ACGR_CODE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_ACGR_CODE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACTP_IATA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTP_ICAO_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_ICAO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTP_ULD_CAPABLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_ULD_CAPABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTP_TYPE_SIZE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_TYPE_SIZE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTP_MAX_FREIGHT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_MAX_FREIGHT",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACTP_MAX_PAX",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_MAX_PAX",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACTP_MAX_TAKE_OFF_WEIGHT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_MAX_TAKE_OFF_WEIGHT",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACTP_MAX_TAXI_WGT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_MAX_TAXI_WGT",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACTP_SHORT_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_SHORT_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTP_LONG_DESCRIPTION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_LONG_DESCRIPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTP_CLASS_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_CLASS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTP_ACTIVE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTP_ACTIVE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }   ]
+}

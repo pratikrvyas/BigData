@@ -1,0 +1,79 @@
+{
+  "type" : "record",
+  "name" : "AGENT_MASTER_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.AGENT_MASTER_DIM",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "AGENT_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "AGENT_ACCOUNT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_ACCOUNT_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_ACCOUNT_KEY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_ACCOUNT_KEY",
+    "sqlType" : "2"
+  }, {
+    "name" : "AGENT_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GEO_LOCATION_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GEO_LOCATION_SK",
+    "sqlType" : "93"
+  }, {
+    "name" : "AGENT_TRADING_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_TRADING_NAME",
+    "sqlType" : "93"
+  }, {
+    "name" : "AGENT_LEGAL_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_LEGAL_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_NAME",
+    "sqlType" : "93"
+  }, {
+    "name" : "SALES_CHANNEL_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_CHANNEL_SK",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CBI_OWNR.AGENT_MASTER_DIM"
+}

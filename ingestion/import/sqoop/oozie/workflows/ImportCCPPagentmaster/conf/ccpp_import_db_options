@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.90.45:6516:mpr
+--username
+ccpp_user
+--password
+ccpp_user
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

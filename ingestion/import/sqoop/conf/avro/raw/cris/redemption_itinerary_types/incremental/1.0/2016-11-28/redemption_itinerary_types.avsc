@@ -1,0 +1,61 @@
+{
+  "type" : "record",
+  "name" : "REDEMPTION_ITINERARY_TYPES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DIFF",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DIFF",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLIGHT_VALIDATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_VALIDATION",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "REDEMPTION_ITINERARY_TYPES"
+}

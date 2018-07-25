@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "import_networkhierarchi",
+  "doc" : "import of DW_OWNR.country_territory",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "ISO_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISO_CODE",
+    "sqlType" : "12"
+  },{
+    "name" : "COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_NAME",
+    "sqlType" : "12"
+  },{
+    "name" : "TERRITORY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "TERRITORY_NAME",
+    "sqlType" : "2"
+  }, {
+    "name" : "NEW_TERRITORY",
+    "type" : [ "string", "null" ],
+    "columnName" : "NEW_TERRITORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "TERRITORY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TERRRITORY_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "NEW_TERRITORY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NEW_TERRITORY_CODE",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.country_territory"
+}

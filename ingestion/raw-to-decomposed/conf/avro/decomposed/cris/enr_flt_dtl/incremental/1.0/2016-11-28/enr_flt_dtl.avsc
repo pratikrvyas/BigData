@@ -1,0 +1,111 @@
+{
+  "type" : "record",
+  "name" : "ENR_FLT_DTL",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+ {
+    "name" : "MEMBER_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "FLIGHT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BOARD_POINT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFF_POINT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OFF_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CABIN_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CABIN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "STAFF_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STAFF_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "STAFF_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STAFF_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PASSENGER_REF_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PASSENGER_REF_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "ENR_FLT_DTL"
+}

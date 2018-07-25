@@ -1,0 +1,187 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_MACS_FLIGHT",
+  "doc" : "Sqoop import of MACS_OWNR.MACS_FLIGHT",
+  "fields" : [ {
+    "name" : "PARTITION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARTITION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPERATION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "OPERATION_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATION_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPERATION_DATE_GMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATION_DATE_GMT",
+    "sqlType" : "93"
+  }, {
+    "name" : "OPERATION_TIME_GMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "OPERATION_TIME_GMT",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOARD_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRCRAFT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLASS_CONFIGURATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "CLASS_CONFIGURATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "REGISTRATION_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGISTRATION_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PANTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PANTRY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREW_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREW_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GATE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "GATE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "BAGGAGE_CONCEPT",
+    "type" : [ "string", "null" ],
+    "columnName" : "BAGGAGE_CONCEPT",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROGRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROGRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_NUMBER_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "LATEST_DEPARTURE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LATEST_DEPARTURE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "LATEST_DEPARTURE_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "LATEST_DEPARTURE_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "LATEST_DEPARTURE_DATE_GMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LATEST_DEPARTURE_DATE_GMT",
+    "sqlType" : "93"
+  }, {
+    "name" : "LATEST_DEPARTURE_TIME_GMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "LATEST_DEPARTURE_TIME_GMT",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEAT_MASK_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEAT_MASK_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "ULD_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ULD_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DOWNLOAD_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOWNLOAD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TIME_STAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIME_STAMP",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "FF_NOTIFIED",
+    "type" : [ "string", "null" ],
+    "columnName" : "FF_NOTIFIED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PD_COUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "PD_COUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRCRAFT_TYPE_FULL_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRCRAFT_TYPE_FULL_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "TERMINAL_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "TERMINAL_NUMBER",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "MACS_OWNR.MACS_FLIGHT"
+}

@@ -1,0 +1,66 @@
+{
+  "type" : "record",
+  "name" : "FILE_EFFECTIVE_DATES",
+  "doc" : "Sqoop import of FILE_EFFECTIVE_DATES",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "Section",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Section",
+    "sqlType" : "12"
+  }, {
+    "name" : "File_Name",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "File_Name",
+    "sqlType" : "2"
+  }, {
+    "name" : "EffectivE_start_date",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EffectivE_start_date",
+    "sqlType" : "2"
+  }, {
+    "name" : "EffectivE_End_Date",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EffectivE_End_Date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Process_start_date",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Process_start_date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Process_end_Date",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Process_end_Date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Last_updated_date",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Last_updated_date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Active_flag",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Active_flag",
+    "sqlType" : "2"
+  }
+   ],
+  "tableName" : "FILE_EFFECTIVE_DATES"
+}

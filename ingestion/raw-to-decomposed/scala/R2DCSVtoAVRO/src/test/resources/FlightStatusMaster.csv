@@ -1,0 +1,19 @@
+Status_Code,Status_Description
+DELETE,Removed from schedule
+CNLD,Cancelled
+PROP,Predeparture: Propagated Delay
+PDEP,Predeparture: Normal Predeparture
+OFBL,Off Blocks: Normal Off Blocks
+RROF,Off Blocks: Off Blocks Subject to Reroute
+ENRT,Airborne: En Route
+RRTG,Airborne: En Reroute
+RTNG,Airborne: Returning to Station
+DVTG,Airborne: Diverting to Station
+LAND,Landed: Landed at Planned Station
+RRLD,Landed: Landed at Rerouted To Station
+DLND,Landed: Landed at Diverted To Station
+RTDR,Arrived: Returned to Ramp (No Take Off)
+ARVD,Arrived: Arrived at Planned Station
+RRTD,Arrived: Arrived at Rerouted To Station
+RTND,Arrived: Returned to Departure Station(Air Return)
+DVTD,Arrived: Arrived at Diverted To Station (Enroute)

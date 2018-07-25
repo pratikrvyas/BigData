@@ -1,0 +1,67 @@
+<workflow-app name="ImportAgsMonthlyData" xmlns="uri:oozie:workflow:0.5">
+    <start to="ssh-687e"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>pratik.vyas@dnata.com </to>
+            <cc>aswini.subramani@dnata.com</cc>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}
+
+Reason for failure:
+please refer to the latest logs for present in 
+/home/ops_eff/ek_ags/ags_log/monthly/ek_opseff_ags_ftp_import_monthly_&lt;date time&gt;.log
+/home/ops_eff/ek_ags/ags_log/monthly/ek_opseff_ags_hdfs_raw_import_&lt;date time&gt;.log
+/home/ops_eff/ek_ags/ags_log/monthly/ek_opseff_ags_ftp_del_&lt;date time&gt;.log
+
+Error Resolution Info : 
+please refer to the confluence page
+https://confluence.emirates.com/display/OBI/</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="ssh-687e">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>ops_eff@10.232.154.65</host>
+            <command>sh</command>
+            <args>/home/ops_eff/ek_ags/ags_scripts/ek_opseff_ags_ftp_import_monthly.sh</args>
+            <args>-p</args>
+            <args>/home/ops_eff/ek_ags/ags_params/ek_opseff_ags_import.env</args>
+            <args>-f</args>
+            <args>cruise_climb_and_cruise_descent_analysis</args>
+        </ssh>
+        <ok to="ssh-0c94"/>
+        <error to="Kill"/>
+    </action>
+    <action name="ssh-0c94">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>ops_eff@10.232.154.65</host>
+            <command>sh</command>
+            <args>/home/ops_eff/ek_ags/ags_scripts/ek_opseff_ags_hdfs_raw_import.sh</args>
+            <args>-p</args>
+            <args>/home/ops_eff/ek_ags/ags_params/ek_opseff_ags_import.env</args>
+            <args>-f</args>
+            <args>cruise_climb_and_cruise_descent_analysis</args>
+        </ssh>
+        <ok to="ssh-72f1"/>
+        <error to="Kill"/>
+    </action>
+    <action name="ssh-72f1">
+        <ssh xmlns="uri:oozie:ssh-action:0.1">
+            <host>ops_eff@10.232.154.65</host>
+            <command>sh</command>
+            <args>/home/ops_eff/ek_ags/ags_scripts/ek_opseff_ags_ftp_del.sh</args>
+            <args>-p</args>
+            <args>/home/ops_eff/ek_ags/ags_params/ek_opseff_ags_import.env</args>
+            <args>-f</args>
+            <args>cruise_climb_and_cruise_descent_analysis</args>
+        </ssh>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,10 @@
+#import
+--connect
+"jdbc:sqlserver://dxbdcsq74v1:6515;database=IBEDB_PRD_EGTC1"
+--username 
+CBI_USER
+--password 
+CBI_USER
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

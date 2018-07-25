@@ -1,0 +1,96 @@
+################# AGENT (Get Data From SPOOL to Kafka) ##################
+
+# Name the components on this agent
+
+a_olci_tktods_pnrods.sources = r_olciemail r_olcisms r_ticket r_pnr
+a_olci_tktods_pnrods.channels = c_olciemail c_olcisms c_ticket c_pnr
+
+################# OLCI EMAIL #################
+
+# Describe/configure the source
+# SPOOL DIR SOURCE
+a_olci_tktods_pnrods.sources.r_olciemail.type = spooldir
+a_olci_tktods_pnrods.sources.r_olciemail.spoolDir = /mnt/hnnfsshare/spool_olciods/email
+a_olci_tktods_pnrods.sources.r_olciemail.deletePolicy = never
+a_olci_tktods_pnrods.sources.r_olciemail.trackerDir = tracker
+a_olci_tktods_pnrods.sources.r_olciemail.batchSize = 800
+
+# Describe channel use HLX_OLCI_EMAIL.DOZ topic
+
+a_olci_tktods_pnrods.channels.c_olciemail.type = org.apache.flume.channel.kafka.KafkaChannel
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.topic=HLX_OLCI_EMAIL.DOZ
+a_olci_tktods_pnrods.channels.c_olciemail.parseAsFlumeEvent = false
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.consumer.group.id = OLCIEMAIL
+a_olci_tktods_pnrods.channels.c_olciemail.kafka.consumer.heartbeat.interval.ms=5000
+
+# Bind the source and sink to the channel
+a_olci_tktods_pnrods.sources.r_olciemail.channels = c_olciemail
+
+################# OLCI SMS #################
+
+# Describe/configure the source
+## JMS Source - listening on a QUEUE
+a_olci_tktods_pnrods.sources.r_olcisms.type = spooldir
+a_olci_tktods_pnrods.sources.r_olcisms.spoolDir = /mnt/hnnfsshare/spool_olciods/sms
+a_olci_tktods_pnrods.sources.r_olcisms.deletePolicy = never
+a_olci_tktods_pnrods.sources.r_olcisms.trackerDir = tracker
+a_olci_tktods_pnrods.sources.r_olcisms.batchSize = 800
+
+# Describe channel use HLX_OLCI_SMS.DOZ topic
+
+a_olci_tktods_pnrods.channels.c_olcisms.type = org.apache.flume.channel.kafka.KafkaChannel
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.topic=HLX_OLCI_SMS.DOZ
+a_olci_tktods_pnrods.channels.c_olcisms.parseAsFlumeEvent = false
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.consumer.group.id = OLCISMS
+a_olci_tktods_pnrods.channels.c_olcisms.kafka.consumer.heartbeat.interval.ms=5000
+
+# Bind the source and sink to the channel
+a_olci_tktods_pnrods.sources.r_olcisms.channels = c_olcisms
+
+################# TICKER ODS #################
+
+# Describe/configure the source
+# SPOOL DIR SOURCE
+a_olci_tktods_pnrods.sources.r_ticket.type = spooldir
+a_olci_tktods_pnrods.sources.r_ticket.spoolDir = /mnt/hnnfsshare/spool_tktods
+a_olci_tktods_pnrods.sources.r_ticket.deletePolicy = never
+a_olci_tktods_pnrods.sources.r_ticket.trackerDir = tracker
+a_olci_tktods_pnrods.sources.r_ticket.batchSize = 800
+
+# Describe channel use HLX_OLCI_TKTODS.DOZ topic
+
+a_olci_tktods_pnrods.channels.c_ticket.type = org.apache.flume.channel.kafka.KafkaChannel
+a_olci_tktods_pnrods.channels.c_ticket.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_olci_tktods_pnrods.channels.c_ticket.kafka.topic=HLX_TKTODS.DOZ
+a_olci_tktods_pnrods.channels.c_ticket.parseAsFlumeEvent = false
+a_olci_tktods_pnrods.channels.c_ticket.kafka.consumer.group.id = TKTODS
+a_olci_tktods_pnrods.channels.c_ticket.kafka.consumer.heartbeat.interval.ms=5000
+
+
+# Bind the source and sink to the channel
+a_olci_tktods_pnrods.sources.r_ticket.channels = c_ticket
+
+################# TICKET ODS #################
+
+# Describe/configure the source
+# SPOOL DIR SOURCE
+a_olci_tktods_pnrods.sources.r_pnr.type = spooldir
+a_olci_tktods_pnrods.sources.r_pnr.spoolDir = /mnt/hnnfsshare/spool_pnrods
+a_olci_tktods_pnrods.sources.r_pnr.deletePolicy = never
+a_olci_tktods_pnrods.sources.r_pnr.trackerDir = tracker
+a_olci_tktods_pnrods.sources.r_pnr.batchSize = 800
+a_olci_tktods_pnrods.sources.r_pnr.deserializer.maxLineLength = 8192
+
+# Describe channel use HLX_OLCI_PNRODS.DOZ topic
+
+a_olci_tktods_pnrods.channels.c_pnr.type = org.apache.flume.channel.kafka.KafkaChannel
+a_olci_tktods_pnrods.channels.c_pnr.kafka.bootstrap.servers = dolinux752:9092,dolinux753:9092,dolinux768:9092
+a_olci_tktods_pnrods.channels.c_pnr.kafka.topic=HLX_PNRODS.DOZ
+a_olci_tktods_pnrods.channels.c_pnr.parseAsFlumeEvent = false
+a_olci_tktods_pnrods.channels.c_pnr.kafka.consumer.group.id = PNRODS
+a_olci_tktods_pnrods.channels.c_pnr.kafka.consumer.heartbeat.interval.ms=5000
+
+# Bind the source and sink to the channel
+a_olci_tktods_pnrods.sources.r_pnr.channels = c_pnr

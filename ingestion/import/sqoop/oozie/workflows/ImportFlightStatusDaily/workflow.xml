@@ -1,0 +1,167 @@
+
+<workflow-app name="ImportFlightStatusDaily" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-77e5"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-77e5">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${FLTSTATUS_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${FLTSTATUS_CONTROL_FILE}#${FLTSTATUS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-0e40"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="sqoop-f16e">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FLTSTATUS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select AIRPORT_CODE, AIRPORT_NAME, AIRPORT_SHORT_NAME, CITY_CODE, IS_VISIBLE, ARRIVAL_TERMINAL, DEPARTURE_TERMINAL, OUTAGE, OUTAGE_COMMENTS, ABBREV_AIRPORT_NAME, ABBREV_ARRIVAL_TERMINAL, ABBREV_DEPARTURE_TERMINAL, OFFSET from FS_AIRPORTS WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>airport_code</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FS_AIRPORTS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FS_AIRPORT}</arg>
+            <file>${FLTSTATUS_SQOOP_OPTIONS_FILE}#${FLTSTATUS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-4ec1"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="shell-a550">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${FLTSTATUS_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${FLTSTATUS_CONTROL_FILE}#${FLTSTATUS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="email-22c4">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-dbe4">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FLTSTATUS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT KEY, VALUE, DESCRIPTION, ISCONFIGURABLE FROM FS_CONFIGURATION WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FS_CONFIGURATION</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FS_CONFIGURATION}</arg>
+            <file>${FLTSTATUS_SQOOP_OPTIONS_FILE}#${FLTSTATUS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-4ec1"/>
+        <error to="email-22c4"/>
+    </action>
+    <fork name="fork-0e40">
+        <path start="sqoop-f16e" />
+        <path start="sqoop-dbe4" />
+        <path start="sqoop-d284" />
+    </fork>
+    <join name="join-4ec1" to="shell-a550"/>
+    <action name="sqoop-d284">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FLTSTATUS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT STATUS_CODE,STATUS_DESCRIPTION,STATUS_IS_IRREGULAR FROM FS_FLIGHT_STATES  WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FS_FLIGHT_STATES</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FS_FLIGHT_STATES}</arg>
+            <file>${FLTSTATUS_SQOOP_OPTIONS_FILE}#${FLTSTATUS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-4ec1"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

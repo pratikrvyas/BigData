@@ -1,0 +1,104 @@
+{
+  "type" : "record",
+  "name" : "prism_corporatetickettracking",
+  "doc" : "Sqoop import of prism_corporatetickettracking",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "Customer",
+    "type" : [ "string", "null" ],
+    "columnName" : "Customer",
+    "sqlType" : "2"
+  }, {
+    "name" : "EK_Company_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_Company_Code",
+    "sqlType" : "12"
+  },{
+    "name" : "Ticket_Number",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Ticket_Number",
+    "sqlType" : "12"
+  }, {
+    "name" : "Validating_Carrier_Code",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Validating_Carrier_Code",
+    "sqlType" : "2"
+  }, {
+    "name" : "Validating_Carrier",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Validating_Carrier",
+    "sqlType" : "2"
+  }, {
+    "name" : "Issue_Date",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Issue_Date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Departure_Date",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Departure_Date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Credit_Card",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Credit_Card",
+    "sqlType" : "2"
+  }, {
+    "name" : "Base_Amount",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Base_Amount",
+    "sqlType" : "2"
+  }, {
+    "name" : "Tax",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Tax",
+    "sqlType" : "2"
+  }, {
+    "name" : "Commission_Amount",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Commission_Amount",
+    "sqlType" : "2"
+  }, {
+    "name" : "Commission_Amount_percentage",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Commission_Amount_percentage",
+    "sqlType" : "2"
+  }, {
+    "name" : "Ticket_Amount",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Ticket_Amount",
+    "sqlType" : "2"
+  }, {
+    "name" : "Currency",
+    "type" : [ "string", "null" ],
+    "default" : null,
+    "columnName" : "Currency",
+    "sqlType" : "2"
+  },{
+    "name" : "Month",
+    "type" : [ "string", "null" ],
+    "columnName" : "Month",
+    "sqlType" : "2"
+  }
+   ],
+  "tableName" : "prism_corporatetickettracking"}

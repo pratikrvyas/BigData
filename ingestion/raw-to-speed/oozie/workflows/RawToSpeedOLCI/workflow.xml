@@ -1,0 +1,100 @@
+
+<workflow-app name="RawToSpeedOLCI" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-6a18"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-6a18">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${SOURCE_DIRECTORY_EMAIL_LOG_ARCHIVE_NTT}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-5bab"/>
+        <error to="email-165c"/>
+    </action>
+    <action name="pig-417e">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>spdtransform_olci_sms_log.pig</script>
+              <param>SOURCE_DIRECTORY_EGTC=${SOURCE_DIRECTORY_SMS_LOG_EGTC}</param>
+              <param>SOURCE_DIRECTORY_NTT=${SOURCE_DIRECTORY_SMS_LOG_NTT}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SMS_LOG}</param>
+              <param>AVRO_SCHEMA_FILE=${SOURCE_SCHEMA_SMS_LOG}</param>
+            <file>olci-pig-udfs-0.0.1.jar#olci-pig-udfs-0.0.1.jar</file>
+            <file>helix-pig-udfs-0.0.1.jar#helix-pig-udfs-0.0.1.jar</file>
+            <file>spdtransform_olci_sms_log.pig#spdtransform_olci_sms_log.pig</file>
+        </pig>
+        <ok to="join-5309"/>
+        <error to="email-165c"/>
+    </action>
+    <action name="pig-c61e">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>spdtransform_olci_email_log.pig</script>
+              <param>SOURCE_DIRECTORY_EGTC=${SOURCE_DIRECTORY_EMAIL_LOG_ARCHIVE_EGTC}</param>
+              <param>SOURCE_DIRECTORY_NTT=${SOURCE_DIRECTORY_EMAIL_LOG_ARCHIVE_NTT}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_EMAIL_LOG_ARCHIVE}</param>
+              <param>AVRO_SCHEMA_FILE=${SOURCE_SCHEMA_EMAIL_LOG_ARCHIVE}</param>
+            <file>spdtransform_olci_email_log.pig#spdtransform_olci_email_log.pig</file>
+            <file>olci-pig-udfs-0.0.1.jar#olci-pig-udfs-0.0.1.jar</file>
+        </pig>
+        <ok to="join-5309"/>
+        <error to="email-165c"/>
+    </action>
+    <fork name="fork-5bab">
+        <path start="pig-417e" />
+        <path start="pig-c61e" />
+    </fork>
+    <join name="join-5309" to="shell-293a"/>
+    <action name="shell-293a">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>spdcopy_to_local.sh</exec>
+              <argument>${TARGET_DIRECTORY_EMAIL_LOG_ARCHIVE}</argument>
+              <argument>${TARGET_DIRECTORY_SMS_LOG}</argument>
+              <argument>${wf:actionData(&#39;shell-6a18&#39;)[&#39;HELIX_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-6a18&#39;)[&#39;HELIX_TIME&#39;]}</argument>
+            <file>spdcopy_to_local.sh#spdcopy_to_local.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-165c"/>
+    </action>
+    <action name="email-165c">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,172 @@
+<workflow-app name="ImportFRRDataIncremental_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="fork-7e31"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-d757">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>get_date_from_path.sh</exec>
+              <argument>${PATH_FRR_QL2_DATA_OUT}</argument>
+            <file>get_date_from_path.sh#get_date_from_path.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="sqoop-0a6a"/>
+        <error to="email-3111"/>
+    </action>
+    <action name="email-3111">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>s434654@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-4379">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${FRR_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${FRR_CONTROL_FILE}#${FRR_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="sqoop-9044"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-7e31">
+        <path start="shell-d757" />
+        <path start="shell-4379" />
+    </fork>
+    <join name="join-38a0" to="shell-8b41"/>
+    <action name="sqoop-0a6a">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_FRR_QL2_DATA_OUT}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select ID1,OBSERVATION_DATE,OBSERVATION_TIME,POS,ORIGIN,DESTINATION,IS_ONE_WAY,OUTBOUND_TRAVEL_STOP_OVER,INBOUND_TRAVEL_STOP_OVER,CARRIER,OUTBOUND_FLIGHT_NO,INBOUND_FLIGHT_NO,OUTBOUND_DEPARTURE_DATE,OUTBOUND_ARRIVAL_DATE,INBOUND_DEPARTURE_DATE,INBOUND_ARRIVAL_DATE,OUTBOUND_FARE_BASIS,INBOUND_FARE_BASIS,OUTBOUND_BOOKING_CLASS,INBOUND_BOOKING_CLASS,PRICE_EXC,PRICE_INC,TAX,CURRENCY,SOURCE,PRICE_OUTBOUND,PRICE_INBOUND,IS_TAX_INC_OUTIN,COMPARTMENT,LOAD_DATE,OUTBOUND_DEPARTURE_TIME,INBOUND_DEPARTURE_TIME,OUTBOUND_ARRIVAL_TIME,INBOUND_ARRIVAL_TIME ,OUTBOUND_FARE_FAMILY,INBOUND_FARE_FAMILY,SOURCE_NAME,&#39;QL2&#39; AS VENDOR from Frr_Ql2_Data_Out  where OBSERVATION_DATE = TO_DATE(&#39;${wf:actionData(&#39;shell-d757&#39;)[&#39;PATH_DATE&#39;]}&#39;,&#39;YYYY-MM-DD&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>OBSERVATION_DATE=String,OUTBOUND_DEPARTURE_DATE=String,OUTBOUND_ARRIVAL_DATE=String,INBOUND_DEPARTURE_DATE=String,INBOUND_ARRIVAL_DATE=String,LOAD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>ID1</arg>
+              <arg>--num-mappers</arg>
+              <arg>4</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>Frr_Ql2_Data_Out</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FRR_QL2_DATA_OUT}</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-38a0"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-9044">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_FRR_SUBS_INTFARED}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT FAREID,SUBID, VENDORID, FARETYPE, CXR, ORIG, ORIGCITY, ORIGCNTRY, DEST, DESTCITY, DESTCNTRY, TARNO, TARCD, FARECLS, STATUS, EFFDT, DISCDT, ACTEFFDT, ACTDISCDT, CREATEDTTM, RULENO, RTGNO, OWRT, FTNT, DI, GLOBAL, MPM, CABOTAGE, FAREAMT, CURR, AMTDEC, ACTIONCD, VENDORACTIONCD, BATCHNO, LINKNO, SEQNO, GFSREF, AUDITED, CHGAMT, PREVFAREID, BATCHID, CUSTOMERID, PROCESS_DT FROM FRR_SUBS_INTFARED WHERE PROCESS_DT  BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-98d3&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-98d3&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>EFFDT=String,DISCDT=String,ACTEFFDT=String,ACTDISCDT=String,CREATEDTTM=String,PROCESS_DT=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FAREID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FRR_SUBS_INTFARED</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FRR_SUBS_INTFARED}</arg>
+              <arg>--num-mappers</arg>
+              <arg>10</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="shell-8345"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-8345">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${FRR_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-4379&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-4379&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${FRR_CONTROL_FILE}#${FRR_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="join-38a0"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-8b41">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-3111"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

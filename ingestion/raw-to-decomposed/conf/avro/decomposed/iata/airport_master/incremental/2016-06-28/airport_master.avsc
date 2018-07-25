@@ -1,0 +1,98 @@
+{
+  "type" : "record",
+  "name" : "import_iata",
+  "doc" : "import of DW_OWNR.airport_master",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "FILLER1",
+    "type" : [ "string", "null" ],
+    "columnName" : "FILLER1",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_NAME",
+    "sqlType" : "2"
+  }, {
+    "name" : "STATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FILLER2",
+    "type" : [ "string", "null" ],
+    "columnName" : "FILLER2",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_CODE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TIME_ZONE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIME_ZONE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STV",
+    "type" : [ "string", "null" ],
+    "columnName" : "STV",
+    "sqlType" : "12"
+  }, {
+    "name" : "FILLER3",
+    "type" : [ "string", "null" ],
+    "columnName" : "FILLER3",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRPORT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRPORT_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "FILLER4",
+    "type" : [ "string", "null" ],
+    "columnName" : "FILLER4",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRPORT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRPORT_NAME",
+    "sqlType" : "2"
+  }, {
+    "name" : "FILLER5",
+    "type" : [ "string", "null" ],
+    "columnName" : "FILLER5",
+    "sqlType" : "2"
+  }, {
+    "name" : "NUMERIC_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NUMERIC_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "FILLER6",
+    "type" : [ "string", "null" ],
+    "columnName" : "FILLER6",
+    "sqlType" : "12"
+  }, {
+    "name" : "LOCATION_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCATION_TYPE",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.AIRPORT_MASTER"
+}

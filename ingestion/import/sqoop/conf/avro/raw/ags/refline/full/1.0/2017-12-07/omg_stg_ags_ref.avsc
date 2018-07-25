@@ -1,0 +1,211 @@
+{
+  "type" : "record",
+  "name" : "OMG_STG_AGS_REF",
+  "namespace" : "datalake",
+  "fields" : [ {
+    "name" : "FUEL_OFF",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FUEL_OFF",
+    "sqlType" : "2"
+  }, {
+    "name" : "FUEL_ON",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FUEL_ON",
+    "sqlType" : "2"
+  }, {
+    "name" : "APU_FUEL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "APU_FUEL",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLAP_LD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLAP_LD",
+    "sqlType" : "12"
+  }, {
+    "name" : "VAPP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VAPP",
+    "sqlType" : "2"
+  }, {
+    "name" : "WINDSPD_LD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WINDSPD_LD",
+    "sqlType" : "2"
+  }, {
+    "name" : "WINDDIR_LD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WINDDIR_LD",
+    "sqlType" : "2"
+  }, {
+    "name" : "WINDCOMP_LD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WINDCOMP_LD",
+    "sqlType" : "2"
+  }, {
+    "name" : "SAT_LD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SAT_LD",
+    "sqlType" : "2"
+  }, {
+    "name" : "BAROMB_LD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BAROMB_LD",
+    "sqlType" : "2"
+  }, {
+    "name" : "RWY_LD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RWY_LD",
+    "sqlType" : "12"
+  }, {
+    "name" : "ANTI_ICE_STATUS_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ANTI_ICE_STATUS_TO",
+    "sqlType" : "2"
+  }, {
+    "name" : "WINDSPD_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WINDSPD_TO",
+    "sqlType" : "2"
+  }, {
+    "name" : "WINDDIR_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WINDDIR_TO",
+    "sqlType" : "2"
+  }, {
+    "name" : "WINDCOMP_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WINDCOMP_TO",
+    "sqlType" : "2"
+  }, {
+    "name" : "SAT_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SAT_TO",
+    "sqlType" : "2"
+  }, {
+    "name" : "BAROMB_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BAROMB_TO",
+    "sqlType" : "2"
+  }, {
+    "name" : "RWY_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RWY_TO",
+    "sqlType" : "12"
+  }, {
+    "name" : "FILENAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FILENAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLTDATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLTDATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ZFW",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ZFW",
+    "sqlType" : "2"
+  }, {
+    "name" : "TO_FLAP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TO_FLAP",
+    "sqlType" : "12"
+  }, {
+    "name" : "ASSM_TEMP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ASSM_TEMP",
+    "sqlType" : "2"
+  }, {
+    "name" : "VR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VR",
+    "sqlType" : "2"
+  }, {
+    "name" : "V2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "V2",
+    "sqlType" : "2"
+  }, {
+    "name" : "V1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "V1",
+    "sqlType" : "2"
+  }, {
+    "name" : "ENG_STOP_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ENG_STOP_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ENG_START_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ENG_START_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "AC_TAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AC_TAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FILENUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FILENUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "MODON",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MODON",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "OMG_STG_AGS_REF"
+}

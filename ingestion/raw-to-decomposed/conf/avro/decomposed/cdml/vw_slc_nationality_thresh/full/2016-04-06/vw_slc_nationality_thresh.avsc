@@ -1,0 +1,50 @@
+{
+  "type": "record",
+  "name": "VW_SLC_NATIONALITY_THRESH",
+  "fields": [
+  {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+      
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  
+  },
+    {
+      "name": "COUNTRY_OF_RESIDENCE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NATIONALITY",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FROM_LOC",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TO_LOC",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "Y_FLEXMILES",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

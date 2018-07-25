@@ -1,0 +1,73 @@
+{  
+   "type":"record",
+   "name":"rps_ctl_ext_val_tbl",
+   "namespace":"datalake",
+   "fields":[  
+      {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{  
+         "name":"INTERFACE_ID",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"BATCH_ID",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"MEASURE_COLUMN",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"MEASURE_TYPE",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"SRC_MEASURE_VALUE",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"TRG_MEASURE_VALUE",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"EDH_TRG_MEASURE_VALUE",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"VALIDATION_STATUS",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }
+   ]
+}

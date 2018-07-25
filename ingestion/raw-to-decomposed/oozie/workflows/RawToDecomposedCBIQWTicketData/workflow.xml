@@ -1,0 +1,85 @@
+
+<workflow-app name="RawToDecomposedCBIQWTicketData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="fork-a7b0"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-1afc">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_TICKET_COUPON_FACT}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-c914"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-a7b0">
+        <path start="shell-1afc" />
+        <path start="shell-f130" />
+    </fork>
+    <join name="join-0675" to="End"/>
+    <action name="pig-c914">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_TICKET_COUPON_FACT}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_TICKET_COUPON_FACT}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_TICKET_COUPON_FACT}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_TICKET_COUPON_FACT}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-1afc&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-f130">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_CDW_TICKET_HEADER}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-0a4d"/>
+        <error to="Kill"/>
+    </action>
+    <action name="pig-0a4d">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY_CDW_TICKET_HEADER}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_CDW_TICKET_HEADER}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_CDW_TICKET_HEADER}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_CDW_TICKET_HEADER}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-f130&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0675"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

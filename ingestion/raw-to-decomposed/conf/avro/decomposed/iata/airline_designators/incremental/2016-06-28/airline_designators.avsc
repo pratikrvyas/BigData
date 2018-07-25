@@ -1,0 +1,153 @@
+{
+  "type" : "record",
+  "name" : "import_iata",
+  "doc" : "import of DW_OWNR.AIRLINE_DESIGNATORS",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "AIRLINE_NAME_LINE1",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_NAME_LINE1",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_NAME_LINE2",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_NAME_LINE2",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCOUNTING_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACCOUNTING_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "THREE_LETTER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "THREE_LETTER_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "TWO_CHARACTER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TWO_CHARACTER_CODE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DUPLICATE_FLAG_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "DUPLICATE_FLAG_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ADDRESS_LINE1",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADDRESS_LINE1",
+    "sqlType" : "93"
+  }, {
+    "name" : "ADDRESS_LINE2",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADDRESS_LINE2",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_STATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_STATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_COUNTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_COUNTRY",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_POSTAL_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_POSTAL_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "RESERVATION_DEPT_TELETYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESERVATION_DEPT_TELETYPE",
+    "sqlType" : "2"
+  }, {
+    "name" : "RESERVATIONS_CONTACT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESERVATIONS_CONTACT_NAME",
+    "sqlType" : "2"
+  }, {
+    "name" : "RESERVATION_CONTACT_TITLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESERVATION_CONTACT_TITLE",
+    "sqlType" : "2"
+  }, {
+    "name" : "RESERVATION_CONTACT_TELETYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESERVATION_CONTACT_TELETYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMERGENCY_TELETYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMERGENCY_TELETYPE",
+    "sqlType" : "93"
+  }, {
+    "name" : "EMERGENCY_CONTACT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMERGENCY_CONTACT_NAME",
+    "sqlType" : "12"
+  },{
+    "name" : "EMERGENCY_CONTACT_TITLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMERGENCY_CONTACT_TITLE",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBERSHIP_FLAG_SITA",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBERSHIP_FLAG_SITA",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEMBERSHIP_FLAG_ARINC",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBERSHIP_FLAG_ARINC",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBERSHIP_FLAG_IATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBERSHIP_FLAG_IATA",
+    "sqlType" : "93"
+  }, {
+    "name" : "MEMBERSHIP_FLAG_ATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBERSHIP_FLAG_ATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "TYPE_OPRATION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TYPE_OPRATION_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACCOUNTING_CODE_SECONDARY_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACCOUNTING_CODE_SECONDARY_FLAG",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_PREFIX",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_PREFIX",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_PREFIX_SECONDARY_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_PREFIX_SECONDARY_FLAG",
+    "sqlType" : "2"
+  }
+],
+  "tableName" : "DW_OWNR.AIRLINE_DESIGNATORS"
+}

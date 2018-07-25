@@ -1,0 +1,3605 @@
+{
+  "type": "record",
+  "name": "bookings_hits",
+  "namespace": "default",
+  "fields": [
+    {
+      "name": "helix_uuid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "helix_timestamp",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hit_timestamp",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "visitnumber",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "visitid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fullvisitorid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hit_visitstarttime",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "trafficsource_referralpath",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "trafficsource_campaign",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "trafficsource_source",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "trafficsource_medium",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "trafficsource_keyword",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "trafficsource_adcontent",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_browser",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_browserversion",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_operatingsystem",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_operatingsystemversion",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_ismobile",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_mobiledevicebranding",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_flashversion",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_javaenabled",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_language",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_screencolors",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_screenresolution",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "device_devicecategory",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "geonetwork_continent",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "geonetwork_subcontinent",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "geonetwork_country",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "geonetwork_region",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_social_socialinteractionnetwork",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_social_socialinteractionaction",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_hitnumber",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_hour",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_minute",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_issecure",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_isinteraction",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_referer",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_page_pagepath",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_page_hostname",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_page_pagetitle",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_page_searchkeyword",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_page_searchcategory",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_transactionid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_transactionrevenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_transactiontax",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_transactionshipping",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_affiliation",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_currencycode",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_localtransactionrevenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_localtransactiontax",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_localtransactionshipping",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_transaction_transactioncoupon",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_item_transactionid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_item_productname",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_item_productcategory",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_item_productsku",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_item_itemquantity",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_item_itemrevenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_item_currencycode",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_item_localitemrevenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_ecommerceaction_action_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_ecommerceaction_step",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_ecommerceaction_option",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_productsku",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_v2productname",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_v2productcategory",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_productvariant",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_productbrand",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_productrevenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_localproductrevenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_productprice",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_localproductprice",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_productquantity",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_productrefundamount",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_localproductrefundamount",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_product_isimpression",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_refund_refundamount",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_refund_localrefundamount",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_promotion_promoid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_promotion_promoname",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_promotion_promocreative",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_promotion_promoposition",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_contentinfo_contentdescription",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_version",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_installerid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_appinstallerid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_appname",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_appversion",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_appid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_screenname",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_landingscreenname",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_exitscreenname",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_appinfo_screendepth",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_exceptioninfo_description",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_exceptioninfo_isfatal",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_eventinfo_eventcategory",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_eventinfo_eventaction",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_eventinfo_eventlabel",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "hits_eventinfo_eventvalue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "campaign_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "adgroup_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "creative_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "criteria_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "page",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "slot",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "criteria_parameters",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "gclid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "customer_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "adnetwork_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "app_installed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "age_of_booked_passengers",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booked_destination_city",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booked_origin_city",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booking_online_vs_offline",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booking_lead_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booking_origin_and_destination_pair",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booking_reference_pnr",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booking_trip_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_lead_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booking_month_of_booking",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booking_month_of_departure",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booking_route_selected_search",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booking_cash_vs_redemption",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "class_of_travel",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "class_outbound",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "class_inbound",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country_and_language_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country_and_region_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "credit_card_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cugo_code_or_promo_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fare_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_oad",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_status_alert_dep_arr",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "form_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "language_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "login_state",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "login_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "meal_selected",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "membership_reward_booking_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "membership_tier",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "membership_tier_user",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "month_of_booking_and_departure",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_chauffer_drive_route",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_flight_search_lead_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_service_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "olci_lead_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "page_category",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "page_url",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "page_sub_section",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "qubit_experiment",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "payment_method",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "platform_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "pos_airport",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "pos_country",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "route_booked",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_destination_city",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_option",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_origin_city",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_trip_duration",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_trip_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "skywards_membership_id_session",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "skywards_membership_id_user",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "skywards_miles_usage",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ticketing_option",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "transaction_pos_currency",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "transaction_chosen_currency",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booked_trip_duration",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "visitor_age",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "visitor_gender",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "visitor_residence",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booked_destination_country",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booked_origin_country",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cab_change_before_or_after_departure",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cab_change_date_and_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cab_change_to_stop_over",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cab_origin_destination_change",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cab_search_options",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "external_loyalty_programme_added",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booked_inward_journey_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booked_outward_journey_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_month_of_search_departure",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_status_lead_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_booking_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_flight_options",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_multiple_destination",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_no",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_payment_by",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_quote_number",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_request_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_return_flight",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "help_center_country",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "help_center_sub_topic",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "help_center_topic",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "inspire_me_experience",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "inspire_me_region",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "inspire_me_temp",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "inspire_me_time_to_destination",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "internal_campaign_creative",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "internal_campaign_location",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "internal_campaign_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "internal_campaign_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "land_product_autoquote",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "land_product_car_search_pick_up_city",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "land_product_car_search_rental_company",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "land_product_car_search_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "land_product_hotel_room_search",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "land_product_hotel_search_chain",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "land_product_hotel_search_city",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "land_product_hotel_search_star",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "miles_purchase_currency",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "my_account_additional_frequent_flyer_numbers",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_transaction_completion_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_upgrade_route_class",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "non_logged_in_member",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "olci_route",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "pomtom_recipient_membership_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "previous_page_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_booking_lead_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_booking_location",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_booking_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_booking_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "route_map_click_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "route_map_destination_city",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "route_map_origin_city",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "route_map_sector",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_faq_category",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_news_month_year",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_location",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_section",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_term",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "server_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "service_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "services_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "services_flight_number",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "services_lead_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "services_route",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cd_site_errors",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "site_search",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "skywards_membership_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "skywards_number_added_post_booking",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "timetable_search_lead_time",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "upgrade_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "visitor_website_session_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "page_sub_section_2",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_airline_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_payment_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booking_trip_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booking_airline_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_booking_payment_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_upsell_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fare_cabinclass_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_promo_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booking_classification",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fare_lock_time_to_convert",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "brand_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "origin_airport",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "destination_airport",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "route",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "passenger_count",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension152",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension153",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension154",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension155",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension156",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension157",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension158",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension159",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension160",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension161",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension162",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension163",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension164",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension165",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension166",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension167",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension168",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension169",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension170",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension171",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension172",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension173",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension174",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension175",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension176",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension177",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension178",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension179",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension180",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension181",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension182",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension183",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension184",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension185",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension186",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension187",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension188",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension189",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension190",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension191",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension192",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension193",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension194",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension195",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension196",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension197",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension198",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension199",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dimension200",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "adults_booked",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "adults_searched",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booking_miles_redeemed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "children_booked",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "children_searched",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dxb_stopover_count",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_search_errors",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_searches_zero_results",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_status_alert_set",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "form_completed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "form_initiated",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "infants_booked",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "infants_searched",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "login",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "miles_for_fuel_surcharge",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_total_number_of_seat_changes",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_cash_upgrade_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_chauffer_drive_no_of_cars",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_miles_upgrade_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_pax_service_count",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_start",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "pomtom_miles_revenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_upgrade_to_bus",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_upgrade_to_first",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "online_checkin_start",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "online_checkin_success",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "total_number_of_checked_in_pax",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "total_passengers_booked",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "myb_completed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "amount_paid_for_change_a_booking",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "event_ticket_quantity",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric32_invalid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric33_invalid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "group_booking_quote_requested",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "internal_search",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "miles_purchased_or_transferred",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "number_of_miles_redeemed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "olci_total_number_pax_in_group",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "online_checkin_accessed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "point_of_origin_revenue_booked_revenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "point_of_origin_tax_fly",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric42_invalid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_adults_booked",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_children_booked",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_hotel_total_pax",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_quantity",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "product_revenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "registration_success",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "route_map_interaction",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "search_success",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cm_site_errors",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "internal_campaign_count",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "point_of_origin_myb_cash_upgrade_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "total_flight_pax_search",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "point_of_origin_amount_paid_for_change_a_booking",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "point_of_origin_fuel_surcharge",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "point_of_origin_miles_purchase_transfer_revenue",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fare_results_view",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric59_invalid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "modified_flight_search",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "incremental_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "booked_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "selected_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "lowest_fare_quote_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "landing_cugo_page",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fare_lock_offered",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fare_lock_chosen",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fare_lock_confirmed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fare_lock_amount",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "flight_revenue_amount",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric71_invalid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "credit_card_surcharge_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "base_fare_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fuel_surcharge_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "tax_value",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric76",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric77",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric78",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric79",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric80",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric81",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric82",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric83",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric84",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric85",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric86",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric87",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric88",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric89",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric90",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric91",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric92",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric93",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric94",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric95",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric96",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric97",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric98",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric99",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric100",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric101",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric102",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric103",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric104",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric105",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric106",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric107",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric108",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric109",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric110",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric111",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric112",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric113",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric114",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric115",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric116",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric117",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric118",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric119",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric120",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric121",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric122",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric123",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric124",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric125",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric126",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric127",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric128",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric129",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric130",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric131",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric132",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric133",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric134",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric135",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric136",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric137",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric138",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric139",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric140",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric141",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric142",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric143",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric144",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric145",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric146",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric147",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric148",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric149",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric150",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric151",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric152",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric153",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric154",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric155",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric156",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric157",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric158",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric159",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric160",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric161",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric162",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric163",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric164",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric165",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric166",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric167",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric168",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric169",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric170",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric171",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric172",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric173",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric174",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric175",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric176",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric177",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric178",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric179",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric180",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric181",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric182",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric183",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric184",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric185",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric186",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric187",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric188",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric189",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric190",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric191",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric192",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric193",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric194",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric195",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric196",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric197",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric198",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric199",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "metric200",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

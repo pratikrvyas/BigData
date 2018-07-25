@@ -1,0 +1,207 @@
+
+<workflow-app name="ImportFlightStatusData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-77e5"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-77e5">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${FLTSTATUS_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${FLTSTATUS_CONTROL_FILE}#${FLTSTATUS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-458c"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="sqoop-a1a0">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FLTSTATUS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select FLIGHT_ID, SUBSCRIPTION_TYPE, MOBILE_NUMBER, EMAIL, NOTIFY_CHANGES, MESSAGES_SENT, LAST_FLIGHT_STATUS, cast(LAST_FLIGHT_ARRIVAL_TIME as varchar(100)) as LAST_FLIGHT_ARRIVAL_TIME_STR , cast(LAST_FLIGHT_DEPARTURE_TIME as varchar(100)) as LAST_FLIGHT_DEPARTURE_TIME_STR ,  cast(NOTIFICATION_TIME as varchar(100)) as NOTIFICATION_TIME_STR, SUBSCRIPTION_ID, LANGUAGE_CODE, INTERVAL, STATUS, DEPARTURE_STATION, ARRIVAL_STATION,  SITE, cast(SUBSCRIPTION_TIME as varchar(100)) as SUBSCRIPTION_TIME_STR, COUNTRY_CODE from  fsa_subscriptions where SUBSCRIPTION_TIME  BETWEEN TO_DATE  (&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>SUBSCRIPTION_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FSA_SUBSCRIPTIONS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FS_SUBSCRIPTIONS}</arg>
+              <arg></arg>
+            <file>${FLTSTATUS_SQOOP_OPTIONS_FILE}#${FLTSTATUS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="email-22c4"/>
+    </action>
+    <fork name="fork-458c">
+        <path start="sqoop-a1a0" />
+        <path start="sqoop-5288" />
+        <path start="sqoop-8d39" />
+        <path start="sqoop-b76f" />
+    </fork>
+    <join name="join-0902" to="shell-a550"/>
+    <action name="sqoop-5288">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FLTSTATUS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select MESSAGE_ID, MOBILE_NUMBER, MESSAGE, SENT_DATETIME, QUEUE_ID, DEPARTURE_STATION, ARRIVAL_STATION, FLIGHT_DATE, ALERT_TYPE, SITE, SUBSCRIPTION_ID from FSA_SENT_SMS WHERE SENT_DATETIME BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>SENT_DATETIME=String,FLIGHT_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>MESSAGE_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FSA_SENT_SMS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FSA_SENT_SMS}</arg>
+            <file>${FLTSTATUS_SQOOP_OPTIONS_FILE}#${FLTSTATUS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="sqoop-8d39">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FLTSTATUS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select MESSAGE_ID,EMAIL_ID, MESSAGE, SENT_DATETIME, DEPARTURE_STATION, ARRIVAL_STATION, FLIGHT_DATE, ALERT_TYPE, SITE, SUBSCRIPTION_ID from FSA_SENT_EMAIL WHERE SENT_DATETIME BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>SENT_DATETIME=String,FLIGHT_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>MESSAGE_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FSA_SENT_EMAIL</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FSA_SENT_EMAIL}</arg>
+            <file>${FLTSTATUS_SQOOP_OPTIONS_FILE}#${FLTSTATUS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="sqoop-b76f">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FLTSTATUS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select  FLIGHT_ID,FLIGHT_NUMBER, FLIGHT_DATE, PLANNED_DEPARTURE_STATION, LEG_NUMBER,  cast( SCHEDULED_ARRIVAL_TIME as varchar(100)) as SCHEDULED_ARRIVAL_TIME_STR,  cast( SCHEDULED_DEPARTURE_TIME as varchar(100)) as SCHEDULED_DEPARTURE_TIME , cast(ESTIMATED_ARRIVAL_TIME as varchar(100)) as ESTIMATED_ARRIVAL_TIME_STR, cast( ESTIMATED_DEPARTURE_TIME as varchar(100)) as ESTIMATED_DEPARTURE_TIME , cast(ACTUAL_ARRIVAL_TIME as varchar(100)) as ACTUAL_ARRIVAL_TIME_STR,  cast( ACTUAL_DEPARTURE_TIME as varchar(100)) as ACTUAL_DEPARTURE_TIME_STR, PLANNED_ARRIVAL_STATION, ACTUAL_ARRIVAL_STATION, ACTUAL_DEPARTURE_STATION,  REMARKS, FLIGHT_STATUS,  cast( LAST_UPDATED_TIME as varchar(100)) as LAST_UPDATED_TIME_STR, DELETE_FLAG,  cast( LAST_UPDATED_TIME_CMT as varchar(100)) as LAST_UPDATED_TIME_CMT_STR, COMMENTS, LAST_UPDATED_USER_CMT, OUTAGE, ARRIVAL_TERMINAL, DEPARTURE_TERMINAL,  TAILNO, CHANGE_FLAG, ALIAS_FLIGHT_NUMBER, ALIAS_DEPARTURE_DATE, ALIAS_ARRIVAL_DATE from FS_FLIGHTS  WHERE LAST_UPDATED_TIME BETWEEN TO_DATE  (&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND  TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PLANNED_DEPARTURE_STATION=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FS_FLIGHTS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FS_FLIGHTS}</arg>
+            <file>${FLTSTATUS_SQOOP_OPTIONS_FILE}#${FLTSTATUS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="shell-a550">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${FLTSTATUS_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${FLTSTATUS_CONTROL_FILE}#${FLTSTATUS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="email-22c4">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,102 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_SKY_SDW_MEMBER_ALIAS_CARDS",
+  "doc" : "Sqoop import of DW_OWNR.SDW_MEMBER_ALIAS_CARDS",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "PMP_MEM_UID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PMP_MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "LPP_PTNR_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LPP_PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ALIAS_CARD_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "ALIAS_CARD_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "MEMBERSHIP_PREFIX",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBERSHIP_PREFIX",
+    "sqlType" : "12"
+  }, {
+    "name" : "ALN_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ALN_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PER_PERSON_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PER_PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "SEQ_NUMBER_PK",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEQ_NUMBER_PK",
+    "sqlType" : "2"
+  }, {
+    "name" : "STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STG_PROCESS_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ALIAS_MBT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ALIAS_MBT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CARD_NO",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "DW_OWNR.SDW_MEMBER_ALIAS_CARDS"
+}

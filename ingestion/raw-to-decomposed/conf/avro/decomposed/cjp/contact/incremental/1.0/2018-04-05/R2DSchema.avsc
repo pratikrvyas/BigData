@@ -1,0 +1,436 @@
+{
+  "type": "record",
+  "name": "topLevelRecord",
+  "fields": [
+    {
+      "name": "messageTimeStamp",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "customercontactfeed",
+      "type": [
+        {
+          "type": "record",
+          "name": "customercontactfeed",
+          "fields": [
+            {
+              "name": "header",
+              "type": [
+                {
+                  "type": "record",
+                  "name": "header",
+                  "fields": [
+                    {
+                      "name": "updatedByStaff",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    {
+                      "name": "staffName",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    {
+                      "name": "recordLocator",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    {
+                      "name": "PNRCreationDateTime",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    {
+                      "name": "customerIdentifier",
+                      "type": [
+                        {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "record",
+                              "name": "customerIdentifier",
+                              "fields": [
+                                {
+                                  "name": "EMCGCustomerIdentifier",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                {
+                                  "name": "CheckInCustomerIdentifier",
+                                  "type": [
+                                    {
+                                      "type": "record",
+                                      "name": "CheckInCustomerIdentifier",
+                                      "fields": [
+                                        {
+                                          "name": "checkInCustomerReference",
+                                          "type": [
+                                            "string",
+                                            "null"
+                                          ]
+                                        },
+                                        {
+                                          "name": "flightDetails",
+                                          "type": [
+                                            {
+                                              "type": "record",
+                                              "name": "flightDetails",
+                                              "fields": [
+                                                {
+                                                  "name": "carrierCode",
+                                                  "type": [
+                                                    "string",
+                                                    "null"
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "flightNumber",
+                                                  "type": [
+                                                    "string",
+                                                    "null"
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "departureDateAndTimeinGMT",
+                                                  "type": [
+                                                    "string",
+                                                    "null"
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "departureDateAndTimeinLocal",
+                                                  "type": [
+                                                    "string",
+                                                    "null"
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "origin",
+                                                  "type": [
+                                                    "string",
+                                                    "null"
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "destination",
+                                                  "type": [
+                                                    "string",
+                                                    "null"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            "null"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "null"
+                                  ]
+                                },
+                                {
+                                  "name": "customerName",
+                                  "type": [
+                                    {
+                                      "type": "record",
+                                      "name": "customerName",
+                                      "fields": [
+                                        {
+                                          "name": "lastName",
+                                          "type": [
+                                            "string",
+                                            "null"
+                                          ]
+                                        },
+                                        {
+                                          "name": "firstName",
+                                          "type": [
+                                            "string",
+                                            "null"
+                                          ]
+                                        },
+                                        {
+                                          "name": "title",
+                                          "type": [
+                                            "string",
+                                            "null"
+                                          ]
+                                        },
+                                        {
+                                          "name": "fullName",
+                                          "type": [
+                                            "string",
+                                            "null"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "null"
+                                  ]
+                                },
+                                {
+                                  "name": "customerContacts",
+                                  "type": [
+                                    {
+                                      "type": "record",
+                                      "name": "customerContacts",
+                                      "fields": [
+                                        {
+                                          "name": "customerEmail",
+                                          "type": [
+                                            {
+                                              "type": "array",
+                                              "items": [
+                                                {
+                                                  "type": "record",
+                                                  "name": "customerEmail",
+                                                  "fields": [
+                                                    {
+                                                      "name": "emailAddress",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "typeOfEmail",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "emailValidity",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "emailAssociatedTo",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "sourceOfData",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "emailUpdateDateAndTime",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                "null"
+                                              ]
+                                            },
+                                            "null"
+                                          ]
+                                        },
+                                        {
+                                          "name": "customerPhone",
+                                          "type": [
+                                            {
+                                              "type": "array",
+                                              "items": [
+                                                {
+                                                  "type": "record",
+                                                  "name": "customerPhone",
+                                                  "fields": [
+                                                    {
+                                                      "name": "typeOfContactNumber",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "fullContactNumber",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "ISDCode",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "areaCode",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "contactNumber",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "contactNumberValidity",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "contactNumberAssociatedTo",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "cityOfUse",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "countryOfUse",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "sourceOfData",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "name": "phoneUpdateDateAndTime",
+                                                      "type": [
+                                                        "string",
+                                                        "null"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                "null"
+                                              ]
+                                            },
+                                            "null"
+                                          ]
+                                        },
+                                        {
+                                          "name": "DonotAskIndicator",
+                                          "type": [
+                                            {
+                                              "type": "record",
+                                              "name": "DonotAskIndicator",
+                                              "fields": [
+                                                {
+                                                  "name": "donotAskDetails",
+                                                  "type": [
+                                                    "string",
+                                                    "null"
+                                                  ]
+                                                },
+                                                {
+                                                  "name": "emiratesValidatedDateAndTime",
+                                                  "type": [
+                                                    "string",
+                                                    "null"
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            "null"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "null"
+                                  ]
+                                }
+                              ]
+                            },
+                            "null"
+                          ]
+                        },
+                        "null"
+                      ]
+                    }
+                  ]
+                },
+                "null"
+              ]
+            },
+            {
+              "name": "error",
+              "type": [
+                {
+                  "type": "record",
+                  "name": "error",
+                  "fields": [
+                    {
+                      "name": "errorCode",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    {
+                      "name": "errorDescription",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  ]
+                },
+                "null"
+              ]
+            }
+          ]
+        },
+        "null"
+      ]
+    },
+    {
+      "name": "HELIX_UUID",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "HELIX_TIMESTAMP",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  ]
+}

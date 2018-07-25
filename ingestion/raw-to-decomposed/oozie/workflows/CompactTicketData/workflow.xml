@@ -1,0 +1,732 @@
+<workflow-app name="CompactTicketData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-4973"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-4973">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${PATH_TKT_FLIGHT_COUPON}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-46d8"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-a022">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-a2a4&#39;)[&#39;HELIX_DATE&#39;]}_in"/>
+            </prepare>
+              <arg>${PATH_TKT_FLIGHT_COUPON}</arg>
+              <arg>${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</arg>
+        </distcp>
+        <ok to="shell-01d5"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-3b48">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in"/>
+            </prepare>
+              <arg>${PATH_TKT_FREQUENT_FLYER}</arg>
+              <arg>${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</arg>
+        </distcp>
+        <ok to="shell-5d53"/>
+        <error to="email-8e81"/>
+    </action>
+    <fork name="fork-46d8">
+        <path start="distcp-a022" />
+        <path start="distcp-3b48" />
+        <path start="distcp-790b" />
+        <path start="distcp-6d05" />
+        <path start="distcp-c150" />
+        <path start="distcp-b7ba" />
+    </fork>
+    <join name="join-5bf7" to="decision-1f18"/>
+    <action name="distcp-790b">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in"/>
+            </prepare>
+              <arg>${PATH_TKT_MASTER}</arg>
+              <arg>${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</arg>
+        </distcp>
+        <ok to="shell-e463"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-6d05">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in"/>
+            </prepare>
+              <arg>${PATH_TKT_OPERATING_CARRIER}</arg>
+              <arg>${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</arg>
+        </distcp>
+        <ok to="shell-f49e"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-c150">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in"/>
+            </prepare>
+              <arg>${PATH_TKT_PAX_FARE}</arg>
+              <arg>${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</arg>
+        </distcp>
+        <ok to="shell-989c"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-b7ba">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in"/>
+            </prepare>
+              <arg>${PATH_TKT_REF}</arg>
+              <arg>${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</arg>
+        </distcp>
+        <ok to="shell-2723"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-01d5">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${SCHEMA_TKT_FLIGHT_COUPON}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-2294"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-5d53">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${SCHEMA_TKT_FREQUENT_FLYER}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-754b"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-e463">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${SCHEMA_TKT_MASTER}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-bac6"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-f49e">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${SCHEMA_TKT_OPERATING_CARRIER}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-d8a2"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-989c">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${SCHEMA_TKT_PAX_FARE}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-f486"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-2723">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${SCHEMA_TKT_REF}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-89dd"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-2294">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out"/>
+            </prepare>
+            <script>compactor.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_FLIGHT_COUPON}</param>
+              <param>AVRO_SCHEMA=${wf:actionData(&#39;shell-01d5&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+              <param>SOURCE_DIRECTORY=${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>TARGET_DIRECTORY=${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+            <file>compactor.pig#compactor.pig</file>
+        </pig>
+        <ok to="pig-c4e0"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-754b">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out"/>
+            </prepare>
+            <script>compactor.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_FREQUENT_FLYER}</param>
+              <param>AVRO_SCHEMA=${wf:actionData(&#39;shell-5d53&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+              <param>SOURCE_DIRECTORY=${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>TARGET_DIRECTORY=${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+            <file>compactor.pig#compactor.pig</file>
+        </pig>
+        <ok to="pig-e3e1"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-bac6">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out"/>
+            </prepare>
+            <script>compactor.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_MASTER}</param>
+              <param>AVRO_SCHEMA=${wf:actionData(&#39;shell-e463&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+              <param>SOURCE_DIRECTORY=${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>TARGET_DIRECTORY=${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+            <file>compactor.pig#compactor.pig</file>
+        </pig>
+        <ok to="pig-f987"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-d8a2">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out"/>
+            </prepare>
+            <script>compactor.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_OPERATING_CARRIER}</param>
+              <param>AVRO_SCHEMA=${wf:actionData(&#39;shell-f49e&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+              <param>SOURCE_DIRECTORY=${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>TARGET_DIRECTORY=${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+            <file>compactor.pig#compactor.pig</file>
+        </pig>
+        <ok to="pig-a15b"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-f486">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out"/>
+            </prepare>
+            <script>compactor.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_PAX_FARE}</param>
+              <param>AVRO_SCHEMA=${wf:actionData(&#39;shell-989c&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+              <param>SOURCE_DIRECTORY=${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>TARGET_DIRECTORY=${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+            <file>compactor.pig#compactor.pig</file>
+        </pig>
+        <ok to="pig-1e43"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-89dd">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out"/>
+            </prepare>
+            <script>compactor.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_REF}</param>
+              <param>AVRO_SCHEMA=${wf:actionData(&#39;shell-2723&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+              <param>SOURCE_DIRECTORY=${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>TARGET_DIRECTORY=${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+            <file>compactor.pig#compactor.pig</file>
+        </pig>
+        <ok to="pig-4a98"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-c4e0">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>oozie.action.external.stats.write</name>
+                    <value>true</value>
+                </property>
+            </configuration>
+            <script>set_difference.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_FLIGHT_COUPON}</param>
+              <param>PATH_IN=${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>PATH_OUT=${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+              <param>PATH_DIFF=${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff</param>
+            <file>set_difference.pig#set_difference.pig</file>
+        </pig>
+        <ok to="join-5bf7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-e3e1">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>oozie.action.external.stats.write</name>
+                    <value>true</value>
+                </property>
+            </configuration>
+            <script>set_difference.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_FREQUENT_FLYER}</param>
+              <param>PATH_IN=${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>PATH_OUT=${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+              <param>PATH_DIFF=${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff</param>
+            <file>set_difference.pig#set_difference.pig</file>
+        </pig>
+        <ok to="join-5bf7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-f987">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>oozie.action.external.stats.write</name>
+                    <value>true</value>
+                </property>
+            </configuration>
+            <script>set_difference.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_MASTER}</param>
+              <param>PATH_IN=${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>PATH_OUT=${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+              <param>PATH_DIFF=${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff</param>
+            <file>set_difference.pig#set_difference.pig</file>
+        </pig>
+        <ok to="join-5bf7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-a15b">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>oozie.action.external.stats.write</name>
+                    <value>true</value>
+                </property>
+            </configuration>
+            <script>set_difference.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_OPERATING_CARRIER}</param>
+              <param>PATH_IN=${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>PATH_OUT=${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+              <param>PATH_DIFF=${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff</param>
+            <file>set_difference.pig#set_difference.pig</file>
+        </pig>
+        <ok to="join-5bf7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-1e43">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>oozie.action.external.stats.write</name>
+                    <value>true</value>
+                </property>
+            </configuration>
+            <script>set_difference.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_PAX_FARE}</param>
+              <param>PATH_IN=${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>PATH_OUT=${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+              <param>PATH_DIFF=${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff</param>
+            <file>set_difference.pig#set_difference.pig</file>
+        </pig>
+        <ok to="join-5bf7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="pig-4a98">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>oozie.action.external.stats.write</name>
+                    <value>true</value>
+                </property>
+            </configuration>
+            <script>set_difference.pig</script>
+              <param>AVRO_SCHEMA_FILE=${SCHEMA_TKT_REF}</param>
+              <param>PATH_IN=${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in</param>
+              <param>PATH_OUT=${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</param>
+              <param>PATH_DIFF=${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff</param>
+            <file>set_difference.pig#set_difference.pig</file>
+        </pig>
+        <ok to="join-5bf7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-b120">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-b070"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-6b77">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="email-d8d2"/>
+        <error to="email-8e81"/>
+    </action>
+    <decision name="decision-1f18">
+        <switch>
+            <case to="shell-b120">
+              ${ hadoop:counters(&#39;pig-c4e0&#39;)[&#39;RECORD_WRITTEN&#39;] eq 0 and hadoop:counters(&#39;pig-e3e1&#39;)[&#39;RECORD_WRITTEN&#39;] eq 0 and hadoop:counters(&#39;pig-f987&#39;)[&#39;RECORD_WRITTEN&#39;] eq 0 and hadoop:counters(&#39;pig-a15b&#39;)[&#39;RECORD_WRITTEN&#39;] eq 0 and hadoop:counters(&#39;pig-1e43&#39;)[&#39;RECORD_WRITTEN&#39;] eq 0 and hadoop:counters(&#39;pig-4a98&#39;)[&#39;RECORD_WRITTEN&#39;] eq 0 }
+            </case>
+            <default to="shell-6b77"/>
+        </switch>
+    </decision>
+    <action name="email-d8d2">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Issue with workflow ${wf:name()}</subject>
+            <body>~~~~~~~~~~~~~~~~~~~~
+Helix Data Compactor Alert
+~~~~~~~~~~~~~~~~~~~~
+Oops, something&#39;s gone wrong!
+Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+~~~~~~~~~~~~~~~~~~~~
+Difference for TKT_FLIGHT_COUPON = ${ hadoop:counters(&#39;pig-c4e0&#39;)[&#39;RECORD_WRITTEN&#39;] }
+Difference for TKT_FREQUENT_FLYER = ${ hadoop:counters(&#39;pig-e3e1&#39;)[&#39;RECORD_WRITTEN&#39;] }
+Difference for TKT_MASTER = ${ hadoop:counters(&#39;pig-f987&#39;)[&#39;RECORD_WRITTEN&#39;] }
+Difference for TKT_OPERATING_CARRIER = ${ hadoop:counters(&#39;pig-a15b&#39;)[&#39;RECORD_WRITTEN&#39;] }
+Difference for TKT_PAX_FARE = ${ hadoop:counters(&#39;pig-1e43&#39;)[&#39;RECORD_WRITTEN&#39;] }
+Difference for TKT_REF = ${ hadoop:counters(&#39;pig-4a98&#39;)[&#39;RECORD_WRITTEN&#39;] }
+Difference for PNR_RMKS = ${ hadoop:counters(&#39;pig-c7f5&#39;)[&#39;RECORD_WRITTEN&#39;] }</body>
+        </email>
+        <ok to="End"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-c88e">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_TKT_FLIGHT_COUPON}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}"/>
+            </prepare>
+              <arg>${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</arg>
+              <arg>${BASE_TKT_FLIGHT_COUPON}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</arg>
+        </distcp>
+        <ok to="shell-1f02"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-cef1">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_TKT_FREQUENT_FLYER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}"/>
+            </prepare>
+              <arg>${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</arg>
+              <arg>${BASE_TKT_FREQUENT_FLYER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</arg>
+        </distcp>
+        <ok to="shell-3599"/>
+        <error to="email-8e81"/>
+    </action>
+    <fork name="fork-b070">
+        <path start="distcp-c88e" />
+        <path start="distcp-cef1" />
+        <path start="distcp-b01e" />
+        <path start="distcp-fce7" />
+        <path start="distcp-66e3" />
+        <path start="distcp-9fbb" />
+    </fork>
+    <join name="join-69e7" to="End"/>
+    <action name="distcp-b01e">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_TKT_MASTER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}"/>
+            </prepare>
+              <arg>${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</arg>
+              <arg>${BASE_TKT_MASTER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</arg>
+        </distcp>
+        <ok to="shell-e513"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-fce7">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_TKT_OPERATING_CARRIER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}"/>
+            </prepare>
+              <arg>${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</arg>
+              <arg>${BASE_TKT_OPERATING_CARRIER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</arg>
+        </distcp>
+        <ok to="shell-000d"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-66e3">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_TKT_PAX_FARE}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}"/>
+            </prepare>
+              <arg>${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</arg>
+              <arg>${BASE_TKT_PAX_FARE}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</arg>
+        </distcp>
+        <ok to="shell-db74"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="distcp-9fbb">
+        <distcp xmlns="uri:oozie:distcp-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${BASE_TKT_REF}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}"/>
+            </prepare>
+              <arg>${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out</arg>
+              <arg>${BASE_TKT_REF}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</arg>
+        </distcp>
+        <ok to="shell-4c69"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-1f02">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>swaparoo.sh</exec>
+              <argument>${wf:user()}</argument>
+              <argument>${BASE_TKT_FLIGHT_COUPON}</argument>
+              <argument>${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</argument>
+            <file>swaparoo.sh#swaparoo.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fs-d36d"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-3599">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>swaparoo.sh</exec>
+              <argument>${wf:user()}</argument>
+              <argument>${BASE_TKT_FREQUENT_FLYER}</argument>
+              <argument>${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</argument>
+            <file>swaparoo.sh#swaparoo.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fs-ed11"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-e513">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>swaparoo.sh</exec>
+              <argument>${wf:user()}</argument>
+              <argument>${BASE_TKT_MASTER}</argument>
+              <argument>${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</argument>
+            <file>swaparoo.sh#swaparoo.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fs-c9f7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-000d">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>swaparoo.sh</exec>
+              <argument>${wf:user()}</argument>
+              <argument>${BASE_TKT_OPERATING_CARRIER}</argument>
+              <argument>${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</argument>
+            <file>swaparoo.sh#swaparoo.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fs-408b"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-db74">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>swaparoo.sh</exec>
+              <argument>${wf:user()}</argument>
+              <argument>${BASE_TKT_PAX_FARE}</argument>
+              <argument>${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</argument>
+            <file>swaparoo.sh#swaparoo.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fs-55a1"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="shell-4c69">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>swaparoo.sh</exec>
+              <argument>${wf:user()}</argument>
+              <argument>${BASE_TKT_REF}</argument>
+              <argument>${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}</argument>
+            <file>swaparoo.sh#swaparoo.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fs-5b4e"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="fs-d36d">
+        <fs>
+              <delete path='${nameNode}${BASE_TKT_FLIGHT_COUPON}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_deleteme'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_FLIGHT_COUPON/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff'/>
+        </fs>
+        <ok to="join-69e7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="fs-ed11">
+        <fs>
+              <delete path='${nameNode}${BASE_TKT_FREQUENT_FLYER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_deleteme'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_FREQUENT_FLYER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff'/>
+        </fs>
+        <ok to="join-69e7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="fs-c9f7">
+        <fs>
+              <delete path='${nameNode}${BASE_TKT_MASTER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_deleteme'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_MASTER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff'/>
+        </fs>
+        <ok to="join-69e7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="fs-408b">
+        <fs>
+              <delete path='${nameNode}${BASE_TKT_OPERATING_CARRIER}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_deleteme'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_OPERATING_CARRIER/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff'/>
+        </fs>
+        <ok to="join-69e7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="fs-55a1">
+        <fs>
+              <delete path='${nameNode}${BASE_TKT_PAX_FARE}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_deleteme'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_PAX_FARE/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff'/>
+        </fs>
+        <ok to="join-69e7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="fs-5b4e">
+        <fs>
+              <delete path='${nameNode}${BASE_TKT_REF}/_${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_deleteme'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_in'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_out'/>
+              <delete path='${nameNode}${BASE_COMPACTOR}/TKT_REF/${wf:actionData(&#39;shell-4973&#39;)[&#39;HELIX_DATE&#39;]}_diff'/>
+        </fs>
+        <ok to="join-69e7"/>
+        <error to="email-8e81"/>
+    </action>
+    <action name="email-8e81">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

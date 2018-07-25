@@ -1,0 +1,143 @@
+DELAY_CODE,DELAY_NO,DESCRIPTION,DEP_CODE
+ADG,8,Deliberate hold due to restriction at destination airport,NCC
+AFA,13,Loading Bridge or Parking Stands not available,DA
+AFB,14,Airport facilities failure or limitation,DA
+AFC,15,Airport roadway congestion,DA
+AFI,553,Airport IT system failure or limitation,DA
+AFQ,966,Terminal Baggage System failure or limitation,DA
+AFT,967,Congestion at Pax Terminal or Concourse,DA
+AGC,18,Congestion at Immigration,DA
+AGD,19,Intervention from Govt Authority,DA
+ALC,901,Initial allocation of A/C from commercial plan,DA
+AMC,600,Awaiting pushback clearance,DA
+AMH,98,Deliberate hold at departure airport due to operational reasons,NCC
+AMR,24,Runway or taxiway closure at departure airport,DA
+AMT,500,Awaiting towing clearance,DA
+ASE,30,Mandatory security check,DA
+ASL,32,Congestion at security check point,DA
+ASP,33,Congestion at Boarding Gate security screening,DA
+ATC,36,Air Traffic Control-enroute demand/capacity/departure slot problems,FOP
+ATN,37,Late or no submission of ATS flight plans by ATC centers,FOP
+CCA,41,"Late acceptance of cargo, courier, or mail",ESC
+CDE,43,"Late completion/ incorrect cargo, mail, or courier documentation",ESC
+CDL,282,Late completion/  incorrect UWS/ NOTOC from SkyCargo,ESC
+CIC,45,Incorrect build-up of cargo ULDs,ESC
+CIL,46,Shifted/ collapsed/ leaking/ damaged units or unserviceable ULD,ESC
+COI,12,Commercial Reasons - Capacity Restrictions as per Indian GCAA,CM
+COI,0,Commercial Reasons - Capacity Restrictions as per Indian GCAA,CM
+COM,274,Commercial Reasons,CM
+CPA,227,Late delivery of cargo to aircraft(including joining and transfer),DAO
+CPB,50,Late delivery of cargo to aircraft (only for Freighters served by DN Cargo),DCG
+CPC,224,Late delivery of mail and courier to aircraft,DCG
+CPE,49,Late presentation of cargo to Ramp Svcs,ESC
+CPH,233,Authorised delay for cargo (by NCC),ESC
+DFB,55,"Aircraft damage enroute(e.g.bird strike,collision on ground,inbound sector)",FOP
+DGB,60,Aircraft damage due to loading/unloading of ULDs/Pallets,DAO
+DGC,61,Aircraft damage due to Service Delivery(includes catering vehicle),SD
+DGE,63,Aircraft damage due to engineering equipment,ENG
+DGI,523,Aircraft damage due to ground equipment(including towing),DAO
+DGO,67,Aircraft damage due to FOD,DA
+DGU,70,Aircraft damage due to incorrect cargo build up or usage of damaged cargo ULD,ESC
+DGW,69,Aircraft damage due to severe weather conditions,NCC
+EDB,73,Baggage reconciliation systems failure,IT
+EDD,74,EK Airport System Failure/Slow Response,IT
+EDG,76,Boarding control system failure/slow response,IT
+EDN,77,"Communications network failure(ACARS,TLX)",FOP
+EDX,80,Other IT system failure/ slow response,IT
+ENG,273,Engineering reasons impacting next rotation,ENG
+ENI,0,Engineering Reasons - Capacity Restrictions as per Indian GCAA,ENG
+FAC,82,Request for extra cabin cleaning after Purser sign off,SD
+FAE,83,Cabin Crew error,SD
+FAR,88,Special request from Purser,SD
+FAT,689,Late completion of cabin security checks,SD
+FBS,90,Captain request for security check,FOP
+FCA,91,Awaiting standby Cabin Crew,SD
+FCE,93,Crew Scheduling or Crew Control error causing delay to Cabin Crew,NCC
+FFI,99,Incorrect or late advice of fuel figures from Flight Dispatch and/or FlightCrew,FOP
+FPC,103,Late issue / changes of Flight Operational documents,FOP
+FRB,2,Hot brakes on arrival. Brake cooling time required.,FOP
+FRB,0,Hot brakes on arrival. Brake cooling time required.,FOP
+FRD,107,Clarification or late completion of flight documentation by Flight Crew,FOP
+FRL,109,Late completion or extended pre-flight check,FOP
+FRP,112,Flight Crew special request,FOP
+FRR,113,Flight Crew requests (Tech. assessment),FOP
+FSA,115,Awaiting standby Flight Crew,FOP
+FSE,117,Crew Scheduling or Crew Control error causing delay to Flight Crew,NCC
+FTI,661,Flight or Cabin Crew late boarding (except standby crew),SD
+GBD,129, Late completion of catering,SD
+GBV,132,Late completion of catering due to vehicle breakdown,SD
+GCL,136,Late completion of aircraft cleaning,DAO
+GDD,142,Slow/ late completion of Pax documents,EAS
+GDL,143,Late completion/ incorrect Load Control documentation,DAO
+GDN,801,Late completion/ incorrect documentation from out-station to DXB CLC,EAS
+GEE,333,Late provisioning of Loading Equipment,DAO
+GFA,147,Late fuelling,EAS
+GLA,153,"Special or bulky cargo difficult to load, unload or move (notified in advance)",DAO
+GLB,154,Special or bulky cargo difficult to load or move (not notified in advance),ESC
+GLE,156,Ramp loading staff errors,DAO
+GLS,161,Late completion of loading or unloading,DAO
+GLU,332,Difficulty in loading or unloading of ULD,DAO
+GLW,327,Maximising space to accommodate joining load - EKSC request,ESC
+GMA,933,HCC / JCR / Ground Dispatcher Error,EAS
+GMB,610,DOCC/ Dispatch error (Freighter Only),DAO
+GMC,0,RTC allocation system error,DAO
+GMC,11,RTC allocation system error,DAO
+GSC,163,Late Pax coach to remote stands,DAO
+GSL,164,Late provisioning of Technical Support Equipment,DAO
+GST,340,Breakdown of any Ground Support Equipment (except catering vehicle),DAO
+GTB,392,Late completion of towing due to EK Engineering resource,ENG
+GTC,402,Late provisioning of follow me vehicle,DA
+GTD,405,Late completion of towing due to dnata tow team resource/ error,DAO
+GUZ,386,"Late delivery of empty ULDs and/or dollies to Ramp, Baggage, or Cargo",DAO
+MXX,270,Delay reason to be determined,EAS
+OPI,900,Operational Reasons - Capacity Restrictions as per Indian GCAA,NCC
+OPS,275,Operational reasons,NCC
+PBA,171,Late delivery of transfer baggage exceeding 75 mins connection time,DAO
+PBB,181,Late baggage reconciliation/ security/ baggage screening errors,DAO
+PBD,172,Late delivery of joining baggage,DAO
+PBF,187,Late completion of hand-baggage loading in hold,DAO
+PBH,286,Late collection of excessive hand-baggage at boarding gate or loading bridge,EAS
+PBO,300,Offloading baggage of pax who did not report at the gate by gate closure time,EAS
+PBR,299,Re-loading of baggage for late reporting pax(after offloading was initiated),EAS
+PDA,178,Late passenger check-in beyond cut off time (authorised or unauthorised),EAS
+PEP,186,Check-in error: passenger and/or baggage,EAS
+PHD,190,Pax document check at departure gates,SEC
+PHE,191,Boarding error by gate staff,EAS
+PHG,193,Slow boarding process (exclude document or security check),EAS
+PHM,196,Boarding of passengers after gate closure time,EAS
+PHT,199,On-board seating discrepancy,EAS
+PSA,947,Passenger special handling,EAS
+PSE,946,"Security checks includes Pax, Baggage and Cargo",SEC
+PSI,207,Offload/handling pax due medical reasons,EAS
+PSM,208,Passengers taking meals on ground,EAS
+PSO,214,Installing or removal of medical equipment on-board,ENG
+PSP,209,Pax searching for missing property/document,EAS
+PST,280,Prolonged pax dis-embarkation on arrival,SD
+PSU,211,Unruly/drunk Pax Handling,EAS
+PSW,213,Passenger special handling (PRM handling),DAO
+RAD,217,"Aircraft Rotation, late inbound aircraft with less than Minimum Ground Time",NCC
+RLA,222,Authorised hold up to 75 mins to connect Pax/Bag/Cargo from other flights,NCC
+ROA,218,Aircraft change due to operational reasons,NCC
+RTE,957,Through check-in error from out-station or OAL (Pax and/or baggage),EAS
+RTM,230,Late/ Incorrect messages received from out-stations,EAS
+RTO,926,Previous station loading error,EAS
+SGD,0,Scheduling mismatch between DMIS and CORE for EK Freighter/PAX flights,OC
+SGD,1,Scheduling mismatch between DMIS and CORE for EK Freighter/PAX flights,OC
+SGI,958,Scheduled Ground Time less than declared Minimum Ground Time,NCC
+TAA,234,Awaiting spares parts,ENG
+TAS,236,Dispatch of urgent AOG spares (EK or OAL),ENG
+TCT,239,Aircraft change due to technical reasons,ENG
+TDA,781,Unserviceable APU (Pre-advised),ENG
+TDD,241,Awaiting dispensation or concession,ENG
+TDR,242,"Aircraft defect requiring repair, including sudden APU failure",ENG
+TDV,243,Cabin IFE (In-Flight Entertainment) repairs,ENG
+TMD,245,Late completion or discrepancy of Technical documentation,ENG
+TML,247,Late release of aircraft from schedule maintenance checks,ENG
+TNB,251,Non-Scheduled maintenance work,ENG
+TNE,246,Other technical issues,ENG
+WGI,262,Ground Handling impaired by adverse weather conditions,NCC
+WII,263,De-icing and/or removal of snow from aircraft,NCC
+WOO,265,Weather delay at departure station,NCC
+WRA,266,Aircraft diverted to alternate station due to weather,NCC
+WSR,269,"Removal of snow, ice, water, and sand from departure airport",NCC
+WTO,267,Weather delay at destination station,NCC

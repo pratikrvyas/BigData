@@ -1,0 +1,10 @@
+{
+  "type": "record",
+  "name": "PRMS_PROS_DCP_MASTER",
+  "fields": [
+{"name" :  "DCP_NO","type" : ["null", "string"]},
+{"name" :  "DAYS_PRIOR","type" : ["null", "string"]},
+{"name" :  "UPD_DT","type" : ["null", "string"]},
+{"name" :  "UPD_ID","type" : ["null", "string"]}
+]
+}

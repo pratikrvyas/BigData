@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:sqlserver://172.31.143.246:1433;database=IBEDB;user=Helix_user;password=Prd$$Pd@H1x
+--username
+Helix_user
+--password
+Prd$$Pd@H1x
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

@@ -1,0 +1,109 @@
+{
+  "type" : "record",
+  "name" : "ACTIVITY_MILES_OUT_TABLE",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+    "name" : "helix_uuid",
+    "type" : [ "null", "string" ]
+  }, {  
+    "name" : "helix_timestamp",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "SEQ_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEQ_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "UNIQUE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UNIQUE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTNER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARTNER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORGIN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "CATEGORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "CABIN_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CABIN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "RBD_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RBD_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_BRAND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FARE_BRAND",
+    "sqlType" : "12"
+  }, {
+    "name" : "FB_RANKING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FB_RANKING",
+    "sqlType" : "12"
+  }, {
+    "name" : "EFFECTIVE_FROM",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFFECTIVE_FROM",
+    "sqlType" : "93"
+  }, {
+    "name" : "EFFECTIVE_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFFECTIVE_TO",
+    "sqlType" : "93"
+  }, {
+    "name" : "BASE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BASE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "CLASS_BONUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLASS_BONUS",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_UPD_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_UPD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "JOB_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "JOB_NUMBER",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "ACTIVITY_MILES_OUT_TABLE"
+}

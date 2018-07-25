@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@(DESCRIPTION = (CONNECT_TIMEOUT=8) (FAILOVER = ON) (LOAD_BALANCE = OFF) (TRANSPORT_CONNECT_TIMEOUT=4) (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = dolinux548.hq.emirates.com)(PORT = 6518)) (ADDRESS = (PROTOCOL =TCP)(HOST = hqlinux548.hq.emirates.com)(PORT = 6518))) (CONNECT_DATA = (SERVICE_NAME = fosop_rep)))
+--username
+ond_oxf_usr
+--password 
+emirates123
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

@@ -1,0 +1,857 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_SKY_SDW_CUSTOMER",
+  "doc" : "Sqoop import of DW_OWNR.SDW_CUSTOMER",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "MEMBER_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBERSHIP_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBERSHIP_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GROUPING_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "GROUPING_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "JOIN_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "JOIN_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "WMEM_USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WMEM_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "WMEM_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WMEM_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "PREFERRED_CARD_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREFERRED_CARD_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVE_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVE_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "SKYWARDS_MILES_BAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "SKYWARDS_MILES_BAL",
+    "sqlType" : "2"
+  }, {
+    "name" : "ORG_ORG_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORG_ORG_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MERGD_FROM_MEMBER_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "MERGD_FROM_MEMBER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEM_MEMBER_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEM_MEMBER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ASSOCIATED_MEMBER_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ASSOCIATED_MEMBER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "RECOM_BY_MEMBER_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "RECOM_BY_MEMBER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "DEPARTMENT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEPARTMENT_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "TERMINATION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TERMINATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "NON_EXP_END",
+    "type" : [ "string", "null" ],
+    "columnName" : "NON_EXP_END",
+    "sqlType" : "93"
+  }, {
+    "name" : "UPGRADE_PROHIBITED",
+    "type" : [ "string", "null" ],
+    "columnName" : "UPGRADE_PROHIBITED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DOWNGRADE_PROHIBITED",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOWNGRADE_PROHIBITED",
+    "sqlType" : "93"
+  }, {
+    "name" : "POSTAL_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "POSTAL_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "LAST_DNGRD_RVW_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LAST_DNGRD_RVW_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "VS_YIELD_VALUE",
+    "type" : [ "string", "null" ],
+    "columnName" : "VS_YIELD_VALUE",
+    "sqlType" : "2"
+  }, {
+    "name" : "VS_LAST_ACTVTY_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "VS_LAST_ACTVTY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "NOTES",
+    "type" : [ "string", "null" ],
+    "columnName" : "NOTES",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVE_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVE_CARD_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "LAST_EXPIRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "LAST_EXPIRY",
+    "sqlType" : "93"
+  }, {
+    "name" : "RECEIVED_BONUS_AWRD",
+    "type" : [ "string", "null" ],
+    "columnName" : "RECEIVED_BONUS_AWRD",
+    "sqlType" : "12"
+  }, {
+    "name" : "WELCOME_LETTER_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "WELCOME_LETTER_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "WMEM_USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WMEM_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "AUTHORISED_SIGNATORY",
+    "type" : [ "string", "null" ],
+    "columnName" : "AUTHORISED_SIGNATORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "WMEM_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WMEM_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "INTY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "INTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_MILES_BAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_MILES_BAL",
+    "sqlType" : "2"
+  }, {
+    "name" : "OTHER_MEMBER_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "OTHER_MEMBER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "RLTNSHIP_TO_FAM_HEAD",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLTNSHIP_TO_FAM_HEAD",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AUTH_SIGN_RELATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "AUTH_SIGN_RELATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROSP_COMM_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROSP_COMM_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "POSTAL_STAT_CHNG_RSN",
+    "type" : [ "string", "null" ],
+    "columnName" : "POSTAL_STAT_CHNG_RSN",
+    "sqlType" : "12"
+  }, {
+    "name" : "WMEM_STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "WMEM_STG_PROCESS_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "RULE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RULE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONDITION_MET_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CONDITION_MET_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FAMILY_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAMILY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HEAD_SHARE_PERCENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "HEAD_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBER_SHARE_PERCENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBER_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "MGM_REQUEST",
+    "type" : [ "string", "null" ],
+    "columnName" : "MGM_REQUEST",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEDIA_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEDIA_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEDIA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEDIA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTNER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARTNER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ECMC_DESCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "ECMC_DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ENROL_METHOD_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ENROL_METHOD_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ENROL_METHOD_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "ENROL_METHOD_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEQUENCE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEQUENCE_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "TIER_DESCRIPTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_DESCRIPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARD_NO_PREFIX",
+    "type" : [ "string", "null" ],
+    "columnName" : "CARD_NO_PREFIX",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_RESOLUTION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_RESOLUTION_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TERRITORY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TERRITORY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AMC_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AMC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TERRITORY_DSCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "TERRITORY_DSCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_TRAVEL_COORD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_TRAVEL_COORD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MTC_RELATIONSHIP",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_RELATIONSHIP",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_CO_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_CO_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_TELEPHONE_NO_HOME",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_TELEPHONE_NO_HOME",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_TELEPHONE_NO_WORK",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_TELEPHONE_NO_WORK",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_MOBILE_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_MOBILE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_EMAIL_ADDRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_EMAIL_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_JOB_ROLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_JOB_ROLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_INTERNET_ACCESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_INTERNET_ACCESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MTC_FAX_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "MTC_FAX_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "PERSON_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "IMPORTANCE_RATING",
+    "type" : [ "string", "null" ],
+    "columnName" : "IMPORTANCE_RATING",
+    "sqlType" : "12"
+  }, {
+    "name" : "LASTNAME_UPPER",
+    "type" : [ "string", "null" ],
+    "columnName" : "LASTNAME_UPPER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FIRSTNAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "FIRSTNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "INITIALS",
+    "type" : [ "string", "null" ],
+    "columnName" : "INITIALS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TITLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TITLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GENDER",
+    "type" : [ "string", "null" ],
+    "columnName" : "GENDER",
+    "sqlType" : "12"
+  }, {
+    "name" : "NATIONALITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NATIONALITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATE_OF_BIRTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "DATE_OF_BIRTH",
+    "sqlType" : "93"
+  }, {
+    "name" : "INTERNET_USER_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "INTERNET_USER_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEND_NO_EMAIL",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEND_NO_EMAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACC_ONLINE_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACC_ONLINE_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACC_ONLINE_STAT_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACC_ONLINE_STAT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEND_VS_MAIL",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEND_VS_MAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEND_NON_VS_MAIL",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEND_NON_VS_MAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "WPER_USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WPER_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "WPER_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WPER_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "WPER_USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WPER_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "WPER_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "WPER_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "FAMILY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAMILY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "NO_FAMILY_MEMBERS",
+    "type" : [ "string", "null" ],
+    "columnName" : "NO_FAMILY_MEMBERS",
+    "sqlType" : "2"
+  }, {
+    "name" : "JOB_DESIGNATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "JOB_DESIGNATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "INT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "INT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STAFF_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "STAFF_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "JOB_TITLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "JOB_TITLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "UNSUBSCRIBE_EMAIL",
+    "type" : [ "string", "null" ],
+    "columnName" : "UNSUBSCRIBE_EMAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVALID_EMAIL",
+    "type" : [ "string", "null" ],
+    "columnName" : "INVALID_EMAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_ADDRESS_UPPER",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMAIL_ADDRESS_UPPER",
+    "sqlType" : "12"
+  }, {
+    "name" : "WPER_STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "WPER_STG_PROCESS_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PCO_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PCO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PCO_DESCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PCO_DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "IND_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "IND_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "IND_TYPE_DESCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "IND_TYPE_DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "LANGUAGE_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "LANGUAGE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "LANGUAGE_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "LANGUAGE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "LANGUAGE_RES_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LANGUAGE_RES_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ADDRESS_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADDRESS_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ADDRESS_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADDRESS_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "VALID_FROM_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "VALID_FROM_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "VALID_TO_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "VALID_TO_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PREFFERED_CONTACT",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREFFERED_CONTACT",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "AT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISD_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISD_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STREET",
+    "type" : [ "string", "null" ],
+    "columnName" : "STREET",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOWN",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOWN",
+    "sqlType" : "12"
+  }, {
+    "name" : "BUILDING",
+    "type" : [ "string", "null" ],
+    "columnName" : "BUILDING",
+    "sqlType" : "12"
+  }, {
+    "name" : "LOCALITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCALITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "REGION",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION",
+    "sqlType" : "12"
+  }, {
+    "name" : "POST_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POST_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PO_BOX",
+    "type" : [ "string", "null" ],
+    "columnName" : "PO_BOX",
+    "sqlType" : "12"
+  }, {
+    "name" : "REGION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CTY_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CTY_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SOF_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SOF_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEND_CARE_OF",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEND_CARE_OF",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVALID_ADDRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "INVALID_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_ADDRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMAIL_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MIME_PREFERENCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MIME_PREFERENCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STAT_PREFERENCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STAT_PREFERENCE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHECK_INVALID_EMAIL",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHECK_INVALID_EMAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FORMAL_SAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "FORMAL_SAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAMILY_HEAD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAMILY_HEAD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "COMPANY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "COMPANY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAMILY_HEAD_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAMILY_HEAD_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAMILY_MEMBER_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAMILY_MEMBER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_ADDRESS_LOWER",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMAIL_ADDRESS_LOWER",
+    "sqlType" : "12"
+  }, {
+    "name" : "NEXT_EXPIRING_MILES",
+    "type" : [ "string", "null" ],
+    "columnName" : "NEXT_EXPIRING_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "NEXT_EXPIRY_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NEXT_EXPIRY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FEEDBACK_CATEGORY",
+    "type" : [ "string", "null" ],
+    "columnName" : "FEEDBACK_CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "ES_DOWNLOAD_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "ES_DOWNLOAD_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "NCC_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NCC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_CORP_ENABLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_CORP_ENABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOB_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "MOB_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "EUB_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "EUB_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BR_MEMBER_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "BR_MEMBER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "SECONDARY_FAM_HEAD",
+    "type" : [ "string", "null" ],
+    "columnName" : "SECONDARY_FAM_HEAD",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGE",
+    "sqlType" : "2"
+  }, {
+    "name" : "TMB_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TMB_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "LAST_ACTIVITY_F",
+    "type" : [ "string", "null" ],
+    "columnName" : "LAST_ACTIVITY_F",
+    "sqlType" : "93"
+  }, {
+    "name" : "LAST_ACTIVITY_J",
+    "type" : [ "string", "null" ],
+    "columnName" : "LAST_ACTIVITY_J",
+    "sqlType" : "93"
+  }, {
+    "name" : "LAST_ACTIVITY_Y",
+    "type" : [ "string", "null" ],
+    "columnName" : "LAST_ACTIVITY_Y",
+    "sqlType" : "93"
+  }, {
+    "name" : "LASTEST_ACTIVITY_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LASTEST_ACTIVITY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "COMPANY_NAME_CLEANED",
+    "type" : [ "string", "null" ],
+    "columnName" : "COMPANY_NAME_CLEANED",
+    "sqlType" : "12"
+  }, {
+    "name" : "INDUSTRY_TYPE_CLEANED",
+    "type" : [ "string", "null" ],
+    "columnName" : "INDUSTRY_TYPE_CLEANED",
+    "sqlType" : "12"
+  }, {
+    "name" : "HOME_AIRPORT",
+    "type" : [ "string", "null" ],
+    "columnName" : "HOME_AIRPORT",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CARD_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "COBRAND_MEMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "COBRAND_MEMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ALT_EMAIL_ADDRESS_UPPER",
+    "type" : [ "string", "null" ],
+    "columnName" : "ALT_EMAIL_ADDRESS_UPPER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ALT_EMAIL_ADDRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "ALT_EMAIL_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROFILE_COMPL_PERC",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROFILE_COMPL_PERC",
+    "sqlType" : "12"
+  }, {
+    "name" : "JOIN_FAM_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "JOIN_FAM_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_MODIFY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_MODIFY_CODE",
+    "sqlType" : "12"
+  }],
+  "tableName" : "DW_OWNR.SDW_CUSTOMER"
+}

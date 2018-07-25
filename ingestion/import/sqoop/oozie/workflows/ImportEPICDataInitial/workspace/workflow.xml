@@ -1,0 +1,108 @@
+<workflow-app name="ImportEPICDataInitial" xmlns="uri:oozie:workflow:0.5">
+    <start to="fork-1317"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name : ${wf:name()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-2b7b">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_EPIC_HOLD_SNAPSHOT}"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${EPIC_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT HOLD_ID,ETA_CALC_ID,HOLD_ENTRY,HOLD_EXIT,HOLD_AREA FROM EPIC_HOLD_SNAPSHOT WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>HOLD_ID=String,ETA_CALC_ID=String,HOLD_ENTRY=String,HOLD_EXIT=String,HOLD_AREA=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>HOLD_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>EPIC_HOLD_SNAPSHOT</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_EPIC_HOLD_SNAPSHOT}</arg>
+            <file>${EPIC_SQOOP_OPTIONS_FILE}#${EPIC_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-35cc"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-2a99">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${PATH_EPIC_CALC_ETA}"/>
+            </prepare>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${EPIC_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT CALC_ETA_ID,AC_REGN,FLIGHT_NO,TIME_AT120,DESCEND_TIME,ETA_BAY,ETA_TOUCHDOWN,AVG_TAXI_IN_TIME,THRESHOLD_EXCEED,EVENT_TYPE,EVENT_TIME,NEAREST_STAR,CORE_ID,LANDED_RUNWAY,LANDED_TIME,DESCEND_TIME_120NM,PREDICT_RUNWAY,MST_VALUE_USED,ABNORMAL,DESCEND_120_ORIG,HOLD_ENTRY,HOLD_EXIT,HOLD_TIME FROM EPIC_CALC_ETA WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CALC_ETA_ID=String,AC_REGN=String,FLIGHT_NO=String,TIME_AT120=String,DESCEND_TIME=String,ETA_BAY=String,ETA_TOUCHDOWN=String,AVG_TAXI_IN_TIME=String,THRESHOLD_EXCEED=String,EVENT_TYPE=String,EVENT_TIME=String,NEAREST_STAR=String,CORE_ID=String,LANDED_RUNWAY=String,LANDED_TIME=String,DESCEND_TIME_120NM=String,PREDICT_RUNWAY=String,MST_VALUE_USED=String,ABNORMAL=String,DESCEND_120_ORIG=String,HOLD_ENTRY=String,HOLD_EXIT=String,HOLD_TIME=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>CALC_ETA_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>EPIC_CALC_ETA</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_EPIC_CALC_ETA}</arg>
+            <file>${EPIC_SQOOP_OPTIONS_FILE}#${EPIC_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-35cc"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-1317">
+        <path start="sqoop-2b7b" />
+        <path start="sqoop-2a99" />
+    </fork>
+    <join name="join-35cc" to="End"/>
+    <end name="End"/>
+</workflow-app>

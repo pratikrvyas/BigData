@@ -1,0 +1,66 @@
+<workflow-app name="RawtoDecomposedEPICDataDaily" xmlns="uri:oozie:workflow:0.5">
+    <start to="shell-7adc"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>manu.mukundan@dnata.com</to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="pig-d299">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+            <script>rawtodecomposed_EPIC.pig</script>
+              <param>HS_SOURCE=${HS_SOURCE}</param>
+              <param>HS_TARGET_DIRECTORY=${HS_TARGET_DIR}</param>
+              <param>CE_SOURCE=${CE_SOURCE}</param>
+              <param>CE_TARGET_DIRECTORY=${CE_TARGET_DIR}</param>
+              <param>HS_TARGET_SCHEMA=${wf:actionData(&#39;shell-7adc&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+              <param>CE_TARGET_SCHEMA=${wf:actionData(&#39;shell-7f11&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+              <param>HS_SOURCE_SCHEMA=${HS_SOURCE_SCHEMA}</param>
+              <param>CE_SOURCE_SCHEMA=${CE_SOURCE_SCHEMA}</param>
+            <file>rawtodecomposed_EPIC.pig#rawtodecomposed_EPIC.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-7adc">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${HS_TARGET_SCHEMA}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="shell-7f11"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-7f11">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${CE_TARGET_SCHEMA}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-d299"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

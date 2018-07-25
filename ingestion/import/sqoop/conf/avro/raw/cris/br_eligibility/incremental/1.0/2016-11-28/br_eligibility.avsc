@@ -1,0 +1,97 @@
+{
+  "type" : "record",
+  "name" : "BR_ELIGIBILITY",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "BR_ELIGIBILITY_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_ELIGIBILITY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BR_FUNC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_FUNC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_PROGRAM_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_PROGRAM_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_ROUTE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_ROUTE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_CABIN_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_CABIN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_FB_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_FB_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_TVL_START_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_TVL_START_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BR_TVL_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_TVL_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BR_TKT_START_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_TKT_START_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BR_TKT_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_TKT_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BR_USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "BR_USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "BR_IS_ACTIVE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_IS_ACTIVE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "BR_ELIGIBILITY"
+}

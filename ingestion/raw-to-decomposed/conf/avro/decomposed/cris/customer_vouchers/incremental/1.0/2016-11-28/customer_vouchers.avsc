@@ -1,0 +1,169 @@
+{
+  "type" : "record",
+  "name" : "CUSTOMER_VOUCHERS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+    "name" : "helix_uuid",
+    "type" : [ "null", "string" ]
+  }, {  
+    "name" : "helix_timestamp",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "VOUCHER_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VOUCHER_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "PER_PERSON_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PER_PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "VOUCHER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VOUCHER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PULL_REQUIRED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PULL_REQUIRED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PULL_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PULL_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "EXPIRY_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXPIRY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CANCELLED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CANCELLED",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "AMEX_EXPIRY_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMEX_EXPIRY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ORG_ORG_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORG_ORG_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ISSUE_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUE_TO",
+    "sqlType" : "12"
+  }, {
+    "name" : "DAY_COUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAY_COUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "VCH_CHARGES_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VCH_CHARGES_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "VCH_UTLIZED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VCH_UTLIZED",
+    "sqlType" : "12"
+  }, {
+    "name" : "SALES_OFF_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_OFF_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DAYS_UTILIZED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAYS_UTILIZED",
+    "sqlType" : "2"
+  }, {
+    "name" : "UTILIZED_COUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UTILIZED_COUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "RBE_REWARD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RBE_REWARD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "VCH_UTLIZED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VCH_UTLIZED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PNR_REC_LOCATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PNR_REC_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "RESEND_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RESEND_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CUSTOMER_VOUCHERS"
+}

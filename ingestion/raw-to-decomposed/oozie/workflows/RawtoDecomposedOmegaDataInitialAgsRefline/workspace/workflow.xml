@@ -1,0 +1,62 @@
+<workflow-app name="RawtoDecomposedOmegaHistoricalDataAgsRef" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="spark-59f4"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST}</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow path: http://10.232.154.13:8888/oozie/list_oozie_workflow/${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-59f4">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${OMG_STG_AGS_REF_OUTPUT_PATH}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <spark-opts>--executor-memory 128m --driver-memory 128m --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=1 --conf spark.dynamicAllocation.maxExecutors=10 </spark-opts>
+              <arg>-i</arg>
+              <arg>${OMG_STG_AGS_REF_INPUT_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${OMG_STG_AGS_REF_OUTPUT_PATH}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${OMG_STG_AGS_REF_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,44 @@
+{
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [ {
+    "name" : "No",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "AIRL_IATA_CURRENT_CODE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BCHT_FLIGHT_NUMBER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BCHT_STA_STD",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLHT_ARRIVAL_DEPARTURE_FLAG",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ACFT_REG_NO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BCHT_REASON_ID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BCHT_OLD_BAY_NO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BCHT_NEW_BAY_NO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ROUTE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "CREATE_DT",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  } ]
+}

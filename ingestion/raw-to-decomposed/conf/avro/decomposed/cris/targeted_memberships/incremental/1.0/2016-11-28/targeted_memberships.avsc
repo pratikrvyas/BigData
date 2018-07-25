@@ -1,0 +1,104 @@
+{
+  "type" : "record",
+  "name" : "TARGETED_MEMBERSHIPS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }, {
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PRC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PRC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PMP_MEM_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PMP_MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PER_PERSON_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PER_PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "DATE_TARGETTED",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "DATE_TARGETTED",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PCO_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PCO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "NO_OF_HITS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NO_OF_HITS",
+    "sqlType" : "2"
+  }, {
+    "name" : "NO_OF_EDITS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NO_OF_EDITS",
+    "sqlType" : "2"
+  }, {
+    "name" : "UNDELIVERED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UNDELIVERED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CAMPAIGN_DETAILS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CAMPAIGN_DETAILS",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "TARGETED_MEMBERSHIPS"
+}

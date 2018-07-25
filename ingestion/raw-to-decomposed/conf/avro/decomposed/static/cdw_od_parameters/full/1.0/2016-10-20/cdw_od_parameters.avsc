@@ -1,0 +1,28 @@
+{
+  "type" : "record",
+  "name" : "CDW_OD_PARAMETERS",
+  "doc" : "import of DW_OWNR.CDW_OD_PARAMETERS",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "VALUE",
+    "type" : [ "string", "null" ],
+    "columnName" : "VALUE",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.CDW_OD_PARAMETERS"
+}

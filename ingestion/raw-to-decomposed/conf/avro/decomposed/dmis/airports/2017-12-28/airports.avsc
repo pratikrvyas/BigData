@@ -1,0 +1,153 @@
+{
+  "type" : "record",
+  "name" : "airportsdecomposed",
+   "fields" : [ {
+    "name" : "AIRP_AIRPORT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_AIRPORT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRP_IATA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_ICAO_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_ICAO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_SEGR_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_SEGR_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_COUN_COUNTRY_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_COUN_COUNTRY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_AIRPORT_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_AIRPORT_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_ADDRESS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_EMAILID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_EMAILID",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_FAX_NR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_FAX_NR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_FLYING_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_FLYING_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_GROUP_CODE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_GROUP_CODE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRP_HOST_AIRPORT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_HOST_AIRPORT",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_IATA_CITY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_IATA_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_MANAGER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_MANAGER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_OPERATING_HOURS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_OPERATING_HOURS",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_REGION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_REGION",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_TELEPHONE_NR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_TELEPHONE_NR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_TIME_ZONE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_TIME_ZONE_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "CREATE_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRP_FLY_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRP_FLY_TIME",
+    "sqlType" : "12"
+  } ,
+	{
+	"name" : "HELIX_UUID",
+	"type" : [ "string", "null" ]
+	},
+	{
+	"name" : "HELIX_TIMESTAMP",
+	"type" : [ "string", "null" ]
+	}
+  ]
+ 
+}

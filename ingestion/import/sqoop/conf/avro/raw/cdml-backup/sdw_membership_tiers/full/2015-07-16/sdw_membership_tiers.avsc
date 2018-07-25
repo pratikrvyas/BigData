@@ -1,0 +1,182 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_SKY_SDW_MEMBERSHIP_TIERS",
+  "doc" : "Sqoop import of DW_OWNR.SDW_MEMBERSHIP_TIERS",
+  "fields" : [ {
+    "name" : "CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "MBT_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MBT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEQ_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEQ_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARD_REPLACE_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "CARD_REPLACE_PERIOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "DGRADE_REVIEW_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "DGRADE_REVIEW_PERIOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "UGRADE_REVIEW_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "UGRADE_REVIEW_PERIOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXP_REVIEW_INTERVAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXP_REVIEW_INTERVAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARD_NO_PREFIX",
+    "type" : [ "string", "null" ],
+    "columnName" : "CARD_NO_PREFIX",
+    "sqlType" : "12"
+  }, {
+    "name" : "RETRO_CREDIT_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "RETRO_CREDIT_PERIOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "QUICK_MVMT_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "QUICK_MVMT_PERIOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "IMAGE_FILENAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "IMAGE_FILENAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXP_REVIEW_RND_INTERVAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXP_REVIEW_RND_INTERVAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARD_REPLACE_RND_INTERVAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "CARD_REPLACE_RND_INTERVAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "REDEMPTION_OVERDRAFT_LIMIT",
+    "type" : [ "string", "null" ],
+    "columnName" : "REDEMPTION_OVERDRAFT_LIMIT",
+    "sqlType" : "12"
+  }, {
+    "name" : "MBT_RES_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "MBT_RES_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REVIEW_LAG_DAYS",
+    "type" : [ "string", "null" ],
+    "columnName" : "REVIEW_LAG_DAYS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_MILES_START_MONTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_MILES_START_MONTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_MILES_EVAL_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_MILES_EVAL_PERIOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "ENROL_RETRO_CREDIT_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "ENROL_RETRO_CREDIT_PERIOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STG_PROCESS_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_MILES_RND_EVAL_PERIOD",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_MILES_RND_EVAL_PERIOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVATION_REQUIRED",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVATION_REQUIRED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHARGEABLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHARGEABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_LEVEL_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_LEVEL_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_BONUS_LIMIT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIER_BONUS_LIMIT",
+    "sqlType" : "12"
+  }, {
+    "name" : "PRODUCT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PRODUCT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BASE_TIER",
+    "type" : [ "string", "null" ],
+    "columnName" : "BASE_TIER",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "DW_OWNR.SDW_MEMBERSHIP_TIERS"
+}

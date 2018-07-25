@@ -1,0 +1,387 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_TKT_PAX_FARE",
+  "doc" : "Sqoop import of TKT_OWNR.TKT_PAX_FARE",
+  "fields" : [ {
+    "name" : "TKT_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_PAX_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_PAX_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AGENT_AIRLINE_INFO",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_AIRLINE_INFO",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISO_COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISO_COUNTRY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "IATA_AGENCY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "IATA_AGENCY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_LENGHT",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_LENGHT",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_SURNAME_LEN",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_SURNAME_LEN",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_SURNAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_SURNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_FIRSTNAME_LEN",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_FIRSTNAME_LEN",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_FIRSTNAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_FIRSTNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_MAGNETIC_STRIP_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_MAGNETIC_STRIP_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_STRING_LEN",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_STRING_LEN",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_NAME_DESC",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_NAME_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "ENDORSEMENT_LEN",
+    "type" : [ "string", "null" ],
+    "columnName" : "ENDORSEMENT_LEN",
+    "sqlType" : "12"
+  }, {
+    "name" : "ENDORSEMENT_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "ENDORSEMENT_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERNATIONAL_SALES_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "INTERNATIONAL_SALES_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXCHANGE_RATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXCHANGE_RATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_LOGIC_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_LOGIC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_SOURCE_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_SOURCE_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_MODE_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_MODE_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_AMOUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "NET_FARE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "NET_FARE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "EQUIVALENT_FARE_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "EQUIVALENT_FARE_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "EQUIVALENT_FARE_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "EQUIVALENT_FARE_AMOUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOTAL_FARE_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOTAL_FARE_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOTAL_FARE_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOTAL_FARE_AMOUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOUR_CODE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOUR_CODE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAYMENT_INDICATOR_1",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAYMENT_INDICATOR_1",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAYMENT_INDICATOR_2",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAYMENT_INDICATOR_2",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAYMENT_INDICATOR_3",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAYMENT_INDICATOR_3",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAYMENT_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAYMENT_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "COMMISSION_RATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COMMISSION_RATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "COMMISSION_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "COMMISSION_AMOUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUED_EXCHANGE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUED_EXCHANGE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGINAL_ISSUE_DATE_JULIAN",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGINAL_ISSUE_DATE_JULIAN",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGINAL_ISSUE_IATA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGINAL_ISSUE_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGINAL_ISSUE_TICKET_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGINAL_ISSUE_TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGINAL_ISSUE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGINAL_ISSUE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "GDS_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GDS_PNR_ADDRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_PNR_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "GDS_AGENT_PSEUDO_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_AGENT_PSEUDO_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GDS_COMMISSION_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_COMMISSION_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "GDS_COMMISSION_CURRENCY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_COMMISSION_CURRENCY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GDS_COMMISSION_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_COMMISSION_AMOUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "GDS_COMMISSION_RATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_COMMISSION_RATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GDS_TOTAL_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_TOTAL_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "NET_CURR_DEC",
+    "type" : [ "string", "null" ],
+    "columnName" : "NET_CURR_DEC",
+    "sqlType" : "12"
+  }, {
+    "name" : "NET_EQUIVALENT_FARE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NET_EQUIVALENT_FARE",
+    "sqlType" : "12"
+  }, {
+    "name" : "NET_TOTAL_CURR_DEC",
+    "type" : [ "string", "null" ],
+    "columnName" : "NET_TOTAL_CURR_DEC",
+    "sqlType" : "12"
+  }, {
+    "name" : "NET_TOTAL",
+    "type" : [ "string", "null" ],
+    "columnName" : "NET_TOTAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "COM_CURR",
+    "type" : [ "string", "null" ],
+    "columnName" : "COM_CURR",
+    "sqlType" : "12"
+  }, {
+    "name" : "COM_AMOUNT_LA",
+    "type" : [ "string", "null" ],
+    "columnName" : "COM_AMOUNT_LA",
+    "sqlType" : "12"
+  }, {
+    "name" : "COM_PART_AMOUNT_CURR",
+    "type" : [ "string", "null" ],
+    "columnName" : "COM_PART_AMOUNT_CURR",
+    "sqlType" : "12"
+  }, {
+    "name" : "COM_PART_AMOUNT_LA",
+    "type" : [ "string", "null" ],
+    "columnName" : "COM_PART_AMOUNT_LA",
+    "sqlType" : "12"
+  }, {
+    "name" : "REFUND_CURR",
+    "type" : [ "string", "null" ],
+    "columnName" : "REFUND_CURR",
+    "sqlType" : "12"
+  }, {
+    "name" : "REFUND_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "REFUND_AMOUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "COM_PERCENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "COM_PERCENT",
+    "sqlType" : "12"
+  }, {
+    "name" : "COM_PERCENT_DEC",
+    "type" : [ "string", "null" ],
+    "columnName" : "COM_PERCENT_DEC",
+    "sqlType" : "12"
+  }, {
+    "name" : "TAX_COMM_RATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TAX_COMM_RATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TAX_AMOUNT_CURR",
+    "type" : [ "string", "null" ],
+    "columnName" : "TAX_AMOUNT_CURR",
+    "sqlType" : "12"
+  }, {
+    "name" : "TAX_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TAX_AMOUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "TAX_PARTY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TAX_PARTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "INFANT_DATE_OF_BIRTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "INFANT_DATE_OF_BIRTH",
+    "sqlType" : "93"
+  }, {
+    "name" : "PASSENGER_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PASSENGER_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGE_FOR_UM",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGE_FOR_UM",
+    "sqlType" : "12"
+  }, {
+    "name" : "POINT_OF_SALE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POINT_OF_SALE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PRESENT_CC_DURING_CHECK_IN",
+    "type" : [ "string", "null" ],
+    "columnName" : "PRESENT_CC_DURING_CHECK_IN",
+    "sqlType" : "12"
+  }, {
+    "name" : "CURRENCY_DECIMAL_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "CURRENCY_DECIMAL_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CURRENCY_AMOUNT_DATA_ELEMENT",
+    "type" : [ "string", "null" ],
+    "columnName" : "CURRENCY_AMOUNT_DATA_ELEMENT",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "TKT_OWNR.TKT_PAX_FARE"
+}

@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "Manual_from_OAL_RBD_to_EK_Cabin",
+  "doc" : "import of DW_OWNR.Manual_from_OAL_RBD_to_EK_Cabin",
+  "fields" : [ {
+    "name" : "helix_uuid",
+    "type" : [ "string", "null" ],
+    "columnName" : "helix_uuid",
+    "sqlType" : "2"
+  }, {
+    "name" : "helix_timestamp",
+    "type" : [ "string", "null" ],
+    "columnName" : "helix_timestamp",
+    "sqlType" : "12"
+  },{
+    "name" : "Airline_2_letter_BCD_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "Airline_2_letter_BCD_Code",
+    "sqlType" : "2"
+  }, {
+    "name" : "Airline_numeric_number",
+    "type" : [ "string", "null" ],
+    "columnName" : "Airline_numeric_number",
+    "sqlType" : "12"
+  }, {
+    "name" : "OAL_RBD",
+    "type" : [ "string", "null" ],
+    "columnName" : "OAL_RBD",
+    "sqlType" : "2"
+  }, {
+    "name" : "EK_Cabin",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_Cabin",
+    "sqlType" : "93"
+  }, {
+    "name" : "Effective_Start_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Effective_Start_Date",
+    "sqlType" : "12"
+  }, {
+    "name" : "Effective_End_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Effective_End_Date",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.Manual_from_OAL_RBD_to_EK_Cabin"
+}

@@ -1,0 +1,202 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_TKT_MASTER",
+  "doc" : "Sqoop import of TKT_OWNR.TKT_MASTER",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "TKT_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERIAL_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERIAL_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PURGE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PURGE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PNR_REC_LOCATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_REC_LOCATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_CREATION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "AIRLINE_CONFIRM_NUM_LENGTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_CONFIRM_NUM_LENGTH",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_CONFIRMATION_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_CONFIRMATION_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "LOCAL_CREATION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCAL_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ETR_SOURCE_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "ETR_SOURCE_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ETR_SOURCE_DESCRIPTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "ETR_SOURCE_DESCRIPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUING_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUING_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUING_AGENT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUING_AGENT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ISSUE_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUE_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_DATE_GMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUE_DATE_GMT",
+    "sqlType" : "93"
+  }, {
+    "name" : "ISSUE_TIME_GMT",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUE_TIME_GMT",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUING_HOST",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUING_HOST",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUING_AIRLINE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUING_AIRLINE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICING_AIRLINE_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERVICING_AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICING_AIRLINE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERVICING_AIRLINE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICING_AIRLINE_CODE_EXTN",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERVICING_AIRLINE_CODE_EXTN",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_CHK_DIGIT",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_CHK_DIGIT",
+    "sqlType" : "12"
+  }, {
+    "name" : "PRIME_CHECK_DIGIT",
+    "type" : [ "string", "null" ],
+    "columnName" : "PRIME_CHECK_DIGIT",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOTAL_AUDIT_COUPONS",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOTAL_AUDIT_COUPONS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOTAL_FLIGHT_COUPONS_EXVOID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TOTAL_FLIGHT_COUPONS_EXVOID",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_LOGIC_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FARE_LOGIC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EK_STAFF_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_STAFF_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUING_AIRLINE_LENGTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUING_AIRLINE_LENGTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUING_AIRLINE_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUING_AIRLINE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONJUNCTION_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "CONJUNCTION_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARS_DOWNLOAD_DATETIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "MARS_DOWNLOAD_DATETIME",
+    "sqlType" : "93"
+  }, {
+    "name" : "TYPE_OF_CREATION_TYPE_OF_TKT",
+    "type" : [ "string", "null" ],
+    "columnName" : "TYPE_OF_CREATION_TYPE_OF_TKT",
+    "sqlType" : "12"
+  }, {
+    "name" : "TST_VALIDATION_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "TST_VALIDATION_INDICATOR",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "TKT_OWNR.TKT_MASTER"
+}

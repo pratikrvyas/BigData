@@ -1,0 +1,123 @@
+{
+  "type" : "record",
+  "name" : "PRMS_EK_Flight_Schedule",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ 
+ {
+      "name": "HELIX_UUID",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "HELIX_TIMESTAMP",
+      "type": [
+        "string",
+        "null"
+      ]
+    }, {
+    "name" : "SNAP_SHOT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SNAP_SHOT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLT_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "EFFECTIVE_DATE_OF_FLT_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFFECTIVE_DATE_OF_FLT_PERIOD",
+    "sqlType" : "93"
+  }, {
+    "name" : "LAST_DAY_OF_FLT_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_DAY_OF_FLT_PERIOD",
+    "sqlType" : "93"
+  }, {
+    "name" : "DAYS_OF_OPERATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAYS_OF_OPERATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "LEG_SEG_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LEG_SEG_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOARD_AIRPORT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOARD_AIRPORT",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEPARTURE_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DEPARTURE_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEPARTURE_DAY_CHANGE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DEPARTURE_DAY_CHANGE",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFFPOINT_AIRPORT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OFFPOINT_AIRPORT",
+    "sqlType" : "12"
+  }, {
+    "name" : "ARRIVAL_TIME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ARRIVAL_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ARRIVAL_DAY_CHANGE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ARRIVAL_DAY_CHANGE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRCRAFT_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRCRAFT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "F_CAP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "F_CAP",
+    "sqlType" : "2"
+  }, {
+    "name" : "J_CAP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "J_CAP",
+    "sqlType" : "2"
+  }, {
+    "name" : "Y_CAP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "Y_CAP",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "PRMS_EK_Flight_Schedule"
+}

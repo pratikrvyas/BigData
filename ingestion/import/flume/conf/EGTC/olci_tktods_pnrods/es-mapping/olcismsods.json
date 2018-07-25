@@ -1,0 +1,22 @@
+{
+  "olcismsods": {
+    "_ttl": {"enabled": true,"default":"10d"},
+    "_timestamp": {
+      "enabled": true,
+      "format": "yyyy-MM-dd HH:mm:ss"
+    },
+    "properties": {
+      "pnr": {"type": "string"},
+      "origin": {"type": "string"},
+      "destination": {"type": "string"},
+      "mobile_number": {"type": "string"},
+      "booked_date": {"type": "string","index": "not_analyzed"},
+      "pax_name": {"type": "string"},
+      "flight_number": {"type": "string"},
+      "departure_date": {"type": "string","index": "not_analyzed"},
+      "departure_time": {"type": "string"},
+      "cabin_class": {"type": "string"},
+      "action_date": {"type": "string","index": "not_analyzed"}
+    }
+  }
+}

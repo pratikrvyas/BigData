@@ -1,0 +1,7 @@
+#export
+--connect
+jdbc:oracle:thin:@10.38.243.2:6516/cbiod
+--username
+opsbi_ownr
+--password
+emirates123

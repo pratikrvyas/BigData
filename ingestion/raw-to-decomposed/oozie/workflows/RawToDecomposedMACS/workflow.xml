@@ -1,0 +1,307 @@
+
+<workflow-app name="RawToDecomposedMacs" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-f290"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-f290">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_dates.sh</exec>
+            <file>generate_dates.sh#generate_dates.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-1778"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="shell-41c0">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>oozie.action.max.output.data</name>
+                    <value>8192</value>
+                </property>
+            </configuration>
+            <exec>MacsIncremental.sh</exec>
+              <argument>${PAXRAWDIR}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}</argument>
+              <argument>${PAXRAWSCHEMAFILE}</argument>
+              <argument>${PAXTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}</argument>
+              <argument>${nameNode}</argument>
+            <file>MacsIncremental.sh#MacsIncremental.sh</file>
+            <file>SeqToAvroUuid.jar#SeqToAvroUuid.jar</file>
+        </shell>
+        <ok to="decision-6240"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="shell-98ef">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>MacsIncremental.sh</exec>
+              <argument>${FLTRAWDIR}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}</argument>
+              <argument>${FLTRAWSCHEMAFILE}</argument>
+              <argument>${FLTTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}</argument>
+              <argument>${nameNode}</argument>
+            <file>MacsIncremental.sh#MacsIncremental.sh</file>
+            <file>SeqToAvroUuid.jar#SeqToAvroUuid.jar</file>
+        </shell>
+        <ok to="decision-e0ff"/>
+        <error to="email-8a5b"/>
+    </action>
+    <fork name="fork-1778">
+        <path start="shell-41c0" />
+        <path start="shell-98ef" />
+    </fork>
+    <join name="join-ec99" to="fork-ad30"/>
+    <action name="subworkflow-a680">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/wf_rawtodecomposed_generic</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>SOURCE_DIRECTORY</name>
+                    <value>${PAXTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}</value>
+                </property>
+                <property>
+                    <name>TARGET_DIRECTORY</name>
+                    <value>${PAXDECOMPOSEDDIR}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_TIME&#39;]}</value>
+                </property>
+                <property>
+                    <name>SOURCE_SCHEMA</name>
+                    <value>${PAXRAWSCHEMAFILE}</value>
+                </property>
+                <property>
+                    <name>TARGET_SCHEMA</name>
+                    <value>${PAXDECOMPOSEDSCHEMAFILE}</value>
+                </property>
+                <property>
+                    <name></name>
+                    <value></value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>35</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="join-ec99"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="subworkflow-93eb">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/wf_rawtodecomposed_generic</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>SOURCE_DIRECTORY</name>
+                    <value>${FLTTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}</value>
+                </property>
+                <property>
+                    <name>TARGET_DIRECTORY</name>
+                    <value>${FLTDECOMPOSEDDIR}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_TIME&#39;]}</value>
+                </property>
+                <property>
+                    <name>SOURCE_SCHEMA</name>
+                    <value>${FLTRAWSCHEMAFILE}</value>
+                </property>
+                <property>
+                    <name>TARGET_SCHEMA</name>
+                    <value>${FLTDECOMPOSEDSCHEMAFILE}</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>35</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="join-ec99"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="shell-045c">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="join-ec99"/>
+        <error to="email-8a5b"/>
+    </action>
+    <decision name="decision-6240">
+        <switch>
+            <case to="subworkflow-a680">
+              ${ fs:isDir( concat( concat(PAXTEMPDIRBASE, &#39;/&#39;), wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;] ) ) }
+            </case>
+            <case to="shell-045c">
+              ${ fs:isDir( concat( concat(PAXTEMPDIRBASE, &#39;/&#39;), wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;] ) )  eq false }
+            </case>
+            <default to="shell-045c"/>
+        </switch>
+    </decision>
+    <action name="shell-a5be">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="join-ec99"/>
+        <error to="email-8a5b"/>
+    </action>
+    <decision name="decision-e0ff">
+        <switch>
+            <case to="subworkflow-93eb">
+              ${ fs:isDir( concat( concat(FLTTEMPDIRBASE, &#39;/&#39;), wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;] ) ) }
+            </case>
+            <case to="shell-a5be">
+              ${ fs:isDir( concat( concat(FLTTEMPDIRBASE, &#39;/&#39;), wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;] ) )  eq false }
+            </case>
+            <default to="shell-a5be"/>
+        </switch>
+    </decision>
+    <action name="shell-f8ca">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>MacsIncremental.sh</exec>
+              <argument>${PAXRAWDIR}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}</argument>
+              <argument>${PAXRAWSCHEMAFILE}</argument>
+              <argument>${PAXTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}</argument>
+              <argument>${nameNode}</argument>
+            <file>MacsIncremental.sh#MacsIncremental.sh</file>
+            <file>SeqToAvroUuid.jar#SeqToAvroUuid.jar</file>
+        </shell>
+        <ok to="subworkflow-aa8e"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="shell-3f0d">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>MacsIncremental.sh</exec>
+              <argument>${FLTRAWDIR}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}</argument>
+              <argument>${FLTRAWSCHEMAFILE}</argument>
+              <argument>${FLTTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}</argument>
+              <argument>${nameNode}</argument>
+            <file>MacsIncremental.sh#MacsIncremental.sh</file>
+            <file>SeqToAvroUuid.jar#SeqToAvroUuid.jar</file>
+        </shell>
+        <ok to="subworkflow-acaa"/>
+        <error to="email-8a5b"/>
+    </action>
+    <fork name="fork-ad30">
+        <path start="shell-f8ca" />
+        <path start="shell-3f0d" />
+    </fork>
+    <join name="join-fda2" to="End"/>
+    <action name="subworkflow-aa8e">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/wf_rawtodecomposed_generic</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>SOURCE_DIRECTORY</name>
+                    <value>${PAXTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}</value>
+                </property>
+                <property>
+                    <name>TARGET_DIRECTORY</name>
+                    <value>${PAXDECOMPOSEDDIR}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_TIME&#39;]}</value>
+                </property>
+                <property>
+                    <name>SOURCE_SCHEMA</name>
+                    <value>${PAXRAWSCHEMAFILE}</value>
+                </property>
+                <property>
+                    <name>TARGET_SCHEMA</name>
+                    <value>${PAXDECOMPOSEDSCHEMAFILE}</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>35</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="fs-9e14"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="subworkflow-acaa">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/wf_rawtodecomposed_generic</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>SOURCE_DIRECTORY</name>
+                    <value>${FLTTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}</value>
+                </property>
+                <property>
+                    <name>TARGET_DIRECTORY</name>
+                    <value>${FLTDECOMPOSEDDIR}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_TIME&#39;]}</value>
+                </property>
+                <property>
+                    <name>SOURCE_SCHEMA</name>
+                    <value>${FLTRAWSCHEMAFILE}</value>
+                </property>
+                <property>
+                    <name>TARGET_SCHEMA</name>
+                    <value>${FLTDECOMPOSEDSCHEMAFILE}</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>35</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="fs-792a"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="fs-9e14">
+        <fs>
+              <delete path='${nameNode}${PAXTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}'/>
+              <delete path='${nameNode}${PAXTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}'/>
+        </fs>
+        <ok to="join-fda2"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="fs-792a">
+        <fs>
+              <delete path='${nameNode}${FLTTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_YESTERDAY&#39;]}'/>
+              <delete path='${nameNode}${FLTTEMPDIRBASE}/${wf:actionData(&#39;shell-f290&#39;)[&#39;HELIX_DATE_TODAY&#39;]}'/>
+        </fs>
+        <ok to="join-fda2"/>
+        <error to="email-8a5b"/>
+    </action>
+    <action name="email-8a5b">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

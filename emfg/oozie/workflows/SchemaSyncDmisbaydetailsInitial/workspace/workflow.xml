@@ -1,0 +1,43 @@
+<workflow-app name="SchemaSyncDmisBayDetailsInitial" xmlns="uri:oozie:workflow:0.5">
+    <start to="spark-89dc"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-89dc">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>DMIS_BAYDETAILS_SCHEMASYNC</name>
+              <class>com.emirates.helix.SchemaSyncDriver</class>
+            <jar>schema-sync-1.0.jar</jar>
+              <spark-opts>--executor-memory 256m --driver-memory 256m --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=1 --conf spark.dynamicAllocation.maxExecutors=10</spark-opts>
+              <arg>-i</arg>
+              <arg>${INPUT_HDFS_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_HDFS_PATH}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+              <arg>-s</arg>
+              <arg>${IN_FORMAT}</arg>
+              <arg>-p</arg>
+              <arg>${OUT_FORMAT}</arg>
+              <arg>-x</arg>
+              <arg>${SYNC_MAPPING_FILE}</arg>
+        </spark>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

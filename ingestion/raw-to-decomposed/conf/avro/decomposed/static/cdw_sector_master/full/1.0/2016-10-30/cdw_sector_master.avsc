@@ -1,0 +1,98 @@
+{
+  "type" : "record",
+  "name" : "CDW_SECTOR_MASTER",
+  "doc" : "import of DW_OWNR.CDW_SECTOR_MASTER",
+  "fields" : [  {
+    "name" : "helix_uuid",
+    "type" : [ "string", "null" ],
+    "columnName" : "helix_uuid",
+    "sqlType" : "2"
+  }, {
+    "name" : "helix_timestamp",
+    "type" : [ "string", "null" ],
+    "columnName" : "helix_timestamp",
+    "sqlType" : "12"
+  },{
+    "name" : "Sector_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "Sector_Code",
+    "sqlType" : "2"
+  }, {
+    "name" : "Sector_board_Point",
+    "type" : [ "string", "null" ],
+    "columnName" : "Sector_board_Point",
+    "sqlType" : "12"
+  }, {
+    "name" : "Sector_Off_Point",
+    "type" : [ "string", "null" ],
+    "columnName" : "Sector_Off_Point",
+    "sqlType" : "2"
+  }, {
+    "name" : "Combined_Sector",
+    "type" : [ "string", "null" ],
+    "columnName" : "Combined_Sector",
+    "sqlType" : "93"
+  }, {
+    "name" : "EK_Online_Offline_Flag",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_Online_Offline_Flag",
+    "sqlType" : "12"
+  }, {
+    "name" : "EK_Online_Offline_Start_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_Online_Offline_Start_Date",
+    "sqlType" : "93"
+  }, {
+    "name" : "EK_Online_Offline_end_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_Online_Offline_end_Date",
+    "sqlType" : "93"
+  }, {
+    "name" : "Sector_Distance",
+    "type" : [ "string", "null" ],
+    "columnName" : "Sector_Distance",
+    "sqlType" : "12"
+  }, {
+    "name" : "GCD",
+    "type" : [ "string", "null" ],
+    "columnName" : "GCD",
+    "sqlType" : "93"
+  }, {
+    "name" : "MPM_Distance",
+    "type" : [ "string", "null" ],
+    "columnName" : "MPM_Distance",
+    "sqlType" : "12"
+  }, {
+    "name" : "Sector_Distance_Effective_Start_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Sector_Distance_Effective_Start_Date",
+    "sqlType" : "12"
+  },{
+    "name" : "Sector_Distance_Effective_End_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Sector_Distance_Effective_End_Date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Source",
+    "type" : [ "string", "null" ],
+    "columnName" : "Source",
+    "sqlType" : "12"
+  }, {
+    "name" : "Effective_Start_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Effective_Start_Date",
+    "sqlType" : "2"
+  }, {
+    "name" : "Effective_End_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Effective_End_Date",
+    "sqlType" : "93"
+  }, {
+    "name" : "Last_Updated_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Last_Updated_Date",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.CDW_SECTOR_MASTER"
+}

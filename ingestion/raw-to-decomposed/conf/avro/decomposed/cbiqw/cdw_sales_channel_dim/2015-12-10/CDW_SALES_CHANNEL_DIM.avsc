@@ -1,0 +1,83 @@
+{
+  "type" : "record",
+  "name" : "CDW_SALES_CHANNEL_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_SALES_CHANNEL_DIM",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "SALES_CHANNEL_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_CHANNEL_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "SALES_CHANNEL_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_CHANNEL_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SALES_CHANNEL_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_CHANNEL_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SALES_CHANNEL_DESCRIPTION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_CHANNEL_DESCRIPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "SALES_CHANNEL_SUB_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_CHANNEL_SUB_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SALES_CHANNEL_SUB_TYPE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_CHANNEL_SUB_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SALES_CHANNEL_SUB_TYPE_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SALES_CHANNEL_SUB_TYPE_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_SALES_CHANNEL_DIM"
+}

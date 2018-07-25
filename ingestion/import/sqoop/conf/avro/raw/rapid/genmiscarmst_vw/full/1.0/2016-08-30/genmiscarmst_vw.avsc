@@ -1,0 +1,35 @@
+{  
+   "type":"record",
+   "name":"GENMISCARMST_VW",
+   "namespace":"datalake",
+   "fields":[  
+      {  
+         "name":"CARDSGCOD",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"CARNUMCOD",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"CARNAM",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"ACTIND",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }
+   ]
+}

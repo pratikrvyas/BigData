@@ -1,0 +1,1 @@
+(chararray)$0 AS port,(chararray)$1 AS portic,(chararray)$2 AS name,(chararray)$3 AS lat,(chararray)$4 AS lon,(chararray)$5 AS elev,(chararray)$6 AS magvar,(chararray)$7 AS translv,(chararray)$8 AS cycle,(chararray)$9 AS country,(chararray)$10 AS city,(chararray)$11 AS iata

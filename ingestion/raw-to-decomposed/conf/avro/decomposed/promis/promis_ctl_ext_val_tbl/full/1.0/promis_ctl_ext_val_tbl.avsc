@@ -1,0 +1,57 @@
+{
+  "type" : "record",
+  "name" : "PROMIS_CTL_EXT_VAL_TBL",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ 
+ {
+      "name": "HELIX_UUID",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "HELIX_TIMESTAMP",
+      "type": [
+        "string",
+        "null"
+      ]
+    }, {
+    "name" : "INTERFACE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTERFACE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEASURE_COLUMN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEASURE_COLUMN",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEASURE_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEASURE_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SRC_MEASURE_VALUE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SRC_MEASURE_VALUE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRG_MEASURE_VALUE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TRG_MEASURE_VALUE",
+    "sqlType" : "2"
+  }, {
+    "name" : "VALIDATION_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VALIDATION_STATUS",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PROMIS_CTL_EXT_VAL_TBL"
+}

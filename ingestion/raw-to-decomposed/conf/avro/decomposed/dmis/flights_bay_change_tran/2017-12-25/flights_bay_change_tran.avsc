@@ -1,0 +1,73 @@
+{
+  "type" : "record",
+  "name" : "flights_bay_change_tran",
+  "fields" : [ {
+    "name" : "BCHT_FLIGHT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BCHT_FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "BCHT_STA_STD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BCHT_STA_STD",
+    "sqlType" : "93"
+  }, {
+    "name" : "BCHT_REASON_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BCHT_REASON_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATE_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_DT",
+    "sqlType" : "93"
+  }, {
+    "name" : "UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "BCHT_OLD_BAY_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BCHT_OLD_BAY_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "BCHT_NEW_BAY_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BCHT_NEW_BAY_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "BCHT_MSG_SENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BCHT_MSG_SENT",
+    "sqlType" : "12"
+  } , {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null
+  } ]
+}

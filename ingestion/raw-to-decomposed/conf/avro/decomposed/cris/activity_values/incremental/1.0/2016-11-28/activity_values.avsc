@@ -1,0 +1,194 @@
+{
+  "type" : "record",
+  "name" : "ACTIVITY_VALUES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [  {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },{
+    "name" : "BAC_ACT_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BAC_ACT_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "EFF_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "AV_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AV_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "RTB_LPP_PTNR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RTB_LPP_PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RTB_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RTB_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DISCONT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCONT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PTS_EXP_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PTS_EXP_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "MULT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MULT",
+    "sqlType" : "2"
+  }, {
+    "name" : "RMKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RMKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXP_RND_INT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXP_RND_INT",
+    "sqlType" : "2"
+  }, {
+    "name" : "VALUE_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VALUE_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "HEAD_SHARE_PERCENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HEAD_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBER_SHARE_PERCENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "REWARD_RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REWARD_RATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "AMT_DENOMINATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMT_DENOMINATOR",
+    "sqlType" : "2"
+  }, {
+    "name" : "TIER_MILES_PER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIER_MILES_PER",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKETING_EFFECTIVE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKETING_EFFECTIVE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TICKETING_DISCONTINUED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKETING_DISCONTINUED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "HEAD_SHARE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HEAD_SHARE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBER_SHARE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_SHARE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "CASH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CASH",
+    "sqlType" : "2"
+  }, {
+    "name" : "CURRENCY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "COMPANY_SHARE_PERCENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COMPANY_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "DISCOUNT_PERCENTAGE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCOUNT_PERCENTAGE",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "ACTIVITY_VALUES"
+}

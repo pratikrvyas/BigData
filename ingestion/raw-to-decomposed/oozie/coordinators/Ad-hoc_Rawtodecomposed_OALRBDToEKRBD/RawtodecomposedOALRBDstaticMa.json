@@ -1,0 +1,26 @@
+[
+{
+  "pk": null, 
+  "model": "desktop.document2", 
+  "fields": {
+    "uuid": "dc562fbe-5e62-439a-b8a4-13ae168f0e98", 
+    "extra": "", 
+    "type": "oozie-coordinator2", 
+    "description": "scheduler to import oal rbd static master data to HDFS raw", 
+    "is_history": false, 
+    "parent_directory": [
+      "", 
+      1, 
+      false
+    ], 
+    "last_modified": "2017-03-14T14:52:24", 
+    "version": 1, 
+    "owner": [
+      "scv_ops"
+    ], 
+    "dependencies": [  ], 
+    "data": "{\"end_date\": {\"name\": \"end_date\", \"value\": \"2017-03-01T10:55\"}, \"variables\": [{\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": true, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"4c0e2a94-eb57-16e1-2f2c-721cdd4389d0\", \"frequency_number\": \"1\", \"dataset_variable\": \"/data/helix/raw/static/manual_from_oal_rbd_to_ek_rbd/incremental/1.0/${YEAR}-${MONTH}-${DAY}/${HOUR}-${MINUTE}\", \"start\": \"2017-01-31T15:55\", \"same_frequency\": false, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"input_path\", \"use_done_flag\": true, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"S_D_M_f_OAL_RBD_to_EK_RBD\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": true, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"608c3e64-0c4e-4705-fddc-508e3738c4e4\", \"frequency_number\": \"1\", \"dataset_variable\": \"/data/helix/decomposed/static/manual_from_oal_rbd_to_ek_rbd/incremental/1.0/${YEAR}-${MONTH}-${DAY}/${HOUR}-${MINUTE}\", \"start\": \"2017-01-31T15:55\", \"same_frequency\": false, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"output_path\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"T_D_M_f_OAL_RBD_to_EK_RBD\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"06099183-784c-d4c1-21cc-dffa0895998b\", \"frequency_number\": 1, \"dataset_variable\": \"/apps/helix/conf/avro/decomposed/static/manual_from_oal_rbd_to_ek_rbd/incremental/1.0/2016-10-26/manual_from_oal_rbd_to_ek_rbd.avsc\", \"start\": \"2017-01-31T15:55\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"T_S_M_f_OAL_RBD_to_EK_RBD\", \"is_advanced_end_instance\": false}], \"isDirty\": false, \"showAdvancedFrequencyUI\": true, \"variablesUI\": [\"parameter\", \"input_path\", \"output_path\"], \"workflowParameters\": [{\"name\": \"T_D_M_f_OAL_RBD_to_EK_RBD\", \"value\": \"\"}, {\"name\": \"T_S_M_f_OAL_RBD_to_EK_RBD\", \"value\": \"\"}, {\"name\": \"S_D_M_f_OAL_RBD_to_EK_RBD\", \"value\": \"\"}], \"id\": 94997, \"name\": \"RawtodecomposedManualOALRBDstaticMaster_OALRBDToEKRBD\", \"uuid\": \"e7964e55-eca8-2f42-d04b-991b02ea86b3\", \"properties\": {\"job_xml\": \"\", \"timeout\": null, \"execution\": \"FIFO\", \"end\": \"${end_date}\", \"description\": \"scheduler to import oal rbd static master data to HDFS raw\", \"frequency_number\": 1, \"workflow\": \"874c3cda-8071-478a-beb7-3b640b791b4b\", \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1489055929.16\", \"cron_frequency\": \"47 7 * * *\", \"frequency_unit\": \"days\", \"schema_version\": \"uri:oozie:coordinator:0.2\", \"cron_advanced\": false, \"start\": \"${start_date}\", \"concurrency\": 0, \"timezone\": \"Asia/Dubai\", \"credentials\": [], \"throttle\": 0, \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"start_date\", \"value\": \"2017-02-28T04:30\"}, {\"name\": \"end_date\", \"value\": \"2017-03-01T10:55\"}], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"start_date\": {\"name\": \"start_date\", \"value\": \"2017-02-28T04:30\"}}", 
+    "name": "Rawtodecomposed_OALRBDToEKRBD_UAT"
+  }
+}
+]

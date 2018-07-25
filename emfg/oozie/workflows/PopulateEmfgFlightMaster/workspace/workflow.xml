@@ -1,0 +1,100 @@
+<workflow-app name="PopulateFlightMasterEmFG_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="spark-fa83"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST}</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-fa83">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${OUTPUT_HISTORY_LOCATION}"/>
+                  <delete path="${OUTPUT_CURRENT_LOCATION}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>flight-master-1.0</name>
+              <class>com.emirates.helix.emfg.FlightMasterDriver</class>
+            <jar>flight-master-1.0.jar</jar>
+              <spark-opts>--files hive-site.xml --driver-memory 10g --executor-memory 20g --num-executors 25 --executor-cores 3 --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf &quot;spark.sql.shuffle.partitions=50&quot;</spark-opts>
+              <arg>--core_input</arg>
+              <arg>${CORE_DEDUPE_PATH}</arg>
+              <arg>--ags_input</arg>
+              <arg>${AGS_DEDUPE_PATH}</arg>
+              <arg>--dmis_input</arg>
+              <arg>${DMIS_FLIGHTINFO_DEDUPE_PATH}</arg>
+              <arg>--lido_input</arg>
+              <arg>${LIDO_DEDUPE_PATH}</arg>
+              <arg>--coalesce_value</arg>
+              <arg>${COALESCE_VALUE}</arg>
+              <arg>--compression</arg>
+              <arg>${COMPRESSION}</arg>
+              <arg>--broadcast_size</arg>
+              <arg>${BROADCAST_SIZE}</arg>
+              <arg>--look_back_months</arg>
+              <arg>${LOOK_BACK_PERIOD}</arg>
+              <arg>--output_current_location</arg>
+              <arg>${OUTPUT_CURRENT_LOCATION}</arg>
+              <arg>--output_history_location</arg>
+              <arg>${OUTPUT_HISTORY_LOCATION}</arg>
+              <arg>--aircraft_country_region_path</arg>
+              <arg>${AIRCRAFT_COUNTRY_REGION_PATH}</arg>
+              <arg>--flight_service_path</arg>
+              <arg>${FLIGHT_SERVICE_PATH}</arg>
+              <arg>--flight_status_path</arg>
+              <arg>${FLIGHT_STATUS_PATH}</arg>
+              <arg>--flight_delay_path</arg>
+              <arg>${FLIGHT_DELAY_PATH}</arg>
+              <arg>--data_load_mode</arg>
+              <arg>${DATA_LOAD_MODE}</arg>
+              <arg>--dmis_baydetail_input</arg>
+              <arg>${DMIS_BAYDETAILS_DEDUPE_PATH}</arg>
+              <arg>--baychange_lookup</arg>
+              <arg>${BAYCHANGE_LOOKUP}</arg>
+              <arg>--concourse_lookup</arg>
+              <arg>${CONCOURSE_LOOKUP}</arg>
+              <arg>--aircraft_details_lookup</arg>
+              <arg>${AIRCRAFT_DETAILS_LOOKUP}</arg>
+        </spark>
+        <ok to="email-57af"/>
+        <error to="Kill"/>
+    </action>
+    <action name="email-57af">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST}</to>
+            <subject>Workflow ${wf:name()} Completed Successfully :)</subject>
+            <body>Workflow ${wf:name()} Completed Successfully</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

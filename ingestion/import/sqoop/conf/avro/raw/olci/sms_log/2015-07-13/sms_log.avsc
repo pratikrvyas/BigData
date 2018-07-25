@@ -1,0 +1,67 @@
+{
+  "type" : "record",
+  "name" : "SMS_LOG",
+  "doc" : "Sqoop import of SMS_LOG",
+  "fields" : [ {
+    "name" : "PNR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BOOKING_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "CABIN_CLASS",
+    "type" : [ "string", "null" ],
+    "columnName" : "CABIN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOBILE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MOBILE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "SMS_MESSAGE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SMS_MESSAGE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SMS_RESPONSE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SMS_RESPONSE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SMS_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "SMS_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACITON_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACITON_DATE",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "SMS_LOG"
+}

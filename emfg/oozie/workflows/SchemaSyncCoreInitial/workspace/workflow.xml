@@ -1,0 +1,54 @@
+<workflow-app name="SchemaSyncCoreInitial" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapreduce.job.queuename</name>
+                    <value>opseff</value>
+                </property>
+                <property>
+                    <name>mapred.job.queuename</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="spark-e00c"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST}</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-e00c">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>yarn-cluster</master>
+            <mode>cluster</mode>
+            <name>CORESync</name>
+              <class>com.emirates.flight_genome.CoreApp</class>
+            <jar>CORESync.jar</jar>
+              <spark-opts>--files hive-site.xml --executor-memory 2g --driver-memory 1g --queue opseff --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=5 --conf spark.dynamicAllocation.maxExecutors=30</spark-opts>
+              <arg>${FLIGHT_INFO_PATH}</arg>
+              <arg>${MVTTYPES_PATH}</arg>
+              <arg>${DELAY_PATH}</arg>
+              <arg>${TARGET_PATH}</arg>
+              <arg>${TARGET_PARTITIONS}</arg>
+        </spark>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

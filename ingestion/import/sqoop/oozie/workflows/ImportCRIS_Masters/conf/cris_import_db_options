@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.153.253:6516:cisl
+--username
+helix_user
+--password
+He0lx_us3R
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

@@ -1,0 +1,91 @@
+{
+  "type" : "record",
+  "name" : "PAYMENT_CARD_TYPES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_NO_REQD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ISSUE_NO_REQD",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARD_VALID_FROM_DATE_REQD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CARD_VALID_FROM_DATE_REQD",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREDIT_CARD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREDIT_CARD",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "IMAGE_FILENAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "IMAGE_FILENAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "SHORT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SHORT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CVC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CVC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CR_CARD_LEN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CR_CARD_LEN",
+    "sqlType" : "2"
+  }, {
+    "name" : "CVV_CODE_LEN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CVV_CODE_LEN",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "PAYMENT_CARD_TYPES"
+}

@@ -1,0 +1,165 @@
+{
+  "type" : "record",
+  "name" : "PRGRM_PRTNR_CONTRACTS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [{  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+ {
+    "name" : "CONTRACT_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CONTRACT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "EFF_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "LPP_PTNR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LPP_PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DISCONT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCONT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "REVIEW_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REVIEW_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TERM_NOTICE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TERM_NOTICE",
+    "sqlType" : "2"
+  }, {
+    "name" : "UPLOAD_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPLOAD_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAX_SINGLE_TRANS_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MAX_SINGLE_TRANS_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "HEAD_SHARE_PERCENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HEAD_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBER_SHARE_PERCENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "BILL_ON_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILL_ON_TYPE",
+    "sqlType" : "1"
+  }, {
+    "name" : "BILLING_MILES_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILLING_MILES_TYPE",
+    "sqlType" : "1"
+  }, {
+    "name" : "BILL_CANCELLED_EARN_ACT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILL_CANCELLED_EARN_ACT",
+    "sqlType" : "1"
+  }, {
+    "name" : "BILL_CANCELLED_RWRD_ACT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILL_CANCELLED_RWRD_ACT",
+    "sqlType" : "1"
+  }, {
+    "name" : "BILL_FAM_MEM_ACT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILL_FAM_MEM_ACT",
+    "sqlType" : "1"
+  }, {
+    "name" : "BILLING_MILES_TOLERANCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILLING_MILES_TOLERANCE",
+    "sqlType" : "2"
+  }, {
+    "name" : "REWARD_ITINERARY_MANDATORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REWARD_ITINERARY_MANDATORY",
+    "sqlType" : "1"
+  }, {
+    "name" : "HEAD_SHARE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HEAD_SHARE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBER_SHARE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_SHARE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "BILLING_AMOUNT_TOLERANCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BILLING_AMOUNT_TOLERANCE",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "PRGRM_PRTNR_CONTRACTS"
+}

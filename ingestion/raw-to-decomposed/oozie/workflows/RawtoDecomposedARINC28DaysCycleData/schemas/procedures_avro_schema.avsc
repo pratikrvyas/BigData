@@ -1,0 +1,139 @@
+{
+  "type" : "record",
+  "name" : "arincproceduresdecomposed",
+  "fields" : 
+[
+{
+"name" : "Port",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "PortIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "ProcId",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "TransId",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "ProcType",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Seq",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Fix",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "FixIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "SecCode",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "DescCode",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "TurnDr",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "PathTerm",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "TDV",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Course",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Dis",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "RecdNavaid",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "RecNavIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "VertAngle",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Rho",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Theta",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "AL",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "SpdLmt",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "AltDesc",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "ATC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Altitude1",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Altitude2",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "TransAlt",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "CenterFix",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "CentreIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "SQ",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Cycle",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "uuid",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "timestamp",
+"type" : [ "string", "null" ]
+}
+]
+}

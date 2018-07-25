@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@dolinuxbl303.hq.emirates.com:6516:CDML
+--username
+helix_user
+--password
+Helix_User#999
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

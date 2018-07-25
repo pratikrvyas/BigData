@@ -1,0 +1,125 @@
+{
+  "type" : "record",
+  "name" : "CDW_FLIGHT_MASTER_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_FLIGHT_MASTER_DIM",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "FLIGHT_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLIGHT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_SK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLIGHT_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPERATIONAL_START_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OPERATIONAL_START_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "OPERATIONAL_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OPERATIONAL_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MULTI_LEG_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MULTI_LEG_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "NUMBER_OF_LEGS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NUMBER_OF_LEGS",
+    "sqlType" : "2"
+  }, {
+    "name" : "ROUTE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ROUTE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_COMMISSIONED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_COMMISSIONED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "FLIGHT_ORIGIN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_DESTINATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SOURCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SOURCE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_FLIGHT_MASTER_DIM"
+}

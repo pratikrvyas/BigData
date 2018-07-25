@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.152.216:6516:CCML
+--username
+HELIX_USER
+--password
+h31#x_2015

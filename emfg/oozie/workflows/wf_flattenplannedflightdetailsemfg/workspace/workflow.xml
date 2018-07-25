@@ -1,0 +1,80 @@
+<workflow-app name="FlattenPlannedFlightDetailsEmFG_UAT" xmlns="uri:oozie:workflow:0.5">
+    <start to="shell-b627"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST} </to>
+            <subject>Workflow ${wf:name()} Failed</subject>
+            <body>Workflow ${wf:name()} Failed
+Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-b627">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${CTRL_FILE_PATH}"/>
+            </prepare>
+            <exec>prev_date_finder.sh</exec>
+              <argument>${CTRL_FILE_PATH}</argument>
+              <argument>${HDFS_OUTPUT_PATH}</argument>
+            <file>prev_date_finder.sh#prev_date_finder.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="spark-4f97"/>
+        <error to="Kill"/>
+    </action>
+    <action name="email-9139">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST}</to>
+            <subject>Workflow ${wf:name()} Completed Successfully</subject>
+            <body>Workflow ${wf:name()} Completed Successfully</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-f504" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://dolinux751.hq.emirates.com:10000/default</jdbc-url>
+            <script>exadata_ddls.hql</script>
+            <file>exadata_ddls.hql#exadata_ddls.hql</file>
+        </hive2>
+        <ok to="email-9139"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-4f97">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>Flatten_Planned_Flight_Details</name>
+              <class>com.helix.emirates.FlattenPlannedFlightDetails</class>
+            <jar>flattenPlannedFlightDetails-1.0-SNAPSHOT.jar</jar>
+              <spark-opts>--files hive-site.xml --driver-memory 4g --executor-memory 8g --num-executors 20 --executor-cores 2 --queue opseff</spark-opts>
+              <arg>-i</arg>
+              <arg>${HDFS_INPUT_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${HDFS_OUTPUT_PATH}</arg>
+              <arg>-s</arg>
+              <arg>${NO_OF_SHUFFLES}</arg>
+              <arg>-p</arg>
+              <arg>${SPARK_PARTITIONS}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+              <arg>-x</arg>
+              <arg>${CTRL_FILE_PATH}</arg>
+        </spark>
+        <ok to="hive2-f504"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

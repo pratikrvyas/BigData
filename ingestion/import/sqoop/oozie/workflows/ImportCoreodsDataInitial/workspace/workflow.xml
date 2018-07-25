@@ -1,0 +1,220 @@
+<workflow-app name="ImportCoreODSHistoricalData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>mapred.job.queuename</name>
+                    <value>opseff</value>
+                </property>
+                <property>
+                    <name>oozie.launcher.mapreduce.job.queuename</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-bbdd"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST}</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <fork name="fork-1b87">
+        <path start="sqoop-cc35" />
+        <path start="sqoop-515c" />
+    </fork>
+    <join name="join-309d" to="email-fb71"/>
+    <action name="shell-bbdd">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_date_params.sh</exec>
+              <argument>${COREODS_CONTROL_FILE}</argument>
+            <file>read_date_params.sh#read_date_params.sh</file>
+            <file>${COREODS_CONTROL_FILE}#${COREODS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-1b87"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-515c">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TBL_ODS_FLIGHT_INFO}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${COREODS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT * FROM ( SELECT ROWNUM RN,SCHDTIMEDEPUTC,SCHDTIMEARRUTC,ACTARRSTN,ACTDEPSTN,EFFECTIVETO,EFFECTIVEFROM,TRANSDATETIME,TRANSUSERID,PRETRXNO,TRXNO,MODBY,MODON,TAILNOTYPE,TAILNO,SIREMARKDEP,SIREMARKARR,SERVICETYPE,SCHDTIMEDEP,SCHDTIMEARR,REMARK,ONWARDFLIGHT,BLKTIMEACT,BLKTIMEORIG,FLTTIME,FLTSTATUS,DORREMARK,DORFLAG,LEGNUM,ARRSTN,DEPSTN,FLIGHTDATE,DEPNUM,FLTSUFFIX,FLTNUM,CXCD,FLIGHTSEQNO,ACVERSION,ACSUBTYPE,ACOWNER,CARGO_DOOR_CLOSURE,CABIN_DOOR_CLOSURE,TAXI_IN,TAXI_OUT,LAST_DOOR_CLOSURE,RTG_FLAG,TAILTYPE,ACTLEGNUM FROM FLTODS_OWNR.TBL_ODS_FLIGHT_INFO WHERE EFFECTIVEFROM &gt; TO_DATE(&#39;${wf:actionData(&#39;shell-bbdd&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND EFFECTIVEFROM &lt; TO_DATE(&#39;${wf:actionData(&#39;shell-bbdd&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;)) WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>SCHDTIMEDEPUTC=String,SCHDTIMEARRUTC=String,ACTARRSTN=String,ACTDEPSTN=String,EFFECTIVETO=String,EFFECTIVEFROM=String,TRANSDATETIME=String,TRANSUSERID=String,PRETRXNO=String,TRXNO=String,MODBY=String,MODON=String,TAILNOTYPE=String,TAILNO=String,SIREMARKDEP=String,SIREMARKARR=String,SERVICETYPE=String,SCHDTIMEDEP=String,SCHDTIMEARR=String,REMARK=String,ONWARDFLIGHT=String,BLKTIMEACT=String,BLKTIMEORIG=String,FLTTIME=String,FLTSTATUS=String,DORREMARK=String,DORFLAG=String,LEGNUM=String,ARRSTN=String,DEPSTN=String,FLIGHTDATE=String,DEPNUM=String,FLTSUFFIX=String,FLTNUM=String,CXCD=String,FLIGHTSEQNO=String,ACVERSION=String,ACSUBTYPE=String,ACOWNER=String,CARGO_DOOR_CLOSURE=String,CABIN_DOOR_CLOSURE=String,TAXI_IN=String,TAXI_OUT=String,LAST_DOOR_CLOSURE=String,RTG_FLAG=String,TAILTYPE=String,ACTLEGNUM=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>RN</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TBL_ODS_FLIGHT_INFO</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TBL_ODS_FLIGHT_INFO}</arg>
+              <arg>-m</arg>
+              <arg>${NUM_MAPPERS}</arg>
+            <file>${COREODS_SQOOP_OPTIONS_FILE}#${COREODS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-5db6"/>
+        <error to="Kill"/>
+    </action>
+    <action name="email-fb71">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST}</to>
+            <subject>Workflow ${wf:name()} Completed Successfully</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow ${wf:name()} Completed Successfully</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-cc35">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TBL_ODS_FLIGHT_TAILCHANGE}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${COREODS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT * FROM (SELECT ROWNUM RN,EFFECTIVETO,EFFECTIVEFROM,TRANSDATETIME,TRANSUSERID,PRETRXNO,TRXNO,MODBY,MODON,CHANGE_REASON,TAILNO,REQUEST_DATE,FLIGHTSEQNO FROM FLTODS_OWNR.TBL_ODS_FLIGHT_TAILCHANGE WHERE EFFECTIVEFROM &gt; TO_DATE(&#39;${wf:actionData(&#39;shell-bbdd&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND EFFECTIVEFROM &lt; TO_DATE(&#39;${wf:actionData(&#39;shell-bbdd&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;)) WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>EFFECTIVETO=String,EFFECTIVEFROM=String,TRANSDATETIME=String,TRANSUSERID=String,PRETRXNO=String,TRXNO=String,MODBY=String,MODON=String,CHANGE_REASON=String,TAILNO=String,REQUEST_DATE=String,FLIGHTSEQNO=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>RN</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TBL_ODS_FLIGHT_TAILCHANGE</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TBL_ODS_FLIGHT_TAILCHANGE}</arg>
+              <arg>-m</arg>
+              <arg>${NUM_MAPPERS}</arg>
+            <file>${COREODS_SQOOP_OPTIONS_FILE}#${COREODS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-6090"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-6090">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TBL_ODS_MVTTYPES}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${COREODS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT FLIGHTSEQNO,MVTTYPE,MVTDATETIME,TRANSUSER,TRANSDATETIME,MODON,MODBY,EFFECTIVEFROM,EFFECTIVETO,TRXNO,PRETRXNO,MVTDATETIMEUTC FROM FLTODS_OWNR.TBL_ODS_MVTTYPES WHERE MODON &gt; TO_DATE(&#39;${wf:actionData(&#39;shell-bbdd&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND MODON &lt; TO_DATE(&#39;${wf:actionData(&#39;shell-bbdd&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>FLIGHTSEQNO=String,MVTTYPE=String,MVTDATETIME=String,TRANSUSER=String,TRANSDATETIME=String,MODON=String,MODBY=String,EFFECTIVEFROM=String,EFFECTIVETO=String,TRXNO=String,PRETRXNO=String,MVTDATETIMEUTC=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FLIGHTSEQNO</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TBL_ODS_MVTTYPES</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TBL_ODS_MVTTYPES}</arg>
+              <arg>-m</arg>
+              <arg>${NUM_MAPPERS}</arg>
+            <file>${COREODS_SQOOP_OPTIONS_FILE}#${COREODS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-309d"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-5db6">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TBL_ODS_DELAY}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${COREODS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT * FROM ( SELECT ROWNUM RN,EFFECTIVETO,EFFECTIVEFROM,TRANSDATETIME,TRANSUSERID,PRETRXNO,TRXNO,MODBY,MODON,DELAYTYPE,DELAYAMOUNT,DELAYCODE,FLIGHTSEQNO FROM FLTODS_OWNR.TBL_ODS_DELAY WHERE EFFECTIVEFROM &gt; TO_DATE(&#39;${wf:actionData(&#39;shell-bbdd&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND EFFECTIVEFROM &lt; TO_DATE(&#39;${wf:actionData(&#39;shell-bbdd&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;)) WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>EFFECTIVETO=String,EFFECTIVEFROM=String,TRANSDATETIME=String,TRANSUSERID=String,PRETRXNO=String,TRXNO=String,MODBY=String,MODON=String,DELAYTYPE=String,DELAYAMOUNT=String,DELAYCODE=String,FLIGHTSEQNO=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>RN</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>TBL_ODS_DELAY</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TBL_ODS_DELAY}</arg>
+              <arg>-m</arg>
+              <arg>${NUM_MAPPERS}</arg>
+            <file>${COREODS_SQOOP_OPTIONS_FILE}#${COREODS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-309d"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

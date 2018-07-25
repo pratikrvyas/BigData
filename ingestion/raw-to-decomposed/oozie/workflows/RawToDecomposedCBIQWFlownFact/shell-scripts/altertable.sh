@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+HIVE_DATABASE="$1"
+HDFS_URL="$2"
+TABLE_NAME="$3"
+TARGET_DIRECTORY="$4"
+
+TABLE_PATH="${HDFS_URL}${TARGET_DIRECTORY}"
+
+hive --database=$HIVE_DATABASE -e "alter table $TABLE_NAME set location '${TARGET_DIRECTORY}'"

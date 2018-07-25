@@ -1,0 +1,54 @@
+{
+  "type": "record",
+  "name": "PRMS_INVENTORY_HISTORY",
+  "fields": [
+{"name" :  "FLT_MASTER_FLT_KEY","type" : ["null", "string"]},
+{"name" :  "CLS_MASTER_CLASS","type" : ["null", "string"]},
+{"name" :  "CLS_MASTER_COMP","type" : ["null", "string"]},
+{"name" :  "DEP_DATE","type" : ["null", "string"]},
+{"name" :  "REC_TYPE","type" : ["null", "string"]},
+{"name" :  "SEG_DEP_DATE","type" : ["null", "string"]},
+{"name" :  "LEG_SEG_IND","type" : ["null", "string"]},
+{"name" :  "UPD_DT","type" : ["null", "string"]},
+{"name" :  "UPD_ID","type" : ["null", "string"]},
+{"name" :  "DCP1","type" : ["null", "string"]},
+{"name" :  "DCP2","type" : ["null", "string"]},
+{"name" :  "DCP3","type" : ["null", "string"]},
+{"name" :  "DCP4","type" : ["null", "string"]},
+{"name" :  "DCP5","type" : ["null", "string"]},
+{"name" :  "DCP6","type" : ["null", "string"]},
+{"name" :  "DCP7","type" : ["null", "string"]},
+{"name" :  "DCP8","type" : ["null", "string"]},
+{"name" :  "DCP9","type" : ["null", "string"]},
+{"name" :  "DCP10","type" : ["null", "string"]},
+{"name" :  "DCP11","type" : ["null", "string"]},
+{"name" :  "DCP12","type" : ["null", "string"]},
+{"name" :  "DCP13","type" : ["null", "string"]},
+{"name" :  "DCP14","type" : ["null", "string"]},
+{"name" :  "DCP15","type" : ["null", "string"]},
+{"name" :  "DCP16","type" : ["null", "string"]},
+{"name" :  "DCP17","type" : ["null", "string"]},
+{"name" :  "DCP18","type" : ["null", "string"]},
+{"name" :  "DCP19","type" : ["null", "string"]},
+{"name" :  "DCP20","type" : ["null", "string"]},
+{"name" :  "DCP21","type" : ["null", "string"]},
+{"name" :  "DCP22","type" : ["null", "string"]},
+{"name" :  "DCP23","type" : ["null", "string"]},
+{"name" :  "DCP24","type" : ["null", "string"]}
+]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

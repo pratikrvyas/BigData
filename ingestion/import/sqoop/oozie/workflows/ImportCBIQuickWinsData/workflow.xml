@@ -1,0 +1,537 @@
+
+<workflow-app name="ImportCBIQuickWinsData" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-7ea8"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-7ea8">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${CBI_CONTROL_FILE}</argument>
+              <argument>${PATH_CDW_TICKET_COUPON_FACT}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${CBI_CONTROL_FILE}#${CBI_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-2087"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-e41c">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_TICKET_COUPON_FACT}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TICKET_SK,T1.TICKET_COUPON_ID,T1.TICKET_ISSUE_DATE_SK,T1.TICKET_NUMBER,T1.PNR_SK,T1.CUSTOMER_SK,T1.SKYWARDS_MEMBER_SK,T1.BR_MEMBER_SK,T1.REVENUE_TICKET_INDICATOR,T1.GROSS_REVENUE_AED,T1.NET_REVENUE_AED,T1.COMMISSION_AED,T1.OTHER_TAXES_AED,T1.YQ_SURCHARGE_AED,T1.YR_SURCHARGE_AED,T1.BOOKING_DATE_SK,T1.DEPARTURE_DATE_SK,T1.ARRIVAL_DATE_SK,T1.TICKET_ITINERARY_STRING,T1.ROUTE_SK,T1.SECTOR_SK,T1.SECTOR_DISTANCE,T1.BOOKING_CLASS_SK,T1.CABIN_CLASS_SK,T1.TRAVELLED_CLASS_SK,T1.TICKETED_FAREBASIS,T1.TOUR_CODE,T1.EK_POO_SK,T1.POO_SK,T1.COUPON_NUMBER,T1.COUPON_REVALIDATION_INDICATOR,T1.COUPON_EXCLUDING_VOID_NUMBER,T1.COUPON_STATUS,T1.COUPON_VALIDITY_PERIOD_FROM,T1.COUPON_VALIDITY_PERIOD_TO,T1.BOARD_POINT_STOPOVER_INDICATOR,T1.OFF_POINT_STOPOVER_INDICATOR,T1.STOPOVER_DURATION_HRS,T1.BAGGAGE_ALLOWANCE,T1.CHECK_IN_WEIGHT,T1.CHECK_IN_WEIGHT_UNIT,T1.CHECK_IN_PIECES,T1.BUSINESS_TYPE_SK,T1.EMD_ASSOCIATED_INDICATOR,T1.GROUP_BOOKING_IND,T1.BOOKING_DISB_CHANNEL_SK,T1.TICKET_DISB_CHANNEL_SK,T1.MARKETING_AIRLINE_SK,T1.MARKETING_FLIGHT_NUMBER_SK,T1.OPERATIONAL_AIRLINE_SK,T1.OPERATIONAL_FLIGHT_NUMBER_SK,T1.FLIGHT_SCHEDULE_SK,T1.BOOKED_AGENT_SK,T1.BOOKED_AGENCY_SK,T1.TICKETED_AGENT_SK,T1.TICKETED_AGENCY_SK,T1.CREDIT_AGENT_SK,T1.CREDIT_AGENCY_SK,T1.TRIP_OD_SK,T1.TRIP_OD_DATE_SK,T1.TRIP_OD_MAIN_CLASS_SK,T1.TICKETED_TRUE_OD_SK,T1.TICKETED_TRUE_OD_DATE_SK,T1.TICKETED_TRUE_OD_CLASS_SK,T1.TKT_TRUE_OD_MAX_FAREBASIS_SK,T1.TKT_TRUE_OD_MIN_FAREBASIS_SK,T1.TICKETED_ONLINE_OD_SK,T1.TICKETED_ONLINE_OD_DATE_SK,T1.TICKETED_ONLINE_OD_CLASS_SK,T1.TKT_ONLINE_OD_MIN_FAREBASIS_SK,T1.TKT_ONLINE_OD_MAX_FAREBASIS_SK,T1.TRIP_OD_PAX_COUNT,T1.TRIP_OD_GROSS_REVENUE_AED,T1.TRIP_OD_NET_REVENUE_AED,T1.TRIP_OD_COMMISSION_AED,T1.TRIP_OD_OTHER_TAXES_AED,T1.TRIP_OD_YQ_SURCHARGE_AED,T1.TRIP_OD_YR_SURCHARGE_AED,T1.TRUE_OD_PAX_COUNT,T1.TRUE_OD_GROSS_REVENUE_AED,T1.TRUE_OD_NET_REVENUE_AED,T1.TRUE_OD_COMMISSION_AED,T1.TRUE_OD_OTHER_TAXES_AED,T1.TRUE_OD_YQ_SURCHARGE_AED,T1.TRUE_OD_YR_SURCHARGE_AED,T1.ONLINE_OD_PAX_COUNT,T1.ONLINE_OD_GROSS_REVENUE_AED,T1.ONLINE_OD_NET_REVENUE_AED,T1.ONLINE_OD_COMMISSION_AED,T1.ONLINE_OD_OTHER_TAXES_AED,T1.ONLINE_OD_YQ_SURCHARGE_AED,T1.ONLINE_OD_YR_SURCHARGE_AED,T1.LOCAL_CORP_ORG_SK,T1.LOCAL_CORP_TRACKING_IND_SK,T1.GLOBAL_CORP_ORG_SK,T1.GLOBAL_CORP_TRACKING_IND_SK,T1.CDW_CREATED_USER,T1.CDW_CREATED_DATE,T1.CDW_CHANGED_USER,T1.CDW_CHANGED_DATE,T1.FLOWN_STATUS,T1.TRIP_TYPE,T1.TRIP_OD_FREEDOM_TYPE,T1.TRUE_OD_FREEDOM_TYPE,T1.ONLINE_OD_FREEDOM_TYPE,T1.LOCAL_CORP_REMARKS,T1.GLOBAL_CORP_REMARKS,T1.JOURNEY_TYPE,T1.TRIP_OD_COMPLETION_IND,T1.TRUE_OD_COMPLETION_IND,T1.ONLINE_OD_COMPLETION_IND,T1.TRIP_ITINERARY_WCC,T1.TRIP_ITINERARY_WOCC,T1.TRIP_ITINERARY_CTRY,T1.TRIP_ITINERARY_REGION,T1.TRUE_ITINERARY_WCC,T1.TRUE_ITINERARY_WOCC,T1.TRUE_ITINERARY_CTRY,T1.TFLAG,T1.OFLAG,T1.LOCAL_CORP_DESC,T1.GLOBAL_CORP_DESC,T1.PRISM_CORPORATE_CODE,T1.PRISM_INDICATOR,T1.PREV_LOCAL_CORP_ORG_SK,T1.PREV_LOCAL_CORP_TRK_IND_SK,T1.PREV_LOCAL_CORP,T1.PREV_GLOBAL_CORP_ORG_SK,T1.PREV_GLOBAL_CORP_TRK_IND_SK,T1.PREV_GLOBAL_CORP,T1.DEPARTURE_TIME,T1.ARRIVAL_TIME,T1.HUB_STOPOVER_DURATION FROM CBI_OWNR.CDW_TICKET_COUPON_FACT T1 WHERE T1.CDW_CHANGED_DATE BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>COUPON_VALIDITY_PERIOD_FROM=String,COUPON_VALIDITY_PERIOD_TO=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.TICKET_COUPON_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_TICKET_COUPON_FACT</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_TICKET_COUPON_FACT}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-d6cd"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-0a6a">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_AIRLINE_MASTER_DIM}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--direct</arg>
+              <arg>--table</arg>
+              <arg>CBI_OWNR.CDW_AIRLINE_MASTER_DIM</arg>
+              <arg>--columns</arg>
+              <arg>AIRLINE_SK,BCD_CODE,CARR_CD,AIRLINE_NAME,COUNTRY_ISO_CODE,IATA_MEMBER_FLAG,ICH_MEMBER_FLAG,ACH_MEMBER_FLAG,GENERAL_REMARKS,CDW_CREATED_USER,CDW_CREATED_DATE,CDW_CHANGED_USER,CDW_CHANGED_DATE</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>AIRLINE_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_AIRLINE_MASTER_DIM</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_AIRLINE_MASTER_DIM}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-b5b9"/>
+        <error to="email-3acc"/>
+    </action>
+    <fork name="fork-2087">
+        <path start="sqoop-e41c" />
+        <path start="sqoop-0a6a" />
+        <path start="sqoop-4408" />
+        <path start="sqoop-f07b" />
+        <path start="sqoop-be9a" />
+        <path start="sqoop-b826" />
+        <path start="sqoop-b3b2" />
+    </fork>
+    <join name="join-3f93" to="shell-749b"/>
+    <action name="shell-749b">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${CBI_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-7ea8&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-7ea8&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${CBI_CONTROL_FILE}#${CBI_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="email-3acc">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-4408">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_OD_MASTER_DIM}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>CBI_OWNR.CDW_OD_MASTER_DIM</arg>
+              <arg>--columns</arg>
+              <arg>OD_SK, ORIGIN, DESTINATION, OD_PAIR, FREEDOM_TYPE, MULTI_DIRECTION_IND, GEO_ORIGIN_SK, GEO_DESTINATION_SK, CDW_CREATED_USER, CDW_CREATED_DATE, CDW_CHANGED_USER, CDW_CHANGED_DATE, SOURCE, BI_DIRECTIONAL_OD</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>OD_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_OD_MASTER_DIM</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_OD_MASTER_DIM}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-430d"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-f07b">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_SALES_CHANNEL_DIM}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>CBI_OWNR.CDW_SALES_CHANNEL_DIM</arg>
+              <arg>--columns</arg>
+              <arg>SALES_CHANNEL_SK, SALES_CHANNEL_TYPE, SALES_CHANNEL_CODE, SALES_CHANNEL_DESCRIPTION, SALES_CHANNEL_SUB_TYPE, SALES_CHANNEL_SUB_TYPE_CODE, SALES_CHANNEL_SUB_TYPE_DESC, CDW_CREATED_USER, CDW_CREATED_DATE, CDW_CHANGED_USER,CDW_CHANGED_DATE</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>SALES_CHANNEL_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_SALES_CHANNEL_DIM</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_SALES_CHANNEL_DIM}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-8d00"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-be9a">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_PNR_HEADER}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.PNR_SK, T1.PNR_BOOKING_REFERENCE, T1.PNR_BOOKING_CREATION_DATE, T1.EOL_ORDER_NUMBER, T1.BOOKING_STATUS, T1.CREATOR_DUTY_CODE, T1.CREATOR_INITIALS, T1.GROUP_BOOKING_INDICATOR, T1.LAST_UPDATE_PNR_DATE, T1.MASTER_PNR_SK, T1.MASTER_PNR_INDICATOR, T1.SPLIT_PNR_INDICATOR, T1.TICKET_AGENT_INITIALS, T1.AGENT_DUTY_CODE, T1.POS_DATA_ORIGINATOR, T1.RLOC_TYPE, T1.ACCOUNTING_INFO, T1.LANGUAGE_CODE, T1.SUB_HOST_ID, T1.AGENT_INITIALS, T1.DUTY_TYPE, T1.USER_TYPE, T1.CREATOR_CITY, T1.POS_GEO_CITY, T1.POS_CRS_SYSTEM_DESIGNATOR, T1.POS_CRS_CITY_CODE, T1.POS_PSEUDO_CITY_CODE, T1.CORPORATE_TRACKING_DEAL_STRING, T1.EK_POINT_OF_ORIGIN_SK, T1.BOOKING_OFFICE_SK, T1.POINT_OF_BOOKING_SK, T1.DISTRIBUTION_CHANNEL_SK, T1.PNR_ID, T1.ITINERARY_STRING, T1.CANCELLED_DATE, T1.CDW_CREATED_USER, T1.CDW_CHANGED_USER,T1.CDW_CREATED_DATE, T1.CDW_CHANGED_DATE, T1.ITN_POINT_OF_ORIGIN_SK, T1.ISSUING_AIRLINE_CODE, T1.BR_MEMB_SK FROM CBI_OWNR.CDW_PNR_HEADER T1 WHERE T1.CDW_CHANGED_DATE BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PNR_BOOKING_CREATION_DATE=String,LAST_UPDATE_PNR_DATE=String,CANCELLED_DATE=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.PNR_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_PNR_HEADER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_PNR_HEADER}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-4a5e"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-b826">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_CALENDAR_DIM}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>CBI_OWNR.CDW_CALENDAR_DIM</arg>
+              <arg>--columns</arg>
+              <arg>DATE_SK,CALENDAR_DATE,DAY_OF_WEEK,DAY_OF_MONTH,DAY_OF_YEAR,DAY_NAME,DAY_ABBREVIATION,SAME_DAY_IN_LAST_YEAR,SAME_DAY_IN_LAST_YEAR_SK,WEEK_DAY_FLAG,SEASONALITY_INDICATOR,WEEK_OF_MONTH,WEEK_OF_YEAR,WEEK_BEGIN_DATE,WEEK_END_DATE,WEEK_BEGIN_DATE_SK,POWER_WEEK,POWER_WEEK_ST_DATE,POWER_WEEK_END_DATE,POWER_WEEK_YEAR_ST_DATE,POWER_WEEK_YEAR_END_DATE,MONTH_NUMBER,MONTH_OF_QUARTER,MONTH_BEGIN_DATE,MONTH_END_DATE,MONTH_BEGIN_DATE_SK,MONTH_END_FLAG,MONTH_NAME,MONTH_ABBREVIATION,QUARTER_NUMBER,QUARTER_NAME,QUARTER_BEGIN_DATE,QUARTER_END_DATE,QUARTER_BEGIN_DATE_SK,YEAR_BEGIN_DATE,YEAR_END_DATE,YEAR,YEAR_MONTH,YEAR_FISCAL_CODE,YEAR_FISCAL,FISCAL_YEAR_BEGIN_DATE,FISCAL_YEAR_END_DATE,FISCAL_YEAR_BEGIN_DATE_SK,FISCAL_MONTH,FISCAL_QUARTER,CDW_CREATED_USER,CDW_CREATED_DATE,CDW_CHANGED_USER,CDW_CHANGED_DATE,MON_YY,LAST_DAY,POWER_YEAR_WEEK,POWER_YEAR_LAST_WEEK,POWER_YEAR_LAST_2_WEEK,POWER_YEAR_NEXT_WEEK,POWER_LAST_YEAR_WEEK,POWER_LAST_YEAR_LAST_WEEK,POWER_LAST_YEAR_NEXT_WEEK,YEAR_WEEK,LAST_YEAR_WEEK,YEAR_LAST_WEEK,YEAR_LAST_2_WEEK,YEAR_LAST_3_WEEK,YEAR_LAST_4_WEEK,YEAR_NEXT_QUARTER,LAST_YEAR,YEAR_QUARTER_NUMBER,LAST_YEAR_QUARTER,YEAR_LAST_QUARTER,YEAR_LAST_MONTH,LAST_YEAR_MONTH,YEAR_NEXT_MONTH,YEAR_NEXT_2_MONTH,YEAR_NEXT_3_MONTH,LAST_YEAR_NEXT_MONTH,LAST_YEAR_FISCAL_CODE,POWER_YEAR_LAST_3_WEEK,POWER_YEAR_LAST_4_WEEK,YEAR_NEXT_4_MONTH,YEAR_NEXT_5_MONTH,YEAR_NEXT_WEEK,LAST_YEAR_SAME_DAY_OF_WEEK,POWER_YEAR_CODE,POWER_YEAR_DESC</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CALENDAR_DATE=String,SAME_DAY_IN_LAST_YEAR=String,WEEK_BEGIN_DATE=String,WEEK_END_DATE=String,POWER_WEEK_ST_DATE=String,POWER_WEEK_END_DATE=String,POWER_WEEK_YEAR_ST_DATE=String,POWER_WEEK_YEAR_END_DATE=String,MONTH_BEGIN_DATE=String,MONTH_END_DATE=String,QUARTER_BEGIN_DATE=String,QUARTER_END_DATE=String,YEAR_BEGIN_DATE=String,YEAR_END_DATE=String,FISCAL_YEAR_BEGIN_DATE=String,FISCAL_YEAR_END_DATE=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>DATE_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_CALENDAR_DIM</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_CALENDAR_DIM}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-3f93"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-d6cd">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_FLIGHT_MASTER_DIM}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>CBI_OWNR.CDW_FLIGHT_MASTER_DIM</arg>
+              <arg>--columns</arg>
+              <arg>FLIGHT_SK,FLIGHT_NUMBER,AIRLINE_SK, FLIGHT_DESC, OPERATIONAL_START_DATE, OPERATIONAL_END_DATE, MULTI_LEG_INDICATOR, NUMBER_OF_LEGS, ROUTE_CODE, FLIGHT_TYPE, FLIGHT_COMMISSIONED_DATE, FLIGHT_ORIGIN, FLIGHT_DESTINATION, CDW_CREATED_USER, CDW_CREATED_DATE, CDW_CHANGED_USER, CDW_CHANGED_DATE, SOURCE</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>OPERATIONAL_START_DATE=String,OPERATIONAL_END_DATE=String,FLIGHT_COMMISSIONED_DATE=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FLIGHT_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_FLIGHT_MASTER_DIM</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_FLIGHT_MASTER_DIM}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-3f93"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-b5b9">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_CABIN_CLASS_DIM}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>CBI_OWNR.CDW_CABIN_CLASS_DIM</arg>
+              <arg>--columns</arg>
+              <arg>CABIN_CLASS_SK, CABIN_CLASS, RBD, AIRLINE_SK, CABIN_DESC, OPERATIONAL_DATE, DISCONTINUED_DATE, CDW_CREATED_USER, CDW_CREATED_DATE, CDW_CHANGED_USER, CDW_CHANGED_DATE, SOURCE</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>OPERATIONAL_DATE=String,DISCONTINUED_DATE=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>CABIN_CLASS_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_CABIN_CLASS_DIM</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_CABIN_CLASS_DIM}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-3f93"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-430d">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_SECTOR_MASTER_DIM}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>CBI_OWNR.CDW_SECTOR_MASTER_DIM</arg>
+              <arg>--columns</arg>
+              <arg>SECTOR_SK, SECTOR_CODE, SECTOR_DESC, SECTOR_DISTANCE, OUTBOUND, EK_OPR_SECT, BOARD_POINT_SK, OFF_POINT_SK, CDW_CREATED_USER, CDW_CREATED_DATE, CDW_CHANGED_USER, CDW_CHANGED_DATE, SOURCE, COMBINED_SECTOR, GCD</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>SECTOR_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_SECTOR_MASTER_DIM</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_SECTOR_MASTER_DIM}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-3f93"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-8d00">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_GEO_LOCATION_DIM}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>CBI_OWNR.CDW_GEO_LOCATION_DIM</arg>
+              <arg>--columns</arg>
+              <arg>LOCATION_SK,CITY_CODE,CITY_NAME,COUNTRY_CODE,COUNTRY_NAME,TERRITORY_CODE,TERRITORY_NAME,REGION_CODE,REGION_NAME,ACTIVE_FLAG,REPORTING_CURRENCY,OLD_REPORTING_CURRENCY,EK_ONLINE_CITY,BASE_CITY_INDICATOR,AIRPORT_ONLY,MAIN_CITY_SK,CITY_EFF_FROM_DATE,CITY_EFF_TO_DATE,NETWORK,AREA_CODE,AREA_NAME,CDW_CREATED_USER,CDW_CREATED_DATE,CDW_CHANGED_USER,CDW_CHANGED_DATE,SOURCE</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>CITY_EFF_FROM_DATE=String,CITY_EFF_TO_DATE=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>LOCATION_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_GEO_LOCATION_DIM</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_GEO_LOCATION_DIM}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-3f93"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-4a5e">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_TICKET_HEADER}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.TICKET_SK, T1.TICKET_ID, T1.TICKET_NUMBER, T1.TICKET_ISSUE_DATE, T1.TICKET_SERVICING_AIRLINE_SK, T1.ISSUING_HOST, T1.CONJUNCTION_INDICATOR, T1.TICKET_TYPE, T1.CONJUNCTION_LAST_TICKET_NO, T1.TICKET_EXCHANGE_IND, T1.ORIGINAL_TICKET_SK, T1.REISSUED_TICKET_IND, T1.CORPORATE_IDENTIFICATION_CODE, T1.REVENUE_TICKET_INDICATOR, T1.ETR_SOURCE_INDICATOR, T1.ISSUING_CITY_CODE, T1.IATA_AGENCY_CODE, T1.CR_CODE, T1.REWARDS_AUTHORIZATION_CODE, T1.PNR_SK, T1.GDS_PNR_ADDRESS, T1.SERIAL_NUMBER, T1.OAL_CONFIRMATION_NUMBER, T1.ISSUE_DATE_GMT, T1.ISSUE_TIME, T1.ISSUE_TIME_GMT, T1.LOCAL_CREATION_DATE, T1.TST_VALIDATION_INDICATOR, T1.INTERNATIONAL_SALES_IND, T1.FARE_LOGIC_CODE, T1.FARE_SOURCE_IND, T1.PAX_MC_IND, T1.SERVICE_TYPE, T1.REBATE_TYP, T1.DISCOUNT_IND, T1.TICKET_SALES_TYPE, T1.TICKET_DISTRIBUTION_CHANNEL, T1.ISSUING_AGENT_CODE, T1.AGENT_ID, T1.TICKET_CREATION_TYPE, T1.PAYMENT_STRING, T1.E_TICKET_IND, T1.TOUR_CODE_DATA, T1.TICKET_ITINERARY_STRING, T1.POO_SK, T1.POT_SK, T1.EK_POO_SK, T1.EK_BOARD_POINT, T1.CORPORATE_TRACKING_DEAL_STRING, T1.PARENT_TICKET_SK, T1.PNR_BOOKING_REFERENCE, T1.PNR_BOOKING_CREATION_DATE, T1.CUSTOMER_TYPE, T1.EMPLOYEE_NUMBER, T1.CDW_CREATED_USER, T1.CDW_CREATED_DATE, T1.CDW_CHANGED_USER, T1.CDW_CHANGED_DATE, T1.TOTAL_FARE_AMOUNT_CUR_SK, T1.TOTAL_FARE_AMOUNT_RC, T1.ADDITIONAL_CHARGES_FLAG, T1.TICKET_ISSUING_AIRLINE, T1.OAL_MEMBERSHIP_AIRLINE, T1.OAL_MEMBERSHIP_NUMBER, T1.FFP_TYPE, T1.OAL_FFP_TYPE, T1.ITINERARY_COMPLETION_INDICATOR, T1.LAST_COUPON_FLOWN_DATE FROM CBI_OWNR.CDW_TICKET_HEADER T1 WHERE T1.CDW_CHANGED_DATE BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>TICKET_ISSUE_DATE=String,ISSUE_DATE_GMT=String,LOCAL_CREATION_DATE=String,PNR_BOOKING_CREATION_DATE=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String,LAST_COUPON_FLOWN_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>T1.TICKET_SK</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_TICKET_HEADER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_TICKET_HEADER}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-3f93"/>
+        <error to="email-3acc"/>
+    </action>
+    <action name="sqoop-b3b2">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_CDW_FLOWN_FACT}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${CBI_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT T1.FLNMTH, T1.TICKET_SK, T1.PNR_SK, T1.DOCTYPE, T1.CARNUMCOD, T1.DOCNUM, T1.OLD_DOCNUM, T1.COUPON_NUMBER, T1.COUPON_SEQ_NO, T1.BOOKING_DATE_SK, T1.TKT_ISSUE_DATE_SK, T1.FLOWN_DATE_SK, T1.ARRIVAL_DATE_SK, T1.STOPOVER_DURATION_HRS, T1.SECTOR_SK, T1.SECTOR_DISTNACE, T1.CUSTOMER_SK, T1.SKYWARDS_MEMBER_SK, T1.BR_MEMBERSHIP_SK, T1.POO_GEO_LOCATION_SK, T1.POO_EK_SK, T1.ROUTE_SK, T1.WEEKID, T1.GROSS_REVENUE_AED, T1.COMMISSION_AED, T1.NET_REVENUE_AED, T1.OTHER_CHARGERS_AED, T1.YQ_SURCHARGE_AED, T1.YR_TAX_AED, T1.OBTAXAMOUNT_AED, T1.OCTAXAMOUNT_AED, T1.GROSS_REVENUE_CC, T1.COMMISSION_CC, T1.NET_REVENUE_CC, T1.OTHER_CHARGERS_CC, T1.BOOKED_AGENT_SK, T1.TICKETED_AGENT_SK, T1.CREDIT_AGENT_SK, T1.BILLING_MONTH_SK, T1.OP_AIRLINE_SK, T1.OPERATIONAL_FLT_SK, T1.MKT_AIRLINE_SK, T1.MKT_FLT_SK, T1.TKT_AIRLINE_SK, T1.BILLED_AIRLNE_SK, T1.IATA_FARE_BASIS, T1.BOOKED_CABIN_CLASS_SK, T1.TRAVELLED_CABIN_CLASS_SK, T1.LOCAL_CORPORATE_SK, T1.LOCAL_CORP_TRACKING_IND, T1.GLOBAL_CORPORATE_SK, T1.GLOBAL_CORP_TRACKING_IND, T1.REPORTING_CURRENCY_SK, T1.TICKETING_DISB_CHANNEL_SK, T1.DISTRIBUTION_CHANNEL_SK, T1.TICKETED_FARE_BASIS_CODE, T1.REVENUE_TICKET_INDICATOR, T1.TRUE_OD_PAX_COUNT, T1.TRUE_OD_SECTOR_DISTANCE, T1.TRUE_OD_SK, T1.TRUE_OD_DATE_SK, T1.TRUE_OD_MAIN_CLASS_SK, T1.TRUE_OD_GROSS_REVENUE_CC, T1.TRUE_OD_NET_REVENUE_CC, T1.TRUE_OD_COMMISSION_CC, T1.TRUE_OD_OTHER_CHARGES_CC, T1.TRUE_OD_GROSS_REVENUE_AED, T1.TRUE_OD_NET_REVENUE_AED, T1.TRUE_OD_COMMISSION_AED, T1.TRUE_OD_OTHER_CHARGES_AED, T1.TRUE_OD_YQ_SURCHARGE_AED, T1.TRUE_OD_YR_TAX_AED, T1.TRUE_OD_OBTAXAMOUNT_AED, T1.TRUE_OD_OCTAXAMOUNT_AED, T1.ONLINE_OD_PAX_COUNT, T1.ONLINE_OD_SECTOR_DISTANCE, T1.ONLIN_OD_SK, T1.ONLINE_OD_DATE_SK, T1.ONLINE_OD_MAIN_CLASS_SK, T1.ONLINE_OD_GROSS_REVENUE_CC, T1.ONLINE_OD_NET_REVENUE_CC, T1.ONLINE_OD_COMMISSION_CC, T1.ONLINE_OD_OTHER_CHARGES_CC, T1.ONLINE_OD_GROSS_REVENUE_AED, T1.ONLINE_OD_NET_REVENUE_AED, T1.ONLINE_OD_COMMISSION_AED, T1.ONLINE_OD_OTHER_CHARGES_AED, T1.ONLINE_OD_YQ_SURCHARGE_AED, T1.ONLINE_OD_YR_TAX_AED, T1.ONLINE_OD_OBTAXAMOUNT_AED, T1.ONLINE_OD_OCTAXAMOUNT_AED, T1.TRIP_OD_PAX_COUNT, T1.TRIP_OD_SECTOR_DISTANCE, T1.TRIP_OD_SK, T1.TRIP_OD_DATE_SK, T1.TRIP_OD_MAIN_CLASS_SK, T1.TRIP_OD_GROSS_REVENUE_CC, T1.TRIP_OD_NET_REVENUE_CC, T1.TRIP_OD_COMMISSION_CC, T1.TRIP_OD_OTHER_CHARGES_CC, T1.TRIP_OD_GROSS_REVENUE_AED, T1.TRIP_OD_NET_REVENUE_AED, T1.TRIP_OD_COMMISSION_AED, T1.TRIP_OD_OTHER_CHARGES_AED, T1.TRIP_OD_YQ_SURCHARGE_AED, T1.TRIP_OD_YR_TAX_AED, T1.TRIP_OD_OBTAXAMOUNT_AED, T1.TRIP_OD_OCTAXAMOUNT_AED, T1.FARE_BASIS_IND, T1.TOUR_CODE_IND, T1.TICKET_DESIGNATOR_IND, T1.OSI_IND, T1.REPROCESSED_IND, T1.CORP_UPD_IND, T1.CORP_UPD_REMARKS, T1.EMD_UPD_IND, T1.EMD_UPD_REMARKS, T1.TICKET_COUPON_ID, T1.TICKET_NUMBER, T1.OD_UPD_STATUS, T1.CDW_CREATED_USER, T1.CDW_CREATED_DATE, T1.CDW_CHANGED_USER, T1.CDW_CHANGED_DATE, T1.TRIP_TYPE, T1.FLOWN_ITINERARY_STRING, T1.PAXCNT, T1.TOTPAX, T1.CPNCNT, T1.TICKET_ITINERARY_STRING, T1.EK_FIRST_BOARD_POINT, T1.TRIP_OD_FREEDOM_TYPE, T1.TRUE_OD_FREEDOM_TYPE, T1.ONLINE_OD_FREEDOM_TYPE, T1.LOCAL_CORP_REMARKS, T1.GLOBAL_CORP_REMARKS, T1.JOURNEY_TYPE, T1.TRIP_OD_COMPLETION_IND, T1.TRUE_OD_COMPLETION_IND, T1.ONLINE_OD_COMPLETION_IND, T1.TRIP_ITINERARY_WCC FROM CBI_OWNR.CDW_FLOWN_FACT T1 WHERE T1.CDW_CHANGED_DATE BETWEEN TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-7ea8&#39;)[&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>FLNMTH=String,CDW_CREATED_DATE=String,CDW_CHANGED_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>-m</arg>
+              <arg>1</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>CDW_FLOWN_FACT</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_CDW_FLOWN_FACT}</arg>
+            <file>${CBI_SQOOP_OPTIONS_FILE}#${CBI_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-3f93"/>
+        <error to="email-3acc"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

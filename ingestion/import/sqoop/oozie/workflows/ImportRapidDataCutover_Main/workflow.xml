@@ -1,0 +1,462 @@
+<workflow-app name="ImportRapidDataCutover-Main" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapreduce.job.queuename</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapreduce.job.queuename</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-fc39"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-fc39">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${wf:appPath()}/${RAPID_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${wf:appPath()}/${RAPID_CONTROL_FILE}#${RAPID_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="decision-d1da"/>
+        <error to="Kill"/>
+    </action>
+    <action name="subworkflow-6d69">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/uat/wf_ImportRapidDataTicket</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>RAPID_CONTROL_FILE</name>
+                    <value>${RAPID_CONTROL_FILE}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPCPNDTL</name>
+                    <value>${PATH_SLPCPNDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPDOCHDR</name>
+                    <value>${PATH_SLPDOCHDR}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPCPNVAL</name>
+                    <value>${PATH_SLPCPNVAL}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPPNRMST</name>
+                    <value>${PATH_SLPPNRMST}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPDOCOTH</name>
+                    <value>${PATH_SLPDOCOTH}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPCNJREI</name>
+                    <value>${PATH_SLPCNJREI}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPMDSDOCTAX</name>
+                    <value>${PATH_SLPMDSDOCTAX}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPCPNFAB</name>
+                    <value>${PATH_SLPCPNFAB}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPCPNVALAUD</name>
+                    <value>${PATH_SLPCPNVALAUD}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPDOCFCS</name>
+                    <value>${PATH_SLPDOCFCS}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPDOCPOTDTL</name>
+                    <value>${PATH_SLPDOCPOTDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_FLPDOCMAP</name>
+                    <value>${PATH_FLPDOCMAP}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE_PATH</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE_PATH}</value>
+                </property>
+                <property>
+                    <name>NUMBER_OF_MAPPERS</name>
+                    <value>${NUMBER_OF_MAPPERS}</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>861125</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="subworkflow-9008"/>
+        <error to="email-36aa"/>
+    </action>
+    <action name="email-36aa">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_RECIPIENTS}</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <decision name="decision-d1da">
+        <switch>
+            <case to="shell-b8c7">
+              ${ (wf:actionData(&#39;shell-fc39&#39;)[&#39;HELIX_RUN_IMPORT&#39;] eq &#39;FALSE&#39;) }
+            </case>
+            <case to="subworkflow-6d69">
+              ${ (wf:actionData(&#39;shell-fc39&#39;)[&#39;HELIX_RUN_IMPORT&#39;] eq &#39;TRUE&#39;) }
+            </case>
+            <default to="email-36aa"/>
+        </switch>
+    </decision>
+    <action name="shell-b8c7">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-36aa"/>
+    </action>
+    <action name="subworkflow-9008">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/uat/wf_ImportRapidDataFlown</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>RAPID_CONTROL_FILE</name>
+                    <value>${RAPID_CONTROL_FILE}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPAPDDTL</name>
+                    <value>${PATH_SLPAPDDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_FLPBATHDR</name>
+                    <value>${PATH_FLPBATHDR}</value>
+                </property>
+                <property>
+                    <name>PATH_FLPTRNACC</name>
+                    <value>${PATH_FLPTRNACC}</value>
+                </property>
+                <property>
+                    <name>PATH_FLPDOCTAX</name>
+                    <value>${PATH_FLPDOCTAX}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPTXPEXMDTL</name>
+                    <value>${PATH_SLPTXPEXMDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_FLPDOCTRN</name>
+                    <value>${PATH_FLPDOCTRN}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPCPNACC</name>
+                    <value>${PATH_SLPCPNACC}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE_PATH</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE_PATH}</value>
+                </property>
+                <property>
+                    <name>PATH_FLPFIMHDR</name>
+                    <value>${PATH_FLPFIMHDR}</value>
+                </property>
+                <property>
+                    <name>PATH_FLPFIMDTL</name>
+                    <value>${PATH_FLPFIMDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_OBLPAXCPN</name>
+                    <value>${PATH_OBLPAXCPN}</value>
+                </property>
+                <property>
+                    <name>NUMBER_OF_MAPPERS</name>
+                    <value>${NUMBER_OF_MAPPERS}</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>904303</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="subworkflow-7c3d"/>
+        <error to="email-36aa"/>
+    </action>
+    <action name="subworkflow-7c3d">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/uat/wf_ImportRapidDataSale</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>RAPID_CONTROL_FILE</name>
+                    <value>${RAPID_CONTROL_FILE}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPDOCTRN</name>
+                    <value>${PATH_SLPDOCTRN}</value>
+                </property>
+                <property>
+                    <name>PATH_REPDOCSTL</name>
+                    <value>${PATH_REPDOCSTL}</value>
+                </property>
+                <property>
+                    <name>PATH_REPDOCTRN</name>
+                    <value>${PATH_REPDOCTRN}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPDOCTAX</name>
+                    <value>${PATH_SLPDOCTAX}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPBATHDR</name>
+                    <value>${PATH_SLPBATHDR}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPCPNTAXHIS</name>
+                    <value>${PATH_SLPCPNTAXHIS}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPCPNHIS</name>
+                    <value>${PATH_SLPCPNHIS}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPDOCFOP</name>
+                    <value>${PATH_SLPDOCFOP}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE_PATH</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE_PATH}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPTRNDTL</name>
+                    <value>${PATH_SLPTRNDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPADMACM</name>
+                    <value>${PATH_SLPADMACM}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPADMTKT</name>
+                    <value>${PATH_SLPADMTKT}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPADMUTL</name>
+                    <value>${PATH_SLPADMUTL}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPADMTKTDTL</name>
+                    <value>${PATH_SLPADMTKTDTL}</value>
+                </property>
+                <property>
+                    <name>NUMBER_OF_MAPPERS</name>
+                    <value>${NUMBER_OF_MAPPERS}</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>904312</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="subworkflow-ba5e"/>
+        <error to="email-36aa"/>
+    </action>
+    <action name="subworkflow-ba5e">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/uat/wf_ImportRapidDataInterline</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>RAPID_CONTROL_FIL</name>
+                    <value>${RAPID_CONTROL_FILE}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE}</value>
+                </property>
+                <property>
+                    <name>PATH_IBPOALCPNBIL</name>
+                    <value>${PATH_IBPOALCPNBIL}</value>
+                </property>
+                <property>
+                    <name>PATH_IBPTAXDTL</name>
+                    <value>${PATH_IBPTAXDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_IBPCPNDTL</name>
+                    <value>${PATH_IBPCPNDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_IBPCPNBIL</name>
+                    <value>${PATH_IBPCPNBIL}</value>
+                </property>
+                <property>
+                    <name>PATH_IBPOALPROVAL</name>
+                    <value>${PATH_IBPOALPROVAL}</value>
+                </property>
+                <property>
+                    <name>PATH_IBPOALCPNDTL</name>
+                    <value>${PATH_IBPOALCPNDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_IBPPROVAL</name>
+                    <value>${PATH_IBPPROVAL}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE_PATH</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE_PATH}</value>
+                </property>
+                <property>
+                    <name>NUMBER_OF_MAPPERS</name>
+                    <value>${NUMBER_OF_MAPPERS}</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>904305</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="subworkflow-80f2"/>
+        <error to="email-36aa"/>
+    </action>
+    <action name="subworkflow-80f2">
+        <sub-workflow>
+            <app-path>${nameNode}/apps/helix/conf/oozie/workspaces/uat/wf_ImportRapidMasters</app-path>
+              <propagate-configuration/>
+            <configuration>
+                <property>
+                    <name>RAPID_CONTROL_FILE</name>
+                    <value>${RAPID_CONTROL_FILE}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE}</value>
+                </property>
+                <property>
+                    <name>PATH_GENCURDTL</name>
+                    <value>${PATH_GENCURDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_GENACCMST</name>
+                    <value>${PATH_GENACCMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENCTAMST</name>
+                    <value>${PATH_GENCTAMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENCARDUP</name>
+                    <value>${PATH_GENCARDUP}</value>
+                </property>
+                <property>
+                    <name>PATH_GENMISFARTYPMST_VW</name>
+                    <value>${PATH_GENMISFARTYPMST_VW}</value>
+                </property>
+                <property>
+                    <name>PATH_GENMISMCOSRVMST_VW</name>
+                    <value>${PATH_GENMISMCOSRVMST_VW}</value>
+                </property>
+                <property>
+                    <name>PATH_GENEMDRFICMST</name>
+                    <value>${PATH_GENEMDRFICMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENEMDRFISMST</name>
+                    <value>${PATH_GENEMDRFISMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENNONREVFAB</name>
+                    <value>${PATH_GENNONREVFAB}</value>
+                </property>
+                <property>
+                    <name>PATH_GENAGPMST</name>
+                    <value>${PATH_GENAGPMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENLOCHDR</name>
+                    <value>${PATH_GENLOCHDR}</value>
+                </property>
+                <property>
+                    <name>PATH_SLPGDSSRCMST</name>
+                    <value>${PATH_SLPGDSSRCMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENREFCODDTL</name>
+                    <value>${PATH_GENREFCODDTL}</value>
+                </property>
+                <property>
+                    <name>PATH_PRPSPAMST</name>
+                    <value>${PATH_PRPSPAMST}</value>
+                </property>
+                <property>
+                    <name>PATH_TXPTAXMST</name>
+                    <value>${PATH_TXPTAXMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENREGMST</name>
+                    <value>${PATH_GENREGMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENCNTMST</name>
+                    <value>${PATH_GENCNTMST}</value>
+                </property>
+                <property>
+                    <name>PATH_GENCURMST</name>
+                    <value>${PATH_GENCURMST}</value>
+                </property>
+                <property>
+                    <name>RAPID_SQOOP_OPTIONS_FILE_PATH</name>
+                    <value>${RAPID_SQOOP_OPTIONS_FILE_PATH}</value>
+                </property>
+                <property>
+                    <name>PATH_GENORGCNTMST</name>
+                    <value>${PATH_GENORGCNTMST}</value>
+                </property>
+                <property>
+                    <name>hue-id-w</name>
+                    <value>904307</value>
+                </property>
+            </configuration>
+        </sub-workflow>
+        <ok to="End"/>
+        <error to="email-36aa"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

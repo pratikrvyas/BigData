@@ -1,0 +1,63 @@
+{
+  "type" : "record",
+  "name" : "CDW_IATA_AREA_MASTER",
+  "doc" : "import of DW_OWNR.CDW_IATA_AREA_MASTER",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "AREA_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "AREA_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ISO_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REGION_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION_NAME",
+    "sqlType" : "2"
+  }, {
+    "name" : "COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_NAME",
+    "sqlType" : "93"
+  }, {
+    "name" : "IATA_AREA",
+    "type" : [ "string", "null" ],
+    "columnName" : "IATA_AREA",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "UPDATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "UPDATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "UPDATED_BY",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.CDW_IATA_AREA_MASTER"
+}

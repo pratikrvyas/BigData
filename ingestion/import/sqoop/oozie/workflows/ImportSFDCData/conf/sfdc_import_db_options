@@ -1,0 +1,7 @@
+#
+--connect
+jdbc:oracle:thin:@dolinuxbl566.hq.emirates.com:6516:midt10gp
+--username
+helix_user
+--password
+helix123

@@ -1,0 +1,173 @@
+[
+{
+  "pk": 2153686, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": "", 
+    "uuid": "00314c7f-f7e6-41bb-89a6-a0fa4c03acc7", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "This workflow will run the spark application to populte the Flight Actual Fuel Burn Satellite", 
+    "is_history": false, 
+    "parent_directory": [
+      "f1992374-b8b7-458e-b157-af952172c926", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-04-25T16:03:23.436", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "f01731fd-e816-497f-b593-a97b1294c045", 
+        1, 
+        true
+      ], 
+      [
+        "2aab3d9e-1c26-49f4-968c-b6ff0b69cce4", 
+        1, 
+        true
+      ], 
+      [
+        "facfe414-d547-48f2-bdc6-cae10e69b270", 
+        1, 
+        true
+      ], 
+      [
+        "db55f2a9-4e3d-4006-a449-840f72f55433", 
+        1, 
+        true
+      ], 
+      [
+        "4191d2fe-61ae-441b-b8ab-1d307343cb84", 
+        1, 
+        true
+      ], 
+      [
+        "b3a4330c-4e62-4f7d-86da-2e963e3d79d7", 
+        1, 
+        true
+      ], 
+      [
+        "2d38e810-3394-40df-aee0-6938024cf0b2", 
+        1, 
+        true
+      ], 
+      [
+        "c2c6438d-1194-4e72-ad71-878c07d50977", 
+        1, 
+        true
+      ], 
+      [
+        "4f295f32-c40d-4766-93df-a59473a9f417", 
+        1, 
+        true
+      ], 
+      [
+        "f61105fe-b9a0-477c-a42c-af31d1b0b07a", 
+        1, 
+        true
+      ], 
+      [
+        "4821aa16-91a3-41d5-b321-c1cefa3d5d89", 
+        1, 
+        true
+      ], 
+      [
+        "9b1a45b2-c955-4a06-8b04-4105edcc5c25", 
+        1, 
+        true
+      ], 
+      [
+        "c2ab3369-fc0a-4f12-8898-59de3e0f23b9", 
+        1, 
+        true
+      ], 
+      [
+        "ad0be306-29a0-42b5-9f7b-09d9abfab647", 
+        1, 
+        true
+      ], 
+      [
+        "141f7682-9937-4960-b036-12b74e6df831", 
+        1, 
+        true
+      ], 
+      [
+        "bdd457c8-403c-493f-9963-026514fee878", 
+        1, 
+        true
+      ], 
+      [
+        "20495fa3-dcec-41de-9193-9ceae2524753", 
+        1, 
+        true
+      ], 
+      [
+        "93652157-0646-400b-aa82-a76d9be67c4f", 
+        1, 
+        true
+      ], 
+      [
+        "683ac806-7b98-4901-8677-8dee8cd1339e", 
+        1, 
+        true
+      ], 
+      [
+        "50ee7d17-1253-4f9e-ad02-22e1f23de4f9", 
+        1, 
+        true
+      ], 
+      [
+        "6171d9dc-1be2-4781-a78c-6efd2d715eed", 
+        1, 
+        true
+      ], 
+      [
+        "600c16e7-31f5-4292-adbf-4c2d271e1575", 
+        1, 
+        true
+      ], 
+      [
+        "ebb602ae-9b8d-41cb-bf48-d34e317448af", 
+        1, 
+        true
+      ], 
+      [
+        "22b0f2f9-5a3e-4d85-a984-c51380e7dc05", 
+        1, 
+        true
+      ], 
+      [
+        "50df209c-cba7-49a4-a7b4-3dafc46072f6", 
+        1, 
+        true
+      ], 
+      [
+        "6f10ec6c-6cd0-4c41-8ce3-7ebc5cd72a58", 
+        1, 
+        true
+      ], 
+      [
+        "734a1be8-f454-40d1-8bec-926c059d6746", 
+        1, 
+        true
+      ], 
+      [
+        "a91c0458-6a8e-4f18-9bda-21773af27972", 
+        1, 
+        true
+      ], 
+      [
+        "a869b317-cbfb-4d7f-bbf5-e0965a5a3cf8", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Shell\", \"widgetType\": \"shell-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"size\": 12}], \"id\": \"eb6d572f-b1e1-efe3-1859-70fd5e847bee\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c12d1fe7-f975-1911-3b91-58bed3224ec6\", \"size\": 12}], \"id\": \"5614fc66-e22b-501e-9cc6-18fbb821f936\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"0beb308e-29d1-7fe4-bc49-c4cd695b6669\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Shell\", \"widgetType\": \"shell-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"size\": 12}], \"id\": \"eb6d572f-b1e1-efe3-1859-70fd5e847bee\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c12d1fe7-f975-1911-3b91-58bed3224ec6\", \"size\": 12}], \"id\": \"5614fc66-e22b-501e-9cc6-18fbb821f936\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"5bbd4905-ac34-ca96-223d-9e09ede09f7a\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"8e1f0875-1ea4-6de5-b455-4fd4b737a589\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"5bbd4905-ac34-ca96-223d-9e09ede09f7a\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"8e1f0875-1ea4-6de5-b455-4fd4b737a589\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"0beb308e-29d1-7fe4-bc49-c4cd695b6669\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"b24b1410-5628-720d-8cbe-5da08f6c1d09\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"This workflow will run the spark application to populte the Flight Actual Fuel Burn Satellite\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"oozie.launcher.mapreduce.job.queuename\", \"value\": \"ingest\"}, {\"name\": \"COMPRESSION\", \"value\": \"snappy\"}, {\"name\": \"SPARK_JAR\", \"value\": \"/apps/helix/conf/oozie/workspaces/uat/wf_populateemfgsatelliteactualfuelburninitial/lib/actualfuelburnsatellite-1.0.jar\"}, {\"name\": \"CLASS_NAME\", \"value\": \"com.emirates.helix.ActualFuelBurnDriver\"}, {\"name\": \"EXECUTOR_MEMORY\", \"value\": \"30g\"}, {\"name\": \"DRIVER_MEMORY\", \"value\": \"10g\"}, {\"name\": \"QUEUE\", \"value\": \"opseff\"}, {\"name\": \"MIN_EXECUTORS\", \"value\": \"10\"}, {\"name\": \"MAX_EXECUTORS\", \"value\": \"50\"}, {\"name\": \"EXECUTOR_CORES\", \"value\": \"4\"}, {\"name\": \"PARTITIONS\", \"value\": \"400\"}, {\"name\": \"EMAIL_ADDRESS_LIST \", \"value\": \"fayazbasha.shaik@dnata.com, aswini.subramani@dnata.com\"}, {\"name\": \"INPUT_DEDUPE_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/dedupe/ags/actual_route/*/\"}, {\"name\": \"INPUT_FLIGHT_MASTER_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/public/flightmaster/*/snapdate=2018-04-19/snaptime=00-00\"}, {\"name\": \"OUTPUT_HISTORY_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/public/fuelburnactual/history/snapdate=2018-04-23/snaptime=00-00\"}, {\"name\": \"OUTPUT_CURRENT_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/public/fuelburnactual/current/snapdate=2018-04-23/snaptime=00-00\"}, {\"name\": \"OUTPUT_REJECTED_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/rejected/ags/actual_route/snapdate=2018-04-23/snaptime=00-00\"}, {\"name\": \"LOOK_BACK_MONTHS\", \"value\": \"3\"}], \"sla_enabled\": false, \"deployment_dir\": \"/apps/helix/conf/oozie/workspaces/uat/wf_populateemfgsatelliteactualfuelburninitial\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"show_arrows\": true, \"wf1_id\": null, \"properties\": [{\"name\": \"oozie.launcher.mapred.job.queue.name\", \"value\": \"opseff\"}, {\"name\": \"mapred.job.queue.name\", \"value\": \"opseff\"}]}, \"name\": \"PopulateActualFuelBurnInitialEmFG_UAT\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": false, \"movedNode\": null, \"linkMapping\": {\"c12d1fe7-f975-1911-3b91-58bed3224ec6\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"c324533a-75b3-c136-d1e3-ad7748298ca7\"], \"c324533a-75b3-c136-d1e3-ad7748298ca7\": [\"c12d1fe7-f975-1911-3b91-58bed3224ec6\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": []}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"c12d1fe7-f975-1911-3b91-58bed3224ec6\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow Name: ${wf:name()} \\nCurrent Timestamp: ${timestamp()}\", \"cc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST} \", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"files\": [{\"value\": \"spark-execute.sh\"}], \"job_xml\": \"\", \"retry_interval\": [], \"retry_max\": [], \"job_properties\": [], \"capture_output\": true, \"shell_command\": \"spark-execute.sh\", \"arguments\": [{\"value\": \"hdfs://${SPARK_JAR}\"}, {\"value\": \"${CLASS_NAME}\"}, {\"value\": \"${EXECUTOR_MEMORY}\"}, {\"value\": \"${DRIVER_MEMORY}\"}, {\"value\": \"${QUEUE}\"}, {\"value\": \"${MIN_EXECUTORS}\"}, {\"value\": \"${MAX_EXECUTORS}\"}, {\"value\": \"${EXECUTOR_CORES}\"}, {\"value\": \"${INPUT_DEDUPE_PATH}\"}, {\"value\": \"${INPUT_FLIGHT_MASTER_PATH}\"}, {\"value\": \"${OUTPUT_HISTORY_PATH}\"}, {\"value\": \"${OUTPUT_CURRENT_PATH}\"}, {\"value\": \"${OUTPUT_REJECTED_PATH}\"}, {\"value\": \"${COMPRESSION}\"}, {\"value\": \"${PARTITIONS}\"}, {\"value\": \"${LOOK_BACK_MONTHS}\"}], \"prepares\": [], \"credentials\": [], \"env_var\": [], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}], \"archives\": []}, \"name\": \"shell-c324\", \"children\": [{\"to\": \"c12d1fe7-f975-1911-3b91-58bed3224ec6\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"shell-widget\", \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow ${wf:name()} Completed Successfully\", \"cc\": \"\", \"retry_interval\": [], \"retry_max\": [], \"bcc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST} \", \"attachment\": \"\", \"content_type\": \"text/plain\", \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"subject\": \"Workflow ${wf:name()} Completed Successfully\"}, \"name\": \"email-c12d\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"email-widget\", \"id\": \"c12d1fe7-f975-1911-3b91-58bed3224ec6\", \"actionParameters\": []}], \"id\": 2153686, \"nodeNamesMapping\": {\"c12d1fe7-f975-1911-3b91-58bed3224ec6\": \"email-c12d\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"c324533a-75b3-c136-d1e3-ad7748298ca7\": \"shell-c324\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\"}, \"uuid\": \"ca4fddd7-8ef8-5590-bff8-04e83b321f92\"}}", 
+    "name": "PopulateActualFuelBurnInitialEmFG_UAT"
+  }
+}
+]

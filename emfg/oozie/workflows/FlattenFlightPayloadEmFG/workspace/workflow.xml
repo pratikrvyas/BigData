@@ -1,0 +1,90 @@
+<workflow-app name="FlattenFlightPayloadEmFG_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>opseff</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-b627"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST} </to>
+            <subject>Workflow ${wf:name()} Failed</subject>
+            <body>Workflow ${wf:name()} Failed
+Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-b627">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${CONTROL_FILE}"/>
+            </prepare>
+            <exec>prev_date_finder.sh</exec>
+              <argument>${CONTROL_FILE}</argument>
+              <argument>${PAYLOAD_TGT_SERVING_LOCATION}</argument>
+            <file>prev_date_finder.sh#prev_date_finder.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="shell-a563"/>
+        <error to="Kill"/>
+    </action>
+    <action name="email-9139">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST} </to>
+            <subject>Workflow ${wf:name()} Completed Successfully</subject>
+            <body>Workflow ${wf:name()} Completed Successfully</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-a563">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>spark-execute.sh</exec>
+              <argument>hdfs://${SPARK_JAR}</argument>
+              <argument>${CLASS_NAME}</argument>
+              <argument>${EXECUTOR_MEMORY}</argument>
+              <argument>${DRIVER_MEMORY}</argument>
+              <argument>${QUEUE}</argument>
+              <argument>${MIN_EXECUTORS}</argument>
+              <argument>${MAX_EXECUTORS}</argument>
+              <argument>${EXECUTOR_CORES}</argument>
+              <argument>${PAYLOAD_SRC_LOCATION}</argument>
+              <argument>${CONTROL_FILE}</argument>
+              <argument>${PAYLOAD_TGT_SERVING_LOCATION}</argument>
+              <argument>${COALESCE_VALUE}</argument>
+              <argument>${COMPRESSION}</argument>
+            <file>spark-execute.sh#spark-execute.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="hive2-f504"/>
+        <error to="Kill"/>
+    </action>
+    <action name="hive2-f504" cred="hive2">
+        <hive2 xmlns="uri:oozie:hive2-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <jdbc-url>jdbc:hive2://dolinux751.hq.emirates.com:10000/default</jdbc-url>
+            <script>exadata_ddls.hql</script>
+            <file>exadata_ddls.hql#exadata_ddls.hql</file>
+        </hive2>
+        <ok to="email-9139"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

@@ -1,0 +1,51 @@
+{
+  "flt": {
+    "_ttl": {"enabled": true,"default":"10d"},
+    "_timestamp" : {
+      "enabled":true,
+      "format":"YYYY-MM-dd HH:mm:ss"
+    },
+    "properties": {
+      "aircraft_type": {"type": "string"},
+      "airline_designator": {"type": "string"},
+      "baggage_concept": {"type": "string"},
+      "board_point": {"type": "string"},
+      "changed": {"type": "string"},
+      "class_configuration": {"type": "string"},
+      "created": {"type": "string","index": "not_analyzed"},
+      "crew_code": {"type": "string"},
+      "download_date": {"type": "string","index": "not_analyzed"},
+      "ff_notified": {"type": "string"},
+      "flight_number": {"type": "string"},
+      "flight_status": {"type": "string"},
+      "flt_snapshot_day": {"type": "string","index": "not_analyzed"},
+      "gate_number": {"type": "string"},
+      "latest_departure_date": {
+        "type": "string",
+        "index": "not_analyzed",
+        "format": "yyyy-MM-ddZZ"
+      },
+      "latest_departure_date_gmt": {"type": "string","index": "not_analyzed"},
+      "latest_departure_time": {"type": "string"},
+      "latest_departure_time_gmt": {"type": "string"},
+      "mfl_id": {"type": "string"},
+      "operation_date": {
+        "type": "string",
+        "index": "not_analyzed",
+        "format": "yyyy-MM-ddZZ"
+      },
+      "operation_date_gmt": {"type": "string", "index":"not_analyzed"},
+      "operation_time": {"type": "string"},
+      "operation_time_gmt": {"type": "string"},
+      "pantry_code": {"type": "string"},
+      "pd_count": {"type": "string"},
+      "registration_number": {"type": "string"},
+      "seat_mask_code": {"type": "string"},
+      "status": {"type": "string"},
+      "time_stamp": {"type": "string"},
+      "uld_code": {"type": "string"},
+      "usr_changed": {"type": "string"},
+      "usr_created": {"type": "string"}
+    }
+  }
+}

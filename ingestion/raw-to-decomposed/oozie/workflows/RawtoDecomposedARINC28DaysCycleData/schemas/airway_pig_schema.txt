@@ -1,0 +1,1 @@
+(chararray)$0 AS Awy,(chararray)$1 AS Seq,(chararray)$2 AS AreaC,(chararray)$3 AS WptUse,(chararray)$4 AS Fix,(chararray)$5 AS FixIC,(chararray)$6 AS FixType,(chararray)$7 AS WptDesc,(chararray)$8 AS Cycle

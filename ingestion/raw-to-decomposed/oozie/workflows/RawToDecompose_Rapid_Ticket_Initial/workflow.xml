@@ -1,0 +1,404 @@
+<workflow-app name="RawToDecompose-Rapid-Ticket-Initial" xmlns="uri:oozie:workflow:0.5">
+    <start to="fork-bb8c"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-927a">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="join-0e2a"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-ca4b">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPDOCHDR}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-82a0"/>
+        <error to="email-17ae"/>
+    </action>
+    <fork name="fork-bb8c">
+        <path start="shell-927a" />
+        <path start="shell-ca4b" />
+        <path start="shell-28e8" />
+        <path start="shell-19fa" />
+        <path start="shell-3b90" />
+        <path start="shell-0b28" />
+        <path start="shell-27bc" />
+        <path start="shell-9d49" />
+        <path start="shell-b85d" />
+        <path start="shell-f325" />
+        <path start="shell-25a8" />
+        <path start="shell-403f" />
+        <path start="shell-4bf0" />
+    </fork>
+    <join name="join-0e2a" to="End"/>
+    <action name="pig-82a0">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPDOCHDR}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPDOCHDR}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPDOCHDR}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPDOCHDR}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-ca4b&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="email-17ae">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>s746216@emirates.com</to>
+            <subject>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</subject>
+            <body>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-28e8">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPPNRMST}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-92d3"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-19fa">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPCPNVAL}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-04df"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-3b90">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPCNJREI}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-d15c"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-0b28">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPDOCOTH}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-8cfe"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-27bc">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPDOCPOTDTL}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-5b0d"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-9d49">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPCPNVALAUD}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-d0de"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-b85d">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPCPNDTL}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-626f"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-f325">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPMDSDOCTAX}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-435c"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-25a8">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPCPNFAB}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-d1c8"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-403f">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_SLPDOCFCS}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-21cc"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="shell-4bf0">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA_FLPDOCMAP}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-2b16"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-92d3">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPPNRMST}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPPNRMST}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPPNRMST}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPPNRMST}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-28e8&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-04df">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPCPNVAL}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPCPNVAL}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPCPNVAL}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPCPNVAL}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-19fa&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-d15c">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPCNJREI}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPCNJREI}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPCNJREI}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPCNJREI}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-3b90&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-8cfe">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPDOCOTH}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPDOCOTH}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPDOCOTH}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPDOCOTH}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-0b28&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-5b0d">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPDOCPOTDTL}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPDOCPOTDTL}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPDOCPOTDTL}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPDOCPOTDTL}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-27bc&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-d0de">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPCPNVALAUD}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPCPNVALAUD}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPCPNVALAUD}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPCPNVALAUD}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-9d49&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-626f">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPCPNDTL}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPCPNDTL}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPCPNDTL}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPCPNDTL}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-b85d&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-435c">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPMDSDOCTAX}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPMDSDOCTAX}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPMDSDOCTAX}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPMDSDOCTAX}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-f325&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-d1c8">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPCPNFAB}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPCPNFAB}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPCPNFAB}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPCPNFAB}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-25a8&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-21cc">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_SLPDOCFCS}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_SLPDOCFCS}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_SLPDOCFCS}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_SLPDOCFCS}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-403f&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <action name="pig-2b16">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${TARGET_DIRECTORY_FLPDOCMAP}"/>
+            </prepare>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY_FLPDOCMAP}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA_FLPDOCMAP}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY_FLPDOCMAP}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-4bf0&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="join-0e2a"/>
+        <error to="email-17ae"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

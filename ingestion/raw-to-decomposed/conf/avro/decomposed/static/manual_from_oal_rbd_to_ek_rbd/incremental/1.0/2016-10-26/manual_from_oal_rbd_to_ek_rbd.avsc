@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "Manual_from_OAL_Cabin_to_EK_Cabin",
+  "doc" : "import of DW_OWNR.Manual_from_OAL_RBD_to_EK_RBD",
+  "fields" : [ {
+    "name" : "helix_uuid",
+    "type" : [ "string", "null" ],
+    "columnName" : "helix_uuid",
+    "sqlType" : "2"
+  }, {
+    "name" : "helix_timestamp",
+    "type" : [ "string", "null" ],
+    "columnName" : "helix_timestamp",
+    "sqlType" : "12"
+  },{
+    "name" : "Operating_Carrier_BCD_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "Operating_Carrier_BCD_Code",
+    "sqlType" : "2"
+  }, {
+    "name" : "Marketing_Carrier_BCD_Code",
+    "type" : [ "string", "null" ],
+    "columnName" : "Marketing_Carrier_BCD_Code",
+    "sqlType" : "12"
+  }, {
+    "name" : "EK_RBD",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_RBD",
+    "sqlType" : "2"
+  },{
+    "name" : "OAL_RBD",
+    "type" : [ "string", "null" ],
+    "columnName" : "OAL_RBD",
+    "sqlType" : "2"
+  },{
+    "name" : "Effective_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Effective_Date",
+    "sqlType" : "12"
+  }, {
+    "name" : "Discontinue_Date",
+    "type" : [ "string", "null" ],
+    "columnName" : "Discontinue_Date",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.Manual_from_OAL_RBD_to_EK_RBD"
+}

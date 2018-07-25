@@ -1,0 +1,4 @@
+FTP_HOST=ftp1.emirates.com
+FTP_USER=insight
+FTP_PUBLIC_KEY=/home/scv_ops/ssh_keys/id_dsa
+FTP_DIR=/incoming/insight/DOB_MIDT_WEEKLY/history

@@ -1,0 +1,108 @@
+{  
+   "type":"record",
+   "name":"CBI_FRPS_POS_SCTR_TRGT_REV",
+   "namespace":"datalake",
+   "fields":[  
+      {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{  
+         "name":"BATCH_ID",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"FIN_ID",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"VRSN_NO",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"YR_MNTH",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"REGN_CD",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"POS_CD",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"SCTR",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"COMP",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"CRNCY_CD",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"FNL_SCTR_PAX",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"FNL_REV_BC",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"FNL_REV_LC",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"PUBLISH_DT",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }
+   ]
+}

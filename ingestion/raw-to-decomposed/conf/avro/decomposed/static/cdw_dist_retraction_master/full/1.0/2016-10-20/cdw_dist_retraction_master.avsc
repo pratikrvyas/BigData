@@ -1,0 +1,68 @@
+{
+  "type" : "record",
+  "name" : "CDW_DIST_RETRACTION_MASTER",
+  "doc" : "import of DW_OWNR.CDW_DIST_RETRACTION_MASTER",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "DIST_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "DIST_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "DST_MILES",
+    "type" : [ "string", "null" ],
+    "columnName" : "DST_MILES",
+    "sqlType" : "12"
+  }, {
+    "name" : "DST_KMS",
+    "type" : [ "string", "null" ],
+    "columnName" : "DST_KMS",
+    "sqlType" : "2"
+  }, {
+    "name" : "RETRACTION_ALLOWED",
+    "type" : [ "string", "null" ],
+    "columnName" : "RETRACTION_ALLOWED",
+    "sqlType" : "93"
+  }, {
+    "name" : "EACH_100",
+    "type" : [ "string", "null" ],
+    "columnName" : "EACH_100",
+    "sqlType" : "12"
+  }, {
+    "name" : "EACH_ONE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EACH_ONE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "UPDATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "UPDATED_DATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_BY",
+    "sqlType" : "93"
+  }, {
+    "name" : "UPDATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "UPDATED_BY",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.CDW_DIST_RETRACTION_MASTER"
+}

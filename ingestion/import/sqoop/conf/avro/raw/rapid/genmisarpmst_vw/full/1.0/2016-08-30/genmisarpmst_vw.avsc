@@ -1,0 +1,35 @@
+{  
+   "type":"record",
+   "name":"GENMISARPMST_VW",
+   "namespace":"datalake",
+   "fields":[  
+      {  
+         "name":"ARPCOD",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"ARPDES",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"CTYCOD",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+      {  
+         "name":"ACTIND",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }
+   ]
+}

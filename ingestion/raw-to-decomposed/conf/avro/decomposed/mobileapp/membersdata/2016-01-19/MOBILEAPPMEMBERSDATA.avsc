@@ -1,0 +1,27 @@
+{
+  "type" : "record",
+  "name" : "MOBILEAPPMEMBERSDATA",
+  "doc" : "Sqoop import of DW_OWNR.MOBILEAPPMEMBERSDATA",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "MEMBERSHIP_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "MEMBERSHIP_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_NAME",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "DW_OWNR.MOBILEAPPMEMBERSDATA"
+}

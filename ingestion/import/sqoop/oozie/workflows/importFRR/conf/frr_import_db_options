@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.153.7:1526:frrlp
+--username
+FRR_USR
+--password
+frr_usr
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

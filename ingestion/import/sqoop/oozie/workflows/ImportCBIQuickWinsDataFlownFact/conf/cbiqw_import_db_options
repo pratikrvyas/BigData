@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@(DESCRIPTION=(CONNECT_TIMEOUT=8)(TRANSPORT_CONNECT_TIMEOUT=4)(FAILOVER = ON)(LOAD_BALANCE = OFF)(ADDRESS_LIST=(ADDRESS = (PROTOCOL = TCP)(HOST = doexap01-scan)(PORT = 6516))(ADDRESS = (PROTOCOL = TCP)(HOST = hqexap01-scan)(PORT = 6516)))(CONNECT_DATA=(SERVICE_NAME=cbiop_ha)))
+--username
+HELIX_USER
+--password 
+emirates1

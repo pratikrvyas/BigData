@@ -1,0 +1,56 @@
+{
+  "type" : "record",
+  "name" : "arincnbddecomposed",
+  "fields" : 
+[
+{
+"name" : "Ident",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "IdentIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Port",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "PortIC",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Lat",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Lon",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Freq",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "MagVar",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "NavClass",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "Cycle",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "uuid",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "timestamp",
+"type" : [ "string", "null" ]
+}
+
+]
+}

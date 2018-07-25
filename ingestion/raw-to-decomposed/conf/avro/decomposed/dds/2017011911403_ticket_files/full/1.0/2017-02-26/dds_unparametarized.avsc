@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "DDS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [  {  
+         "name":"helix_uuid",
+         "type":["null","string"]
+      },{
+	"name":"helix_timestamp",
+    "type":["null","string"]
+  },
+{
+    "name" : "DDS_Data_String",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DDS_Data_String",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "DDS"
+}

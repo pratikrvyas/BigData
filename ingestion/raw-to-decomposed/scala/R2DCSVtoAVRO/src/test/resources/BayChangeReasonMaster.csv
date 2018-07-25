@@ -1,0 +1,28 @@
+Bay_Change_Reason_Code,Bay_Change_Reason_Description
+ACR,Acft change due to rotation reason.
+ACT,Acft change due to technical reason.
+ATC,ATC rule - stand not vacant while 10 miles out.
+COP,Due to concourse optimisation.
+DIS,Disruption due to fog/weather
+DPD,Previous flight held up on stand.
+EAR,Due early arrival of acft
+GSE,Stand blocked by Ground Svcs Equipment.
+IAC,Indirect impact due other acft change.
+TOE,Tow cancelled due to Engg reqmt.
+TOW,Delay in getting ATC towing clearance.
+TRD,Due delay in towing resource - DNATA
+TRE,Due delay in towing resource - EK Engg
+HCC,HCC / airline request. Remote to Remote
+LIA,Late in-bound
+FCS,Facilities-stand closure etc
+DOP,DCA Ops requirements
+DAC,Incorrect Bay given by DAC
+AOG,Technical Acft - On Ground
+0,New Bay Assigned
+IRR,Wrong Bay/Gate input
+RRT,Acft Ramp/Forced Return
+DDV,DAC Data Verification
+OEC,Other Airlines Aircraft change
+ARG,Airlines request for remote gate change
+TBN,Due no movements/Flight TBN or Cancellation
+ish,Ishannanna

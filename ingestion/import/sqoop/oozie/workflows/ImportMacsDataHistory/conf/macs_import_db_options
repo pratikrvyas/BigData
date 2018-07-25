@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.88.237:6516:MACSL
+--username
+MACS_USER
+--password 
+MACS_USER
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

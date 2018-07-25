@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.154.65:6517:TKTODS
+--username
+SCV_USER
+--password
+SCV_USER
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

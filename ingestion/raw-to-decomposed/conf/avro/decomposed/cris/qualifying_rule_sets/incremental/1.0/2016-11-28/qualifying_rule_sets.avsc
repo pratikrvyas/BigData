@@ -1,0 +1,728 @@
+{
+  "type" : "record",
+  "name" : "QUALIFYING_RULE_SETS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      }, {
+    "name" : "CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "QRS_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QRS_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACT_HITS_SO_FAR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACT_HITS_SO_FAR",
+    "sqlType" : "2"
+  }, {
+    "name" : "AUTH_BY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AUTH_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "SBE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SBE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MBT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MBT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RTB_LPP_PTNR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RTB_LPP_PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RTB_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RTB_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "QUAL_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUAL_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "QUAL_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUAL_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "BONUS_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BONUS_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "OVR_PTS_EARNING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OVR_PTS_EARNING",
+    "sqlType" : "2"
+  }, {
+    "name" : "PTS_EXP_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PTS_EXP_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "UPD_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPD_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "QUAL_VAL_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUAL_VAL_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "UPD_EFF_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPD_EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PTS_WARN_LEVEL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PTS_WARN_LEVEL",
+    "sqlType" : "2"
+  }, {
+    "name" : "PERCENT_MULT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PERCENT_MULT",
+    "sqlType" : "2"
+  }, {
+    "name" : "EXP_RND_INT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXP_RND_INT",
+    "sqlType" : "2"
+  }, {
+    "name" : "UNEXP_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UNEXP_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "UNEXP_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UNEXP_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "UPD_DISCONT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPD_DISCONT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "REPEAT_COUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REPEAT_COUNT",
+    "sqlType" : "12"
+  }, {
+    "name" : "EFF_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DISCONT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCONT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DYNAMIC_SQL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DYNAMIC_SQL",
+    "sqlType" : "-1"
+  }, {
+    "name" : "ACHIEVEMENT_STMT_MSG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACHIEVEMENT_STMT_MSG",
+    "sqlType" : "12"
+  }, {
+    "name" : "HIST_EFF_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HIST_EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "HIST_DISCONT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HIST_DISCONT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CLOSENESS_MSG_TEMPLATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLOSENESS_MSG_TEMPLATE",
+    "sqlType" : "12"
+  }, {
+    "name" : "HIST_COUNT_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HIST_COUNT_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "HIST_ACT_COUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HIST_ACT_COUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "CLOSENESS_THRESHOLD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLOSENESS_THRESHOLD",
+    "sqlType" : "2"
+  }, {
+    "name" : "HIST_COUNT_OP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HIST_COUNT_OP",
+    "sqlType" : "12"
+  }, {
+    "name" : "PRED_TOT_HITS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PRED_TOT_HITS",
+    "sqlType" : "2"
+  }, {
+    "name" : "PRED_AVG_HIT_RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PRED_AVG_HIT_RATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "MAX_BONUSES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MAX_BONUSES",
+    "sqlType" : "2"
+  }, {
+    "name" : "QRS_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QRS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEM_CRITERIA_CNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEM_CRITERIA_CNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "CUR_ACT_CRITERIA_CNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CUR_ACT_CRITERIA_CNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "HIS_ACT_CRITERIA_CNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HIS_ACT_CRITERIA_CNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "TIER_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIER_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "PERCENT_TIER_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PERCENT_TIER_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "TIER_CHANGE_ISSUE_RSN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIER_CHANGE_ISSUE_RSN",
+    "sqlType" : "12"
+  }, {
+    "name" : "TM_CALC_START_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TM_CALC_START_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TM_CALC_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TM_CALC_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MNX_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MNX_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MBT_CODE_TO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MBT_CODE_TO",
+    "sqlType" : "12"
+  }, {
+    "name" : "BAC_ACT_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BAC_ACT_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TCR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TCR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RETAIN_CARD_EXPIRY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RETAIN_CARD_EXPIRY",
+    "sqlType" : "12"
+  }, {
+    "name" : "STMT_ZERO_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STMT_ZERO_MILES",
+    "sqlType" : "12"
+  }, {
+    "name" : "SORT_ORDER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SORT_ORDER",
+    "sqlType" : "2"
+  }, {
+    "name" : "LAST_RUN_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAST_RUN_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACTIVITY_RELATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTIVITY_RELATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROM_RULE_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PROM_RULE_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "JOURNEY_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "JOURNEY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAX_HITS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MAX_HITS",
+    "sqlType" : "2"
+  }, {
+    "name" : "INFANT_APPLICABLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INFANT_APPLICABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROMOTION_CATEGORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PROMOTION_CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXTENDED_RETROS_YN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXTENDED_RETROS_YN",
+    "sqlType" : "12"
+  }, {
+    "name" : "FIXED_REDUCED_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FIXED_REDUCED_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "ACHIEVEMENT_STMT_MSG_LANG1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACHIEVEMENT_STMT_MSG_LANG1",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACHIEVEMENT_STMT_MSG_LANG2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACHIEVEMENT_STMT_MSG_LANG2",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKETING_EFFECTIVE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKETING_EFFECTIVE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TICKETING_DISCONTINUED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKETING_DISCONTINUED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TOPUP_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TOPUP_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "STATUS_REMARKS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STATUS_REMARKS",
+    "sqlType" : "12"
+  }, {
+    "name" : "USAGE_PERC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USAGE_PERC",
+    "sqlType" : "2"
+  }, {
+    "name" : "CAMPAIGN_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CAMPAIGN_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_TYPE",
+    "sqlType" : "1"
+  }, {
+    "name" : "CABIN_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CABIN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FORCAST_LOWER_LIMIT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FORCAST_LOWER_LIMIT",
+    "sqlType" : "2"
+  }, {
+    "name" : "FORCAST_UPPER_LIMIT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FORCAST_UPPER_LIMIT",
+    "sqlType" : "2"
+  }, {
+    "name" : "DAYS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAYS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLT_SPC_BONUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLT_SPC_BONUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "REMARK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REMARK",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLT_SPC_EXCEPTION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLT_SPC_EXCEPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "FAMILY_BONUS_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAMILY_BONUS_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "HEAD_SHARE_PERCENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HEAD_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBER_SHARE_PERCENT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_SHARE_PERCENT",
+    "sqlType" : "2"
+  }, {
+    "name" : "HEAD_SHARE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HEAD_SHARE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "MEMBER_SHARE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_SHARE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "TIER_MILES_QUAL_PERIOD_RND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIER_MILES_QUAL_PERIOD_RND",
+    "sqlType" : "1"
+  }, {
+    "name" : "TIER_OD_QUAL_PERIOD_RND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIER_OD_QUAL_PERIOD_RND",
+    "sqlType" : "1"
+  }, {
+    "name" : "ENABLE_PROMOTION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ENABLE_PROMOTION",
+    "sqlType" : "1"
+  }, {
+    "name" : "THRESHOLD_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "THRESHOLD_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "PROMOTIONAL_PERIOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PROMOTIONAL_PERIOD",
+    "sqlType" : "2"
+  }, {
+    "name" : "EVENT_DESC",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EVENT_DESC",
+    "sqlType" : "12"
+  }, {
+    "name" : "MESSAGE_DEFINITION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MESSAGE_DEFINITION",
+    "sqlType" : "12"
+  }, {
+    "name" : "DATE_FORMAT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DATE_FORMAT",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROMOTIONAL_RULE_NEW",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PROMOTIONAL_RULE_NEW",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARD_EXP_LPP_PTNR_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CARD_EXP_LPP_PTNR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BONUS_CATEGORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BONUS_CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "EXCLUDE_BONUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXCLUDE_BONUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MINIMUM_SEAT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MINIMUM_SEAT",
+    "sqlType" : "2"
+  }, {
+    "name" : "UPGRADE_CHANNEL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPGRADE_CHANNEL",
+    "sqlType" : "12"
+  }, {
+    "name" : "CORP_COBRAND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORP_COBRAND",
+    "sqlType" : "12"
+  }, {
+    "name" : "QUALIFY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUALIFY",
+    "sqlType" : "12"
+  }, {
+    "name" : "QUAL_ONDS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QUAL_ONDS",
+    "sqlType" : "2"
+  }, {
+    "name" : "RETAIN_TIER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RETAIN_TIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEN_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEN_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "THRESHOLD_ONDS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "THRESHOLD_ONDS",
+    "sqlType" : "2"
+  }, {
+    "name" : "COST_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COST_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "NOMINAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NOMINAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "SUB_NOMINAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SUB_NOMINAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FD_BONUS_RULE_CRITERIA",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FD_BONUS_RULE_CRITERIA",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "QUALIFYING_RULE_SETS"
+}

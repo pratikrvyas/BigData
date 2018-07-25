@@ -1,0 +1,53 @@
+{
+  "type" : "record",
+  "name" : "topLevelRecord",
+  "fields" : [ {
+    "name" : "NO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "AIRLINECODE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLIGHTNUMBER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "SCHEDULEDDATE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ARRIVALDEPARTUREFLAG",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BAYNUMBER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "GATENUMBER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "BAGGAGEBELTNUMBER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HANDLINGTERMINAL",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "ACTUALDATE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "REGISTRATIONNUMBER",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLIGHTCREATEDDATE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLIGHTUPDATEDDATE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "VIAROUTES",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  } ]
+}

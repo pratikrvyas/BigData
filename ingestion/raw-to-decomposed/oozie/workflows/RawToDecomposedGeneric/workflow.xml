@@ -1,0 +1,81 @@
+
+<workflow-app name="RawToDecomposedGeneric" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>model</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>model</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-b45e"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-b45e">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>CheckDirectoryExists.sh</exec>
+              <argument>${SOURCE_DIRECTORY}</argument>
+            <file>CheckDirectoryExists.sh#CheckDirectoryExists.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="decision-90fd"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-68bd">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>read_avro_schema.sh</exec>
+              <argument>${TARGET_SCHEMA}</argument>
+            <file>read_avro_schema.sh#read_avro_schema.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-c872"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-1973">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_donothing.sh</exec>
+            <file>helix_donothing.sh#helix_donothing.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <decision name="decision-90fd">
+        <switch>
+            <case to="shell-68bd">
+              ${ (wf:actionData(&#39;shell-b45e&#39;)[&#39;ISPATHEXIST&#39;] eq &#39;TRUE&#39;) }
+            </case>
+            <case to="shell-1973">
+              ${ (wf:actionData(&#39;shell-b45e&#39;)[&#39;ISPATHEXIST&#39;] eq &#39;FALSE&#39;) }
+            </case>
+            <default to="End"/>
+        </switch>
+    </decision>
+    <action name="pig-c872">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <script>RawToDecomposed.pig</script>
+              <param>SOURCE_DIRECTORY=${SOURCE_DIRECTORY}</param>
+              <param>SOURCE_SCHEMA_FILE=${SOURCE_SCHEMA}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY}</param>
+              <param>TARGET_SCHEMA=${wf:actionData(&#39;shell-68bd&#39;)[&#39;AVRO_SCHEMA&#39;]}</param>
+            <file>RawToDecomposed.pig#RawToDecomposed.pig</file>
+            <file>pigudf.jar#pigudf.jar</file>
+        </pig>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

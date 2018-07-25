@@ -1,0 +1,433 @@
+{
+  "type" : "record",
+  "name" : "PEOPL",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+    "name" : "helix_uuid",
+    "type" : [ "null", "string" ]
+  }, {  
+    "name" : "helix_timestamp",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "PERSON_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "IMP_RATING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "IMP_RATING",
+    "sqlType" : "12"
+  }, {
+    "name" : "LASTNAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LASTNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "LASTNAME_UPPER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LASTNAME_UPPER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FIRSTNAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FIRSTNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "INITIALS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INITIALS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TTL_TITLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TTL_TITLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GENDER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GENDER",
+    "sqlType" : "12"
+  }, {
+    "name" : "HONOURS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HONOURS",
+    "sqlType" : "12"
+  }, {
+    "name" : "FORMAL_SAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FORMAL_SAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "INFORMAL_SAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INFORMAL_SAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "ENVELOPE_SAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ENVELOPE_SAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "COU_NATIONALITY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COU_NATIONALITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "DOB",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DOB",
+    "sqlType" : "93"
+  }, {
+    "name" : "INTERNET_USER_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTERNET_USER_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "OLD_INTERNET_PASSWORD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OLD_INTERNET_PASSWORD",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERNET_CHALLENGE_PHRASE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTERNET_CHALLENGE_PHRASE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEND_NO_EMAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEND_NO_EMAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "LAN_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LAN_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "APP1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "APP1",
+    "sqlType" : "12"
+  }, {
+    "name" : "APP2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "APP2",
+    "sqlType" : "12"
+  }, {
+    "name" : "APP3",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "APP3",
+    "sqlType" : "12"
+  }, {
+    "name" : "APP4",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "APP4",
+    "sqlType" : "12"
+  }, {
+    "name" : "APP5",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "APP5",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCOUNT_ONLINE_STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACCOUNT_ONLINE_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCOUNT_ONLINE_STATUS_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACCOUNT_ONLINE_STATUS_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEND_VS_MAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEND_VS_MAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEND_NON_VS_MAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEND_NON_VS_MAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "REG_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REG_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "FAMILY_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAMILY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "NICK_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NICK_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRLINE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "DAY_OF_DOB",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DAY_OF_DOB",
+    "sqlType" : "2"
+  }, {
+    "name" : "MONTH_OF_DOB",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MONTH_OF_DOB",
+    "sqlType" : "2"
+  }, {
+    "name" : "YEAR_OF_DOB",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "YEAR_OF_DOB",
+    "sqlType" : "2"
+  }, {
+    "name" : "PIN_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PIN_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "NO_FAM_MEM",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NO_FAM_MEM",
+    "sqlType" : "2"
+  }, {
+    "name" : "ARABIC_SAL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ARABIC_SAL",
+    "sqlType" : "12"
+  }, {
+    "name" : "JOB_DESIGN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "JOB_DESIGN",
+    "sqlType" : "12"
+  }, {
+    "name" : "INT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "STAFF_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STAFF_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "PRS_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PRS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PCO_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PCO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "JOB_TITLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "JOB_TITLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOBILE_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MOBILE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "CO_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CO_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_ADDRESS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EMAIL_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "UNSUBSCRIBE_EMAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UNSUBSCRIBE_EMAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVALID_EMAIL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INVALID_EMAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOTHERS_MAIDEN_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MOTHERS_MAIDEN_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "NAME_SUFFIX",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "NAME_SUFFIX",
+    "sqlType" : "12"
+  }, {
+    "name" : "GUID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GUID",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEPT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DEPT",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_ADDRESS_UPPER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EMAIL_ADDRESS_UPPER",
+    "sqlType" : "12"
+  }, {
+    "name" : "MOB_IND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MOB_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "INTERNET_PASSWORD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "INTERNET_PASSWORD",
+    "sqlType" : "12"
+  }, {
+    "name" : "WEB_LANGUAGE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "WEB_LANGUAGE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MEMBER_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEMBER_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMAIL_VERIF_REQ",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EMAIL_VERIF_REQ",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARENT_CARD_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "RESET_PWD_REQ",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RESET_PWD_REQ",
+    "sqlType" : "12"
+  }, {
+    "name" : "ALT_EMAIL_ADDRESS_UPPER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ALT_EMAIL_ADDRESS_UPPER",
+    "sqlType" : "12"
+  }, {
+    "name" : "ALT_EMAIL_ADDRESS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ALT_EMAIL_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AGENT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANNEL_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANNEL_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPLOAD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPLOAD_ID",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "PEOPLE"
+}

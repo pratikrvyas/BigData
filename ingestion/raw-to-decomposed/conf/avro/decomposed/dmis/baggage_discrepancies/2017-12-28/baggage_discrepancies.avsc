@@ -1,0 +1,43 @@
+{
+  "type" : "record",
+  "name" : "baggage_discrepancies",
+  "fields" : [ {
+    "name" : "RN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RN",
+    "sqlType" : "200"
+  }, {
+    "name" : "BDIS_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BDIS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BDIS_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BDIS_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "BDIS_SECT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BDIS_SECT",
+    "sqlType" : "12"
+  }, {
+    "name" : "BDIS_ACCOUNTABLE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BDIS_ACCOUNTABLE",
+    "sqlType" : "12"
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }  ]
+}

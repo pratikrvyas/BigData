@@ -1,0 +1,88 @@
+<workflow-app name="ImportFRRDataIncrementalQL2" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-d757"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-0a6a">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_FRR_QL2_DATA_OUT}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select ID1,OBSERVATION_DATE,OBSERVATION_TIME,POS,ORIGIN,DESTINATION,IS_ONE_WAY,OUTBOUND_TRAVEL_STOP_OVER,INBOUND_TRAVEL_STOP_OVER,CARRIER,OUTBOUND_FLIGHT_NO,INBOUND_FLIGHT_NO,OUTBOUND_DEPARTURE_DATE,OUTBOUND_ARRIVAL_DATE,INBOUND_DEPARTURE_DATE,INBOUND_ARRIVAL_DATE,OUTBOUND_FARE_BASIS,INBOUND_FARE_BASIS,OUTBOUND_BOOKING_CLASS,INBOUND_BOOKING_CLASS,PRICE_EXC,PRICE_INC,TAX,CURRENCY,SOURCE,PRICE_OUTBOUND,PRICE_INBOUND,IS_TAX_INC_OUTIN,COMPARTMENT,LOAD_DATE,OUTBOUND_DEPARTURE_TIME,INBOUND_DEPARTURE_TIME,OUTBOUND_ARRIVAL_TIME,INBOUND_ARRIVAL_TIME ,OUTBOUND_FARE_FAMILY,INBOUND_FARE_FAMILY,SOURCE_NAME,&#39;QL2&#39; AS VENDOR from Frr_Ql2_Data_Out  where OBSERVATION_DATE = TO_DATE(&#39;${wf:actionData(&#39;shell-d757&#39;)[&#39;PATH_DATE&#39;]}&#39;,&#39;YYYY-MM-DD&#39;) AND $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>OBSERVATION_DATE=String,OUTBOUND_DEPARTURE_DATE=String,OUTBOUND_ARRIVAL_DATE=String,INBOUND_DEPARTURE_DATE=String,INBOUND_ARRIVAL_DATE=String,LOAD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>ID1</arg>
+              <arg>--num-mappers</arg>
+              <arg>4</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>Frr_Ql2_Data_Out</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_FRR_QL2_DATA_OUT}</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="End"/>
+        <error to="email-3111"/>
+    </action>
+    <action name="shell-d757">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>get_date_from_path.sh</exec>
+              <argument>${PATH_FRR_QL2_DATA_OUT}</argument>
+            <file>get_date_from_path.sh#get_date_from_path.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="sqoop-0a6a"/>
+        <error to="email-3111"/>
+    </action>
+    <action name="email-3111">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

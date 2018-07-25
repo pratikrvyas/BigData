@@ -1,0 +1,110 @@
+{
+  "type" : "record",
+  "name" : "STANDARD_CHARGES",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [  {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },{
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AMOUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRT_MBT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TRT_MBT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TRT_LPT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TRT_LPT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEC_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEC_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "ADMIN_CHARGES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ADMIN_CHARGES",
+    "sqlType" : "12"
+  }, {
+    "name" : "DISCOUNT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DISCOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "VAT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VAT",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "STANDARD_CHARGES"
+}

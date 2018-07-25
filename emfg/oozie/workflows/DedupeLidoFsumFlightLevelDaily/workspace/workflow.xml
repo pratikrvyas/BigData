@@ -1,0 +1,60 @@
+<workflow-app name="DedupeLidoFsumFlightLevelDaily_UAT" xmlns="uri:oozie:workflow:0.5">
+    <start to="spark-6880"/>
+    <action name="Kill">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>${wf:name()} failed</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+        </email>
+        <ok to="Kill-kill"/>
+        <error to="Kill-kill"/>
+    </action>
+    <kill name="Kill-kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-6880">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>Dedup_Lido_Fsum_Flight_Level_Incr</name>
+              <class>com.helix.emirates.Dedup_Lido_Fsum_Flight_Level_Incr</class>
+            <jar>Dedup_Lido_Fsum_Flight_Level_Incr-1.0-SNAPSHOT.jar</jar>
+              <spark-opts>--files hive-site.xml --driver-memory 4g --executor-memory 2g --num-executors 4 --executor-cores 1 --queue opseff</spark-opts>
+              <arg>-h</arg>
+              <arg>${HIST_INPUT_PATH}</arg>
+              <arg>-i</arg>
+              <arg>${INCR_INPUT_PATH}</arg>
+              <arg>-o</arg>
+              <arg>${INCR_OUTPUT_HDFS_PATH}_tmp</arg>
+              <arg>-p</arg>
+              <arg>${SPARK_PARTITIONS}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="fs-2580"/>
+        <error to="Kill"/>
+    </action>
+    <action name="fs-2580">
+        <fs>
+              <delete path='${INCR_OUTPUT_HDFS_PATH}'/>
+              <move source='${INCR_OUTPUT_HDFS_PATH}_tmp' target='${INCR_OUTPUT_HDFS_PATH}'/>
+        </fs>
+        <ok to="email-cbc9"/>
+        <error to="Kill"/>
+    </action>
+    <action name="email-cbc9">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_LIST}</to>
+            <subject>${wf:name()} Successful :)</subject>
+            <body>Workflow Name: ${wf:name()} 
+Current Timestamp: ${timestamp()}</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

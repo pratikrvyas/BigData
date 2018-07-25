@@ -1,0 +1,89 @@
+
+<workflow-app name="ImportPROMISDataCutover" xmlns="uri:oozie:workflow:0.5">
+    <start to="shell-77e5"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-77e5">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${PROMIS_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${PROMIS_CONTROL_FILE}#${PROMIS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="sqoop-5288"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-5288">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PROMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select SNAP_DT, NETWORK_DT, FILE_PRCS_DT, AIRL_CD, FLT_NO, FLT_DT, DOW, DCP, DAYS_PRIOR, INHIBIT_FLAG, ORGN, DSTN, DEP_DT_ORG, LEG_SEQ, COMP, CLASS, ARCFT_TYPE, AVAIL_SEAT_KM, REV_PASS_KM,   CAP_ADJUSTED, CAP_PHYSICAL, CAP_VIRTUAL, AU, TOT_BKG, TOT_BKG_FINAL, ACH_DEMAND, GRP_BKG, TOT_OUT, CNST_DEMAND, CNST_OUT, ACH_OUT, TOT_NSHOW, DND_BRD, DND_BRD_VOL, OVER_BKG, DEC_SEATS, ADDED_SEATS,   DNG_INTO, DNG_OUTOF, UPG_INTO, UPG_OUTOF, SBY_OUT, BID_PRICE, SEAT_IDX, DSPL_COST, GRP_OUT, FARE, BLOCKED_SEATS, GRP_BKG_FINAL, SEATS_PROTECTED, LEG_SEG_IND, SHOW_UP_RATE, NO_SHOW_PCT, FOS_ACH_OUT,   FOS_CNST_OUT from prms_leg_fcst_data where SNAP_DT between  TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) AND TO_DATE(&#39;${wf:actionData(&#39;shell-77e5&#39;)  [&#39;END_DATE&#39;]}&#39;,&#39;YYYY-MM-DD HH24:MI:SS&#39;) and $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>SNAP_DT=String,NETWORK_DT=String,FILE_PRCS_DT=String,FLT_DT=String,DEP_DT_ORG=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FLT_NO</arg>
+              <arg>--m</arg>
+              <arg>60</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PRMS_LEG_FCST_DATA</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PRMS_LEG_FCST_DATA}</arg>
+            <file>${PROMIS_SQOOP_OPTIONS_FILE}#${PROMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="shell-a550"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-a550">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${PROMIS_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${PROMIS_CONTROL_FILE}#${PROMIS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="email-22c4">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>Ksenia.Suresh@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

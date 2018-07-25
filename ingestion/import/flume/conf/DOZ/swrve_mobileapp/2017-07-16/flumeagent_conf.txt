@@ -1,0 +1,71 @@
+################# SWRVE AGENT (Get Data From Kafka to HDFS) #################
+
+# Name the components on this agent
+SwerveRawAgent.channels = swerveChannelDOZ swerveChannelETC
+SwerveRawAgent.sinks = swerveSinkDOZ swerveSinkETC
+
+################# CORE FLIGHT #################
+
+#Describe DOZ Channel
+
+SwerveRawAgent.channels.swerveChannelDOZ.type = org.apache.flume.channel.kafka.KafkaChannel
+SwerveRawAgent.channels.swerveChannelDOZ.parseAsFlumeEvent = false
+SwerveRawAgent.channels.swerveChannelDOZ.kafka.bootstrap.servers =  dxbhqhdpwn01.hq.emirates.com:9092,dxbhqhdpwn02.hq.emirates.com:9092,dxbhqhdpwn03.hq.emirates.com:9092
+SwerveRawAgent.channels.swerveChannelDOZ.kafka.topic = HLX_EKAPP_TIB_KFT_MOBDEVICE_IN_DOZ
+SwerveRawAgent.channels.swerveChannelDOZ.kafka.consumer.group.id = swrve
+SwerveRawAgent.channels.swerveChannelDOZ.kafka.consumer.auto.offset.reset = latest
+
+# Describe DOZ sink
+
+SwerveRawAgent.sinks.swerveSinkDOZ.type = HDFS
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.path = /data/helix/raw/swrve/event/incremental/1.0/%Y-%m-%d/%H-%M
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.filePrefix = swrve_DOZ
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.fileType = SequenceFile
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.codeC = snappy
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.rollInterval = 0
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.rollSize = 0
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.rollCount = 1000
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.batchSize = 100
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.codeC = snappy
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.maxOpenFiles = 100
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.callTimeout = 60000
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.round = true
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.roundValue = 30
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.roundUnit = minute
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.idleTimeout = 600
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.useLocalTimeStamp = true
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.timeZone = GMT
+SwerveRawAgent.sinks.swerveSinkDOZ.hdfs.proxyUser = scv_ops
+SwerveRawAgent.sinks.swerveSinkDOZ.channel = swerveChannelDOZ
+
+#Describe DOZ Channel
+
+SwerveRawAgent.channels.swerveChannelETC.type = org.apache.flume.channel.kafka.KafkaChannel
+SwerveRawAgent.channels.swerveChannelETC.parseAsFlumeEvent = false
+SwerveRawAgent.channels.swerveChannelETC.kafka.bootstrap.servers =  dxbhqhdpwn01.hq.emirates.com:9092,dxbhqhdpwn02.hq.emirates.com:9092,dxbhqhdpwn03.hq.emirates.com:9092
+SwerveRawAgent.channels.swerveChannelETC.kafka.topic = HLX_EKAPP_TIB_KFT_MOBDEVICE_IN_ETC
+SwerveRawAgent.channels.swerveChannelETC.kafka.consumer.group.id = swrve
+SwerveRawAgent.channels.swerveChannelETC.kafka.consumer.auto.offset.reset = latest
+
+# Describe DOZ sink
+
+SwerveRawAgent.sinks.swerveSinkETC.type = HDFS
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.path = /data/helix/raw/swrve/event/incremental/1.0/%Y-%m-%d/%H-%M
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.filePrefix = swrve_ETC
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.fileType = SequenceFile
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.codeC = snappy
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.rollInterval = 0
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.rollSize = 0
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.rollCount = 1000
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.batchSize = 100
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.codeC = snappy
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.maxOpenFiles = 100
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.callTimeout = 60000
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.round = true
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.roundValue = 30
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.roundUnit = minute
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.idleTimeout = 600
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.useLocalTimeStamp = true
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.timeZone = GMT
+SwerveRawAgent.sinks.swerveSinkETC.hdfs.proxyUser = scv_ops
+SwerveRawAgent.sinks.swerveSinkETC.channel = swerveChannelETC

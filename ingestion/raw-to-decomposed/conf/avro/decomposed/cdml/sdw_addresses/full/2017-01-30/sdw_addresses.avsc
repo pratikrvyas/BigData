@@ -1,0 +1,157 @@
+{
+  "type" : "record",
+  "name" : "SDW_ADDRESSES",
+  "doc" : "Sqoop import of DW_OWNR.SDW_ADDRESSES",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "ADD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADD_ID"
+	}, {
+    "name" : "USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CREATED"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED"
+  }, {
+    "name" : "LCN_LCN_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "LCN_LCN_ID"
+  }, {
+    "name" : "ADD_CONTEXT",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADD_CONTEXT"
+  }, {
+    "name" : "ORG_ORG_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORG_ORG_ID"
+  }, {
+    "name" : "TELEPHONE_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "TELEPHONE_NO"
+  }, {
+    "name" : "PER_PERSON_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PER_PERSON_ID"
+  }, {
+    "name" : "JOB_TITLE",
+    "type" : [ "string", "null" ],
+    "columnName" : "JOB_TITLE"
+  }, {
+    "name" : "DEPT",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEPT"
+  }, {
+    "name" : "LOCN_PREFIX",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCN_PREFIX"
+  }, {
+    "name" : "CO_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "CO_NAME"
+  }, {
+    "name" : "EXTN",
+    "type" : [ "string", "null" ],
+    "columnName" : "EXTN"
+  }, {
+    "name" : "FAX_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "FAX_NO"
+  }, {
+    "name" : "MOBILE_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "MOBILE_NO"
+  }, {
+    "name" : "EMAIL_ADDRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMAIL_ADDRESS"
+  }, {
+    "name" : "SITA_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "SITA_NO"
+  }, {
+    "name" : "TELEX_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "TELEX_NO"
+  }, {
+    "name" : "SEND_CARE_OF",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEND_CARE_OF"
+  }, {
+    "name" : "CMNTS",
+    "type" : [ "string", "null" ],
+    "columnName" : "CMNTS"
+  }, {
+    "name" : "PREF_CONTACT",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_CONTACT"
+  }, {
+    "name" : "MATCH_STRING",
+    "type" : [ "string", "null" ],
+    "columnName" : "MATCH_STRING"
+  }, {
+    "name" : "MATCH_STRING2",
+    "type" : [ "string", "null" ],
+    "columnName" : "MATCH_STRING2"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "USR_CHANGED"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED"
+  }, {
+    "name" : "QAS_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "QAS_FLAG"
+  }, {
+    "name" : "QAS_UNUSED",
+    "type" : [ "string", "null" ],
+    "columnName" : "QAS_UNUSED"
+  }, {
+    "name" : "INVALID_ADDRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "INVALID_ADDRESS"
+  }, {
+    "name" : "STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STG_PROCESS_DATE"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE"
+  }, {
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CARD_NO"
+  }, {
+    "name" : "CREATED_ADMIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_ADMIN"
+  }, {
+    "name" : "CHANGED_ADMIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHANGED_ADMIN"
+  } ],
+  "tableName" : "DW_OWNR.SDW_ADDRESSES"
+}

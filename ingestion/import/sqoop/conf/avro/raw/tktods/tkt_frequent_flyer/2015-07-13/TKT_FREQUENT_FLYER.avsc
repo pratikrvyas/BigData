@@ -1,0 +1,52 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_TKT_FREQUENT_FLYER",
+  "doc" : "Sqoop import of TKT_OWNR.TKT_FREQUENT_FLYER",
+  "fields" : [ {
+    "name" : "TKT_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_FFD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_FFD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "FFP_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_NUM_LENGTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_NUM_LENGTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_NUMBER_DTL",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_NUMBER_DTL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_MEMBER_AIRLINE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_MEMBER_AIRLINE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_BY",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "TKT_OWNR.TKT_FREQUENT_FLYER"
+}

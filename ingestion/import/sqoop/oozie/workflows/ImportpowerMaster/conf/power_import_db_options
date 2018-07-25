@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.154.202:6516:PWROP
+--username
+CBI_PWR_INTF
+--password
+P0wer#123

@@ -1,0 +1,1 @@
+(chararray)$0 AS Port,(chararray)$1 AS PortIC,(chararray)$2 AS Ident,(chararray)$3 AS Length,(chararray)$4 AS Brg,(chararray)$5 AS Lat,(chararray)$6 AS Lon,(chararray)$7 AS ThrElev,(chararray)$8 AS DispDist,(chararray)$9 AS TCH,(chararray)$10 AS LIdent,(chararray)$11 AS SWay , (chararray)$12 AS Cycle

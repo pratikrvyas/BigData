@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@dolinuxbl786.hq.emirates.com:6516:CBIOP
+--username
+HELIX_USER
+--password 
+emirates1
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

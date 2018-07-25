@@ -1,0 +1,138 @@
+{
+  "type" : "record",
+  "name" : "import_midtpnr",
+  "doc" : "import of DW_OWNR.corporatemarketshare",
+  "fields" : [{
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "Selected_Code1",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Code1",
+    "sqlType" : "2"
+  }, {
+    "name" : "Selected_Name1",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Name1",
+    "sqlType" : "12"
+  }, {
+    "name" : "Selected_Code2",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Code2",
+    "sqlType" : "2"
+  }, {
+    "name" : "Selected_Name2",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Name2",
+    "sqlType" : "93"
+  }, {
+    "name" : "Selected_Code3",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Code3",
+    "sqlType" : "12"
+  }, {
+    "name" : "Issue_Month",
+    "type" : [ "string", "null" ],
+    "columnName" : "Issue_Month",
+    "sqlType" : "93"
+  }, {
+    "name" : "Selected_Name3",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Name3",
+    "sqlType" : "93"
+  }, {
+    "name" : "Selected_Code4",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Code4",
+    "sqlType" : "12"
+  }, {
+    "name" : "Selected_Name4",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Name4",
+    "sqlType" : "93"
+  }, {
+    "name" : "Selected_Code5",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Code5",
+    "sqlType" : "12"
+  }, {
+    "name" : "Selected_Name5",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Name5",
+    "sqlType" : "12"
+  }, {
+    "name" : "Selected_Code6",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Code6",
+    "sqlType" : "2"
+  }, {
+    "name" : "Selected_Name6",
+    "type" : [ "string", "null" ],
+    "columnName" : "Selected_Name6",
+    "sqlType" : "12"
+  }, {
+    "name" : "Flights",
+    "type" : [ "string", "null" ],
+    "columnName" : "Flights",
+    "sqlType" : "2"
+  },{
+    "name" : "Flights_percentage",
+    "type" : [ "string", "null" ],
+    "columnName" : "Flights_percentage",
+    "sqlType" : "2"
+  }, {
+    "name" : "Base_Amount",
+    "type" : [ "string", "null" ],
+    "columnName" : "Base_Amount",
+    "sqlType" : "2"
+  }, {
+    "name" : "Base_Amount_perentage",
+    "type" : [ "string", "null" ],
+    "columnName" : "Base_Amount_perentage",
+    "sqlType" : "2"
+  }, {
+    "name" : "Tax_Amount",
+    "type" : [ "string", "null" ],
+    "columnName" : "Tax_Amount",
+    "sqlType" : "2"
+  }, {
+    "name" : "Commission_Amount",
+    "type" : [ "string", "null" ],
+    "columnName" : "Commission_Amount",
+    "sqlType" : "2"
+  }, {
+    "name" : "Average_Flight_Amount",
+    "type" : [ "string", "null" ],
+    "columnName" : "Average_Flight_Amount",
+    "sqlType" : "12"
+  }, {
+    "name" : "Amount_Per_KM",
+    "type" : [ "string", "null" ],
+    "columnName" : "Amount_Per_KM",
+    "sqlType" : "93"
+  }, {
+    "name" : "Distance_KM",
+    "type" : [ "string", "null" ],
+    "columnName" : "Distance_KM",
+    "sqlType" : "93"
+  }, {
+    "name" : "Currency",
+    "type" : [ "string", "null" ],
+    "columnName" : "Currency",
+    "sqlType" : "93"
+  },{
+    "name" : "Month",
+    "type" : [ "string", "null" ],
+    "columnName" : "Month",
+    "sqlType" : "2"
+  }
+],
+  "tableName" : "DW_OWNR.corporatemarketshare"
+}

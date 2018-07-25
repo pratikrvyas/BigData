@@ -1,0 +1,75 @@
+{
+  "type" : "record",
+  "name" : "BR_CONVERTION_FACTOR",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+         "name":"helix_uuid",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+	  {  
+         "name":"helix_timestamp",
+         "type":[  
+            "null",
+            "string"
+         ]
+      },
+ {
+    "name" : "BR_FUNCTION_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_FUNCTION_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BR_FUNC_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_FUNC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_PROGRAM_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_PROGRAM_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_CABIN_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_CABIN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_CONVERT_RATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_CONVERT_RATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "BR_USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "BR_USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "BR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_CHANGED",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "BR_CONVERTION_FACTOR"
+}

@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.155.251:6516:tktos
+--username
+SCV_USER
+--password
+SCV_USER

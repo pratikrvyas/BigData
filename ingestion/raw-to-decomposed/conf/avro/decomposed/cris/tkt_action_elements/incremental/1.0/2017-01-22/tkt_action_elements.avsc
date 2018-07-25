@@ -1,0 +1,103 @@
+{
+  "type" : "record",
+  "name" : "TKT_ACTION_ELEMENTS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+    "name" : "helix_uuid",
+    "type" : [ "null", "string" ]
+  }, {  
+    "name" : "helix_timestamp",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "SERVICE_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SERVICE_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICE_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SERVICE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEARCH_STRING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEARCH_STRING",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACCRUAL_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACCRUAL_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTION_REQD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTION_REQD",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEQ_NUMBER_PK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEQ_NUMBER_PK",
+    "sqlType" : "2"
+  }, {
+    "name" : "EXIT_COND",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXIT_COND",
+    "sqlType" : "12"
+  }, {
+    "name" : "OVERRIDE_USERS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OVERRIDE_USERS",
+    "sqlType" : "12"
+  }, {
+    "name" : "TKT_END_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TKT_END_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TKT_START_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TKT_START_DATE",
+    "sqlType" : "93"
+  } ],
+  "tableName" : "TKT_ACTION_ELEMENTS"
+}

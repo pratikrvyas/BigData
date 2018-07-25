@@ -1,0 +1,88 @@
+[
+{
+  "pk": 213368, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": null, 
+    "uuid": "126810a3-3357-4ca1-a78d-cfc72afd12dc", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "This workflow will perform the DeDupe of AGS_Refline", 
+    "is_history": false, 
+    "parent_directory": [
+      "63e12206-9e5b-4dff-ba0f-76133643baec", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-02-15T10:00:56", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "1ffb939f-a18f-443a-8616-0a5af12895be", 
+        1, 
+        true
+      ], 
+      [
+        "43c4b001-86a3-44e1-b190-e3f762f274f9", 
+        1, 
+        true
+      ], 
+      [
+        "1431ee9a-aa1b-4a83-a92d-13a7b2ace7cd", 
+        1, 
+        true
+      ], 
+      [
+        "0066dc6f-a6af-4fd8-8574-fa4c1285b818", 
+        1, 
+        true
+      ], 
+      [
+        "70d925d0-5fec-4666-bc84-3a5e972e83b0", 
+        1, 
+        true
+      ], 
+      [
+        "cd8fd1f1-5337-4a15-82b8-23b4822bf348", 
+        1, 
+        true
+      ], 
+      [
+        "9194052e-33a0-4ef5-854e-451f4cc35775", 
+        1, 
+        true
+      ], 
+      [
+        "d7b70f42-8666-48de-8d61-03e5266ff61c", 
+        1, 
+        true
+      ], 
+      [
+        "62afd341-dbec-45fc-aca3-996ba2a28cf6", 
+        1, 
+        true
+      ], 
+      [
+        "c11814a0-2313-4d04-a620-269548c2c2ab", 
+        1, 
+        true
+      ], 
+      [
+        "e2f86a08-2c5b-4b5f-a263-658613833f57", 
+        1, 
+        true
+      ], 
+      [
+        "66d0ee6e-4aed-4a15-a08c-fe04be43a1ee", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"AGS_Refline_DeDupe\", \"widgetType\": \"spark-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"size\": 12}], \"id\": \"0a991ef9-4693-29c0-e97b-16798900355e\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\", \"size\": 12}], \"id\": \"0b45f0ce-acbf-aa12-f642-f25616e0d8af\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"74d3d018-dc0c-6d80-32c1-cec1ddd4be43\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"AGS_Refline_DeDupe\", \"widgetType\": \"spark-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"size\": 12}], \"id\": \"0a991ef9-4693-29c0-e97b-16798900355e\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Email\", \"widgetType\": \"email-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\", \"size\": 12}], \"id\": \"0b45f0ce-acbf-aa12-f642-f25616e0d8af\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"ca4fd68e-c44e-1e3c-d331-5bf6d89f9176\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"4b5e8bd5-c6c4-3193-d150-4d9c490a4a03\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"ca4fd68e-c44e-1e3c-d331-5bf6d89f9176\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"4b5e8bd5-c6c4-3193-d150-4d9c490a4a03\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"74d3d018-dc0c-6d80-32c1-cec1ddd4be43\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"c90bfac2-d23a-b3e0-4988-6740b621a0a0\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"This workflow will perform the DeDupe of AGS_Refline\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"EMAIL_ADDRESS_LIST\", \"value\": \"fayazbasha.shaik@dnata.com, aswini.subramani@dnata.com\"}, {\"name\": \"AGS_REFLINE_HISTORY_SYNC_PATH\", \"value\": \"/data/helix/modelled/emfg/sync/ags/ags_refline/full/1.0/2018-02-07/00-00/*.avro\"}, {\"name\": \"AGS_REFLINE_INCREMENTAL_PATH\", \"value\": \"/data/helix/modelled/emfg/sync/ags/ags_refline/full/1.0/2018-02-07/00-00/*.avro\"}, {\"name\": \"AGS_REFLINE_DEDUPE_HISTORY_PATH\", \"value\": \"/data/helix/modelled/emfg/dedupe/ags_refline/history\"}, {\"name\": \"AGS_REFLINE_DEDUPE_CURRENT_PATH\", \"value\": \"/data/helix/modelled/emfg/dedupe/ags_refline/current\"}, {\"name\": \"COMPRESSION\", \"value\": \"snappy\"}, {\"name\": \"COALESCE_VALUE\", \"value\": \"4\"}, {\"name\": \"LOOKBACK_MONTHS\", \"value\": \"6\"}], \"sla_enabled\": false, \"deployment_dir\": \"/apps/helix/conf/oozie/workspaces/wf_dedupeagsreflineinitial\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"properties\": [{\"name\": \"oozie.launcher.mapred.job.queue.name\", \"value\": \"opseff\"}, {\"name\": \"mapred.job.queue.name\", \"value\": \"opseff\"}], \"show_arrows\": true, \"wf1_id\": null, \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"DedupeAgsReflineInitial\", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": false, \"movedNode\": null, \"linkMapping\": {\"b888c8f8-1968-1b89-38a5-600eea8c7a8c\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": [], \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"fa832f7b-18d3-8f6a-8437-0a3864e97c78\"], \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\": [\"b888c8f8-1968-1b89-38a5-600eea8c7a8c\"]}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Current timestamp: ${timestamp()}\\nWorkflow name: ${wf:name()}\\nWorkflow path: http://10.232.154.13:8888/oozie/list_oozie_workflow/${wf:id()}\\nWorkflow application path: ${wf:appPath()}\\nWorkflow user: ${wf:user()}\\nLast error action: ${wf:lastErrorNode()}\\nError code: ${wf:errorCode(wf:lastErrorNode())}\\nError message: ${wf:errorMessage(wf:lastErrorNode())}\", \"cc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST}\", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"Workflow ${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"job_xml\": \"\", \"app_name\": \"agsreflinededupe\", \"spark_opts\": \"--files hive-site.xml --executor-memory 2g --driver-memory 1g --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=1 --conf spark.dynamicAllocation.maxExecutors=10 \", \"retry_max\": [], \"retry_interval\": [], \"job_properties\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"spark_master\": \"yarn\", \"mode\": \"cluster\", \"spark_arguments\": [{\"value\": \"-i\"}, {\"value\": \"${AGS_REFLINE_HISTORY_SYNC_PATH}\"}, {\"value\": \"-j\"}, {\"value\": \"${AGS_REFLINE_INCREMENTAL_PATH}\"}, {\"value\": \"-x\"}, {\"value\": \"${AGS_REFLINE_DEDUPE_HISTORY_PATH}\"}, {\"value\": \"-y\"}, {\"value\": \"${AGS_REFLINE_DEDUPE_CURRENT_PATH}\"}, {\"value\": \"-m\"}, {\"value\": \"${LOOKBACK_MONTHS}\"}, {\"value\": \"-c\"}, {\"value\": \"${COMPRESSION}\"}, {\"value\": \"-p\"}, {\"value\": \"${COALESCE_VALUE}\"}], \"prepares\": [], \"credentials\": [], \"jars\": \"agsreflinededupe-1.0.jar\", \"class\": \"com.emirates.helix.AgsReflineDeDupeDriver\"}, \"name\": \"spark-fa83\", \"children\": [{\"to\": \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"spark-widget\", \"id\": \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow ${wf:name()} Completed Successfully\", \"cc\": \"\", \"retry_interval\": [], \"retry_max\": [], \"bcc\": \"\", \"to\": \"${EMAIL_ADDRESS_LIST} \", \"attachment\": \"\", \"content_type\": \"text/plain\", \"credentials\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"subject\": \"Workflow ${wf:name()} Completed Successfully\"}, \"name\": \"email-b888\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"email-widget\", \"id\": \"b888c8f8-1968-1b89-38a5-600eea8c7a8c\", \"actionParameters\": []}], \"id\": 213368, \"nodeNamesMapping\": {\"b888c8f8-1968-1b89-38a5-600eea8c7a8c\": \"email-b888\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"fa832f7b-18d3-8f6a-8437-0a3864e97c78\": \"spark-fa83\"}, \"uuid\": \"9183a858-bc3d-f281-8d37-dff0972c25b1\"}}", 
+    "name": "DedupeAgsReflineInitial"
+  }
+}
+]

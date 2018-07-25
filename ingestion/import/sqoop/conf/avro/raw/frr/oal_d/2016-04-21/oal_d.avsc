@@ -1,0 +1,251 @@
+{
+  "type": "record",
+  "name": "OAL_D",
+  "fields": [
+    {
+      "name": "FRLNKID",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "VERNO",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "FAREAMT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "ORIG",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "DEST",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "CXR",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "FARECLS",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "FARE_IND",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "PROCESSED",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OWRT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "WINDATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "BASE_FAREAMT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "CAT12_SURCHARGE_AMT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "YQ_YR_SURCHARGE_AMT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "YQ_YR_TYPE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "YQ_YR_RESPONSE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "YQ_YR_SURCHARGE_CURR",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "YQ_YR_SURCHARGE_VALUE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "TOTAL_FUEL",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "TOTAL_FARE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "COMPARTMENT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "SESSION_ID",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "TACT_STR_FLAG",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "ADV_PURCHASE_VALUE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "ADV_PURCHASE_UNIT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "MAX_STAY_VALUE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "MAX_STAY_UNIT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "MIN_STAY_VALUE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "MIN_STAY_UNIT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "SALE_START_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "SALE_END_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "TVL_START_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "TVL_END_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "TOTAL_TAX_AMT_USD",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "TOTAL_TAX_TRANSIT_USD",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  ]
+}

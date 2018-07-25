@@ -1,0 +1,61 @@
+{
+  "type" : "record",
+  "name" : "MEDIA_CAMPAIGN_PROSPECTS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "PER_PERSON_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PER_PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PMP_RECOMMEND_MEM_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PMP_RECOMMEND_MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ECM_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ECM_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CAMP_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CAMP_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEQ_NUMBER_PK",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SEQ_NUMBER_PK",
+    "sqlType" : "2"
+  } ],
+  "tableName" : "MEDIA_CAMPAIGN_PROSPECTS"
+}

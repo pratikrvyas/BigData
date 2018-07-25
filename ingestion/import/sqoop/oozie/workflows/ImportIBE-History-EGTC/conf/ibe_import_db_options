@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.143.188:6516:IBEDOP
+--username 
+IBED_USER
+--password 
+IBE_US_12#ES
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

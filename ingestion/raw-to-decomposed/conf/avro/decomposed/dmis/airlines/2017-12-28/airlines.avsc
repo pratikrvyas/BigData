@@ -1,0 +1,242 @@
+{
+  "type" : "record",
+  "name" : "airlinesdecomposed",
+  "fields" : [ {
+    "name" : "AIRL_AIRLINE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_AIRLINE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_IATA_CURRENT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_IATA_CURRENT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_ICAO_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_ICAO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_CAGR_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_CAGR_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_CASH_PAYER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_CASH_PAYER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_CONTACT_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_CONTACT_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_FOREIGN_AIRLINE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_FOREIGN_AIRLINE",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_IATA_OTHER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_IATA_OTHER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_ADDRESS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_AIRLINE_NR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_AIRLINE_NR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_CUSTOMER_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_CUSTOMER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_EMAIL_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_EMAIL_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_FAX_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_FAX_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_PHONE_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_PHONE_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_BILLING_REF",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_BILLING_REF",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_GROUP_CODE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_GROUP_CODE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_SEND_SITA",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_SEND_SITA",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATE_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATE_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_ULD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_ULD",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_BTAG_TCI",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_BTAG_TCI",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_OLD_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_OLD_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_OLD_IATA_CURRENT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_OLD_IATA_CURRENT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_DACS_IATA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_DACS_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_DELINK_ARR_PCT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_DELINK_ARR_PCT",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_DELINK_DEP_PCT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_DELINK_DEP_PCT",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_DIFFAIRL_ARR_PCT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_DIFFAIRL_ARR_PCT",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_DIFFAIRL_DEP_PCT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_DIFFAIRL_DEP_PCT",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_CUSTOMER_BALANCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_CUSTOMER_BALANCE",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_UNACCT_CASH_ADVANCE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_UNACCT_CASH_ADVANCE",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRL_UNACCT_CASH_ADV_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "AIRL_UNACCT_CASH_ADV_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "AIRL_ALLOW_ATD_WITHOUT_AHCN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_ALLOW_ATD_WITHOUT_AHCN",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_CHARTER_FLAG",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_CHARTER_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_CONTRACTED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_CONTRACTED",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRL_MOVEMENT_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AIRL_MOVEMENT_CODE",
+    "sqlType" : "12"
+  },
+	{
+	"name" : "HELIX_UUID",
+	"type" : [ "string", "null" ]
+	},
+	{
+	"name" : "HELIX_TIMESTAMP",
+	"type" : [ "string", "null" ]
+	} 
+  ]
+}

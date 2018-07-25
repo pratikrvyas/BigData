@@ -1,0 +1,47 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_TKT_REF",
+  "doc" : "Sqoop import of TKT_OWNR.TKT_REF",
+  "fields" : [ {
+    "name" : "ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TKT_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TKT_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "MASTER_TICKET_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "MASTER_TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CONJUNCTION_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "CONJUNCTION_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CREATED_BY",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "TKT_OWNR.TKT_REF"
+}

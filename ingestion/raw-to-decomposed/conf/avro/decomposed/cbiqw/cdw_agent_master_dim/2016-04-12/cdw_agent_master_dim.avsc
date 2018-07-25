@@ -1,0 +1,581 @@
+{
+  "type": "record",
+  "name": "cdw_agent_master_dim",
+  "namespace": "helix",
+  "fields": [
+    {
+      "name": "helix_uuid",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "helix_timestamp",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "agent_sk",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_account_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_number",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_account_key",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "geo_location_sk",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_trading_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_legal_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sales_channel_sk",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_category",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "gsa_agent_indicator",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "farelogic_agent_indicator",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "life_cycle_status",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "dormant_reason",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "big4account",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_reporting_currency",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_old_reporting_currency",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "assoc_sales_executive_staffid",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "assoc_sales_executive_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "owner_applicable_from",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_original_class",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_location_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_check_digit",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_pax_cargo_indicator",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_company_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_last_change_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_last_reinstate_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_original_approval_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_org_status_gained_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_internal_reference_number",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "iata_main_agent_internl_ref_no",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_address",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_city_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "state_country",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "post_abbreviation",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_country",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country_iso_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "post_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "zip_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "email_address",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "web_site_link",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "domain",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "phone_isd_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "phone_std_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "phone_number",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fax_isd_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fax_std_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "fax_number",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "participate_fam_trips_ind",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "accept_free_tickets_ind",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "accept_upgrades_ind",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "local_travel_policy",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "local_travel_policy_details",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "global_travel_policy",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "gtp_details",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_active_flag",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_city_effective_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_discountinued_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_old_city_sk",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "agent_city_change_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sales_agent_employee_id",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "terminal_number",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "gbl_agency_chain_sk",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sfc_created_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sfc_created_user",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sfc_last_modified_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sfc_last_modified_user",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cdw_created_user",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cdw_created_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cdw_changed_user",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cdw_changed_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "source",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "ownership",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "brand",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "market_type",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "tmcregion",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "inclusion",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "cluster_deal",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "account_owner_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

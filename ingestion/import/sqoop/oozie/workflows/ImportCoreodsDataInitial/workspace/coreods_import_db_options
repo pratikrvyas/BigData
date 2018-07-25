@@ -1,0 +1,10 @@
+#import
+--connect
+jdbc:oracle:thin:@10.38.230.176:6516:FCODSS
+--username
+helixods_user
+--password
+helixods_user#123
+--compress
+--compression-codec
+org.apache.hadoop.io.compress.SnappyCodec

@@ -1,0 +1,137 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_CBI_OWNR_CDW_GEO_LOCATION_DIM",
+  "doc" : "Sqoop import of CBI_OWNR.CDW_GEO_LOCATION_DIM",
+  "fields" : [ {
+    "name" : "LOCATION_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "LOCATION_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "TERRITORY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TERRITORY_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "TERRITORY_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "TERRITORY_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "REGION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "REGION_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVE_FLAG",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVE_FLAG",
+    "sqlType" : "12"
+  }, {
+    "name" : "REPORTING_CURRENCY",
+    "type" : [ "string", "null" ],
+    "columnName" : "REPORTING_CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "OLD_REPORTING_CURRENCY",
+    "type" : [ "string", "null" ],
+    "columnName" : "OLD_REPORTING_CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "EK_ONLINE_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "EK_ONLINE_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "BASE_CITY_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "BASE_CITY_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRPORT_ONLY",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRPORT_ONLY",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAIN_CITY_SK",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAIN_CITY_SK",
+    "sqlType" : "2"
+  }, {
+    "name" : "CITY_EFF_FROM_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_EFF_FROM_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CITY_EFF_TO_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_EFF_TO_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "NETWORK",
+    "type" : [ "string", "null" ],
+    "columnName" : "NETWORK",
+    "sqlType" : "12"
+  }, {
+    "name" : "AREA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AREA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AREA_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "AREA_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_USER",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CREATED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CDW_CHANGED_USER",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CHANGED_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SOURCE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SOURCE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "CBI_OWNR.CDW_GEO_LOCATION_DIM"
+}

@@ -1,0 +1,271 @@
+{
+  "type" : "record",
+  "name" : "BR_IDFY_PNR_TKT_COUPONS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BOOKING_REFERENCE_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOOKING_REFERENCE_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_CREATION_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "PNR_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TICKET_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUPON_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "COUPON_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_ISSUE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TICKET_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TICKET_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLIGHT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ORIGIN",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESTINATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLASS_OF_TRAVEL",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CLASS_OF_TRAVEL",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLOWN_CLASS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLOWN_CLASS",
+    "sqlType" : "12"
+  }, {
+    "name" : "MARKETED_BY_CARRIER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MARKETED_BY_CARRIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "OPERATED_BY_CARRIER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OPERATED_BY_CARRIER",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANNEL_OF_BOOKING",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANNEL_OF_BOOKING",
+    "sqlType" : "12"
+  }, {
+    "name" : "FARE_BASIS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FARE_BASIS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PASSENGER_NAME",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PASSENGER_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PASSENGER_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PASSENGER_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SKYWARDS_MEMBERSHIP_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "SKYWARDS_MEMBERSHIP_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PERSON_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BR_MEMBERSHIP_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BR_MEMBERSHIP_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "REVENUE_VALUE_USD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REVENUE_VALUE_USD",
+    "sqlType" : "2"
+  }, {
+    "name" : "REVENUE_VALUE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REVENUE_VALUE",
+    "sqlType" : "2"
+  }, {
+    "name" : "LC_NET_NET",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "LC_NET_NET",
+    "sqlType" : "2"
+  }, {
+    "name" : "REPORTING_CURRENCY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "REPORTING_CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOOKED_BY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BOOKED_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "APPROVED_BY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "APPROVED_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "CURRENCY_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CURRENCY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLOWN_INDICATOR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLOWN_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "STATUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "BASE_PMA_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BASE_PMA_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BATCH_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BATCH_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_BY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CHANGED_BY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED_BY",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACTIVITY_METHOD",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ACTIVITY_METHOD",
+    "sqlType" : "12"
+  }, {
+    "name" : "PMP_MEM_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PMP_MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "BLACKLISTED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "BLACKLISTED",
+    "sqlType" : "12"
+  }, {
+    "name" : "IS_CUGO_TKT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "IS_CUGO_TKT",
+    "sqlType" : "12"
+  }, {
+    "name" : "OLD_TICKET_ISSUE_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OLD_TICKET_ISSUE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "OLD_COUPON_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OLD_COUPON_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "OLD_TICKET_NUMBER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "OLD_TICKET_NUMBER",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "BR_IDFY_PNR_TKT_COUPONS"
+}

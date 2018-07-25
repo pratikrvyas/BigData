@@ -1,0 +1,348 @@
+{
+  "type" : "record",
+  "name" : "eol_target",
+  "doc" : "import of DW_OWNR.eol_target",
+  "fields" : [ {
+    "name" : "helix_uuid",
+    "type" : [ "string", "null" ],
+    "columnName" : "helix_uuid",
+    "sqlType" : "2"
+  }, {
+    "name" : "helix_timestamp",
+    "type" : [ "string", "null" ],
+    "columnName" : "helix_timestamp",
+    "sqlType" : "12"
+  },{
+    "name" : "Countrycode",
+    "type" : [ "string", "null" ],
+    "columnName" : "Countrycode",
+    "sqlType" : "2"
+  }, {
+    "name" : "Country",
+    "type" : [ "string", "null" ],
+    "columnName" : "Country",
+    "sqlType" : "12"
+  }, {
+    "name" : "Fin_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "Fin_ID",
+    "sqlType" : "2"
+  },{
+    "name" : "LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "LC",
+    "sqlType" : "2"
+  }, {
+    "name" : "Compartment",
+    "type" : [ "string", "null" ],
+    "columnName" : "Compartment",
+    "sqlType" : "93"
+  }, {
+    "name" : "Year",
+    "type" : [ "string", "null" ],
+    "columnName" : "Year",
+    "sqlType" : "93"
+  },{
+    "name" : "APR_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "APR_EOL_REV_TGT_AED",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAY_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAY_EOL_REV_TGT_AED",
+    "sqlType" : "93"
+  }, {
+    "name" : "JUN_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUN_EOL_REV_TGT_AED",
+    "sqlType" : "12"
+  },{
+    "name" : "JUL_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUL_EOL_REV_TGT_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "AUG_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "AUG_EOL_REV_TGT_AED",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEP_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEP_EOL_REV_TGT_AED",
+    "sqlType" : "2"
+  },{
+    "name" : "OCT_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "OCT_EOL_REV_TGT_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "NOV_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "NOV_EOL_REV_TGT_AED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DEC_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEC_EOL_REV_TGT_AED",
+    "sqlType" : "93"
+  },{
+    "name" : "JAN_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "JAN_EOL_REV_TGT_AED",
+    "sqlType" : "12"
+  }, {
+    "name" : "FEB_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "FEB_EOL_REV_TGT_AED",
+    "sqlType" : "93"
+  },{
+    "name" : "MAR_EOL_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAR_EOL_REV_TGT_AED",
+    "sqlType" : "12"
+  },{
+    "name" : "APR_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "APR_CTY_PAX_TGT",
+    "sqlType" : "2"
+  }, {
+    "name" : "MAY_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAY_CTY_PAX_TGT",
+    "sqlType" : "12"
+  }, {
+    "name" : "JUN_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUN_CTY_PAX_TGT",
+    "sqlType" : "2"
+  },{
+    "name" : "JUL_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUL_CTY_PAX_TGT",
+    "sqlType" : "2"
+  }, {
+    "name" : "AUG_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "AUG_CTY_PAX_TGT",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEP_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEP_CTY_PAX_TGT",
+    "sqlType" : "93"
+  },{
+    "name" : "OCT_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "OCT_CTY_PAX_TGT",
+    "sqlType" : "12"
+  }, {
+    "name" : "NOV_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "NOV_CTY_PAX_TGT",
+    "sqlType" : "93"
+  },{
+    "name" : "DEC_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEC_CTY_PAX_TGT",
+    "sqlType" : "12"
+  },{
+    "name" : "JAN_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "JAN_CTY_PAX_TGT",
+    "sqlType" : "2"
+  }, {
+    "name" : "FEB_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "FEB_CTY_PAX_TGT",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAR_CTY_PAX_TGT",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAR_CTY_PAX_TGT",
+    "sqlType" : "2"
+  },{
+    "name" : "APR_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "APR_EOL_REV_TGT_LC",
+    "sqlType" : "2"
+  }, {
+    "name" : "MAY_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAY_EOL_REV_TGT_LC",
+    "sqlType" : "93"
+  }, {
+    "name" : "JUN_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUN_EOL_REV_TGT_LC",
+    "sqlType" : "93"
+  },{
+    "name" : "JUL_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUL_EOL_REV_TGT_LC",
+    "sqlType" : "12"
+  }, {
+    "name" : "AUG_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "AUG_EOL_REV_TGT_LC",
+    "sqlType" : "93"
+  },{
+    "name" : "SEP_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEP_EOL_REV_TGT_LC",
+    "sqlType" : "12"
+  },{
+    "name" : "OCT_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "OCT_EOL_REV_TGT_LC",
+    "sqlType" : "2"
+  }, {
+    "name" : "NOV_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "NOV_EOL_REV_TGT_LC",
+    "sqlType" : "12"
+  }, {
+    "name" : "DEC_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEC_EOL_REV_TGT_LC",
+    "sqlType" : "2"
+  },{
+    "name" : "JAN_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "JAN_EOL_REV_TGT_LC",
+    "sqlType" : "2"
+  }, {
+    "name" : "FEB_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "FEB_EOL_REV_TGT_LC",
+    "sqlType" : "93"
+  }, {
+    "name" : "MAR_EOL_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAR_EOL_REV_TGT_LC",
+    "sqlType" : "93"
+  },{
+    "name" : "APR_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "APR_CTY_REV_TGT_AED",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAY_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAY_CTY_REV_TGT_AED",
+    "sqlType" : "93"
+  },{
+    "name" : "JUN_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUN_CTY_REV_TGT_AED",
+    "sqlType" : "12"
+  },{
+    "name" : "JUL_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUL_CTY_REV_TGT_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "AUG_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "AUG_CTY_REV_TGT_AED",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEP_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEP_CTY_REV_TGT_AED",
+    "sqlType" : "2"
+  },{
+    "name" : "OCT_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "OCT_CTY_REV_TGT_AED",
+    "sqlType" : "2"
+  }, {
+    "name" : "NOV_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "NOV_CTY_REV_TGT_AED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DEC_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEC_CTY_REV_TGT_AED",
+    "sqlType" : "93"
+  },{
+    "name" : "JAN_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "JAN_CTY_REV_TGT_AED",
+    "sqlType" : "12"
+  }, {
+    "name" : "FEB_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "FEB_CTY_REV_TGT_AED",
+    "sqlType" : "93"
+  },{
+    "name" : "MAR_CTY_REV_TGT_AED",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAR_CTY_REV_TGT_AED",
+    "sqlType" : "12"
+  },{
+    "name" : "APR_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "APR_CTY_REV_TGT_LC",
+    "sqlType" : "2"
+  }, {
+    "name" : "MAY_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAY_CTY_REV_TGT_LC",
+    "sqlType" : "12"
+  }, {
+    "name" : "JUN_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUN_CTY_REV_TGT_LC",
+    "sqlType" : "2"
+  },{
+    "name" : "JUL_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "JUL_CTY_REV_TGT_LC",
+    "sqlType" : "2"
+  }, {
+    "name" : "AUG_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "AUG_CTY_REV_TGT_LC",
+    "sqlType" : "93"
+  }, {
+    "name" : "SEP_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEP_CTY_REV_TGT_LC",
+    "sqlType" : "93"
+  },{
+    "name" : "OCT_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "OCT_CTY_REV_TGT_LC",
+    "sqlType" : "12"
+  }, {
+    "name" : "NOV_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "NOV_CTY_REV_TGT_LC",
+    "sqlType" : "93"
+  },{
+    "name" : "DEC_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "DEC_CTY_REV_TGT_LC",
+    "sqlType" : "12"
+  },{
+    "name" : "JAN_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "JAN_CTY_REV_TGT_LC",
+    "sqlType" : "2"
+  }, {
+    "name" : "FEB_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "FEB_CTY_REV_TGT_LC",
+    "sqlType" : "12"
+  }, {
+    "name" : "MAR_CTY_REV_TGT_LC",
+    "type" : [ "string", "null" ],
+    "columnName" : "MAR_CTY_REV_TGT_LC",
+    "sqlType" : "2"
+  }
+],
+  "tableName" : "DW_OWNR.eol_target"
+}

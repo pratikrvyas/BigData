@@ -1,0 +1,1 @@
+(chararray)$0 AS Ident,(chararray)$1 AS IdentIC,(chararray)$2 AS Port,(chararray)$3 AS PortIC,(chararray)$4 AS Name,(chararray)$5 AS WptDesc,(chararray)$6 AS Lat,(chararray)$7 AS Lon,(chararray)$8 AS Cycle

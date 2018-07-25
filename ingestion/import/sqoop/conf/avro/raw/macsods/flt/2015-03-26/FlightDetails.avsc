@@ -1,0 +1,145 @@
+{
+  "type" : "record",
+  "name" : "AnonType_FlightDetails",
+  "fields" : [ {
+    "name" : "flt_snapshot_day",
+    "type" : [ "null", "string" ],
+    "source" : "element flt_snapshot_day"
+  }, {
+    "name" : "mfl_id",
+    "type" : [ "null", "string" ],
+    "source" : "element mfl_id"
+  }, {
+    "name" : "airline_designator",
+    "type" : [ "null", "string" ],
+    "source" : "element airline_designator"
+  }, {
+    "name" : "airline_designator_exp",
+    "type" : [ "null", "string" ],
+    "source" : "element airline_designator_exp"
+  }, {
+    "name" : "flight_number",
+    "type" : [ "null", "string" ],
+    "source" : "element flight_number"
+  }, {
+    "name" : "operation_date",
+    "type" : [ "null", "string" ],
+    "source" : "element operation_date"
+  }, {
+    "name" : "operation_time",
+    "type" : [ "null", "string" ],
+    "source" : "element operation_time"
+  }, {
+    "name" : "operation_date_gmt",
+    "type" : [ "null", "string" ],
+    "source" : "element operation_date_gmt"
+  }, {
+    "name" : "operation_time_gmt",
+    "type" : [ "null", "string" ],
+    "source" : "element operation_time_gmt"
+  }, {
+    "name" : "latest_departure_date",
+    "type" : [ "null", "string" ],
+    "source" : "element latest_departure_date"
+  }, {
+    "name" : "latest_departure_time",
+    "type" : [ "null", "string" ],
+    "source" : "element latest_departure_time"
+  }, {
+    "name" : "latest_departure_date_gmt",
+    "type" : [ "null", "string" ],
+    "source" : "element latest_departure_date_gmt"
+  }, {
+    "name" : "latest_departure_time_gmt",
+    "type" : [ "null", "string" ],
+    "source" : "element latest_departure_time_gmt"
+  }, {
+    "name" : "board_point",
+    "type" : [ "null", "string" ],
+    "source" : "element board_point"
+  }, {
+    "name" : "aircraft_type",
+    "type" : [ "null", "string" ],
+    "source" : "element aircraft_type"
+  }, {
+    "name" : "class_configuration",
+    "type" : [ "null", "string" ],
+    "source" : "element class_configuration"
+  }, {
+    "name" : "registration_number",
+    "type" : [ "null", "string" ],
+    "source" : "element registration_number"
+  }, {
+    "name" : "pantry_code",
+    "type" : [ "null", "string" ],
+    "source" : "element pantry_code"
+  }, {
+    "name" : "crew_code",
+    "type" : [ "null", "string" ],
+    "source" : "element crew_code"
+  }, {
+    "name" : "gate_number",
+    "type" : [ "null", "string" ],
+    "source" : "element gate_number"
+  }, {
+    "name" : "baggage_concept",
+    "type" : [ "null", "string" ],
+    "source" : "element baggage_concept"
+  }, {
+    "name" : "seat_mask_code",
+    "type" : [ "null", "string" ],
+    "source" : "element seat_mask_code"
+  }, {
+    "name" : "uld_code",
+    "type" : [ "null", "string" ],
+    "source" : "element uld_code"
+  }, {
+    "name" : "flight_status",
+    "type" : [ "null", "string" ],
+    "source" : "element flight_status"
+  }, {
+    "name" : "progress",
+    "type" : [ "null", "string" ],
+    "source" : "element progress"
+  }, {
+    "name" : "download_date",
+    "type" : [ "null", "string" ],
+    "source" : "element download_date"
+  }, {
+    "name" : "time_stamp",
+    "type" : [ "null", "string" ],
+    "source" : "element time_stamp"
+  }, {
+    "name" : "flight_number_exp",
+    "type" : [ "null", "string" ],
+    "source" : "element flight_number_exp"
+  }, {
+    "name" : "created",
+    "type" : [ "null", "string" ],
+    "source" : "element created"
+  }, {
+    "name" : "usr_created",
+    "type" : [ "null", "string" ],
+    "source" : "element usr_created"
+  }, {
+    "name" : "changed",
+    "type" : [ "null", "string" ],
+    "source" : "element changed"
+  }, {
+    "name" : "usr_changed",
+    "type" : [ "null", "string" ],
+    "source" : "element usr_changed"
+  }, {
+    "name" : "ff_notified",
+    "type" : [ "null", "string" ],
+    "source" : "element ff_notified"
+  }, {
+    "name" : "pd_count",
+    "type" : [ "null", "string" ],
+    "source" : "element pd_count"
+  }, {
+    "name" : "status",
+    "type" : [ "null", "string" ],
+    "source" : "element status"
+  } ]
+}

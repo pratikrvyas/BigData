@@ -1,0 +1,47 @@
+{
+  "type" : "record",
+  "name" : "tbl_ods_delay",
+  "fields" : [ {
+    "name" : "EFFECTIVETO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "EFFECTIVEFROM",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRANSDATETIME",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRANSUSERID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "PRETRXNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "TRXNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MODBY",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "MODON",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "DELAYTYPE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "DELAYAMOUNT",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "DELAYCODE",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "FLIGHTSEQNO",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ]
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ]
+  } ]
+}

@@ -1,0 +1,312 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_PNR_OTHERS",
+  "doc" : "Sqoop import of PNR_OWNR.PNR_OTHERS",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+	"sqlType" : "12"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+	"sqlType" : "12"
+  },{
+    "name" : "TIME_LIMIT_VENDOR_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIME_LIMIT_VENDOR_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIME_LIMIT_LOC_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIME_LIMIT_LOC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TIME_LIMIT_ACTIION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIME_LIMIT_ACTIION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TIME_LIMIT_ACTION_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "TIME_LIMIT_ACTION_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "SUSPENSE_SEQ_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "SUSPENSE_SEQ_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "RLC_DUTY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_DUTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_CURRENCY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_CURRENCY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_COUNTRY_OF_ORIGIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_COUNTRY_OF_ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_ORIGIN_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_ORIGIN_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_AIRLINE_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_PLACE_OF_ORIGIN",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_PLACE_OF_ORIGIN",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_IATA_ARC_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_IATA_ARC_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_OFFICE_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_OFFICE_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_RECORD_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_RECORD_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_GDS_CRC",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_GDS_CRC",
+    "sqlType" : "12"
+  }, {
+    "name" : "RLC_HEADQUARTER_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "RLC_HEADQUARTER_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "FIRST_SEG_DEPARTURE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "FIRST_SEG_DEPARTURE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TSM_AGN_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "TSM_AGN_ID",
+    "sqlType" : "12"
+  }, {
+    "name" : "TSM_HOST_AIRLINE_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "TSM_HOST_AIRLINE_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "TSM_HOST_AIRLINE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TSM_HOST_AIRLINE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TSM_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TSM_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REPORT_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "REPORT_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "TSM_SALE_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "TSM_SALE_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "PTA_IN_LOCATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "PTA_IN_LOCATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "PTA_OUT_LOCATION",
+    "type" : [ "string", "null" ],
+    "columnName" : "PTA_OUT_LOCATION",
+    "sqlType" : "12"
+  }, {
+    "name" : "TSM_LOCAL_CREATION_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TSM_LOCAL_CREATION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "TSM_ACTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "TSM_ACTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "PTA_STATUS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PTA_STATUS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TSM_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "TSM_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "AGENT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISO_CURRENCY",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISO_CURRENCY",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISO_COUNTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISO_COUNTRY",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENCY_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENCY_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CRS_CARRIER_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CRS_CARRIER_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "CRS_CARRIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CRS_CARRIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLOSEST_CITY_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CLOSEST_CITY_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "CLOSEST_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CLOSEST_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "IATA_ERSP",
+    "type" : [ "string", "null" ],
+    "columnName" : "IATA_ERSP",
+    "sqlType" : "12"
+  }, {
+    "name" : "PSEUDO_CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "PSEUDO_CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_ADDRESS",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ADDRESS",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARRIER_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CARRIER_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "CARRIER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CARRIER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SYSTEM_GENERATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SYSTEM_GENERATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "DAY_OF_WEEK",
+    "type" : [ "string", "null" ],
+    "columnName" : "DAY_OF_WEEK",
+    "sqlType" : "12"
+  }, {
+    "name" : "VARIABLE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "VARIABLE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "BCD_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "BCD_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BCD_TIME_LIMIT",
+    "type" : [ "string", "null" ],
+    "columnName" : "BCD_TIME_LIMIT",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY_CODE_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_CODE_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "OTHER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "OTHER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PNR_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_OTHER_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_OTHER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PDI_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PDI_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PDI_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "PDI_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMD_INDICTOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMD_INDICTOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "QUEUE_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "QUEUE_NUMBER",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PNR_OWNR.PNR_OTHERS"
+}

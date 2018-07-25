@@ -1,0 +1,11 @@
+#!/bin/bash -e
+
+CONTROL_FILE=$1
+
+echo CONTROL_FILE=${CONTROL_FILE}
+
+ 
+echo START_DATE='2015-05-01 00:00:00'
+echo END_DATE='2015-06-30 23:59:59'
+
+echo HELIX_TIMESTAMP=`date -u +"%s"`

@@ -1,0 +1,244 @@
+<workflow-app name="RawtoDecomposedDmisHistory_MasterData" xmlns="uri:oozie:workflow:0.5">
+    <start to="fork-ddb9"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="spark-10f5">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_PATH_REASONS}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <spark-opts>--executor-memory 128m --driver-memory 128m --queue opseff --conf spark.serializer=org.apache.spark.serializer.KryoSerializer --conf spark.shuffle.service.enabled=true --conf spark.speculation=true --conf spark.dynamicAllocation.enabled=true --conf spark.dynamicAllocation.minExecutors=1 --conf spark.dynamicAllocation.maxExecutors=10 </spark-opts>
+              <arg>-i</arg>
+              <arg>${INPUT_PATH_REASONS}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_PATH_REASONS}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${REASONS_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="join-8168"/>
+        <error to="Kill"/>
+    </action>
+    <action name="email-f9ea">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>${EMAIL_ADDRESS_LIST} </to>
+            <subject>Workflow ${wf:name()} Completed Successfully</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow path: http://10.232.154.13:8888/oozie/list_oozie_workflow/${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-42c2">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_PATH_AIRCRAFTTYPE}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <arg>-i</arg>
+              <arg>${INPUT_PATH_AIRCRAFTTYPE}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_PATH_AIRCRAFTTYPE}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${AIRCRAFTTYPE_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="join-8168"/>
+        <error to="Kill"/>
+    </action>
+    <fork name="fork-ddb9">
+        <path start="spark-10f5" />
+        <path start="spark-42c2" />
+        <path start="spark-80b3" />
+        <path start="spark-0432" />
+        <path start="spark-d0bb" />
+        <path start="spark-48da" />
+        <path start="spark-f71b" />
+        <path start="spark-6094" />
+    </fork>
+    <join name="join-8168" to="email-f9ea"/>
+    <action name="spark-80b3">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_PATH_DELAYS}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <arg>-i</arg>
+              <arg>${INPUT_PATH_DELAYS}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_PATH_DELAYS}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${DELAYS_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="join-8168"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-0432">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_PATH_FLIGHTTYPES}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <arg>-i</arg>
+              <arg>${INPUT_PATH_FLIGHTTYPES}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_PATH_FLIGHTTYPES}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${FLIGHTTYPES_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="join-8168"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-d0bb">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_PATH_BAGGAGEDISCR}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <arg>-i</arg>
+              <arg>${INPUT_PATH_BAGGAGEDISCR}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_PATH_BAGGAGEDISCR}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${BAGGAGEDISCR_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="join-8168"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-48da">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_PATH_AIRLINES}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <arg>-i</arg>
+              <arg>${INPUT_PATH_AIRLINES}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_PATH_AIRLINES}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${AIRLINES_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="join-8168"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-f71b">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_PATH_AIRCRAFTS}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <arg>-i</arg>
+              <arg>${INPUT_PATH_AIRCRAFTS}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_PATH_AIRCRAFTS}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${AIRCRAFTS_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="join-8168"/>
+        <error to="Kill"/>
+    </action>
+    <action name="spark-6094">
+        <spark xmlns="uri:oozie:spark-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${nameNode}${OUTPUT_PATH_AIRPORTS}"/>
+            </prepare>
+            <master>yarn</master>
+            <mode>cluster</mode>
+            <name>R2D_AVRO_SOURCE</name>
+              <class>com.emirates.helix.ingestion.process.R2DForAVROSource</class>
+            <jar>ops_eff_utils-1.0.jar</jar>
+              <arg>-i</arg>
+              <arg>${INPUT_PATH_AIRPORTS}</arg>
+              <arg>-o</arg>
+              <arg>${OUTPUT_PATH_AIRPORTS}</arg>
+              <arg>-h</arg>
+              <arg>${HDFS_URI}</arg>
+              <arg>-s</arg>
+              <arg>${AIRPORTS_SCHEMA_FILE}</arg>
+              <arg>-c</arg>
+              <arg>${COMPRESSION}</arg>
+        </spark>
+        <ok to="join-8168"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

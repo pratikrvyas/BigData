@@ -1,0 +1,146 @@
+
+<workflow-app name="ImportMacsDataHistory" xmlns="uri:oozie:workflow:0.5">
+    <start to="shell-c3f1"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="sqoop-3d18">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${MACS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>MACS_OWNR.MACS_INBOUND</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PARTITION_DATE=String,OPERATION_DATE=String,DOWNLOAD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>MACS_INBOUND</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>/data/helix/raw/macsods/MACS_INBOUND</arg>
+              <arg>--split-by</arg>
+              <arg>MFL_ID,REFERENCE_NUMBER</arg>
+            <file>${MACS_SQOOP_OPTIONS_FILE}#${MACS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-8b9b"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-8b9b">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${MACS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>MACS_OWNR.MACS_DESTINATION</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PARTITION_DATE=String,ARRIVAL_DATE=String,ARRIVAL_DATE_GMT=String,DEPARTURE_DATE=String,DEPARTURE_DATE_GMT=String,LATEST_ARRIVAL_DATE=String,LATEST_ARRIVAL_DATE_GMT=String,LATEST_DEPARTURE_DATE=String,LATEST_DEPARTURE_DATE_GMT=String,DOWNLOAD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>MACS_DESTINATION</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>/data/helix/raw/macsods/MACS_DESTINATION</arg>
+              <arg>--split-by</arg>
+              <arg>MFL_ID</arg>
+            <file>${MACS_SQOOP_OPTIONS_FILE}#${MACS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-5edc"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-dfc7">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${MACS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>MACS_OWNR.MACS_ONWARD</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PARTITION_DATE=String,OPERATION_DATE=String,DOWNLOAD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>MACS_INBOUND</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>/data/helix/raw/macsods/MACS_ONWARD</arg>
+              <arg>--split-by</arg>
+              <arg>MFL_ID,REFERENCE_NUMBER</arg>
+            <file>${MACS_SQOOP_OPTIONS_FILE}#${MACS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="sqoop-3d18"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-5edc">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${MACS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--table</arg>
+              <arg>MACS_OWNR.MACS_INFANT</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>PARTITION_DATE=String,DOWNLOAD_DATE=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>MACS_INFANT</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>/data/helix/raw/macsods/MACS_INFANT</arg>
+              <arg>--split-by</arg>
+              <arg>MFL_ID</arg>
+            <file>${MACS_SQOOP_OPTIONS_FILE}#${MACS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="End"/>
+        <error to="Kill"/>
+    </action>
+    <action name="shell-c3f1">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>/apps/helix/conf/oozie/workspaces/wf_importsmsgateway/helix_donothing.sh</exec>
+              <capture-output/>
+        </shell>
+        <ok to="sqoop-5edc"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

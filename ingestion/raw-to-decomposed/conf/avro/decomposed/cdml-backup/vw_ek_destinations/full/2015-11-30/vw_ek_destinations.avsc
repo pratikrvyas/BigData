@@ -1,0 +1,161 @@
+{
+  "type": "record",
+  "name": "VW_EK_DESTINATIONS",
+  "namespace": "emcg_multivalue",
+  "fields": [
+    {
+      "name": "helix_uuid",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "helix_timestamp",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "sdw_refresh_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "airport_iata_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "airport_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "usr_created",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "created",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "usr_changed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "changed",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "host_online_apt",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "stg_process_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "city_iata_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "city_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country_iata_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "country_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "currency_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "currency_name",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "territory_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "amc_code",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "territory_dscr",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sdw_created_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "sdw_changed_date",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}

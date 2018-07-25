@@ -1,0 +1,85 @@
+
+<workflow-app name="RawToSpeedTicket" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-16c7"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-16c7">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>helix_current_date.sh</exec>
+              <argument>${SOURCE_DIRECTORY_TKT_FLIGHT_CPN}</argument>
+            <file>helix_current_date.sh#helix_current_date.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="pig-aa8b"/>
+        <error to="email-5fc6"/>
+    </action>
+    <action name="pig-aa8b">
+        <pig>
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${TARGET_DIRECTORY}"/>
+            </prepare>
+            <script>spdtransform_tkt.pig</script>
+              <param>SOURCE_DIRECTORY_TKT_MASTER=${SOURCE_DIRECTORY_TKT_MASTER}</param>
+              <param>SOURCE_DIRECTORY_TKT_FLIGHT_CPN=${SOURCE_DIRECTORY_TKT_FLIGHT_CPN}</param>
+              <param>SOURCE_DIRECTORY_TKT_PAX_FARE=${SOURCE_DIRECTORY_TKT_PAX_FARE}</param>
+              <param>SOURCE_DIRECTORY_TKT_OPERATING_CARRIER=${SOURCE_DIRECTORY_TKT_OPERATING_CARRIER}</param>
+              <param>TARGET_DIRECTORY=${TARGET_DIRECTORY}</param>
+              <param>AVRO_SCHEMA_TKT_MASTER=${AVRO_SCHEMA_TKT_MASTER}</param>
+              <param>AVRO_SCHEMA_TKT_FLIGHT_CPN=${AVRO_SCHEMA_TKT_FLIGHT_CPN}</param>
+              <param>AVRO_SCHEMA_TKT_PAX_FARE=${AVRO_SCHEMA_TKT_PAX_FARE}</param>
+              <param>AVRO_SCHEMA_TKT_OPERATING_CARRIER=${AVRO_SCHEMA_TKT_OPERATING_CARRIER}</param>
+            <file>spdtransform_tkt.pig#spdtransform_tkt.pig</file>
+        </pig>
+        <ok to="shell-d566"/>
+        <error to="email-5fc6"/>
+    </action>
+    <action name="shell-d566">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>spdcopy_to_local.sh</exec>
+              <argument>${TARGET_DIRECTORY}</argument>
+              <argument>${wf:actionData(&#39;shell-16c7&#39;)[&#39;HELIX_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-16c7&#39;)[&#39;HELIX_TIME&#39;]}</argument>
+            <file>spdcopy_to_local.sh#spdcopy_to_local.sh</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-5fc6"/>
+    </action>
+    <action name="email-5fc6">
+        <email xmlns="uri:oozie:email-action:0.1">
+            <to>HelixSupport@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}
+</body>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

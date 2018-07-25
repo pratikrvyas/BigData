@@ -1,0 +1,296 @@
+<workflow-app name="ImportPROMISData-copy" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-77e5"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-77e5">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${PROMIS_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${PROMIS_CONTROL_FILE}#${PROMIS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-458c"/>
+        <error to="email-22c4"/>
+    </action>
+    <fork name="fork-458c">
+        <path start="sqoop-5288" />
+        <path start="sqoop-8d39" />
+        <path start="sqoop-b76f" />
+        <path start="sqoop-4178" />
+        <path start="sqoop-cab4" />
+        <path start="sqoop-4225" />
+    </fork>
+    <join name="join-0902" to="shell-a550"/>
+    <action name="sqoop-5288">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_PRMS_FLIGHT_MASTER}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PROMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select FLT_KEY, CARR_CODE, FLT_NO, ORGN, DSTN, UPD_DT, UPD_ID from PRMS_V_HELIX_FLIGHTMASTER WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPD_DT=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FLT_KEY</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PRMS_FLIGHT_MASTER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PRMS_FLIGHT_MASTER}</arg>
+            <file>${PROMIS_SQOOP_OPTIONS_FILE}#${PROMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="sqoop-8d39">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_PRMS_PROS_DCP_MASTER}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PROMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select DCP_NO, DAYS_PRIOR, UPD_DT, UPD_ID from PRMS_V_HELIX_PROS_DCP_MASTER  WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPD_DT=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>DCP_NO</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PRMS_PROS_DCP_MASTER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PRMS_PROS_DCP_MASTER}</arg>
+            <file>${PROMIS_SQOOP_OPTIONS_FILE}#${PROMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="sqoop-b76f">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_PRMS_REGION_DETAIL}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PROMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select FROM_FLT_NO, TO_FLT_NO, UPD_DT, UPD_ID, REGION_MST_REGION_NAME from PRMS_V_HELIX_REGION_DETAIL WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPD_DT=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FROM_FLT_NO</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PRMS_REGION_DETAIL</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PRMS_REGION_DETAIL}</arg>
+            <file>${PROMIS_SQOOP_OPTIONS_FILE}#${PROMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="shell-a550">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>update_control_file.sh</exec>
+              <argument>${PROMIS_CONTROL_FILE}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;START_DATE&#39;]}</argument>
+              <argument>${wf:actionData(&#39;shell-77e5&#39;)[&#39;END_DATE&#39;]}</argument>
+              <argument>${wf:appPath()}</argument>
+            <file>update_control_file.sh#update_control_file.sh</file>
+            <file>${PROMIS_CONTROL_FILE}#${PROMIS_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="End"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="email-22c4">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>s403277@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-4178">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_PRMS_POST_DEPARTURE}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PROMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select FLT_MASTER_FLT_KEY, CLS_MASTER_CLASS, CLS_MASTER_COMP, DEP_DATE, LEG_SEG_IND, MULTI_LEG_FLT_IND, ORGN_CITY_NUM, DSTN_CITY_NUM, EQUIP_CODE, CAPACITY, SEG_DAY0_BKG, LEG_DAY0_BKG, SEG_DAY0_GRP_BKG, LEG_DAY0_GRP_BKG, SEG_DAY0_SEATS_AVLBL, LEG_DAY0_SEATS_AVLBL, SEG_REV_BRDG, LEG_REV_BRDG, SEG_NREV_BRDG, LEG_NREV_BRDG, SEG_NOSHO, LEG_NOSHO, SEG_TLS_NOSHO, SEG_GOSHO, LEG_GOSHO, SEG_NOREC, LEG_NOREC, SEG_MISCON, LEG_MISCON, SEG_DB, LEG_DB, SEG_VOLDB, LEG_VOLDB, UPG_F, DNG_J, UPG_J, DNG_Y, DB_OP_IND, INV_DAY0_UPD_IND, LEG_CALC_UPD_IND, NEW_REC_IND, UPD_DT, UPD_ID, SEG_PRETRANS_UPGC, LEG_PRETRANS_UPGC, CAP_ORG, SEG_PRETRANS_DBC, LEG_PRETRANS_DBC from PRMS_V_HELIX_POST_DEPARTURE WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>DEP_DATE=String,UPD_DT=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>FLT_MASTER_FLT_KEY</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PRMS_POST_DEPARTURE</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PRMS_POST_DEPARTURE}</arg>
+            <file>${PROMIS_SQOOP_OPTIONS_FILE}#${PROMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="email-22c4"/>
+    </action>
+    <action name="sqoop-cab4">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_PRMS_REGION_MASTER}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PROMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select REGION_NAME,UPD_DT,UPD_ID from PRMS_REGION_MASTER WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>UPD_DT=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>UPD_ID</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PRMS_REGION_MASTER</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PRMS_REGION_MASTER}</arg>
+            <file>${PROMIS_SQOOP_OPTIONS_FILE}#${PROMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-4225">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <prepare>
+                  <delete path="${PATH_PINT_FLT_LEGSEGS}"/>
+            </prepare>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${PROMIS_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;select AIRL_CD,FLT_NO,FLT_DT,LEG_ORGN,LEG_DSTN,SEG_ORGN,SEG_DSTN,PURE_LEG_IND,LEG_NO from PINT_FLT_LEGSEGS WHERE $CONDITIONS&quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>AIRL_CD=String,FLT_NO=String,FLT_DT=String,LEG_ORGN=String,LEG_DSTN=String,SEG_ORGN=String,SEG_DSTN=String,PURE_LEG_IND=String,LEG_NO=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--split-by</arg>
+              <arg>AIRL_CD</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>PINT_FLT_LEGSEGS</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${PATH_PINT_FLT_LEGSEGS}</arg>
+            <file>${PROMIS_SQOOP_OPTIONS_FILE}#${PROMIS_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-0902"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

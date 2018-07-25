@@ -1,0 +1,293 @@
+<workflow-app name="ImportFRRData_TaxSWF1_UAT" xmlns="uri:oozie:workflow:0.5">
+  <global>
+            <configuration>
+                <property>
+                    <name>oozie.launcher.mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>ingest</value>
+                </property>
+            </configuration>
+  </global>
+    <start to="shell-a0d6"/>
+    <kill name="Kill">
+        <message>Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+    <action name="shell-a0d6">
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <exec>generate_date_params.sh</exec>
+              <argument>${FRR_CONTROL_FILE}</argument>
+            <file>generate_date_params.sh#generate_date_params.sh</file>
+            <file>${FRR_CONTROL_FILE}#${FRR_CONTROL_FILE}</file>
+              <capture-output/>
+        </shell>
+        <ok to="fork-a726"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="email-98ee">
+        <email xmlns="uri:oozie:email-action:0.2">
+            <to>s434654@emirates.com</to>
+            <subject>Workflow ${wf:name()} failed</subject>
+            <body>Current timestamp: ${timestamp()}
+Workflow name: ${wf:name()}
+Workflow id: ${wf:id()}
+Workflow application path: ${wf:appPath()}
+Workflow user: ${wf:user()}
+Last error action: ${wf:lastErrorNode()}
+Error code: ${wf:errorCode(wf:lastErrorNode())}
+Error message: ${wf:errorMessage(wf:lastErrorNode())}</body>
+            <content_type>text/plain</content_type>
+        </email>
+        <ok to="Kill"/>
+        <error to="Kill"/>
+    </action>
+    <action name="sqoop-8998">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  RECID,SUBID,ACTION,TBL_ID,TBL_NO,TICKET_CODE,APPL_TAG,FARE_BASIS_TKT_DESIG,EQUIP_CODE,CABIN_CODE,RBD,FARE_TYPE,TARIFF,FARE_OWN_CXR,SECTORE_RULE,ACTDISCDT from FRR_SUBS_TBL167 where $CONDITIONS &quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FRR_SUBS_TBL167</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TABLE_FRR_SUBS_TBL167}</arg>
+              <arg>--split-by</arg>
+              <arg>RECID</arg>
+              <arg>--map-column-java</arg>
+              <arg>ACTDISCDT=String</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-127c"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="sqoop-42c1">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  RECID,SUBID,ACTION,TBL_ID,TBL_NO,APPL_TAG,PSGR_TYPE,AGE_MIN,AGE_MAX,PSGR_STATUS,GEOSPEC_TYPE,GEOSPEC_LOC,PTC_MATCHTYPE,ACTDISCDT from FRR_SUBS_TBL169 where $CONDITIONS &quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FRR_SUBS_TBL169</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TABLE_FRR_SUBS_TBL169}</arg>
+              <arg>--split-by</arg>
+              <arg>RECID</arg>
+              <arg>--map-column-java</arg>
+              <arg>ACTDISCDT=String</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-127c"/>
+        <error to="email-98ee"/>
+    </action>
+    <fork name="fork-a726">
+        <path start="sqoop-8998" />
+        <path start="sqoop-42c1" />
+        <path start="sqoop-ae1e" />
+        <path start="sqoop-ea27" />
+        <path start="sqoop-f255" />
+        <path start="sqoop-1a36" />
+        <path start="sqoop-0853" />
+    </fork>
+    <join name="join-127c" to="End"/>
+    <action name="sqoop-ae1e">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  RECID,SUBID,NATION,TAX_CODE,TAX_TYPE,TAX_REMITTANCE_ID,TAX_POINT_TAG,PERCENT_FLAT_TAG,SEQ_NO,TAX_UNIT_TG1,TAX_UNIT_TG2,TAX_UNIT_TG3,TAX_UNIT_TG4,TAX_UNIT_TG5,TAX_UNIT_TG6,TAX_UNIT_TG7,TAX_UNIT_TG8,TAX_UNIT_TG9,TAX_UNIT_TG10,CALC_ORDER,SALES_FIRST_DATE,SALES_LAST_DATE,TRAVEL_DATES_IND,TRAVEL_DATES_FIRST,TRAVEL_DATES_LAST,TAX_CARRIER,CXR_APPL_TBLNO_190,RTN_TO_ORIG,PTC_TABLE_169,TICKETED_POINT_TAG,POINT_OF_SALE_TYPE,POINT_OF_SALE,SECURITY_TBLNO_183,PT_OF_TKTING_TYPE,PT_OF_TKTING,PT_OF_DLVRY_TYPE,PT_OF_DLVRY,JRNY_GEO_SPEC_IND,GEO_SPEC_LOC1_TYPE,GEO_SPEC_LOC1,GEO_SPEC_LOC2_TYPE,JRNY_GEO_SPEC_LOC2,JRNY_INCL_TYPE,JOURNEY_INCLUDES_LOC,TRL_WLY_IN_LOC_TYPE,TRL_WLY_IN_LOC,TAX1INTLDOM,TAX1TNFRTYP,TAX1STPOVRTG,TAX1LOCTYP,TAX1LOC,TAX2INTLDOM,TAX2COMP,TAX2STPOVRTG,TAX2LOCTYP,TAX2LOC,TAX3GEOTYP,TAX3LOCTYP,TAX3LOC,TPQT_STPOVR_TIMETAG,TPQT_STPOVR_TIMEUNIT,TPQT_CONNECTION_TAGS,BAGGAGE_APPLN_TAG,BAGGAGE_TABLENO168,CXRFLT_TABLENO186,SEC_DTL_APPLN_TAG,SEC_DTL_TBLNO167,TKT_VAL_APPLN,TKT_VAL_MIN,TKT_VAL_MAX,TKT_VAL_CURR,DECIMALPT,CURRENCY_OF_SALE,PAIDBY_THIRDPARTY,RATD_DATE,HIST_SALE_EFF,HISTORIC_SALE_DISC,HIST_TVL_EFF,HIST_TVL_DISC,TAX_CALC_AMT,TAX_CALC_CURR,TAX_CALC_DEC,TAX_CALC_PERCENT,TAX_CALC_MINTAX,TAX_CALC_MAXTAX,TAX_CALC_MINMAXCURR,TAX_CALC_MINMAXDECI,TAX_CALC_VATIND,TAX_CALC_TAXAPPLIESTO,TAX_CALC_TAXAPPLLIMIT,TAX_CALC_NETREMITTAG,TAX_ROUND_UNIT,TAX_ROUND_DIR,TAXRULE_REFTAG,TXT_TBLNO164,TAX_PRCS_APPL_TAG,TAX_MATCHING_APPL_TAG,OUTPUT_TYPEIND,EXEMPT_TAG from FRR_SUBS_X1 where $CONDITIONS &quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--map-column-java</arg>
+              <arg>TRAVEL_DATES_FIRST=String,TRAVEL_DATES_LAST=String,SALES_FIRST_DATE=String,SALES_LAST_DATE=String,HISTORIC_SALE_DISC=String,HIST_SALE_EFF=String,HIST_TVL_DISC=String,HIST_TVL_EFF=String</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FRR_SUBS_X1</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TABLE_FRR_SUBS_X1}</arg>
+              <arg>--split-by</arg>
+              <arg>RECID</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-127c"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="sqoop-ea27">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  RECID,SUBID,ACTION,TBL_ID,TBL_NO,TVL_AGT,CXR,DUTY_CD,LOCTYPE,LOC,CODE,VIEWSHIP,ACTDISCDT from FRR_SUBS_TBL183 where $CONDITIONS &quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FRR_SUBS_TBL183</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TABLE_FRR_SUBS_TBL183}</arg>
+              <arg>--split-by</arg>
+              <arg>RECID</arg>
+              <arg>--map-column-java</arg>
+              <arg>ACTDISCDT=String</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-127c"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="sqoop-f255">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  RECID,SUBID,ACTIONCD,TBLNO,SEGS,ACTDISCDT,VENDORID from FRR_SUBS_TBL186 where $CONDITIONS &quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FRR_SUBS_TBL186</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TABLE_FRR_SUBS_TBL186}</arg>
+              <arg>--split-by</arg>
+              <arg>RECID</arg>
+              <arg>--map-column-java</arg>
+              <arg>ACTDISCDT=String</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-127c"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="sqoop-1a36">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  RECID,SEQNO,MKTCXR,OPERATINGCXR,FLTNO1,FLTNO2 from FRR_SUBS_TBL186SEG where $CONDITIONS &quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>FRR_SUBS_TBL186SEG</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TABLE_FRR_SUBS_TBL186SEG}</arg>
+              <arg>--split-by</arg>
+              <arg>RECID</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-127c"/>
+        <error to="email-98ee"/>
+    </action>
+    <action name="sqoop-0853">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+              <arg>import</arg>
+              <arg>-D</arg>
+              <arg>mapred.child.java.opts=&quot;-Djava.security.egd=file:/dev/../dev/urandom&quot;</arg>
+              <arg>--options-file</arg>
+              <arg>${FRR_SQOOP_OPTIONS_FILE}</arg>
+              <arg>--query</arg>
+              <arg>&quot;SELECT  APPENDIXDID, COUNTRY, COUNTRYCD, CURR, COUNTRYENABLED, CURRENABLED, QSSIGDIGITS, ROUNDING, ZONECD from OAL_COUNTRY_CURRENCY_MAP where $CONDITIONS &quot;</arg>
+              <arg>--as-avrodatafile</arg>
+              <arg>--enclosed-by</arg>
+              <arg>&#39;\&quot;&#39;</arg>
+              <arg>--null-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--null-non-string</arg>
+              <arg>&#39;\\N&#39;</arg>
+              <arg>--class-name</arg>
+              <arg>OAL_COUNTRY_CURRENCY_MAP</arg>
+              <arg>--compress</arg>
+              <arg>--compression-codec</arg>
+              <arg>org.apache.hadoop.io.compress.SnappyCodec</arg>
+              <arg>--target-dir</arg>
+              <arg>${TABLE_OAL_COUNTRY_CURRENCY_MAP}</arg>
+              <arg>--split-by</arg>
+              <arg>APPENDIXDID</arg>
+            <file>${FRR_SQOOP_OPTIONS_FILE}#${FRR_SQOOP_OPTIONS_FILE}</file>
+        </sqoop>
+        <ok to="join-127c"/>
+        <error to="Kill"/>
+    </action>
+    <end name="End"/>
+</workflow-app>

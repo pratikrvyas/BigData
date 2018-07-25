@@ -1,0 +1,123 @@
+[
+{
+  "pk": 2164234, 
+  "model": "desktop.document2", 
+  "fields": {
+    "search": "", 
+    "uuid": "c498f7f3-5ff9-490b-93f4-6ddbeb14b53e", 
+    "extra": "", 
+    "type": "oozie-workflow2", 
+    "description": "This workflow take Payload data from decompose and sync schema with loadsheet incremental", 
+    "is_history": false, 
+    "parent_directory": [
+      "f1992374-b8b7-458e-b157-af952172c926", 
+      1, 
+      false
+    ], 
+    "last_modified": "2018-05-17T11:25:52.943", 
+    "version": 1, 
+    "owner": [
+      "ops_eff"
+    ], 
+    "dependencies": [
+      [
+        "1e6291f9-3171-4a99-814f-8ba35bf1508f", 
+        1, 
+        true
+      ], 
+      [
+        "f5d377f7-8dfc-4e66-b6eb-e5d234969f45", 
+        1, 
+        true
+      ], 
+      [
+        "676fb870-90ff-48e2-a36f-6c534510ccbf", 
+        1, 
+        true
+      ], 
+      [
+        "92781cfd-a409-4366-aa1e-1034e05d4df4", 
+        1, 
+        true
+      ], 
+      [
+        "865bcf30-7b0f-4ecd-8323-d8888cba3f1c", 
+        1, 
+        true
+      ], 
+      [
+        "7ac548a0-1337-4df9-9fb4-26c171b4c15e", 
+        1, 
+        true
+      ], 
+      [
+        "956b4d7c-5076-4a6f-b5c3-963c6840d7e3", 
+        1, 
+        true
+      ], 
+      [
+        "b7137f5b-5810-4c9d-a38a-7fade27819bb", 
+        1, 
+        true
+      ], 
+      [
+        "56a9be02-d5f2-4876-9a94-d26d87d507ef", 
+        1, 
+        true
+      ], 
+      [
+        "8bb28f1c-ce36-4493-9854-8591e6caec17", 
+        1, 
+        true
+      ], 
+      [
+        "f60c9f6b-17cb-4257-a392-7a5cba8011ab", 
+        1, 
+        true
+      ], 
+      [
+        "c975503f-dcf6-4c2f-aaf1-05214ce69a83", 
+        1, 
+        true
+      ], 
+      [
+        "5dfbf138-1fbe-49c8-ac7a-9f685f73d45c", 
+        1, 
+        true
+      ], 
+      [
+        "606df697-d856-4dc9-9c02-b26e61c7a6e4", 
+        1, 
+        true
+      ], 
+      [
+        "4f3a96b0-2ecd-4540-9859-e16d4522c707", 
+        1, 
+        true
+      ], 
+      [
+        "05c107dd-9bd9-4c82-b907-0012ab390e02", 
+        1, 
+        true
+      ], 
+      [
+        "0963bc95-5012-4c3e-9b29-2bd86eaad5fb", 
+        1, 
+        true
+      ], 
+      [
+        "34678a57-965e-49fc-8dba-7922699f75d3", 
+        1, 
+        true
+      ], 
+      [
+        "0108b276-144a-4d13-ab59-af0b9c46de8f", 
+        1, 
+        true
+      ]
+    ], 
+    "data": "{\"layout\": [{\"oozieRows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Shell\", \"widgetType\": \"shell-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"size\": 12}], \"id\": \"3decc7cc-f0ca-34b3-2270-3d20956a47ce\", \"columns\": []}], \"rows\": [{\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"d5a7e090-85d5-e236-a2ad-41084a23e8ce\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Shell\", \"widgetType\": \"shell-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"size\": 12}], \"id\": \"3decc7cc-f0ca-34b3-2270-3d20956a47ce\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"010a614c-1983-1670-383b-d8797a02bb65\", \"columns\": []}, {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"583cf827-f58f-3a8f-d2ec-145efe6238fd\", \"columns\": []}], \"oozieEndRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"End\", \"widgetType\": \"end-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"size\": 12}], \"id\": \"010a614c-1983-1670-383b-d8797a02bb65\", \"columns\": []}, \"oozieKillRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Kill\", \"widgetType\": \"kill-widget\", \"oozieMovable\": true, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"size\": 12}], \"id\": \"583cf827-f58f-3a8f-d2ec-145efe6238fd\", \"columns\": []}, \"enableOozieDropOnAfter\": true, \"oozieStartRow\": {\"enableOozieDropOnBefore\": true, \"enableOozieDropOnSide\": true, \"enableOozieDrop\": false, \"widgets\": [{\"status\": \"\", \"logsURL\": \"\", \"name\": \"Start\", \"widgetType\": \"start-widget\", \"oozieMovable\": false, \"ooziePropertiesExpanded\": false, \"externalIdUrl\": \"\", \"properties\": {}, \"isLoading\": true, \"offset\": 0, \"actionURL\": \"\", \"progress\": 0, \"klass\": \"card card-widget span12\", \"oozieExpanded\": false, \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"size\": 12}], \"id\": \"d5a7e090-85d5-e236-a2ad-41084a23e8ce\", \"columns\": []}, \"klass\": \"card card-home card-column span12\", \"enableOozieDropOnBefore\": true, \"drops\": [\"temp\"], \"id\": \"7a42d413-fd73-e125-fa65-a5f4604a9de2\", \"size\": 12}], \"workflow\": {\"properties\": {\"job_xml\": \"\", \"description\": \"This workflow take Payload data from decompose and sync schema with loadsheet incremental\", \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"oozie.launcher.mapreduce.job.queuename\", \"value\": \"ingest\"}, {\"name\": \"OUTPUT_HDFS_PATH\", \"value\": \"/data/helix/uat/modelled/emfg/sync/altea/loadsheet/2018-04-20/00-00\"}, {\"name\": \"COMPRESSION\", \"value\": \"snappy\"}, {\"name\": \"SPARK_JAR\", \"value\": \"/apps/helix/conf/oozie/workspaces/uat/wf_SchemaSyncAlteaLoadsheetInitial/lib/payload-loadsheet-schemasync-1.0.1.540.jar\"}, {\"name\": \"CLASS_NAME\", \"value\": \"com.emirates.helix.PayloadLoadsheetSchemaSyncDriver\"}, {\"name\": \"EXECUTOR_MEMORY\", \"value\": \"8g\"}, {\"name\": \"DRIVER_MEMORY\", \"value\": \"8g\"}, {\"name\": \"QUEUE\", \"value\": \"opseff\"}, {\"name\": \"MIN_EXECUTORS\", \"value\": \"4\"}, {\"name\": \"MAX_EXECUTORS\", \"value\": \"20\"}, {\"name\": \"EMAIL_LIST\", \"value\": \"pratik.vyas@dnata.com, aswini.subramani@dnata.com, krishnaraj.rajagopal@emirates.com, fayazbasha.shaik@dnata.com\"}, {\"name\": \"INPUT_HDFS_PATH_CLC_FLIGHT_DTLS\", \"value\": \" /data/helix/decomposed/altea/clc_flight_dtls/full/1.0/*/*/*.avro\"}, {\"name\": \"INPUT_HDFS_PATH_CLC_CABIN_SEC_INFO\", \"value\": \"/data/helix/decomposed/altea/clc_cabin_sec_info/full/1.0/*/*/*.avro\"}, {\"name\": \"INPUT_HDFS_PATH_CLC_CREW_FIGURES\", \"value\": \"/data/helix/decomposed/altea/clc_crew_figures/full/1.0/*/*/*.avro\"}, {\"name\": \"INPUT_HDFS_PATH_CLC_LEG_INFO\", \"value\": \"/data/helix/decomposed/altea/clc_leg_info/full/1.0/*/*/*.avro\"}, {\"name\": \"INPUT_HDFS_PATH_CLC_PAX_BAG_TOTAL\", \"value\": \"/data/helix/decomposed/altea/clc_pax_bag_total/full/1.0/*/*/*.avro\"}, {\"name\": \"INPUT_HDFS_PATH_CLC_PAX_FIGURES\", \"value\": \"/data/helix/decomposed/altea/clc_pax_figures/full/1.0/*/*/*.avro\"}, {\"name\": \"INPUT_HDFS_PATH_MACS_LOAD_SHEET_DATA\", \"value\": \"/data/helix/decomposed/altea/macs_load_sheet_data/full/1.0/*/*/*.avro\"}, {\"name\": \"INPUT_HDFS_PATH_MACS_CARGO_DSTR_CMPT\", \"value\": \"/data/helix/decomposed/altea/macs_cargo_dstr_cmpt/full/1.0/*/*/*.avro\"}, {\"name\": \"COALESCE_VALUE\", \"value\": \"20\"}], \"sla_enabled\": false, \"deployment_dir\": \"/apps/helix/conf/oozie/workspaces/uat/wf_SchemaSyncAlteaLoadsheetInitial\", \"schema_version\": \"uri:oozie:workflow:0.5\", \"properties\": [{\"name\": \"oozie.launcher.mapred.job.queue.name\", \"value\": \"opseff\"}, {\"name\": \"mapred.job.queue.name\", \"value\": \"opseff\"}], \"show_arrows\": true, \"wf1_id\": null, \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"name\": \"SchemaSyncAlteaLoadsheetInitial_UAT \", \"hasKillNode\": true, \"versions\": [\"uri:oozie:workflow:0.4\", \"uri:oozie:workflow:0.4.5\", \"uri:oozie:workflow:0.5\"], \"isDirty\": true, \"movedNode\": null, \"linkMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": [], \"3f107997-04cc-8733-60a9-a4bb62cebffc\": [\"c324533a-75b3-c136-d1e3-ad7748298ca7\"], \"c324533a-75b3-c136-d1e3-ad7748298ca7\": [\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"], \"17c9c895-5a16-7443-bb81-f34b30b21548\": []}, \"nodeIds\": [\"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"c324533a-75b3-c136-d1e3-ad7748298ca7\"], \"nodes\": [{\"properties\": {}, \"name\": \"Start\", \"children\": [{\"to\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\"}], \"actionParametersFetched\": false, \"type\": \"start-widget\", \"id\": \"3f107997-04cc-8733-60a9-a4bb62cebffc\", \"actionParameters\": []}, {\"properties\": {}, \"name\": \"End\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"end-widget\", \"id\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\", \"actionParameters\": []}, {\"properties\": {\"body\": \"Workflow Name: ${wf:name()} \\nCurrent Timestamp: ${timestamp()}\", \"cc\": \"\", \"to\": \"${EMAIL_LIST}\", \"enableMail\": true, \"message\": \"Action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]\", \"subject\": \"${wf:name()} failed\"}, \"name\": \"Kill\", \"children\": [], \"actionParametersFetched\": false, \"type\": \"kill-widget\", \"id\": \"17c9c895-5a16-7443-bb81-f34b30b21548\", \"actionParameters\": []}, {\"properties\": {\"files\": [{\"value\": \"spark-execute.sh\"}], \"job_xml\": \"\", \"retry_interval\": [], \"retry_max\": [], \"job_properties\": [], \"capture_output\": true, \"shell_command\": \"spark-execute.sh\", \"arguments\": [{\"value\": \"hdfs://${SPARK_JAR}\"}, {\"value\": \"${CLASS_NAME}\"}, {\"value\": \"${EXECUTOR_MEMORY}\"}, {\"value\": \"${DRIVER_MEMORY}\"}, {\"value\": \"${QUEUE}\"}, {\"value\": \"${MIN_EXECUTORS}\"}, {\"value\": \"${MAX_EXECUTORS}\"}, {\"value\": \"${INPUT_HDFS_PATH_CLC_FLIGHT_DTLS}\"}, {\"value\": \"${ INPUT_HDFS_PATH_CLC_CABIN_SEC_INFO}\"}, {\"value\": \"${INPUT_HDFS_PATH_CLC_CREW_FIGURES }\"}, {\"value\": \"${ INPUT_HDFS_PATH_CLC_LEG_INFO}\"}, {\"value\": \"${INPUT_HDFS_PATH_CLC_PAX_BAG_TOTAL }\"}, {\"value\": \"${INPUT_HDFS_PATH_CLC_PAX_FIGURES }\"}, {\"value\": \"${ INPUT_HDFS_PATH_MACS_LOAD_SHEET_DATA}\"}, {\"value\": \"${ INPUT_HDFS_PATH_MACS_CARGO_DSTR_CMPT}\"}, {\"value\": \"${OUTPUT_HDFS_PATH}\"}, {\"value\": \"${COALESCE_VALUE}\"}, {\"value\": \"${COMPRESSION}\"}], \"prepares\": [{\"type\": \"delete\", \"value\": \"${OUTPUT_HDFS_PATH}\"}], \"credentials\": [], \"env_var\": [], \"sla\": [{\"value\": false, \"key\": \"enabled\"}, {\"value\": \"${nominal_time}\", \"key\": \"nominal-time\"}, {\"value\": \"\", \"key\": \"should-start\"}, {\"value\": \"${30 * MINUTES}\", \"key\": \"should-end\"}, {\"value\": \"\", \"key\": \"max-duration\"}, {\"value\": \"\", \"key\": \"alert-events\"}, {\"value\": \"\", \"key\": \"alert-contact\"}, {\"value\": \"\", \"key\": \"notification-msg\"}, {\"value\": \"\", \"key\": \"upstream-apps\"}], \"archives\": []}, \"name\": \"shell-c324\", \"children\": [{\"to\": \"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\"}, {\"error\": \"17c9c895-5a16-7443-bb81-f34b30b21548\"}], \"actionParametersFetched\": false, \"type\": \"shell-widget\", \"id\": \"c324533a-75b3-c136-d1e3-ad7748298ca7\", \"actionParameters\": []}], \"id\": 2164234, \"nodeNamesMapping\": {\"33430f0f-ebfa-c3ec-f237-3e77efa03d0a\": \"End\", \"3f107997-04cc-8733-60a9-a4bb62cebffc\": \"Start\", \"c324533a-75b3-c136-d1e3-ad7748298ca7\": \"shell-c324\", \"17c9c895-5a16-7443-bb81-f34b30b21548\": \"Kill\"}, \"uuid\": \"ca4fddd7-8ef8-5590-bff8-04e83b321f92\"}}", 
+    "name": "SchemaSyncAlteaLoadsheetInitial_UAT "
+  }
+}
+]

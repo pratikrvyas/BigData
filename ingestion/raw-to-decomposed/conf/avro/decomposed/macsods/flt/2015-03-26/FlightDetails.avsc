@@ -1,0 +1,153 @@
+{
+  "type" : "record",
+  "name" : "AnonType_FlightDetails",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "source" : "HELIX_UUID"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "source" : "HELIX_TIMESTAMP"
+  },{
+    "name" : "FLT_SNAPSHOT_DAY",
+    "type" : [ "null", "string" ],
+    "source" : "FLT_SNAPSHOT_DAY"
+  }, {
+    "name" : "MFL_ID",
+    "type" : [ "null", "string" ],
+    "source" : "MFL_ID"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "null", "string" ],
+    "source" : "AIRLINE_DESIGNATOR"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_EXP",
+    "type" : [ "null", "string" ],
+    "source" : "AIRLINE_DESIGNATOR_EXP"
+  }, {
+    "name" : "FLIGHT_NUMBER",
+    "type" : [ "null", "string" ],
+    "source" : "FLIGHT_NUMBER"
+  }, {
+    "name" : "OPERATION_DATE",
+    "type" : [ "null", "string" ],
+    "source" : "OPERATION_DATE"
+  }, {
+    "name" : "OPERATION_TIME",
+    "type" : [ "null", "string" ],
+    "source" : "OPERATION_TIME"
+  }, {
+    "name" : "OPERATION_DATE_GMT",
+    "type" : [ "null", "string" ],
+    "source" : "OPERATION_DATE_GMT"
+  }, {
+    "name" : "OPERATION_TIME_GMT",
+    "type" : [ "null", "string" ],
+    "source" : "OPERATION_TIME_GMT"
+  }, {
+    "name" : "LATEST_DEPARTURE_DATE",
+    "type" : [ "null", "string" ],
+    "source" : "LATEST_DEPARTURE_DATE"
+  }, {
+    "name" : "LATEST_DEPARTURE_TIME",
+    "type" : [ "null", "string" ],
+    "source" : "LATEST_DEPARTURE_TIME"
+  }, {
+    "name" : "LATEST_DEPARTURE_DATE_GMT",
+    "type" : [ "null", "string" ],
+    "source" : "LATEST_DEPARTURE_DATE_GMT"
+  }, {
+    "name" : "LATEST_DEPARTURE_TIME_GMT",
+    "type" : [ "null", "string" ],
+    "source" : "LATEST_DEPARTURE_TIME_GMT"
+  }, {
+    "name" : "BOARD_POINT",
+    "type" : [ "null", "string" ],
+    "source" : "BOARD_POINT"
+  }, {
+    "name" : "AIRCRAFT_TYPE",
+    "type" : [ "null", "string" ],
+    "source" : "AIRCRAFT_TYPE"
+  }, {
+    "name" : "CLASS_CONFIGURATION",
+    "type" : [ "null", "string" ],
+    "source" : "CLASS_CONFIGURATION"
+  }, {
+    "name" : "REGISTRATION_NUMBER",
+    "type" : [ "null", "string" ],
+    "source" : "REGISTRATION_NUMBER"
+  }, {
+    "name" : "PANTRY_CODE",
+    "type" : [ "null", "string" ],
+    "source" : "PANTRY_CODE"
+  }, {
+    "name" : "CREW_CODE",
+    "type" : [ "null", "string" ],
+    "source" : "CREW_CODE"
+  }, {
+    "name" : "GATE_NUMBER",
+    "type" : [ "null", "string" ],
+    "source" : "GATE_NUMBER"
+  }, {
+    "name" : "BAGGAGE_CONCEPT",
+    "type" : [ "null", "string" ],
+    "source" : "BAGGAGE_CONCEPT"
+  }, {
+    "name" : "SEAT_MASK_CODE",
+    "type" : [ "null", "string" ],
+    "source" : "SEAT_MASK_CODE"
+  }, {
+    "name" : "ULD_CODE",
+    "type" : [ "null", "string" ],
+    "source" : "ULD_CODE"
+  }, {
+    "name" : "FLIGHT_STATUS",
+    "type" : [ "null", "string" ],
+    "source" : "FLIGHT_STATUS"
+  }, {
+    "name" : "PROGRESS",
+    "type" : [ "null", "string" ],
+    "source" : "PROGRESS"
+  }, {
+    "name" : "DOWNLOAD_DATE",
+    "type" : [ "null", "string" ],
+    "source" : "DOWNLOAD_DATE"
+  }, {
+    "name" : "TIME_STAMP",
+    "type" : [ "null", "string" ],
+    "source" : "TIME_STAMP"
+  }, {
+    "name" : "FLIGHT_NUMBER_EXP",
+    "type" : [ "null", "string" ],
+    "source" : "FLIGHT_NUMBER_EXP"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "source" : "CREATED"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "source" : "USR_CREATED"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "source" : "CHANGED"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "source" : "USR_CHANGED"
+  }, {
+    "name" : "FF_NOTIFIED",
+    "type" : [ "null", "string" ],
+    "source" : "FF_NOTIFIED"
+  }, {
+    "name" : "PD_COUNT",
+    "type" : [ "null", "string" ],
+    "source" : "PD_COUNT"
+  }, {
+    "name" : "STATUS",
+    "type" : [ "null", "string" ],
+    "source" : "STATUS"
+  } ]
+}

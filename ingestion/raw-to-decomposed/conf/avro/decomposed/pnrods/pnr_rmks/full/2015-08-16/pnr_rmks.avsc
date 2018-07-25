@@ -1,0 +1,298 @@
+{
+  "type": "record",
+  "name": "TMP_PNR_RMKS",
+  "namespace": "datalake",
+  "fields": [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+	"sqlType" : "12"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+	"sqlType" : "12"
+  },
+    {
+      "name": "PNR_RMK_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PNR_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "REMARK_TYPE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "PNR_SYMBOLIC_ADDRESS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BCD_TIME",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BCD_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BCD_CITY_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "BCD_CITY_CODE_EXP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AIRLINE_DESIGNATOR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AIRLINE_DESIGNATOR_EXP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AGENT_INITIALS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DUTY_INITIALS",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DVD_MSG",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "VARIABLE_TEXT",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DUTY_CODE_CREATOR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CITY_CREATOR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CITY_CREATOR_EXP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "HA_ID_CREATOR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "HA_ID_CREATOR_EXP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRAVEL_AGENCY_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "DATE_CREATION",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TIME_CREATION",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "GAL_CITY_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "GAL_CITY_CODE_EXP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CRS_AIRLINE_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CRS_AIRLINE_CODE_EXP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CLAIM_RESTRICTION_IND",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AMD_CITY_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AMD_CITY_CODE_EXP",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SME_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "FFP_NUMBER",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NUM_OF_ADDRESSEE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "CITY_CODE_ADDRESSEE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "HOST_AIRLINE_CODE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "TRV_AGENCY_ID",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "SPARE_4_ADDRESSEE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AGENT_BCD_DATE",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AGENT_BCD_TIME",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NEGOSPACE_OWNR",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "NEGOSPACE_AGENT_CRT",
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  ]
+}
+

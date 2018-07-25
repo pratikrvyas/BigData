@@ -1,0 +1,244 @@
+{
+  "type": "record",
+  "name": "FRR_INF_DATA_NEW",
+  "fields": [
+    {
+      "name": "ID1",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OBSERVATION_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OBSERVATION_TIME",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "POS",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "ORIGIN",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "DESTINATION",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "IS_ONE_WAY",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OUTBOUND_TRAVEL_STOP_OVER",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "INBOUND_TRAVEL_STOP_OVER",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "CARRIER",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OUTBOUND_FLIGHT_NO",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "INBOUND_FLIGHT_NO",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OUTBOUND_DEPARTURE_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OUTBOUND_ARRIVAL_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "INBOUND_DEPARTURE_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "INBOUND_ARRIVAL_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OUTBOUND_FARE_BASIS",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "INBOUND_FARE_BASIS",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OUTBOUND_BOOKING_CLASS",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "INBOUND_BOOKING_CLASS",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "PRICE_EXC",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "PRICE_INC",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "TAX",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "CURRENCY",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "SOURCE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "PRICE_OUTBOUND",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "PRICE_INBOUND",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "IS_TAX_INC_OUTIN",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "COMPARTMENT",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "LOAD_DATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OUTBOUND_DEPARTURE_TIME",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "INBOUND_DEPARTURE_TIME",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "OUTBOUND_ARRIVAL_TIME",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "INBOUND_ARRIVAL_TIME",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  ]
+}

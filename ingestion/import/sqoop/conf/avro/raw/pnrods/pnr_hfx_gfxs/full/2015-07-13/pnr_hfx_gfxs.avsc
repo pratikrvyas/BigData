@@ -1,0 +1,317 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_PNR_HFX_GFXS",
+  "doc" : "Sqoop import of PNR_OWNR.PNR_HFX_GFXS",
+  "fields" : [ {
+    "name" : "PNR_HFX_GFX_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_HFX_GFX_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_ITN_PNR_ITN_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_ITN_PNR_ITN_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PNR_PAX_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PNR_PAX_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HFX_GFX_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "HFX_GFX_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "HFX_GFX_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "HFX_GFX_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICE_TYPE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERVICE_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERVICE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_SUFFIX",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_SUFFIX",
+    "sqlType" : "12"
+  }, {
+    "name" : "FFP_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "FFP_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_SSR",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR_SSR",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_SSR_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR_SSR_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_FLT",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR_FLT",
+    "sqlType" : "12"
+  }, {
+    "name" : "AIRLINE_DESIGNATOR_FLT_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DESIGNATOR_FLT_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_NUMBER_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_NUMBER_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "SERVICE_CLASS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SERVICE_CLASS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "RESERVATION_CLASS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "RESERVATION_CLASS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "INVENTORY_CLASS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "INVENTORY_CLASS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "SEGMENT_BOOKING_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SEGMENT_BOOKING_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "BOOKING_STATUS",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOOKING_STATUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "NUMBER_IN_PARTY_WEIGHT_QTY",
+    "type" : [ "string", "null" ],
+    "columnName" : "NUMBER_IN_PARTY_WEIGHT_QTY",
+    "sqlType" : "12"
+  }, {
+    "name" : "WEIGHT_UNIT",
+    "type" : [ "string", "null" ],
+    "columnName" : "WEIGHT_UNIT",
+    "sqlType" : "12"
+  }, {
+    "name" : "VARIABLE_DATA",
+    "type" : [ "string", "null" ],
+    "columnName" : "VARIABLE_DATA",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOARD_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOARD_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "BOARD_POINT_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "BOARD_POINT_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFF_POINT",
+    "type" : [ "string", "null" ],
+    "columnName" : "OFF_POINT",
+    "sqlType" : "12"
+  }, {
+    "name" : "OFF_POINT_EXP",
+    "type" : [ "string", "null" ],
+    "columnName" : "OFF_POINT_EXP",
+    "sqlType" : "12"
+  }, {
+    "name" : "NAME_SEG_ERROR",
+    "type" : [ "string", "null" ],
+    "columnName" : "NAME_SEG_ERROR",
+    "sqlType" : "12"
+  }, {
+    "name" : "SYSTEM_ACTION",
+    "type" : [ "string", "null" ],
+    "columnName" : "SYSTEM_ACTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "HFX_GFX_SEQ_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HFX_GFX_SEQ_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PAX_SEQ_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_SEQ_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "DOC_BIRTHDATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOC_BIRTHDATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DOC_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOC_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "DOC_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DOC_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "GENDER_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "GENDER_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "INFANT_INDICATOR",
+    "type" : [ "string", "null" ],
+    "columnName" : "INFANT_INDICATOR",
+    "sqlType" : "12"
+  }, {
+    "name" : "ISSUE_COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ISSUE_COUNTRY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_FIRST_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_FIRST_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_SECOND_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_SECOND_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_LAST_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_LAST_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PRIMARY_DOC_HOLDER_IND",
+    "type" : [ "string", "null" ],
+    "columnName" : "PRIMARY_DOC_HOLDER_IND",
+    "sqlType" : "12"
+  }, {
+    "name" : "PRIMARY_DOC_HOLDER_FNAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PRIMARY_DOC_HOLDER_FNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "PRIMARY_DOC_HOLDER_LNAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PRIMARY_DOC_HOLDER_LNAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "SSR_NO_IN_PARTY",
+    "type" : [ "string", "null" ],
+    "columnName" : "SSR_NO_IN_PARTY",
+    "sqlType" : "2"
+  }, {
+    "name" : "QUEUE_PLACE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "QUEUE_PLACE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "QUEUE_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "QUEUE_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ARRANGE_LOC_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ARRANGE_LOC_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PAX_REF_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "PAX_REF_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTIVITY_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "ACTIVITY_TIME",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTIVITY_TIME",
+    "sqlType" : "12"
+  }, {
+    "name" : "DUTY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "DUTY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ARRANGE_SINE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ARRANGE_SINE",
+    "sqlType" : "12"
+  }, {
+    "name" : "ACTION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "ACTION_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "TICKET_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "TICKET_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "SSR_START_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SSR_START_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "EMG_CONT_SEQ",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMG_CONT_SEQ",
+    "sqlType" : "2"
+  }, {
+    "name" : "EMG_PHONE",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMG_PHONE",
+    "sqlType" : "12"
+  }, {
+    "name" : "EMG_CONTACT_NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "EMG_CONTACT_NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "COUNTRY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY_CODE",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "PNR_OWNR.PNR_HFX_GFXS"
+}

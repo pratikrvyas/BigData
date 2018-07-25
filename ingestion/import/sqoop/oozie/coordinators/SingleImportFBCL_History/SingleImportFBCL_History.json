@@ -1,0 +1,26 @@
+[
+{
+  "pk": null, 
+  "model": "desktop.document2", 
+  "fields": {
+    "uuid": "b302d3e4-768e-f801-c76e-1d4500b6c440", 
+    "extra": "", 
+    "type": "oozie-coordinator2", 
+    "description": "Schedules ImportFBCL_History", 
+    "is_history": false, 
+    "parent_directory": [
+      "", 
+      1, 
+      false
+    ], 
+    "last_modified": "2017-05-08T16:17:08", 
+    "version": 1, 
+    "owner": [
+      "scv_ops"
+    ], 
+    "dependencies": [], 
+    "data": "{\"end_date\": {\"name\": \"end_date\", \"value\": \"2017-05-08T04:59\"}, \"variables\": [{\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": true, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"c21de0bb-23fc-4e3a-ce20-0b89e2657af4\", \"frequency_number\": \"1\", \"dataset_variable\": \"/data/helix/raw/cris/fare_basis_code_list/incremental/1.0/${YEAR}-${MONTH}-${DAY}/${HOUR}-${MINUTE}\", \"start\": \"2017-05-08T16:01\", \"same_frequency\": false, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"output_path\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"hours\", \"workflow_variable\": \"T_D_FARE_BASIS_CODE_LIST\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"bd128fb8-2e5f-5080-031a-87f36e23c68b\", \"frequency_number\": 1, \"dataset_variable\": \"fbcl_import_db_options\", \"start\": \"2017-05-08T16:09\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"FBCL_SQOOP_OPTIONS_FILE\", \"is_advanced_end_instance\": false}, {\"shared_dataset_uuid\": \"\", \"is_advanced_start_instance\": false, \"show_advanced\": false, \"start_instance\": \"0\", \"timezone\": \"Asia/Dubai\", \"end_instance\": \"0\", \"same_timezone\": true, \"uuid\": \"7ee9a56d-b4a9-ffe9-ad73-54182faf6d22\", \"frequency_number\": 1, \"dataset_variable\": \"/apps/helix/controlfiles/cris/fbcl_history_control.txt\", \"start\": \"2017-05-08T16:09\", \"same_frequency\": true, \"advanced_start_instance\": \"${coord:current(0)}\", \"advanced_end_instance\": \"${coord:current(0)}\", \"instance_choice\": \"default\", \"dataset_type\": \"parameter\", \"use_done_flag\": false, \"done_flag\": \"_SUCCESS\", \"same_start\": true, \"frequency_unit\": \"days\", \"workflow_variable\": \"FBCL_CONTROL_FILE\", \"is_advanced_end_instance\": false}], \"isDirty\": true, \"showAdvancedFrequencyUI\": true, \"variablesUI\": [\"parameter\", \"input_path\", \"output_path\"], \"workflowParameters\": [{\"name\": \"T_D_FARE_BASIS_CODE_LIST\", \"value\": \"\"}, {\"name\": \"FBCL_SQOOP_OPTIONS_FILE\", \"value\": \"\"}, {\"name\": \"FBCL_CONTROL_FILE\", \"value\": \"\"}], \"id\": 124330, \"name\": \"SingleImportFBCL_History\", \"uuid\": \"b302d3e4-768e-f801-c76e-1d4500b6c440\", \"properties\": {\"job_xml\": \"\", \"timeout\": null, \"execution\": \"FIFO\", \"end\": \"${end_date}\", \"description\": \"Schedules ImportFBCL_History\", \"frequency_number\": 1, \"workflow\": \"ca4ddd1f-f5ec-8563-4f80-3b55bad06347\", \"deployment_dir\": \"/user/hue/oozie/workspaces/hue-oozie-1494244865.57\", \"cron_frequency\": \"0 * * * *\", \"frequency_unit\": \"days\", \"schema_version\": \"uri:oozie:coordinator:0.2\", \"cron_advanced\": false, \"start\": \"${start_date}\", \"concurrency\": 0, \"timezone\": \"Asia/Dubai\", \"credentials\": [], \"throttle\": 0, \"parameters\": [{\"name\": \"oozie.use.system.libpath\", \"value\": true}, {\"name\": \"start_date\", \"value\": \"2017-05-08T04:00\"}, {\"name\": \"end_date\", \"value\": \"2017-05-08T04:59\"}], \"sla\": [{\"key\": \"enabled\", \"value\": false}, {\"key\": \"nominal-time\", \"value\": \"${nominal_time}\"}, {\"key\": \"should-start\", \"value\": \"\"}, {\"key\": \"should-end\", \"value\": \"${30 * MINUTES}\"}, {\"key\": \"max-duration\", \"value\": \"\"}, {\"key\": \"alert-events\", \"value\": \"\"}, {\"key\": \"alert-contact\", \"value\": \"\"}, {\"key\": \"notification-msg\", \"value\": \"\"}, {\"key\": \"upstream-apps\", \"value\": \"\"}]}, \"start_date\": {\"name\": \"start_date\", \"value\": \"2017-05-08T04:00\"}}", 
+    "name": "SingleImportFBCL_History"
+  }
+}
+]

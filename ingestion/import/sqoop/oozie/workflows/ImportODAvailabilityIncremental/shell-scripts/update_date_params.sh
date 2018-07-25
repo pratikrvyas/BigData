@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+CONTROL_FILE=$1
+START_DATE=$2
+END_DATE=$3
+HDFS_PATH=$4
+#HDFS_PATH='/user/hue/oozie/workspaces/hue-oozie-1489060932.33'
+CURRENT_TIMESTAMP=`date -u +"%s"`
+
+echo CONTROL_FILE=${CONTROL_FILE}
+echo START_DATE=${START_DATE}
+echo END_DATE=${END_DATE}
+echo HDFS_PATH=${HDFS_PATH}
+
+echo "${START_DATE} ${END_DATE} `date '+%Y-%b-%d %a %T'`" > ${CONTROL_FILE}.${CURRENT_TIMESTAMP}
+hdfs dfs -appendToFile ${CONTROL_FILE}.${CURRENT_TIMESTAMP} ${HDFS_PATH}/${CONTROL_FILE}

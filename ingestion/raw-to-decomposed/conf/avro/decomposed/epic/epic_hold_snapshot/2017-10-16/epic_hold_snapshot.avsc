@@ -1,0 +1,47 @@
+{
+  "type" : "record",
+  "name" : "EPIC_HOLD_SNAPSHOT",
+  "fields" : [ 
+  {
+    "name" : "UUID",
+    "type" : [ "null", "string" ],
+    "default" : null
+  },
+  {
+    "name" : "TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null
+  },
+  {
+    "name" : "HOLD_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOLD_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "ETA_CALC_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ETA_CALC_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HOLD_ENTRY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOLD_ENTRY",
+    "sqlType" : "93"
+  }, {
+    "name" : "HOLD_EXIT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOLD_EXIT",
+    "sqlType" : "93"
+  }, {
+    "name" : "HOLD_AREA",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "HOLD_AREA",
+    "sqlType" : "12"
+  }
+  ]
+}

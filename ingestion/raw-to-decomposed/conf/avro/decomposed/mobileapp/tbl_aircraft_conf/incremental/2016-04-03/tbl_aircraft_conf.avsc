@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "TBL_AIRCRAFT_CONF",
+  "fields": [
+  {"name":"HELIX_UUID","type":["null","string"]},
+{"name":"HELIX_TIMESTAMP","type":["null","string"]},  
+{"name" :  "FLIGHT_NO_AND_DATE","type" : ["null", "string"]},
+{"name" :  "AIRCRAFT_TYPE","type" : ["null", "string"]},
+{"name" :  "CONF","type" : ["null", "string"]},
+{"name" :  "LST_UPDATED_TIME","type" : ["null", "string"]}
+
+]
+}
+

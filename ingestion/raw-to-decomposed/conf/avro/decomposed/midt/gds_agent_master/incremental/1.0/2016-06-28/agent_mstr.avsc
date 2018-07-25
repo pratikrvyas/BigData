@@ -1,0 +1,88 @@
+{
+  "type" : "record",
+  "name" : "import_agent_mstr",
+  "doc" : "import of DW_OWNR.agent_mstr",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "GDS_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "GDS_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "PSEUDO_CITY_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PSEUDO_CITY_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENCY_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENCY_NUMBER",
+    "sqlType" : "2"
+  }, {
+    "name" : "CHECK_DIGIT",
+    "type" : [ "string", "null" ],
+    "columnName" : "CHECK_DIGIT",
+    "sqlType" : "93"
+  }, {
+    "name" : "NAME",
+    "type" : [ "string", "null" ],
+    "columnName" : "NAME",
+    "sqlType" : "12"
+  }, {
+    "name" : "ADDRESS_1",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADDRESS_1",
+    "sqlType" : "93"
+  }, {
+    "name" : "ADDRESS_2",
+    "type" : [ "string", "null" ],
+    "columnName" : "ADDRESS_2",
+    "sqlType" : "12"
+  }, {
+    "name" : "CITY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CITY",
+    "sqlType" : "12"
+  }, {
+    "name" : "STATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STATE",
+    "sqlType" : "2"
+  }, {
+    "name" : "POSTAL_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "POSTAL_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "COUNTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "COUNTRY",
+    "sqlType" : "2"
+  }, {
+    "name" : "FILLER",
+    "type" : [ "string", "null" ],
+    "columnName" : "FILLER",
+    "sqlType" : "12"
+  },{
+    "name" : "BATCH_NUMBER",
+    "type" : [ "string", "null" ],
+    "columnName" : "BATCH_NUMBER",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROCESSING_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PROCESSING_DATE",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.agent_mstr"
+}

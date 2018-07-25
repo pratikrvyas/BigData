@@ -1,0 +1,63 @@
+{
+  "type" : "record",
+  "name" : "arinc_airport_decomposed",
+  "fields" : 
+[
+{
+"name" : "port",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "portic",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "name",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "lat",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "lon",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "elev",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "magvar",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "translv",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "cycle",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "country",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "city",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "iata",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "uuid",
+"type" : [ "string", "null" ]
+},
+{
+"name" : "timestamp",
+"type" : [ "string", "null" ]
+}
+]
+}

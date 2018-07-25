@@ -1,0 +1,55 @@
+{
+  "type" : "record",
+  "name" : "flight_types",
+  "fields" : [ {
+    "name" : "FLTP_FLIGHT_TYPE_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLTP_FLIGHT_TYPE_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "FLTP_FLIGHT_CATEGORY",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLTP_FLIGHT_CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLTP_IATA_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLTP_IATA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLTP_DESCRIPTION",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLTP_DESCRIPTION",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLTP_ICAO_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FLTP_ICAO_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_DT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_DT",
+    "sqlType" : "12"
+  }, {
+    "name" : "UPDT_USER",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "UPDT_USER",
+    "sqlType" : "12"
+  }, {
+    "name" : "HELIX_UUID",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }    ]
+}

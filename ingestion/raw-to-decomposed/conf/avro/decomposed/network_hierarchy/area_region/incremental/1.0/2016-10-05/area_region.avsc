@@ -1,0 +1,58 @@
+{
+  "type" : "record",
+  "name" : "import_networkhierarchi",
+  "doc" : "import of DW_OWNR.area_region",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "AREA",
+    "type" : [ "string", "null" ],
+    "columnName" : "AREA",
+    "sqlType" : "12"
+  },{
+    "name" : "NEW_AREA",
+    "type" : [ "string", "null" ],
+    "columnName" : "NEW_AREA",
+    "sqlType" : "12"
+  },{
+    "name" : "AREA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AREA_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "NEW_AREA_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NEW_AREA_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "REGION",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION",
+    "sqlType" : "2"
+  }, {
+    "name" : "NEW_REGION",
+    "type" : [ "string", "null" ],
+    "columnName" : "NEW_REGION",
+    "sqlType" : "93"
+  }, {
+    "name" : "REGION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "REGION_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "NEW_REGION_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "NEW_REGION_CODE",
+    "sqlType" : "93"
+  }
+],
+  "tableName" : "DW_OWNR.area_region"
+}

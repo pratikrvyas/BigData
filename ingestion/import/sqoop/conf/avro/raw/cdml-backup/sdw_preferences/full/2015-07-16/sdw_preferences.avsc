@@ -1,0 +1,87 @@
+{
+  "type" : "record",
+  "name" : "sqoop_import_SKY_SDW_PREFERENCES",
+  "doc" : "Sqoop import of DW_OWNR.SDW_PREFERENCES",
+  "fields" : [ {
+    "name" : "PREFERENCE_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREFERENCE_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PREFERENCE_DETAIL",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREFERENCE_DETAIL",
+    "sqlType" : "12"
+  }, {
+    "name" : "PERSON_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PERSON_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "SPRF_USR_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SPRF_USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "SPRF_CREATED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SPRF_CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "SPRF_USR_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SPRF_USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "SPRF_CHANGED",
+    "type" : [ "string", "null" ],
+    "columnName" : "SPRF_CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "STG_PROCESS_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "STG_PROCESS_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PREF_TYPE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_TYPE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREF_TYPE_DESCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_TYPE_DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "PREF_CATEGORY_ID",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_CATEGORY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PREF_CATEGORY_DESCR",
+    "type" : [ "string", "null" ],
+    "columnName" : "PREF_CATEGORY_DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "SDW_CREATED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CREATED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_CHANGED_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_CHANGED_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "SDW_REFRESH_DATE",
+    "type" : [ "string", "null" ],
+    "columnName" : "SDW_REFRESH_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PARENT_CARD_NO",
+    "type" : [ "string", "null" ],
+    "columnName" : "PARENT_CARD_NO",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "DW_OWNR.SDW_PREFERENCES"
+}

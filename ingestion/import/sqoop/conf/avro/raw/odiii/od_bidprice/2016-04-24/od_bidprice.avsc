@@ -1,0 +1,111 @@
+{
+  "type": "record",
+  "name": "OD_BIDPRICE",
+  "fields": [
+    {
+      "name": "FLTDATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "FLTNUM",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "CRRCODE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "ORGN",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "DSTN",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "CMPCODE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "SEATIDX",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "LEGDPTDATE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "VALUE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "RAW_VALUE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "UPDATETIME",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "EXPECTED_VALUE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "RAW_EXPECTED_VALUE",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "VALUE_NO_FRQ_FLY_DMD",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    {
+      "name": "RAW_VALUE_NO_FRQ_FLY_DMD",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  ]
+}

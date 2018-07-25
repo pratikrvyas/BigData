@@ -1,0 +1,124 @@
+{
+  "type" : "record",
+  "name" : "import_accelya",
+  "doc" : "import of DW_OWNR.t5115",
+  "fields" : [ {
+    "name" : "HELIX_UUID",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_UUID",
+    "sqlType" : "2"
+  }, {
+    "name" : "HELIX_TIMESTAMP",
+    "type" : [ "string", "null" ],
+    "columnName" : "HELIX_TIMESTAMP",
+    "sqlType" : "12"
+  },{
+    "name" : "MONTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "MONTH",
+    "sqlType" : "4"
+  }, {
+    "name" : "AIRLINE_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "AGENT_CODE",
+    "type" : [ "string", "null" ],
+    "columnName" : "AGENT_CODE",
+    "sqlType" : "2"
+  }, {
+    "name" : "STAT",
+    "type" : [ "string", "null" ],
+    "columnName" : "STAT",
+    "sqlType" : "93"
+  }, {
+    "name" : "ORIGIN_AIRPORT",
+    "type" : [ "string", "null" ],
+    "columnName" : "ORIGIN_AIRPORT",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESTINATION_AIRPORT",
+    "type" : [ "string", "null" ],
+    "columnName" : "DESTINATION_AIRPORT",
+    "sqlType" : "93"
+  }, {
+    "name" : "CLASS_CATEGORY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CLASS_CATEGORY",
+    "sqlType" : "12"
+  }, {
+    "name" : "FLIGHT_MONTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "FLIGHT_MONTH",
+    "sqlType" : "12"
+  }, {
+    "name" : "GROSS_INDUSTRY_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "GROSS_INDUSTRY_AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "GROSS_AIRLINE_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "GROSS_AIRLINE_AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "NET_INDUSTRY_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "NET_INDUSTRY_AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "NET_AIRLINE_AMOUNT",
+    "type" : [ "string", "null" ],
+    "columnName" : "NET_AIRLINE_AMOUNT",
+    "sqlType" : "2"
+  }, {
+    "name" : "INDUSTRY_DOCUMENTS",
+    "type" : [ "string", "null" ],
+    "columnName" : "INDUSTRY_DOCUMENTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "AIRLINE_DOCUMENTS",
+    "type" : [ "string", "null" ],
+    "columnName" : "AIRLINE_DOCUMENTS",
+    "sqlType" : "2"
+  },  {
+    "name" : "YQ_TAX_INDUSTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "YQ_TAX_INDUSTRY",
+    "sqlType" : "2"
+  }, {
+    "name" : "YR_TAX_INDUSTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "YR_TAX_INDUSTRY",
+    "sqlType" : "2"
+  }, {
+    "name" : "YQ_TAX",
+    "type" : [ "string", "null" ],
+    "columnName" : "YQ_TAX",
+    "sqlType" : "2"
+  },{
+    "name" : "YR_TAX",
+    "type" : [ "string", "null" ],
+    "columnName" : "YR_TAX",
+    "sqlType" : "2"
+  },{
+    "name" : "CUTP",
+    "type" : [ "string", "null" ],
+    "columnName" : "CUTP",
+    "sqlType" : "12"
+  }
+, {
+    "name" : "COUNTRY",
+    "type" : [ "string", "null" ],
+    "columnName" : "CUTP",
+    "sqlType" : "12"
+  }, {
+    "name" : "PROCESSING_MONTH",
+    "type" : [ "string", "null" ],
+    "columnName" : "CUTP",
+    "sqlType" : "12"
+  }
+],
+  "tableName" : "DW_OWNR.t5115"
+}

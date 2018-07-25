@@ -1,0 +1,7 @@
+#import
+--connect
+jdbc:oracle:thin:@10.20.143.56:6516:epicop
+--username
+epic_user
+--password
+epic_user

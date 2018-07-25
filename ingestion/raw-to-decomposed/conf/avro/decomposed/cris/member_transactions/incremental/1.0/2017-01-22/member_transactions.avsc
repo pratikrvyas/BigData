@@ -1,0 +1,235 @@
+{
+  "type" : "record",
+  "name" : "MEMBER_TRANSACTIONS",
+  "doc" : "Sqoop import of QueryResult",
+  "fields" : [ {  
+    "name" : "helix_uuid",
+    "type" : [ "null", "string" ]
+  }, {  
+    "name" : "helix_timestamp",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MTR_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "MTR_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "TRANS_TYPE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "TRANS_TYPE",
+    "sqlType" : "12"
+  }, {
+    "name" : "MCD_CARD_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MCD_CARD_NO",
+    "sqlType" : "12"
+  }, {
+    "name" : "EFF_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EFF_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "MEM_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "USR_CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CREATED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CREATED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CREATED",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCR",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR",
+    "sqlType" : "12"
+  }, {
+    "name" : "MST_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MST_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PMA_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PMA_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MTR_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MTR_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "MTR_TRANSFER_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "MTR_TRANSFER_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "PST_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PST_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "QRS_CODE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "QRS_CODE",
+    "sqlType" : "12"
+  }, {
+    "name" : "PTS_UNEXP",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PTS_UNEXP",
+    "sqlType" : "2"
+  }, {
+    "name" : "EXP_ACTION_DATE",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXP_ACTION_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "CNDTNL_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CNDTNL_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "CNDTNL_PTS_REALISED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CNDTNL_PTS_REALISED",
+    "sqlType" : "12"
+  }, {
+    "name" : "VAL_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VAL_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "CORP_CREDIT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CORP_CREDIT",
+    "sqlType" : "12"
+  }, {
+    "name" : "USR_CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "USR_CHANGED",
+    "sqlType" : "12"
+  }, {
+    "name" : "CHANGED",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "CHANGED",
+    "sqlType" : "93"
+  }, {
+    "name" : "FAM_FAMILY_ID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAM_FAMILY_ID",
+    "sqlType" : "2"
+  }, {
+    "name" : "FAM_MEM_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAM_MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "FAM_ACT_PTS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "FAM_ACT_PTS",
+    "sqlType" : "2"
+  }, {
+    "name" : "EXCL_FROM_STMT",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "EXCL_FROM_STMT",
+    "sqlType" : "12"
+  }, {
+    "name" : "AVAILABLE_MILES",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "AVAILABLE_MILES",
+    "sqlType" : "2"
+  }, {
+    "name" : "VOUCHER_NO",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "VOUCHER_NO",
+    "sqlType" : "2"
+  }, {
+    "name" : "GIFT_MEM_UID",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "GIFT_MEM_UID",
+    "sqlType" : "2"
+  }, {
+    "name" : "DESCR_LANG1",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR_LANG1",
+    "sqlType" : "12"
+  }, {
+    "name" : "DESCR_LANG2",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR_LANG2",
+    "sqlType" : "12"
+  }, {
+    "name" : "RETRO_PROMOTIONAL_BONUS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "RETRO_PROMOTIONAL_BONUS",
+    "sqlType" : "12"
+  }, {
+    "name" : "ORIG_EXP_ACT_DATE",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "ORIG_EXP_ACT_DATE",
+    "sqlType" : "93"
+  }, {
+    "name" : "DESCR_ENGLISH",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "DESCR_ENGLISH",
+    "sqlType" : "12"
+  }, {
+    "name" : "PARTIAL_UTI_TRANS",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "PARTIAL_UTI_TRANS",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "MEMBER_TRANSACTIONS"
+}
