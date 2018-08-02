@@ -1,1 +1,3 @@
 https://github.com/jleetutorial/python-spark-tutorial
+
+https://www.safaribooksonline.com/videos/apache-spark-with/9781789134537/9781789134537-video4_9
