@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html -->
+<html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/think-bayes/9781491945407/ch02.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="3421967" data-user-uuid="50f03e1c-9cec-49e5-851c-0859c083b2de" data-username="pratik3vyas" data-account-type="Trial" data-activated-trial-date="09/22/2018" data-archive="9781491945407" data-publishers="O&#39;Reilly Media, Inc." data-htmlfile-name="ch02.html" data-epub-title="Think Bayes" data-debug="0" data-testing="0" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491945407"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><script type="text/javascript" async="" src="./5. Odds and Addends - Think Bayes_files/cool-2.1.15.min.js.download"></script><script type="text/javascript" src="./5. Odds and Addends - Think Bayes_files/510f1a6865"></script><script src="./5. Odds and Addends - Think Bayes_files/nr-1071.min.js.download"></script><script src="./5. Odds and Addends - Think Bayes_files/1732687426968531" async=""></script><script async="" src="./5. Odds and Addends - Think Bayes_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./5. Odds and Addends - Think Bayes_files/bat.js.download"></script><script type="text/javascript" async="" src="./5. Odds and Addends - Think Bayes_files/f.txt"></script><script type="text/javascript" async="" src="./5. Odds and Addends - Think Bayes_files/insight.min.js.download"></script><script type="text/javascript" async="" src="./5. Odds and Addends - Think Bayes_files/f.txt"></script><script type="text/javascript" async="" src="./5. Odds and Addends - Think Bayes_files/linkid.js.download"></script><script async="" src="./5. Odds and Addends - Think Bayes_files/gtm.js.download"></script><script async="" src="./5. Odds and Addends - Think Bayes_files/analytics.js.download"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.0c29511d2d72.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="./5. Odds and Addends - Think Bayes_files/css" rel="stylesheet" type="text/css"><title>5. Odds and Addends - Think Bayes</title><link rel="stylesheet" href="./5. Odds and Addends - Think Bayes_files/5e586a47a3b7.css" type="text/css"><link rel="stylesheet" type="text/css" href="./5. Odds and Addends - Think Bayes_files/annotator.e3b0c44298fc.css"><link rel="stylesheet" href="./5. Odds and Addends - Think Bayes_files/font-awesome.min.css"><style type="text/css" title="ibis-book">@charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title{font-size:1.5em;font-weight:bold;font-family:sans-serif,"DejaVuSans";margin-top:20px !important;page-break-after:avoid !important}#sbo-rt-content h2{font-size:1.3em;font-weight:bold;font-family:sans-serif,"DejaVuSans";color:#8e0012;margin:40px 0 8px 0;page-break-after:avoid !important;text-align:left}#sbo-rt-content h3{font-size:1.1em;font-weight:bold;font-family:sans-serif,"DejaVuSans";margin:30px 0 8px 0 !important;page-break-after:avoid !important;text-align:left}#sbo-rt-content h4{font-weight:1em;font-size:bold;font-family:sans-serif,"DejaVuSans";color:#555;margin:20px 0 8px 0 !important;page-break-after:avoid !important;text-align:left}#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;page-break-after:avoid}#sbo-rt-content section.chapter div.titlepage,#sbo-rt-content section.appendix div.titlepage,#sbo-rt-content section.preface div.titlepage{page-break-inside:avoid;page-break-after:avoid}#sbo-rt-content section.chapter>div.titlepage,#sbo-rt-content section.preface>div.titlepage,#sbo-rt-content section.appendix>div.titlepage{margin-bottom:50px}#sbo-rt-content section.chapter>div.titlepage h2.title,#sbo-rt-content section.preface>div.titlepage h2.title,#sbo-rt-content section.appendix>div.titlepage h2.title{font-size:2em;line-height:1;margin-bottom:15px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div.toc-title{margin-bottom:30px !important}#sbo-rt-content div.part h1{font-size:2em;text-align:center;margin-top:0 !important;padding:50px 0 20px 0;border-bottom:1px solid #000}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:30px 0 30px 0 !important;max-height:100%;page-break-inside:avoid}#sbo-rt-content div.figure-title,#sbo-rt-content div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:30px 0 20px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure{border:none}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div.example{margin:10px 0 15px 0 !important}#sbo-rt-content div.example-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div.example-contents pre.programlisting,#sbo-rt-content div.example-contents pre.screen{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content div.book div.titlepage h1.title{font-size:3em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content div.book div.titlepage h2.subtitle{text-align:center;color:#000;margin:0 !important;font-style:italic;font-family:serif;font-size:1.5em}#sbo-rt-content div.book div.titlepage div.author h3{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div.footnote{font-size:90%}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:1em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content div.calloutlist dd{padding-left:40px !important}#sbo-rt-content div.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.warning,#sbo-rt-content div.caution,#sbo-rt-content div.important{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.important{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div.caution{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3,#sbo-rt-content div.important h3{font:bold 90%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.important h3{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:20px 0 0 0 !important;text-align:center;padding:0}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold}#sbo-rt-content div.index dt{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif"}</style><script> // <![CDATA[
+    var g = {
+      position_cache: {
+        
+          "chapter": "/api/v1/book/9781491945407/chapter/ch02.html",
+          "book_id": "9781491945407",
+          "chapter_uri": "ch02.html",
+          "position": 5.09254725296,
+          "user_uuid": "50f03e1c-9cec-49e5-851c-0859c083b2de",
+          "next_chapter_uri": "/library/view/think-bayes/9781491945407/ch03.html"
+        
+      },
+      title: "Think Bayes",
+      author_list: "Allen B. Downey",
+      format: "book",
+      source: "application/epub+zip",
+      is_system_book: true,
+      is_public: false,
+      loaded_from_server: true,
+      allow_scripts: false,
+      has_mathml: false,
+      show_ios_app_teaser: false
+    };
+    // ]]></script><script src="./5. Odds and Addends - Think Bayes_files/modernizr.8e35451ddb64.js.download"></script><script>
+    
+      
+
+      
+
+      
+        
+          window.PUBLIC_ANNOTATIONS = true;
+        
+      
+
+      window.MOBILE_PUBLIC_ANNOTATIONS = false;
+
+    
+
+    
+      window.PRIVACY_CONTROL_OVERRIDE = false;
+    
+
+    
+      window.PRIVACY_CONTROL_SWITCH = true;
+    
+
+    
+      window.PUBLISHER_PAGES = true;
+    
+
+      window.SBO = {
+        "constants": {
+          "SITB_ENDPOINT": "https://www.safaribooksonline.com/api/v2/sitb/",
+          "SEARCH_SELECT_ENDPOINT": "https://www.safaribooksonline.com/api/v2/search/select/",
+          "ENABLE_ONLINE_TRAINING": true
+        }
+      };
+  </script><link rel="canonical" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html"><meta name="description" content="Chapter 2. Computational Statistics Distributions In statistics a distribution is a set of values and their corresponding probabilities. For example, if you roll a six-sided die, the set of possible ... "><meta property="og:title" content="2. Computational Statistics"><meta itemprop="isPartOf" content="/library/view/think-bayes/9781491945407/"><meta itemprop="name" content="2. Computational Statistics"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491945407/"><meta property="og:description" itemprop="description" content="Chapter 2. Computational Statistics Distributions In statistics a distribution is a set of values and their corresponding probabilities. For example, if you roll a six-sided die, the set of possible ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O&#39;Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781449370787"><meta property="og:book:author" itemprop="author" content="Allen B. Downey"><meta property="og:book:tag" itemprop="about" content="Python"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: &lt;%= font_size %&gt; !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: &lt;%= font_family %&gt; !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: &lt;%= column_width %&gt;% !important; margin: 0 auto !important; }"></style><noscript><meta http-equiv="refresh" content="0; url=/library/no-js/" /></noscript><script type="text/javascript">
+    (function(i,s,o,g,r,a,m) {
+      i['GoogleAnalyticsObject']=r;
+      i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+      a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+      a.async=1;
+      a.src=g;
+      m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    var matches = document.cookie.match(/BrowserCookie\s*=\s*([a-f0-9\-]{36})/),
+      user_uuid = null;
+
+    if (matches && matches.length === 2) {
+      user_uuid = matches[1];
+    }
+
+  
+    ga('create', 'UA-39299553-7', {'userId': '50f03e1c-9cec-49e5-851c-0859c083b2de' });
+  
+
+  
+    
+      ga('set', 'dimension1', 'Trial');
+    
+  
+
+  ga('set', 'dimension6', user_uuid);
+
+  
+    ga('set', 'dimension2', '50f03e1c-9cec-49e5-851c-0859c083b2de');
+    
+  
+
+  
+
+  
+
+  //enable enhanced link tracking
+  ga('require', 'linkid', 'linkid.js');
+
+  // reading interface will track pageviews itself
+  if (document.location.pathname.indexOf("/library/view") !== 0) {
+    ga('send', 'pageview');
+  }
+  </script><script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5P4V6Z');
+  </script><script defer="" src="./5. Odds and Addends - Think Bayes_files/vendor.218bb2719961.js.download"></script><script defer="" src="./5. Odds and Addends - Think Bayes_files/reader.1ce61fb971aa.js.download"></script><script src="./5. Odds and Addends - Think Bayes_files/f(1).txt"></script><script src="./5. Odds and Addends - Think Bayes_files/f(2).txt"></script><script async="" src="./5. Odds and Addends - Think Bayes_files/MathJax.js.download"></script><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 2147483020;
+}
+.annotator-filter {
+  z-index: 2147483010;
+}</style><style type="text/css" id="kampyleStyle">.noOutline{outline: none !important;}.wcagOutline:focus{outline: 1px dashed #595959 !important;outline-offset: 2px !important;transition: none !important;}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts subscribe-panel library">
+
+    
+  
+  <noscript> 
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P4V6Z"
+            height="0" width="0"
+            style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  
+
+
+
+    
+      <div class="working hide" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/playlists/" class="t-queue-nav l0 nav-icn None"><!--?xml version="1.0" encoding="UTF-8"?--><svg width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch --><title>icon_Playlist_sml</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_Playlist_sml" fill-rule="nonzero" fill="#000000"><g id="playlist-icon"><g id="Group-6"><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle></g><g id="Group-5" transform="translate(0.000000, 7.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g><g id="Group-5-Copy" transform="translate(0.000000, 14.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g></g></g></g></svg><span>
+               Playlists
+            </span></a></li><li class="search"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://get.oreilly.com/email-signup.html" target="_blank" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/50f03e1c-9cec-49e5-851c-0859c083b2de/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/preferences/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.safaribooksonline.com/public/support" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/preferences/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.safaribooksonline.com/public/support" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Think Bayes
+      
+    </h1></span></a><div class="toc-contents" style="max-height: 0px;">
+  <div class="sbo-toc ">
+    <button type="button" class="sbo-toc-thumb close"><div class="visuallyhidden">Close</div></button>
+      <section class="ios-app-teaser">
+        <ul>
+            <li><a class="js-toc-link toc-link" href="https://itunes.apple.com/gb/app/safari-queue-library-over/id881697395?mt=8" role="button">Install App</a></li>
+            <li><a class="js-toc-link toc-link" href="safaridetail://9781491945407" role="button">Open in App</a></li>
+        </ul>
+      </section>
+      <div class="sbo-book-meta">
+        
+        <span class="cover">
+         <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/">
+          <img src="./5. Odds and Addends - Think Bayes_files/saved_resource" alt="Cover image for Think Bayes" height="184" width="140">
+        </a>
+        </span>
+        <span class="title">
+          
+            
+                <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/publisher/oreilly-media-inc/">
+                  <img src="./5. Odds and Addends - Think Bayes_files/ORM_logo_box_rgb.png" class="publisher-logo video" alt="publisher logo">
+                </a>
+            
+          
+
+          <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/">Think Bayes</a>
+        </span>
+        
+        <span class="authors">by Allen B. Downey</span>
+        
+
+        
+        <span class="publishers t-publishers">Published by
+          <!-- Show publisher page link if publisher pages switch is on -->
+          
+            <a class="t-publisher-link toc-link js-toc-link" href="https://www.safaribooksonline.com/library/publisher/oreilly-media-inc/">
+              O'Reilly Media, Inc.</a>, 2013
+          
+        </span>
+        
+
+    
+
+    </div>
+  <ol class="tocList">
+    
+    
+    
+     
+
+     <li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/pr01.html">
+        Preface <span class="minutes">(10:21 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html">
+        1. Bayes’s Theorem <span class="minutes">(16:06 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html">
+        2. Computational Statistics <span class="minutes">(09:12 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch03.html">
+        3. Estimation <span class="minutes">(13:48 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1 currently-reading">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch04.html">
+        4. More Estimation <span class="minutes">(12:39 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html">
+        5. Odds and Addends <span class="minutes">(17:15 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch06.html">
+        6. Decision Analysis <span class="minutes">(18:24 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch07.html">
+        7. Prediction <span class="minutes">(14:57 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch08.html">
+        8. Observer Bias <span class="minutes">(23:00 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch09.html">
+        9. Two Dimensions <span class="minutes">(14:57 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch10.html">
+        10. Approximate Bayesian Computation <span class="minutes">(23:00 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch11.html">
+        11. Hypothesis Testing <span class="minutes">(06:54 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch12.html">
+        12. Evidence <span class="minutes">(18:24 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch13.html">
+        13. Simulation <span class="minutes">(19:33 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch14.html">
+        14. A Hierarchical Model <span class="minutes">(09:12 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch15.html">
+        15. Dealing with Dimensions <span class="minutes">(33:21 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ix01.html">
+        Index <span class="minutes">(10:21 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/co01.html">
+        Colophon <span class="minutes">(01:09 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/copyright.html">
+        Copyright <span class="minutes">(01:09 mins)</span>
+       </a>
+      
+        
+      
+   </li></ol>
+ </div>
+
+
+
+</div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><div class="js-content-uri" data-content-uri="/api/v1/book/9781491945407/chapter/ch02.html"><div class="js-collections-dropdown collections-dropdown menu-bit-cards"><div data-reactroot="" class="menu-dropdown-wrapper js-menu-dropdown-wrapper align-right"><img class="hidden" src="./5. Odds and Addends - Think Bayes_files/ajax-transp.gif" alt="loading spinner"><div class="menu-control"><div class="control "><div class="js-playlists-menu"><button class="js-playlist-icon"><svg class="icon-add-to-playlist-sml" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#000000"><g transform="translate(-1.000000, 0.000000)"><rect x="5" y="0" width="12" height="2"></rect><title>Playlists</title><path d="M4.5,14 C6.43299662,14 8,12.4329966 8,10.5 C8,8.56700338 6.43299662,7 4.5,7 C2.56700338,7 1,8.56700338 1,10.5 C1,12.4329966 2.56700338,14 4.5,14 Z M2.5,10 L4,10 L4,8.5 L5,8.5 L5,10 L6.5,10 L6.5,11 L5,11 L5,12.5 L4,12.5 L4,11 L2.5,11 L2.5,10 Z"></path><circle cx="2" cy="5" r="1"></circle><circle cx="1.94117647" cy="1" r="1"></circle><rect x="5" y="4" width="12" height="2"></rect><rect x="9" y="8" width="8" height="2"></rect><rect x="9" y="12" width="8" height="2"></rect></g></g></g></svg><div class="js-playlist-addto-label">Add&nbsp;To</div></button></div></div></div></div></div></div></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li class=""><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html&amp;text=Think%20Bayes&amp;via=safari"><span>Twitter</span></a></li><li class=""><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html"><span>Facebook</span></a></li><li class=""><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html"><span>Google Plus</span></a></li><li class=""><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%202.%20Computational%20Statistics&amp;body=https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html%0D%0Afrom%20Think%20Bayes%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch04.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">4. More Estimation</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch06.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">6. Decision Analysis</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><section class="chapter" epub:type="chapter" id="a0000001854"><div class="titlepage"><div><div><h2 class="title">Chapter&nbsp;5.&nbsp;Odds and Addends</h2></div></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000001856">Odds</h2></div></div></div><p>One way to represent a probability is with a number between 0 and 1,
+    but that’s not the only way. If you have ever bet on a football game or a
+    horse race, you have probably encountered another representation of
+    probability, called <span class="bold"><strong>odds</strong></span>.<a id="id362717" class="indexterm"></a></p><p>You might have heard expressions like “the odds are three to one,”
+    but you might not know what they mean. The <span class="bold"><strong>odds in
+    favor</strong></span> of an event are the ratio of the probability it will
+    occur to the probability that it will not.</p><p>So if I think my team has a 75% chance of winning, I would say that
+    the odds in their favor are three to one, because the chance of winning is
+    three times the chance of losing.</p><p>You can write odds in decimal form, but it is most common to write
+    them as a ratio of integers. So “three to one” is written <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0501.png" alt="" width="50" height="21" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0501.png"></span>.</p><p>When probabilities are low, it is more common to report the
+    <span class="bold"><strong>odds against</strong></span> rather than the odds in
+    favor. For example, if I think my horse has a 10% chance of winning, I
+    would say that the odds against are <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0502.png" alt="" width="51" height="23" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0502.png"></span>.</p><p>Probabilities and odds are different representations of the same
+    information. Given a probability, you can compute the odds like
+    this:</p><pre class="programlisting">def Odds(p):
+    return p / (1-p)</pre><p>Given the odds in favor, in decimal form, you can convert to
+    probability like this:</p><pre class="programlisting">def Probability(o):
+    return o / (o+1)</pre><p>If you represent odds with a numerator and denominator, you can
+    convert to probability like this:</p><pre class="programlisting">def Probability2(yes, no):
+    return yes / (yes + no)</pre><p>When I work with odds in my head, I find it helpful to picture
+    people at the track. If 20% of them think my horse will win, then 80% of
+    them don’t, so the odds in favor are <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0503.png" alt="" width="84" height="20" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0503.png"></span> or <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0504.png" alt="" width="50" height="21" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0504.png"></span>.</p><p>If the odds are <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0505.png" alt="" width="51" height="21" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0505.png"></span> against my horse, then five out of six people think
+    she will lose, so the probability of winning is <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0506.png" alt="" width="41" height="21" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0506.png"></span>.<a id="id362914" class="indexterm"></a></p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000001890">The odds form of Bayes’s theorem</h2></div></div></div><p><a id="id362937" class="indexterm"></a>In <a class="xref" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html">Chapter&nbsp;1</a> I wrote Bayes’s theorem in the
+    <span class="bold"><strong>probability form</strong></span>:</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0507.png" alt="The odds form of Bayes’s theorem" width="630" height="129" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0507.png"></div></div><p>If we have two hypotheses, <span class="math">A</span> and
+    <span class="math">B</span>, we can write the ratio of posterior
+    probabilities like this:</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0508.png" alt="The odds form of Bayes’s theorem" width="639" height="134" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0508.png"></div></div><p>Notice that the normalizing constant, <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0509.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0509.png"></span>, drops out of this equation.<a id="id363028" class="indexterm"></a></p><p>If <span class="math">A</span> and <span class="math">B</span> are mutually exclusive and collectively
+    exhaustive, that means <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0510.png" alt="" width="195" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0510.png"></span>, so we can rewrite the ratio of the priors, and the
+    ratio of the posteriors, as odds.</p><p>Writing <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0511.png" alt="" width="55" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0511.png"></span> for odds in favor of <span class="math">A</span>, we get:</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0512.png" alt="The odds form of Bayes’s theorem" width="629" height="134" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0512.png"></div></div><p>In words, this says that the posterior odds are the prior odds times
+    the likelihood ratio. This is the <span class="bold"><strong>odds
+    form</strong></span> of Bayes’s theorem.</p><p>This form is most convenient for computing a Bayesian update on
+    paper or in your head. For example, let’s go back to the cookie
+    problem:<a id="id363118" class="indexterm"></a></p><div class="blockquote"><blockquote class="blockquote"><p>Suppose there are two bowls of cookies. Bowl 1 contains 30 vanilla
+      cookies and 10 chocolate cookies. Bowl 2 contains 20 of each.</p><p>Now suppose you choose one of the bowls at random and, without
+      looking, select a cookie at random. The cookie is vanilla. What is the
+      probability that it came from Bowl 1?</p></blockquote></div><p>The prior probability is 50%, so the prior odds are <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0513.png" alt="" width="48" height="21" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0513.png"></span>, or just 1. The likelihood ratio is <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0514.png" alt="" width="41" height="30" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0514.png"></span>, or <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0515.png" alt="" width="44" height="21" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0515.png"></span>. So the posterior odds are <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0516.png" alt="" width="52" height="20" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0516.png"></span>, which corresponds to probability <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0517.png" alt="" width="43" height="21" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0517.png"></span>.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="oliver">Oliver’s blood</h2></div></div></div><p><a id="id363243" class="indexterm"></a><a id="id363253" class="indexterm"></a>Here is another problem from MacKay’s <span class="emphasis"><em>Information
+    Theory, Inference, and Learning Algorithms</em></span>:</p><div class="blockquote"><blockquote class="blockquote"><p>Two people have left traces of their own blood at the scene of a
+      crime. A suspect, Oliver, is tested and found to have type ‘O’ blood.
+      The blood groups of the two traces are found to be of type ‘O’ (a common
+      type in the local population, having frequency 60%) and of type ‘AB’ (a
+      rare type, with frequency 1%). Do these data [the traces found at the
+      scene] give evidence in favor of the proposition that Oliver was one of
+      the people [who left blood at the scene]?</p></blockquote></div><p>To answer this question, we need to think about what it means for
+    data to give evidence in favor of (or against) a hypothesis. Intuitively,
+    we might say that data favor a hypothesis if the hypothesis is more likely
+    in light of the data than it was before.<a id="id363279" class="indexterm"></a></p><p>In the cookie problem, the prior odds are <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0518.png" alt="" width="48" height="21" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0518.png"></span>, or probability 50%. The posterior odds are
+    <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0519.png" alt="" width="52" height="20" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0519.png"></span>, or probability 60%. So we could say that the vanilla
+    cookie is evidence in favor of Bowl 1.</p><p>The odds form of Bayes’s theorem provides a way to make this
+    intuition more precise. Again</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0520.png" alt="Oliver’s blood" width="629" height="134" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0520.png"></div></div><p>Or dividing through by <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0521.png" alt="" width="55" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0521.png"></span>:</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0522.png" alt="Oliver’s blood" width="517" height="134" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0522.png"></div></div><p>The term on the left is the ratio of the posterior and prior odds.
+    The term on the right is the likelihood ratio, also called the <span class="bold"><strong>Bayes factor</strong></span>.<a id="id363390" class="indexterm"></a><a id="id363400" class="indexterm"></a></p><p>If the Bayes factor value is greater than 1, that means that the
+    data were more likely under <span class="math">A</span> than under
+    <span class="math">B</span>. And since the odds ratio is also
+    greater than 1, that means that the odds are greater, in light of the
+    data, than they were before.</p><p>If the Bayes factor is less than 1, that means the data were less
+    likely under <span class="math">A</span> than under <span class="math">B</span>, so the odds in favor of <span class="math">A</span> go down.</p><p>Finally, if the Bayes factor is exactly 1, the data are equally
+    likely under either hypothesis, so the odds do not change.</p><p>Now we can get back to the Oliver’s blood problem. If Oliver is one
+    of the people who left blood at the crime scene, then he accounts for the
+    ‘O’ sample, so the probability of the data is just the probability that a
+    random member of the population has type ‘AB’ blood, which is 1%.</p><p>If Oliver did not leave blood at the scene, then we have two samples
+    to account for. If we choose two random people from the population, what
+    is the chance of finding one with type ‘O’ and one with type ‘AB’? Well,
+    there are two ways it might happen: the first person we choose might have
+    type ‘O’ and the second ‘AB’, or the other way around. So the total
+    probability is <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0523.png" alt="" width="247" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0523.png"></span>.</p><p>The likelihood of the data is slightly higher if Oliver is
+    <span class="emphasis"><em>not</em></span> one of the people who left blood at the scene, so
+    the blood data is actually evidence against Oliver’s guilt.<a id="id363459" class="indexterm"></a></p><p>This example is a little contrived, but it is an example of the
+    counterintuitive result that data <span class="emphasis"><em>consistent</em></span> with a
+    hypothesis are not necessarily <span class="emphasis"><em>in favor of</em></span> the
+    hypothesis.</p><p>If this result is so counterintuitive that it bothers you, this way
+    of thinking might help: the data consist of a common event, type ‘O’
+    blood, and a rare event, type ‘AB’ blood. If Oliver accounts for the
+    common event, that leaves the rare event still unexplained. If Oliver
+    doesn’t account for the ‘O’ blood, then we have two chances to find
+    someone in the population with ‘AB’ blood. And that factor of two makes
+    the difference.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="addends">Addends</h2></div></div></div><p>The fundamental operation of Bayesian statistics is <code class="literal">Update</code>, which takes a prior distribution and a
+    set of data, and produces a posterior distribution. But solving real
+    problems usually involves a number of other operations, including scaling,
+    addition and other arithmetic operations, max and min, and
+    mixtures.<a id="id363526" class="indexterm"></a></p><p>This chapter presents addition and max; I will present other
+    operations as we need them.</p><p>The first example is based on
+    <span class="emphasis"><em>Dungeons&nbsp;&amp;&nbsp;Dragons</em></span>,
+    a role-playing game where the results of players’ decisions are usually
+    determined by rolling dice. In fact, before game play starts, players
+    generate each attribute of their characters—strength, intelligence,
+    wisdom, dexterity, constitution, and charisma—by rolling three 6-sided
+    dice and adding them up.<a id="id363582" class="indexterm"></a></p><p>So you might be curious to know the distribution of this sum. There
+    are two ways you might compute it:<a id="id363622" class="indexterm"></a><a id="id363561" class="indexterm"></a></p><div class="variablelist"><dl><dt><span class="term">Simulation:</span></dt><dd><p>Given a Pmf that represents the distribution for a single die,
+          you can draw random samples, add them up, and accumulate the
+          distribution of simulated sums.</p></dd><dt><span class="term">Enumeration:</span></dt><dd><p>Given two Pmfs, you can enumerate all possible pairs of values
+          and compute the distribution of the sums.</p></dd></dl></div><p><code class="literal">thinkbayes</code> provides
+    functions for both. Here’s an example of the first approach. First, I’ll
+    define a class to represent a single die as a Pmf:</p><pre class="programlisting">class Die(thinkbayes.Pmf):
+
+    def __init__(self, sides):
+        thinkbayes.Pmf.__init__(self)
+        for x in xrange(1, sides+1):
+            self.Set(x, 1)
+        self.Normalize()</pre><p>Now I can create a 6-sided die:</p><pre class="programlisting">d6 = Die(6)</pre><p>And use <code class="literal">thinkbayes.SampleSum</code> to generate a sample of 1000
+    rolls.</p><pre class="programlisting">dice = [d6] * 3
+three = thinkbayes.SampleSum(dice, 1000)</pre><p><code class="literal">SampleSum</code> takes list
+    of distributions (either Pmf or Cdf objects) and the sample size, <code class="literal">n</code>. It generates <code class="literal">n</code> random sums and returns their distribution as
+    a Pmf object.</p><pre class="programlisting">def SampleSum(dists, n):
+    pmf = MakePmfFromList(RandomSum(dists) for i in xrange(n))
+    return pmf</pre><p><code class="literal">SampleSum</code> uses
+    <code class="literal">RandomSum</code>, also in
+    <code class="literal">thinkbayes.py</code>:</p><pre class="programlisting">def RandomSum(dists):
+    total = sum(dist.Random() for dist in dists)
+    return total</pre><p><code class="literal">RandomSum</code> invokes <code class="literal">Random</code> on each distribution and adds up the
+    results.</p><p>The drawback of simulation is that the result is only approximately
+    correct. As <code class="literal">n</code> gets larger,
+    it gets more accurate, but of course the run time increases as
+    well.</p><p>The other approach is to enumerate all pairs of values and compute
+    the sum and probability of each pair. This is implemented in <code class="literal">Pmf.__add__</code>:</p><pre class="programlisting"># class Pmf
+
+    def __add__(self, other):
+        pmf = Pmf()
+        for v1, p1 in self.Items():
+            for v2, p2 in other.Items():
+                pmf.Incr(v1+v2, p1*p2)
+        return pmf</pre><p><code class="literal">self</code> is a Pmf, of course;
+    <code class="literal">other</code> can be a Pmf or anything else
+    that provides <code class="literal">Items</code>. The result is a
+    new Pmf. The time to run <code class="literal">__add__</code> depends on the number of items in <code class="literal">self</code> and other; it is proportional to <code class="literal">len(self) * len(other)</code>.</p><p>And here’s how it’s used:</p><pre class="programlisting">    three_exact = d6 + d6 + d6</pre><p>When you apply the <code class="literal">+</code> operator to
+    a Pmf, Python invokes <code class="literal">__add__</code>. In this example, <code class="literal">__add__</code> is invoked twice.</p><p><a class="xref" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#fig.dungeons1">Figure&nbsp;5-1</a> shows an approximate result
+    generated by simulation and the exact result computed by
+    enumeration.</p><div class="figure-float"><div class="figure"><a id="fig.dungeons1"></a><div class="figure-contents"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/thba_0501.png" alt="Approximate and exact distributions for the sum of three 6-sided dice." width="1000" height="750" data-mfp-src="/library/view/think-bayes/9781491945407/figs/thba_0501.png"></div></div><div class="figure-title">Figure&nbsp;5-1.&nbsp;Approximate and exact distributions for the sum of three 6-sided
+      dice.</div></div></div><p><code class="literal">Pmf.__add__</code> is based
+    on the assumption that the random selections from each Pmf are
+    independent. In the example of rolling several dice, this assumption is
+    pretty good. In other cases, we would have to extend this method to use
+    conditional probabilities.<a id="id363930" class="indexterm"></a></p><p>The code from this section is available from <a class="ulink" href="http://thinkbayes.com/dungeons.py" target="_top">http://thinkbayes.com/dungeons.py</a>.
+    For more information see <a class="xref" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/pr01.html#download">Working with the code</a>.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000002139">Maxima</h2></div></div></div><p>When you generate a
+    <span class="emphasis"><em>Dungeons&nbsp;&amp;&nbsp;Dragons</em></span>
+    character, you are particularly interested in the character’s best
+    attributes, so you might like to know the distribution of the maximum
+    attribute.</p><p>There are three ways to compute the distribution of a
+    maximum:<a id="id363990" class="indexterm"></a><a id="id363986" class="indexterm"></a><a id="id363999" class="indexterm"></a><a id="id364008" class="indexterm"></a></p><div class="variablelist"><dl><dt><span class="term">Simulation:</span></dt><dd><p>Given a Pmf that represents the distribution for a single
+          selection, you can generate random samples, find the maximum, and
+          accumulate the distribution of simulated maxima.</p></dd><dt><span class="term">Enumeration:</span></dt><dd><p>Given two Pmfs, you can enumerate all possible pairs of values
+          and compute the distribution of the maximum.</p></dd><dt><span class="term">Exponentiation:</span></dt><dd><p>If we convert a Pmf to a Cdf, there is a simple and efficient
+          algorithm for finding the Cdf of the maximum.</p></dd></dl></div><p>The code to simulate maxima is almost identical to the code for
+    simulating sums:</p><pre class="programlisting">def RandomMax(dists):
+    total = max(dist.Random() for dist in dists)
+    return total
+
+def SampleMax(dists, n):
+    pmf = MakePmfFromList(RandomMax(dists) for i in xrange(n))
+    return pmf</pre><p>All I did was replace “sum” with “max”. And the code for enumeration
+    is almost identical, too:</p><pre class="programlisting">def PmfMax(pmf1, pmf2):
+    res = thinkbayes.Pmf()
+    for v1, p1 in pmf1.Items():
+        for v2, p2 in pmf2.Items():
+            res.Incr(max(v1, v2), p1*p2)
+    return res</pre><p>In fact, you could generalize this function by taking the
+    appropriate operator as a parameter.</p><p>The only problem with this algorithm is that if each Pmf has
+    <span class="math">m</span> values, the run time is proportional to
+    <span class="math">m<sup>2</sup></span>. And if we
+    want the maximum of <code class="literal">k</code> selections, it
+    takes time proportional to <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0524.png" alt="" width="40" height="24" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0524.png"></span>.</p><p>If we convert the Pmfs to Cdfs, we can do the same calculation much
+    faster! The key is to remember the definition of the cumulative
+    distribution function:</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0525.png" alt="Maxima" width="496" height="57" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0525.png"></div></div><p>where <span class="math">X</span> is a random variable that
+    means “a value chosen randomly from this distribution.” So, for example,
+    <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0526.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0526.png"></span> is the probability that a value from this distribution
+    is less than or equal to 5.</p><p>If I draw <span class="math">X</span> from <span class="math">CDF<sub>1</sub></span> and <span class="math">Y</span> from <span class="math">CDF<sub>2</sub></span>, and compute the
+    maximum <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0527.png" alt="" width="185" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0527.png"></span>, what is the chance that <span class="math">Z</span> is less than or equal to 5? Well, in that case
+    both <span class="math">X</span> and <span class="math">Y</span> must be less than or equal to 5.</p><p><a id="id364253" class="indexterm"></a>If the selections of <span class="math">X</span> and
+    <span class="math">Y</span> are independent,</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0528.png" alt="Maxima" width="720" height="62" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0528.png"></div></div><p>where <span class="math">CDF<sub>3</sub></span>
+    is the distribution of <span class="math">Z</span>. I chose the
+    value 5 because I think it makes the formulas easy to read, but we can
+    generalize for any value of <span class="math">z</span>:</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0529.png" alt="Maxima" width="710" height="61" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0529.png"></div></div><p>In the special case where we draw <span class="math">k</span>
+    values from the same distribution,</p><div class="informalequation"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/eq_0530.png" alt="Maxima" width="522" height="76" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0530.png"></div></div><p>So to find the distribution of the maximum of <span class="math">k</span> values, we can enumerate the probabilities in the
+    given Cdf and raise them to the <span class="math">k</span>th
+    power. <code class="literal">Cdf</code> provides a
+    method that does just that:</p><pre class="programlisting"># class Cdf
+
+    def Max(self, k):
+        cdf = self.Copy()
+        cdf.ps = [p**k for p in cdf.ps]
+        return cdf</pre><p><code class="literal">Max</code> takes the number
+    of selections, <code class="literal">k</code>, and returns a new Cdf
+    that represents the distribution of the maximum of <code class="literal">k</code> selections. The run time for this method is
+    proportional to <span class="math">m</span>, the number of items in
+    the Cdf.</p><p><code class="literal">Pmf.Max</code> does the
+    same thing for Pmfs. It has to do a little more work to convert the Pmf to
+    a Cdf, so the run time is proportional to <span class="inlinemediaobject"><img src="./5. Odds and Addends - Think Bayes_files/inleq_0531.png" alt="" width="98" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0531.png"></span>, but that’s still better than quadratic.</p><p>Finally, here’s an example that computes the distribution of a
+    character’s best attribute:</p><pre class="programlisting">    best_attr_cdf = three_exact.Max(6)
+    best_attr_pmf = best_attr_cdf.MakePmf()</pre><p>Where <code class="literal">three_exact</code> is
+    defined in the previous section. If we print the results, we see that the
+    chance of generating a character with at least one attribute of 18 is
+    about 3%. <a class="xref" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#fig.dungeons2">Figure&nbsp;5-2</a> shows the distribution.</p><div class="figure-float"><div class="figure"><a id="fig.dungeons2"></a><div class="figure-contents"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/thba_0502.png" alt="Distribution of the maximum of six rolls of three dice." width="1000" height="750" data-mfp-src="/library/view/think-bayes/9781491945407/figs/thba_0502.png"></div></div><div class="figure-title">Figure&nbsp;5-2.&nbsp;Distribution of the maximum of six rolls of three dice.</div></div></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="mixture">Mixtures</h2></div></div></div><p>Let’s do one more example from
+    <span class="emphasis"><em>Dungeons&nbsp;&amp;&nbsp;Dragons</em></span>.
+    Suppose I have a box of dice with the following inventory:</p><pre class="programlisting">5   4-sided dice
+4   6-sided dice
+3   8-sided dice
+2  12-sided dice
+1  20-sided die</pre><p>I choose a die from the box and roll it. What is the distribution of
+    the outcome?</p><p>If you know which die it is, the answer is easy. A die with <code class="literal">n</code> sides yields a uniform distribution from 1 to
+    <code class="literal">n</code>, including both.<a id="id364540" class="indexterm"></a></p><p>But if we don’t know which die it is, the resulting distribution is
+    a <span class="bold"><strong>mixture</strong></span> of uniform distributions with
+    different bounds. In general, this kind of mixture does not fit any simple
+    mathematical model, but it is straightforward to compute the distribution
+    in the form of a PMF.<a id="id364566" class="indexterm"></a></p><p>As always, one option is to simulate the scenario, generate a random
+    sample, and compute the PMF of the sample. This approach is simple and it
+    generates an approximate solution quickly. But if we want an exact
+    solution, we need a different approach.<a id="id364582" class="indexterm"></a></p><p>Let’s start with a simple version of the problem where there are
+    only two dice, one with 6 sides and one with 8. We can make a Pmf to
+    represent each die:</p><pre class="programlisting">    d6 = Die(6)
+    d8 = Die(8)</pre><p>Then we create a Pmf to represent the mixture:</p><pre class="programlisting">    mix = thinkbayes.Pmf()
+    for die in [d6, d8]:
+        for outcome, prob in die.Items():
+            mix.Incr(outcome, prob)
+    mix.Normalize()</pre><p>The first loop enumerates the dice; the second enumerates the
+    outcomes and their probabilities. Inside the loop, <code class="literal">Pmf.Incr</code> adds up the contributions from the two
+    distributions.</p><p>This code assumes that the two dice are equally likely. More
+    generally, we need to know the probability of each die so we can weight
+    the outcomes accordingly.</p><p>First we create a Pmf that maps from each die to the probability it
+    is selected:</p><pre class="programlisting">    pmf_dice = thinkbayes.Pmf()
+    pmf_dice.Set(Die(4), 2)
+    pmf_dice.Set(Die(6), 3)
+    pmf_dice.Set(Die(8), 2)
+    pmf_dice.Set(Die(12), 1)
+    pmf_dice.Set(Die(20), 1)
+    pmf_dice.Normalize()</pre><p>Next we need a more general version of the mixture algorithm:</p><pre class="programlisting">    mix = thinkbayes.Pmf()
+    for die, weight in pmf_dice.Items():
+        for outcome, prob in die.Items():
+            mix.Incr(outcome, weight*prob)</pre><p>Now each die has a weight associated with it (which makes it a
+    weighted die, I suppose). When we add each outcome to the mixture, its
+    probability is multiplied by <code class="literal">weight</code>.</p><p><a class="xref" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#fig.dungeons3">Figure&nbsp;5-3</a> shows the result. As expected,
+    values 1 through 4 are the most likely because any die can produce them.
+    Values above 12 are unlikely because there is only one die in the box that
+    can produce them (and it does so less than half the time).</p><div class="figure-float"><div class="figure"><a id="fig.dungeons3"></a><div class="figure-contents"><div class="mediaobject"><img src="./5. Odds and Addends - Think Bayes_files/thba_0503.png" alt="Distribution outcome for random die from a box." width="1000" height="750" data-mfp-src="/library/view/think-bayes/9781491945407/figs/thba_0503.png"></div></div><div class="figure-title">Figure&nbsp;5-3.&nbsp;Distribution outcome for random die from a box.</div></div></div><p><code class="literal">thinkbayes</code> provides a function
+    named <code class="literal">MakeMixture</code> that encapsulates
+    this algorithm, so we could have written:</p><pre class="programlisting">    mix = thinkbayes.MakeMixture(pmf_dice)</pre><p>We’ll use <code class="literal">MakeMixture</code> again in
+    Chapters <a class="xref totri-footnote" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch07.html">7</a> and
+    <a class="xref totri-footnote" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch08.html">8</a>.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000002320">Discussion</h2></div></div></div><p>Other than the odds form of Bayes’s theorem, this chapter is not
+    specifically Bayesian. But Bayesian analysis is all about distributions,
+    so it is important to understand the concept of a distribution well. From
+    a computational point of view, a distribution is any data structure that
+    represents a set of values (possible outcomes of a random process) and
+    their probabilities.<a id="id364810" class="indexterm"></a></p><p>We have seen two representations of distributions: Pmfs and Cdfs.
+    These representations are equivalent in the sense that they contain the
+    same information, so you can convert from one to the other. The primary
+    difference between them is performance: some operations are faster and
+    easier with a Pmf; others are faster with a Cdf.<a id="id364826" class="indexterm"></a><a id="id364766" class="indexterm"></a></p><p>The other goal of this chapter is to introduce operations that act
+    on distributions, like <code class="literal">Pmf.__add__</code>, <code class="literal">Cdf.Max</code>, and <code class="literal">thinkbayes.MakeMixture</code>. We will use these
+    operations later, but I introduce them now to encourage you to think of a
+    distribution as a fundamental unit of computation, not just a container
+    for values and probabilities.</p></div></section><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-5" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch04.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">4. More Estimation</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch06.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">6. Decision Analysis</div>
+        </a>
+    
+  
+  </div>
+
+</section>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel t-subscribe-nag collapsed slideUp">
+        
+        
+          
+          
+            <p class="usage-data">Find answers on the fly, or master something new. Subscribe today. <a href="https://www.safaribooksonline.com/subscribe/" class="ga-active-trial-subscribe-nag">See pricing options.</a></p>
+          
+
+          
+        
+        
+
+      </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" class="icon-up" style="display: none;"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li>
+      <a class="t-queue-footer" href="https://www.safaribooksonline.com/playlists/">Playlists</a>
+      </li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/preferences/">Settings</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2018 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"transactionName":"YgdaZ0NSW0cEB0RdWltNfkZfUEFdCgofXFBHDVYdR1pQQxZeRl1QQj1aWkU=","applicationID":"3275661,67267027,67267028","errorBeacon":"bam.nr-data.net","beacon":"bam.nr-data.net","queueTime":6,"licenseKey":"510f1a6865","agent":"","applicationTime":268}</script>
+
+
+    
+    
+      <img src="./5. Odds and Addends - Think Bayes_files/saved_resource(1)" alt="" style="display:none;">
+    
+    <script src="./5. Odds and Addends - Think Bayes_files/saved_resource(2)" charset="utf-8"></script><script type="text/javascript" id="">(function(){window.medalliaUserIdentifier=document.documentElement.dataset.userUuid;window.medalliaUserName=document.documentElement.dataset.username})();</script>
+<script type="text/javascript" id="" src="./5. Odds and Addends - Think Bayes_files/embed.js.download"></script><script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1732687426968531");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1732687426968531&amp;ev=PageView&amp;noscript=1"></noscript><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.29340038944538027"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.7337121095479129" width="0" height="0" alt="" src="./5. Odds and Addends - Think Bayes_files/0"></div>
+
+
+
+    <script src="./5. Odds and Addends - Think Bayes_files/saved_resource(3)" charset="utf-8"></script>
+  
+
+<script src="./5. Odds and Addends - Think Bayes_files/saved_resource(4)" type="text/javascript"></script><div class="annotator-notice"></div><div class="font-flyout" style="top: 201.013px; left: 1280px;"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html#">Reset</a>
+</div>
+</div><script type="text/javascript" async="" src="./5. Odds and Addends - Think Bayes_files/generic1537389850717.js.download" charset="UTF-8"></script><span><div id="KampyleAnimationContainer" style="z-index: 2147483000; border: 0px; position: fixed; display: block; width: 0px; height: 0px;"></div></span></body></html>

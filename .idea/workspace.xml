@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28b062c6-1f8b-4b01-a01e-d1eeb6134060" name="Default" comment="" />
+    <list default="true" id="28b062c6-1f8b-4b01-a01e-d1eeb6134060" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pairRdd/create/PairRddFromRegularRdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/pairRdd/create/PairRddFromRegularRdd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pairRdd/create/PairRddFromTupleList.py" beforeDir="false" afterPath="$PROJECT_DIR$/pairRdd/create/PairRddFromTupleList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseSolution.py" beforeDir="false" afterPath="$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseSolution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdd/WordCount.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/WordCount.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdd/persist/PersistExample.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/persist/PersistExample.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,22 +21,49 @@
       <file leaf-file-name="WordCount.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rdd/WordCount.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+            <state relative-caret-position="187">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AirportsByLatitudeProblem.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rdd/airports/AirportsByLatitudeProblem.py">
+      <file leaf-file-name="PairRddFromRegularRdd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pairRdd/create/PairRddFromRegularRdd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AirportsUppercaseProblem.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseProblem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AirportsUppercaseSolution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseSolution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JoinOperations.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pairRdd/join/JoinOperations.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="AirportsByLatitudeSolution.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rdd/airports/AirportsByLatitudeSolution.py">
+      <file leaf-file-name="PairRddFromTupleList.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pairRdd/create/PairRddFromTupleList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="153">
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -37,17 +71,35 @@
       <file leaf-file-name="StackOverFlowSurvey.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sparkSql/StackOverFlowSurvey.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="544">
+              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UkMakerSpaces.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UkMakerSpaces.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sparkSql/join/UkMakerSpaces.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SameHostsProblem.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rdd/nasaApacheWebLogs/SameHostsProblem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersistExample.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rdd/persist/PersistExample.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -75,9 +127,13 @@
         <option value="$PROJECT_DIR$/advanced/broadcast/UkMakerSpaces.py" />
         <option value="$PROJECT_DIR$/advanced/accumulator/StackOverFlowSurveyFollowUp.py" />
         <option value="$PROJECT_DIR$/advanced/accumulator/StackOverFlowSurvey.py" />
-        <option value="$PROJECT_DIR$/rdd/WordCount.py" />
         <option value="$PROJECT_DIR$/rdd/airports/AirportsByLatitudeSolution.py" />
         <option value="$PROJECT_DIR$/lnk.txt" />
+        <option value="$PROJECT_DIR$/rdd/persist/PersistExample.py" />
+        <option value="$PROJECT_DIR$/rdd/WordCount.py" />
+        <option value="$PROJECT_DIR$/pairRdd/create/PairRddFromTupleList.py" />
+        <option value="$PROJECT_DIR$/pairRdd/create/PairRddFromRegularRdd.py" />
+        <option value="$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseSolution.py" />
       </list>
     </option>
   </component>
@@ -93,6 +149,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -105,24 +162,10 @@
               <item name="Git" type="47feb1d3:ProjectViewModuleNode" />
               <item name="Git" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Git" type="462c0819:PsiDirectoryNode" />
-              <item name="sparkSql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Git" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Git" type="462c0819:PsiDirectoryNode" />
-              <item name="sparkSql" type="462c0819:PsiDirectoryNode" />
-              <item name="join" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -141,8 +184,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.UkMakerSpaces">
-    <configuration name="AirportsByLatitudeSolution" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.AirportsUppercaseSolution">
+    <configuration name="AirportsUppercaseSolution" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Git" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,17 +193,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd/airports" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pairRdd/mapValues" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/airports/AirportsByLatitudeSolution.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseSolution.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="StackOverFlowSurvey (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="PairRddFromRegularRdd" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Git" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -168,17 +211,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sparkSql" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pairRdd/create" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sparkSql/StackOverFlowSurvey.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pairRdd/create/PairRddFromRegularRdd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="StackOverFlowSurvey" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="PersistExample" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Git" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -186,11 +229,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/advanced/accumulator" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd/persist" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/advanced/accumulator/StackOverFlowSurvey.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/persist/PersistExample.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -233,19 +276,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.StackOverFlowSurvey" />
       <item itemvalue="Python.WordCount" />
-      <item itemvalue="Python.AirportsByLatitudeSolution" />
-      <item itemvalue="Python.StackOverFlowSurvey (1)" />
       <item itemvalue="Python.UkMakerSpaces" />
+      <item itemvalue="Python.PersistExample" />
+      <item itemvalue="Python.PairRddFromRegularRdd" />
+      <item itemvalue="Python.AirportsUppercaseSolution" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.UkMakerSpaces" />
-        <item itemvalue="Python.StackOverFlowSurvey (1)" />
-        <item itemvalue="Python.AirportsByLatitudeSolution" />
+        <item itemvalue="Python.AirportsUppercaseSolution" />
+        <item itemvalue="Python.PairRddFromRegularRdd" />
         <item itemvalue="Python.WordCount" />
-        <item itemvalue="Python.StackOverFlowSurvey" />
+        <item itemvalue="Python.PersistExample" />
+        <item itemvalue="Python.UkMakerSpaces" />
       </list>
     </recent_temporary>
   </component>
@@ -267,14 +310,14 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50073206" side_tool="true" weight="0.4244833" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5014641" side_tool="true" weight="0.47853735" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853587" weight="0.47853735" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.4244833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -293,6 +336,51 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/rdd/persist/PersistExample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseSolution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rdd/WordCount.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rdd/airports/AirportsByLatitudeProblem.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rdd/airports/AirportsByLatitudeSolution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sparkSql/StackOverFlowSurvey.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sparkSql/join/UkMakerSpaces.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rdd/WordCount.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -366,20 +454,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rdd/nasaApacheWebLogs/SameHostsProblem.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/rdd/sumOfNumbers/SumOfNumbersSolution.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rdd/persist/PersistExample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -489,34 +567,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pairRdd/aggregation/reducebykey/WordCount.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="54" lean-forward="true" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rdd/WordCount.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rdd/airports/AirportsByLatitudeProblem.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/rdd/airports/AirportsByLatitudeSolution.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sparkSql/StackOverFlowSurvey.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+        <state relative-caret-position="544">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -530,9 +594,68 @@
     <entry file="file://$PROJECT_DIR$/sparkSql/join/UkMakerSpaces.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rdd/nasaApacheWebLogs/SameHostsProblem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rdd/persist/PersistExample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rdd/WordCount.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairRdd/aggregation/reducebykey/WordCount.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairRdd/create/PairRddFromTupleList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseProblem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairRdd/create/PairRddFromRegularRdd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairRdd/mapValues/AirportsUppercaseSolution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairRdd/join/JoinOperations.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

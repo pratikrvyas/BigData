@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html -->
+<html class=" js flexbox flexboxlegacy no-touch websqldatabase indexeddb history csscolumns csstransforms localstorage sessionstorage applicationcache svg inlinesvg zoom" lang="en" prefix="og: http://ogp.me/ns/# og:book: http://ogp.me/ns/book# og:video: http://ogp.me/ns/video#" itemscope="" itemtype="http://schema.org/Book http://schema.org/ItemPage" data-login-url="/accounts/login/" data-offline-url="/" data-url="/library/view/think-bayes/9781491945407/co01.html" data-csrf-cookie="csrfsafari" data-highlight-privacy="" data-user-id="3421967" data-user-uuid="50f03e1c-9cec-49e5-851c-0859c083b2de" data-username="pratik3vyas" data-account-type="Trial" data-activated-trial-date="09/22/2018" data-archive="9781491945407" data-publishers="O&#39;Reilly Media, Inc." data-htmlfile-name="co01.html" data-epub-title="Think Bayes" data-debug="0" data-testing="0" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="author" content="Safari Books Online"><meta name="format-detection" content="telephone=no"><meta http-equiv="cleartype" content="on"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="apple-itunes-app" content="app-id=881697395, app-argument=safaridetail://9781491945407"><meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0"><meta property="twitter:account_id" content="4503599627559754"><script type="text/javascript" async="" src="./1. Bayes’s Theorem - Think Bayes_files/cool-2.1.15.min.js.download"></script><script type="text/javascript" src="./1. Bayes’s Theorem - Think Bayes_files/510f1a6865"></script><script src="./1. Bayes’s Theorem - Think Bayes_files/nr-1071.min.js.download"></script><script src="./1. Bayes’s Theorem - Think Bayes_files/1732687426968531" async=""></script><script async="" src="./1. Bayes’s Theorem - Think Bayes_files/fbevents.js.download"></script><script type="text/javascript" async="" src="./1. Bayes’s Theorem - Think Bayes_files/bat.js.download"></script><script type="text/javascript" async="" src="./1. Bayes’s Theorem - Think Bayes_files/f.txt"></script><script type="text/javascript" async="" src="./1. Bayes’s Theorem - Think Bayes_files/insight.min.js.download"></script><script type="text/javascript" async="" src="./1. Bayes’s Theorem - Think Bayes_files/f.txt"></script><script type="text/javascript" async="" src="./1. Bayes’s Theorem - Think Bayes_files/linkid.js.download"></script><script async="" src="./1. Bayes’s Theorem - Think Bayes_files/gtm.js.download"></script><script async="" src="./1. Bayes’s Theorem - Think Bayes_files/analytics.js.download"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><link rel="apple-touch-icon" href="https://www.safaribooksonline.com/static/images/apple-touch-icon.0c29511d2d72.png"><link rel="shortcut icon" href="https://www.safaribooksonline.com/favicon.ico" type="image/x-icon"><link href="./1. Bayes’s Theorem - Think Bayes_files/css" rel="stylesheet" type="text/css"><title>1. Bayes’s Theorem - Think Bayes</title><link rel="stylesheet" href="./1. Bayes’s Theorem - Think Bayes_files/5e586a47a3b7.css" type="text/css"><link rel="stylesheet" type="text/css" href="./1. Bayes’s Theorem - Think Bayes_files/annotator.e3b0c44298fc.css"><link rel="stylesheet" href="./1. Bayes’s Theorem - Think Bayes_files/font-awesome.min.css"><style type="text/css" title="ibis-book">@charset "utf-8";#sbo-rt-content html,#sbo-rt-content div,#sbo-rt-content div,#sbo-rt-content span,#sbo-rt-content applet,#sbo-rt-content object,#sbo-rt-content iframe,#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4,#sbo-rt-content h5,#sbo-rt-content h6,#sbo-rt-content p,#sbo-rt-content blockquote,#sbo-rt-content pre,#sbo-rt-content a,#sbo-rt-content abbr,#sbo-rt-content acronym,#sbo-rt-content address,#sbo-rt-content big,#sbo-rt-content cite,#sbo-rt-content code,#sbo-rt-content del,#sbo-rt-content dfn,#sbo-rt-content em,#sbo-rt-content font,#sbo-rt-content img,#sbo-rt-content ins,#sbo-rt-content kbd,#sbo-rt-content q,#sbo-rt-content s,#sbo-rt-content samp,#sbo-rt-content small,#sbo-rt-content strike,#sbo-rt-content strong,#sbo-rt-content sub,#sbo-rt-content sup,#sbo-rt-content tt,#sbo-rt-content var,#sbo-rt-content b,#sbo-rt-content u,#sbo-rt-content i,#sbo-rt-content center,#sbo-rt-content dl,#sbo-rt-content dt,#sbo-rt-content dd,#sbo-rt-content ol,#sbo-rt-content ul,#sbo-rt-content li,#sbo-rt-content fieldset,#sbo-rt-content form,#sbo-rt-content label,#sbo-rt-content legend,#sbo-rt-content table,#sbo-rt-content caption,#sbo-rt-content tdiv,#sbo-rt-content tfoot,#sbo-rt-content thead,#sbo-rt-content tr,#sbo-rt-content th,#sbo-rt-content td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}@page{margin:5px !important}#sbo-rt-content p{margin:8px 0 0;line-height:125%}#sbo-rt-content em{font-style:italic;font-family:inherit}#sbo-rt-content em.replaceable{font-style:italic}#sbo-rt-content em strong,#sbo-rt-content strong em{font-weight:bold;font-style:italic;font-family:inherit}#sbo-rt-content strong.userinput{font-weight:bold;font-style:normal}#sbo-rt-content span.bolditalic{font-weight:bold;font-style:italic}#sbo-rt-content strong,#sbo-rt-content span.bold{font-weight:bold}#sbo-rt-content a.ulink,#sbo-rt-content a.xref,#sbo-rt-content a.email,#sbo-rt-content a.link{text-decoration:none;color:#8e0012}#sbo-rt-content sup{font-size:x-small;vertical-align:super}#sbo-rt-content sub{font-size:smaller;vertical-align:sub}#sbo-rt-content span.lineannotation{font-style:italic;color:#A62A2A;font-family:serif,"DejaVuSerif"}#sbo-rt-content span.underline{text-decoration:underline}#sbo-rt-content span.strikethrough{text-decoration:line-through}#sbo-rt-content span.smallcaps{font-variant:small-caps}#sbo-rt-content span.cursor{background:#000;color:#FFF}#sbo-rt-content span.smaller{font-size:75%}#sbo-rt-content .boxedtext,#sbo-rt-content .keycap{border-style:solid;border-width:1px;border-color:#000;padding:1px}#sbo-rt-content span.gray50{color:#7F7F7F;}#sbo-rt-content .gray-background,#sbo-rt-content .reverse-video{background:#2E2E2E;color:#FFF}#sbo-rt-content .light-gray-background{background:#A0A0A0}#sbo-rt-content .preserve-whitespace{white-space:pre-wrap}#sbo-rt-content h1,#sbo-rt-content div.toc-title{font-size:1.5em;font-weight:bold;font-family:sans-serif,"DejaVuSans";margin-top:20px !important;page-break-after:avoid !important}#sbo-rt-content h2{font-size:1.3em;font-weight:bold;font-family:sans-serif,"DejaVuSans";color:#8e0012;margin:40px 0 8px 0;page-break-after:avoid !important;text-align:left}#sbo-rt-content h3{font-size:1.1em;font-weight:bold;font-family:sans-serif,"DejaVuSans";margin:30px 0 8px 0 !important;page-break-after:avoid !important;text-align:left}#sbo-rt-content h4{font-weight:1em;font-size:bold;font-family:sans-serif,"DejaVuSans";color:#555;margin:20px 0 8px 0 !important;page-break-after:avoid !important;text-align:left}#sbo-rt-content h1,#sbo-rt-content h2,#sbo-rt-content h3,#sbo-rt-content h4{-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none;page-break-after:avoid}#sbo-rt-content section.chapter div.titlepage,#sbo-rt-content section.appendix div.titlepage,#sbo-rt-content section.preface div.titlepage{page-break-inside:avoid;page-break-after:avoid}#sbo-rt-content section.chapter>div.titlepage,#sbo-rt-content section.preface>div.titlepage,#sbo-rt-content section.appendix>div.titlepage{margin-bottom:50px}#sbo-rt-content section.chapter>div.titlepage h2.title,#sbo-rt-content section.preface>div.titlepage h2.title,#sbo-rt-content section.appendix>div.titlepage h2.title{font-size:2em;line-height:1;margin-bottom:15px;color:#000;padding-bottom:10px;border-bottom:1px solid #000}#sbo-rt-content div.toc-title{margin-bottom:30px !important}#sbo-rt-content div.part h1{font-size:2em;text-align:center;margin-top:0 !important;padding:50px 0 20px 0;border-bottom:1px solid #000}#sbo-rt-content img{max-width:95%;margin:0 auto;padding:0}#sbo-rt-content div.figure{background-color:transparent;text-align:center;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;padding:15px 5px 15px 5px !important;margin:30px 0 30px 0 !important;max-height:100%;page-break-inside:avoid}#sbo-rt-content div.figure-title,#sbo-rt-content div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.informalfigure{text-align:center;padding:5px 0 !important}#sbo-rt-content div.sidebar{margin:30px 0 20px 0 !important;-webkit-border-radius:5px;border-radius:5px;border:1px solid #DCDCDC;background-color:#F7F7F7;font-size:90%;padding:15px !important;page-break-inside:avoid}#sbo-rt-content div.sidebar-title{font-weight:bold;font-size:1em;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px 0 !important;page-break-inside:avoid}#sbo-rt-content div.sidebar div.figure p.title,#sbo-rt-content div.sidebar div.informalfigure div.caption{font-size:90%;text-align:center;font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";color:#000;padding:5px !important;page-break-before:avoid;page-break-after:avoid}#sbo-rt-content div.sidebar ol{margin-left:15px}#sbo-rt-content div.sidebar div.tip,#sbo-rt-content div.sidebar div.note,#sbo-rt-content div.sidebar div.warning,#sbo-rt-content div.sidebar div.caution,#sbo-rt-content div.sidebar div.important{margin:20px auto 20px auto !important;font-size:90%;width:85%}#sbo-rt-content div.sidebar div.figure{border:none}#sbo-rt-content pre{white-space:pre-wrap;font-family:"Ubuntu Mono",monospace;margin:25px 0 25px 20px;font-size:85%;display:block;-webkit-hyphens:none;hyphens:none;adobe-hyphenate:none}#sbo-rt-content div.note pre.programlisting,#sbo-rt-content div.tip pre.programlisting,#sbo-rt-content div.warning pre.programlisting,#sbo-rt-content div.caution pre.programlisting,#sbo-rt-content div.important pre.programlisting{margin-bottom:0}#sbo-rt-content code{font-family:"Ubuntu Mono",monospace}#sbo-rt-content code strong em,#sbo-rt-content code em strong,#sbo-rt-content pre em strong,#sbo-rt-content pre strong em,#sbo-rt-content strong code em code,#sbo-rt-content em code strong code,#sbo-rt-content span.bolditalic code{font-weight:bold;font-style:italic;font-family:"Ubuntu Mono BoldItal",monospace}#sbo-rt-content code em,#sbo-rt-content em code,#sbo-rt-content pre em,#sbo-rt-content em.replaceable{font-family:"Ubuntu Mono Ital",monospace;font-style:italic}#sbo-rt-content code strong,#sbo-rt-content strong code,#sbo-rt-content pre strong,#sbo-rt-content strong.userinput{font-family:"Ubuntu Mono Bold",monospace;font-weight:bold}#sbo-rt-content div.example{margin:10px 0 15px 0 !important}#sbo-rt-content div.example-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:10px 0 5px 0 !important;border-bottom:1px solid #000}#sbo-rt-content li pre.example{padding:10px 0 !important}#sbo-rt-content div.example-contents pre.programlisting,#sbo-rt-content div.example-contents pre.screen{margin:0}#sbo-rt-content span.gray{color:#4C4C4C}#sbo-rt-content div.book div.titlepage h1.title{font-size:3em;font-family:sans-serif,"DejaVuSans";font-weight:bold;margin:50px 0 10px 0 !important;line-height:1;text-align:center}#sbo-rt-content div.book div.titlepage h2.subtitle{text-align:center;color:#000;margin:0 !important;font-style:italic;font-family:serif;font-size:1.5em}#sbo-rt-content div.book div.titlepage div.author h3{font-size:2em;font-family:sans-serif,"DejaVuSans";font-weight:bold;color:#8e0012;margin:50px 0 !important;text-align:center}#sbo-rt-content div.book div.titlepage div.publishername{margin-top:60%;margin-bottom:20px;text-align:center;font-size:1.25em}#sbo-rt-content div.book div.titlepage div.locations p{margin:0;text-align:center}#sbo-rt-content div.book div.titlepage div.locations p.cities{font-size:80%;text-align:center;margin-top:5px}#sbo-rt-content section.preface[title="Dedication"]>div.titlepage h2.title{text-align:center;text-transform:uppercase;font-size:1.5em;margin-top:50px;margin-bottom:50px}#sbo-rt-content section.preface[title="Dedication"] p{font-style:italic;text-align:center}#sbo-rt-content div.colophon h1.title{font-size:1.3em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon h2.subtitle{margin:0 !important;color:#000;font-family:serif,"DejaVuSerif";font-size:1em;font-weight:normal}#sbo-rt-content div.colophon div.author h3.author{font-size:1.1em;font-family:serif,"DejaVuSerif";margin:10px 0 0 !important;font-weight:normal}#sbo-rt-content div.colophon div.editor h4,#sbo-rt-content div.colophon div.editor h3.editor{color:#000;font-size:.8em;margin:15px 0 0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.editor h3.editor{font-size:.8em;margin:0 !important;font-family:serif,"DejaVuSerif";font-weight:normal}#sbo-rt-content div.colophon div.publisher{margin-top:10px}#sbo-rt-content div.colophon div.publisher p,#sbo-rt-content div.colophon div.publisher span.publishername{margin:0;font-size:.8em}#sbo-rt-content div.legalnotice p,#sbo-rt-content div.timestamp p{font-size:.8em}#sbo-rt-content div.timestamp p{margin-top:10pt}#sbo-rt-content div.colophon[title="About the Author"] h1.title,#sbo-rt-content div.colophon[title="Colophon"] h1.title{font-size:1.5em;margin:0 !important;font-family:sans-serif,"DejaVuSans";font-weight:bold}#sbo-rt-content section.chapter div.titlepage div.author{margin:10px 0 10px 0}#sbo-rt-content section.chapter div.titlepage div.author div.affiliation{font-style:italic}#sbo-rt-content div.attribution{margin:5px 0 0 50px !important}#sbo-rt-content h3.author span.orgname{display:none}#sbo-rt-content div.epigraph{margin:10px 0 10px 20px !important;page-break-inside:avoid;font-size:90%}#sbo-rt-content div.epigraph p{font-style:italic}#sbo-rt-content blockquote,#sbo-rt-content div.blockquote{margin:10px !important;page-break-inside:avoid;font-size:95%}#sbo-rt-content blockquote p,#sbo-rt-content div.blockquote p{font-family:serif,"DejaVuSerif";font-style:italic}#sbo-rt-content blockquote div.attribution{margin:5px 0 0 30px !important;text-align:right;width:80%}#sbo-rt-content blockquote div.attribution p{font-style:normal}#sbo-rt-content p.right{text-align:right;margin:0}#sbo-rt-content div.footnote{font-size:90%}#sbo-rt-content div.refnamediv h2,#sbo-rt-content div.refnamediv h3,#sbo-rt-content div.refsynopsisdiv h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refentry div.refsect1 h2{font-size:1.1em;color:#000;margin-top:15px !important;margin-bottom:0 !important}#sbo-rt-content div.refsect2 h3{font-size:1em;color:#000;margin-top:10px !important;margin-bottom:0 !important}#sbo-rt-content div.refnamediv p{margin-left:15px !important}#sbo-rt-content dt{padding-top:10px !important;padding-bottom:0 !important}#sbo-rt-content dt span.term{font-weight:bold;font-style:italic}#sbo-rt-content dt span.term code.literal{font-style:normal;font-weight:normal}#sbo-rt-content dd{margin-left:1.5em !important}#sbo-rt-content ol{list-style-type:decimal;margin-top:8px !important;margin-bottom:8px !important;margin-left:20px !important;padding-left:25px !important}#sbo-rt-content ol ol{list-style-type:lower-alpha}#sbo-rt-content ol ol ol{list-style-type:lower-roman}#sbo-rt-content ul{list-style-type:square;margin-top:8px !important;margin-bottom:8px !important;margin-left:5px !important;padding-left:20px !important}#sbo-rt-content ul ul{list-style-type:none;padding-left:0 !important;margin-left:0 !important}#sbo-rt-content ol li,#sbo-rt-content ul li,#sbo-rt-content dd{margin-bottom:1em}#sbo-rt-content ul ul li p:before{content:"— "}#sbo-rt-content ul ul ul li p:before{content:""}#sbo-rt-content ul ul ul{list-style-type:square;margin-left:20px !important;padding-left:30px !important}#sbo-rt-content div.orderedlistalpha{list-style-type:upper-alpha}#sbo-rt-content table.simplelist{margin-left:20px !important;margin-bottom:10px}#sbo-rt-content table.simplelist td{border:none;font-size:90%}#sbo-rt-content table.simplelist tr{border-bottom:none}#sbo-rt-content table.simplelist tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.calloutlist p:first-child{margin-top:-25px !important}#sbo-rt-content div.calloutlist dd{padding-left:40px !important}#sbo-rt-content div.calloutlist img{padding:0}#sbo-rt-content a.co img{padding:0}#sbo-rt-content div.toc ol{margin-top:8px !important;margin-bottom:8px !important;margin-left:0 !important;padding-left:0 !important}#sbo-rt-content div.toc ol ol{margin-left:30px !important;padding-left:0 !important}#sbo-rt-content div.toc ol li{list-style-type:none}#sbo-rt-content div.toc a{color:#8e0012}#sbo-rt-content div.toc ol a{font-size:1em;font-weight:bold}#sbo-rt-content div.toc ol>li>ol a{font-weight:bold;font-size:1em}#sbo-rt-content div.toc ol>li>ol>li>ol a{text-decoration:none;font-weight:normal;font-size:1em}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.warning,#sbo-rt-content div.caution,#sbo-rt-content div.important{margin:30px !important;-webkit-border-radius:5px;border-radius:5px;font-size:90%;padding:10px 8px 20px 8px !important;page-break-inside:avoid}#sbo-rt-content div.tip,#sbo-rt-content div.note,#sbo-rt-content div.important{border:1px solid #BEBEBE;background-color:transparent}#sbo-rt-content div.warning,#sbo-rt-content div.caution{border:1px solid #BC8F8F}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3,#sbo-rt-content div.important h3{font:bold 90%;font-family:sans-serif,"DejaVuSans";text-transform:uppercase;letter-spacing:1px;text-align:center;margin:4px 0 6px !important}#sbo-rt-content div.tip h3,#sbo-rt-content div.note h3,#sbo-rt-content div.important h3{color:#737373}#sbo-rt-content div.warning h3,#sbo-rt-content div.caution h3{color:#C67171}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note{background-color:transparent;margin:8px 0 0 !important;border:0 solid #BEBEBE;-webkit-border-radius:0;border-radius:0;font-size:100%;padding:0 !important;page-break-inside:avoid}#sbo-rt-content div.sect1[title="Safari® Books Online"] div.note h3{display:none}#sbo-rt-content div.table,#sbo-rt-content table{margin:15px auto 30px auto !important;max-width:95%;border-collapse:collapse;border-spacing:0}#sbo-rt-content div.table,#sbo-rt-content div.informaltable{page-break-inside:avoid}#sbo-rt-content tr{border-bottom:1px solid #c3c3c3}#sbo-rt-content thead td{border-bottom:#9d9d9d 1px solid !important;border-top:#9d9d9d 1px solid !important}#sbo-rt-content tr:nth-of-type(even){background-color:#f1f6fc}#sbo-rt-content thead{font-family:sans-serif,"DejaVuSans";color:#000;font-weight:bold}#sbo-rt-content td{padding:.3em;text-align:left;vertical-align:baseline;font-size:80%}#sbo-rt-content div.informaltable table{margin:10px auto !important}#sbo-rt-content div.informaltable table tr{border-bottom:none}#sbo-rt-content div.informaltable table tr:nth-of-type(even){background-color:transparent}#sbo-rt-content div.informaltable td,#sbo-rt-content div.informaltable th{border:#9d9d9d 1px solid}#sbo-rt-content div.table-title{font-weight:normal;font-style:italic;font-family:serif,"DejaVuSerif";margin:20px 0 0 0 !important;text-align:center;padding:0}#sbo-rt-content table code{font-size:smaller}#sbo-rt-content div.equation{margin:10px 0 15px 0 !important}#sbo-rt-content div.equation-title{font-style:italic;font-weight:normal;font-family:serif,"DejaVuSerif";margin:20px 0 10px 0 !important;page-break-after:avoid}#sbo-rt-content div.equation-contents{margin-left:20px}#sbo-rt-content span.inlinemediaobject{height:.85em;display:inline-block;margin-bottom:.2em}#sbo-rt-content span.inlinemediaobject img{margin:0;height:.85em}#sbo-rt-content div.informalequation{margin:20px 0 20px 20px;width:75%}#sbo-rt-content div.informalequation img{width:75%}#sbo-rt-content div.index{font-weight:bold}#sbo-rt-content div.index dt{line-height:140%}#sbo-rt-content div.index a.indexterm{color:#8e0012}#sbo-rt-content code.boolean,#sbo-rt-content .navy{color:rgb(0,0,128);}#sbo-rt-content code.character,#sbo-rt-content .olive{color:rgb(128,128,0);}#sbo-rt-content code.comment,#sbo-rt-content .blue{color:rgb(0,0,255);}#sbo-rt-content code.conditional,#sbo-rt-content .limegreen{color:rgb(50,205,50);}#sbo-rt-content code.constant,#sbo-rt-content .darkorange{color:rgb(255,140,0);}#sbo-rt-content code.debug,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.define,#sbo-rt-content .darkgoldenrod,#sbo-rt-content .gold{color:rgb(184,134,11);}#sbo-rt-content code.delimiter,#sbo-rt-content .dimgray{color:rgb(105,105,105);}#sbo-rt-content code.error,#sbo-rt-content .red{color:rgb(255,0,0);}#sbo-rt-content code.exception,#sbo-rt-content .salmon{color:rgb(250,128,11);}#sbo-rt-content code.float,#sbo-rt-content .steelblue{color:rgb(70,130,180);}#sbo-rt-content pre code.function,#sbo-rt-content .green{color:rgb(0,128,0);}#sbo-rt-content code.identifier,#sbo-rt-content .royalblue{color:rgb(65,105,225);}#sbo-rt-content code.ignore,#sbo-rt-content .gray{color:rgb(128,128,128);}#sbo-rt-content code.include,#sbo-rt-content .purple{color:rgb(128,0,128);}#sbo-rt-content code.keyword,#sbo-rt-content .sienna{color:rgb(160,82,45);}#sbo-rt-content code.label,#sbo-rt-content .deeppink{color:rgb(255,20,147);}#sbo-rt-content code.macro,#sbo-rt-content .orangered{color:rgb(255,69,0);}#sbo-rt-content code.number,#sbo-rt-content .brown{color:rgb(165,42,42);}#sbo-rt-content code.operator,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.preCondit,#sbo-rt-content .teal{color:rgb(0,128,128);}#sbo-rt-content code.preProc,#sbo-rt-content .fuschia{color:rgb(255,0,255);}#sbo-rt-content code.repeat,#sbo-rt-content .indigo{color:rgb(75,0,130);}#sbo-rt-content code.special,#sbo-rt-content .saddlebrown{color:rgb(139,69,19);}#sbo-rt-content code.specialchar,#sbo-rt-content .magenta{color:rgb(255,0,255);}#sbo-rt-content code.specialcomment,#sbo-rt-content .seagreen{color:rgb(46,139,87);}#sbo-rt-content code.statement,#sbo-rt-content .forestgreen{color:rgb(34,139,34);}#sbo-rt-content code.storageclass,#sbo-rt-content .plum{color:rgb(221,160,221);}#sbo-rt-content code.string,#sbo-rt-content .darkred{color:rgb(139,0,0);}#sbo-rt-content code.structure,#sbo-rt-content .chocolate{color:rgb(210,106,30);}#sbo-rt-content code.tag,#sbo-rt-content .darkcyan{color:rgb(0,139,139);}#sbo-rt-content code.todo,#sbo-rt-content .black{color:#000;}#sbo-rt-content code.type,#sbo-rt-content .mediumslateblue{color:rgb(123,104,238);}#sbo-rt-content code.typedef,#sbo-rt-content .darkgreen{color:rgb(0,100,0);}#sbo-rt-content code.underlined{text-decoration:underline;}#sbo-rt-content pre code.hll{background-color:#ffc}#sbo-rt-content pre code.c{color:#09F;font-style:italic}#sbo-rt-content pre code.err{color:#A00}#sbo-rt-content pre code.k{color:#069;font-weight:bold}#sbo-rt-content pre code.o{color:#555}#sbo-rt-content pre code.cm{color:#35586C;font-style:italic}#sbo-rt-content pre code.cp{color:#099}#sbo-rt-content pre code.c1{color:#35586C;font-style:italic}#sbo-rt-content pre code.cs{color:#35586C;font-weight:bold;font-style:italic}#sbo-rt-content pre code.gd{background-color:#FCC}#sbo-rt-content pre code.ge{font-style:italic}#sbo-rt-content pre code.gr{color:#F00}#sbo-rt-content pre code.gh{color:#030;font-weight:bold}#sbo-rt-content pre code.gi{background-color:#CFC}#sbo-rt-content pre code.go{color:#000}#sbo-rt-content pre code.gp{color:#009;font-weight:bold}#sbo-rt-content pre code.gs{font-weight:bold}#sbo-rt-content pre code.gu{color:#030;font-weight:bold}#sbo-rt-content pre code.gt{color:#9C6}#sbo-rt-content pre code.kc{color:#069;font-weight:bold}#sbo-rt-content pre code.kd{color:#069;font-weight:bold}#sbo-rt-content pre code.kn{color:#069;font-weight:bold}#sbo-rt-content pre code.kp{color:#069}#sbo-rt-content pre code.kr{color:#069;font-weight:bold}#sbo-rt-content pre code.kt{color:#078;font-weight:bold}#sbo-rt-content pre code.m{color:#F60}#sbo-rt-content pre code.s{color:#C30}#sbo-rt-content pre code.na{color:#309}#sbo-rt-content pre code.nb{color:#366}#sbo-rt-content pre code.nc{color:#0A8;font-weight:bold}#sbo-rt-content pre code.no{color:#360}#sbo-rt-content pre code.nd{color:#99F}#sbo-rt-content pre code.ni{color:#999;font-weight:bold}#sbo-rt-content pre code.ne{color:#C00;font-weight:bold}#sbo-rt-content pre code.nf{color:#C0F}#sbo-rt-content pre code.nl{color:#99F}#sbo-rt-content pre code.nn{color:#0CF;font-weight:bold}#sbo-rt-content pre code.nt{color:#309;font-weight:bold}#sbo-rt-content pre code.nv{color:#033}#sbo-rt-content pre code.ow{color:#000;font-weight:bold}#sbo-rt-content pre code.w{color:#bbb}#sbo-rt-content pre code.mf{color:#F60}#sbo-rt-content pre code.mh{color:#F60}#sbo-rt-content pre code.mi{color:#F60}#sbo-rt-content pre code.mo{color:#F60}#sbo-rt-content pre code.sb{color:#C30}#sbo-rt-content pre code.sc{color:#C30}#sbo-rt-content pre code.sd{color:#C30;font-style:italic}#sbo-rt-content pre code.s2{color:#C30}#sbo-rt-content pre code.se{color:#C30;font-weight:bold}#sbo-rt-content pre code.sh{color:#C30}#sbo-rt-content pre code.si{color:#A00}#sbo-rt-content pre code.sx{color:#C30}#sbo-rt-content pre code.sr{color:#3AA}#sbo-rt-content pre code.s1{color:#C30}#sbo-rt-content pre code.ss{color:#A60}#sbo-rt-content pre code.bp{color:#366}#sbo-rt-content pre code.vc{color:#033}#sbo-rt-content pre code.vg{color:#033}#sbo-rt-content pre code.vi{color:#033}#sbo-rt-content pre code.il{color:#F60}#sbo-rt-content pre code.g{color:#050}#sbo-rt-content pre code.l{color:#C60}#sbo-rt-content pre code.l{color:#F90}#sbo-rt-content pre code.n{color:#008}#sbo-rt-content pre code.nx{color:#008}#sbo-rt-content pre code.py{color:#96F}#sbo-rt-content pre code.p{color:#000}#sbo-rt-content pre code.x{color:#F06}#sbo-rt-content div.blockquote_sampler_toc{width:95%;margin:5px 5px 5px 10px !important}#sbo-rt-content div{font-family:serif,"DejaVuSerif"}</style><script> // <![CDATA[
+    var g = {
+      position_cache: {
+        
+          "chapter": "/api/v1/book/9781491945407/chapter/co01.html",
+          "book_id": "9781491945407",
+          "chapter_uri": "co01.html",
+          "position": 0.0,
+          "user_uuid": "50f03e1c-9cec-49e5-851c-0859c083b2de",
+          "next_chapter_uri": "/library/view/think-bayes/9781491945407/copyright.html"
+        
+      },
+      title: "Think Bayes",
+      author_list: "Allen B. Downey",
+      format: "book",
+      source: "application/epub+zip",
+      is_system_book: true,
+      is_public: false,
+      loaded_from_server: true,
+      allow_scripts: false,
+      has_mathml: false,
+      show_ios_app_teaser: false
+    };
+    // ]]></script><script src="./1. Bayes’s Theorem - Think Bayes_files/modernizr.8e35451ddb64.js.download"></script><script>
+    
+      
+
+      
+
+      
+        
+          window.PUBLIC_ANNOTATIONS = true;
+        
+      
+
+      window.MOBILE_PUBLIC_ANNOTATIONS = false;
+
+    
+
+    
+      window.PRIVACY_CONTROL_OVERRIDE = false;
+    
+
+    
+      window.PRIVACY_CONTROL_SWITCH = true;
+    
+
+    
+      window.PUBLISHER_PAGES = true;
+    
+
+      window.SBO = {
+        "constants": {
+          "SITB_ENDPOINT": "https://www.safaribooksonline.com/api/v2/sitb/",
+          "SEARCH_SELECT_ENDPOINT": "https://www.safaribooksonline.com/api/v2/search/select/",
+          "ENABLE_ONLINE_TRAINING": true
+        }
+      };
+  </script><link rel="canonical" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/co01.html"><meta name="description" content="Colophon The animal on the cover of Think Bayes is a red striped mullet (Mullus surmuletus). This species of goatfish can be found in the Mediterranean Sea, east North Atlantic ... "><meta property="og:title" content="Colophon"><meta itemprop="isPartOf" content="/library/view/think-bayes/9781491945407/"><meta itemprop="name" content="Colophon"><meta property="og:url" itemprop="url" content="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/co01.html"><meta property="og:site_name" content="Safari"><meta property="og:image" itemprop="thumbnailUrl" content="https://www.safaribooksonline.com/library/cover/9781491945407/"><meta property="og:description" itemprop="description" content="Colophon The animal on the cover of Think Bayes is a red striped mullet (Mullus surmuletus). This species of goatfish can be found in the Mediterranean Sea, east North Atlantic ... "><meta itemprop="inLanguage" content="en"><meta itemprop="publisher" content="O&#39;Reilly Media, Inc."><meta property="og:type" content="book"><meta property="og:book:isbn" itemprop="isbn" content="9781449370787"><meta property="og:book:author" itemprop="author" content="Allen B. Downey"><meta property="og:book:tag" itemprop="about" content="Python"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@safari"><style type="text/css" id="font-styles" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-size: &lt;%= font_size %&gt; !important; }"></style><style type="text/css" id="font-family" data-template="#sbo-rt-content, #sbo-rt-content p, #sbo-rt-content div { font-family: &lt;%= font_family %&gt; !important; }"></style><style type="text/css" id="column-width" data-template="#sbo-rt-content { max-width: &lt;%= column_width %&gt;% !important; margin: 0 auto !important; }"></style><noscript><meta http-equiv="refresh" content="0; url=/library/no-js/" /></noscript><script type="text/javascript">
+    (function(i,s,o,g,r,a,m) {
+      i['GoogleAnalyticsObject']=r;
+      i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+      a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+      a.async=1;
+      a.src=g;
+      m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    var matches = document.cookie.match(/BrowserCookie\s*=\s*([a-f0-9\-]{36})/),
+      user_uuid = null;
+
+    if (matches && matches.length === 2) {
+      user_uuid = matches[1];
+    }
+
+  
+    ga('create', 'UA-39299553-7', {'userId': '50f03e1c-9cec-49e5-851c-0859c083b2de' });
+  
+
+  
+    
+      ga('set', 'dimension1', 'Trial');
+    
+  
+
+  ga('set', 'dimension6', user_uuid);
+
+  
+    ga('set', 'dimension2', '50f03e1c-9cec-49e5-851c-0859c083b2de');
+    
+  
+
+  
+
+  
+
+  //enable enhanced link tracking
+  ga('require', 'linkid', 'linkid.js');
+
+  // reading interface will track pageviews itself
+  if (document.location.pathname.indexOf("/library/view") !== 0) {
+    ga('send', 'pageview');
+  }
+  </script><script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5P4V6Z');
+  </script><script defer="" src="./1. Bayes’s Theorem - Think Bayes_files/vendor.218bb2719961.js.download"></script><script defer="" src="./1. Bayes’s Theorem - Think Bayes_files/reader.1ce61fb971aa.js.download"></script><script async="" src="./1. Bayes’s Theorem - Think Bayes_files/MathJax.js.download"></script><style id="annotator-dynamic-style">.annotator-adder, .annotator-outer, .annotator-notice {
+  z-index: 2147483020;
+}
+.annotator-filter {
+  z-index: 2147483010;
+}</style><script src="./1. Bayes’s Theorem - Think Bayes_files/f(1).txt"></script><script src="./1. Bayes’s Theorem - Think Bayes_files/f(2).txt"></script><style type="text/css" id="kampyleStyle">.noOutline{outline: none !important;}.wcagOutline:focus{outline: 1px dashed #595959 !important;outline-offset: 2px !important;transition: none !important;}</style></head>
+
+
+<body class="reading sidenav nav-collapsed  scalefonts subscribe-panel library">
+
+    
+  
+  <noscript> 
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5P4V6Z"
+            height="0" width="0"
+            style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  
+
+
+
+    
+      <div class="working hide" role="status">
+        <div class="working-image"></div>
+      </div>
+      <div class="sbo-site-nav">
+        
+
+
+
+
+
+<a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#container" class="skip">Skip to content</a><header class="topbar t-topbar"><nav role="navigation" class="js-site-nav"><ul class="topnav"><li class="t-logo"><a href="https://www.safaribooksonline.com/home/" class="l0 None safari-home nav-icn js-keyboard-nav-home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>Safari Home Icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M4 9.9L4 9.9 4 18 16 18 16 9.9 10 4 4 9.9ZM2.6 8.1L2.6 8.1 8.7 1.9 10 0.5 11.3 1.9 17.4 8.1 18 8.7 18 9.5 18 18.1 18 20 16.1 20 3.9 20 2 20 2 18.1 2 9.5 2 8.7 2.6 8.1Z"></path><rect x="10" y="12" width="3" height="7"></rect><rect transform="translate(18.121320, 10.121320) rotate(-315.000000) translate(-18.121320, -10.121320) " x="16.1" y="9.1" width="4" height="2"></rect><rect transform="translate(2.121320, 10.121320) scale(-1, 1) rotate(-315.000000) translate(-2.121320, -10.121320) " x="0.1" y="9.1" width="4" height="2"></rect></g></svg><span>Safari Home</span></a></li><li><a href="https://www.safaribooksonline.com/r/" class="t-recommendations-nav l0 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recommendations icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M50 25C50 18.2 44.9 12.5 38.3 11.7 37.5 5.1 31.8 0 25 0 18.2 0 12.5 5.1 11.7 11.7 5.1 12.5 0 18.2 0 25 0 31.8 5.1 37.5 11.7 38.3 12.5 44.9 18.2 50 25 50 31.8 50 37.5 44.9 38.3 38.3 44.9 37.5 50 31.8 50 25ZM25 3.1C29.7 3.1 33.6 6.9 34.4 11.8 30.4 12.4 26.9 15.1 25 18.8 23.1 15.1 19.6 12.4 15.6 11.8 16.4 6.9 20.3 3.1 25 3.1ZM34.4 15.6C33.6 19.3 30.7 22.2 27.1 22.9 27.8 19.2 30.7 16.3 34.4 15.6ZM22.9 22.9C19.2 22.2 16.3 19.3 15.6 15.6 19.3 16.3 22.2 19.2 22.9 22.9ZM3.1 25C3.1 20.3 6.9 16.4 11.8 15.6 12.4 19.6 15.1 23.1 18.8 25 15.1 26.9 12.4 30.4 11.8 34.4 6.9 33.6 3.1 29.7 3.1 25ZM22.9 27.1C22.2 30.7 19.3 33.6 15.6 34.4 16.3 30.7 19.2 27.8 22.9 27.1ZM25 46.9C20.3 46.9 16.4 43.1 15.6 38.2 19.6 37.6 23.1 34.9 25 31.3 26.9 34.9 30.4 37.6 34.4 38.2 33.6 43.1 29.7 46.9 25 46.9ZM27.1 27.1C30.7 27.8 33.6 30.7 34.4 34.4 30.7 33.6 27.8 30.7 27.1 27.1ZM38.2 34.4C37.6 30.4 34.9 26.9 31.3 25 34.9 23.1 37.6 19.6 38.2 15.6 43.1 16.4 46.9 20.3 46.9 25 46.9 29.7 43.1 33.6 38.2 34.4Z"></path></g></svg><span>Recommended</span></a></li><li><a href="https://www.safaribooksonline.com/playlists/" class="t-queue-nav l0 nav-icn None"><!--?xml version="1.0" encoding="UTF-8"?--><svg width="21px" height="17px" viewBox="0 0 21 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch --><title>icon_Playlist_sml</title><desc>Created with Sketch.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="icon_Playlist_sml" fill-rule="nonzero" fill="#000000"><g id="playlist-icon"><g id="Group-6"><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle></g><g id="Group-5" transform="translate(0.000000, 7.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g><g id="Group-5-Copy" transform="translate(0.000000, 14.000000)"><circle id="Oval" cx="1.5" cy="1.5" r="1.5"></circle><rect id="Rectangle-path" x="5" y="0" width="16" height="3" rx="0.5"></rect></g></g></g></g></svg><span>
+               Playlists
+            </span></a></li><li class="search"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" class="t-search-nav trigger nav-icn l0" data-dropdown-selector=".searchbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>search icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M31.3 0C20.9 0 12.5 8.4 12.5 18.8 12.5 22.5 13.6 25.9 15.4 28.8L1.2 42.9C-0.4 44.5-0.4 47.2 1.2 48.8 2 49.6 3.1 50 4.2 50 5.2 50 6.3 49.6 7.1 48.8L21.2 34.6C24.1 36.5 27.5 37.5 31.3 37.5 41.6 37.5 50 29.1 50 18.8 50 8.4 41.6 0 31.3 0ZM31.3 31.3C24.4 31.3 18.8 25.6 18.8 18.8 18.8 11.9 24.4 6.3 31.3 6.3 38.1 6.3 43.8 11.9 43.8 18.8 43.8 25.6 38.1 31.3 31.3 31.3Z"></path></g></svg><span>Search</span></a></li><li class="usermenu dropdown"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" class="trigger l0 nav-icn nav-dropdown"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>navigation arrow</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M0.1 12.5L9.7 3.1C9.8 3 9.9 3 10 3 10.1 3 10.2 3 10.3 3.1L19.9 12.5C20 12.5 20 12.6 20 12.8 20 12.9 20 13 19.9 13L17 15.9C16.9 16 16.8 16 16.7 16 16.5 16 16.4 16 16.4 15.9L10 9.7 3.6 15.9C3.6 16 3.5 16 3.3 16 3.2 16 3.1 16 3 15.9L0.1 13C0 12.9 0 12.8 0 12.7 0 12.7 0 12.6 0.1 12.5Z"></path></g></svg><span>Expand Nav</span></a><div class="drop-content"><ul><li><a href="https://www.safaribooksonline.com/history/" class="t-recent-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>recent items icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 0C11.2 0 0 11.2 0 25 0 38.8 11.2 50 25 50 38.8 50 50 38.8 50 25 50 11.2 38.8 0 25 0ZM6.3 25C6.3 14.6 14.6 6.3 25 6.3 35.4 6.3 43.8 14.6 43.8 25 43.8 35.4 35.4 43.8 25 43.8 14.6 43.8 6.3 35.4 6.3 25ZM31.8 31.5C32.5 30.5 32.4 29.2 31.6 28.3L27.1 23.8 27.1 12.8C27.1 11.5 26.2 10.4 25 10.4 23.9 10.4 22.9 11.5 22.9 12.8L22.9 25.7 28.8 31.7C29.2 32.1 29.7 32.3 30.2 32.3 30.8 32.3 31.3 32 31.8 31.5Z"></path></g></svg><span>History</span></a></li><li><a href="https://www.safaribooksonline.com/topics" class="t-topics-link l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 55" width="20" height="20" version="1.1" fill="#4A3C31"><desc>topics icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M25 55L50 41.262 50 13.762 25 0 0 13.762 0 41.262 25 55ZM8.333 37.032L8.333 17.968 25 8.462 41.667 17.968 41.667 37.032 25 46.538 8.333 37.032Z"></path></g></svg><span>Topics</span></a></li><li><a href="https://www.safaribooksonline.com/tutorials/" class="l1 nav-icn t-tutorials-nav js-toggle-menu-item None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" version="1.1" fill="#4A3C31"><desc>tutorials icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M15.8 18.2C15.8 18.2 15.9 18.2 16 18.2 16.1 18.2 16.2 18.2 16.4 18.2 16.5 18.2 16.7 18.1 16.9 18 17 17.9 17.1 17.8 17.2 17.7 17.3 17.6 17.4 17.5 17.4 17.4 17.5 17.2 17.6 16.9 17.6 16.7 17.6 16.6 17.6 16.5 17.6 16.4 17.5 16.2 17.5 16.1 17.4 15.9 17.3 15.8 17.2 15.6 17 15.5 16.8 15.3 16.6 15.3 16.4 15.2 16.2 15.2 16 15.2 15.8 15.2 15.7 15.2 15.5 15.3 15.3 15.4 15.2 15.4 15.1 15.5 15 15.7 14.9 15.8 14.8 15.9 14.7 16 14.7 16.1 14.6 16.3 14.6 16.4 14.6 16.5 14.6 16.6 14.6 16.6 14.6 16.7 14.6 16.9 14.6 17 14.6 17.1 14.7 17.3 14.7 17.4 14.8 17.6 15 17.7 15.1 17.9 15.2 18 15.3 18 15.5 18.1 15.5 18.1 15.6 18.2 15.7 18.2 15.7 18.2 15.7 18.2 15.8 18.2L15.8 18.2ZM9.4 11.5C9.5 11.5 9.5 11.5 9.6 11.5 9.7 11.5 9.9 11.5 10 11.5 10.2 11.5 10.3 11.4 10.5 11.3 10.6 11.2 10.8 11.1 10.9 11 10.9 10.9 11 10.8 11.1 10.7 11.2 10.5 11.2 10.2 11.2 10 11.2 9.9 11.2 9.8 11.2 9.7 11.2 9.5 11.1 9.4 11 9.2 10.9 9.1 10.8 8.9 10.6 8.8 10.5 8.7 10.3 8.6 10 8.5 9.9 8.5 9.7 8.5 9.5 8.5 9.3 8.5 9.1 8.6 9 8.7 8.8 8.7 8.7 8.8 8.6 9 8.5 9.1 8.4 9.2 8.4 9.3 8.2 9.5 8.2 9.8 8.2 10 8.2 10.1 8.2 10.2 8.2 10.3 8.2 10.5 8.3 10.6 8.4 10.7 8.5 10.9 8.6 11.1 8.7 11.2 8.9 11.3 9 11.4 9.1 11.4 9.2 11.4 9.3 11.5 9.3 11.5 9.3 11.5 9.4 11.5 9.4 11.5L9.4 11.5ZM3 4.8C3.1 4.8 3.1 4.8 3.2 4.8 3.4 4.8 3.5 4.8 3.7 4.8 3.8 4.8 4 4.7 4.1 4.6 4.3 4.5 4.4 4.4 4.5 4.3 4.6 4.2 4.6 4.1 4.7 4 4.8 3.8 4.8 3.5 4.8 3.3 4.8 3.1 4.8 3 4.8 2.9 4.7 2.8 4.7 2.6 4.6 2.5 4.5 2.3 4.4 2.2 4.2 2.1 4 1.9 3.8 1.9 3.6 1.8 3.5 1.8 3.3 1.8 3.1 1.8 2.9 1.8 2.7 1.9 2.6 2 2.4 2.1 2.3 2.2 2.2 2.3 2.1 2.4 2 2.5 2 2.6 1.8 2.8 1.8 3 1.8 3.3 1.8 3.4 1.8 3.5 1.8 3.6 1.8 3.8 1.9 3.9 2 4 2.1 4.2 2.2 4.4 2.4 4.5 2.5 4.6 2.6 4.7 2.7 4.7 2.8 4.7 2.9 4.8 2.9 4.8 3 4.8 3 4.8 3 4.8L3 4.8ZM13.1 15.2C13.2 15.1 13.2 15.1 13.2 15.1 13.3 14.9 13.4 14.7 13.6 14.5 13.8 14.2 14.1 14 14.4 13.8 14.7 13.6 15.1 13.5 15.5 13.4 15.9 13.4 16.3 13.4 16.7 13.5 17.2 13.5 17.6 13.7 17.9 13.9 18.2 14.1 18.5 14.4 18.7 14.7 18.9 15 19.1 15.3 19.2 15.6 19.3 15.9 19.4 16.1 19.4 16.4 19.4 17 19.3 17.5 19.1 18.1 19 18.3 18.9 18.5 18.7 18.7 18.5 19 18.3 19.2 18 19.4 17.7 19.6 17.3 19.8 16.9 19.9 16.6 20 16.3 20 16 20 15.8 20 15.6 20 15.4 19.9 15.4 19.9 15.4 19.9 15.4 19.9 15.2 19.9 15 19.8 14.9 19.8 14.8 19.7 14.7 19.7 14.6 19.7 14.4 19.6 14.3 19.5 14.1 19.3 13.7 19.1 13.4 18.7 13.2 18.4 13.1 18.1 12.9 17.8 12.9 17.5 12.8 17.3 12.8 17.1 12.8 16.9L3.5 14.9C3.3 14.9 3.1 14.8 3 14.8 2.7 14.7 2.4 14.5 2.1 14.3 1.7 14 1.4 13.7 1.2 13.3 1 13 0.9 12.6 0.8 12.3 0.7 12 0.7 11.7 0.7 11.4 0.7 11 0.8 10.5 1 10.1 1.1 9.8 1.3 9.5 1.6 9.2 1.8 8.9 2.1 8.7 2.4 8.5 2.8 8.3 3.2 8.1 3.6 8.1 3.9 8 4.2 8 4.5 8 4.6 8 4.8 8 4.9 8.1L6.8 8.5C6.8 8.4 6.8 8.4 6.8 8.4 6.9 8.2 7.1 8 7.2 7.8 7.5 7.5 7.7 7.3 8 7.1 8.4 6.9 8.7 6.8 9.1 6.7 9.5 6.7 10 6.7 10.4 6.8 10.8 6.8 11.2 7 11.5 7.2 11.8 7.5 12.1 7.7 12.4 8 12.6 8.3 12.7 8.6 12.8 8.9 12.9 9.2 13 9.4 13 9.7 13 9.7 13 9.8 13 9.8 13.6 9.9 14.2 10.1 14.9 10.2 15 10.2 15 10.2 15.1 10.2 15.3 10.2 15.4 10.2 15.6 10.2 15.8 10.1 16 10 16.2 9.9 16.4 9.8 16.5 9.6 16.6 9.5 16.8 9.2 16.9 8.8 16.9 8.5 16.9 8.3 16.9 8.2 16.8 8 16.8 7.8 16.7 7.7 16.6 7.5 16.5 7.3 16.3 7.2 16.2 7.1 16 7 15.9 6.9 15.8 6.9 15.7 6.9 15.6 6.8 15.5 6.8L6.2 4.8C6.2 5 6 5.2 5.9 5.3 5.7 5.6 5.5 5.8 5.3 6 4.9 6.2 4.5 6.4 4.1 6.5 3.8 6.6 3.5 6.6 3.2 6.6 3 6.6 2.8 6.6 2.7 6.6 2.6 6.6 2.6 6.5 2.6 6.5 2.5 6.5 2.3 6.5 2.1 6.4 1.8 6.3 1.6 6.1 1.3 6 1 5.7 0.7 5.4 0.5 5 0.3 4.7 0.2 4.4 0.1 4.1 0 3.8 0 3.6 0 3.3 0 2.8 0.1 2.2 0.4 1.7 0.5 1.5 0.7 1.3 0.8 1.1 1.1 0.8 1.3 0.6 1.6 0.5 2 0.3 2.3 0.1 2.7 0.1 3.1 0 3.6 0 4 0.1 4.4 0.2 4.8 0.3 5.1 0.5 5.5 0.8 5.7 1 6 1.3 6.2 1.6 6.3 1.9 6.4 2.3 6.5 2.5 6.6 2.7 6.6 3 6.6 3 6.6 3.1 6.6 3.1 9.7 3.8 12.8 4.4 15.9 5.1 16.1 5.1 16.2 5.2 16.4 5.2 16.7 5.3 16.9 5.5 17.2 5.6 17.5 5.9 17.8 6.2 18.1 6.5 18.3 6.8 18.4 7.2 18.6 7.5 18.6 7.9 18.7 8.2 18.7 8.6 18.7 9 18.6 9.4 18.4 9.8 18.3 10.1 18.2 10.3 18 10.6 17.8 10.9 17.5 11.1 17.3 11.3 16.9 11.6 16.5 11.8 16 11.9 15.7 12 15.3 12 15 12 14.8 12 14.7 12 14.5 11.9 13.9 11.8 13.3 11.7 12.6 11.5 12.5 11.7 12.4 11.9 12.3 12 12.1 12.3 11.9 12.5 11.7 12.7 11.3 12.9 10.9 13.1 10.5 13.2 10.2 13.3 9.9 13.3 9.6 13.3 9.4 13.3 9.2 13.3 9 13.2 9 13.2 9 13.2 9 13.2 8.8 13.2 8.7 13.2 8.5 13.1 8.2 13 8 12.8 7.7 12.6 7.4 12.4 7.1 12 6.8 11.7 6.7 11.4 6.6 11.1 6.5 10.8 6.4 10.6 6.4 10.4 6.4 10.2 5.8 10.1 5.2 9.9 4.5 9.8 4.4 9.8 4.4 9.8 4.3 9.8 4.1 9.8 4 9.8 3.8 9.8 3.6 9.9 3.4 10 3.2 10.1 3 10.2 2.9 10.4 2.8 10.5 2.6 10.8 2.5 11.1 2.5 11.5 2.5 11.6 2.5 11.8 2.6 12 2.6 12.1 2.7 12.3 2.8 12.5 2.9 12.6 3.1 12.8 3.2 12.9 3.3 13 3.5 13.1 3.6 13.1 3.7 13.1 3.8 13.2 3.9 13.2L13.1 15.2 13.1 15.2Z"></path></g></svg><span>Tutorials</span></a></li><li class="nav-offers flyout-parent"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" class="l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20" height="20" version="1.1" fill="#4A3C31"><desc>offers icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M35.9 20.6L27 15.5C26.1 15 24.7 15 23.7 15.5L14.9 20.6C13.9 21.1 13.2 22.4 13.2 23.4L13.2 41.4C13.2 42.4 13.9 43.7 14.9 44.2L23.3 49C24.2 49.5 25.6 49.5 26.6 49L35.9 43.6C36.8 43.1 37.6 41.8 37.6 40.8L37.6 23.4C37.6 22.4 36.8 21.1 35.9 20.6L35.9 20.6ZM40 8.2C39.1 7.6 37.6 7.6 36.7 8.2L30.2 11.9C29.3 12.4 29.3 13.2 30.2 13.8L39.1 18.8C40 19.4 40.7 20.6 40.7 21.7L40.7 39C40.7 40.1 41.4 40.5 42.4 40L48.2 36.6C49.1 36.1 49.8 34.9 49.8 33.8L49.8 15.6C49.8 14.6 49.1 13.3 48.2 12.8L40 8.2 40 8.2ZM27 10.1L33.6 6.4C34.5 5.9 34.5 5 33.6 4.5L26.6 0.5C25.6 0 24.2 0 23.3 0.5L16.7 4.2C15.8 4.7 15.8 5.6 16.7 6.1L23.7 10.1C24.7 10.6 26.1 10.6 27 10.1ZM10.1 21.7C10.1 20.6 10.8 19.4 11.7 18.8L20.6 13.8C21.5 13.2 21.5 12.4 20.6 11.9L13.6 7.9C12.7 7.4 11.2 7.4 10.3 7.9L1.6 12.8C0.7 13.3 0 14.6 0 15.6L0 33.8C0 34.9 0.7 36.1 1.6 36.6L8.4 40.5C9.3 41 10.1 40.6 10.1 39.6L10.1 21.7 10.1 21.7Z"></path></g></svg><span>Offers &amp; Deals</span></a><ul class="flyout"><li><a href="https://get.oreilly.com/email-signup.html" target="_blank" class="l2 nav-icn"><span>Newsletters</span></a></li></ul></li><li class="nav-highlights"><a href="https://www.safaribooksonline.com/u/50f03e1c-9cec-49e5-851c-0859c083b2de/" class="t-highlights-nav l1 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 35" width="20" height="20" version="1.1" fill="#4A3C31"><desc>highlights icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M13.325 18.071L8.036 18.071C8.036 11.335 12.36 7.146 22.5 5.594L22.5 0C6.37 1.113 0 10.632 0 22.113 0 29.406 3.477 35 10.403 35 15.545 35 19.578 31.485 19.578 26.184 19.578 21.556 17.211 18.891 13.325 18.071L13.325 18.071ZM40.825 18.071L35.565 18.071C35.565 11.335 39.86 7.146 50 5.594L50 0C33.899 1.113 27.5 10.632 27.5 22.113 27.5 29.406 30.977 35 37.932 35 43.045 35 47.078 31.485 47.078 26.184 47.078 21.556 44.74 18.891 40.825 18.071L40.825 18.071Z"></path></g></svg><span>Highlights</span></a></li><li><a href="https://www.safaribooksonline.com/u/preferences/" class="t-settings-nav l1 js-settings nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a></li><li><a href="https://www.safaribooksonline.com/public/support" class="l1 no-icon">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l1 no-icon">Sign Out</a></li></ul><ul class="profile"><li><a href="https://www.safaribooksonline.com/u/preferences/" class="l2 nav-icn None"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 53" width="20" height="20" version="1.1" fill="#4A3C31"><desc>settings icon</desc><g stroke="none" stroke-width="1" fill-rule="evenodd"><path d="M44.6 29.6C44.7 28.6 44.8 27.5 44.8 26.5 44.8 25.5 44.7 24.4 44.6 23.4L49.6 19C50 18.8 50.1 18.3 49.9 17.9 48.9 14.7 47.1 11.7 44.9 9.1 44.6 8.8 44.2 8.7 43.8 8.8L37.4 11.1C35.8 9.8 34 8.7 32.1 8L30.9 1.4C30.8 0.9 30.4 0.6 30 0.5 26.7-0.2 23.3-0.2 20 0.5 19.6 0.6 19.2 0.9 19.1 1.4L17.9 8C16 8.7 14.1 9.8 12.6 11.1L6.2 8.8C5.8 8.7 5.4 8.8 5.1 9.1 2.9 11.7 1.1 14.7 0.1 17.9 -0.1 18.3 0 18.8 0.4 19L5.4 23.4C5.3 24.4 5.2 25.5 5.2 26.5 5.2 27.5 5.3 28.6 5.4 29.6L0.4 34C0 34.2-0.1 34.7 0.1 35.1 1.1 38.3 2.9 41.4 5.1 43.9 5.4 44.2 5.8 44.4 6.2 44.2L12.6 42C14.1 43.2 16 44.3 17.9 45L19.1 51.7C19.2 52.1 19.6 52.5 20 52.5 21.6 52.8 23.3 53 25 53 26.7 53 28.4 52.8 30 52.5 30.4 52.5 30.8 52.1 30.9 51.7L32.1 45C34 44.3 35.8 43.2 37.4 42L43.8 44.2C44.2 44.4 44.6 44.2 44.9 43.9 47.1 41.4 48.9 38.3 49.9 35.1 50.1 34.7 50 34.2 49.6 34L44.6 29.6ZM25 36.4C19.6 36.4 15.2 32 15.2 26.5 15.2 21 19.6 16.6 25 16.6 30.4 16.6 34.8 21 34.8 26.5 34.8 32 30.4 36.4 25 36.4Z"></path></g></svg><span>Settings</span></a><span class="l2 t-nag-notification" id="nav-nag"><strong class="trial-green">10</strong> days left in your trial.
+  
+  
+
+  
+    
+      
+
+<a class="" href="https://www.safaribooksonline.com/subscribe/">Subscribe</a>.
+
+
+    
+  
+
+  
+
+</span></li><li><a href="https://www.safaribooksonline.com/public/support" class="l2">Support</a></li><li><a href="https://www.safaribooksonline.com/accounts/logout/" class="l2">Sign Out</a></li></ul></div></li></ul></nav></header>
+
+
+      </div>
+      <div id="container" class="application" style="height: auto;">
+        
+          <div class="nav-container clearfix">
+            
+
+
+            
+            
+          </div>
+
+          
+
+  <div class="js-toc">
+    
+      <div class="sbo-reading-menu sbo-menu-top"><section class="sbo-toc-container toc-menu"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" class="sbo-toc-thumb"><span class="sbo-title ss-list"><h1><div class="visuallyhidden">Table of Contents for </div>
+      
+      Think Bayes
+      
+    </h1></span></a><div class="toc-contents" style="max-height: 0px;">
+  <div class="sbo-toc ">
+    <button type="button" class="sbo-toc-thumb close"><div class="visuallyhidden">Close</div></button>
+      <section class="ios-app-teaser">
+        <ul>
+            <li><a class="js-toc-link toc-link" href="https://itunes.apple.com/gb/app/safari-queue-library-over/id881697395?mt=8" role="button">Install App</a></li>
+            <li><a class="js-toc-link toc-link" href="safaridetail://9781491945407" role="button">Open in App</a></li>
+        </ul>
+      </section>
+      <div class="sbo-book-meta">
+        
+        <span class="cover">
+         <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/">
+          <img src="./1. Bayes’s Theorem - Think Bayes_files/saved_resource" alt="Cover image for Think Bayes" height="184" width="140">
+        </a>
+        </span>
+        <span class="title">
+          
+            
+                <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/publisher/oreilly-media-inc/">
+                  <img src="./1. Bayes’s Theorem - Think Bayes_files/ORM_logo_box_rgb.png" class="publisher-logo video" alt="publisher logo">
+                </a>
+            
+          
+
+          <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/">Think Bayes</a>
+        </span>
+        
+        <span class="authors">by Allen B. Downey</span>
+        
+
+        
+        <span class="publishers t-publishers">Published by
+          <!-- Show publisher page link if publisher pages switch is on -->
+          
+            <a class="t-publisher-link toc-link js-toc-link" href="https://www.safaribooksonline.com/library/publisher/oreilly-media-inc/">
+              O'Reilly Media, Inc.</a>, 2013
+          
+        </span>
+        
+
+    
+
+    </div>
+  <ol class="tocList">
+    
+    
+    
+     
+
+     <li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/pr01.html">
+        Preface <span class="minutes">(10:21 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html">
+        1. Bayes’s Theorem <span class="minutes">(16:06 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html">
+        2. Computational Statistics <span class="minutes">(09:12 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch03.html">
+        3. Estimation <span class="minutes">(13:48 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch04.html">
+        4. More Estimation <span class="minutes">(12:39 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch05.html">
+        5. Odds and Addends <span class="minutes">(17:15 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch06.html">
+        6. Decision Analysis <span class="minutes">(18:24 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch07.html">
+        7. Prediction <span class="minutes">(14:57 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch08.html">
+        8. Observer Bias <span class="minutes">(23:00 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch09.html">
+        9. Two Dimensions <span class="minutes">(14:57 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch10.html">
+        10. Approximate Bayesian Computation <span class="minutes">(23:00 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch11.html">
+        11. Hypothesis Testing <span class="minutes">(06:54 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch12.html">
+        12. Evidence <span class="minutes">(18:24 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch13.html">
+        13. Simulation <span class="minutes">(19:33 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch14.html">
+        14. A Hierarchical Model <span class="minutes">(09:12 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch15.html">
+        15. Dealing with Dimensions <span class="minutes">(33:21 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ix01.html">
+        Index <span class="minutes">(10:21 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1 currently-reading">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/co01.html">
+        Colophon <span class="minutes">(01:09 mins)</span>
+       </a>
+      
+        
+      
+    
+    
+     
+
+     </li><li class="toc-level1">
+        
+        <a class="js-toc-link toc-link" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/copyright.html">
+        Copyright <span class="minutes">(01:09 mins)</span>
+       </a>
+      
+        
+      
+   </li></ol>
+ </div>
+
+
+
+</div></section></div>
+
+    
+
+    <div class="interface-controls interface-controls-top">
+      <ul class="interface-control-btns js-bitlist js-reader">
+        <li class="js-search-in-archive search-in-archive t-search-in-archive"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" title="Search in archive" class="js-search-controls search-controls"><span class="icon">Search in book...</span></a><form class="search-archive-bar js-search-form"><input type="search" name="query" placeholder="Search inside this book..." autocomplete="off"></form><div class="search-archive-results"><div class="js-sitb-results-region"></div></div></li><li class="queue-control"><div class="js-content-uri" data-content-uri="/api/v1/book/9781491945407/chapter/co01.html"><div class="js-collections-dropdown collections-dropdown menu-bit-cards"><div data-reactroot="" class="menu-dropdown-wrapper js-menu-dropdown-wrapper align-right"><img class="hidden" src="./1. Bayes’s Theorem - Think Bayes_files/ajax-transp.gif" alt="loading spinner"><div class="menu-control"><div class="control "><div class="js-playlists-menu"><button class="js-playlist-icon"><svg class="icon-add-to-playlist-sml" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill-rule="nonzero" fill="#000000"><g transform="translate(-1.000000, 0.000000)"><rect x="5" y="0" width="12" height="2"></rect><title>Playlists</title><path d="M4.5,14 C6.43299662,14 8,12.4329966 8,10.5 C8,8.56700338 6.43299662,7 4.5,7 C2.56700338,7 1,8.56700338 1,10.5 C1,12.4329966 2.56700338,14 4.5,14 Z M2.5,10 L4,10 L4,8.5 L5,8.5 L5,10 L6.5,10 L6.5,11 L5,11 L5,12.5 L4,12.5 L4,11 L2.5,11 L2.5,10 Z"></path><circle cx="2" cy="5" r="1"></circle><circle cx="1.94117647" cy="1" r="1"></circle><rect x="5" y="4" width="12" height="2"></rect><rect x="9" y="8" width="8" height="2"></rect><rect x="9" y="12" width="8" height="2"></rect></g></g></g></svg><div class="js-playlist-addto-label">Add&nbsp;To</div></button></div></div></div></div></div></div></li><li class="js-font-control-panel font-control-activator"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" data-push-state="false" id="font-controls" title="Change font size" aria-label="Change font size"><span class="icon">Toggle Font Controls</span></a></li><li class="dropdown sharing-controls"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" class="trigger" data-push-state="false" title="Share" aria-label="Share"><i class="fa fa-share"></i></a><ul class="social-sharing dropdown-menu"><li class="currently-reading"><a class="twitter share-button t-twitter" target="_blank" aria-label="Share this section on Twitter" title="Share this section on Twitter" href="https://twitter.com/share?url=https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/co01.html&amp;text=Think%20Bayes&amp;via=safari"><span>Twitter</span></a></li><li class="currently-reading"><a class="facebook share-button t-facebook" target="_blank" aria-label="Share this section on Facebook" title="Share this section on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/co01.html"><span>Facebook</span></a></li><li class="currently-reading"><a class="googleplus share-button t-googleplus" target="_blank" aria-label="Share this secton on Google Plus" title="Share this secton on Google Plus" href="https://plus.google.com/share?url=https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/co01.html"><span>Google Plus</span></a></li><li class="currently-reading"><a class="email share-button t-email" aria-label="Share this section via email" title="Share this section via email" href="mailto:?subject=Safari:%20Colophon&amp;body=https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/co01.html%0D%0Afrom%20Think%20Bayes%0D%0A"><span>Email</span></a></li></ul></li>
+      </ul>
+    </div>
+
+    <section role="document">
+	  <div class="t-sbo-prev sbo-prev sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/pr01.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">Preface</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-top">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">2. Computational Statistics</div>
+        </a>
+    
+  
+  </div>
+
+
+
+<div id="sbo-rt-content"><div class="annotator-wrapper"><section class="chapter" epub:type="chapter" id="intro"><div class="titlepage"><div><div><h2 class="title">Chapter&nbsp;1.&nbsp;Bayes’s Theorem</h2></div></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000000235">Conditional probability</h2></div></div></div><p>The fundamental idea behind all Bayesian statistics is Bayes’s
+    theorem, which is surprisingly easy to derive, provided that you
+    understand conditional probability. So we’ll start with probability, then
+    conditional probability, then Bayes’s theorem, and on to Bayesian
+    statistics.<a id="id355579" class="indexterm"></a><a id="id355543" class="indexterm"></a></p><p>A probability is a number between 0 and 1 (including both) that
+    represents a degree of belief in a fact or prediction. The value 1
+    represents certainty that a fact is true, or that a prediction will come
+    true. The value 0 represents certainty that the fact is false.<a id="id355558" class="indexterm"></a></p><p>Intermediate values represent degrees of certainty. The value 0.5,
+    often written as 50%, means that a predicted outcome is as likely to
+    happen as not. For example, the probability that a tossed coin lands face
+    up is very close to 50%.<a id="id355574" class="indexterm"></a></p><p>A conditional probability is a probability based on some background
+    information. For example, I want to know the probability that I will have
+    a heart attack in the next year. According to the CDC, “Every year about
+    785,000 Americans have a first coronary attack (<a class="ulink" href="http://www.cdc.gov/heartdisease/facts.htm" target="_top">http://www.cdc.gov/heartdisease/facts.htm</a>).”<a id="id355634" class="indexterm"></a></p><p>The U.S. population is about 311 million, so the probability that a
+    randomly chosen American will have a heart attack in the next year is
+    roughly 0.3%.</p><p>But I am not a randomly chosen American. Epidemiologists have
+    identified many factors that affect the risk of heart attacks; depending
+    on those factors, my risk might be higher or lower than average.</p><p>I am male, 45 years old, and I have borderline high cholesterol.
+    Those factors increase my chances. However, I have low blood pressure and
+    I don’t smoke, and those factors decrease my chances.</p><p>Plugging everything into the online calculator at <a class="ulink" href="http://hp2010.nhlbihin.net/atpiii/calculator.asp" target="_top">http://hp2010.nhlbihin.net/atpiii/calculator.asp</a>,
+    I find that my risk of a heart attack in the next year is about 0.2%, less
+    than the national average. That value is a conditional probability,
+    because it is based on a number of factors that make up my
+    “condition.”</p><p>The usual notation for conditional probability is <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0101.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0101.png"></span>, which is the probability of <span class="math">A</span> given that <span class="math">B</span> is
+    true. In this example, <span class="math">A</span> represents the
+    prediction that I will have a heart attack in the next year, and <span class="math">B</span> is the set of conditions I listed.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000000258">Conjoint probability</h2></div></div></div><p><span class="bold"><strong>Conjoint probability</strong></span> is a fancy way
+    to say the probability that two things are true. I write <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0102.png" alt="" width="121" height="29" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0102.png"></span> to mean the probability that <span class="math">A</span> and <span class="math">B</span> are both
+    true.<a id="id355740" class="indexterm"></a><a id="id355750" class="indexterm"></a></p><p>If you learned about probability in the context of coin tosses and
+    dice, you might have learned the following formula:</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0103.png" alt="Conjoint probability" width="1456" height="58" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0103.png"></div></div><p>For example, if I toss two coins, and <span class="math">A</span> means the first coin lands face up, and <span class="math">B</span> means the second coin lands face up, then
+    <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0104.png" alt="" width="219" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0104.png"></span>, and sure enough, <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0105.png" alt="" width="359" height="29" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0105.png"></span>.</p><p>But this formula only works because in this case <span class="math">A</span> and <span class="math">B</span> are
+    independent; that is, knowing the outcome of the first event does not
+    change the probability of the second. Or, more formally, <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0106.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0106.png"></span> = <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0107.png" alt="" width="53" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0107.png"></span>.<a id="id355877" class="indexterm"></a><a id="id355886" class="indexterm"></a></p><p>Here is a different example where the events are not independent.
+    Suppose that <span class="math">A</span> means that it rains today
+    and <span class="math">B</span> means that it rains tomorrow. If I
+    know that it rained today, it is more likely that it will rain tomorrow,
+    so <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0108.png" alt="" width="175" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0108.png"></span>.</p><p>In general, the probability of a conjunction is</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0109.png" alt="Conjoint probability" width="662" height="62" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0109.png"></div></div><p>for any <span class="math">A</span> and <span class="math">B</span>. So if the chance of rain on any given day is
+    0.5, the chance of rain on two consecutive days is not 0.25, but probably
+    a bit higher.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000000336">The cookie problem</h2></div></div></div><p>We’ll get to Bayes’s theorem soon, but I want to motivate it with an
+    example called the cookie problem.<sup>[<a id="id355983" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#ftn.id355983" class="footnote totri-footnote">1</a>]</sup> Suppose there are two bowls of cookies. Bowl 1 contains 30
+    vanilla cookies and 10 chocolate cookies. Bowl 2 contains 20 of
+    each.<a id="id355992" class="indexterm"></a><a id="id356004" class="indexterm"></a></p><p>Now suppose you choose one of the bowls at random and, without
+    looking, select a cookie at random. The cookie is vanilla. What is the
+    probability that it came from Bowl 1?</p><p>This is a conditional probability; we want <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0110.png" alt="" width="230" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0110.png"></span>, but it is not obvious how to compute it. If I asked a
+    different question—the probability of a vanilla cookie given Bowl 1—it
+    would be easy:</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0111.png" alt="The cookie problem" width="703" height="62" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0111.png"></div></div><p>Sadly, <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0112.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0112.png"></span> is <span class="emphasis"><em>not</em></span> the same as
+    <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0113.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0113.png"></span>, but there is a way to get from one to the other:
+    Bayes’s theorem.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000000360">Bayes’s theorem</h2></div></div></div><p>At this point we have everything we need to derive Bayes’s theorem.
+    We’ll start with the observation that conjunction is commutative; that
+    is</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0114.png" alt="Bayes’s theorem" width="591" height="58" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0114.png"></div></div><p>for any events <span class="math">A</span> and <span class="math">B</span>.<a id="id356144" class="indexterm"></a><a id="id356157" class="indexterm"></a></p><p>Next, we write the probability of a conjunction:</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0115.png" alt="Bayes’s theorem" width="662" height="62" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0115.png"></div></div><p>Since we have not said anything about what <span class="math">A</span> and <span class="math">B</span> mean, they
+    are interchangeable. Interchanging them yields</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0116.png" alt="Bayes’s theorem" width="658" height="62" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0116.png"></div></div><p>That’s all we need. Pulling those pieces together, we get</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0117.png" alt="Bayes’s theorem" width="729" height="62" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0117.png"></div></div><p>Which means there are two ways to compute the conjunction. If you
+    have <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0118.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0118.png"></span>, you multiply by the conditional probability
+    <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0119.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0119.png"></span>. Or you can do it the other way around; if you know
+    <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0120.png" alt="" width="53" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0120.png"></span>, you multiply by <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0121.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0121.png"></span>. Either way you should get the same thing.</p><p>Finally we can divide through by <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0122.png" alt="" width="53" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0122.png"></span>:</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0123.png" alt="Bayes’s theorem" width="623" height="129" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0123.png"></div></div><p>And that’s Bayes’s theorem! It might not look like much, but it
+    turns out to be surprisingly powerful.</p><p>For example, we can use it to solve the cookie problem. I’ll write
+    <span class="math">B<sub>1</sub></span> for the
+    hypothesis that the cookie came from Bowl 1 and <span class="math">V</span> for the vanilla cookie. Plugging in Bayes’s
+    theorem we get</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0124.png" alt="Bayes’s theorem" width="686" height="129" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0124.png"></div></div><p>The term on the left is what we want: the probability of Bowl 1,
+    given that we chose a vanilla cookie. The terms on the right are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0125.png" alt="" width="54" height="24" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0125.png"></span>: This is the probability that we chose Bowl 1,
+        unconditioned by what kind of cookie we got. Since the problem says we
+        chose a bowl at random, we can assume <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0126.png" alt="" width="126" height="26" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0126.png"></span>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0127.png" alt="" width="91" height="26" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0127.png"></span>: This is the probability of getting a vanilla
+        cookie from Bowl 1, which is 3/4.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0128.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0128.png"></span>: This is the probability of drawing a vanilla
+        cookie from either bowl. Since we had an equal chance of choosing
+        either bowl and the bowls contain the same number of cookies, we had
+        the same chance of choosing any cookie. Between the two bowls there
+        are 50 vanilla and 30 chocolate cookies, so <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0129.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0129.png"></span> = 5/8.</p></li></ul></div><p>Putting it together, we have</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0130.png" alt="Bayes’s theorem" width="607" height="119" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0130.png"></div></div><p>which reduces to 3/5. So the vanilla cookie is evidence in favor of
+    the hypothesis that we chose Bowl 1, because vanilla cookies are more
+    likely to come from Bowl 1.<a id="id356508" class="indexterm"></a></p><p>This example demonstrates one use of Bayes’s theorem: it provides a
+    strategy to get from <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0131.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0131.png"></span> to <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0132.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0132.png"></span>. This strategy is useful in cases, like the cookie
+    problem, where it is easier to compute the terms on the right side of
+    Bayes’s theorem than the term on the left.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000000505">The diachronic interpretation</h2></div></div></div><p>There is another way to think of Bayes’s theorem: it gives us a way
+    to update the probability of a hypothesis, <span class="math">H</span>, in light of some body of data, <span class="math">D</span>.<a id="id356577" class="indexterm"></a></p><p>This way of thinking about Bayes’s theorem is called the <span class="bold"><strong>diachronic interpretation</strong></span>. “Diachronic” means that
+    something is happening over time; in this case the probability of the
+    hypotheses changes, over time, as we see new data.</p><p>Rewriting Bayes’s theorem with <span class="math">H</span>
+    and <span class="math">D</span> yields:</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0133.png" alt="The diachronic interpretation" width="630" height="129" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0133.png"></div></div><p>In this interpretation, each term has a name:<a id="id356652" class="indexterm"></a><a id="id356648" class="indexterm"></a><a id="id356661" class="indexterm"></a><a id="id356669" class="indexterm"></a></p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0134.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0134.png"></span> is the probability of the hypothesis before we see
+        the data, called the prior probability, or just <span class="bold"><strong>prior</strong></span>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0135.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0135.png"></span> is what we want to compute, the probability of the
+        hypothesis after we see the data, called the <span class="bold"><strong>posterior</strong></span>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0136.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0136.png"></span> is the probability of the data under the
+        hypothesis, called the <span class="bold"><strong>likelihood</strong></span>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0137.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0137.png"></span> is the probability of the data under any
+        hypothesis, called the <span class="bold"><strong>normalizing
+        constant</strong></span>.</p></li></ul></div><p>Sometimes we can compute the prior based on background information.
+    For example, the cookie problem specifies that we choose a bowl at random
+    with equal probability.</p><p>In other cases the prior is subjective; that is, reasonable people
+    might disagree, either because they use different background information
+    or because they interpret the same information differently.<a id="id356807" class="indexterm"></a></p><p>The likelihood is usually the easiest part to compute. In the cookie
+    problem, if we know which bowl the cookie came from, we find the
+    probability of a vanilla cookie by counting.</p><p>The normalizing constant can be tricky. It is supposed to be the
+    probability of seeing the data under any hypothesis at all, but in the
+    most general case it is hard to nail down what that means.</p><p>Most often we simplify things by specifying a set of hypotheses that
+    are<a id="id356842" class="indexterm"></a><a id="id356850" class="indexterm"></a></p><div class="variablelist"><dl><dt><span class="term">Mutually exclusive:</span></dt><dd><p>At most one hypothesis in the set can be true, and</p></dd><dt><span class="term">Collectively exhaustive:</span></dt><dd><p>There are no other possibilities; at least one of the
+          hypotheses has to be true.</p></dd></dl></div><p>I use the word <span class="bold"><strong>suite</strong></span> for a set of
+    hypotheses that has these properties.<a id="id356900" class="indexterm"></a></p><p>In the cookie problem, there are only two hypotheses—the cookie came
+    from Bowl 1 or Bowl 2—and they are mutually exclusive and collectively
+    exhaustive.</p><p>In that case we can compute <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0138.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0138.png"></span> using the law of total probability, which says that if
+    there are two exclusive ways that something might happen, you can add up
+    the probabilities like this:</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0139.png" alt="The diachronic interpretation" width="1003" height="62" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0139.png"></div></div><p>Plugging in the values from the cookie problem, we have</p><div class="informalequation"><div class="mediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/eq_0140.png" alt="The diachronic interpretation" width="1024" height="62" data-mfp-src="/library/view/think-bayes/9781491945407/eq_0140.png"></div></div><p>which is what we computed earlier by mentally combining the two
+    bowls.<a id="id356974" class="indexterm"></a></p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000000607">The M&amp;M&nbsp;problem</h2></div></div></div><p>M&amp;M’s are small candy-coated chocolates that come in a variety
+    of colors. Mars, Inc., which makes M&amp;M’s, changes the mixture of
+    colors from time to time.<a id="id356984" class="indexterm"></a></p><p>In 1995, they introduced blue M&amp;M’s. Before then, the color mix
+    in a bag of plain M&amp;M’s was 30% Brown, 20% Yellow, 20% Red, 10% Green,
+    10% Orange, 10% Tan. Afterward it was 24% Blue , 20% Green, 16% Orange,
+    14% Yellow, 13% Red, 13% Brown.</p><p>Suppose a friend of mine has two bags of M&amp;M’s, and he tells me
+    that one is from 1994 and one from 1996. He won’t tell me which is which,
+    but he gives me one M&amp;M&nbsp;from each bag. One is yellow
+    and one is green. What is the probability that the yellow one came from
+    the 1994 bag?</p><p>This problem is similar to the cookie problem, with the twist that I
+    draw one sample from each bowl/bag. This problem also gives me a chance to
+    demonstrate the table method, which is useful for solving problems like
+    this on paper. In the next chapter we will solve them
+    computationally.<a id="id357053" class="indexterm"></a></p><p>The first step is to enumerate the hypotheses. The bag the yellow
+    M&amp;M&nbsp;came from I’ll call Bag 1; I’ll call the other
+    Bag 2. So the hypotheses are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>A: Bag 1 is from 1994, which implies that Bag 2 is from
+        1996.</p></li><li class="listitem"><p>B: Bag 1 is from 1996 and Bag 2 from 1994.</p></li></ul></div><p>Now we construct a table with a row for each hypothesis and a column
+    for each term in Bayes’s theorem:</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col><col><col><col></colgroup><tbody><tr><td>&nbsp;</td><td style="border-right: 0.5pt solid ; "><p> Prior </p></td><td style="border-right: 0.5pt solid ; "><p> Likelihood </p></td><td style="border-right: 0.5pt solid ; ">&nbsp;</td><td><p> Posterior </p></td></tr><tr><td style="border-bottom: 0.5pt solid ; ">&nbsp;</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0141.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0141.png"></span> </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0142.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0142.png"></span> </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0143.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0143.png"></span>&nbsp;<span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0144.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0144.png"></span> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0145.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0145.png"></span> </p></td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>A </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1/2 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> (20)(20) </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 200 </p></td><td style="border-bottom: 0.5pt solid ; "><p> 20/27 </p></td></tr><tr><td style="border-right: 0.5pt solid ; "><p>B </p></td><td style="border-right: 0.5pt solid ; "><p> 1/2 </p></td><td style="border-right: 0.5pt solid ; "><p> (10)(14) </p></td><td style="border-right: 0.5pt solid ; "><p> 70 </p></td><td><p> 7/27 </p></td></tr></tbody></table></div><p>The first column has the priors. Based on the statement of the
+    problem, it is reasonable to choose <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0146.png" alt="" width="214" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0146.png"></span>.</p><p>The second column has the likelihoods, which follow from the
+    information in the problem. For example, if <span class="math">A</span> is true, the yellow M&amp;M&nbsp;came
+    from the 1994 bag with probability 20%, and the green came from the 1996
+    bag with probability 20%. Because the selections are independent, we get
+    the conjoint probability by multiplying.<a id="id357345" class="indexterm"></a></p><p>The third column is just the product of the previous two. The sum of
+    this column, 270, is the normalizing constant. To get the last column,
+    which contains the posteriors, we divide the third column by the
+    normalizing constant.</p><p>That’s it. Simple, right?</p><p>Well, you might be bothered by one detail. I write <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0147.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0147.png"></span> in terms of percentages, not probabilities, which
+    means it is off by a factor of 10,000. But that cancels out when we divide
+    through by the normalizing constant, so it doesn’t affect the
+    result.<a id="id357384" class="indexterm"></a></p><p>When the set of hypotheses is mutually exclusive and collectively
+    exhaustive, you can multiply the likelihoods by any factor, if it is
+    convenient, as long as you apply the same factor to the entire
+    column.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000000721">The Monty Hall problem</h2></div></div></div><p>The Monty Hall problem might be the most contentious question in the
+    history of probability. The scenario is simple, but the correct answer is
+    so counterintuitive that many people just can’t accept it, and many smart
+    people have embarrassed themselves not just by getting it wrong but by
+    arguing the wrong side, aggressively, in public.<a id="id357403" class="indexterm"></a></p><p>Monty Hall was the original host of the game show <span class="emphasis"><em>Let’s
+    Make a Deal</em></span>. The Monty Hall problem is based on one of the
+    regular games on the show. If you are on the show, here’s what
+    happens:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Monty shows you three closed doors and tells you that there is a
+        prize behind each door: one prize is a car, the other two are less
+        valuable prizes like peanut butter and fake finger nails. The prizes
+        are arranged at random.</p></li><li class="listitem"><p>The object of the game is to guess which door has the car. If
+        you guess right, you get to keep the car.</p></li><li class="listitem"><p>You pick a door, which we will call Door A. We’ll call the other
+        doors B and C.</p></li><li class="listitem"><p>Before opening the door you chose, Monty increases the suspense
+        by opening either Door B or C, whichever does not have the car. (If
+        the car is actually behind Door A, Monty can safely open B or C, so he
+        chooses one at random.)</p></li><li class="listitem"><p>Then Monty offers you the option to stick with your original
+        choice or switch to the one remaining unopened door.</p></li></ul></div><p>The question is, should you “stick” or “switch” or does it make no
+    difference?<a id="id357498" class="indexterm"></a><a id="id357469" class="indexterm"></a><a id="id357483" class="indexterm"></a></p><p>Most people have the strong intuition that it makes no difference.
+    There are two doors left, they reason, so the chance that the car is
+    behind Door A is 50%.</p><p>But that is wrong. In fact, the chance of winning if you stick with
+    Door A is only 1/3; if you switch, your chances are 2/3.</p><p>By applying Bayes’s theorem, we can break this problem into simple
+    pieces, and maybe convince ourselves that the correct answer is, in fact,
+    correct.</p><p>To start, we should make a careful statement of the data. In this
+    case <span class="math">D</span> consists of two parts: Monty
+    chooses Door B <span class="emphasis"><em>and</em></span> there is no car there.</p><p>Next we define three hypotheses: <span class="math">A</span>,
+    <span class="math">B</span>, and <span class="math">C</span>
+    represent the hypothesis that the car is behind Door A, Door B, or Door C.
+    Again, let’s apply the table method:</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col><col><col><col></colgroup><tbody><tr><td>&nbsp;</td><td style="border-right: 0.5pt solid ; "><p> Prior </p></td><td style="border-right: 0.5pt solid ; "><p> Likelihood </p></td><td style="border-right: 0.5pt solid ; ">&nbsp;</td><td><p> Posterior </p></td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-bottom: 0.5pt solid ; ">&nbsp;</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0148.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0148.png"></span> </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0149.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0149.png"></span> </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0150.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0150.png"></span>&nbsp;<span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0151.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0151.png"></span> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0152.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0152.png"></span> </p></td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>A </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1/3 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1/2 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1/6 </p></td><td style="border-bottom: 0.5pt solid ; "><p> 1/3 </p></td></tr><tr style="border-bottom: 0.5pt solid ; "><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>B </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1/3 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 0 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 0 </p></td><td style="border-bottom: 0.5pt solid ; "><p> 0 </p></td></tr><tr><td style="border-right: 0.5pt solid ; "><p>C </p></td><td style="border-right: 0.5pt solid ; "><p> 1/3 </p></td><td style="border-right: 0.5pt solid ; "><p> 1 </p></td><td style="border-right: 0.5pt solid ; "><p> 1/3 </p></td><td><p> 2/3 </p></td></tr></tbody></table></div><p>Filling in the priors is easy because we are told that the prizes
+    are arranged at random, which suggests that the car is equally likely to
+    be behind any door.</p><p>Figuring out the likelihoods takes some thought, but with reasonable
+    care we can be confident that we have it right:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>If the car is actually behind A, Monty could safely open Doors B
+        or C. So the probability that he chooses B is 1/2. And since the car
+        is actually behind A, the probability that the car is not behind B is
+        1.</p></li><li class="listitem"><p>If the car is actually behind B, Monty has to open door C, so
+        the probability that he opens door B is 0.</p></li><li class="listitem"><p>Finally, if the car is behind Door C, Monty opens B with
+        probability 1 and finds no car there with probability 1.</p></li></ul></div><p>Now the hard part is over; the rest is just arithmetic. The sum of
+    the third column is 1/2. Dividing through yields <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0153.png" alt="" width="170" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0153.png"></span> and <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0154.png" alt="" width="168" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0154.png"></span>. So you are better off switching.</p><p>There are many variations of the Monty Hall problem. One of the
+    strengths of the Bayesian approach is that it generalizes to handle these
+    variations.</p><p>For example, suppose that Monty always chooses B if he can, and only
+    chooses C if he has to (because the car is behind B). In that case the
+    revised table is:</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col><col><col><col></colgroup><tbody><tr><td>&nbsp;</td><td style="border-right: 0.5pt solid ; "><p> Prior </p></td><td style="border-right: 0.5pt solid ; "><p> Likelihood </p></td><td style="border-right: 0.5pt solid ; ">&nbsp;</td><td><p> Posterior </p></td></tr><tr><td style="border-bottom: 0.5pt solid ; ">&nbsp;</td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0155.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0155.png"></span> </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0156.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0156.png"></span> </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0157.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0157.png"></span>&nbsp;<span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0158.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0158.png"></span> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0159.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0159.png"></span> </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>A </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1/3 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1/3 </p></td><td style="border-bottom: 0.5pt solid ; "><p> 1/2 </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>B </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 1/3 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 0 </p></td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> 0 </p></td><td style="border-bottom: 0.5pt solid ; "><p> 0 </p></td></tr><tr><td style="border-right: 0.5pt solid ; "><p>C </p></td><td style="border-right: 0.5pt solid ; "><p> 1/3 </p></td><td style="border-right: 0.5pt solid ; "><p> 1 </p></td><td style="border-right: 0.5pt solid ; "><p> 1/3 </p></td><td><p> 1/2 </p></td></tr></tbody></table></div><p>The only change is <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0160.png" alt="" width="91" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0160.png"></span>. If the car is behind <span class="math">A</span>, Monty can choose to open B or C. But in this
+    variation he always chooses B, so <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0161.png" alt="" width="137" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0161.png"></span>.</p><p>As a result, the likelihoods are the same for <span class="math">A</span> and <span class="math">C</span>, and the
+    posteriors are the same: <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0162.png" alt="" width="297" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0162.png"></span>. In this case, the fact that Monty chose B reveals no
+    information about the location of the car, so it doesn’t matter whether
+    the contestant sticks or switches.</p><p>On the other hand, if he had opened <span class="math">C</span>, we would know <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0163.png" alt="" width="136" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0163.png"></span>.</p><p>I included the Monty Hall problem in this chapter because I think it
+    is fun, and because Bayes’s theorem makes the complexity of the problem a
+    little more manageable. But it is not a typical use of Bayes’s theorem, so
+    if you found it confusing, don’t worry!</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both" id="a0000000936">Discussion</h2></div></div></div><p>For many problems involving conditional probability, Bayes’s theorem
+    provides a divide-and-conquer strategy. If <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0164.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0164.png"></span> is hard to compute, or hard to measure experimentally,
+    check whether it might be easier to compute the other terms in Bayes’s
+    theorem, <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0165.png" alt="" width="90" height="27" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0165.png"></span>, <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0166.png" alt="" width="55" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0166.png"></span> and <span class="inlinemediaobject"><img src="./1. Bayes’s Theorem - Think Bayes_files/inleq_0167.png" alt="" width="53" height="28" data-mfp-src="/library/view/think-bayes/9781491945407/inleq_0167.png"></span>.<a id="id358296" class="indexterm"></a></p><p>If the Monty Hall problem is your idea of fun, I have collected a
+    number of similar problems in an article called “All your Bayes are belong
+    to us,” which you can read at <a class="ulink" href="http://allendowney.blogspot.com/2011/10/all-your-bayes-are-belong-to-us.html" target="_top">http://allendowney.blogspot.com/2011/10/all-your-bayes-are-belong-to-us.html</a>.</p></div><div class="footnotes" epub:type="footnotes"><br><hr style="width: 100; align: left;"><div class="footnote" id="ftn.id355983"><p><sup>[<a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#id355983" class="para totri-footnote">1</a>] </sup>Based on an example from <a class="ulink" href="http://en.wikipedia.org/wiki/Bayes%E2%80%99_theorem" target="_top">http://en.wikipedia.org/wiki/Bayes’_theorem</a>
+        that is no longer there.</p></div></div></section><div class="annotator-outer annotator-viewer viewer annotator-hide">
+  <ul class="annotator-widget annotator-listing"></ul>
+</div><div class="annotator-modal-wrapper annotator-editor-modal annotator-editor annotator-hide">
+	<div class="annotator-outer editor">
+		<h2 class="title">Highlight</h2>
+		<form class="annotator-widget">
+			<ul class="annotator-listing">
+			<li class="annotator-item"><textarea id="annotator-field-1" placeholder="Add a note using markdown (optional)" class="js-editor" maxlength="750"></textarea></li></ul>
+			<div class="annotator-controls">
+				<a class="link-to-markdown" href="https://daringfireball.net/projects/markdown/basics" target="_blank">?</a>
+				<ul>
+					<li class="delete annotator-hide"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#delete" class="annotator-delete-note button positive">Delete Note</a></li>
+					<li class="save"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#save" class="annotator-save annotator-focus button positive">Save Note</a></li>
+					<li class="cancel"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#cancel" class="annotator-cancel button">Cancel</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</div><div class="annotator-modal-wrapper annotator-delete-confirm-modal" style="display: none;">
+  <div class="annotator-outer">
+    <h2 class="title">Highlight</h2>
+      <a class="js-close-delete-confirm annotator-cancel close" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#close">Close</a>
+      <div class="annotator-widget">
+         <div class="delete-confirm">
+            Are you sure you want to permanently delete this note?
+         </div>
+         <div class="annotator-controls">
+            <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#cancel" class="annotator-cancel button js-cancel-delete-confirm">No, I changed my mind</a>
+            <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#delete" class="annotator-delete button positive js-delete-confirm">Yes, delete it</a>
+         </div>
+       </div>
+   </div>
+</div><div class="annotator-adder" style="display: none;">
+	<ul class="adders ">
+		
+		<li class="copy"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#">Copy</a></li>
+		
+		<li class="add-highlight"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#">Add Highlight</a></li>
+		<li class="add-note"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#">
+			
+				Add Note
+			
+		</a></li>
+		
+	</ul>
+</div></div></div>
+
+
+
+  <div class="t-sbo-prev sbo-prev sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/pr01.html" class="prev nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-prev-label">Prev</span>
+          <span class="visuallyhidden">Previous Chapter</span>
+          <div class="pagination-title t-prev-title">Preface</div>
+        </a>
+    
+  
+  </div>
+
+  <div class="t-sbo-next sbo-next sbo-nav-bottom">
+  
+    
+      
+        <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch02.html" class="next nav-link">
+      
+          <span aria-hidden="true" class="pagination-label t-next-label">Next</span>
+          <span class="visuallyhidden">Next Chapter</span>
+          <div class="pagination-title t-next-title">2. Computational Statistics</div>
+        </a>
+    
+  
+  </div>
+
+</section>
+  </div>
+<section class="sbo-saved-archives"></section>
+
+
+
+          
+          
+  
+
+
+
+
+    
+    
+      <div id="js-subscribe-nag" class="subscribe-nag clearfix trial-panel t-subscribe-nag collapsed slideUp">
+        
+        
+          
+          
+            <p class="usage-data">Find answers on the fly, or master something new. Subscribe today. <a href="https://www.safaribooksonline.com/subscribe/" class="ga-active-trial-subscribe-nag">See pricing options.</a></p>
+          
+
+          
+        
+        
+
+      </div>
+
+    
+    
+
+
+
+        
+      </div>
+      
+
+
+
+
+  <footer class="pagefoot t-pagefoot" style="padding-bottom: 69px;">
+    <a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" class="icon-up" style="display: none;"><div class="visuallyhidden">Back to top</div></a>
+    <ul class="js-footer-nav">
+      
+        <li><a class="t-recommendations-footer" href="https://www.safaribooksonline.com/r/">Recommended</a></li>
+      
+      <li>
+      <a class="t-queue-footer" href="https://www.safaribooksonline.com/playlists/">Playlists</a>
+      </li>
+      
+        <li><a class="t-recent-footer" href="https://www.safaribooksonline.com/history/">History</a></li>
+        <li><a class="t-topics-footer" href="https://www.safaribooksonline.com/topics?q=*&amp;limit=21">Topics</a></li>
+      
+      
+        <li><a class="t-tutorials-footer" href="https://www.safaribooksonline.com/tutorials/">Tutorials</a></li>
+      
+      <li><a class="t-settings-footer js-settings" href="https://www.safaribooksonline.com/u/preferences/">Settings</a></li>
+      <li class="full-support"><a href="https://www.safaribooksonline.com/public/support">Support</a></li>
+      <li><a href="https://www.safaribooksonline.com/apps/">Get the App</a></li>
+      <li><a href="https://www.safaribooksonline.com/accounts/logout/">Sign Out</a></li>
+    </ul>
+    <span class="copyright">© 2018 <a href="https://www.safaribooksonline.com/" target="_blank">Safari</a>.</span>
+    <a href="https://www.safaribooksonline.com/terms/">Terms of Service</a> /
+    <a href="https://www.safaribooksonline.com/privacy/">Privacy Policy</a>
+  </footer>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"agent":"","errorBeacon":"bam.nr-data.net","licenseKey":"510f1a6865","queueTime":8,"beacon":"bam.nr-data.net","transactionName":"YgdaZ0NSW0cEB0RdWltNfkZfUEFdCgofXFBHDVYdR1pQQxZeRl1QQj1aWkU=","applicationID":"3275661,67267027,67267028","applicationTime":803}</script>
+
+
+    
+    
+      <img src="./1. Bayes’s Theorem - Think Bayes_files/saved_resource(1)" alt="" style="display:none;">
+    
+    <script src="./1. Bayes’s Theorem - Think Bayes_files/saved_resource(2)" charset="utf-8"></script>
+    <script src="./1. Bayes’s Theorem - Think Bayes_files/saved_resource(3)" charset="utf-8"></script>
+  
+
+<div class="annotator-notice"></div><div class="font-flyout" style="top: 151px; left: 1280px;"><div class="font-controls-panel">
+	<div class="nightmodes">
+		<ul>
+			<li class="day"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" id="day-mode" title="Day Mode">
+				<i class="fa fa-sun-o"></i>
+				<span>Day Mode</span></a></li>
+			<li class="cloudy"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" id="cloudy-mode" title="Cloudy Mode">
+				<i class="fa fa-cloud"></i>
+				<span>Cloud Mode</span>
+			</a></li>
+			<li class="night"><a href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#" id="night-mode" title="Night Mode">
+				<i class="fa fa-moon-o"></i>
+				<span>Night Mode</span>
+			</a></li>
+		</ul>
+	</div>
+
+	<div class="font-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-font left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-font-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-font right"></i>
+		</div>
+	</div>
+
+	<div class="column-resizer resizer">
+		<div class="draggable-containment-wrapper">
+			<i class="fa fa-compress left"></i>
+			<span class="filler" style="width: 50%;"></span>
+			<div id="js-column-size-draggable" class="draggable ui-widget-content ui-draggable ui-draggable-handle" style="position: relative; left: 80px;"></div>
+			<i class="fa fa-expand right"></i>
+		</div>
+	</div>
+
+	<a id="reset" class="button" href="https://www.safaribooksonline.com/library/view/think-bayes/9781491945407/ch01.html#">Reset</a>
+</div>
+</div><script type="text/javascript" id="">(function(){window.medalliaUserIdentifier=document.documentElement.dataset.userUuid;window.medalliaUserName=document.documentElement.dataset.username})();</script>
+<script type="text/javascript" id="" src="./1. Bayes’s Theorem - Think Bayes_files/embed.js.download"></script><script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1732687426968531");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1732687426968531&amp;ev=PageView&amp;noscript=1"></noscript><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.7087256101270374"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.5183678573722106" width="0" height="0" alt="" src="./1. Bayes’s Theorem - Think Bayes_files/0"></div>
+
+
+<script src="./1. Bayes’s Theorem - Think Bayes_files/saved_resource(4)" type="text/javascript"></script><script type="text/javascript" async="" src="./1. Bayes’s Theorem - Think Bayes_files/generic1537389850717.js.download" charset="UTF-8"></script><span><div id="KampyleAnimationContainer" style="z-index: 2147483000; border: 0px; position: fixed; display: block; width: 0px; height: 0px;"></div></span></body></html>
